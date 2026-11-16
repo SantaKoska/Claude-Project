@@ -161,7 +161,7 @@ def sfx_sig(kind):
     raise ValueError(kind)
 
 
-SFX_GAIN = {"whoosh": .30, "pop": .42, "tick": .20, "thud": .55, "chime": .30, "shimmer": .22, "fire": .30}
+SFX_GAIN = {"whoosh": .10, "pop": .13, "tick": .05, "thud": .16, "chime": .10, "shimmer": .07, "fire": .09}
 
 
 def loudness(path):
@@ -210,6 +210,7 @@ def main():
         else:
             add(fx, sig, e["t"], pan, g)
 
+    fx *= 1 - 0.5 * sm                      # effects also dip under the voice (~-6 dB)
     mix = voice + m + fx
     mix /= np.abs(mix).max() + 1e-9
     write(B("premaster.wav"), mix * 0.5)
