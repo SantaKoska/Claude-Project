@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="ml">
+<head>
+<meta charset="utf-8">
+<title>Pencil Facts Reel</title>
+<meta name="viewport" content="width=1080, initial-scale=1">
+
+<!-- =====================================================================
+     CONFIG — make a new video by editing this block + the MP3, then run
+     tools/build.sh.  Sentences must match the voiceover, phrase by phrase
+     (a phrase = a stretch of speech between pauses).
+     ===================================================================== -->
+<script id="config" type="application/json">
+{
+  "title": "പെൻസിലിൽ ലെഡ് ഇല്ല!",
+  "voice": "audio/voice.mp3",
+  "voiceTempo": 1.05,
+  "timing": { "phraseGap": 0.24, "sentenceGap": 0.40, "head": 0.10, "tail": 1.30 },
+  "music": { "bpm": 96, "chords": ["D", "A", "Bm", "G"], "level": 0.9 },
+  "font": "FreeSans",
+  "palette": {
+    "bgTop": "#0A1033", "bgMid": "#15296A", "bgBottom": "#0A6C73",
+    "glowA": "#FFC93C", "glowB": "#8B5CF6", "glowC": "#2DD4BF",
+    "accent": "#FFC93C", "accent2": "#5EEAD4", "danger": "#FF4D6D",
+    "card": "#0F1A46", "cardStroke": "#3B57B8", "ink": "#0B1030", "text": "#FFFFFF"
+  },
+  "sentences": [
+    { "scene": "hook",
+      "phrases": ["നിങ്ങൾക്കറിയാമോ?", "പെൻസിലിലെ \"ലെഡിൽ\",", "ഒരു തരി ലെഡ് പോലുമില്ല!"],
+      "labels": { "tag": "“ലെഡ്”", "badgeSymbol": "Pb", "badgeNumber": "82", "badgeName": "ലെഡ്", "counterLabel": "ലെഡ്" } },
+    { "scene": "discovery",
+      "phrases": ["1560-കളിൽ ഇംഗ്ലണ്ടിൽ,", "കറുത്ത് തിളങ്ങുന്ന ഒരു കല്ല് കണ്ടെത്തി."],
+      "labels": { "yearFrom": 1400, "year": 1560, "yearSuffix": "-കൾ", "place": "ഇംഗ്ലണ്ട്" } },
+    { "scene": "belief",
+      "phrases": ["ആളുകൾ അത് ലെഡ് ആണെന്ന് കരുതി...", "\"ബ്ലാക്ക് ലെഡ്\" എന്ന് പേരുമിട്ടു."],
+      "labels": { "thought": "Pb ?", "tag": "ബ്ലാക്ക് ലെഡ്", "tagSub": "BLACK LEAD" } },
+    { "scene": "reveal",
+      "phrases": ["പക്ഷേ അത് ഗ്രാഫൈറ്റ് ആയിരുന്നു —", "കാർബണിന്റെ ഒരു രൂപം."],
+      "labels": { "newTag": "ഗ്രാഫൈറ്റ്", "flipWord": 2, "symbol": "C", "number": 6, "name": "കാർബൺ" } },
+    { "scene": "recipe",
+      "phrases": ["ഇന്ന്, ഗ്രാഫൈറ്റ് പൊടിയും കളിമണ്ണും ചേർത്ത്, ചൂളയിൽ ചുട്ടാണ് പെൻസിൽ മുന ഉണ്ടാക്കുന്നത്."],
+      "labels": { "a": "ഗ്രാഫൈറ്റ്", "b": "കളിമണ്ണ്", "process": "ചൂള", "result": "മുന",
+                  "cues": { "a": 1, "b": 3, "mix": 4, "process": 5, "heat": 6, "rod": 7, "result": 8, "done": 9 } } },
+    { "scene": "compare",
+      "phrases": ["കളിമണ്ണ് കൂടിയാൽ കട്ടി,", "ഗ്രാഫൈറ്റ് കൂടിയാൽ കറുപ്പ് —", "അതാണ് H-ഉം B-യും!"],
+      "labels": { "left": "H", "right": "B", "leftNote": "കട്ടി", "rightNote": "കറുപ്പ്",
+                  "barLeft": "കളിമണ്ണ്", "barRight": "ഗ്രാഫൈറ്റ്", "imprint": "HB" } },
+    { "scene": "outro",
+      "phrases": ["നാനൂറ് വർഷം പഴക്കമുള്ള ഒരു തെറ്റായ പേര്...", "നിങ്ങളിത് അറിഞ്ഞിരുന്നോ?", "കമന്റ് ചെയ്യൂ!"],
+      "labels": { "count": 400, "countLabel": "വർഷം", "oldName": "“ലെഡ്”", "wrongWord": 4, "comment": "കമന്റ്", "follow": "ഫോളോ" } }
+  ]
+}
+</script>
+
+<!-- THE HERO OBJECT — drawn once, pointing right, centred on (0,0), ~1000 units long.
+     Optional ids the scenes use: obj-body (fades in cut-away view), obj-interior,
+     obj-core (its width grows when the core is "made"), obj-imprint. Tip is at (500,0). -->
+<template id="object-svg"><svg xmlns="http://www.w3.org/2000/svg">
+  <g id="obj">
+    <g id="obj-interior" opacity="0">
+      <rect x="-322" y="-56" width="630" height="112" rx="6" fill="url(#woodG)"/>
+      <path d="M-300 -36 C-100 -28 100 -46 300 -34 M-300 36 C-100 28 100 46 300 34" stroke="#B9824B" stroke-width="3" fill="none" opacity=".55"/>
+      <rect x="-318" y="-16" width="752" height="32" rx="10" fill="#7A5230" fill-opacity=".35" stroke="#5B3A1E" stroke-width="3" stroke-dasharray="14 10"/>
+    </g>
+    <rect id="obj-core" x="-322" y="-15" width="0" height="30" rx="10" fill="url(#coreG)"/>
+    <g id="obj-body">
+      <path d="M-320 -60H300V-20H-320Z" fill="#FFE27A"/>
+      <path d="M-320 -20H300V20H-320Z" fill="#FFC531"/>
+      <path d="M-320 20H300V60H-320Z" fill="#E59E12"/>
+      <path d="M-320 -20H300M-320 20H300" stroke="#B87800" stroke-opacity=".35" stroke-width="2"/>
+      <rect x="-300" y="-51" width="580" height="9" rx="4.5" fill="#fff" opacity=".5"/>
+      <text id="obj-imprint" x="-40" y="14" font-size="40" font-weight="700" fill="#7A4E00" letter-spacing="6" opacity="0">HB</text>
+    </g>
+    <path d="M300 -60L438 -17V17L300 60Z" fill="url(#woodG)"/>
+    <path d="M300 22L438 6V17L300 60Z" fill="#9C6331" opacity=".35"/>
+    <path d="M300 -60Q330 -40 300 -20Z" fill="#FFE27A"/>
+    <path d="M300 -20Q330 0 300 20Z" fill="#FFC531"/>
+    <path d="M300 20Q330 40 300 60Z" fill="#E59E12"/>
+    <path d="M438 -17L500 0L438 17Z" fill="url(#tipG)"/>
+    <path d="M438 -17L500 0L438 -5Z" fill="#AEB6C7" opacity=".7"/>
+    <rect x="-410" y="-66" width="94" height="132" rx="10" fill="url(#ferruleG)"/>
+    <path d="M-392 -66V66M-364 -66V66M-336 -66V66" stroke="#596277" stroke-width="5" opacity=".5"/>
+    <rect x="-404" y="-56" width="82" height="10" rx="5" fill="#fff" opacity=".6"/>
+    <rect x="-500" y="-60" width="104" height="120" rx="28" fill="url(#eraserG)"/>
+    <rect x="-486" y="-47" width="72" height="12" rx="6" fill="#fff" opacity=".38"/>
+  </g>
+</svg></template>
+<!-- ======================= END OF CONFIG ================================ -->
+
+<script id="timings" type="application/json">
+{
+ "duration": 32.6,
+ "audio": "build/voice_cut.wav",
+ "phrases": [
+  {
+   "text": "നിങ്ങൾക്കറിയാമോ?",
+   "sentence": 0,
+   "start": 0.133,
+   "end": 0.848,
+   "words": [
+    {
+     "w": "നിങ്ങൾക്കറിയാമോ?",
+     "t": 0.133
+    }
+   ]
+  },
+  {
+   "text": "പെൻസിലിലെ \"ലെഡിൽ\",",
+   "sentence": 0,
+   "start": 1.076,
+   "end": 2.21,
+   "words": [
+    {
+     "w": "പെൻസിലിലെ",
+     "t": 1.076
+    },
+    {
+     "w": "\"ലെഡിൽ\",",
+     "t": 1.794
+    }
+   ]
+  },
+  {
+   "text": "ഒരു തരി ലെഡ് പോലുമില്ല!",
+   "sentence": 0,
+   "start": 2.438,
+   "end": 3.933,
+   "words": [
+    {
+     "w": "ഒരു",
+     "t": 2.438
+    },
+    {
+     "w": "തരി",
+     "t": 2.67
+    },
+    {
+     "w": "ലെഡ്",
+     "t": 3.035
+    },
+    {
+     "w": "പോലുമില്ല!",
+     "t": 3.302
+    }
+   ]
+  },
+  {
+   "text": "1560-കളിൽ ഇംഗ്ലണ്ടിൽ,",
+   "sentence": 1,
+   "start": 4.314,
+   "end": 6.429,
+   "words": [
+    {
+     "w": "1560-കളിൽ",
+     "t": 4.314
+    },
+    {
+     "w": "ഇംഗ്ലണ്ടിൽ,",
+     "t": 5.675
+    }
+   ]
+  },
+  {
+   "text": "കറുത്ത് തിളങ്ങുന്ന ഒരു കല്ല് കണ്ടെത്തി.",
+   "sentence": 1,
+   "start": 6.657,
+   "end": 8.524,
+   "words": [
+    {
+     "w": "കറുത്ത്",
+     "t": 6.657
+    },
+    {
+     "w": "തിളങ്ങുന്ന",
+     "t": 7.036
+    },
+    {
+     "w": "ഒരു",
+     "t": 7.59
+    },
+    {
+     "w": "കല്ല്",
+     "t": 7.767
+    },
+    {
+     "w": "കണ്ടെത്തി.",
+     "t": 8.044
+    }
+   ]
+  },
+  {
+   "text": "ആളുകൾ അത് ലെഡ് ആണെന്ന് കരുതി...",
+   "sentence": 2,
+   "start": 8.905,
+   "end": 10.61,
+   "words": [
+    {
+     "w": "ആളുകൾ",
+     "t": 8.905
+    },
+    {
+     "w": "അത്",
+     "t": 9.313
+    },
+    {
+     "w": "ലെഡ്",
+     "t": 9.534
+    },
+    {
+     "w": "ആണെന്ന്",
+     "t": 9.788
+    },
+    {
+     "w": "കരുതി...",
+     "t": 10.262
+    }
+   ]
+  },
+  {
+   "text": "\"ബ്ലാക്ക് ലെഡ്\" എന്ന് പേരുമിട്ടു.",
+   "sentence": 2,
+   "start": 10.838,
+   "end": 12.457,
+   "words": [
+    {
+     "w": "\"ബ്ലാക്ക്",
+     "t": 10.838
+    },
+    {
+     "w": "ലെഡ്\"",
+     "t": 11.309
+    },
+    {
+     "w": "എന്ന്",
+     "t": 11.545
+    },
+    {
+     "w": "പേരുമിട്ടു.",
+     "t": 11.868
+    }
+   ]
+  },
+  {
+   "text": "പക്ഷേ അത് ഗ്രാഫൈറ്റ് ആയിരുന്നു —",
+   "sentence": 3,
+   "start": 12.838,
+   "end": 14.562,
+   "words": [
+    {
+     "w": "പക്ഷേ",
+     "t": 12.838
+    },
+    {
+     "w": "അത്",
+     "t": 13.132
+    },
+    {
+     "w": "ഗ്രാഫൈറ്റ്",
+     "t": 13.453
+    },
+    {
+     "w": "ആയിരുന്നു",
+     "t": 13.989
+    },
+    {
+     "w": "—",
+     "t": 14.498
+    }
+   ]
+  },
+  {
+   "text": "കാർബണിന്റെ ഒരു രൂപം.",
+   "sentence": 3,
+   "start": 14.79,
+   "end": 15.943,
+   "words": [
+    {
+     "w": "കാർബണിന്റെ",
+     "t": 14.79
+    },
+    {
+     "w": "ഒരു",
+     "t": 15.475
+    },
+    {
+     "w": "രൂപം.",
+     "t": 15.693
+    }
+   ]
+  },
+  {
+   "text": "ഇന്ന്, ഗ്രാഫൈറ്റ് പൊടിയും കളിമണ്ണും ചേർത്ത്, ചൂളയിൽ ചുട്ടാണ് പെൻസിൽ മുന ഉണ്ടാക്കുന്നത്.",
+   "sentence": 4,
+   "start": 16.324,
+   "end": 21.543,
+   "words": [
+    {
+     "w": "ഇന്ന്,",
+     "t": 16.324
+    },
+    {
+     "w": "ഗ്രാഫൈറ്റ്",
+     "t": 16.64
+    },
+    {
+     "w": "പൊടിയും",
+     "t": 17.418
+    },
+    {
+     "w": "കളിമണ്ണും",
+     "t": 17.794
+    },
+    {
+     "w": "ചേർത്ത്,",
+     "t": 18.342
+    },
+    {
+     "w": "ചൂളയിൽ",
+     "t": 18.774
+    },
+    {
+     "w": "ചുട്ടാണ്",
+     "t": 19.347
+    },
+    {
+     "w": "പെൻസിൽ",
+     "t": 19.809
+    },
+    {
+     "w": "മുന",
+     "t": 20.478
+    },
+    {
+     "w": "ഉണ്ടാക്കുന്നത്.",
+     "t": 20.679
+    }
+   ]
+  },
+  {
+   "text": "കളിമണ്ണ് കൂടിയാൽ കട്ടി,",
+   "sentence": 5,
+   "start": 21.924,
+   "end": 23.133,
+   "words": [
+    {
+     "w": "കളിമണ്ണ്",
+     "t": 21.924
+    },
+    {
+     "w": "കൂടിയാൽ",
+     "t": 22.418
+    },
+    {
+     "w": "കട്ടി,",
+     "t": 22.831
+    }
+   ]
+  },
+  {
+   "text": "ഗ്രാഫൈറ്റ് കൂടിയാൽ കറുപ്പ് —",
+   "sentence": 5,
+   "start": 23.362,
+   "end": 24.695,
+   "words": [
+    {
+     "w": "ഗ്രാഫൈറ്റ്",
+     "t": 23.362
+    },
+    {
+     "w": "കൂടിയാൽ",
+     "t": 23.872
+    },
+    {
+     "w": "കറുപ്പ്",
+     "t": 24.253
+    },
+    {
+     "w": "—",
+     "t": 24.635
+    }
+   ]
+  },
+  {
+   "text": "അതാണ് H-ഉം B-യും!",
+   "sentence": 5,
+   "start": 24.924,
+   "end": 26.324,
+   "words": [
+    {
+     "w": "അതാണ്",
+     "t": 24.924
+    },
+    {
+     "w": "H-ഉം",
+     "t": 25.444
+    },
+    {
+     "w": "B-യും!",
+     "t": 25.859
+    }
+   ]
+  },
+  {
+   "text": "നാനൂറ് വർഷം പഴക്കമുള്ള ഒരു തെറ്റായ പേര്...",
+   "sentence": 6,
+   "start": 26.705,
+   "end": 29.495,
+   "words": [
+    {
+     "w": "നാനൂറ്",
+     "t": 26.705
+    },
+    {
+     "w": "വർഷം",
+     "t": 27.13
+    },
+    {
+     "w": "പഴക്കമുള്ള",
+     "t": 27.483
+    },
+    {
+     "w": "ഒരു",
+     "t": 28.329
+    },
+    {
+     "w": "തെറ്റായ",
+     "t": 28.681
+    },
+    {
+     "w": "പേര്...",
+     "t": 29.211
+    }
+   ]
+  },
+  {
+   "text": "നിങ്ങളിത് അറിഞ്ഞിരുന്നോ?",
+   "sentence": 6,
+   "start": 29.724,
+   "end": 30.543,
+   "words": [
+    {
+     "w": "നിങ്ങളിത്",
+     "t": 29.724
+    },
+    {
+     "w": "അറിഞ്ഞിരുന്നോ?",
+     "t": 30.062
+    }
+   ]
+  },
+  {
+   "text": "കമന്റ് ചെയ്യൂ!",
+   "sentence": 6,
+   "start": 30.771,
+   "end": 31.324,
+   "words": [
+    {
+     "w": "കമന്റ്",
+     "t": 30.771
+    },
+    {
+     "w": "ചെയ്യൂ!",
+     "t": 31.068
+    }
+   ]
+  }
+ ]
+}
+</script>
+
+<style>
+  html, body { margin: 0; background: #050816; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  #world { position: absolute; inset: 0; }
+  #capShade { position: absolute; left: 0; right: 0; top: 1180px; height: 740px;
+    background: linear-gradient(to bottom, rgba(4,8,30,0) 0%, rgba(4,8,30,.55) 40%, rgba(4,8,30,.7) 100%); }
+  #captions { position: absolute; left: 50px; width: 860px; top: 1290px; height: 220px; }
+  .page { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center;
+    justify-content: center; text-align: center; opacity: 0; }
+  .w { display: inline-block; font-weight: 700; font-size: 78px; line-height: 1.32; color: #fff;
+    margin: 0 12px; opacity: 0;
+    text-shadow: 0 6px 22px rgba(0,0,0,.6), 0 0 3px rgba(0,0,0,.9), 0 2px 0 rgba(0,0,0,.35); }
+  svg text { font-weight: 700; }
+  /* safe-zone overlay for checking: add ?guides to the URL */
+  .guide { position: absolute; background: rgba(255,0,80,.25); pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="world" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+    <defs id="defs"></defs>
+    <rect id="bg" width="1080" height="1920" fill="url(#bgG)"/>
+    <g id="blobs"></g>
+    <g id="cam">
+      <g id="layerBack"></g>
+      <g id="layerMid"></g>
+      <g id="heroWrap" filter="url(#shadow)"><g id="hero"></g></g>
+      <g id="sparks"></g>
+      <g id="layerFront"></g>
+    </g>
+    <g id="layerScreen"></g>
+    <rect width="1080" height="1920" fill="url(#vignette)" pointer-events="none"/>
+  </svg>
+  <div id="capShade"></div>
+  <div id="captions"></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script>
+(async function () {
+const CFG = JSON.parse(document.getElementById('config').textContent);
+const TIM = JSON.parse(document.getElementById('timings').textContent);
+const C = CFG.palette, FONT = CFG.font;
+const NS = 'http://www.w3.org/2000/svg';
+const DUR = TIM.duration;
+const SFX = [];
+const $ = id => document.getElementById(id);
+const sfx = (type, t, gain = 1) => SFX.push({ type, t: +t.toFixed(3), gain });
+
+await document.fonts.load(`700 80px ${FONT}`, 'മലയാളം');
+document.body.style.fontFamily = FONT;
+
+// ---------------------------------------------------------------- helpers
+function el(tag, attrs = {}, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function svg(parent, markup) {           // append markup, return the first new element
+  const g = el('g', {}, parent); g.innerHTML = markup; return g;
+}
+function text(parent, x, y, str, size, fill, anchor = 'middle', extra = {}) {
+  const t = el('text', Object.assign({ x, y, 'font-size': size, fill, 'text-anchor': anchor,
+    'font-family': FONT, 'dominant-baseline': 'central' }, extra), parent);
+  t.textContent = str; return t;
+}
+// pill label: rounded box sized to its text
+function pill(parent, cx, cy, str, o = {}) {
+  const g = el('g', {}, parent);
+  const size = o.size || 56, padX = o.padX ?? size * 0.55, padY = o.padY ?? size * 0.32;
+  const r = el('rect', { fill: o.fill || C.card, stroke: o.stroke || C.cardStroke, 'stroke-width': o.sw ?? 4 }, g);
+  const t = text(g, cx, cy, str, size, o.color || '#fff');
+  const b = t.getBBox();
+  const w = b.width + padX * 2, h = size * 1.25 + padY * 2;
+  r.setAttribute('x', cx - w / 2); r.setAttribute('y', cy - h / 2);
+  r.setAttribute('width', w); r.setAttribute('height', h); r.setAttribute('rx', o.rx ?? h / 2);
+  g.box = { w, h, cx, cy }; g.label = t; g.rect = r;
+  return g;
+}
+function bob(g) { const inner = el('g', {}, g.parentNode); inner.appendChild(g); return inner; }
+
+// ---------------------------------------------------------------- defs
+$('defs').innerHTML = `
+  <linearGradient id="bgG" x1="0" y1="0" x2="0.25" y2="1">
+    <stop offset="0" stop-color="${C.bgTop}"/><stop offset=".55" stop-color="${C.bgMid}"/><stop offset="1" stop-color="${C.bgBottom}"/>
+  </linearGradient>
+  <radialGradient id="vignette" cx=".5" cy=".45" r=".75">
+    <stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".55"/>
+  </radialGradient>
+  <radialGradient id="blobA"><stop offset="0" stop-color="${C.glowA}" stop-opacity=".55"/><stop offset="1" stop-color="${C.glowA}" stop-opacity="0"/></radialGradient>
+  <radialGradient id="blobB"><stop offset="0" stop-color="${C.glowB}" stop-opacity=".55"/><stop offset="1" stop-color="${C.glowB}" stop-opacity="0"/></radialGradient>
+  <radialGradient id="blobC"><stop offset="0" stop-color="${C.glowC}" stop-opacity=".45"/><stop offset="1" stop-color="${C.glowC}" stop-opacity="0"/></radialGradient>
+  <radialGradient id="tipGlow"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".95"/><stop offset=".35" stop-color="${C.accent2}" stop-opacity=".55"/><stop offset="1" stop-color="${C.accent2}" stop-opacity="0"/></radialGradient>
+  <radialGradient id="fireG" cx=".5" cy=".9" r=".9"><stop offset="0" stop-color="#FFF3B0"/><stop offset=".4" stop-color="#FF9F1C"/><stop offset="1" stop-color="#C2410C"/></radialGradient>
+  <radialGradient id="stoneGlow"><stop offset="0" stop-color="#C9D6FF" stop-opacity=".6"/><stop offset="1" stop-color="#C9D6FF" stop-opacity="0"/></radialGradient>
+  <linearGradient id="woodG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8DBAE"/><stop offset="1" stop-color="#D9A36A"/></linearGradient>
+  <linearGradient id="tipG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B6375"/><stop offset="1" stop-color="#1A1E27"/></linearGradient>
+  <linearGradient id="coreG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C8597"/><stop offset=".45" stop-color="#3A4050"/><stop offset="1" stop-color="#1A1E27"/></linearGradient>
+  <linearGradient id="ferruleG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A93A6"/><stop offset=".3" stop-color="#F4F6FA"/><stop offset=".6" stop-color="#B9C0CC"/><stop offset="1" stop-color="#5E667A"/></linearGradient>
+  <linearGradient id="eraserG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFA3B5"/><stop offset="1" stop-color="#E0517A"/></linearGradient>
+  <linearGradient id="cardG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1A2A6C"/><stop offset="1" stop-color="#0D1640"/></linearGradient>
+  <linearGradient id="mintG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#99F6E4"/><stop offset="1" stop-color="#2DD4BF"/></linearGradient>
+  <linearGradient id="hillBack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#127C78"/><stop offset="1" stop-color="#0A3A4A"/></linearGradient>
+  <linearGradient id="hillFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1C5D52"/><stop offset=".12" stop-color="#2B3F4A"/><stop offset="1" stop-color="#151B2E"/></linearGradient>
+  <linearGradient id="kilnG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E06D4F"/><stop offset="1" stop-color="#8E3324"/></linearGradient>
+  <linearGradient id="shineG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="16" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="26" stdDeviation="20" flood-color="#020414" flood-opacity=".55"/></filter>
+  <filter id="cardShadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#020414" flood-opacity=".5"/></filter>
+`;
+
+// ---------------------------------------------------------------- background blobs
+const blobs = [
+  el('circle', { cx: 300, cy: 600, r: 520, fill: 'url(#blobB)' }, $('blobs')),
+  el('circle', { cx: 820, cy: 1150, r: 560, fill: 'url(#blobC)' }, $('blobs')),
+  el('circle', { cx: 560, cy: 900, r: 420, fill: 'url(#blobA)', opacity: .7 }, $('blobs')),
+];
+const dust = [];
+for (let i = 0; i < 26; i++) dust.push(el('circle', { r: 2 + (i * 7 % 5), fill: '#fff', opacity: .0 }, $('blobs')));
+
+// ---------------------------------------------------------------- hero object
+$('hero').innerHTML = document.getElementById('object-svg').content.querySelector('svg').innerHTML;
+const heroG = $('hero');
+const tipGlow = el('circle', { cx: 500, cy: 0, r: 70, fill: 'url(#tipGlow)', opacity: 0 }, heroG);
+const shClip = el('clipPath', { id: 'heroClip' }, $('defs'));
+el('path', { d: 'M-500 -66H300L438 -17L500 0L438 17L300 66H-500Z' }, shClip);
+const shine = el('rect', { x: -560, y: -70, width: 140, height: 140, fill: 'url(#shineG)', opacity: 0, 'clip-path': 'url(#heroClip)' }, heroG);
+const H = { x: 580, y: 773, r: 145, s: 1, cut: 0, float: 0, glow: 1, shineX: -560 };
+const CAM = { x: 200, y: 1050, s: 2.2 };
+const AMB = { spark: 1, flow: 0, fire: 0, dust: 1 };
+const sparks = [];
+for (let i = 0; i < 18; i++) sparks.push(el('circle', { r: 6, fill: i % 3 ? C.accent2 : '#fff', filter: 'url(#glow)' }, $('sparks')));
+
+function tipWorld() {
+  const a = H.r * Math.PI / 180;
+  return [H.x + H.s * 500 * Math.cos(a), H.y + H.s * 500 * Math.sin(a) + floatY()];
+}
+let NOW = 0;
+const floatY = () => H.float * Math.sin(NOW * 2.2) * 14;
+
+// ---------------------------------------------------------------- timing helpers
+const sentences = CFG.sentences.map((s, si) => {
+  const ph = TIM.phrases.filter(p => p.sentence === si);
+  return Object.assign({}, s, { ph, words: ph.flatMap(p => p.words) });
+});
+const sStart = si => sentences[si].ph[0].start;
+const sEnd = si => si + 1 < sentences.length ? sStart(si + 1) : DUR;
+const pS = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].start;
+const pE = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].end;
+const wT = (si, k) => { const w = sentences[si].words; return w[Math.max(0, Math.min(k, w.length - 1))].t; };
+
+const tl = gsap.timeline({ paused: true });
+tl.to({}, { duration: DUR }, 0);                       // fixed length
+
+function hide(e) { tl.set(e, { opacity: 0 }, 0); }
+function pop(e, t, o = {}) {
+  tl.set(e, { opacity: 0, scale: o.from ?? .3, transformOrigin: o.origin || '50% 50%' }, 0);
+  tl.to(e, { opacity: 1, scale: 1, duration: o.d || .5, ease: o.ease || 'back.out(2.2)' }, t);
+  if (o.sound !== false) sfx(o.sound || 'pop', t, o.gain ?? .9);
+}
+function fadeIn(e, t, d = .4) { hide(e); tl.to(e, { opacity: 1, duration: d }, t); }
+function fadeOut(e, t, d = .35) { tl.to(e, { opacity: 0, duration: d, ease: 'power1.in' }, t); }
+function drawPath(p, t, d, ease = 'power2.inOut') {
+  const L = p.getTotalLength(); p.setAttribute('stroke-dasharray', L + ' ' + L);
+  tl.set(p, { attr: { 'stroke-dashoffset': L } }, 0);
+  tl.to(p, { attr: { 'stroke-dashoffset': 0 }, duration: d, ease }, t);
+}
+function counter(tEl, from, to, t, d, fmt = v => v, ticks = 12) {
+  const o = { v: from }; tEl.textContent = fmt(from);
+  tl.to(o, { v: to, duration: d, ease: 'power2.out', onUpdate: () => tEl.textContent = fmt(Math.round(o.v)) }, t);
+  for (let k = 0; k < ticks; k++) sfx('tick', t + d * (1 - Math.sqrt(1 - k / ticks)), .55);
+}
+function heroTo(t, v, d = .9, ease = 'power3.inOut') { tl.to(H, Object.assign({ duration: d, ease }, v), t); }
+function camTo(t, v, d = 1, ease = 'power2.inOut') { tl.to(CAM, Object.assign({ duration: d, ease }, v), t); }
+function crossMark(parent, cx, cy, size, t) {
+  const g = el('g', { filter: 'url(#glow)' }, parent);
+  const a = el('path', { d: `M${cx - size} ${cy - size}L${cx + size} ${cy + size}`, stroke: C.danger, 'stroke-width': 26, 'stroke-linecap': 'round', fill: 'none' }, g);
+  const b = el('path', { d: `M${cx + size} ${cy - size}L${cx - size} ${cy + size}`, stroke: C.danger, 'stroke-width': 26, 'stroke-linecap': 'round', fill: 'none' }, g);
+  drawPath(a, t, .18, 'power2.out'); drawPath(b, t + .14, .18, 'power2.out');
+  sfx('thud', t + .1, 1);
+  return g;
+}
+function badgeQ(parent, cx, cy, r, color) {
+  const g = el('g', {}, parent);
+  el('circle', { cx, cy, r, fill: color, filter: 'url(#glow)' }, g);
+  text(g, cx, cy + r * .04, '?', r * 1.25, C.ink);
+  return g;
+}
+
+// ================================================================= SCENES
+const scenes = {
+  // ---------------------------------------------------------------- HOOK
+  hook(si, L) {
+    const T0 = 0, T1 = sEnd(si);
+    const g = el('g', {}, $('layerMid'));
+    // the sparkly line the tip draws
+    const tipPath = u => [170 + 340 * u, 1062 + 34 * Math.sin(u * Math.PI * 4.4)];
+    let d = ''; for (let i = 0; i <= 80; i++) { const [x, y] = tipPath(i / 80); d += (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1); }
+    const line = el('path', { d, stroke: C.accent2, 'stroke-width': 10, fill: 'none', 'stroke-linecap': 'round', filter: 'url(#glow)' }, g);
+    const Lp = line.getTotalLength(); line.setAttribute('stroke-dasharray', Lp + ' ' + Lp);
+    const off = [580 - 170, 773 - 1062];              // hero centre relative to tip
+    const drawEnd = pS(si, 2) + .1;
+    const o = { u: 0 };
+    const applyU = () => { const [x, y] = tipPath(o.u); H.x = x + off[0]; H.y = y + off[1]; line.setAttribute('stroke-dashoffset', Lp * (1 - o.u)); };
+    applyU();
+    tl.to(o, { u: 1, duration: drawEnd, ease: 'none', onUpdate: applyU }, 0);
+    tl.set(H, { glow: 1 }, 0);
+    camTo(.05, { s: 1, x: 540, y: 960 }, 1.0, 'power2.inOut');
+    sfx('whoosh', 0, .8); sfx('shimmer', .05, .6);
+
+    // three "?" badges on the hook question
+    const qLayer = el('g', {}, $('layerScreen'));
+    const qs = [[250, 430, 70, C.accent2], [540, 330, 84, C.accent], [800, 470, 64, '#C4B5FD']];
+    const qg = qs.map(([x, y, r, c], i) => { const b = badgeQ(qLayer, x, y, r, c); pop(b, pS(si, 0) + .3 + i * .14); return b; });
+    // tag pointing at the tip
+    const tag = pill(g, 270, 850, L.tag, { size: 62, fill: C.card, stroke: C.accent2 });
+    const arrow = el('path', { d: 'M330 905 Q400 990 470 1030', stroke: C.accent2, 'stroke-width': 8, fill: 'none', 'stroke-linecap': 'round' }, g);
+    const head = el('path', { d: 'M470 1030 l-34 -2 M470 1030 l-8 -32', stroke: C.accent2, 'stroke-width': 8, 'stroke-linecap': 'round', fill: 'none' }, g);
+    pop(tag, pS(si, 1), { sound: 'pop' }); drawPath(arrow, pS(si, 1) + .2, .35); fadeIn(head, pS(si, 1) + .5, .15);
+
+    // "no lead": Pb card + 100% -> 0% counter + red cross
+    const t2 = pS(si, 2);
+    qg.forEach((b, i) => fadeOut(b, t2 - .1 + i * .05, .25));
+    fadeOut(tag, t2, .25); fadeOut(arrow, t2, .25); fadeOut(head, t2, .25);
+    const card = el('g', { filter: 'url(#cardShadow)' }, g);
+    el('rect', { x: 150, y: 330, width: 300, height: 300, rx: 36, fill: 'url(#cardG)', stroke: C.cardStroke, 'stroke-width': 5 }, card);
+    text(card, 190, 380, L.badgeNumber, 40, '#9FB4FF', 'start');
+    text(card, 300, 470, L.badgeSymbol, 150, '#E6ECFF');
+    text(card, 300, 580, L.badgeName, 48, '#9FB4FF');
+    pop(card, t2 + .05);
+    const cg = el('g', {}, g);
+    text(cg, 700, 380, L.counterLabel, 56, C.accent2);
+    const cnt = text(cg, 700, 500, '100%', 150, '#fff', 'middle', { filter: 'url(#glow)' });
+    pop(cg, t2 + .15, { sound: false });
+    const tz = Math.max(t2 + .4, wT(si, sentences[si].words.length - 1));
+    counter(cnt, 100, 0, t2 + .25, tz - t2 - .2, v => v + '%', 12);
+    crossMark(g, 300, 480, 120, tz);
+    tl.to(cnt, { attr: { fill: C.danger }, duration: .2 }, tz);
+    // pencil glides into its hero pose
+    heroTo(drawEnd, { x: 600, y: 960, r: 145, s: 1 }, .9);
+    tl.to(AMB, { spark: .35, duration: .6 }, drawEnd);
+    fadeOut(line, drawEnd + .3, .6);
+    fadeOut(g, T1 - .05, .3);
+  },
+
+  // ---------------------------------------------------------------- DISCOVERY
+  discovery(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si);
+    sfx('whoosh', T0 - .15, .9);
+    heroTo(T0 - .2, { x: 540, y: 330, r: -8, s: .55 }, 1);
+    tl.to(AMB, { spark: 0, duration: .4 }, T0);
+    // ground (shared with the next two scenes)
+    const back = svg($('layerBack'), `<path d="M0 1110 C180 1030 360 1090 540 1060 C720 1030 900 1090 1080 1050 L1080 1920 L0 1920Z" fill="url(#hillBack)"/>`);
+    const stone = el('g', {}, $('layerBack'));
+    const front = svg($('layerBack'), `<path d="M0 1150 C220 1095 380 1135 540 1112 C720 1090 880 1140 1080 1110 L1080 1920 L0 1920Z" fill="url(#hillFront)"/>
+      <path d="M0 1230 C300 1205 700 1250 1080 1220 M0 1310 C320 1290 680 1330 1080 1300" stroke="#41536A" stroke-width="4" fill="none" opacity=".6"/>`);
+    window.__ground = [back, front, stone];
+    [back, front].forEach(e => { tl.set(e, { y: 950 }, 0); tl.to(e, { y: 0, duration: .9, ease: 'power3.out' }, T0 - .1); });
+    // the black stone
+    el('circle', { cx: 0, cy: 0, r: 230, fill: 'url(#stoneGlow)', class: 'sglow', opacity: 0 }, stone);
+    const S = [[-130, 20], [-92, -70], [0, -108], [96, -76], [138, 8], [82, 92], [-42, 104]];
+    const cen = [12, -8], cols = ['#2C3242', '#1B1F2A', '#3A4255', '#232838', '#151925', '#2E3546', '#1E2331'];
+    S.forEach((p, i) => { const q = S[(i + 1) % S.length]; el('path', { d: `M${cen}L${p}L${q}Z`, fill: cols[i], stroke: '#4A5570', 'stroke-width': 2 }, stone); });
+    el('path', { d: 'M-60 -60 L-20 -88 M30 -80 L70 -64 M-100 0 L-84 -40', stroke: '#DCE4F7', 'stroke-width': 6, 'stroke-linecap': 'round', opacity: .9 }, stone);
+    const glints = el('g', { opacity: 0 }, stone);
+    [[-150, -110], [150, -90], [0, -170], [170, 60], [-170, 70]].forEach(([x, y]) =>
+      el('path', { d: `M${x} ${y - 22}L${x + 6} ${y - 6}L${x + 22} ${y}L${x + 6} ${y + 6}L${x} ${y + 22}L${x - 6} ${y + 6}L${x - 22} ${y}L${x - 6} ${y - 6}Z`, fill: '#fff', filter: 'url(#glow)' }, glints));
+    stone.setAttribute('transform', 'translate(540 1260)');
+    hide(stone);
+    const st = { y: 1260, sc: .9 };
+    const applyStone = () => stone.setAttribute('transform', `translate(540 ${st.y}) scale(${st.sc})`);
+    window.__stone = { st, applyStone, stone, glints };
+    // year counter + place
+    const yg = el('g', {}, $('layerMid'));
+    const yt = text(yg, 540, 610, '', 190, C.accent, 'middle', { filter: 'url(#glow)' });
+    const num = el('tspan', {}, yt); const suf = el('tspan', { 'font-size': 100 }, yt);
+    suf.textContent = L.yearSuffix;
+    fadeIn(yg, T0, .3);
+    hide(suf);
+    const o = { v: L.yearFrom }; num.textContent = L.yearFrom;
+    const tYearEnd = Math.min(wT(si, 1), pE(si, 0) - .3);
+    tl.to(o, { v: L.year, duration: tYearEnd - T0, ease: 'power2.out', onUpdate: () => num.textContent = Math.round(o.v) }, T0 + .05);
+    for (let k = 0; k < 12; k++) sfx('tick', T0 + .05 + (tYearEnd - T0) * (1 - Math.sqrt(1 - k / 12)), .55);
+    tl.to(suf, { opacity: 1, duration: .25 }, tYearEnd);
+    const pin = el('g', {}, $('layerMid'));
+    svg(pin, `<path d="M0 0 C-28 -34 -40 -52 -40 -72 A40 40 0 1 1 40 -72 C40 -52 28 -34 0 0Z" fill="${C.danger}" transform="translate(370 812) scale(.8)"/><circle cx="370" cy="754" r="12" fill="#fff"/>`);
+    pill(pin, 580, 780, L.place, { size: 58, fill: C.card, stroke: C.accent2 });
+    pop(pin, wT(si, 1));
+    // stone rises out of a crack
+    const t1 = pS(si, 1);
+    const crack = el('path', { d: 'M540 1112 L515 1150 L560 1185 L530 1230 L566 1270', stroke: '#0B0F1C', 'stroke-width': 9, fill: 'none', 'stroke-linecap': 'round' }, front);
+    drawPath(crack, t1, .3); sfx('thud', t1 + .05, .7);
+    tl.set(stone, { opacity: 1 }, t1 + .15);
+    tl.to(st, { y: 935, sc: 1.05, duration: .9, ease: 'back.out(1.4)', onUpdate: applyStone }, t1 + .2);
+    sfx('whoosh', t1 + .15, .6);
+    const tShine = wT(si, sentences[si].words.length - 1);
+    tl.to(stone.querySelector('.sglow'), { opacity: 1, duration: .4 }, tShine);
+    tl.to(glints, { opacity: 1, duration: .25 }, tShine);
+    tl.to(glints, { rotation: 25, svgOrigin: '0 0', duration: 1.4, ease: 'none' }, tShine);
+    sfx('chime', tShine, .8);
+    camTo(t1 + .2, { s: 1.06, y: 950 }, 1.8);
+    fadeOut(yg, T1 - .15, .3); fadeOut(pin, T1 - .15, .3);
+  },
+
+  // ---------------------------------------------------------------- BELIEF
+  belief(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si);
+    const g = el('g', {}, $('layerMid'));
+    camTo(T0, { s: 1.1, x: 540, y: 900 }, 1.2);
+    // thought cloud
+    const cloud = el('g', { filter: 'url(#cardShadow)' }, g);
+    [[540, 560, 200, 110], [420, 590, 110, 80], [660, 590, 110, 80], [470, 500, 100, 80], [620, 505, 100, 80]].forEach(([x, y, rx, ry]) =>
+      el('ellipse', { cx: x, cy: y, rx, ry, fill: '#EEF2FF' }, cloud));
+    el('circle', { cx: 590, cy: 720, r: 26, fill: '#EEF2FF' }, cloud);
+    el('circle', { cx: 565, cy: 780, r: 15, fill: '#EEF2FF' }, cloud);
+    text(cloud, 540, 560, L.thought, 120, '#4B5563');
+    pop(cloud, T0 + .1, { from: .2 });
+    tl.to(cloud, { y: -10, duration: .7, ease: 'sine.inOut', yoyo: true, repeat: 1 }, T0 + .6);
+    // hanging tag
+    const t1 = pS(si, 1);
+    fadeOut(cloud, t1 - .1, .25);
+    const tag = el('g', {}, g);
+    el('path', { d: 'M540 740 L540 840', stroke: '#E5E7EB', 'stroke-width': 5 }, tag);
+    const p = pill(tag, 540, 660, L.tag, { size: 66, fill: '#1F2433', stroke: '#94A3B8', rx: 22, padY: 30 });
+    text(tag, 540, 738 - 6, L.tagSub, 28, '#94A3B8');
+    p.rect.setAttribute('height', +p.rect.getAttribute('height') + 34);
+    el('circle', { cx: 540, cy: +p.rect.getAttribute('y') + 18, r: 9, fill: '#0B1030' }, tag);
+    tl.set(tag, { opacity: 0, rotation: -35, svgOrigin: '540 840' }, 0);
+    tl.to(tag, { opacity: 1, duration: .2 }, t1);
+    tl.to(tag, { rotation: 0, duration: 1.1, ease: 'elastic.out(1,0.45)', svgOrigin: '540 840' }, t1);
+    sfx('whoosh', t1 - .05, .5); sfx('pop', t1 + .25, .7);
+    window.__tag = { tag, p };
+  },
+
+  // ---------------------------------------------------------------- REVEAL
+  reveal(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si);
+    const { tag, p } = window.__tag;
+    const g = el('g', {}, $('layerMid'));
+    // strike + flip to the true name
+    const b = p.label.getBBox();
+    const strike = el('path', { d: `M${b.x - 10} ${b.y + b.height / 2}L${b.x + b.width + 10} ${b.y + b.height / 2}`, stroke: C.danger, 'stroke-width': 12, 'stroke-linecap': 'round' }, tag);
+    drawPath(strike, T0 + .05, .3); sfx('thud', T0 + .1, .8);
+    const tf = wT(si, L.flipWord);
+    tl.to(tag, { scaleY: 0, duration: .16, ease: 'power2.in', svgOrigin: '540 680' }, tf - .16);
+    tl.set([strike, p.label, tag.querySelectorAll('text')[1]], { opacity: 0 }, tf);
+    const newT = text(tag, 540, 672, L.newTag, 66, C.ink); hide(newT); tl.set(newT, { opacity: 1 }, tf);
+    tl.set(p.rect, { attr: { fill: 'url(#mintG)', stroke: '#CCFBF1' } }, tf);
+    tl.to(tag, { scaleY: 1, duration: .35, ease: 'back.out(2)', svgOrigin: '540 680' }, tf);
+    sfx('chime', tf, .9);
+    tl.to(window.__stone.stone.querySelector('.sglow'), { attr: { r: 280 }, duration: .4, yoyo: true, repeat: 1 }, tf);
+    // carbon: lens with honeycomb + element card
+    const t1 = pS(si, 1);
+    fadeOut(tag, t1 - .1, .25);
+    camTo(t1 - .1, { s: 1.05, x: 540, y: 930 }, .8);
+    const lens = el('g', {}, g);
+    const clip = el('clipPath', { id: 'lensClip' }, $('defs')); el('circle', { cx: 540, cy: 935, r: 225 }, clip);
+    el('circle', { cx: 540, cy: 935, r: 225, fill: '#0B1236', opacity: .92 }, lens);
+    const lat = el('g', { 'clip-path': 'url(#lensClip)' }, lens);
+    const latInner = el('g', {}, lat);
+    const R = 46, atoms = [], bonds = [];
+    for (let row = -6; row <= 6; row++) for (let col = -5; col <= 5; col++) {
+      const x = 540 + col * R * Math.sqrt(3) + (row % 2 ? R * Math.sqrt(3) / 2 : 0), y = 935 + row * R * 1.5;
+      for (let k = 0; k < 6; k++) {
+        const a1 = Math.PI / 6 + k * Math.PI / 3, a2 = a1 + Math.PI / 3;
+        bonds.push(`M${(x + R * Math.cos(a1)).toFixed(1)} ${(y + R * Math.sin(a1)).toFixed(1)}L${(x + R * Math.cos(a2)).toFixed(1)} ${(y + R * Math.sin(a2)).toFixed(1)}`);
+        if (k < 2) atoms.push([x + R * Math.cos(a1), y + R * Math.sin(a1)]);
+      }
+    }
+    el('path', { d: bonds.join(''), stroke: C.accent2, 'stroke-width': 5, opacity: .75, fill: 'none' }, latInner);
+    atoms.forEach(([x, y]) => el('circle', { cx: x.toFixed(1), cy: y.toFixed(1), r: 10, fill: '#CCFBF1', filter: 'url(#glow)' }, latInner));
+    el('circle', { cx: 540, cy: 935, r: 225, fill: 'none', stroke: '#E0E7FF', 'stroke-width': 12, filter: 'url(#glow)' }, lens);
+    el('path', { d: 'M700 1095 L800 1195', stroke: '#E0E7FF', 'stroke-width': 30, 'stroke-linecap': 'round' }, lens);
+    pop(lens, t1, { from: .1, d: .6, sound: 'whoosh' });
+    tl.to(latInner, { rotation: 18, svgOrigin: '540 935', duration: T1 - t1 + .5, ease: 'none' }, t1);
+    fadeOut(window.__stone.stone, t1 + .2, .3);
+    // element card
+    const card = el('g', { filter: 'url(#cardShadow)' }, g);
+    el('rect', { x: 400, y: 410, width: 280, height: 270, rx: 34, fill: 'url(#cardG)', stroke: C.accent2, 'stroke-width': 5 }, card);
+    const num = text(card, 438, 455, '0', 42, C.accent2, 'start');
+    text(card, 540, 540, L.symbol, 140, '#fff');
+    text(card, 540, 635, L.name, 46, C.accent2);
+    pop(card, t1 + .15, { sound: 'pop' });
+    counter(num, 0, L.number, t1 + .3, .8, v => v, 6);
+    sfx('shimmer', t1 + .4, .5);
+    window.__reveal = { g, lens, card };
+    fadeOut(g, T1 - .1, .3);
+    window.__ground.forEach(e => fadeOut(e, T1 - .1, .3));
+  },
+
+  // ---------------------------------------------------------------- RECIPE
+  recipe(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si), cu = L.cues, W = k => wT(si, k);
+    const g = el('g', {}, $('layerMid'));
+    sfx('whoosh', T0 - .15, .8);
+    camTo(T0 - .1, { s: 1, x: 540, y: 960 }, .8);
+    heroTo(T0 - .2, { x: 500, y: 1200, r: 0, s: .84 }, 1);
+    tl.to(H, { cut: 1, duration: .6 }, T0 + .3);
+    // ingredients
+    const pileA = el('g', {}, g), pileB = el('g', {}, g);
+    el('path', { d: 'M110 610 Q250 430 390 610Z', fill: '#2B303C', stroke: '#6B7488', 'stroke-width': 3 }, pileA);
+    el('path', { d: 'M590 610 Q730 430 870 610Z', fill: '#D9A36A', stroke: '#F3D2A2', 'stroke-width': 3 }, pileB);
+    for (let i = 0; i < 26; i++) {
+      const u = (i * 37 % 26) / 26, v = (i * 11 % 7) / 7;
+      const x = 150 + u * 200, y = 600 - v * 110 * Math.sin(Math.PI * u);
+      el('circle', { cx: x, cy: y, r: 6 + (i % 3) * 2, fill: '#596173' }, pileA);
+      el('circle', { cx: x + 480, cy: y, r: 6 + (i % 3) * 2, fill: '#EBC08B' }, pileB);
+    }
+    const la = pill(g, 250, 410, L.a, { size: 54, fill: C.card, stroke: '#94A3B8' });
+    const lb = pill(g, 730, 410, L.b, { size: 54, fill: C.card, stroke: '#F3D2A2' });
+    const plus = text(g, 490, 540, '+', 110, '#fff', 'middle', { filter: 'url(#glow)' });
+    pop(pileA, W(cu.a), { from: .2 }); pop(la, W(cu.a) + .1, { sound: false });
+    pop(plus, W(cu.b) - .15, { sound: false });
+    pop(pileB, W(cu.b), { from: .2 }); pop(lb, W(cu.b) + .1, { sound: false });
+    // mixing swirl fed by two particle streams
+    const swirl = el('g', {}, g);
+    el('circle', { cx: 490, cy: 700, r: 62, fill: '#3B4050', stroke: '#fff', 'stroke-width': 4 }, swirl);
+    const swirlDots = el('g', {}, swirl);
+    for (let i = 0; i < 10; i++) { const a = i / 10 * Math.PI * 2; el('circle', { cx: 490 + Math.cos(a) * 36, cy: 700 + Math.sin(a) * 36, r: 9, fill: i % 2 ? '#EBC08B' : '#1F2430' }, swirlDots); }
+    pop(swirl, W(cu.mix), { sound: 'whoosh', gain: .5 });
+    tl.to(swirlDots, { rotation: 720, svgOrigin: '490 700', duration: 3, ease: 'none' }, W(cu.mix));
+    tl.to(AMB, { flow: 1, duration: .3 }, W(cu.mix) - .2);
+    tl.to(AMB, { flow: 0, duration: .3 }, W(cu.process) + .2);
+    // kiln
+    const kiln = el('g', {}, g);
+    el('path', { d: 'M330 975 L330 870 Q330 760 490 760 Q650 760 650 870 L650 975 Z', fill: 'url(#kilnG)', stroke: '#F59E7A', 'stroke-width': 4 }, kiln);
+    el('path', { d: 'M330 830 H650 M330 900 H650 M410 760 V830 M570 760 V830 M450 830 V900 M530 830 V900', stroke: '#7A2A1C', 'stroke-width': 4, opacity: .55 }, kiln);
+    const mouth = el('path', { d: 'M425 975 L425 920 Q425 880 490 880 Q555 880 555 920 L555 975Z', fill: 'url(#fireG)', filter: 'url(#glow)', class: 'mouth' }, kiln);
+    const heat = el('path', { d: 'M440 740 q12 -20 0 -40 q-12 -20 0 -40 M490 735 q12 -20 0 -40 q-12 -20 0 -40 M540 740 q12 -20 0 -40 q-12 -20 0 -40', stroke: '#FDBA74', 'stroke-width': 6, fill: 'none', 'stroke-linecap': 'round', opacity: 0 }, kiln);
+    const lk = pill(g, 790, 880, L.process, { size: 54, fill: C.card, stroke: '#FDBA74' });
+    pop(kiln, W(cu.process) - .1, { from: .5 }); pop(lk, W(cu.process) + .05, { sound: false });
+    tl.to(swirl, { y: 190, scale: .4, opacity: 0, svgOrigin: '490 700', duration: .5, ease: 'power2.in' }, W(cu.process) + .1);
+    tl.to(AMB, { fire: 1, duration: .4 }, W(cu.heat) - .1);
+    tl.to(heat, { opacity: 1, duration: .3 }, W(cu.heat));
+    sfx('fire', W(cu.heat) - .1, .7);
+    // rod comes out and becomes the core
+    const rod = el('rect', { x: 360, y: 920, width: 260, height: 32, rx: 14, fill: '#FF9F1C', filter: 'url(#glow)' }, g);
+    hide(rod);
+    tl.to(rod, { opacity: 1, duration: .15 }, W(cu.rod));
+    tl.to(rod, { attr: { y: 1184, fill: '#3A4050' }, duration: .55, ease: 'power2.in' }, W(cu.rod) + .05);
+    sfx('whoosh', W(cu.rod), .6);
+    const core = $('obj-core');
+    tl.to(core, { attr: { width: 760 }, duration: .6, ease: 'power2.out' }, W(cu.result) - .05);
+    tl.to(rod, { opacity: 0, duration: .2 }, W(cu.result) + .1);
+    sfx('pop', W(cu.result), .8);
+    const lm = pill(g, 830, 1060, L.result, { size: 52, fill: C.card, stroke: C.accent2 });
+    const ar = el('path', { d: 'M880 1100 Q910 1140 912 1176', stroke: C.accent2, 'stroke-width': 7, fill: 'none', 'stroke-linecap': 'round' }, g);
+    pop(lm, W(cu.result) + .1, { sound: false }); drawPath(ar, W(cu.result) + .2, .25);
+    tl.to(H, { cut: 0, duration: .5 }, W(cu.done) + .1);
+    tl.to(H, { shineX: 520, duration: .8, ease: 'power2.inOut' }, W(cu.done) + .35);
+    tl.set(shine, { opacity: 1 }, W(cu.done) + .35); tl.set(shine, { opacity: 0 }, W(cu.done) + 1.2);
+    sfx('chime', W(cu.done) + .35, .7);
+    tl.to(AMB, { fire: 0, duration: .4 }, T1 - .2);
+    fadeOut(g, T1 - .12, .3);
+  },
+
+  // ---------------------------------------------------------------- COMPARE
+  compare(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si);
+    const g = el('g', {}, $('layerMid'));
+    sfx('whoosh', T0 - .1, .6);
+    heroTo(T0 - .1, { x: 500, y: 1215 }, .6);
+    // ratio bar
+    const bar = el('g', {}, g);
+    pill(bar, 250, 420, L.barLeft, { size: 46, fill: '#3A2A1A', stroke: '#D9A36A' });
+    pill(bar, 730, 420, L.barRight, { size: 46, fill: '#1A1D26', stroke: '#94A3B8' });
+    el('rect', { x: 110, y: 490, width: 760, height: 56, rx: 28, fill: '#2B303C' }, bar);
+    const clay = el('rect', { x: 110, y: 490, width: 380, height: 56, rx: 28, fill: '#D9A36A' }, bar);
+    el('rect', { x: 110, y: 490, width: 760, height: 56, rx: 28, fill: 'none', stroke: '#fff', 'stroke-width': 4, opacity: .7 }, bar);
+    fadeIn(bar, T0, .35);
+    // cards + paper strip with marks
+    const mkCard = (cx, letter, letterFill, bgFill) => {
+      const c = el('g', { filter: 'url(#cardShadow)' }, g);
+      el('rect', { x: cx - 115, y: 600, width: 230, height: 220, rx: 34, fill: bgFill, stroke: '#fff', 'stroke-width': 5 }, c);
+      text(c, cx, 712, letter, 150, letterFill);
+      return c;
+    };
+    const cH = mkCard(290, L.left, '#AAB2C2', '#F4F6FB'), cB = mkCard(690, L.right, '#0E1016', '#F4F6FB');
+    const paper = el('rect', { x: 110, y: 850, width: 760, height: 140, rx: 22, fill: '#FBFAF5' }, g);
+    fadeIn(paper, T0 + .1, .3);
+    const mH = el('path', { d: 'M150 925 c30 -40 60 40 90 0 s60 40 90 0 s60 40 90 0', stroke: '#B4BCCB', 'stroke-width': 7, fill: 'none', 'stroke-linecap': 'round' }, g);
+    const mB = el('path', { d: 'M550 925 c30 -40 60 40 90 0 s60 40 90 0 s60 40 90 0', stroke: '#111318', 'stroke-width': 18, fill: 'none', 'stroke-linecap': 'round' }, g);
+    const nH = pill(g, 290, 1060, L.leftNote, { size: 52, fill: C.card, stroke: '#CBD5E1' });
+    const nB = pill(g, 690, 1060, L.rightNote, { size: 52, fill: C.card, stroke: C.accent });
+    const p0 = pS(si, 0), p1 = pS(si, 1), p2 = pS(si, 2);
+    tl.to(clay, { attr: { width: 600 }, duration: .7, ease: 'power2.out' }, p0 + .05); sfx('tick', p0 + .1, .5);
+    pop(cH, p0 + .1); drawPath(mH, p0 + .35, .7); pop(nH, wT(si, 2), { sound: 'pop', gain: .6 });
+    tl.to(clay, { attr: { width: 170 }, duration: .7, ease: 'power2.out' }, p1 + .05); sfx('tick', p1 + .1, .5);
+    pop(cB, p1 + .1); drawPath(mB, p1 + .35, .7); pop(nB, wT(si, 5), { sound: 'pop', gain: .6 });
+    const n = sentences[si].words.length;
+    [[cH, wT(si, n - 2)], [cB, wT(si, n - 1)]].forEach(([c, t]) => {
+      tl.to(c, { scale: 1.14, duration: .18, yoyo: true, repeat: 1, transformOrigin: '50% 50%', ease: 'power2.out' }, t);
+      sfx('pop', t, .7);
+    });
+    const imp = $('obj-imprint'); imp.textContent = L.imprint;
+    tl.to(imp, { opacity: 1, duration: .3 }, p2 + .1);
+    tl.to(H, { shineX: -560, duration: .01 }, p2);
+    tl.set(shine, { opacity: 1 }, p2 + .1);
+    tl.to(H, { shineX: 520, duration: .8, ease: 'power2.inOut' }, p2 + .1);
+    tl.set(shine, { opacity: 0 }, p2 + .95);
+    sfx('chime', wT(si, n - 1) + .1, .8);
+    fadeOut(g, T1 - .12, .3);
+  },
+
+  // ---------------------------------------------------------------- OUTRO
+  outro(si, L) {
+    const T0 = sStart(si), T1 = DUR;
+    const g = el('g', {}, $('layerMid'));
+    sfx('whoosh', T0 - .15, .8);
+    heroTo(T0 - .2, { x: 560, y: 800, r: -22, s: 1 }, 1.1, 'back.out(1.2)');
+    tl.to(H, { float: 1, duration: .8 }, T0 + .5);
+    tl.to(AMB, { spark: .8, duration: .5 }, T0 + .3);
+    const cg = el('g', {}, g);
+    const num = text(cg, 400, 430, '0', 200, C.accent, 'middle', { filter: 'url(#glow)' });
+    pill(cg, 400, 575, L.countLabel, { size: 58, fill: C.card, stroke: C.accent });
+    pop(cg, T0, { sound: false });
+    counter(num, 0, L.count, T0 + .05, Math.max(.8, wT(si, 2) - T0), v => v, 14);
+    const old = el('g', {}, g);
+    pill(old, 735, 440, L.oldName, { size: 58, fill: '#1F2433', stroke: '#94A3B8' });
+    pop(old, wT(si, L.wrongWord) - .1);
+    crossMark(old, 735, 440, 60, wT(si, L.wrongWord) + .2);
+    // question
+    const p1 = pS(si, 1), p2 = pS(si, 2);
+    fadeOut(cg, p1 - .1, .25); fadeOut(old, p1 - .1, .25);
+    const q = badgeQ(g, 420, 470, 120, C.accent);
+    pop(q, p1, { from: .2 });
+    tl.to(q, { rotation: 12, transformOrigin: '50% 50%', duration: .15, yoyo: true, repeat: 3, ease: 'sine.inOut' }, p1 + .45);
+    // comment + follow
+    const cm = el('g', {}, g);
+    el('path', { d: 'M230 1070 h200 a40 40 0 0 1 40 40 v90 a40 40 0 0 1 -40 40 h-110 l-50 44 v-44 h-40 a40 40 0 0 1 -40 -40 v-90 a40 40 0 0 1 40 -40z', fill: '#fff', filter: 'url(#cardShadow)' }, cm);
+    [290, 330, 370].forEach(x => el('circle', { cx: x, cy: 1155, r: 13, fill: C.bgMid }, cm));
+    const fb = el('g', {}, g);
+    pill(fb, 700, 1155, '+ ' + L.follow, { size: 60, fill: C.danger, stroke: '#FFC2CD', sw: 5 });
+    pop(cm, p2 - .05); pop(fb, p2 + .15);
+    for (let k = 0; k < 4; k++) {
+      const t = p2 + .8 + k * .55; if (t > DUR - .3) break;
+      tl.to([cm, fb], { scale: 1.08, transformOrigin: '50% 50%', duration: .2, yoyo: true, repeat: 1, ease: 'sine.inOut' }, t);
+    }
+    sfx('chime', p2 + .15, 1);
+    fadeOut(q, p2 - .05, .25);
+  },
+};
+
+// build all scenes
+sentences.forEach((s, si) => scenes[s.scene](si, s.labels || {}));
+
+// ================================================================= CAPTIONS
+const capBox = $('captions');
+const MAXCH = 30;
+TIM.phrases.forEach((ph, pi) => {
+  const pages = []; let cur = [];
+  ph.words.forEach(w => {
+    const len = cur.reduce((a, b) => a + b.w.length + 1, 0);
+    if (cur.length && len + w.w.length > MAXCH) { pages.push(cur); cur = []; }
+    cur.push(w);
+  });
+  if (cur.length) pages.push(cur);
+  const next = pi + 1 < TIM.phrases.length ? TIM.phrases[pi + 1].start : DUR;
+  pages.forEach((words, k) => {
+    const page = document.createElement('div'); page.className = 'page'; capBox.appendChild(page);
+    const tIn = words[0].t - .08;
+    const tOut = k + 1 < pages.length ? pages[k + 1][0].t - .1 : (pi + 1 < TIM.phrases.length ? Math.min(next - .06, ph.end + .9) : DUR + 1);
+    tl.set(page, { opacity: 1 }, Math.max(0, tIn));
+    words.forEach((w, j) => {
+      const s = document.createElement('span'); s.className = 'w'; s.textContent = w.w; page.appendChild(s);
+      tl.set(s, { opacity: 0, y: 28, scale: .82 }, 0);
+      tl.to(s, { opacity: 1, y: 0, scale: 1, duration: .22, ease: 'back.out(2.5)' }, Math.max(0, w.t - .06));
+      tl.set(s, { color: C.accent }, Math.max(0, w.t - .06));
+      const tEnd = j + 1 < words.length ? words[j + 1].t - .06 : tOut;
+      tl.set(s, { color: '#FFFFFF' }, tEnd);
+    });
+    tl.to(page, { opacity: 0, y: -18, duration: .14 }, tOut);
+    tl.set(page, { y: 0 }, tOut + .15);
+  });
+});
+
+// ================================================================= RENDER (time-only state)
+function render(t) {
+  NOW = t;
+  document.getElementById('cam').setAttribute('transform',
+    `translate(540 960) scale(${CAM.s}) translate(${-CAM.x} ${-CAM.y})`);
+  heroG.setAttribute('transform', `translate(${H.x} ${H.y + floatY()}) rotate(${H.r}) scale(${H.s})`);
+  $('obj-body').setAttribute('opacity', 1 - .82 * H.cut);
+  $('obj-interior').setAttribute('opacity', H.cut);
+  $('obj-core').setAttribute('opacity', Math.max(H.cut, +$('obj-core').getAttribute('width') > 1 ? 1 : 0));
+  shine.setAttribute('x', H.shineX);
+  tipGlow.setAttribute('opacity', (.55 + .35 * Math.sin(t * 7)) * Math.max(AMB.spark, .25));
+  // tip sparkles
+  const [tx, ty] = tipWorld();
+  sparks.forEach((p, i) => {
+    const age = (t * 1.3 + i / sparks.length) % 1, seed = i * 2.399;
+    const x = tx + Math.cos(seed) * age * 110, y = ty + Math.sin(seed) * age * 110 - age * 40;
+    p.setAttribute('cx', x.toFixed(1)); p.setAttribute('cy', y.toFixed(1));
+    p.setAttribute('r', (7 * (1 - age) + 1).toFixed(1));
+    p.setAttribute('opacity', (AMB.spark * (1 - age)).toFixed(3));
+  });
+  // drifting background
+  blobs[0].setAttribute('cx', 300 + 80 * Math.sin(t * .35)); blobs[0].setAttribute('cy', 600 + 60 * Math.cos(t * .3));
+  blobs[1].setAttribute('cx', 820 + 70 * Math.cos(t * .28)); blobs[1].setAttribute('cy', 1150 + 90 * Math.sin(t * .33));
+  blobs[2].setAttribute('cx', 560 + 60 * Math.sin(t * .5 + 1)); blobs[2].setAttribute('cy', 900 + 50 * Math.sin(t * .4));
+  dust.forEach((d, i) => {
+    const sp = .02 + (i % 5) * .008, y = (1 - ((t * sp + i / dust.length) % 1)) * 2000 - 40;
+    d.setAttribute('cx', ((i * 211) % 1080 + 30 * Math.sin(t * .6 + i)).toFixed(1)); d.setAttribute('cy', y.toFixed(1));
+    d.setAttribute('opacity', (.12 + .1 * Math.sin(t * 1.5 + i)).toFixed(3));
+  });
+  // particle streams into the mixer
+  flowDots.forEach((p, i) => {
+    const side = i % 2, u = (t * .9 + (i >> 1) / (flowDots.length / 2)) % 1;
+    const sx = side ? 730 : 250, sy = 520, cx = side ? 640 : 340, cy = 470, ex = 490, ey = 700;
+    const x = (1 - u) * (1 - u) * sx + 2 * u * (1 - u) * cx + u * u * ex, y = (1 - u) * (1 - u) * sy + 2 * u * (1 - u) * cy + u * u * ey;
+    p.setAttribute('cx', x.toFixed(1)); p.setAttribute('cy', y.toFixed(1));
+    p.setAttribute('opacity', (AMB.flow * Math.sin(Math.PI * u)).toFixed(3));
+  });
+  const mouth = document.querySelector('.mouth');
+  if (mouth) mouth.setAttribute('opacity', (.55 + .45 * AMB.fire * (.8 + .2 * Math.sin(t * 23) * Math.sin(t * 7))).toFixed(3));
+}
+const flowDots = [];
+for (let i = 0; i < 32; i++) flowDots.push(el('circle', { r: 8, fill: i % 2 ? '#EBC08B' : '#596173', opacity: 0 }, $('layerFront')));
+
+// warm up every tween in order so random seeking is exact
+tl.seek(DUR, false); tl.seek(0, false); render(0);
+
+window.seek = t => { tl.seek(Math.max(0, Math.min(DUR, t)), false); render(t); };
+window.DURATION = DUR;
+window.SFX = SFX.sort((a, b) => a.t - b.t);
+window.CONFIG = CFG;
+window.READY = true;
+
+// preview helpers: ?t=12.3 to freeze a frame, ?play to play with the voice, ?guides for safe zones
+const q = new URLSearchParams(location.search);
+if (q.has('guides')) {
+  const st = $('stage');
+  [['0', '0', '1080px', '230px'], ['0', '1520px', '1080px', '400px'], ['940px', '0', '140px', '1920px']].forEach(([l, tp, w, h]) => {
+    const d = document.createElement('div'); d.className = 'guide';
+    Object.assign(d.style, { left: l, top: tp, width: w, height: h }); st.appendChild(d);
+  });
+}
+if (q.has('t')) window.seek(parseFloat(q.get('t')));
+if (q.has('play')) {
+  const a = new Audio(TIM.audio); document.body.addEventListener('click', () => {
+    a.currentTime = 0; a.play();
+    const loop = () => { window.seek(a.currentTime); if (!a.paused) requestAnimationFrame(loop); }; loop();
+  });
+}
+})();
+</script>
+</body>
+</html>
