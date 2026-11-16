@@ -12,7 +12,7 @@ const FR = path.join(BUILD, 'frames');
 
 (async () => {
   fs.rmSync(FR, { recursive: true, force: true }); fs.mkdirSync(FR, { recursive: true });
-  const browser = await chromium.launch({ args: ['--allow-file-access-from-files'] });
+  const browser = await chromium.launch({ args: ['--allow-file-access-from-files', '--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
   const open = async () => {
     const p = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
     p.on('pageerror', e => { console.error('[pageerror]', e.message); process.exit(1); });

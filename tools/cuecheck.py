@@ -6,7 +6,7 @@ stem = sys.argv[1] if len(sys.argv) > 1 else "index"
 m = json.load(open(os.path.join(ROOT, "build", stem, "sfx.json")))
 b = m.get("beat")
 if not b: sys.exit("no beat grid in sfx.json (page must expose window.BEAT)")
-beat = 60 / b["bpm"]
+beat = 30 / b["bpm"]   # 8th-note grid
 on = ("pop", "hit", "thud", "chime", "whoosh")
 offs = [(e["t"], e["type"], ((e["t"] - b["t0"] + beat / 2) % beat) - beat / 2) for e in m["sfx"] if e["type"] in on]
 bad = [o for o in offs if abs(o[2]) > 0.017]

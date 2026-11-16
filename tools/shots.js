@@ -5,7 +5,7 @@ const path = require('path');
   const [out, ...rest] = process.argv.slice(2);
   const guides = rest.includes('guides');
   const times = rest.filter(x => x !== 'guides').map(Number);
-  const b = await chromium.launch({ args: ['--allow-file-access-from-files'] });
+  const b = await chromium.launch({ args: ['--allow-file-access-from-files', '--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
   const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
   p.on('console', m => console.log('[page]', m.type(), m.text()));
   p.on('pageerror', e => console.log('[pageerror]', e.message));

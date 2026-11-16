@@ -1,0 +1,1127 @@
+<!doctype html>
+<html lang="ml">
+<head>
+<meta charset="utf-8">
+<title>Muziris Reel (3D)</title>
+<meta name="viewport" content="width=1080, initial-scale=1">
+
+<!-- =====================================================================
+     CONFIG — edit this block + the MP3, then run: tools/build.sh muziris.html
+     ===================================================================== -->
+<script id="config" type="application/json">
+{
+  "title": "റോമൻ സ്വർണ്ണം കേരളത്തിലേക്ക്",
+  "voice": "audio/muziris.mp3",
+  "voiceTempo": 1.07,
+  "timing": { "phraseGap": 0.22, "sentenceGap": 0.36, "head": 0.08, "tail": 1.6 },
+  "music": { "bpm": 96, "chords": ["Dm", "C", "Bb", "A"], "level": 0.9 },
+  "font": "FreeSans",
+  "palette": {
+    "bgTop": "#070B26", "bgMid": "#12306B", "bgBottom": "#0B6E86",
+    "accent": "#FFC93C", "accent2": "#5EEAD4", "danger": "#FF5470",
+    "card": "#10194A", "cardStroke": "#4A63D9", "ink": "#0B1030"
+  },
+  "sentences": [
+    { "scene": "hook", "phrases": ["2000 വർഷം മുൻപ്...", "റോമൻ സാമ്രാജ്യം, കേരളത്തിലേക്ക് സ്വർണ്ണം ഒഴുക്കിക്കൊണ്ടിരുന്നു!", "എന്തിന്?"],
+      "labels": { "year": 2000, "yearLabel": "വർഷം മുൻപ്", "rome": "റോം", "kerala": "കേരളം" } },
+    { "scene": "pepper", "phrases": ["ഒരേ ഒരു സാധനത്തിന്...", "കുരുമുളക്!"], "labels": { "word": "കുരുമുളക്" } },
+    { "scene": "value", "phrases": ["അന്ന് റോമിൽ, കുരുമുളകിന് സ്വർണ്ണത്തിന്റെ വിലയായിരുന്നു...", "കേരളത്തിലാണെങ്കിൽ, അത് സുലഭം."],
+      "labels": { "rome": "റോം", "gold": "സ്വർണ്ണ വില", "kerala": "കേരളം", "plenty": "സുലഭം" } },
+    { "scene": "voyage", "phrases": ["റോമൻ കപ്പലുകൾ, മാസങ്ങൾ കടൽ താണ്ടി, മുസിരിസ് തുറമുഖത്തെത്തി...", "കയ്യിൽ, നിറയെ നാണയങ്ങളും."],
+      "labels": { "start": "ചെങ്കടൽ", "months": "മാസങ്ങൾ", "port": "മുസിരിസ്" } },
+    { "scene": "pliny", "phrases": ["റോമൻ എഴുത്തുകാരനായ പ്ലിനി, പരാതിപ്പെട്ടു...", "\"ഇന്ത്യ, ഓരോ വർഷവും, റോമിന്റെ ഏകദേശം അഞ്ച് കോടി സെസ്റ്റേഴ്സ് ഊറ്റിയെടുക്കുന്നു!\""],
+      "labels": { "name": "പ്ലിനി", "role": "റോമൻ എഴുത്തുകാരൻ", "count": 50000000, "unit": "സെസ്റ്റേഴ്സ് / വർഷം" } },
+    { "scene": "papyrus", "phrases": ["വിയന്നയിൽ, ഒരു പഴയ പപ്പൈറസ് ഇന്നും സൂക്ഷിച്ചിട്ടുണ്ട്...", "ഒരൊറ്റ കപ്പലിലെ ചരക്കിന്റെ കണക്ക്!"],
+      "labels": { "city": "വിയന്ന", "ship": "Hermapollon", "era": "AD 2-ാം നൂറ്റാണ്ട്" } },
+    { "scene": "numbers", "phrases": ["ഏകദേശം എഴുപത് ലക്ഷം സെസ്റ്റേഴ്സ് വിലയുള്ള ചരക്ക്...", "അതിൽ മൂന്നിൽ രണ്ട് ഭാഗവും, കേരളത്തിന്റെ കുരുമുളക്!"],
+      "labels": { "total": 70, "suffix": " ലക്ഷം", "unit": "സെസ്റ്റേഴ്സ്", "pepper": "കുരുമുളക്", "other": "മറ്റുള്ളവ", "twoThirds": "മൂന്നിൽ രണ്ട്" } },
+    { "scene": "pattanam", "phrases": ["പട്ടണം എന്ന സ്ഥലത്ത്, ഖനനത്തിൽ, റോമൻ നാണയങ്ങളും മൺപാത്രങ്ങളും കിട്ടി...", "അവിടമാണ് മുസിരിസ് എന്ന് കരുതപ്പെടുന്നു!"],
+      "labels": { "place": "പട്ടണം", "coin": "റോമൻ നാണയം", "pot": "മൺപാത്രം", "guess": "മുസിരിസ്?" } },
+    { "scene": "finale", "phrases": ["നമ്മുടെ കറുത്ത പൊന്ന്...", "ഒരു സാമ്രാജ്യത്തെ തന്നെ ഞെട്ടിച്ചു!"],
+      "labels": { "t1": "കറുത്ത പൊന്ന്", "t2": "സാമ്രാജ്യത്തെ ഞെട്ടിച്ചു" } }
+  ],
+  "geo": { "lon0": 55, "lat0": 22, "kx": 0.9 },
+  "places": {
+    "rome": [12.5, 41.9], "kerala": [76.2, 10.2], "vienna": [16.4, 48.2],
+    "route": [[36.0,23.5],[38.0,20.8],[40.3,17.2],[42.2,14.3],[43.5,12.7],[45.8,12.1],[53,14.5],[60,13],[67,11.5],[73,10.5],[75.7,10.15]]
+  }
+}
+</script>
+<!-- ======================= END OF CONFIG ================================ -->
+
+<script id="timings" type="application/json">
+{
+ "duration": 50.168,
+ "audio": "build/muziris/voice_cut.wav",
+ "phrases": [
+  {
+   "text": "2000 വർഷം മുൻപ്...",
+   "sentence": 0,
+   "start": 0.093,
+   "end": 1.383,
+   "words": [
+    {
+     "w": "2000",
+     "t": 0.093
+    },
+    {
+     "w": "വർഷം",
+     "t": 0.85
+    },
+    {
+     "w": "മുൻപ്...",
+     "t": 1.103
+    }
+   ]
+  },
+  {
+   "text": "റോമൻ സാമ്രാജ്യം, കേരളത്തിലേക്ക് സ്വർണ്ണം ഒഴുക്കിക്കൊണ്ടിരുന്നു!",
+   "sentence": 0,
+   "start": 1.589,
+   "end": 4.72,
+   "words": [
+    {
+     "w": "റോമൻ",
+     "t": 1.589
+    },
+    {
+     "w": "സാമ്രാജ്യം,",
+     "t": 1.832
+    },
+    {
+     "w": "കേരളത്തിലേക്ക്",
+     "t": 2.323
+    },
+    {
+     "w": "സ്വർണ്ണം",
+     "t": 3.226
+    },
+    {
+     "w": "ഒഴുക്കിക്കൊണ്ടിരുന്നു!",
+     "t": 3.665
+    }
+   ]
+  },
+  {
+   "text": "എന്തിന്?",
+   "sentence": 0,
+   "start": 4.925,
+   "end": 5.234,
+   "words": [
+    {
+     "w": "എന്തിന്?",
+     "t": 4.925
+    }
+   ]
+  },
+  {
+   "text": "ഒരേ ഒരു സാധനത്തിന്...",
+   "sentence": 1,
+   "start": 5.57,
+   "end": 6.841,
+   "words": [
+    {
+     "w": "ഒരേ",
+     "t": 5.57
+    },
+    {
+     "w": "ഒരു",
+     "t": 5.817
+    },
+    {
+     "w": "സാധനത്തിന്...",
+     "t": 6.064
+    }
+   ]
+  },
+  {
+   "text": "കുരുമുളക്!",
+   "sentence": 1,
+   "start": 7.047,
+   "end": 7.617,
+   "words": [
+    {
+     "w": "കുരുമുളക്!",
+     "t": 7.047
+    }
+   ]
+  },
+  {
+   "text": "അന്ന് റോമിൽ, കുരുമുളകിന് സ്വർണ്ണത്തിന്റെ വിലയായിരുന്നു...",
+   "sentence": 2,
+   "start": 7.953,
+   "end": 10.701,
+   "words": [
+    {
+     "w": "അന്ന്",
+     "t": 7.953
+    },
+    {
+     "w": "റോമിൽ,",
+     "t": 8.224
+    },
+    {
+     "w": "കുരുമുളകിന്",
+     "t": 8.495
+    },
+    {
+     "w": "സ്വർണ്ണത്തിന്റെ",
+     "t": 9.222
+    },
+    {
+     "w": "വിലയായിരുന്നു...",
+     "t": 10.035
+    }
+   ]
+  },
+  {
+   "text": "കേരളത്തിലാണെങ്കിൽ, അത് സുലഭം.",
+   "sentence": 2,
+   "start": 10.907,
+   "end": 12.458,
+   "words": [
+    {
+     "w": "കേരളത്തിലാണെങ്കിൽ,",
+     "t": 10.907
+    },
+    {
+     "w": "അത്",
+     "t": 11.996
+    },
+    {
+     "w": "സുലഭം.",
+     "t": 12.176
+    }
+   ]
+  },
+  {
+   "text": "റോമൻ കപ്പലുകൾ, മാസങ്ങൾ കടൽ താണ്ടി, മുസിരിസ് തുറമുഖത്തെത്തി...",
+   "sentence": 3,
+   "start": 12.794,
+   "end": 16.626,
+   "words": [
+    {
+     "w": "റോമൻ",
+     "t": 12.794
+    },
+    {
+     "w": "കപ്പലുകൾ,",
+     "t": 13.121
+    },
+    {
+     "w": "മാസങ്ങൾ",
+     "t": 13.773
+    },
+    {
+     "w": "കടൽ",
+     "t": 14.328
+    },
+    {
+     "w": "താണ്ടി,",
+     "t": 14.62
+    },
+    {
+     "w": "മുസിരിസ്",
+     "t": 15.014
+    },
+    {
+     "w": "തുറമുഖത്തെത്തി...",
+     "t": 15.643
+    }
+   ]
+  },
+  {
+   "text": "കയ്യിൽ, നിറയെ നാണയങ്ങളും.",
+   "sentence": 3,
+   "start": 16.832,
+   "end": 18.57,
+   "words": [
+    {
+     "w": "കയ്യിൽ,",
+     "t": 16.832
+    },
+    {
+     "w": "നിറയെ",
+     "t": 17.454
+    },
+    {
+     "w": "നാണയങ്ങളും.",
+     "t": 17.826
+    }
+   ]
+  },
+  {
+   "text": "റോമൻ എഴുത്തുകാരനായ പ്ലിനി, പരാതിപ്പെട്ടു...",
+   "sentence": 4,
+   "start": 18.907,
+   "end": 21.206,
+   "words": [
+    {
+     "w": "റോമൻ",
+     "t": 18.907
+    },
+    {
+     "w": "എഴുത്തുകാരനായ",
+     "t": 19.2
+    },
+    {
+     "w": "പ്ലിനി,",
+     "t": 20.054
+    },
+    {
+     "w": "പരാതിപ്പെട്ടു...",
+     "t": 20.409
+    }
+   ]
+  },
+  {
+   "text": "\"ഇന്ത്യ, ഓരോ വർഷവും, റോമിന്റെ ഏകദേശം അഞ്ച് കോടി സെസ്റ്റേഴ്സ് ഊറ്റിയെടുക്കുന്നു!\"",
+   "sentence": 4,
+   "start": 21.411,
+   "end": 26.168,
+   "words": [
+    {
+     "w": "\"ഇന്ത്യ,",
+     "t": 21.411
+    },
+    {
+     "w": "ഓരോ",
+     "t": 21.839
+    },
+    {
+     "w": "വർഷവും,",
+     "t": 22.212
+    },
+    {
+     "w": "റോമിന്റെ",
+     "t": 22.64
+    },
+    {
+     "w": "ഏകദേശം",
+     "t": 23.243
+    },
+    {
+     "w": "അഞ്ച്",
+     "t": 23.671
+    },
+    {
+     "w": "കോടി",
+     "t": 24.008
+    },
+    {
+     "w": "സെസ്റ്റേഴ്സ്",
+     "t": 24.357
+    },
+    {
+     "w": "ഊറ്റിയെടുക്കുന്നു!\"",
+     "t": 25.094
+    }
+   ]
+  },
+  {
+   "text": "വിയന്നയിൽ, ഒരു പഴയ പപ്പൈറസ് ഇന്നും സൂക്ഷിച്ചിട്ടുണ്ട്...",
+   "sentence": 5,
+   "start": 26.505,
+   "end": 29.57,
+   "words": [
+    {
+     "w": "വിയന്നയിൽ,",
+     "t": 26.505
+    },
+    {
+     "w": "ഒരു",
+     "t": 27.109
+    },
+    {
+     "w": "പഴയ",
+     "t": 27.404
+    },
+    {
+     "w": "പപ്പൈറസ്",
+     "t": 27.662
+    },
+    {
+     "w": "ഇന്നും",
+     "t": 28.181
+    },
+    {
+     "w": "സൂക്ഷിച്ചിട്ടുണ്ട്...",
+     "t": 28.528
+    }
+   ]
+  },
+  {
+   "text": "ഒരൊറ്റ കപ്പലിലെ ചരക്കിന്റെ കണക്ക്!",
+   "sentence": 5,
+   "start": 29.776,
+   "end": 31.841,
+   "words": [
+    {
+     "w": "ഒരൊറ്റ",
+     "t": 29.776
+    },
+    {
+     "w": "കപ്പലിലെ",
+     "t": 30.312
+    },
+    {
+     "w": "ചരക്കിന്റെ",
+     "t": 30.822
+    },
+    {
+     "w": "കണക്ക്!",
+     "t": 31.445
+    }
+   ]
+  },
+  {
+   "text": "ഏകദേശം എഴുപത് ലക്ഷം സെസ്റ്റേഴ്സ് വിലയുള്ള ചരക്ക്...",
+   "sentence": 6,
+   "start": 32.178,
+   "end": 35.159,
+   "words": [
+    {
+     "w": "ഏകദേശം",
+     "t": 32.178
+    },
+    {
+     "w": "എഴുപത്",
+     "t": 32.616
+    },
+    {
+     "w": "ലക്ഷം",
+     "t": 33.055
+    },
+    {
+     "w": "സെസ്റ്റേഴ്സ്",
+     "t": 33.4
+    },
+    {
+     "w": "വിലയുള്ള",
+     "t": 34.156
+    },
+    {
+     "w": "ചരക്ക്...",
+     "t": 34.72
+    }
+   ]
+  },
+  {
+   "text": "അതിൽ മൂന്നിൽ രണ്ട് ഭാഗവും, കേരളത്തിന്റെ കുരുമുളക്!",
+   "sentence": 6,
+   "start": 35.364,
+   "end": 38.393,
+   "words": [
+    {
+     "w": "അതിൽ",
+     "t": 35.364
+    },
+    {
+     "w": "മൂന്നിൽ",
+     "t": 35.667
+    },
+    {
+     "w": "രണ്ട്",
+     "t": 36.122
+    },
+    {
+     "w": "ഭാഗവും,",
+     "t": 36.456
+    },
+    {
+     "w": "കേരളത്തിന്റെ",
+     "t": 36.821
+    },
+    {
+     "w": "കുരുമുളക്!",
+     "t": 37.815
+    }
+   ]
+  },
+  {
+   "text": "പട്ടണം എന്ന സ്ഥലത്ത്, ഖനനത്തിൽ, റോമൻ നാണയങ്ങളും മൺപാത്രങ്ങളും കിട്ടി...",
+   "sentence": 7,
+   "start": 38.729,
+   "end": 42.935,
+   "words": [
+    {
+     "w": "പട്ടണം",
+     "t": 38.729
+    },
+    {
+     "w": "എന്ന",
+     "t": 39.135
+    },
+    {
+     "w": "സ്ഥലത്ത്,",
+     "t": 39.424
+    },
+    {
+     "w": "ഖനനത്തിൽ,",
+     "t": 40.077
+    },
+    {
+     "w": "റോമൻ",
+     "t": 40.815
+    },
+    {
+     "w": "നാണയങ്ങളും",
+     "t": 41.104
+    },
+    {
+     "w": "മൺപാത്രങ്ങളും",
+     "t": 41.743
+    },
+    {
+     "w": "കിട്ടി...",
+     "t": 42.585
+    }
+   ]
+  },
+  {
+   "text": "അവിടമാണ് മുസിരിസ് എന്ന് കരുതപ്പെടുന്നു!",
+   "sentence": 7,
+   "start": 43.14,
+   "end": 45.103,
+   "words": [
+    {
+     "w": "അവിടമാണ്",
+     "t": 43.14
+    },
+    {
+     "w": "മുസിരിസ്",
+     "t": 43.61
+    },
+    {
+     "w": "എന്ന്",
+     "t": 44.03
+    },
+    {
+     "w": "കരുതപ്പെടുന്നു!",
+     "t": 44.318
+    }
+   ]
+  },
+  {
+   "text": "നമ്മുടെ കറുത്ത പൊന്ന്...",
+   "sentence": 8,
+   "start": 45.439,
+   "end": 46.766,
+   "words": [
+    {
+     "w": "നമ്മുടെ",
+     "t": 45.439
+    },
+    {
+     "w": "കറുത്ത",
+     "t": 45.925
+    },
+    {
+     "w": "പൊന്ന്...",
+     "t": 46.377
+    }
+   ]
+  },
+  {
+   "text": "ഒരു സാമ്രാജ്യത്തെ തന്നെ ഞെട്ടിച്ചു!",
+   "sentence": 8,
+   "start": 46.972,
+   "end": 48.635,
+   "words": [
+    {
+     "w": "ഒരു",
+     "t": 46.972
+    },
+    {
+     "w": "സാമ്രാജ്യത്തെ",
+     "t": 47.15
+    },
+    {
+     "w": "തന്നെ",
+     "t": 47.842
+    },
+    {
+     "w": "ഞെട്ടിച്ചു!",
+     "t": 48.123
+    }
+   ]
+  }
+ ],
+ "beat": {
+  "bpm": 99.5,
+  "t0": 0.135,
+  "err_ms": 53
+ }
+}
+</script>
+
+<style>
+  html, body { margin: 0; background: #050816; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  #gl, #ui { position: absolute; left: 0; top: 0; }
+  #capShade { position: absolute; left: 0; right: 0; top: 1180px; height: 740px;
+    background: linear-gradient(to bottom, rgba(4,8,30,0) 0%, rgba(4,8,30,.55) 40%, rgba(4,8,30,.7) 100%); }
+  #captions { position: absolute; left: 50px; width: 860px; top: 1290px; height: 220px; }
+  .page { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center;
+    justify-content: center; text-align: center; opacity: 0; }
+  .w { display: inline-block; font-weight: 700; font-size: 78px; line-height: 1.32; color: #fff;
+    margin: 0 12px; opacity: 0;
+    text-shadow: 0 6px 22px rgba(0,0,0,.6), 0 0 3px rgba(0,0,0,.9), 0 2px 0 rgba(0,0,0,.35); }
+  svg text { font-weight: 700; }
+  .guide { position: absolute; background: rgba(255,0,80,.25); pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <svg id="ui" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+    <defs id="defs">
+      <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#020414" flood-opacity=".5"/></filter>
+      <linearGradient id="cardG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1D2B78"/><stop offset="1" stop-color="#0E1648"/></linearGradient>
+      <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE29A"/><stop offset="1" stop-color="#D9A02B"/></linearGradient>
+      <linearGradient id="papG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E4C98C"/><stop offset=".5" stop-color="#F3E1B0"/><stop offset="1" stop-color="#D9BA7A"/></linearGradient>
+    </defs>
+    <rect id="dim" width="1080" height="1920" fill="#040720" opacity="0"/>
+    <g id="L3"></g>
+    <g id="mid"></g>
+    <g id="ppl"></g>
+    <g id="front"></g>
+    <rect id="flash" width="1080" height="1920" fill="#fff" opacity="0"/>
+  </svg>
+  <div id="capShade"></div>
+  <div id="captions"></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="vendor/topojson-client.min.js"></script>
+<script src="vendor/land-50m.js"></script>
+<script src="lib/people.js"></script>
+<script>
+(async function () {
+const CFG = JSON.parse(document.getElementById('config').textContent);
+const TIM = JSON.parse(document.getElementById('timings').textContent);
+const C = CFG.palette, FONT = CFG.font, G = CFG.geo;
+const NS = 'http://www.w3.org/2000/svg';
+const DUR = TIM.duration;
+const SFX = [];
+const $ = id => document.getElementById(id);
+const FREE = new Set(['tick', 'coin', 'wave', 'dip', 'shimmer', 'ping']);
+const sfx = (type, t, gain = 1, extra = {}) => SFX.push(Object.assign({ type, t: +Math.max(0, FREE.has(type) ? t : snapT(t)).toFixed(3), gain }, extra));
+window.BEAT = TIM.beat || null;
+const BEAT = window.BEAT;
+const snapT = t => { if (!BEAT) return t; const g = 30 / BEAT.bpm; return Math.max(0, BEAT.t0 + Math.ceil((t - .08 - BEAT.t0) / g) * g); };
+const snap = t => { if (!BEAT) return t; const g = 30 / BEAT.bpm, s = BEAT.t0 + Math.ceil((t - .08 - BEAT.t0) / g) * g; return Math.max(0, s); };   // next 8th-note on the grid (never more than 80 ms early)
+
+await document.fonts.load(`700 80px ${FONT}`, 'മലയാളം');
+document.body.style.fontFamily = FONT;
+const land = window.LAND50;
+
+// ------------------------------------------------------------ 2D helpers
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function text(parent, x, y, str, size, fill, anchor = 'middle', extra = {}) {
+  const t = el('text', Object.assign({ x, y, 'font-size': size, fill, 'text-anchor': anchor, 'font-family': FONT, 'dominant-baseline': 'central' }, extra), parent);
+  t.textContent = str; return t;
+}
+function pill(parent, cx, cy, str, o = {}) {
+  const g = el('g', {}, parent), size = o.size || 56, padX = o.padX ?? size * .55, padY = o.padY ?? size * .32;
+  const r = el('rect', { fill: o.fill || C.card, stroke: o.stroke || C.cardStroke, 'stroke-width': o.sw ?? 4 }, g);
+  const t = text(g, cx, cy, str, size, o.color || '#fff');
+  const b = t.getBBox(), w = b.width + padX * 2, h = size * 1.25 + padY * 2;
+  r.setAttribute('x', cx - w / 2); r.setAttribute('y', cy - h / 2); r.setAttribute('width', w); r.setAttribute('height', h); r.setAttribute('rx', o.rx ?? h / 2);
+  g.box = { w, h }; g.label = t; g.rect = r; return g;
+}
+
+// ------------------------------------------------------------ timing helpers
+const sentences = CFG.sentences.map((s, si) => {
+  const ph = TIM.phrases.filter(p => p.sentence === si);
+  return Object.assign({}, s, { ph, words: ph.flatMap(p => p.words) });
+});
+const sStart = si => sentences[si].ph[0].start;
+const sEnd = si => si + 1 < sentences.length ? sStart(si + 1) : DUR;
+const pS = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].start;
+const pE = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].end;
+const wT = (si, k) => { const w = sentences[si].words; return w[Math.max(0, Math.min(k, w.length - 1))].t; };
+const wIdx = (si, j, k = 0) => sentences[si].ph.slice(0, j).reduce((a, p) => a + p.words.length, 0) + k;
+const lastW = si => wT(si, sentences[si].words.length - 1);
+const speak = (si, t) => { for (const w of sentences[si].words) { const d = t - w.t; if (d >= 0 && d < .2) return Math.sin(Math.PI * d / .2); } return 0; };
+
+const tl = gsap.timeline({ paused: true });
+tl.to({}, { duration: DUR }, 0);
+const hide = e => tl.set(e, { opacity: 0 }, 0);
+function pop(e, t, o = {}) {
+  t = o.nosnap ? t : snap(t);
+  tl.set(e, { opacity: 0, scale: o.from ?? .3, transformOrigin: o.origin || '50% 50%' }, 0);
+  tl.to(e, { opacity: 1, scale: 1, duration: o.d || .45, ease: o.ease || 'back.out(2.2)' }, t);
+  if (o.sound !== false) sfx(o.sound || 'pop', t, o.gain ?? .9);
+}
+const fadeIn = (e, t, d = .4) => { hide(e); tl.to(e, { opacity: 1, duration: d }, t); };
+const fadeOut = (e, t, d = .3) => tl.to(e, { opacity: 0, duration: d, ease: 'power1.in' }, t);
+function drawPath(p, t, d, ease = 'power2.inOut') { const L = p.getTotalLength(); p.setAttribute('stroke-dasharray', L + ' ' + L); tl.set(p, { attr: { 'stroke-dashoffset': L } }, 0); tl.to(p, { attr: { 'stroke-dashoffset': 0 }, duration: d, ease }, t); }
+function counter(tEl, from, to, t, d, fmt = v => v, ticks = 12) {
+  const o = { v: from }; tEl.textContent = fmt(from);
+  tl.to(o, { v: to, duration: d, ease: 'power2.out', onUpdate: () => tEl.textContent = fmt(o.v) }, t);
+  for (let k = 0; k < ticks; k++) sfx('tick', t + d * (1 - Math.sqrt(1 - k / ticks)), .55);
+}
+const fmtInt = v => Math.round(v).toLocaleString('en-US');
+const flash = (t, a = .6) => { tl.set($('flash'), { opacity: a }, t); tl.to($('flash'), { opacity: 0, duration: .4, ease: 'power2.out' }, t + .03); };
+const hit = t => sfx('hit', snap(t), .9);
+
+// ------------------------------------------------------------ THREE: renderer / scene
+const renderer = new THREE.WebGLRenderer({ canvas: $('gl'), antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(1080, 1920, false);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(C.bgTop);
+scene.fog = new THREE.Fog(C.bgTop, 190, 420);
+const camera = new THREE.PerspectiveCamera(38, 1080 / 1920, .5, 600);
+scene.add(new THREE.HemisphereLight(0xCFE3FF, 0x1A2A55, 1.05));
+const sun = new THREE.DirectionalLight(0xFFF1D0, 1.5); sun.position.set(-40, 70, 30); scene.add(sun);
+
+const px = lon => (lon - G.lon0) * G.kx, pz = lat => -(lat - G.lat0);
+const W = (lon, lat, y = 0) => new THREE.Vector3(px(lon), y, pz(lat));
+const ROME = W(...CFG.places.rome), KER = W(...CFG.places.kerala), VIE = W(...CFG.places.vienna);
+
+// sea
+const seaMat = new THREE.ShaderMaterial({
+  uniforms: { uTime: { value: 0 }, uA: { value: new THREE.Color('#0A2E78') }, uB: { value: new THREE.Color('#1BA6BC') } },
+  vertexShader: 'varying vec3 vW; void main(){ vec4 w = modelMatrix*vec4(position,1.); vW = w.xyz; gl_Position = projectionMatrix*viewMatrix*w; }',
+  fragmentShader: `varying vec3 vW; uniform float uTime; uniform vec3 uA; uniform vec3 uB;
+    float h(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7)))*43758.5453); }
+    float n(vec2 p){ vec2 i=floor(p), f=fract(p); f=f*f*(3.-2.*f); return mix(mix(h(i),h(i+vec2(1,0)),f.x), mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x), f.y); }
+    void main(){
+      vec2 p = vW.xz;
+      float g = n(p*.06 + vec2(uTime*.02, 0.)) * .6 + n(p*.18 - vec2(0., uTime*.03)) * .4;
+      vec3 c = mix(uA, uB, smoothstep(.2,.9,g));
+      float l = sin((p.x*1.3 + p.y*.8)*.7 + uTime*.9 + n(p*.3)*6.);
+      c += vec3(.55,.8,.95) * smoothstep(.94,1.,l) * .16;
+      c += vec3(1.) * smoothstep(.985,1., n(p*1.7 + uTime*.35)) * .35;
+      gl_FragColor = vec4(c, 1.);
+    }`
+});
+const sea = new THREE.Mesh(new THREE.PlaneGeometry(520, 380), seaMat); sea.rotation.x = -Math.PI / 2; sea.position.set(0, 0, 0); scene.add(sea);
+
+// land (Natural Earth 50m, extruded)
+{
+  const f = topojson.feature(land, land.objects.land);
+  const geos = f.features ? f.features.map(x => x.geometry) : [f.geometry];
+  const polys = geos.flatMap(gm => gm.type === 'MultiPolygon' ? gm.coordinates : [gm.coordinates]);
+  const cl = (v, a, b) => Math.max(a, Math.min(b, v));
+  const topM = new THREE.MeshLambertMaterial({ color: 0xE6C58A }), sideM = new THREE.MeshLambertMaterial({ color: 0xA9763F });
+  const geoms = [];
+  polys.forEach(poly => {
+    const inRegion = poly[0].some(([lo, la]) => lo > -30 && lo < 125 && la > -30 && la < 70);
+    if (!inRegion) return;
+    const mkRing = r => r.map(([lo, la]) => new THREE.Vector2(px(cl(lo, -30, 130)), cl(la, -30, 72) - G.lat0));
+    const shape = new THREE.Shape(mkRing(poly[0]));
+    for (let i = 1; i < poly.length; i++) shape.holes.push(new THREE.Path(mkRing(poly[i])));
+    const g = new THREE.ExtrudeGeometry(shape, { depth: .4, bevelEnabled: false });
+    g.rotateX(-Math.PI / 2); geoms.push(g);
+  });
+  geoms.forEach(g => scene.add(new THREE.Mesh(g, [topM, sideM])));
+}
+
+// markers
+const mkPin = (color) => {
+  const g = new THREE.Group();
+  const cone = new THREE.Mesh(new THREE.ConeGeometry(.7, 2.2, 20), new THREE.MeshPhongMaterial({ color, shininess: 80 })); cone.rotation.x = Math.PI; cone.position.y = 1.1; g.add(cone);
+  const ball = new THREE.Mesh(new THREE.SphereGeometry(.85, 20, 14), new THREE.MeshPhongMaterial({ color, shininess: 90 })); ball.position.y = 2.7; g.add(ball);
+  const ring = new THREE.Mesh(new THREE.RingGeometry(1.2, 1.6, 40), new THREE.MeshBasicMaterial({ color, transparent: true, opacity: .8, side: THREE.DoubleSide })); ring.rotation.x = -Math.PI / 2; ring.position.y = .08; g.add(ring);
+  g.userData.ring = ring; return g;
+};
+const pinK = mkPin(0xFF4D6D); pinK.position.set(KER.x, .45, KER.z); scene.add(pinK);
+const pinV = mkPin(0x4CC9F0); pinV.position.set(VIE.x, .45, VIE.z); scene.add(pinV);
+// Rome: gold coin stack
+const romeStack = new THREE.Group(); romeStack.position.set(ROME.x, .45, ROME.z);
+const goldM = new THREE.MeshPhongMaterial({ color: 0xFFC93C, emissive: 0x4A3000, shininess: 120, specular: 0xFFFFFF });
+for (let i = 0; i < 9; i++) { const c = new THREE.Mesh(new THREE.CylinderGeometry(1.1, 1.1, .32, 28), goldM); c.position.y = .2 + i * .34; c.rotation.y = i * .7; romeStack.add(c); }
+scene.add(romeStack);
+// beacon of light at Kerala
+const beacon = new THREE.Mesh(new THREE.CylinderGeometry(.55, 1.4, 40, 24, 1, true), new THREE.MeshBasicMaterial({ color: 0xFFD166, transparent: true, opacity: .35, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide }));
+beacon.position.set(KER.x, 20.5, KER.z); scene.add(beacon);
+
+// glow sprite texture (drawn in code)
+const glowTex = (() => { const c = document.createElement('canvas'); c.width = c.height = 128; const x = c.getContext('2d'), g = x.createRadialGradient(64, 64, 0, 64, 64, 64); g.addColorStop(0, 'rgba(255,224,150,1)'); g.addColorStop(.35, 'rgba(255,190,70,.5)'); g.addColorStop(1, 'rgba(255,190,70,0)'); x.fillStyle = g; x.fillRect(0, 0, 128, 128); return new THREE.CanvasTexture(c); })();
+
+// pepper spike at Kerala (stem + peppercorns + leaves)
+const pepper = new THREE.Group(); pepper.position.set(KER.x + 1.6, .45, KER.z - .3);
+{
+  const rnd = (() => { let s = 7; return () => (s = (s * 16807) % 2147483647) / 2147483647; })();
+  const stemPts = [new THREE.Vector3(0, 6, 0), new THREE.Vector3(.5, 4.6, .2), new THREE.Vector3(.4, 3, -.1), new THREE.Vector3(-.1, 1.5, .1)];
+  const stem = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(stemPts), 20, .12, 8), new THREE.MeshLambertMaterial({ color: 0x5A7A2B })); pepper.add(stem);
+  const pm = new THREE.MeshPhongMaterial({ color: 0x151515, shininess: 90, specular: 0x666666 });
+  const corn = new THREE.InstancedMesh(new THREE.SphereGeometry(.34, 14, 10), pm, 36); const m4 = new THREE.Matrix4();
+  for (let i = 0; i < 36; i++) { const u = i / 36, p = new THREE.CatmullRomCurve3(stemPts).getPoint(.15 + u * .8); m4.makeTranslation(p.x + (rnd() - .5) * .9, p.y + (rnd() - .5) * .3, p.z + (rnd() - .5) * .9); corn.setMatrixAt(i, m4); }
+  pepper.add(corn);
+  const lm = new THREE.MeshLambertMaterial({ color: 0x2E7D32, side: THREE.DoubleSide });
+  for (let i = 0; i < 4; i++) { const lf = new THREE.Mesh(new THREE.SphereGeometry(1, 12, 8), lm); lf.scale.set(1.0, .06, .5); lf.position.set(Math.cos(i * 1.6) * 1.0, 5.7 - i * .1, Math.sin(i * 1.6) * .8); lf.rotation.set(0, i * 1.6, .35); pepper.add(lf); }
+  const gl = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, blending: THREE.AdditiveBlending, transparent: true, depthWrite: false })); gl.scale.set(9, 9, 1); gl.position.y = 3.4; pepper.add(gl); pepper.userData.glow = gl;
+}
+scene.add(pepper);
+
+// route
+const routePts = CFG.places.route.map(([lo, la]) => W(lo, la, .45));
+const curve = new THREE.CatmullRomCurve3(routePts, false, 'catmullrom', .3);
+const TUBE_SEG = 400, TUBE_RAD = 6;
+const tubeGeo = new THREE.TubeGeometry(curve, TUBE_SEG, .2, TUBE_RAD, false);
+const tube = new THREE.Mesh(tubeGeo, new THREE.MeshBasicMaterial({ color: 0xFFD166 })); scene.add(tube);
+tubeGeo.setDrawRange(0, 0);
+
+// ship
+const ship = new THREE.Group(); scene.add(ship);
+const shipBody = new THREE.Group(); ship.add(shipBody);
+let sailGeo;
+{
+  const sh = new THREE.Shape(); sh.moveTo(1.8, 0); sh.quadraticCurveTo(1.3, .8, -.8, .85); sh.lineTo(-1.7, .55); sh.lineTo(-1.7, -.55); sh.lineTo(-.8, -.85); sh.quadraticCurveTo(1.3, -.8, 1.8, 0);
+  const hg = new THREE.ExtrudeGeometry(sh, { depth: .7, bevelEnabled: true, bevelSize: .1, bevelThickness: .08, bevelSegments: 2 }); hg.rotateX(-Math.PI / 2);
+  const hull = new THREE.Mesh(hg, [new THREE.MeshLambertMaterial({ color: 0xB9824B }), new THREE.MeshLambertMaterial({ color: 0x7A4A22 })]); hull.position.y = -.15; shipBody.add(hull);
+  const deck = new THREE.Mesh(new THREE.BoxGeometry(2.9, .06, 1.1), new THREE.MeshLambertMaterial({ color: 0xE3B879 })); deck.position.set(-.1, .58, 0); shipBody.add(deck);
+  const stripe = new THREE.Mesh(new THREE.BoxGeometry(3.3, .14, 1.75), new THREE.MeshLambertMaterial({ color: 0xD62839 })); stripe.position.set(-.05, .3, 0); stripe.scale.set(1, 1, .96); shipBody.add(stripe);
+  const wood = new THREE.MeshLambertMaterial({ color: 0x6B4423 });
+  const mast = new THREE.Mesh(new THREE.CylinderGeometry(.07, .09, 3.6, 10), wood); mast.position.set(.1, 2.4, 0); shipBody.add(mast);
+  const yard = new THREE.Mesh(new THREE.CylinderGeometry(.05, .05, 2.5, 8), wood); yard.rotation.x = Math.PI / 2; yard.position.set(.1, 3.7, 0); shipBody.add(yard);
+  sailGeo = new THREE.PlaneGeometry(2.3, 2.5, 10, 10); sailGeo.rotateY(Math.PI / 2); sailGeo.userData.base = sailGeo.attributes.position.array.slice();
+  const sail = new THREE.Mesh(sailGeo, new THREE.MeshLambertMaterial({ color: 0xFBF1D6, emissive: 0x8A8068, side: THREE.DoubleSide })); sail.position.set(.15, 2.4, 0); shipBody.add(sail);
+  const sailStripe = new THREE.Mesh(new THREE.PlaneGeometry(.55, 2.5, 1, 1), new THREE.MeshLambertMaterial({ color: 0xC1121F, side: THREE.DoubleSide })); sailStripe.rotation.y = Math.PI / 2; sailStripe.position.set(.5, 2.4, 0); sailStripe.visible = false; shipBody.add(sailStripe);
+  const flag = new THREE.Mesh(new THREE.ConeGeometry(.22, .9, 3), new THREE.MeshLambertMaterial({ color: 0xFFC93C })); flag.rotation.z = Math.PI / 2; flag.position.set(-.5, 4.3, 0); shipBody.add(flag);
+  const sack = new THREE.MeshLambertMaterial({ color: 0xBFA06A }), cap = new THREE.MeshPhongMaterial({ color: 0x151515 });
+  [[-1.1, .85, .35], [-1.1, .85, -.35], [-.7, .85, .4], [-.7, .85, -.4], [-1.1, 1.3, 0], [-1.4, .85, 0]].forEach(([x, y, z]) => {
+    const b = new THREE.Mesh(new THREE.CylinderGeometry(.26, .32, .55, 10), sack); b.position.set(x, y, z); b.name = 'sack'; shipBody.add(b);
+    const c = new THREE.Mesh(new THREE.SphereGeometry(.22, 10, 8), cap); c.position.set(x, y + .3, z); c.name = 'sack'; shipBody.add(c);
+  });
+}
+const wake = new THREE.InstancedMesh(new THREE.SphereGeometry(.28, 8, 6), new THREE.MeshBasicMaterial({ color: 0xFFFFFF, transparent: true, opacity: .55 }), 26); scene.add(wake);
+
+// coins
+const COIN_N = 60;
+const coinMat = new THREE.MeshPhongMaterial({ color: 0xFFC93C, emissive: 0x6A4300, shininess: 120, specular: 0xFFFFFF });
+const coins = new THREE.InstancedMesh(new THREE.CylinderGeometry(.55, .55, .14, 20), coinMat, COIN_N); scene.add(coins);
+const burst = new THREE.InstancedMesh(new THREE.CylinderGeometry(.5, .5, .13, 18), coinMat, 36); scene.add(burst);
+
+// ------------------------------------------------------------ 3D state (tweened) + time-only render
+const CAM3 = { tx: ROME.x + 2, ty: 1.5, tz: ROME.z + 5, dist: 12, pitch: 30, yaw: -22, follow: 0 };
+const SH = { u: 0, vis: 0, sacks: 0 }, RT = { u: 0 }, FLOW = { n: 0, vis: 1 }, PEP = { s: 0 }, PINS = { k: 0, v: 0, rome: 1, beacon: 0 }, BURST = { t0: 9999 };
+const DIM = { v: 0 };
+const L3 = [];                                          // world-anchored overlay labels
+function anchor(v3, dy = 3) { const outer = el('g', {}, $('L3')); const inner = el('g', {}, outer); L3.push({ v: v3.clone(), dy, outer }); return inner; }
+const tmp = new THREE.Vector3();
+const bez = (a, b, u, h, out) => { out.lerpVectors(a, b, u); out.y += h * 4 * u * (1 - u) + .8; return out; };
+const dummy = new THREE.Object3D();
+
+function render(t) {
+  seaMat.uniforms.uTime.value = t;
+  // ship
+  const su = Math.max(0, Math.min(1, SH.u)), sp = curve.getPointAt(su), st = curve.getTangentAt(su);
+  ship.position.set(sp.x, 0, sp.z);
+  ship.rotation.set(0, Math.atan2(-st.z, st.x), 0);
+  shipBody.position.y = .25 + Math.sin(t * 2.1) * .09; shipBody.rotation.set(Math.sin(t * 1.7) * .05, 0, Math.sin(t * 1.3) * .035);
+  ship.scale.setScalar(Math.max(.001, SH.vis)); ship.visible = SH.vis > .01;
+  shipBody.children.forEach(c => { if (c.name === 'sack') c.visible = SH.sacks > .5; });
+  const pa = sailGeo.attributes.position, base = sailGeo.userData.base;
+  for (let i = 0; i < pa.count; i++) { const y = base[i * 3 + 1], z = base[i * 3 + 2]; pa.setX(i, base[i * 3] + (.38 * Math.cos(z * 1.2) * (1 - (y + 1.25) / 5)) + Math.sin(t * 2 + z * 2 + y) * .05); }
+  pa.needsUpdate = true; sailGeo.computeVertexNormals();
+  // route + wake
+  tubeGeo.setDrawRange(0, Math.floor(Math.max(0, Math.min(1, RT.u)) * TUBE_SEG) * TUBE_RAD * 6);
+  for (let i = 0; i < 26; i++) { const wu = Math.max(0, su - i * .004), p = curve.getPointAt(wu); dummy.position.set(p.x + Math.sin(i * 2.1 + t * 3) * .12, .5, p.z + Math.cos(i * 1.7 + t * 3) * .12); const s = SH.vis * (1 - i / 26) * (su > .003 ? 1 : 0); dummy.scale.setScalar(Math.max(.001, s)); dummy.rotation.set(0, 0, 0); dummy.updateMatrix(); wake.setMatrixAt(i, dummy.matrix); }
+  wake.instanceMatrix.needsUpdate = true;
+  // gold coins flowing Rome -> Kerala
+  for (let i = 0; i < COIN_N; i++) {
+    const u = ((t * .16 + i / COIN_N) % 1), on = i < FLOW.n ? FLOW.vis : 0;
+    bez(ROME, KER, u, 16, tmp); tmp.x += Math.sin(i * 12.9) * 1.6; tmp.z += Math.cos(i * 7.3) * 1.6;
+    dummy.position.copy(tmp); dummy.rotation.set(t * 4 + i, t * 6 + i * .5, 0); dummy.scale.setScalar(Math.max(.001, on * (1 + .3 * Math.sin(i)))); dummy.updateMatrix(); coins.setMatrixAt(i, dummy.matrix);
+  }
+  coins.instanceMatrix.needsUpdate = true;
+  // coins raining onto the ship
+  for (let i = 0; i < 36; i++) {
+    const a = Math.max(0, Math.min(1, (t - BURST.t0 - i * .045) / .55)), on = (t > BURST.t0 + i * .045 && a < 1) ? 1 : 0;
+    dummy.position.set(sp.x + Math.cos(i * 2.4) * 1.0, 14 - 13.2 * a * a, sp.z + Math.sin(i * 3.7) * .6); dummy.rotation.set(t * 8 + i, 0, t * 5); dummy.scale.setScalar(Math.max(.001, on)); dummy.updateMatrix(); burst.setMatrixAt(i, dummy.matrix);
+  }
+  burst.instanceMatrix.needsUpdate = true;
+  // markers
+  pepper.scale.setScalar(Math.max(.001, PEP.s * .55)); pepper.rotation.y = t * .5; pepper.userData.glow.material.opacity = .5 + .3 * Math.sin(t * 4);
+  pinK.scale.setScalar(Math.max(.001, PINS.k * .5)); pinK.userData.ring.scale.setScalar(1 + .6 * ((t * 1.2) % 1)); pinK.userData.ring.material.opacity = .8 * (1 - ((t * 1.2) % 1));
+  pinV.scale.setScalar(Math.max(.001, PINS.v * .5)); pinV.userData.ring.scale.setScalar(1 + .6 * ((t * 1.2) % 1)); pinV.userData.ring.material.opacity = .8 * (1 - ((t * 1.2) % 1));
+  romeStack.scale.setScalar(Math.max(.001, PINS.rome)); romeStack.rotation.y = t;
+  beacon.scale.set(1 + .08 * Math.sin(t * 5), Math.max(.001, PINS.beacon), 1 + .08 * Math.sin(t * 5)); beacon.position.y = .45 + 20 * PINS.beacon;
+  // camera
+  const f = CAM3.follow, tx = CAM3.tx + (sp.x - CAM3.tx) * f, tz = CAM3.tz + (sp.z - CAM3.tz) * f, ty = CAM3.ty + (1.2 - CAM3.ty) * f;
+  const pr = CAM3.pitch * Math.PI / 180, yw = CAM3.yaw * Math.PI / 180;
+  camera.position.set(tx + CAM3.dist * Math.sin(yw) * Math.cos(pr), ty + CAM3.dist * Math.sin(pr), tz + CAM3.dist * Math.cos(yw) * Math.cos(pr));
+  camera.lookAt(tx, ty, tz); camera.updateMatrixWorld();
+  renderer.render(scene, camera);
+  // overlay labels follow their 3D anchors
+  L3.forEach(l => { tmp.copy(l.v); tmp.y += l.dy; tmp.project(camera); l.outer.setAttribute('transform', `translate(${((tmp.x * .5 + .5) * 1080).toFixed(1)} ${((-tmp.y * .5 + .5) * 1920).toFixed(1)})`); });
+  $('dim').setAttribute('opacity', DIM.v);
+  PPL.forEach(p => p.render(t, p.speakFn ? p.speakFn(t) : 0));
+}
+const PPL = [];
+function person(opts, state) { const p = Person($('ppl'), opts); Object.assign(p.S, state); PPL.push(p); return p; }
+
+// ------------------------------------------------------------ scene helpers
+const cam = (t, v, d = 1.2, ease = 'power2.inOut') => tl.to(CAM3, Object.assign({ duration: d, ease }, v), t);
+const to = (obj, t, v, d = .6, ease = 'power2.out') => tl.to(obj, Object.assign({ duration: d, ease }, v), t);
+const sackSvg = (p, cx, cy, s = 1, tone = '#BFA06A') => {
+  const g = el('g', { transform: `translate(${cx} ${cy}) scale(${s})` }, p);
+  el('path', { d: 'M-60 40 Q-72 -10 -42 -50 L-22 -70 L22 -70 L42 -50 Q72 -10 60 40 Q0 58 -60 40Z', fill: tone, stroke: '#7B5E2E', 'stroke-width': 5 }, g);
+  el('path', { d: 'M-26 -64 Q0 -46 26 -64', stroke: '#6A4F25', 'stroke-width': 6, fill: 'none' }, g);
+  for (let i = 0; i < 9; i++) el('circle', { cx: -22 + (i % 3) * 22, cy: -78 + Math.floor(i / 3) * -10 + (i % 2) * 5, r: 11, fill: '#161616' }, g);
+  return g;
+};
+const coinSvg = (p, cx, cy, r = 38) => { const g = el('g', { transform: `translate(${cx} ${cy})` }, p); el('circle', { r, fill: 'url(#goldG)', stroke: '#B8841D', 'stroke-width': 5 }, g); el('circle', { r: r * .68, fill: 'none', stroke: '#B8841D', 'stroke-width': 3 }, g); text(g, 0, 2, '★', r * .8, '#B8841D'); return g; };
+
+// ================================================================= SCENES
+const scenes = {
+  // ------------------------------------------------------------ 0 HOOK
+  hook(si, L) {
+    const T1 = sEnd(si), g = el('g', {}, $('mid'));
+    FLOW.n = 60; FLOW.vis = 1;
+    // fly from the coin stack at Rome toward Kerala, pulling back to the whole route
+    cam(0, { tx: -6, tz: -1, ty: 1, dist: 105, pitch: 54, yaw: 0 }, T1 - .3, 'power2.inOut');
+    sfx('whoosh', 0, .9); sfx('coin', .12, .8); sfx('coin', .42, .7); hit(.02);
+    // year counter
+    const yg = el('g', {}, g), yt = text(yg, 540, 380, '0', 170, C.accent, 'middle', { filter: 'url(#glow)' });
+    const yl = pill(yg, 540, 520, L.yearLabel, { size: 54, fill: C.card, stroke: C.accent });
+    fadeIn(yg, 0, .15); counter(yt, 0, L.year, .05, Math.max(.7, pE(si, 0) - .2), fmtInt, 14);
+    fadeOut(yg, pS(si, 1) - .05, .25);
+    // labels on the map
+    const rl = anchor(ROME, 5), kl = anchor(KER, 5);
+    pill(rl, 0, -30, L.rome, { size: 50, fill: C.card, stroke: C.accent }); pill(kl, 0, -30, L.kerala, { size: 50, fill: C.card, stroke: '#FF8FA3' });
+    pop(rl, wT(si, wIdx(si, 1, 0)), { gain: .6 }); pop(kl, wT(si, wIdx(si, 1, 2)), { gain: .6 });
+    PINS.k = 0; to(PINS, wT(si, wIdx(si, 1, 2)), { k: 1 }, .5, 'back.out(2)');
+    // the question
+    const q = el('g', {}, g); el('circle', { cx: 540, cy: 760, r: 130, fill: C.accent, filter: 'url(#glow)' }, q); text(q, 540, 768, '?', 190, C.ink);
+    pop(q, pS(si, 2), { from: 2, ease: 'power4.out', d: .3, sound: 'thud' }); hit(pS(si, 2));
+    tl.to(q, { rotation: 10, transformOrigin: '540px 760px', duration: .14, yoyo: true, repeat: 3, ease: 'sine.inOut' }, pS(si, 2) + .4);
+    fadeOut(g, T1 - .1, .25); fadeOut(rl, T1 - .1, .25); fadeOut(kl, T1 - .1, .25);
+  },
+
+  // ------------------------------------------------------------ 1 PEPPER
+  pepper(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si), g = el('g', {}, $('mid'));
+    cam(T0 - .3, { tx: KER.x + 1.2, tz: KER.z - .3, ty: 2.2, dist: 11, pitch: 24, yaw: 10 }, 1.1, 'power3.inOut');
+    cam(T0 + .8, { yaw: 55 }, T1 - T0, 'none');
+    sfx('whoosh', T0 - .3, .8); hit(T0);
+    to(FLOW, T0, { vis: .25 }, .5);
+    to(PEP, T0 + .1, { s: 1 }, .7, 'back.out(1.6)'); sfx('shimmer', T0 + .15, .6);
+    const q = el('g', {}, g); el('circle', { cx: 540, cy: 520, r: 90, fill: C.card, stroke: C.accent, 'stroke-width': 6 }, q); text(q, 540, 526, '?', 130, C.accent);
+    pop(q, T0 + .3, { gain: .6 }); fadeOut(q, pS(si, 1) - .05, .2);
+    const w = pill(g, 540, 520, L.word, { size: 112, fill: 'url(#goldG)', stroke: '#FFF3C4', color: C.ink, sw: 7 });
+    pop(w, pS(si, 1), { from: 2.2, ease: 'power4.out', d: .3, sound: 'thud' }); hit(pS(si, 1)); flash(pS(si, 1), .45); sfx('chime', pS(si, 1) + .1, .8);
+    fadeOut(g, T1 - .1, .25);
+  },
+
+  // ------------------------------------------------------------ 2 VALUE (people)
+  value(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si), g = el('g', {}, $('mid'));
+    sfx('whoosh', T0 - .1, .6); to(DIM, T0 - .1, { v: .62 }, .35);
+    cam(T0 - .1, { tx: ROME.x + 10, tz: ROME.z + 8, ty: 1, dist: 70, pitch: 50, yaw: -10 }, T1 - T0 + .3, 'none');
+    const roman = person({ hairStyle: 'buzz', hair: '#6B6B6B', skin: '#E0B08A', top: '#F4EFE3', topStyle: 'tracksuit', stripe: '#7B2CBF', pants: '#CDBFA3', shoes: '#8A5A2B' }, { x: 270, y: 1245, s: 1.1, face: 1, smile: 0, armN: [40, 80], speed: .8 });
+    const trader = person({ hairStyle: 'short', hair: '#17110E', skin: '#8D5A3B', top: '#FFFFFF', topStyle: 'tee', stripe: '#FFD166', pants: '#F7F1E1', shoes: '#C98B3B' }, { x: 810, y: 1245, s: 1.1, face: -1, smile: 1, armN: [10, 20] });
+    [roman, trader].forEach(p => hide(p.g));
+    tl.to(roman.g, { opacity: 1, duration: .25 }, T0); tl.to(trader.g, { opacity: 1, duration: .25 }, pS(si, 1));
+    // left: Rome card — pepper is worth gold
+    const lc = el('g', {}, g);
+    pill(lc, 270, 330, L.rome, { size: 52, fill: C.card, stroke: C.accent });
+    sackSvg(lc, 190, 520, 1.3); text(lc, 300, 510, '=', 90, '#fff'); coinSvg(lc, 410, 510, 52);
+    pill(lc, 290, 660, L.gold, { size: 46, fill: 'url(#goldG)', stroke: '#FFF3C4', color: C.ink });
+    pop(lc, wT(si, wIdx(si, 0, 1)), { gain: .7 });
+    tl.to(roman.S, { smile: 0, look: 1, duration: .1 }, T0);
+    // right: Kerala — plentiful
+    const rc = el('g', {}, g);
+    pill(rc, 790, 330, L.kerala, { size: 52, fill: C.card, stroke: '#FF8FA3' });
+    [[680, 530, 1.1], [800, 520, 1.25], [900, 545, .95]].forEach(([x, y, s]) => sackSvg(rc, x, y, s));
+    const st = pill(rc, 790, 690, L.plenty, { size: 62, fill: '#1B7F4B', stroke: '#8FF0B5' }); tl.set(st, { rotation: -6, svgOrigin: '790 690' }, 0);
+    pop(rc, pS(si, 1) + .1, { gain: .7 }); pop(st, wT(si, wIdx(si, 1, 2)), { from: 2, ease: 'power4.out', d: .3, sound: 'thud' });
+    sfx('chime', wT(si, wIdx(si, 1, 2)) + .1, .6);
+    fadeOut(g, T1 - .12, .25); [roman.g, trader.g].forEach(e => fadeOut(e, T1 - .12, .25));
+    roman.speakFn = null; DIM_OFF_AT = T1 - .1;
+  },
+
+  // ------------------------------------------------------------ 3 VOYAGE (3D ship)
+  voyage(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si), g = el('g', {}, $('mid')), arr = wT(si, wIdx(si, 0, 5));
+    to(DIM, T0 - .1, { v: 0 }, .3); to(FLOW, T0, { vis: .2 }, .5);
+    to(SH, T0 - .3, { vis: 1 }, .5, 'back.out(1.5)');
+    CAM3.follow = 0; cam(T0 - .3, { tx: W(...CFG.places.route[0]).x, tz: W(...CFG.places.route[0]).z, ty: 1, dist: 22, pitch: 36, yaw: -25 }, .5);
+    tl.to(CAM3, { follow: 1, duration: .6, ease: 'power2.inOut' }, T0 + .1);
+    cam(T0 + .2, { dist: 24, yaw: 25 }, arr - T0, 'sine.inOut');
+    tl.to(SH, { u: 1, duration: arr - T0 + .1, ease: 'sine.inOut' }, T0);
+    tl.to(RT, { u: 1, duration: arr - T0 + .1, ease: 'sine.inOut' }, T0);
+    sfx('whoosh', T0 - .2, .8); for (let k = 0; k < 6; k++) sfx('wave', T0 + k * ((arr - T0) / 6), .5);
+    const sl = anchor(W(...CFG.places.route[0]), 4); pill(sl, 0, -20, L.start, { size: 44, fill: C.card, stroke: C.accent2 });
+    pop(sl, T0 + .1, { gain: .5 }); fadeOut(sl, T0 + 2.2, .3);
+    const mg = el('g', {}, g); pill(mg, 540, 420, L.months, { size: 64, fill: C.card, stroke: C.accent });
+    const clock = el('g', {}, mg); el('circle', { cx: 540, cy: 560, r: 54, fill: '#F4EFE3', stroke: C.accent, 'stroke-width': 6 }, clock);
+    const hand = el('path', { d: 'M540 560 V516', stroke: C.ink, 'stroke-width': 7, 'stroke-linecap': 'round' }, clock);
+    pop(mg, wT(si, wIdx(si, 0, 2)), { gain: .6 });
+    for (let k = 0; k < 12; k++) tl.set(hand, { rotation: (k + 1) * 30, svgOrigin: '540 560' }, wT(si, wIdx(si, 0, 2)) + k * ((arr - wT(si, wIdx(si, 0, 2))) / 12));
+    fadeOut(mg, arr - .3, .3);
+    // arrival: camera swings to the harbour
+    tl.to(CAM3, { follow: 0, duration: .01 }, arr + .05);
+    tl.set(CAM3, { tx: KER.x - 2.5, tz: KER.z, ty: 1 }, arr + .05);
+    cam(arr + .06, { dist: 17, pitch: 30, yaw: -30, tx: KER.x - 1, tz: KER.z, ty: 1 }, 1.0, 'power2.out');
+    const pl = anchor(KER, 5); pill(pl, 0, -30, L.port, { size: 56, fill: 'url(#goldG)', stroke: '#FFF3C4', color: C.ink });
+    to(PINS, arr, { k: 1 }, .4, 'back.out(2)'); pop(pl, arr + .05, { from: 2, ease: 'power4.out', d: .3, sound: 'thud' }); hit(arr); flash(arr, .35); sfx('chime', arr + .1, .9);
+    // coins rain onto the deck
+    const tc = pS(si, 1); BURST.t0 = tc; for (let k = 0; k < 8; k++) sfx('coin', tc + .35 + k * .12, .6);
+    to(SH, tc + .5, { sacks: 1 }, .01); sfx('pop', tc + .5, .6);
+    fadeOut(pl, T1 - .1, .25);
+  },
+
+  // ------------------------------------------------------------ 4 PLINY (people)
+  pliny(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si), g = el('g', {}, $('mid'));
+    sfx('whoosh', T0 - .1, .6); to(DIM, T0 - .1, { v: .4 }, .35); to(SH, T0 - .1, { vis: 0 }, .3); to(RT, T0 - .1, { u: 0 }, .01);
+    to(FLOW, T0, { vis: 1 }, .4); cam(T0 - .1, { tx: -10, tz: -4, ty: 1, dist: 95, pitch: 62, yaw: 0, follow: 0 }, 1, 'power2.inOut');
+    to(PINS, T0, { rome: 1.6 }, .5);
+    const pl = person({ hairStyle: 'buzz', hair: '#8A8A8A', skin: '#E0B08A', top: '#F4EFE3', topStyle: 'tracksuit', stripe: '#7B2CBF', pants: '#CDBFA3', shoes: '#8A5A2B' }, { x: 250, y: 1245, s: 1.1, face: 1, smile: 0, talk: 1, armN: [55, 60] });
+    pl.speakFn = t => speak(si, t); hide(pl.g); tl.to(pl.g, { opacity: 1, duration: .25 }, T0);
+    const sc = el('g', {}, g); el('rect', { x: 400, y: 1010, width: 100, height: 130, rx: 14, fill: '#F2DFAE', stroke: '#B9965B', 'stroke-width': 5 }, sc);
+    for (let i = 0; i < 5; i++) el('rect', { x: 415, y: 1028 + i * 22, width: 70 - (i % 2) * 18, height: 7, rx: 4, fill: '#8B6B35' }, sc);
+    pop(sc, T0 + .2, { gain: .5 });
+    tl.to(pl.S, { smile: 0, look: 1, duration: .1 }, T0);
+    const gg = el('g', {}, g);
+    pill(gg, 300, 560, L.name, { size: 56, fill: C.card, stroke: C.accent }); pill(gg, 300, 660, L.role, { size: 38, fill: '#6A1B9A', stroke: '#D9A7FF' });
+    pop(gg, T0 + .1, { gain: .6 });
+    // the shocking number
+    const cg = el('g', {}, g), ct = text(cg, 640, 760, '0', 100, C.accent, 'middle', { filter: 'url(#glow)' });
+    const un = pill(cg, 640, 860, L.unit, { size: 46, fill: C.card, stroke: C.accent });
+    const tn = pS(si, 1); pop(cg, tn, { from: .6, gain: .6 }); counter(ct, 0, L.count, tn + .1, Math.max(1, pE(si, 1) - tn - .5), fmtInt, 18);
+    tl.to(pl.S, { smile: 0, duration: .1 }, tn);
+    hit(tn); sfx('thud', tn, .5);
+    fadeOut(g, T1 - .12, .25); fadeOut(pl.g, T1 - .12, .25);
+  },
+
+  // ------------------------------------------------------------ 5 PAPYRUS
+  papyrus(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si), g = el('g', {}, $('mid'));
+    sfx('whoosh', T0 - .1, .6); to(DIM, T0 - .1, { v: .5 }, .35); to(FLOW, T0, { vis: .2 }, .4);
+    cam(T0 - .1, { tx: VIE.x + 1, tz: VIE.z + 11, ty: 1, dist: 36, pitch: 46, yaw: 12 }, 1.1, 'power3.inOut');
+    to(PINS, T0 + .2, { v: 1 }, .45, 'back.out(2)');
+    const vl = anchor(VIE, 6); pill(vl, 0, -30, L.city, { size: 52, fill: C.card, stroke: C.accent2 }); pop(vl, T0 + .25, { gain: .6 });
+    // papyrus scroll unrolling
+    const clip = el('clipPath', { id: 'papClip' }, $('defs')); const cr = el('rect', { x: 540, y: 560, width: 0, height: 520 }, clip);
+    const pg = el('g', {}, g);
+    const body = el('g', { 'clip-path': 'url(#papClip)' }, pg);
+    el('rect', { x: 170, y: 580, width: 740, height: 480, rx: 10, fill: 'url(#papG)' }, body);
+    for (let r = 0; r < 6; r++) for (let c = 0; c < 9; c++) { if ((r * 9 + c) % 7 === 3) continue; el('rect', { x: 215 + c * 74 + ((r * 3 + c) % 3) * 4, y: 628 + r * 52, width: 20 + ((r + c * 2) % 4) * 10, height: 9, rx: 4, fill: '#7A5A2A', opacity: .75 }, body); }
+    const rl = el('g', {}, pg); [170, 910].forEach(x => { el('rect', { x: x - 20, y: 560, width: 40, height: 520, rx: 20, fill: '#CDA85F', stroke: '#9A7A3B', 'stroke-width': 4 }, rl); });
+    pg.setAttribute('filter', 'url(#shadow)');
+    const from = { w: 0 };
+    tl.set(pg, { opacity: 0 }, 0); tl.to(pg, { opacity: 1, duration: .2 }, T0 + .2);
+    tl.to(from, { w: 740, duration: 1.1, ease: 'power2.out', onUpdate: () => { cr.setAttribute('x', 540 - from.w / 2 - 20); cr.setAttribute('width', from.w + 40); } }, T0 + .25);
+    sfx('whoosh', T0 + .25, .6); sfx('shimmer', T0 + .5, .4);
+    // phrase 2: the ship's account
+    const t1 = pS(si, 1);
+    const hl = el('rect', { x: 200, y: 740, width: 680, height: 74, rx: 12, fill: C.accent, opacity: 0 }, pg); pg.insertBefore(hl, rl);
+    tl.to(hl, { opacity: .5, duration: .25 }, t1 + .1);
+    const sp = pill(g, 540, 890, L.ship, { size: 66, fill: '#3B2A12', stroke: '#E9C46A', color: '#FFE9A8' }); pop(sp, t1 + .1, { gain: .7 });
+    const er = pill(g, 540, 1020, L.era, { size: 44, fill: C.card, stroke: C.accent }); pop(er, lastW(si) - .2, { gain: .5 }); sfx('chime', lastW(si) - .2, .7);
+    fadeOut(g, T1 - .12, .25); fadeOut(vl, T1 - .12, .25);
+  },
+
+  // ------------------------------------------------------------ 6 NUMBERS
+  numbers(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si), g = el('g', {}, $('mid'));
+    sfx('whoosh', T0 - .1, .6); to(DIM, T0 - .1, { v: 0 }, .3);
+    to(PINS, T0, { v: 0 }, .3); to(SH, T0 - .1, { vis: 1, u: 1, sacks: 1 }, .5, 'back.out(1.5)'); to(RT, T0, { u: 0 }, .01);
+    CAM3.follow = 0; cam(T0 - .1, { tx: KER.x - .6, tz: KER.z, ty: 4.2, dist: 14, pitch: 17, yaw: -35 }, 1, 'power3.inOut');
+    cam(T0 + 1, { yaw: 30 }, T1 - T0, 'sine.inOut');
+    // total value counter
+    const tg = el('g', {}, g), tt = text(tg, 540, 330, '0', 140, C.accent, 'middle', { filter: 'url(#glow)' });
+    pill(tg, 540, 450, L.unit, { size: 48, fill: C.card, stroke: C.accent });
+    fadeIn(tg, T0, .2); const dd = Math.max(1, wT(si, wIdx(si, 0, 3)) - T0);
+    const o = { v: 0 }; tl.to(o, { v: L.total, duration: dd, ease: 'power2.out', onUpdate: () => tt.textContent = Math.round(o.v) + L.suffix }, T0 + .1);
+    for (let k = 0; k < 14; k++) sfx('tick', T0 + .1 + dd * (1 - Math.sqrt(1 - k / 14)), .5);
+    // two-thirds bar
+    const t1 = pS(si, 1), bar = el('g', {}, g);
+    el('rect', { x: 110, y: 540, width: 860, height: 56, rx: 28, fill: '#232A55' }, bar);
+    const peppr = el('rect', { x: 110, y: 540, width: 0, height: 56, rx: 28, fill: '#101010', stroke: '#fff', 'stroke-width': 3 }, bar);
+    const bw = { w: 0 }; tl.to(bw, { w: 860 * 2 / 3, duration: .9, ease: 'power3.out', onUpdate: () => peppr.setAttribute('width', bw.w) }, t1 + .2);
+    pill(bar, 330, 650, L.pepper, { size: 44, fill: '#101010', stroke: '#fff' }); pill(bar, 800, 650, L.other, { size: 40, fill: C.card, stroke: C.accent });
+    fadeIn(bar, t1, .25); sfx('whoosh', t1 + .2, .5);
+    const tw = pill(g, 540, 750, L.twoThirds, { size: 62, fill: 'url(#goldG)', stroke: '#FFF3C4', color: C.ink });
+    pop(tw, wT(si, wIdx(si, 1, 1)), { from: 2, ease: 'power4.out', d: .3, sound: 'thud' }); hit(wT(si, wIdx(si, 1, 1))); sfx('chime', lastW(si), .7);
+    fadeOut(g, T1 - .12, .25);
+  },
+
+  // ------------------------------------------------------------ 7 PATTANAM
+  pattanam(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si), g = el('g', {}, $('mid'));
+    sfx('whoosh', T0 - .1, .6); to(SH, T0 - .1, { vis: 0 }, .3); to(DIM, T0 - .1, { v: .3 }, .4); to(PINS, T0, { k: 1 }, .3);
+    cam(T0 - .1, { tx: KER.x - .5, tz: KER.z - .5, ty: 1, dist: 15, pitch: 40, yaw: -25 }, 1.1, 'power3.inOut');
+    const dg = person({ hairStyle: 'bun', hair: '#2B1B12', skin: '#8D5A3B', top: '#2DD4BF', topStyle: 'tee', pants: '#7A5A2A', shoes: '#4A2E12' }, { x: 260, y: 1245, s: 1.1, face: 1, smile: .8, lean: 14, armN: [60, 30], armF: [50, 20] });
+    hide(dg.g); tl.to(dg.g, { opacity: 1, duration: .25 }, T0);
+    const dig = { a: 0 }; const dugAt = pS(si, 0);
+    // digging motion (time-only): arms swing, body leans
+    dg.speakFn = null; dg.digFn = t => { const s = Math.sin(t * 7); dg.S.armN = [35 + 30 * s, 20 + 25 * s]; dg.S.armF = [30 + 28 * s, 25 + 25 * s]; dg.S.lean = 10 + 8 * s; };
+    PPL.digs = (PPL.digs || []).concat(dg);
+    const mound = el('g', {}, g); el('ellipse', { cx: 560, cy: 1230, rx: 230, ry: 34, fill: '#7B5A33' }, mound); el('ellipse', { cx: 560, cy: 1222, rx: 150, ry: 18, fill: '#5A3F21' }, mound);
+    fadeIn(mound, T0, .3);
+    const pl = anchor(KER, 6); pill(pl, 0, -30, L.place, { size: 56, fill: C.card, stroke: C.accent }); pop(pl, T0 + .3, { gain: .6 });
+    // finds pop out of the ground
+    const cw = wT(si, wIdx(si, 0, 5)), pw = wT(si, wIdx(si, 0, 7));
+    const c1 = el('g', {}, g); coinSvg(c1, 520, 1130, 46); pop(c1, cw, { from: .1, sound: 'coin' }); tl.to(c1, { y: -90, duration: .4, ease: 'power2.out' }, cw); tl.to(c1, { y: -60, duration: .3 }, cw + .4);
+    pill(g, 520, 1075, L.coin, { size: 40, fill: C.card, stroke: C.accent }); const cl = g.lastChild; pop(cl, cw + .25, { gain: .5 });
+    const c2 = el('g', {}, g); el('path', { d: 'M-34 -44 Q-54 -4 -34 40 Q0 56 34 40 Q54 -4 34 -44 Q36 -60 22 -62 L-22 -62 Q-36 -60 -34 -44Z', fill: '#C0663B', stroke: '#7A3A1C', 'stroke-width': 5 }, c2); el('path', { d: 'M-40 -8 H40', stroke: '#7A3A1C', 'stroke-width': 5 }, c2);
+    c2.setAttribute('transform', 'translate(700 1140)'); const c2w = el('g', {}, g); c2w.appendChild(c2);
+    pop(c2w, pw, { from: .1, sound: 'pop', origin: '700px 1140px' }); tl.to(c2w, { y: -80, duration: .4, ease: 'power2.out' }, pw);
+    pill(g, 800, 1075, L.pot, { size: 40, fill: C.card, stroke: '#FF9A62' }); const pt = g.lastChild; pop(pt, pw + .25, { gain: .5 });
+    // the claim
+    const t1 = pS(si, 1), gs = pill(g, 540, 560, L.guess, { size: 100, fill: 'url(#goldG)', stroke: '#FFF3C4', color: C.ink, sw: 7 });
+    pop(gs, wT(si, wIdx(si, 1, 1)), { from: 2.2, ease: 'power4.out', d: .3, sound: 'thud' }); hit(wT(si, wIdx(si, 1, 1))); flash(wT(si, wIdx(si, 1, 1)), .4); sfx('chime', lastW(si) - .1, .8);
+    fadeOut(g, T1 - .12, .25); fadeOut(dg.g, T1 - .12, .25); fadeOut(pl, T1 - .12, .25);
+  },
+
+  // ------------------------------------------------------------ 8 FINALE
+  finale(si, L) {
+    const T0 = sStart(si), g = el('g', {}, $('mid'));
+    sfx('whoosh', T0 - .1, .8); to(DIM, T0 - .1, { v: 0 }, .4); to(PINS, T0, { k: 1 }, .1);
+    to(FLOW, T0, { vis: 1 }, .5); to(PINS, T0 + .3, { beacon: 1, rome: .6 }, 1.2, 'power2.out');
+    cam(T0 - .1, { tx: -4, tz: -2, ty: 1, dist: 130, pitch: 58, yaw: 0 }, DUR - T0 + .2, 'power1.inOut');
+    sfx('shimmer', T0 + .3, .7); hit(T0);
+    const t1 = text(g, 520, 430, L.t1, 112, C.accent, 'middle', { filter: 'url(#glow)' });
+    pop(t1, wT(si, 1), { from: 1.8, ease: 'power4.out', d: .35, sound: 'thud' }); flash(wT(si, 1), .4);
+    const t2 = text(g, 520, 560, L.t2, 62, '#fff', 'middle', { filter: 'url(#glow)' });
+    pop(t2, pS(si, 1) + .1, { sound: 'pop' }); sfx('chime', lastW(si) - .3, 1); sfx('chime', lastW(si) + .1, .8);
+    for (let k = 0; k < 3; k++) { const rg = el('circle', { cx: 540, cy: 520, r: 120, fill: 'none', stroke: C.accent, 'stroke-width': 8, opacity: 0 }, g); const tt = pS(si, 1) + .1 + k * .35; tl.set(rg, { opacity: .8 }, tt); tl.to(rg, { attr: { r: 420 }, opacity: 0, duration: 1, ease: 'power2.out' }, tt); }
+  },
+};
+let DIM_OFF_AT = 0;
+sentences.forEach((s, si) => scenes[s.scene](si, s.labels || {}));
+to(DIM, DIM_OFF_AT, { v: 0 }, .01);
+
+// ------------------------------------------------------------ captions
+const capBox = $('captions'), MAXCH = 30;
+TIM.phrases.forEach((ph, pi) => {
+  const pages = []; let cur = [];
+  ph.words.forEach(w => { const len = cur.reduce((a, b) => a + b.w.length + 1, 0); if (cur.length && len + w.w.length > MAXCH) { pages.push(cur); cur = []; } cur.push(w); });
+  if (cur.length) pages.push(cur);
+  const next = pi + 1 < TIM.phrases.length ? TIM.phrases[pi + 1].start : DUR;
+  pages.forEach((words, k) => {
+    const page = document.createElement('div'); page.className = 'page'; capBox.appendChild(page);
+    const tOut = k + 1 < pages.length ? pages[k + 1][0].t - .2 : (pi + 1 < TIM.phrases.length ? Math.min(next - .06, ph.end + .9) : DUR + 1);
+    tl.set(page, { opacity: 1 }, Math.max(0, words[0].t - .08));
+    words.forEach((w, j) => {
+      const s = document.createElement('span'); s.className = 'w'; s.textContent = w.w; page.appendChild(s);
+      tl.set(s, { opacity: 0, y: 28, scale: .82 }, 0);
+      tl.to(s, { opacity: 1, y: 0, scale: 1, duration: .22, ease: 'back.out(2.5)' }, Math.max(0, w.t - .06));
+      tl.set(s, { color: C.accent }, Math.max(0, w.t - .06));
+      tl.set(s, { color: '#FFFFFF' }, j + 1 < words.length ? words[j + 1].t - .06 : tOut);
+    });
+    tl.to(page, { opacity: 0, y: -18, duration: .1 }, tOut); tl.set(page, { y: 0 }, tOut + .15);
+  });
+});
+
+// ------------------------------------------------------------ time-only seek
+const wrapRender = t => { (PPL.digs || []).forEach(d => d.digFn(t)); render(t); };
+tl.seek(DUR, false); tl.seek(0, false); wrapRender(0);
+window.seek = t => { tl.seek(Math.max(0, Math.min(DUR, t)), false); wrapRender(t); };
+window.DURATION = DUR; window.SFX = SFX.sort((a, b) => a.t - b.t); window.CONFIG = CFG; window.READY = true;
+const q = new URLSearchParams(location.search);
+if (q.has('guides')) { const st = $('stage'); [['0', '0', '1080px', '230px'], ['0', '1520px', '1080px', '400px'], ['940px', '0', '140px', '1920px']].forEach(([l, tp, w, h]) => { const d = document.createElement('div'); d.className = 'guide'; Object.assign(d.style, { left: l, top: tp, width: w, height: h }); st.appendChild(d); }); }
+if (q.has('t')) window.seek(parseFloat(q.get('t')));
+})();
+</script>
+</body>
+</html>

@@ -166,6 +166,15 @@ def sfx_sig(kind):
         boom = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 4.5)
         crash = onepole_lp(rng.standard_normal(len(t)), 7000) * np.exp(-t * 3.2) * 0.35
         return boom + crash, 0
+    if kind == "coin":                     # bright metallic coin clink
+        t = tt(0.55); out = np.zeros(len(t))
+        for f, amp, dec in ((2350, 1, 9), (3150, .8, 11), (4700, .5, 14), (6100, .3, 18)):
+            out += amp * np.sin(2 * np.pi * f * t) * np.exp(-t * dec)
+        return out * np.minimum(t / .001, 1) * 0.5, 0.25
+    if kind == "wave":                     # soft sea swell
+        t = tt(1.4); u = t / 1.4
+        n = onepole_lp(rng.standard_normal(len(t)), 700 + 600 * np.sin(np.pi * u))
+        return n * np.sin(np.pi * u) ** 2 * 1.6, 0
     if kind == "ping":                     # table-tennis ball contact
         t = tt(0.09)
         body = (np.sin(2 * np.pi * 2350 * t) + 0.6 * np.sin(2 * np.pi * 3900 * t)) * np.exp(-t * 90)
@@ -181,7 +190,7 @@ def sfx_sig(kind):
 
 
 SFX_GAIN = {"whoosh": .10, "pop": .13, "tick": .05, "thud": .16, "chime": .10, "shimmer": .07, "fire": .09,
-            "ping": .10, "door": .10, "shutter": .13, "hit": .22}
+            "ping": .10, "door": .10, "shutter": .13, "hit": .22, "coin": .12, "wave": .08}
 
 
 def loudness(path):
