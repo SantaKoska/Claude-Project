@@ -9,7 +9,9 @@ import json, os, re, subprocess
 import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-B = lambda *p: os.path.join(ROOT, "build", *p)
+import sys
+STEM = sys.argv[1] if len(sys.argv) > 1 else "index"
+B = lambda *p: os.path.join(ROOT, "build", STEM, *p)
 SR = 48000
 rng = np.random.default_rng(7)
 
@@ -158,10 +160,22 @@ def sfx_sig(kind):
         cr = (rng.random(len(t)) > 0.9993) * rng.standard_normal(len(t)) * 3
         cr = onepole_lp(cr, 3000)
         return (n + cr) * np.minimum(t / .2, 1) * np.exp(-t * 1.2), 0
+    if kind == "ping":                     # table-tennis ball contact
+        t = tt(0.09)
+        body = (np.sin(2 * np.pi * 2350 * t) + 0.6 * np.sin(2 * np.pi * 3900 * t)) * np.exp(-t * 90)
+        knock = np.sin(2 * np.pi * 700 * t) * np.exp(-t * 140)
+        return (body * 0.6 + knock + rng.standard_normal(len(t)) * np.exp(-t * 600) * 0.3), 0.2
+    if kind == "door":                     # pneumatic bus door hiss
+        t = tt(0.7); n = onepole_lp(rng.standard_normal(len(t)), 5000) - onepole_lp(rng.standard_normal(len(t)), 600) * 0.3
+        return n * np.minimum(t / 0.03, 1) * np.exp(-t * 4) * 1.2, 0
+    if kind == "shutter":                  # camera click
+        t = tt(0.12); c = rng.standard_normal(len(t))
+        return (c * np.exp(-t * 120) + np.roll(c, int(0.05 * SR)) * (t > 0.05) * np.exp(-np.clip(t - 0.05, 0, None) * 140)) * 0.8, 0
     raise ValueError(kind)
 
 
-SFX_GAIN = {"whoosh": .10, "pop": .13, "tick": .05, "thud": .16, "chime": .10, "shimmer": .07, "fire": .09}
+SFX_GAIN = {"whoosh": .10, "pop": .13, "tick": .05, "thud": .16, "chime": .10, "shimmer": .07, "fire": .09,
+            "ping": .10, "door": .10, "shutter": .13}
 
 
 def loudness(path):
@@ -195,10 +209,21 @@ def main():
         z = a * z + (1 - a) * mask[i]; sm[i] = z
     duck = 1 - 0.6 * sm                     # about -8 dB while speaking
     m *= duck
+    # music "drop-outs" for dramatic silences (sfx type "dip")
+    dipg = np.ones(N)
+    for e in meta["sfx"]:
+        if e["type"] != "dip": continue
+        a, b = int(e["t"] * SR), int((e["t"] + e.get("dur", 2)) * SR)
+        r = int(0.35 * SR)
+        env = np.zeros(N); env[a:b] = 1
+        env = np.convolve(env, np.ones(r) / r, "same")
+        dipg = np.minimum(dipg, 1 - 0.85 * env)
+    m *= dipg
 
     fx = np.zeros((2, N)); cache = {}
     for e in meta["sfx"]:
         k = e["type"]
+        if k == "dip": continue
         if k not in cache: cache[k] = sfx_sig(k)
         sig, pan = cache[k]
         g = SFX_GAIN[k] * e.get("gain", 1) * vr / 0.12

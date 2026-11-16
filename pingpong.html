@@ -1,0 +1,1270 @@
+<!doctype html>
+<html lang="ml">
+<head>
+<meta charset="utf-8">
+<title>Ping-Pong Diplomacy Reel</title>
+<meta name="viewport" content="width=1080, initial-scale=1">
+
+<!-- =====================================================================
+     CONFIG — edit this block + the MP3, then run: tools/build.sh pingpong.html
+     Phrases must match the voiceover (a phrase = speech between pauses).
+     ===================================================================== -->
+<script id="config" type="application/json">
+{
+  "title": "പിങ്-പോങ് ഡിപ്ലോമസി",
+  "voice": "audio/pingpong.mp3",
+  "voiceTempo": 1.06,
+  "timing": { "phraseGap": 0.22, "sentenceGap": 0.38, "head": 0.10, "tail": 1.40 },
+  "music": { "bpm": 100, "chords": ["Am", "F", "C", "G"], "level": 0.9 },
+  "font": "FreeSans",
+  "palette": {
+    "bgTop": "#090F2B", "bgMid": "#2A1240", "bgBottom": "#0E4C6E",
+    "glowA": "#FFD166", "glowB": "#EF476F", "glowC": "#4CC9F0",
+    "accent": "#FFD166", "accent2": "#4CC9F0", "danger": "#EF476F",
+    "card": "#141A45", "cardStroke": "#4258C9", "ink": "#0B1030", "text": "#FFFFFF",
+    "usa": "#3A86FF", "china": "#E63946", "table": "#1F5FBF"
+  },
+  "sentences": [
+    { "scene": "hook", "phrases": ["ഒരു പയ്യൻ ബസ് മാറിക്കയറി...", "ആ ഒരു തെറ്റ്,", "ലോകത്തിലെ രണ്ട് വൻശക്തികളെ വീണ്ടും അടുപ്പിച്ചു!"],
+      "labels": { "mistake": "തെറ്റ്!" } },
+    { "scene": "enemies", "phrases": ["1971.", "അമേരിക്കയും ചൈനയും കടുത്ത ശത്രുക്കൾ —", "നയതന്ത്രബന്ധം പോലുമില്ല."],
+      "labels": { "yearFrom": 1949, "year": 1971, "left": "അമേരിക്ക", "right": "ചൈന", "noTies": "നയതന്ത്രബന്ധം" } },
+    { "scene": "wrongbus", "phrases": ["ജപ്പാനിലെ ലോക ടേബിൾ ടെന്നീസ് ചാമ്പ്യൻഷിപ്പ്.", "പത്തൊൻപതുകാരനായ അമേരിക്കൻ താരം ഗ്ലെൻ കോവൻ,", "ഓടിക്കയറിയത്...", "ചൈനീസ് ടീമിന്റെ ബസ്സിൽ!"],
+      "labels": { "event": "ലോക ചാമ്പ്യൻഷിപ്പ്", "place": "ജപ്പാൻ · 1971", "player": "ഗ്ലെൻ കോവൻ", "age": "19" } },
+    { "scene": "silence", "phrases": ["ബസ്സിൽ കനത്ത നിശ്ശബ്ദത.", "ആരും ഒന്നും മിണ്ടുന്നില്ല."], "labels": {} },
+    { "scene": "gift", "phrases": ["പെട്ടെന്ന്,", "ചൈനീസ് ക്യാപ്റ്റൻ ഷുവാങ് സെഡോങ് എഴുന്നേറ്റു...", "കോവന് ഒരു സമ്മാനം കൊടുത്തു."],
+      "labels": { "captain": "ഷുവാങ് സെഡോങ്", "role": "ക്യാപ്റ്റൻ", "gift": "സമ്മാനം" } },
+    { "scene": "photo", "phrases": ["ഇരുവരും ഒരുമിച്ച് ബസ്സിറങ്ങിയ ചിത്രം,", "ലോകമെങ്ങും വാർത്തയായി!"], "labels": { "news": "വാർത്ത" } },
+    { "scene": "invite", "phrases": ["ദിവസങ്ങൾക്കകം അമേരിക്കൻ ടീമിന് ചൈനയിലേക്ക് ക്ഷണം...", "അടുത്ത വർഷം,", "പ്രസിഡന്റ് നിക്സൺ തന്നെ ചൈനയിലെത്തി!"],
+      "labels": { "invite": "ക്ഷണം", "yearFrom": 1971, "year": 1972, "who": "നിക്സൺ" } },
+    { "scene": "outro", "phrases": ["ഇതാണ് \"പിങ്-പോങ് ഡിപ്ലോമസി\" —", "ഒരു കുഞ്ഞു പന്ത് മാറ്റിയ ചരിത്രം!", "ഇത്തരം കഥകൾക്ക് ഫോളോ ചെയ്യൂ!"],
+      "labels": { "title1": "പിങ്-പോങ്", "title2": "ഡിപ്ലോമസി", "follow": "ഫോളോ" } }
+  ]
+}
+</script>
+
+<!-- THE HERO OBJECT — a table-tennis paddle, drawn once, blade up, centred on (0,0).
+     The ball is drawn by the engine (see BALL below). -->
+<template id="object-svg"><svg xmlns="http://www.w3.org/2000/svg">
+  <g id="obj">
+    <rect x="-34" y="40" width="68" height="230" rx="22" fill="url(#handleG)"/>
+    <path d="M-30 90H30M-30 140H30M-30 190H30M-30 240H30" stroke="#8A5A2B" stroke-width="4" opacity=".45"/>
+    <path d="M-48 60 Q0 20 48 60 L34 92 H-34Z" fill="#C88A4E"/>
+    <ellipse cx="0" cy="-110" rx="176" ry="190" fill="#2A1B12"/>
+    <ellipse cx="0" cy="-112" rx="166" ry="180" fill="url(#rubberG)"/>
+    <ellipse cx="-50" cy="-190" rx="70" ry="38" fill="#fff" opacity=".22" transform="rotate(-28 -50 -190)"/>
+    <path d="M-120 -40 Q0 40 120 -40" stroke="#000" stroke-width="6" fill="none" opacity=".12"/>
+  </g>
+</svg></template>
+<!-- ======================= END OF CONFIG ================================ -->
+
+<script id="timings" type="application/json">
+{
+ "duration": 46.651,
+ "audio": "build/pingpong/voice_cut.wav",
+ "phrases": [
+  {
+   "text": "ഒരു പയ്യൻ ബസ് മാറിക്കയറി...",
+   "sentence": 0,
+   "start": 0.132,
+   "end": 1.717,
+   "words": [
+    {
+     "w": "ഒരു",
+     "t": 0.132
+    },
+    {
+     "w": "പയ്യൻ",
+     "t": 0.358
+    },
+    {
+     "w": "ബസ്",
+     "t": 0.778
+    },
+    {
+     "w": "മാറിക്കയറി...",
+     "t": 1.004
+    }
+   ]
+  },
+  {
+   "text": "ആ ഒരു തെറ്റ്,",
+   "sentence": 0,
+   "start": 1.925,
+   "end": 2.783,
+   "words": [
+    {
+     "w": "ആ",
+     "t": 1.925
+    },
+    {
+     "w": "ഒരു",
+     "t": 2.041
+    },
+    {
+     "w": "തെറ്റ്,",
+     "t": 2.313
+    }
+   ]
+  },
+  {
+   "text": "ലോകത്തിലെ രണ്ട് വൻശക്തികളെ വീണ്ടും അടുപ്പിച്ചു!",
+   "sentence": 0,
+   "start": 2.991,
+   "end": 5.764,
+   "words": [
+    {
+     "w": "ലോകത്തിലെ",
+     "t": 2.991
+    },
+    {
+     "w": "രണ്ട്",
+     "t": 3.576
+    },
+    {
+     "w": "വൻശക്തികളെ",
+     "t": 3.915
+    },
+    {
+     "w": "വീണ്ടും",
+     "t": 4.652
+    },
+    {
+     "w": "അടുപ്പിച്ചു!",
+     "t": 5.055
+    }
+   ]
+  },
+  {
+   "text": "1971.",
+   "sentence": 1,
+   "start": 6.123,
+   "end": 7.981,
+   "words": [
+    {
+     "w": "1971.",
+     "t": 6.123
+    }
+   ]
+  },
+  {
+   "text": "അമേരിക്കയും ചൈനയും കടുത്ത ശത്രുക്കൾ —",
+   "sentence": 1,
+   "start": 8.189,
+   "end": 10.425,
+   "words": [
+    {
+     "w": "അമേരിക്കയും",
+     "t": 8.189
+    },
+    {
+     "w": "ചൈനയും",
+     "t": 8.9
+    },
+    {
+     "w": "കടുത്ത",
+     "t": 9.272
+    },
+    {
+     "w": "ശത്രുക്കൾ",
+     "t": 9.704
+    },
+    {
+     "w": "—",
+     "t": 10.351
+    }
+   ]
+  },
+  {
+   "text": "നയതന്ത്രബന്ധം പോലുമില്ല.",
+   "sentence": 1,
+   "start": 10.632,
+   "end": 12.0,
+   "words": [
+    {
+     "w": "നയതന്ത്രബന്ധം",
+     "t": 10.632
+    },
+    {
+     "w": "പോലുമില്ല.",
+     "t": 11.479
+    }
+   ]
+  },
+  {
+   "text": "ജപ്പാനിലെ ലോക ടേബിൾ ടെന്നീസ് ചാമ്പ്യൻഷിപ്പ്.",
+   "sentence": 2,
+   "start": 12.358,
+   "end": 14.925,
+   "words": [
+    {
+     "w": "ജപ്പാനിലെ",
+     "t": 12.358
+    },
+    {
+     "w": "ലോക",
+     "t": 12.946
+    },
+    {
+     "w": "ടേബിൾ",
+     "t": 13.162
+    },
+    {
+     "w": "ടെന്നീസ്",
+     "t": 13.502
+    },
+    {
+     "w": "ചാമ്പ്യൻഷിപ്പ്.",
+     "t": 13.997
+    }
+   ]
+  },
+  {
+   "text": "പത്തൊൻപതുകാരനായ അമേരിക്കൻ താരം ഗ്ലെൻ കോവൻ,",
+   "sentence": 2,
+   "start": 15.132,
+   "end": 17.887,
+   "words": [
+    {
+     "w": "പത്തൊൻപതുകാരനായ",
+     "t": 15.132
+    },
+    {
+     "w": "അമേരിക്കൻ",
+     "t": 16.266
+    },
+    {
+     "w": "താരം",
+     "t": 16.946
+    },
+    {
+     "w": "ഗ്ലെൻ",
+     "t": 17.207
+    },
+    {
+     "w": "കോവൻ,",
+     "t": 17.564
+    }
+   ]
+  },
+  {
+   "text": "ഓടിക്കയറിയത്...",
+   "sentence": 2,
+   "start": 17.991,
+   "end": 18.84,
+   "words": [
+    {
+     "w": "ഓടിക്കയറിയത്...",
+     "t": 17.991
+    }
+   ]
+  },
+  {
+   "text": "ചൈനീസ് ടീമിന്റെ ബസ്സിൽ!",
+   "sentence": 2,
+   "start": 19.047,
+   "end": 20.491,
+   "words": [
+    {
+     "w": "ചൈനീസ്",
+     "t": 19.047
+    },
+    {
+     "w": "ടീമിന്റെ",
+     "t": 19.46
+    },
+    {
+     "w": "ബസ്സിൽ!",
+     "t": 20.011
+    }
+   ]
+  },
+  {
+   "text": "ബസ്സിൽ കനത്ത നിശ്ശബ്ദത.",
+   "sentence": 3,
+   "start": 20.849,
+   "end": 22.519,
+   "words": [
+    {
+     "w": "ബസ്സിൽ",
+     "t": 20.849
+    },
+    {
+     "w": "കനത്ത",
+     "t": 21.337
+    },
+    {
+     "w": "നിശ്ശബ്ദത.",
+     "t": 21.788
+    }
+   ]
+  },
+  {
+   "text": "ആരും ഒന്നും മിണ്ടുന്നില്ല.",
+   "sentence": 3,
+   "start": 22.726,
+   "end": 24.104,
+   "words": [
+    {
+     "w": "ആരും",
+     "t": 22.726
+    },
+    {
+     "w": "ഒന്നും",
+     "t": 22.961
+    },
+    {
+     "w": "മിണ്ടുന്നില്ല.",
+     "t": 23.313
+    }
+   ]
+  },
+  {
+   "text": "പെട്ടെന്ന്,",
+   "sentence": 4,
+   "start": 24.462,
+   "end": 24.906,
+   "words": [
+    {
+     "w": "പെട്ടെന്ന്,",
+     "t": 24.462
+    }
+   ]
+  },
+  {
+   "text": "ചൈനീസ് ക്യാപ്റ്റൻ ഷുവാങ് സെഡോങ് എഴുന്നേറ്റു...",
+   "sentence": 4,
+   "start": 25.094,
+   "end": 27.415,
+   "words": [
+    {
+     "w": "ചൈനീസ്",
+     "t": 25.094
+    },
+    {
+     "w": "ക്യാപ്റ്റൻ",
+     "t": 25.439
+    },
+    {
+     "w": "ഷുവാങ്",
+     "t": 26.068
+    },
+    {
+     "w": "സെഡോങ്",
+     "t": 26.412
+    },
+    {
+     "w": "എഴുന്നേറ്റു...",
+     "t": 26.756
+    }
+   ]
+  },
+  {
+   "text": "കോവന് ഒരു സമ്മാനം കൊടുത്തു.",
+   "sentence": 4,
+   "start": 27.623,
+   "end": 29.104,
+   "words": [
+    {
+     "w": "കോവന്",
+     "t": 27.623
+    },
+    {
+     "w": "ഒരു",
+     "t": 27.955
+    },
+    {
+     "w": "സമ്മാനം",
+     "t": 28.166
+    },
+    {
+     "w": "കൊടുത്തു.",
+     "t": 28.619
+    }
+   ]
+  },
+  {
+   "text": "ഇരുവരും ഒരുമിച്ച് ബസ്സിറങ്ങിയ ചിത്രം,",
+   "sentence": 5,
+   "start": 29.462,
+   "end": 31.481,
+   "words": [
+    {
+     "w": "ഇരുവരും",
+     "t": 29.462
+    },
+    {
+     "w": "ഒരുമിച്ച്",
+     "t": 29.889
+    },
+    {
+     "w": "ബസ്സിറങ്ങിയ",
+     "t": 30.429
+    },
+    {
+     "w": "ചിത്രം,",
+     "t": 31.139
+    }
+   ]
+  },
+  {
+   "text": "ലോകമെങ്ങും വാർത്തയായി!",
+   "sentence": 5,
+   "start": 31.66,
+   "end": 33.141,
+   "words": [
+    {
+     "w": "ലോകമെങ്ങും",
+     "t": 31.66
+    },
+    {
+     "w": "വാർത്തയായി!",
+     "t": 32.367
+    }
+   ]
+  },
+  {
+   "text": "ദിവസങ്ങൾക്കകം അമേരിക്കൻ ടീമിന് ചൈനയിലേക്ക് ക്ഷണം...",
+   "sentence": 6,
+   "start": 33.5,
+   "end": 36.377,
+   "words": [
+    {
+     "w": "ദിവസങ്ങൾക്കകം",
+     "t": 33.5
+    },
+    {
+     "w": "അമേരിക്കൻ",
+     "t": 34.408
+    },
+    {
+     "w": "ടീമിന്",
+     "t": 35.024
+    },
+    {
+     "w": "ചൈനയിലേക്ക്",
+     "t": 35.377
+    },
+    {
+     "w": "ക്ഷണം...",
+     "t": 36.054
+    }
+   ]
+  },
+  {
+   "text": "അടുത്ത വർഷം,",
+   "sentence": 6,
+   "start": 36.585,
+   "end": 37.255,
+   "words": [
+    {
+     "w": "അടുത്ത",
+     "t": 36.585
+    },
+    {
+     "w": "വർഷം,",
+     "t": 36.976
+    }
+   ]
+  },
+  {
+   "text": "പ്രസിഡന്റ് നിക്സൺ തന്നെ ചൈനയിലെത്തി!",
+   "sentence": 6,
+   "start": 37.406,
+   "end": 39.179,
+   "words": [
+    {
+     "w": "പ്രസിഡന്റ്",
+     "t": 37.406
+    },
+    {
+     "w": "നിക്സൺ",
+     "t": 37.963
+    },
+    {
+     "w": "തന്നെ",
+     "t": 38.317
+    },
+    {
+     "w": "ചൈനയിലെത്തി!",
+     "t": 38.596
+    }
+   ]
+  },
+  {
+   "text": "ഇതാണ് \"പിങ്-പോങ് ഡിപ്ലോമസി\" —",
+   "sentence": 7,
+   "start": 39.538,
+   "end": 41.349,
+   "words": [
+    {
+     "w": "ഇതാണ്",
+     "t": 39.538
+    },
+    {
+     "w": "\"പിങ്-പോങ്",
+     "t": 39.919
+    },
+    {
+     "w": "ഡിപ്ലോമസി\"",
+     "t": 40.607
+    },
+    {
+     "w": "—",
+     "t": 41.267
+    }
+   ]
+  },
+  {
+   "text": "ഒരു കുഞ്ഞു പന്ത് മാറ്റിയ ചരിത്രം!",
+   "sentence": 7,
+   "start": 41.557,
+   "end": 43.462,
+   "words": [
+    {
+     "w": "ഒരു",
+     "t": 41.557
+    },
+    {
+     "w": "കുഞ്ഞു",
+     "t": 41.778
+    },
+    {
+     "w": "പന്ത്",
+     "t": 42.16
+    },
+    {
+     "w": "മാറ്റിയ",
+     "t": 42.509
+    },
+    {
+     "w": "ചരിത്രം!",
+     "t": 42.986
+    }
+   ]
+  },
+  {
+   "text": "ഇത്തരം കഥകൾക്ക് ഫോളോ ചെയ്യൂ!",
+   "sentence": 7,
+   "start": 43.67,
+   "end": 45.292,
+   "words": [
+    {
+     "w": "ഇത്തരം",
+     "t": 43.67
+    },
+    {
+     "w": "കഥകൾക്ക്",
+     "t": 44.09
+    },
+    {
+     "w": "ഫോളോ",
+     "t": 44.689
+    },
+    {
+     "w": "ചെയ്യൂ!",
+     "t": 44.93
+    }
+   ]
+  }
+ ]
+}
+</script>
+
+<style>
+  html, body { margin: 0; background: #050816; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  #world { position: absolute; inset: 0; }
+  #capShade { position: absolute; left: 0; right: 0; top: 1180px; height: 740px;
+    background: linear-gradient(to bottom, rgba(4,8,30,0) 0%, rgba(4,8,30,.55) 40%, rgba(4,8,30,.7) 100%); }
+  #captions { position: absolute; left: 50px; width: 860px; top: 1290px; height: 220px; }
+  .page { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center;
+    justify-content: center; text-align: center; opacity: 0; }
+  .w { display: inline-block; font-weight: 700; font-size: 78px; line-height: 1.32; color: #fff;
+    margin: 0 12px; opacity: 0;
+    text-shadow: 0 6px 22px rgba(0,0,0,.6), 0 0 3px rgba(0,0,0,.9), 0 2px 0 rgba(0,0,0,.35); }
+  svg text { font-weight: 700; }
+  .guide { position: absolute; background: rgba(255,0,80,.25); pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="world" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+    <defs id="defs"></defs>
+    <rect id="bg" width="1080" height="1920" fill="url(#bgG)"/>
+    <g id="blobs"></g>
+    <g id="cam">
+      <g id="layerBack"></g>
+      <g id="layerMid"></g>
+      <g id="flags"></g>
+      <g id="heroWrap" filter="url(#shadow)"><g id="hero"></g></g>
+      <g id="layerFront"></g>
+      <g id="ballG"></g>
+    </g>
+    <g id="layerScreen"></g>
+    <rect width="1080" height="1920" fill="url(#vignette)" pointer-events="none"/>
+  </svg>
+  <div id="capShade"></div>
+  <div id="captions"></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script>
+(async function () {
+const CFG = JSON.parse(document.getElementById('config').textContent);
+const TIM = JSON.parse(document.getElementById('timings').textContent);
+const C = CFG.palette, FONT = CFG.font;
+const NS = 'http://www.w3.org/2000/svg';
+const DUR = TIM.duration;
+const SFX = [];
+const $ = id => document.getElementById(id);
+const sfx = (type, t, gain = 1, extra = {}) => SFX.push(Object.assign({ type, t: +Math.max(0, t).toFixed(3), gain }, extra));
+
+await document.fonts.load(`700 80px ${FONT}`, 'മലയാളം');
+document.body.style.fontFamily = FONT;
+
+// ---------------------------------------------------------------- helpers
+function el(tag, attrs = {}, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function svg(parent, markup) { const g = el('g', {}, parent); g.innerHTML = markup; return g; }
+function text(parent, x, y, str, size, fill, anchor = 'middle', extra = {}) {
+  const t = el('text', Object.assign({ x, y, 'font-size': size, fill, 'text-anchor': anchor,
+    'font-family': FONT, 'dominant-baseline': 'central' }, extra), parent);
+  t.textContent = str; return t;
+}
+function pill(parent, cx, cy, str, o = {}) {
+  const g = el('g', {}, parent);
+  const size = o.size || 56, padX = o.padX ?? size * 0.55, padY = o.padY ?? size * 0.32;
+  const r = el('rect', { fill: o.fill || C.card, stroke: o.stroke || C.cardStroke, 'stroke-width': o.sw ?? 4 }, g);
+  const t = text(g, cx, cy, str, size, o.color || '#fff');
+  const b = t.getBBox();
+  const w = b.width + padX * 2, h = size * 1.25 + padY * 2;
+  r.setAttribute('x', cx - w / 2); r.setAttribute('y', cy - h / 2);
+  r.setAttribute('width', w); r.setAttribute('height', h); r.setAttribute('rx', o.rx ?? h / 2);
+  g.box = { w, h }; g.label = t; g.rect = r;
+  return g;
+}
+const starPath = (cx, cy, R, r, rot = -90) => {
+  let d = '';
+  for (let i = 0; i < 10; i++) {
+    const a = (rot + i * 36) * Math.PI / 180, rad = i % 2 ? r : R;
+    d += (i ? 'L' : 'M') + (cx + rad * Math.cos(a)).toFixed(1) + ' ' + (cy + rad * Math.sin(a)).toFixed(1);
+  }
+  return d + 'Z';
+};
+let uid = 0;
+
+// ---------------------------------------------------------------- defs
+$('defs').innerHTML = `
+  <linearGradient id="bgG" x1="0" y1="0" x2="0.3" y2="1">
+    <stop offset="0" stop-color="${C.bgTop}"/><stop offset=".55" stop-color="${C.bgMid}"/><stop offset="1" stop-color="${C.bgBottom}"/>
+  </linearGradient>
+  <radialGradient id="vignette" cx=".5" cy=".45" r=".75">
+    <stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".55"/>
+  </radialGradient>
+  <radialGradient id="blobA"><stop offset="0" stop-color="${C.glowA}" stop-opacity=".45"/><stop offset="1" stop-color="${C.glowA}" stop-opacity="0"/></radialGradient>
+  <radialGradient id="blobB"><stop offset="0" stop-color="${C.glowB}" stop-opacity=".5"/><stop offset="1" stop-color="${C.glowB}" stop-opacity="0"/></radialGradient>
+  <radialGradient id="blobC"><stop offset="0" stop-color="${C.glowC}" stop-opacity=".45"/><stop offset="1" stop-color="${C.glowC}" stop-opacity="0"/></radialGradient>
+  <radialGradient id="ballG2" cx=".38" cy=".32" r=".75"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".6" stop-color="#FFF1DC"/><stop offset="1" stop-color="#E9B97A"/></radialGradient>
+  <radialGradient id="ballGlow"><stop offset="0" stop-color="#FFE9B0" stop-opacity=".8"/><stop offset="1" stop-color="#FFE9B0" stop-opacity="0"/></radialGradient>
+  <radialGradient id="rubberG" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#FF5A5F"/><stop offset="1" stop-color="#B3122A"/></radialGradient>
+  <linearGradient id="handleG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B9773D"/><stop offset=".45" stop-color="#F0C48A"/><stop offset="1" stop-color="#9A5B26"/></linearGradient>
+  <linearGradient id="busG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0525E"/><stop offset="1" stop-color="#A3162A"/></linearGradient>
+  <linearGradient id="glassG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9BD6FF"/><stop offset="1" stop-color="#2B5F8F"/></linearGradient>
+  <linearGradient id="tableG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3B82E0"/><stop offset="1" stop-color="#1A4FA0"/></linearGradient>
+  <linearGradient id="cardG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1D2B78"/><stop offset="1" stop-color="#0E1648"/></linearGradient>
+  <linearGradient id="interiorG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A1E3F"/><stop offset="1" stop-color="#1A0E22"/></linearGradient>
+  <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE3B3"/><stop offset="1" stop-color="#F7B267"/></linearGradient>
+  <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE29A"/><stop offset="1" stop-color="#D9A02B"/></linearGradient>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="#020414" flood-opacity=".55"/></filter>
+  <filter id="cardShadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#020414" flood-opacity=".5"/></filter>
+`;
+
+// ---------------------------------------------------------------- background
+const blobs = [
+  el('circle', { cx: 300, cy: 600, r: 520, fill: 'url(#blobB)' }, $('blobs')),
+  el('circle', { cx: 820, cy: 1150, r: 560, fill: 'url(#blobC)' }, $('blobs')),
+  el('circle', { cx: 560, cy: 900, r: 420, fill: 'url(#blobA)', opacity: .6 }, $('blobs')),
+];
+const dust = [];
+for (let i = 0; i < 26; i++) dust.push(el('circle', { r: 2 + (i * 7 % 5), fill: '#fff', opacity: 0 }, $('blobs')));
+
+// ---------------------------------------------------------------- hero: paddle + ball
+$('hero').innerHTML = document.getElementById('object-svg').content.querySelector('svg').innerHTML;
+const heroG = $('hero');
+const P = { x: 1000, y: 1380, r: 40, s: .95 };               // paddle state
+const BALL = { x: 600, y: 820, s: .9, hop: 0, o: 1 };      // ball state
+const ballGlow = el('circle', { r: 80, fill: 'url(#ballGlow)' }, $('ballG'));
+const ballC = el('circle', { r: 36, fill: 'url(#ballG2)' }, $('ballG'));
+const CAM = { x: 540, y: 960, s: 1, shake: 0 };
+const F = { ux: -260, uy: 620, cx: 1340, cy: 620, s: 1, shake: 0 };   // flag badges
+const AMB = { dark: 0, lights: 0 };
+let NOW = 0;
+const HOPW = 5;   // hop angular speed (bounces every PI/HOPW s)
+
+// ---------------------------------------------------------------- reusable drawings
+function flagUSA(parent, r) {
+  const g = el('g', {}, parent), id = 'fu' + (uid++);
+  const cp = el('clipPath', { id }, $('defs')); el('circle', { r }, cp);
+  const inner = el('g', { 'clip-path': `url(#${id})` }, g);
+  for (let i = 0; i < 9; i++) el('rect', { x: -r, y: -r + i * (2 * r / 9), width: 2 * r, height: 2 * r / 9 + 1, fill: i % 2 ? '#FFFFFF' : '#D62839' }, inner);
+  el('rect', { x: -r, y: -r, width: r * 1.05, height: r * .95, fill: '#1D3A8A' }, inner);
+  for (let a = 0; a < 4; a++) for (let b = 0; b < 4; b++) el('circle', { cx: -r * .82 + b * r * .24, cy: -r * .78 + a * r * .22, r: r * .045, fill: '#fff' }, inner);
+  el('circle', { r, fill: 'none', stroke: '#fff', 'stroke-width': 8 }, g);
+  return g;
+}
+function flagChina(parent, r) {
+  const g = el('g', {}, parent);
+  el('circle', { r, fill: '#DE2910' }, g);
+  el('path', { d: starPath(-r * .38, -r * .28, r * .32, r * .13), fill: '#FFDE00' }, g);
+  [[-.02, -.62], [.14, -.42], [.14, -.14], [-.02, .06]].forEach(([x, y], i) =>
+    el('path', { d: starPath(r * x, r * y, r * .1, r * .04, -90 + i * 20), fill: '#FFDE00' }, g));
+  el('circle', { r, fill: 'none', stroke: '#fff', 'stroke-width': 8 }, g);
+  return g;
+}
+function figure(parent, x, y, color, s = 1, o = {}) {     // (x,y) = feet
+  const g = el('g', { transform: `translate(${x} ${y}) scale(${s})` }, parent);
+  el('path', { d: 'M-70 0 L-62 -170 Q-58 -205 0 -210 Q58 -205 62 -170 L70 0 Z', fill: color }, g);
+  el('rect', { x: -16, y: -232, width: 32, height: 30, fill: color }, g);
+  el('circle', { cx: 0, cy: -272, r: 50, fill: color }, g);
+  el('circle', { cx: -16, cy: -288, r: 16, fill: '#fff', opacity: .18 }, g);
+  if (o.smile) el('path', { d: 'M-20 -262 Q0 -240 20 -262', stroke: '#fff', 'stroke-width': 6, fill: 'none', 'stroke-linecap': 'round' }, g);
+  return g;
+}
+function bus(parent) {                                      // facing left, centred
+  const g = el('g', {}, parent);
+  el('rect', { x: -330, y: -150, width: 660, height: 280, rx: 46, fill: 'url(#busG)', stroke: '#FFB3BA', 'stroke-width': 4 }, g);
+  el('path', { d: 'M-330 -40 L-330 -104 Q-330 -150 -284 -150 L-250 -150 L-250 -40Z', fill: 'url(#glassG)' }, g);
+  for (let i = 0; i < 5; i++) el('rect', { x: -120 + i * 86, y: -122, width: 70, height: 84, rx: 12, fill: 'url(#glassG)' }, g);
+  el('rect', { x: -330, y: 10, width: 660, height: 22, fill: '#FFD166' }, g);
+  const door = el('g', {}, g);
+  el('rect', { x: -232, y: -122, width: 92, height: 236, rx: 8, fill: '#12223A' }, door);
+  const dl = el('rect', { x: -232, y: -122, width: 46, height: 236, fill: 'url(#glassG)', stroke: '#7A1220', 'stroke-width': 4 }, door);
+  const dr = el('rect', { x: -186, y: -122, width: 46, height: 236, fill: 'url(#glassG)', stroke: '#7A1220', 'stroke-width': 4 }, door);
+  const badge = flagChina(g, 44); badge.setAttribute('transform', 'translate(150 66)');
+  [-200, 210].forEach(x => { el('circle', { cx: x, cy: 132, r: 52, fill: '#1B1B24' }, g); el('circle', { cx: x, cy: 132, r: 22, fill: '#9AA3B5' }, g); });
+  el('circle', { cx: -318, cy: 70, r: 14, fill: '#FFF3B0', filter: 'url(#glow)' }, g);
+  return { g, dl, dr, badge };
+}
+function paper(parent, cx, cy) {
+  const g = el('g', {}, parent);
+  el('rect', { x: cx - 120, y: cy - 150, width: 240, height: 300, rx: 6, fill: '#F4EFE3', filter: 'url(#cardShadow)' }, g);
+  el('rect', { x: cx - 100, y: cy - 130, width: 200, height: 30, fill: '#1B1B24' }, g);
+  el('rect', { x: cx - 100, y: cy - 88, width: 120, height: 90, fill: '#9AA3B5' }, g);
+  for (let i = 0; i < 7; i++) el('rect', { x: cx - 100 + (i < 4 ? 130 : 0), y: cy - 88 + (i < 4 ? i * 24 : 110 + (i - 4) * 24), width: i < 4 ? 70 : 200, height: 10, fill: '#B9B2A3' }, g);
+  return g;
+}
+
+// ---------------------------------------------------------------- timing helpers
+const sentences = CFG.sentences.map((s, si) => {
+  const ph = TIM.phrases.filter(p => p.sentence === si);
+  return Object.assign({}, s, { ph, words: ph.flatMap(p => p.words) });
+});
+const sStart = si => sentences[si].ph[0].start;
+const sEnd = si => si + 1 < sentences.length ? sStart(si + 1) : DUR;
+const pS = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].start;
+const pE = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].end;
+const wT = (si, k) => { const w = sentences[si].words; return w[Math.max(0, Math.min(k, w.length - 1))].t; };
+const lastW = si => wT(si, sentences[si].words.length - 1);
+
+const tl = gsap.timeline({ paused: true });
+tl.to({}, { duration: DUR }, 0);
+
+function hide(e) { tl.set(e, { opacity: 0 }, 0); }
+function pop(e, t, o = {}) {
+  tl.set(e, { opacity: 0, scale: o.from ?? .3, transformOrigin: o.origin || '50% 50%' }, 0);
+  tl.to(e, { opacity: 1, scale: 1, duration: o.d || .5, ease: o.ease || 'back.out(2.2)' }, t);
+  if (o.sound !== false) sfx(o.sound || 'pop', t, o.gain ?? .9);
+}
+function fadeIn(e, t, d = .4) { hide(e); tl.to(e, { opacity: 1, duration: d }, t); }
+function fadeOut(e, t, d = .35) { tl.to(e, { opacity: 0, duration: d, ease: 'power1.in' }, t); }
+function drawPath(p, t, d, ease = 'power2.inOut') {
+  const L = p.getTotalLength(); p.setAttribute('stroke-dasharray', L + ' ' + L);
+  tl.set(p, { attr: { 'stroke-dashoffset': L } }, 0);
+  tl.to(p, { attr: { 'stroke-dashoffset': 0 }, duration: d, ease }, t);
+}
+function counter(tEl, from, to, t, d, fmt = v => v, ticks = 12) {
+  const o = { v: from }; tEl.textContent = fmt(from);
+  tl.to(o, { v: to, duration: d, ease: 'power2.out', onUpdate: () => tEl.textContent = fmt(Math.round(o.v)) }, t);
+  for (let k = 0; k < ticks; k++) sfx('tick', t + d * (1 - Math.sqrt(1 - k / ticks)), .55);
+}
+const to = (obj, t, v, d = .9, ease = 'power3.inOut') => tl.to(obj, Object.assign({ duration: d, ease }, v), t);
+function crossMark(parent, cx, cy, size, t) {
+  const g = el('g', { filter: 'url(#glow)' }, parent);
+  [[-1, -1, 1, 1], [1, -1, -1, 1]].forEach(([a, b, c, d], i) => {
+    const p = el('path', { d: `M${cx + a * size} ${cy + b * size}L${cx + c * size} ${cy + d * size}`, stroke: C.danger, 'stroke-width': 22, 'stroke-linecap': 'round', fill: 'none' }, g);
+    drawPath(p, t + i * .14, .18, 'power2.out');
+  });
+  sfx('thud', t + .1, 1);
+  return g;
+}
+function hop(t0, t1, gain = .35) {          // ball bounces in place between t0..t1
+  to(BALL, t0, { hop: 1 }, .25, 'power1.out'); to(BALL, t1, { hop: 0 }, .25, 'power1.in');
+  for (let k = Math.ceil(t0 * HOPW / Math.PI); k * Math.PI / HOPW < t1; k++) sfx('ping', k * Math.PI / HOPW, gain);
+}
+function rally(t0, t1, pts, h = 160, gain = .7) {    // ball flies point to point in arcs
+  const n = pts.length - 1, d = (t1 - t0) / n;
+  for (let k = 0; k < n; k++) {
+    const o = { u: 0 }, [ax, ay] = pts[k], [bx, by] = pts[k + 1];
+    tl.to(o, { u: 1, duration: d, ease: 'none', onUpdate: () => {
+      BALL.x = ax + (bx - ax) * o.u; BALL.y = ay + (by - ay) * o.u - h * 4 * o.u * (1 - o.u);
+    } }, t0 + k * d);
+    sfx('ping', t0 + (k + 1) * d, gain);
+  }
+}
+function flash(t, peak = .9) {
+  tl.set(flashR, { opacity: peak }, t); tl.to(flashR, { opacity: 0, duration: .45, ease: 'power2.out' }, t + .03);
+}
+const darkR = el('rect', { width: 1080, height: 1920, fill: '#02030A', opacity: 0 }, $('layerScreen'));
+const flashR = el('rect', { width: 1080, height: 1920, fill: '#FFFFFF', opacity: 0 }, $('layerScreen'));
+
+// flags (persistent)
+const fU = flagUSA($('flags'), 130), fC = flagChina($('flags'), 130);
+const fGlow = el('circle', { r: 40, fill: 'none', stroke: C.accent, 'stroke-width': 16, opacity: 0, filter: 'url(#glow)' }, $('flags'));
+
+// ================================================================= SCENES
+const scenes = {
+  // --------------------------------------------------------------- HOOK
+  hook(si, L) {
+    const g = el('g', {}, $('layerMid'));
+    // speed lines behind the incoming ball
+    const speed = el('g', { opacity: 1 }, $('layerBack'));
+    for (let i = 0; i < 16; i++) {
+      const a = i / 16 * Math.PI * 2;
+      el('path', { d: `M${600 + Math.cos(a) * 230} ${820 + Math.sin(a) * 230}L${600 + Math.cos(a) * 900} ${820 + Math.sin(a) * 900}`, stroke: '#fff', 'stroke-width': 6, opacity: .25 }, speed);
+    }
+    tl.to(speed, { scale: 1.25, svgOrigin: '600 820', duration: .45, ease: 'power2.in' }, 0);
+    fadeOut(speed, .42, .2);
+    tl.set(BALL, { x: 600, y: 820, s: .9 }, 0);
+    to(BALL, 0, { s: 2.4 }, .45, 'power2.in');
+    to(P, 0, { x: 790, y: 1110, r: -22, s: .95 }, .42, 'power3.out');
+    sfx('whoosh', 0, .9);
+    // smash!
+    const tS = .45;
+    sfx('ping', tS, 1.6); sfx('thud', tS, .8);
+    const ring = el('circle', { cx: 640, cy: 870, r: 60, fill: 'none', stroke: '#fff', 'stroke-width': 14, opacity: 0 }, $('layerFront'));
+    tl.set(ring, { opacity: .9 }, tS); tl.to(ring, { attr: { r: 420 }, opacity: 0, duration: .5, ease: 'power2.out' }, tS);
+    to(CAM, tS, { shake: 1 }, .05); to(CAM, tS + .05, { shake: 0 }, .4, 'power2.out');
+    to(BALL, tS, { x: 930, y: 330, s: 1 }, .6, 'power3.out');
+    to(P, tS + .15, { x: 1250, y: 1650, r: 40, s: .9 }, .7, 'power2.in');
+    hop(tS + .6, sEnd(si) + 3);
+    // the bus pulls in and opens its door
+    const B1 = bus(g);
+    const bp = { x: 1500 };
+    const placeBus = () => B1.g.setAttribute('transform', `translate(${bp.x} 990)`);
+    placeBus();
+    tl.to(bp, { x: 560, duration: .9, ease: 'power3.out', onUpdate: placeBus }, .3);
+    sfx('whoosh', .3, .7);
+    tl.to([B1.dl, B1.dr], { attr: { width: 4 }, duration: .3 }, 1.2);
+    tl.to(B1.dr, { attr: { x: -144 }, duration: .3 }, 1.2);
+    sfx('door', 1.15, .8);
+    // "the mistake"
+    const st = pill(g, 560, 760, L.mistake, { size: 84, fill: C.danger, stroke: '#FFD6DD', sw: 6 });
+    tl.set(st, { rotation: -8, svgOrigin: '560 760' }, 0);
+    pop(st, pS(si, 1), { from: 2.2, ease: 'power4.out', d: .3, sound: 'thud' });
+    // bus leaves; two superpowers drift together
+    const t2 = pS(si, 2);
+    fadeOut(st, t2 - .05, .2);
+    tl.to(bp, { x: -800, duration: .8, ease: 'power3.in', onUpdate: placeBus }, t2);
+    sfx('whoosh', t2, .8);
+    to(F, t2 + .2, { ux: 410, cx: 670, uy: 640, cy: 640 }, lastW(si) - t2 - .1, 'power2.inOut');
+    const tm = lastW(si) + .1;
+    tl.set(fGlow, { opacity: 1, attr: { cx: 540, cy: 640, r: 30 } }, tm);
+    tl.to(fGlow, { attr: { r: 330 }, opacity: 0, duration: .7, ease: 'power2.out' }, tm);
+    sfx('chime', tm, 1);
+    fadeOut(g, sEnd(si) - .05, .2);
+  },
+
+  // --------------------------------------------------------------- ENEMIES
+  enemies(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si);
+    const g = el('g', {}, $('layerMid'));
+    to(F, T0 - .1, { ux: 220, cx: 860, uy: 800, cy: 800 }, .8);
+    sfx('whoosh', T0 - .1, .6);
+    const yt = text(g, 540, 470, '', 200, C.accent, 'middle', { filter: 'url(#glow)' });
+    fadeIn(yt, T0, .2);
+    counter(yt, L.yearFrom, L.year, T0 + .05, pE(si, 0) - T0 - .2, v => v, 12);
+    // crack of hostility
+    const crack = el('path', { d: 'M540 640 L505 700 L565 760 L515 830 L570 890 L530 960', stroke: C.danger, 'stroke-width': 12, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', filter: 'url(#glow)' }, g);
+    drawPath(crack, pS(si, 1), .35, 'power2.out'); sfx('thud', pS(si, 1) + .05, .9);
+    const lu = pill(g, 220, 990, L.left, { size: 50, fill: C.card, stroke: C.usa });
+    const lc = pill(g, 860, 990, L.right, { size: 50, fill: C.card, stroke: C.china });
+    pop(lu, wT(si, 1), { gain: .6 }); pop(lc, wT(si, 2), { gain: .6 });
+    to(F, wT(si, 3), { shake: 1 }, .1); to(F, wT(si, 3) + .5, { shake: 0 }, .3);
+    sfx('thud', wT(si, 3), .6);
+    const nt = pill(g, 540, 1140, L.noTies, { size: 56, fill: '#1F2433', stroke: '#94A3B8' });
+    pop(nt, pS(si, 2));
+    crossMark(g, 540, 1140, 48, lastW(si) - .1);
+    fadeOut(g, T1 - .1, .3);
+    to(F, T1 - .2, { ux: -300, cx: 1380 }, .6, 'power2.in');
+    tl.to(BALL, { x: 960, y: 300, duration: .5 }, T0);
+  },
+
+  // --------------------------------------------------------------- WRONG BUS
+  wrongbus(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si);
+    const g = el('g', {}, $('layerMid'));
+    sfx('whoosh', T0 - .1, .6);
+    // championship: table, banner, paddle, rally
+    const champ = el('g', {}, g);
+    const ev = pill(champ, 540, 380, L.event, { size: 62, fill: 'url(#goldG)', stroke: '#FFF1C1', color: C.ink, sw: 5 });
+    const pl = el('g', {}, champ);
+    el('circle', { cx: 400, cy: 488, r: 18, fill: '#fff' }, pl); el('circle', { cx: 400, cy: 488, r: 9, fill: '#BC002D' }, pl);
+    pill(pl, 570, 488, L.place, { size: 50, fill: C.card, stroke: '#fff' });
+    const table = el('g', {}, champ);
+    el('rect', { x: 140, y: 820, width: 800, height: 34, rx: 6, fill: 'url(#tableG)', stroke: '#fff', 'stroke-width': 5 }, table);
+    el('path', { d: 'M540 822 V854', stroke: '#fff', 'stroke-width': 4 }, table);
+    [190, 890].forEach(x => el('rect', { x: x - 12, y: 854, width: 24, height: 190, fill: '#1B2540' }, table));
+    el('rect', { x: 532, y: 742, width: 16, height: 82, fill: '#E5E7EB', opacity: .9 }, table);
+    el('path', { d: 'M540 750 V820', stroke: '#9CA3AF', 'stroke-width': 3, 'stroke-dasharray': '6 6' }, table);
+    pop(ev, T0, { sound: false }); pop(pl, T0 + .25, { gain: .5 }); fadeIn(table, T0, .3);
+    to(P, T0 - .1, { x: 930, y: 700, r: -35, s: .55 }, .7);
+    tl.to(BALL, { x: 250, y: 790, s: 1, duration: .5 }, T0);
+    rally(T0 + .5, pE(si, 0), [[250, 790], [800, 790], [300, 790], [830, 790]], 170, .6);
+    const t1 = pS(si, 1);
+    fadeOut(champ, t1 - .1, .3);
+    to(P, t1 - .2, { x: 1450, y: 150, r: 30 }, .6, 'power2.in');
+    to(BALL, t1, { x: 960, y: 300, s: 1 }, .6);
+    hop(t1 + .6, T1 - .3);
+    // Glenn Cowan
+    const cow = el('g', {}, g);
+    const cfig = el('g', {}, cow); figure(cfig, 0, 0, C.usa, 1);
+    const cpos = { x: 300, run: 0 };
+    const placeC = () => cow.setAttribute('transform', `translate(${cpos.x} ${1160 + (cpos.run || 0) * -Math.abs(Math.sin(NOW * 14)) * 22})`);
+    window.__placeC = placeC; placeC();
+    const name = el('g', {}, g);
+    pill(name, 300, 790, L.player, { size: 54, fill: C.card, stroke: C.usa });
+    const age = el('g', {}, name);
+    el('circle', { cx: 455, cy: 715, r: 50, fill: C.accent, filter: 'url(#glow)' }, age);
+    text(age, 455, 717, L.age, 54, C.ink);
+    pop(cow, t1, { from: .6 }); pop(name, t1 + .2, { sound: false }); pop(age, wT(si, 5), { gain: .6 });
+    // the red bus with the China badge arrives, he runs in
+    const t2 = pS(si, 2);
+    const B2 = bus(g); B2.g.setAttribute('transform', 'scale(.9)');
+    const bp = { x: 1500 };
+    const placeBus = () => B2.g.setAttribute('transform', `translate(${bp.x} 1010) scale(.9)`);
+    placeBus();
+    tl.to(bp, { x: 720, duration: .8, ease: 'power3.out', onUpdate: placeBus }, t2 - .5);
+    sfx('whoosh', t2 - .5, .6);
+    tl.to([B2.dl, B2.dr], { attr: { width: 4 }, duration: .25 }, t2 + .2);
+    tl.to(B2.dr, { attr: { x: -144 }, duration: .25 }, t2 + .2);
+    sfx('door', t2 + .15, .7);
+    fadeOut(name, t2, .25);
+    tl.to(cpos, { x: 545, duration: pE(si, 2) - t2 + .25, ease: 'power1.inOut', onUpdate: placeC }, t2);
+    tl.to(cpos, { run: 1, duration: .1, onUpdate: placeC }, t2); tl.to(cpos, { run: 0, duration: .1, onUpdate: placeC }, pE(si, 2) + .25);
+    for (let k = 0; k < 5; k++) sfx('tick', t2 + k * .18, .5);
+    const t3 = pS(si, 3);
+    tl.to(cow, { opacity: 0, scale: .85, transformOrigin: '50% 100%', duration: .3 }, t3 - .05);
+    tl.to([B2.dl, B2.dr], { attr: { width: 46 }, duration: .25 }, t3 + .25);
+    tl.to(B2.dr, { attr: { x: -186 }, duration: .25 }, t3 + .25);
+    sfx('door', t3 + .2, .6);
+    tl.to(B2.badge, { scale: 1.5, svgOrigin: '150 66', duration: .25, yoyo: true, repeat: 1 }, wT(si, sentences[si].words.length - 2));
+    const bang = el('g', {}, g);
+    el('circle', { cx: 720, cy: 760, r: 66, fill: C.danger, filter: 'url(#glow)' }, bang);
+    text(bang, 720, 762, '!', 96, '#fff');
+    pop(bang, lastW(si), { from: .2 });
+    tl.to(bp, { x: 700, duration: .08, yoyo: true, repeat: 3, onUpdate: placeBus }, lastW(si));
+    fadeOut(g, T1 - .1, .3);
+    to(CAM, T1 - .4, { s: 1.6, x: 720, y: 930 }, .36, 'power2.in');
+    tl.set(CAM, { s: 1, x: 540, y: 960 }, T1 - .02);
+  },
+
+  // --------------------------------------------------------------- SILENCE (inside the bus)
+  silence(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si);
+    const g = el('g', {}, $('layerBack'));
+    window.__interior = g;
+    el('rect', { x: 0, y: 400, width: 1080, height: 900, fill: 'url(#interiorG)' }, g);
+    const wid = 'win' + (uid++), cp = el('clipPath', { id: wid }, $('defs'));
+    for (let i = 0; i < 5; i++) {
+      el('rect', { x: 40 + i * 205, y: 450, width: 180, height: 190, rx: 20 }, cp);
+      el('rect', { x: 40 + i * 205, y: 450, width: 180, height: 190, rx: 20, fill: '#0B1B33', stroke: '#6B4A72', 'stroke-width': 6 }, g);
+    }
+    const lights = el('g', { 'clip-path': `url(#${wid})` }, g);
+    window.__lights = [];
+    for (let i = 0; i < 12; i++) window.__lights.push(el('rect', { y: 470 + (i * 37 % 150), width: 60 + (i % 3) * 30, height: 8, rx: 4, fill: i % 2 ? '#FFD166' : '#4CC9F0', opacity: .7 }, lights));
+    el('rect', { x: 0, y: 1150, width: 1080, height: 200, fill: '#120A18' }, g);
+    el('path', { d: 'M160 420 V1160', stroke: '#C0C7D6', 'stroke-width': 12 }, g);
+    // Cowan standing at the front
+    figure(g, 250, 1160, C.usa, .9);
+    // Chinese team seated
+    const seated = [];
+    [480, 625, 770, 915].forEach((x, i) => {
+      const fg = el('g', {}, g); figure(fg, x, 1110, '#C1121F', .78);
+      seated.push(fg);
+      el('rect', { x: x - 70, y: 900, width: 140, height: 230, rx: 26, fill: '#6E2433', stroke: '#9A3B4D', 'stroke-width': 4 }, g);
+    });
+    window.__seated = seated;
+    fadeIn(g, T0 - .05, .35);
+    to(CAM, T0, { s: 1.07, y: 940 }, T1 - T0 + 1.5, 'none');
+    to(AMB, T0, { dark: .35, lights: 1 }, 1.2, 'power1.inOut');
+    sfx('dip', T0, 1, { dur: T1 - T0 + .2 });
+    // ticking clock + muted speech
+    const clock = el('g', {}, g);
+    el('circle', { cx: 760, cy: 330, r: 62, fill: '#F4EFE3', stroke: '#C9C2B2', 'stroke-width': 6 }, clock);
+    const hand = el('path', { d: 'M760 330 V285', stroke: '#1B1B24', 'stroke-width': 7, 'stroke-linecap': 'round' }, clock);
+    el('path', { d: 'M760 330 H790', stroke: '#1B1B24', 'stroke-width': 7, 'stroke-linecap': 'round' }, clock);
+    pop(clock, T0 + .2, { sound: false });
+    const nTicks = Math.floor((T1 - T0) / .5);
+    for (let k = 0; k < nTicks; k++) {
+      tl.set(hand, { rotation: (k + 1) * 30, svgOrigin: '760 330' }, T0 + .3 + k * .5);
+      sfx('tick', T0 + .3 + k * .5, .9);
+    }
+    const mute = el('g', {}, g);
+    el('path', { d: 'M310 270 h170 a30 30 0 0 1 30 30 v70 a30 30 0 0 1 -30 30 h-110 l-40 36 v-36 h-20 a30 30 0 0 1 -30 -30 v-70 a30 30 0 0 1 30 -30z', fill: '#fff', opacity: .9 }, mute);
+    [355, 395, 435].forEach(x => el('circle', { cx: x, cy: 335, r: 11, fill: '#3A1E3F' }, mute));
+    pop(mute, pS(si, 1), { sound: false });
+    crossMark(mute, 395, 335, 60, pS(si, 1) + .35);
+    fadeOut(clock, T1 - .1, .25); fadeOut(mute, T1 - .1, .25);
+  },
+
+  // --------------------------------------------------------------- GIFT
+  gift(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si);
+    const g = el('g', {}, $('layerMid'));
+    const cap = window.__seated[1];
+    flash(T0, .55); sfx('whoosh', T0, .7); sfx('shimmer', T0 + .05, .7);
+    hop(T0 + .1, sStart(si + 3) - .3);
+    to(AMB, T0, { dark: 0 }, .4);
+    const halo = el('circle', { cx: 625, cy: 830, r: 120, fill: 'url(#blobA)', opacity: 0 }, $('layerBack'));
+    tl.to(halo, { opacity: 1, duration: .3 }, T0);
+    // he stands up, then walks to Cowan
+    const t1 = pS(si, 1);
+    tl.to(cap, { y: -130, duration: .5, ease: 'back.out(1.6)' }, t1);
+    tl.to(halo, { attr: { cy: 700 }, duration: .5 }, t1);
+    const nm = el('g', {}, g);
+    pill(nm, 625, 400, L.captain, { size: 54, fill: C.card, stroke: C.china });
+    pill(nm, 625, 310, L.role, { size: 38, fill: C.china, stroke: '#FFC2C8' });
+    pop(nm, wT(si, 3) - .1);
+    const tw = wT(si, sentences[si].ph[0].words.length + sentences[si].ph[1].words.length - 1);
+    tl.to(cap, { x: -230, y: 30, duration: .8, ease: 'power2.inOut' }, tw - .1);
+    tl.to(halo, { attr: { cx: 395, cy: 830 }, duration: .8, ease: 'power2.inOut' }, tw - .1);
+    fadeOut(nm, tw, .3);
+    // the gift: a silk picture of mountains
+    const t2 = pS(si, 2);
+    const gift = el('g', {}, g);
+    el('rect', { x: -130, y: -95, width: 260, height: 190, rx: 10, fill: 'url(#goldG)', filter: 'url(#cardShadow)' }, gift);
+    el('rect', { x: -110, y: -75, width: 220, height: 150, fill: 'url(#skyG)' }, gift);
+    el('circle', { cx: 50, cy: -30, r: 22, fill: '#FF8C42' }, gift);
+    el('path', { d: 'M-110 75 L-60 -20 L-20 30 L30 -45 L110 50 L110 75Z', fill: '#2F4858' }, gift);
+    el('path', { d: 'M-110 75 L-70 25 L-30 55 L20 10 L80 60 L110 40 L110 75Z', fill: '#33658A' }, gift);
+    const gp = { x: 400, y: 820, s: .45 };
+    const placeG = () => gift.setAttribute('transform', `translate(${gp.x} ${gp.y}) scale(${gp.s})`);
+    placeG(); hide(gift);
+    tl.to(gift, { opacity: 1, duration: .2 }, t2);
+    tl.to(gp, { x: 320, duration: .5, ease: 'power2.out', onUpdate: placeG }, t2);
+    tl.to(gp, { x: 540, y: 560, s: 1.25, duration: .6, ease: 'back.out(1.5)', onUpdate: placeG }, wT(si, sentences[si].words.length - 2));
+    const gl = pill(g, 540, 760, L.gift, { size: 54, fill: 'url(#goldG)', stroke: '#FFF1C1', color: C.ink });
+    pop(gl, lastW(si), { sound: false });
+    sfx('chime', wT(si, sentences[si].words.length - 2), 1);
+    fadeOut(g, T1 - .1, .3); fadeOut(halo, T1 - .1, .3);
+    fadeOut(window.__interior, T1 - .05, .25);
+  },
+
+  // --------------------------------------------------------------- PHOTO → NEWS
+  photo(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si);
+    const g = el('g', {}, $('layerMid'));
+    flash(T0 - .05, 1); sfx('shutter', T0 - .05, 1);
+    to(CAM, T0 - .05, { s: 1, x: 540, y: 960 }, .3);
+    const ph = el('g', {}, g);
+    el('rect', { x: 290, y: 430, width: 500, height: 560, rx: 10, fill: '#FBFAF5', filter: 'url(#cardShadow)' }, ph);
+    el('rect', { x: 320, y: 460, width: 440, height: 420, fill: '#5C2A3D' }, ph);
+    el('rect', { x: 330, y: 470, width: 150, height: 400, fill: '#C1323F' }, ph);
+    el('rect', { x: 350, y: 500, width: 110, height: 330, fill: 'url(#glassG)', opacity: .8 }, ph);
+    figure(ph, 470, 880, C.usa, .78, { smile: true });
+    figure(ph, 640, 880, C.china, .78, { smile: true });
+    tl.set(ph, { rotation: -4, svgOrigin: '540 710' }, 0);
+    pop(ph, T0, { from: .6, sound: false });
+    const t1 = pS(si, 1);
+    tl.to(ph, { scale: .62, y: -40, svgOrigin: '540 710', duration: .5, ease: 'power2.inOut' }, t1 - .15);
+    const spots = [[230, 470, -14], [850, 520, 12], [200, 980, 9], [880, 1010, -10], [540, 1110, 3], [540, 360, -6]];
+    spots.forEach(([x, y, r], i) => {
+      const pg = el('g', {}, g); paper(pg, 0, 0);
+      const st = { x: x < 540 ? -400 : 1480, y: y + 300, r: r * 4 };
+      const place = () => pg.setAttribute('transform', `translate(${st.x} ${st.y}) rotate(${st.r}) scale(.8)`);
+      place();
+      const tt = t1 + i * .12;
+      tl.to(st, { x, y, r, duration: .45, ease: 'power3.out', onUpdate: place }, tt);
+      sfx('whoosh', tt, .35); sfx('shutter', tt + .1, .4);
+    });
+    g.appendChild(ph);
+    const globe = el('g', {}, g);
+    el('circle', { cx: 540, cy: 1100, r: 96, fill: '#1E6FB8', stroke: '#BDE0FE', 'stroke-width': 6 }, globe);
+    el('path', { d: 'M500 1040 q30 20 10 50 q-20 30 20 50 M580 1050 q-10 30 20 40 q30 20 0 50', stroke: '#7BD389', 'stroke-width': 26, fill: 'none', 'stroke-linecap': 'round' }, globe);
+    el('ellipse', { cx: 540, cy: 1100, rx: 40, ry: 96, fill: 'none', stroke: '#BDE0FE', 'stroke-width': 4, opacity: .7 }, globe);
+    pop(globe, t1 + .6);
+    for (let k = 0; k < 3; k++) {
+      const rg = el('circle', { cx: 540, cy: 1100, r: 100, fill: 'none', stroke: C.accent2, 'stroke-width': 8, opacity: 0 }, g);
+      tl.set(rg, { opacity: .8 }, t1 + .8 + k * .35);
+      tl.to(rg, { attr: { r: 330 }, opacity: 0, duration: .9, ease: 'power2.out' }, t1 + .8 + k * .35);
+    }
+    fadeOut(g, T1 - .1, .3);
+  },
+
+  // --------------------------------------------------------------- INVITE + NIXON
+  invite(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si);
+    const g = el('g', {}, $('layerMid'));
+    to(F, T0 - .1, { ux: 210, cx: 870, uy: 860, cy: 860, s: .85 }, .8);
+    sfx('whoosh', T0 - .1, .6);
+    // envelope from China to the US team
+    const env = el('g', {}, g);
+    el('rect', { x: -80, y: -52, width: 160, height: 104, rx: 8, fill: '#FFF3D6', stroke: '#E7C98F', 'stroke-width': 4 }, env);
+    el('path', { d: 'M-80 -52 L0 12 L80 -52', fill: 'none', stroke: '#C9A15E', 'stroke-width': 5 }, env);
+    el('circle', { cx: 0, cy: 12, r: 15, fill: C.china }, env);
+    const ep = { u: 0 };
+    const placeE = () => { const u = ep.u, x = 870 + (210 - 870) * u, y = 760 - 330 * 4 * u * (1 - u); env.setAttribute('transform', `translate(${x} ${y}) rotate(${-20 * (1 - 2 * u)})`); };
+    placeE(); hide(env);
+    tl.to(env, { opacity: 1, duration: .2 }, T0 + .4);
+    tl.to(ep, { u: 1, duration: 1.3, ease: 'power1.inOut', onUpdate: placeE }, T0 + .4);
+    sfx('whoosh', T0 + .5, .5);
+    const inv = pill(g, 260, 600, L.invite, { size: 58, fill: 'url(#goldG)', stroke: '#FFF1C1', color: C.ink });
+    pop(inv, wT(si, 4));
+    sfx('chime', wT(si, 4), .6);
+    // next year
+    const t1 = pS(si, 1);
+    fadeOut(env, t1 - .1, .2); fadeOut(inv, t1 - .1, .2);
+    const yt = text(g, 540, 420, '', 170, C.accent, 'middle', { filter: 'url(#glow)' });
+    fadeIn(yt, t1, .2);
+    counter(yt, L.yearFrom, L.year, t1 + .05, .6, v => v, 4);
+    // the flight
+    const t2 = pS(si, 2);
+    const arc = el('path', { d: 'M260 760 Q540 420 820 760', stroke: '#fff', 'stroke-width': 6, 'stroke-dasharray': '4 18', 'stroke-linecap': 'round', fill: 'none', opacity: .8 }, g);
+    drawPath(arc, t2 - .1, .4);
+    const plane = el('g', {}, g);
+    el('path', { d: 'M-46 -7 L24 -7 L48 0 L24 7 L-46 7Z M-4 -7 L-22 -40 L2 -40 L18 -7Z M-4 7 L-22 40 L2 40 L18 7Z M-46 -7 L-54 -24 L-42 -24 L-34 -7Z M-46 7 L-54 24 L-42 24 L-34 7Z', fill: '#fff', filter: 'url(#glow)' }, plane);
+    const L0 = arc.getTotalLength(), pp = { u: 0 };
+    const placeP = () => { const a = arc.getPointAtLength(L0 * pp.u), b = arc.getPointAtLength(Math.min(L0, L0 * pp.u + 2)), c = arc.getPointAtLength(Math.max(0, L0 * pp.u - 2));
+      const ang = Math.atan2(b.y - c.y, b.x - c.x) * 180 / Math.PI; plane.setAttribute('transform', `translate(${a.x} ${a.y}) rotate(${ang}) scale(1.4)`); };
+    placeP(); hide(plane);
+    tl.to(plane, { opacity: 1, duration: .15 }, t2);
+    tl.to(pp, { u: 1, duration: lastW(si) - t2 + .1, ease: 'power1.inOut', onUpdate: placeP }, t2);
+    sfx('whoosh', t2, .7);
+    const nx = pill(g, 760, 1060, L.who, { size: 58, fill: C.card, stroke: C.accent });
+    pop(nx, wT(si, sentences[si].ph[0].words.length + sentences[si].ph[1].words.length + 1));
+    tl.set(fGlow, { opacity: 1, attr: { cx: 870, cy: 860, r: 60 } }, lastW(si) + .1);
+    tl.to(fGlow, { attr: { r: 260 }, opacity: 0, duration: .7 }, lastW(si) + .1);
+    sfx('chime', lastW(si) + .1, .9);
+    fadeOut(g, T1 - .1, .3);
+  },
+
+  // --------------------------------------------------------------- OUTRO
+  outro(si, L) {
+    const T0 = sStart(si);
+    const g = el('g', {}, $('layerMid'));
+    to(F, T0 - .1, { ux: 260, cx: 820, uy: 860, cy: 860, s: .8 }, .7);
+    const bridge = el('path', { d: 'M340 830 Q540 700 740 830', stroke: 'url(#goldG)', 'stroke-width': 14, fill: 'none', 'stroke-linecap': 'round', filter: 'url(#glow)' }, g);
+    drawPath(bridge, T0 + .2, .5);
+    const t1g = text(g, 540, 420, L.title1, 130, C.accent, 'middle', { filter: 'url(#glow)' });
+    const t2g = text(g, 540, 570, L.title2, 108, '#fff', 'middle', { filter: 'url(#glow)' });
+    pop(t1g, wT(si, 1) - .05, { sound: 'pop' }); pop(t2g, wT(si, 2) - .05, { sound: 'pop' });
+    sfx('chime', wT(si, 2), 1);
+    // the tiny ball rallies across the bridge
+    const t1 = pS(si, 1);
+    to(BALL, T0, { x: 340, y: 800, s: .9, hop: 0 }, .5);
+    rally(t1, pE(si, 1) + .2, [[340, 800], [740, 800], [340, 800], [740, 800], [540, 760]], 150, .7);
+    to(BALL, pE(si, 1) + .2, { s: 1.6 }, .4, 'back.out(2)');
+    hop(pE(si, 1) + .7, DUR + 1, .3);
+    to(P, T0, { x: 190, y: 1130, r: -24, s: .5 }, .8, 'back.out(1.3)');
+    const t2 = pS(si, 2);
+    const fb = el('g', {}, g);
+    pill(fb, 640, 1150, '+ ' + L.follow, { size: 64, fill: C.danger, stroke: '#FFC2CD', sw: 5 });
+    pop(fb, t2);
+    for (let k = 0; k < 4; k++) {
+      const t = t2 + .8 + k * .55; if (t > DUR - .3) break;
+      tl.to(fb, { scale: 1.08, transformOrigin: '50% 50%', duration: .2, yoyo: true, repeat: 1, ease: 'sine.inOut' }, t);
+    }
+    sfx('chime', t2 + .1, .8);
+  },
+};
+
+sentences.forEach((s, si) => scenes[s.scene](si, s.labels || {}));
+
+// ================================================================= CAPTIONS
+const capBox = $('captions');
+const MAXCH = 30;
+TIM.phrases.forEach((ph, pi) => {
+  const pages = []; let cur = [];
+  ph.words.forEach(w => {
+    const len = cur.reduce((a, b) => a + b.w.length + 1, 0);
+    if (cur.length && len + w.w.length > MAXCH) { pages.push(cur); cur = []; }
+    cur.push(w);
+  });
+  if (cur.length) pages.push(cur);
+  const next = pi + 1 < TIM.phrases.length ? TIM.phrases[pi + 1].start : DUR;
+  pages.forEach((words, k) => {
+    const page = document.createElement('div'); page.className = 'page'; capBox.appendChild(page);
+    const tIn = words[0].t - .08;
+    const tOut = k + 1 < pages.length ? pages[k + 1][0].t - .2 : (pi + 1 < TIM.phrases.length ? Math.min(next - .06, ph.end + .9) : DUR + 1);
+    tl.set(page, { opacity: 1 }, Math.max(0, tIn));
+    words.forEach((w, j) => {
+      const s = document.createElement('span'); s.className = 'w'; s.textContent = w.w; page.appendChild(s);
+      tl.set(s, { opacity: 0, y: 28, scale: .82 }, 0);
+      tl.to(s, { opacity: 1, y: 0, scale: 1, duration: .22, ease: 'back.out(2.5)' }, Math.max(0, w.t - .06));
+      tl.set(s, { color: C.accent }, Math.max(0, w.t - .06));
+      const tEnd = j + 1 < words.length ? words[j + 1].t - .06 : tOut;
+      tl.set(s, { color: '#FFFFFF' }, tEnd);
+    });
+    tl.to(page, { opacity: 0, y: -18, duration: .1 }, tOut);
+    tl.set(page, { y: 0 }, tOut + .15);
+  });
+});
+
+// ================================================================= RENDER (time-only state)
+function render(t) {
+  NOW = t;
+  const sh = CAM.shake * 18;
+  $('cam').setAttribute('transform',
+    `translate(${540 + sh * Math.sin(t * 90)} ${960 + sh * Math.cos(t * 77)}) scale(${CAM.s}) translate(${-CAM.x} ${-CAM.y})`);
+  heroG.setAttribute('transform', `translate(${P.x} ${P.y}) rotate(${P.r}) scale(${P.s})`);
+  const by = BALL.y - BALL.hop * Math.abs(Math.sin(t * HOPW)) * 80;
+  ballC.setAttribute('cx', BALL.x); ballC.setAttribute('cy', by); ballC.setAttribute('r', 36 * BALL.s);
+  ballGlow.setAttribute('cx', BALL.x); ballGlow.setAttribute('cy', by); ballGlow.setAttribute('r', 80 * BALL.s);
+  const wig = F.shake * Math.sin(t * 45) * 7;
+  fU.setAttribute('transform', `translate(${F.ux} ${F.uy}) rotate(${wig}) scale(${F.s})`);
+  fC.setAttribute('transform', `translate(${F.cx} ${F.cy}) rotate(${-wig}) scale(${F.s})`);
+  darkR.setAttribute('opacity', AMB.dark);
+  if (window.__lights) window.__lights.forEach((l, i) => l.setAttribute('x', ((t * 420 + i * 157) % 1250) - 120));
+  if (window.__placeC) window.__placeC();
+  blobs[0].setAttribute('cx', 300 + 80 * Math.sin(t * .35)); blobs[0].setAttribute('cy', 600 + 60 * Math.cos(t * .3));
+  blobs[1].setAttribute('cx', 820 + 70 * Math.cos(t * .28)); blobs[1].setAttribute('cy', 1150 + 90 * Math.sin(t * .33));
+  blobs[2].setAttribute('cx', 560 + 60 * Math.sin(t * .5 + 1)); blobs[2].setAttribute('cy', 900 + 50 * Math.sin(t * .4));
+  dust.forEach((d, i) => {
+    const sp = .02 + (i % 5) * .008, y = (1 - ((t * sp + i / dust.length) % 1)) * 2000 - 40;
+    d.setAttribute('cx', ((i * 211) % 1080 + 30 * Math.sin(t * .6 + i)).toFixed(1)); d.setAttribute('cy', y.toFixed(1));
+    d.setAttribute('opacity', (.12 + .1 * Math.sin(t * 1.5 + i)).toFixed(3));
+  });
+}
+
+tl.seek(DUR, false); tl.seek(0, false); render(0);
+window.seek = t => { tl.seek(Math.max(0, Math.min(DUR, t)), false); render(t); };
+window.DURATION = DUR;
+window.SFX = SFX.sort((a, b) => a.t - b.t);
+window.CONFIG = CFG;
+window.READY = true;
+
+const q = new URLSearchParams(location.search);
+if (q.has('guides')) {
+  const st = $('stage');
+  [['0', '0', '1080px', '230px'], ['0', '1520px', '1080px', '400px'], ['940px', '0', '140px', '1920px']].forEach(([l, tp, w, h]) => {
+    const d = document.createElement('div'); d.className = 'guide';
+    Object.assign(d.style, { left: l, top: tp, width: w, height: h }); st.appendChild(d);
+  });
+}
+if (q.has('t')) window.seek(parseFloat(q.get('t')));
+if (q.has('play')) {
+  const a = new Audio(TIM.audio); document.body.addEventListener('click', () => {
+    a.currentTime = 0; a.play();
+    const loop = () => { window.seek(a.currentTime); if (!a.paused) requestAnimationFrame(loop); }; loop();
+  });
+}
+})();
+</script>
+</body>
+</html>

@@ -10,7 +10,9 @@ import json, re, subprocess, sys, unicodedata, os
 import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-HTML = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, "index.html")
+HTML = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else os.path.join(ROOT, "index.html")
+STEM = os.path.splitext(os.path.basename(HTML))[0]
+BUILD = os.path.join(ROOT, "build", STEM)
 SR = 48000
 WIN = int(0.01 * SR)           # 10 ms analysis windows
 
@@ -59,6 +61,39 @@ def fit_count(segs, want):
     return segs
 
 
+def align(isl, weights):
+    """Pick phrase boundaries among the pauses so each phrase's speaking time best
+    matches its expected length (dynamic programming)."""
+    M, N = len(isl), len(weights)
+    if M < N:
+        sys.exit(f"Voice has only {M} speech islands for {N} phrases - check the script matches the MP3.")
+    dur = [b - a for a, b in isl]
+    cum = np.concatenate([[0], np.cumsum(dur)])
+    rate = cum[-1] / sum(weights)
+    gap = [isl[i + 1][0] - isl[i][1] for i in range(M - 1)]
+    def pcost(i, a, b):                    # phrase i covers islands a..b
+        e = weights[i] * rate; d = cum[b + 1] - cum[a]
+        inner = sum(max(0, g - 0.3) for g in gap[a:b])
+        return ((d - e) / max(e, 0.35)) ** 2 + 3 * inner
+    def gcost(j):                          # boundary after island j
+        return 1.5 * max(0, 0.40 - gap[j]) / 0.40
+    INF = 1e18
+    D = np.full((N + 1, M + 1), INF); P = np.zeros((N + 1, M + 1), int)
+    D[0][0] = 0
+    for i in range(1, N + 1):
+        for b in range(i, M + 1):          # phrase i-1 ends at island b-1
+            best, arg = INF, 0
+            for a in range(i - 1, b):      # starts at island a
+                if D[i - 1][a] >= INF: continue
+                c = D[i - 1][a] + pcost(i - 1, a, b - 1) + (gcost(a - 1) if a > 0 else 0)
+                if c < best: best, arg = c, a
+            D[i][b], P[i][b] = best, arg
+    segs, b = [], M
+    for i in range(N, 0, -1):
+        a = P[i][b]; segs.append([isl[a][0], isl[b - 1][1]]); b = a
+    return segs[::-1]
+
+
 def word_weight(w):
     wt = 0.0
     for ch in w:
@@ -85,18 +120,11 @@ def main():
 
     x = decode(os.path.join(ROOT, cfg["voice"]))
     want = len(phrases)
-    segs = None
-    for thr in (-40, -38, -42, -36, -45, -34, -48):
-        for gap in (0.25, 0.22, 0.3, 0.18):
-            cand = islands(x, thr, gap)
-            if len(cand) >= want:
-                segs = fit_count(cand, want)
-                break
-        if segs:
-            break
-    if not segs:
-        sys.exit(f"Could not find {want} phrases in the voice (got {len(cand)}). "
-                 "Check the script matches the MP3.")
+    coarse = islands(x, -40, 0.25)
+    if len(coarse) == want:
+        segs = coarse
+    else:
+        segs = align(islands(x, -45, 0.08, 0.03), [sum(word_weight(w) for w in p["text"].split()) for p in phrases])
     print(f"Found {len(segs)} phrases (want {want})")
 
     # --- tighten pauses -----------------------------------------------------
@@ -125,10 +153,10 @@ def main():
     micro = islands(y, -50, 0.10, 0.03)
 
     tempo = float(cfg.get("voiceTempo", 1.0))
-    os.makedirs(os.path.join(ROOT, "build"), exist_ok=True)
-    tmp = os.path.join(ROOT, "build", "voice_edit.f32")
+    os.makedirs(BUILD, exist_ok=True)
+    tmp = os.path.join(BUILD, "voice_edit.f32")
     y.astype(np.float32).tofile(tmp)
-    out = os.path.join(ROOT, "build", "voice_cut.wav")
+    out = os.path.join(BUILD, "voice_cut.wav")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(SR), "-ac", "1",
                     "-i", tmp, "-af", f"atempo={tempo}", "-c:a", "pcm_s16le", out], check=True)
     os.remove(tmp)
@@ -154,7 +182,7 @@ def main():
         out_phr.append({"text": ph["text"], "sentence": ph["sentence"],
                         "start": round(a / tempo, 3), "end": round(b / tempo, 3), "words": wl})
 
-    timings = {"duration": round(dur, 3), "audio": "build/voice_cut.wav", "phrases": out_phr}
+    timings = {"duration": round(dur, 3), "audio": f"build/{STEM}/voice_cut.wav", "phrases": out_phr}
     block = json.dumps(timings, ensure_ascii=False, indent=1)
     html = re.sub(r'(<script id="timings" type="application/json">)(.*?)(</script>)',
                   lambda m: m.group(1) + "\n" + block + "\n" + m.group(3), html, flags=re.S)

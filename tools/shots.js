@@ -9,7 +9,7 @@ const path = require('path');
   const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
   p.on('console', m => console.log('[page]', m.type(), m.text()));
   p.on('pageerror', e => console.log('[pageerror]', e.message));
-  await p.goto('file://' + path.resolve(__dirname, '..', 'index.html') + (guides ? '?guides' : ''));
+  await p.goto('file://' + path.resolve(__dirname, '..', process.env.PAGE || 'index.html') + (guides ? '?guides' : ''));
   await p.waitForFunction(() => window.READY === true, null, { timeout: 20000 });
   require('fs').mkdirSync(out, { recursive: true });
   for (const t of times) {
