@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="ml">
+<head>
+<meta charset="utf-8">
+<title>Red Rain Reel</title>
+<meta name="viewport" content="width=1080, initial-scale=1">
+
+<!-- =====================================================================
+     CONFIG — edit this block + the MP3, then run: tools/build.sh redrain.html
+     ===================================================================== -->
+<script id="config" type="application/json">
+{
+  "title": "ചുവന്ന മഴ",
+  "voice": "audio/redrain.mp3",
+  "voiceTempo": 1.05,
+  "timing": { "phraseGap": 0.22, "sentenceGap": 0.36, "head": 0.08, "tail": 1.4 },
+  "music": { "bpm": 92, "chords": ["Dm", "Bb", "F", "C"], "level": 0.85 },
+  "font": "FreeSans",
+  "palette": {
+    "bgTop": "#06081F", "bgMid": "#2A0E2E", "bgBottom": "#4A1020",
+    "accent": "#FFC93C", "accent2": "#FF6B6B", "rain": "#FF5A5A", "cool": "#7DD3FC",
+    "card": "#1A1030", "cardStroke": "#7C4DFF", "ink": "#0B1030"
+  },
+  "sentences": [
+    { "scene": "hook", "phrases": ["മഴ ചുവന്നു...", "എന്തുകൊണ്ട്?"], "labels": { "q": "?" } },
+    { "scene": "place", "phrases": ["2001 ജൂലൈയിൽ, കേരളത്തിലെ ചങ്ങനാശ്ശേരിയിൽ ചുവന്ന മഴ പെയ്തു."], "labels": { "year": 2001, "place": "ചങ്ങനാശ്ശേരി" } },
+    { "scene": "duration", "phrases": ["രണ്ട് മാസത്തോളം ഇത് തുടർന്നു."], "labels": { "months": "2 മാസം" } },
+    { "scene": "meteor", "phrases": ["ആദ്യം, ഒരു ഉൽക്ക പൊട്ടിത്തെറിച്ചതാകാം എന്ന് പറഞ്ഞു."], "labels": { "card": "ഉൽക്ക?" } },
+    { "scene": "algae", "phrases": ["പിന്നീട്, ആൽഗയുടെ ബീജങ്ങളാണ് നിറം നൽകിയത് എന്ന് റിപ്പോർട്ട് പറഞ്ഞു."], "labels": { "card": "ആൽഗ", "name": "ശാസ്ത്രജ്ഞ" } },
+    { "scene": "comet", "phrases": ["പക്ഷേ, ചില ശാസ്ത്രജ്ഞർ മറ്റൊന്ന് കരുതുന്നു:", "ഒരു വാൽനക്ഷത്രം പൊട്ടിച്ചിതറിയതാകാം."], "labels": { "card": "വാൽനക്ഷത്രം?" } },
+    { "scene": "dispute", "phrases": ["ഏതാണ് ശരി?", "തെളിവുകൾ ഇപ്പോഴും തർക്കത്തിലാണ്."], "labels": { "a": "ഉൽക്ക / ആൽഗ", "b": "വാൽനക്ഷത്രം" } },
+    { "scene": "outro", "phrases": ["നിങ്ങളുടെ അഭിപ്രായം എന്താണ്?", "കമന്റ് ചെയ്യൂ, ഒരു സുഹൃത്തിനൊപ്പം ഇത് അയക്കൂ!"], "labels": { "comment": "കമന്റ്", "share": "പങ്കിടൂ" } }
+  ]
+}
+</script>
+<!-- ======================= END OF CONFIG ================================ -->
+
+<script id="timings" type="application/json">
+{
+ "duration": 30.724,
+ "audio": "build/redrain/voice_cut.wav",
+ "phrases": [
+  {
+   "text": "മഴ ചുവന്നു...",
+   "sentence": 0,
+   "start": 0.114,
+   "end": 1.057,
+   "words": [
+    {
+     "w": "മഴ",
+     "t": 0.114
+    },
+    {
+     "w": "ചുവന്നു...",
+     "t": 0.382
+    }
+   ]
+  },
+  {
+   "text": "എന്തുകൊണ്ട്?",
+   "sentence": 0,
+   "start": 1.267,
+   "end": 1.81,
+   "words": [
+    {
+     "w": "എന്തുകൊണ്ട്?",
+     "t": 1.267
+    }
+   ]
+  },
+  {
+   "text": "2001 ജൂലൈയിൽ, കേരളത്തിലെ ചങ്ങനാശ്ശേരിയിൽ ചുവന്ന മഴ പെയ്തു.",
+   "sentence": 1,
+   "start": 2.152,
+   "end": 6.419,
+   "words": [
+    {
+     "w": "2001",
+     "t": 2.152
+    },
+    {
+     "w": "ജൂലൈയിൽ,",
+     "t": 3.073
+    },
+    {
+     "w": "കേരളത്തിലെ",
+     "t": 3.537
+    },
+    {
+     "w": "ചങ്ങനാശ്ശേരിയിൽ",
+     "t": 4.409
+    },
+    {
+     "w": "ചുവന്ന",
+     "t": 5.43
+    },
+    {
+     "w": "മഴ",
+     "t": 5.862
+    },
+    {
+     "w": "പെയ്തു.",
+     "t": 6.046
+    }
+   ]
+  },
+  {
+   "text": "രണ്ട് മാസത്തോളം ഇത് തുടർന്നു.",
+   "sentence": 2,
+   "start": 6.762,
+   "end": 8.61,
+   "words": [
+    {
+     "w": "രണ്ട്",
+     "t": 6.762
+    },
+    {
+     "w": "മാസത്തോളം",
+     "t": 7.131
+    },
+    {
+     "w": "ഇത്",
+     "t": 7.771
+    },
+    {
+     "w": "തുടർന്നു.",
+     "t": 8.005
+    }
+   ]
+  },
+  {
+   "text": "ആദ്യം, ഒരു ഉൽക്ക പൊട്ടിത്തെറിച്ചതാകാം എന്ന് പറഞ്ഞു.",
+   "sentence": 3,
+   "start": 8.952,
+   "end": 11.857,
+   "words": [
+    {
+     "w": "ആദ്യം,",
+     "t": 8.952
+    },
+    {
+     "w": "ഒരു",
+     "t": 9.268
+    },
+    {
+     "w": "ഉൽക്ക",
+     "t": 9.62
+    },
+    {
+     "w": "പൊട്ടിത്തെറിച്ചതാകാം",
+     "t": 9.991
+    },
+    {
+     "w": "എന്ന്",
+     "t": 11.141
+    },
+    {
+     "w": "പറഞ്ഞു.",
+     "t": 11.457
+    }
+   ]
+  },
+  {
+   "text": "പിന്നീട്, ആൽഗയുടെ ബീജങ്ങളാണ് നിറം നൽകിയത് എന്ന് റിപ്പോർട്ട് പറഞ്ഞു.",
+   "sentence": 4,
+   "start": 12.2,
+   "end": 16.4,
+   "words": [
+    {
+     "w": "പിന്നീട്,",
+     "t": 12.2
+    },
+    {
+     "w": "ആൽഗയുടെ",
+     "t": 12.96
+    },
+    {
+     "w": "ബീജങ്ങളാണ്",
+     "t": 13.481
+    },
+    {
+     "w": "നിറം",
+     "t": 14.157
+    },
+    {
+     "w": "നൽകിയത്",
+     "t": 14.404
+    },
+    {
+     "w": "എന്ന്",
+     "t": 14.924
+    },
+    {
+     "w": "റിപ്പോർട്ട്",
+     "t": 15.262
+    },
+    {
+     "w": "പറഞ്ഞു.",
+     "t": 15.971
+    }
+   ]
+  },
+  {
+   "text": "പക്ഷേ, ചില ശാസ്ത്രജ്ഞർ മറ്റൊന്ന് കരുതുന്നു:",
+   "sentence": 5,
+   "start": 16.743,
+   "end": 19.305,
+   "words": [
+    {
+     "w": "പക്ഷേ,",
+     "t": 16.743
+    },
+    {
+     "w": "ചില",
+     "t": 17.069
+    },
+    {
+     "w": "ശാസ്ത്രജ്ഞർ",
+     "t": 17.438
+    },
+    {
+     "w": "മറ്റൊന്ന്",
+     "t": 18.177
+    },
+    {
+     "w": "കരുതുന്നു:",
+     "t": 18.741
+    }
+   ]
+  },
+  {
+   "text": "ഒരു വാൽനക്ഷത്രം പൊട്ടിച്ചിതറിയതാകാം.",
+   "sentence": 5,
+   "start": 19.514,
+   "end": 21.781,
+   "words": [
+    {
+     "w": "ഒരു",
+     "t": 19.514
+    },
+    {
+     "w": "വാൽനക്ഷത്രം",
+     "t": 19.737
+    },
+    {
+     "w": "പൊട്ടിച്ചിതറിയതാകാം.",
+     "t": 20.534
+    }
+   ]
+  },
+  {
+   "text": "ഏതാണ് ശരി?",
+   "sentence": 6,
+   "start": 22.124,
+   "end": 22.867,
+   "words": [
+    {
+     "w": "ഏതാണ്",
+     "t": 22.124
+    },
+    {
+     "w": "ശരി?",
+     "t": 22.578
+    }
+   ]
+  },
+  {
+   "text": "തെളിവുകൾ ഇപ്പോഴും തർക്കത്തിലാണ്.",
+   "sentence": 6,
+   "start": 23.076,
+   "end": 24.99,
+   "words": [
+    {
+     "w": "തെളിവുകൾ",
+     "t": 23.076
+    },
+    {
+     "w": "ഇപ്പോഴും",
+     "t": 23.593
+    },
+    {
+     "w": "തർക്കത്തിലാണ്.",
+     "t": 24.158
+    }
+   ]
+  },
+  {
+   "text": "നിങ്ങളുടെ അഭിപ്രായം എന്താണ്?",
+   "sentence": 7,
+   "start": 25.333,
+   "end": 26.648,
+   "words": [
+    {
+     "w": "നിങ്ങളുടെ",
+     "t": 25.333
+    },
+    {
+     "w": "അഭിപ്രായം",
+     "t": 25.805
+    },
+    {
+     "w": "എന്താണ്?",
+     "t": 26.276
+    }
+   ]
+  },
+  {
+   "text": "കമന്റ് ചെയ്യൂ, ഒരു സുഹൃത്തിനൊപ്പം ഇത് അയക്കൂ!",
+   "sentence": 7,
+   "start": 26.857,
+   "end": 29.352,
+   "words": [
+    {
+     "w": "കമന്റ്",
+     "t": 26.857
+    },
+    {
+     "w": "ചെയ്യൂ,",
+     "t": 27.227
+    },
+    {
+     "w": "ഒരു",
+     "t": 27.869
+    },
+    {
+     "w": "സുഹൃത്തിനൊപ്പം",
+     "t": 28.054
+    },
+    {
+     "w": "ഇത്",
+     "t": 28.798
+    },
+    {
+     "w": "അയക്കൂ!",
+     "t": 28.983
+    }
+   ]
+  }
+ ],
+ "beat": {
+  "bpm": 90.0,
+  "t0": 0.125,
+  "err_ms": 59
+ }
+}
+</script>
+
+<style>
+  html, body { margin: 0; background: #050816; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  #world { position: absolute; inset: 0; }
+  #capShade { position: absolute; left: 0; right: 0; top: 1180px; height: 740px;
+    background: linear-gradient(to bottom, rgba(4,8,30,0) 0%, rgba(4,8,30,.55) 40%, rgba(4,8,30,.7) 100%); }
+  #captions { position: absolute; left: 50px; width: 860px; top: 1290px; height: 220px; }
+  .page { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center;
+    justify-content: center; text-align: center; opacity: 0; }
+  .w { display: inline-block; font-weight: 700; font-size: 78px; line-height: 1.32; color: #fff;
+    margin: 0 12px; opacity: 0;
+    text-shadow: 0 6px 22px rgba(0,0,0,.6), 0 0 3px rgba(0,0,0,.9), 0 2px 0 rgba(0,0,0,.35); }
+  svg text { font-weight: 700; }
+  .guide { position: absolute; background: rgba(255,0,80,.25); pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="world" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+    <defs id="defs">
+      <linearGradient id="bgG" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#06081F"/><stop offset=".55" stop-color="#2A0E2E"/><stop offset="1" stop-color="#4A1020"/></linearGradient>
+      <radialGradient id="vig" cx=".5" cy=".45" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".55"/></radialGradient>
+      <radialGradient id="glowR"><stop offset="0" stop-color="#FF5A5A" stop-opacity=".55"/><stop offset="1" stop-color="#FF5A5A" stop-opacity="0"/></radialGradient>
+      <linearGradient id="cardG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2A1B52"/><stop offset="1" stop-color="#140B2E"/></linearGradient>
+      <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE29A"/><stop offset="1" stop-color="#D9A02B"/></linearGradient>
+      <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="cardShadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#000" flood-opacity=".5"/></filter>
+    </defs>
+    <rect width="1080" height="1920" fill="url(#bgG)"/>
+    <g id="blobs"></g>
+    <g id="cam">
+      <g id="ground"></g>
+      <g id="rain"></g>
+      <g id="mid"></g>
+      <g id="ppl"></g>
+      <g id="front"></g>
+    </g>
+    <rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+  </svg>
+  <div id="capShade"></div>
+  <div id="captions"></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="lib/people.js"></script>
+<script>
+(async function () {
+const CFG = JSON.parse(document.getElementById('config').textContent);
+const TIM = JSON.parse(document.getElementById('timings').textContent);
+const C = CFG.palette, FONT = CFG.font;
+const NS = 'http://www.w3.org/2000/svg';
+const DUR = TIM.duration;
+const SFX = [];
+const $ = id => document.getElementById(id);
+window.BEAT = TIM.beat || null;
+const BEAT = window.BEAT;
+const snapT = t => { if (!BEAT) return t; const g = 30 / BEAT.bpm; return Math.max(0, BEAT.t0 + Math.ceil((t - .08 - BEAT.t0) / g) * g); };
+const FREE = new Set(['tick', 'wave', 'dip', 'shimmer', 'rain']);
+const sfx = (type, t, gain = 1, extra = {}) => SFX.push(Object.assign({ type, t: +Math.max(0, FREE.has(type) ? t : snapT(t)).toFixed(3), gain }, extra));
+const hitAt = t => sfx('hit', snapT(t), .9);
+
+await document.fonts.load(`700 80px ${FONT}`, 'മലയാളം');
+document.body.style.fontFamily = FONT;
+
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function text(parent, x, y, str, size, fill, anchor = 'middle', extra = {}) {
+  const t = el('text', Object.assign({ x, y, 'font-size': size, fill, 'text-anchor': anchor, 'font-family': FONT, 'dominant-baseline': 'central' }, extra), parent);
+  t.textContent = str; return t;
+}
+function pill(parent, cx, cy, str, o = {}) {
+  const g = el('g', {}, parent), size = o.size || 56, padX = o.padX ?? size * .55, padY = o.padY ?? size * .32;
+  const r = el('rect', { fill: o.fill || C.card, stroke: o.stroke || C.cardStroke, 'stroke-width': o.sw ?? 4 }, g);
+  const t = text(g, cx, cy, str, size, o.color || '#fff');
+  const b = t.getBBox(), w = b.width + padX * 2, h = size * 1.25 + padY * 2;
+  r.setAttribute('x', cx - w / 2); r.setAttribute('y', cy - h / 2); r.setAttribute('width', w); r.setAttribute('height', h); r.setAttribute('rx', o.rx ?? h / 2);
+  return g;
+}
+
+// ---------------------------------------------------------------- timing
+const sentences = CFG.sentences.map((s, si) => {
+  const ph = TIM.phrases.filter(p => p.sentence === si);
+  return Object.assign({}, s, { ph, words: ph.flatMap(p => p.words) });
+});
+const sStart = si => sentences[si].ph[0].start;
+const sEnd = si => si + 1 < sentences.length ? sStart(si + 1) : DUR;
+const pS = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].start;
+const pE = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].end;
+const wT = (si, k) => { const w = sentences[si].words; return w[Math.max(0, Math.min(k, w.length - 1))].t; };
+const lastW = si => wT(si, sentences[si].words.length - 1);
+const speak = (si, t) => { for (const w of sentences[si].words) { const d = t - w.t; if (d >= 0 && d < .2) return Math.sin(Math.PI * d / .2); } return 0; };
+
+const tl = gsap.timeline({ paused: true });
+tl.to({}, { duration: DUR }, 0);
+const hide = e => tl.set(e, { opacity: 0 }, 0);
+function pop(e, t, o = {}) {
+  t = o.nosnap ? t : snapT(t);
+  tl.set(e, { opacity: 0, scale: o.from ?? .3, transformOrigin: o.origin || '50% 50%' }, 0);
+  tl.to(e, { opacity: 1, scale: 1, duration: o.d || .45, ease: o.ease || 'back.out(2.2)' }, t);
+  if (o.sound !== false) sfx(o.sound || 'pop', t, o.gain ?? .9);
+}
+const fadeIn = (e, t, d = .4) => { hide(e); tl.to(e, { opacity: 1, duration: d }, t); };
+const fadeOut = (e, t, d = .3) => tl.to(e, { opacity: 0, duration: d, ease: 'power1.in' }, t);
+function drawPath(p, t, d) { const L = p.getTotalLength(); p.setAttribute('stroke-dasharray', L + ' ' + L); tl.set(p, { attr: { 'stroke-dashoffset': L } }, 0); tl.to(p, { attr: { 'stroke-dashoffset': 0 }, duration: d, ease: 'power2.inOut' }, t); }
+function counter(tEl, from, to, t, d, fmt = v => v, ticks = 12) {
+  const o = { v: from }; tEl.textContent = fmt(from);
+  tl.to(o, { v: to, duration: d, ease: 'power2.out', onUpdate: () => tEl.textContent = fmt(Math.round(o.v)) }, t);
+  for (let k = 0; k < ticks; k++) sfx('tick', t + d * (1 - Math.sqrt(1 - k / ticks)), .5);
+}
+const flash = (t, a = .4) => { tl.set($('flash'), { opacity: a }, t); tl.to($('flash'), { opacity: 0, duration: .4, ease: 'power2.out' }, t + .03); };
+
+// ---------------------------------------------------------------- background + rain
+const bl = [el('circle', { cx: 300, cy: 500, r: 480, fill: 'url(#glowR)' }, $('blobs')), el('circle', { cx: 820, cy: 1100, r: 520, fill: 'url(#glowR)', opacity: .6 }, $('blobs'))];
+const ground = el('g', { opacity: 0 }, $('ground'));
+el('path', { d: 'M0 1230 C240 1190 420 1240 560 1210 C740 1180 900 1230 1080 1200 L1080 1920 L0 1920Z', fill: '#2A1020' }, ground);
+el('path', { d: 'M0 1270 C300 1245 700 1290 1080 1260', stroke: '#5A2A3A', 'stroke-width': 4, fill: 'none', opacity: .6 }, ground);
+const DROPS = 90, drops = [];
+for (let i = 0; i < DROPS; i++) drops.push(el('line', { stroke: C.rain, 'stroke-width': 4, 'stroke-linecap': 'round', opacity: 0 }, $('rain')));
+const flash2 = el('rect', { id: 'flash', width: 1080, height: 1920, fill: '#fff', opacity: 0 }, $('front'));
+const RAIN = { on: 0, red: 0 };
+
+// ---------------------------------------------------------------- scene helpers
+function mapPin(parent, x, y, color = C.accent2) {
+  const g = el('g', { transform: `translate(${x} ${y})` }, parent);
+  el('path', { d: 'M0 -40 C-22 -22 -30 -10 -30 0 A30 30 0 1 0 30 0 C30 -10 22 -22 0 -40Z', fill: color, filter: 'url(#glow)' }, g);
+  el('circle', { cx: 0, cy: 0, r: 12, fill: '#fff' }, g);
+  return g;
+}
+function person(opts, state) { const p = Person($('ppl'), opts); Object.assign(p.S, state); PPL.push(p); return p; }
+const PPL = [];
+
+// ================================================================= SCENES
+const scenes = {
+  hook(si, L) {
+    const T1 = sEnd(si), g = el('g', {}, $('mid'));
+    tl.to(RAIN, { red: 1, duration: .4, ease: 'power1.in' }, 0);
+    fadeIn(ground, 0, .3);
+    tl.to(RAIN, { on: 1, duration: .5 }, .05);
+    sfx('whoosh', 0, .8); hitAt(0);
+    const q = el('g', {}, g); el('circle', { cx: 540, cy: 760, r: 130, fill: C.accent, filter: 'url(#glow)' }, q); text(q, 540, 770, L.q, 190, C.ink);
+    pop(q, pS(si, 1), { from: 2, ease: 'power4.out', d: .3, sound: 'thud' });
+    tl.to(q, { rotation: 10, transformOrigin: '540px 760px', duration: .14, yoyo: true, repeat: 3, ease: 'sine.inOut' }, pS(si, 1) + .4);
+    fadeOut(g, T1 - .1, .25);
+  },
+
+  place(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si), g = el('g', {}, $('mid'));
+    tl.to(RAIN, { red: 1 }, T0);
+    const yt = text(g, 540, 430, '0', 170, C.accent, 'middle', { filter: 'url(#glow)' });
+    fadeIn(yt, T0, .2);
+    counter(yt, 2000, L.year, T0 + .05, pE(si, 0) - T0 - .2, v => v, 12);
+    const pin = mapPin(g, 540, 760);
+    pop(pin, pS(si, 0) + .9, { from: 2, ease: 'power4.out', d: .3, sound: 'thud' });
+    const pl = pill(g, 540, 900, L.place, { size: 54, fill: C.card, stroke: C.accent2 });
+    pop(pl, pS(si, 0) + 1.2, { gain: .6 });
+    fadeOut(g, T1 - .12, .3);
+  },
+
+  duration(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si), g = el('g', {}, $('mid'));
+    sfx('whoosh', T0 - .1, .6);
+    const cal = el('g', { filter: 'url(#cardShadow)' }, g);
+    el('rect', { x: 340, y: 520, width: 400, height: 380, rx: 30, fill: 'url(#cardG)', stroke: C.cardStroke, 'stroke-width': 5 }, cal);
+    el('rect', { x: 340, y: 520, width: 400, height: 70, rx: 30, fill: C.accent2 }, cal);
+    for (let r = 0; r < 3; r++) for (let c = 0; c < 4; c++) el('circle', { cx: 390 + c * 90, cy: 660 + r * 80, r: 22, fill: (r * 4 + c) < 8 ? C.accent2 : '#3A2D5E' }, cal);
+    pop(cal, T0, { from: .5 });
+    const big = pill(g, 540, 1030, L.months, { size: 96, fill: 'url(#goldG)', stroke: '#FFF3C4', color: C.ink, sw: 6 });
+    pop(big, wT(si, 4), { from: 2, ease: 'power4.out', d: .3, sound: 'thud' });
+    hitAt(wT(si, 4));
+    fadeOut(g, T1 - .12, .3);
+  },
+
+  meteor(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si), g = el('g', {}, $('mid'));
+    fadeIn(g, T0 - .05, .1);
+    const m = el('g', { transform: 'translate(260 280)' }, g);
+    el('path', { d: 'M0 0 L-180 180', stroke: C.accent, 'stroke-width': 14, 'stroke-linecap': 'round', filter: 'url(#glow)' }, m);
+    el('circle', { cx: 0, cy: 0, r: 36, fill: '#FFE29A', filter: 'url(#glow)' }, m);
+    const mp = { x: 260, y: 280 };
+    const place = () => m.setAttribute('transform', `translate(${mp.x} ${mp.y})`);
+    place();
+    tl.to(mp, { x: 760, y: 720, duration: pE(si, 0) - T0, ease: 'power2.in', onUpdate: place }, T0);
+    sfx('whoosh', T0, .8);
+    const card = pill(g, 540, 1020, L.card, { size: 70, fill: C.card, stroke: C.accent });
+    pop(card, lastW(si), { from: 2, ease: 'power4.out', d: .3, sound: 'thud' });
+    hitAt(lastW(si)); flash(lastW(si), .3);
+    fadeOut(g, T1 - .12, .3);
+  },
+
+  algae(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si), g = el('g', {}, $('mid'));
+    const sc = person({ hairStyle: 'bun', hair: '#2B1B12', skin: '#8D5A3B', top: '#FFFFFF', topStyle: 'tee', pants: '#2A3352', shoes: '#222' }, { x: 250, y: 1245, s: 1.2, face: 1, smile: .3, talk: 1, armN: [40, 90] });
+    sc.g.setAttribute('opacity', 0); tl.to(sc.g, { opacity: 1, duration: .25 }, T0);
+    sc.speakFn = t => speak(si, t);
+    const micro = el('g', {}, g);
+    el('rect', { x: 470, y: 860, width: 160, height: 120, rx: 14, fill: '#0F3D2E', stroke: '#6EE7B7', 'stroke-width': 5 }, micro);
+    for (let k = 0; k < 12; k++) el('circle', { cx: 490 + (k * 37) % 130, cy: 885 + ((k * 29) % 70), r: 9, fill: '#86EFAC' }, micro);
+    pop(micro, T0 + .15, { gain: .6 });
+    const card = pill(g, 600, 1000, L.card, { size: 70, fill: C.card, stroke: '#6EE7B7' });
+    pop(card, pS(si, 0) + .05 + .6, { gain: .7 });
+    fadeOut(g, T1 - .12, .3); fadeOut(sc.g, T1 - .12, .25);
+  },
+
+  comet(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si), g = el('g', {}, $('mid'));
+    fadeIn(g, T0 - .05, .1);
+    const c = el('g', {}, g);
+    el('circle', { cx: 0, cy: 0, r: 50, fill: '#FFE29A', filter: 'url(#glow)' }, c);
+    el('path', { d: 'M0 0 L-160 90 M0 0 L-140 -20', stroke: '#FFE29A', 'stroke-width': 16, 'stroke-linecap': 'round', opacity: .8 }, c);
+    const cp = { x: 760, y: 340, s: 1 }, place = () => c.setAttribute('transform', `translate(${cp.x} ${cp.y}) scale(${cp.s})`);
+    place();
+    tl.to(cp, { x: 540, y: 620, duration: pE(si, 0) - T0, ease: 'power2.inOut', onUpdate: place }, T0);
+    const t1 = pS(si, 1);
+    tl.to(cp, { s: 0, duration: .4, onUpdate: place }, t1);
+    for (let k = 0; k < 6; k++) {
+      const shard = el('circle', { cx: 540, cy: 620, r: 14, fill: '#FFE29A' }, g);
+      const a = k / 6 * Math.PI * 2 + .3;
+      tl.to(shard, { attr: { cx: 540 + Math.cos(a) * 260, cy: 620 + Math.sin(a) * 180 }, opacity: 0, duration: 1.2, ease: 'power2.out' }, t1);
+    }
+    sfx('thud', t1, .9); hitAt(t1);
+    const card = pill(g, 540, 1040, L.card, { size: 70, fill: C.card, stroke: C.accent });
+    pop(card, t1 + .45, { from: 2, ease: 'power4.out', d: .3, sound: 'thud' });
+    fadeOut(g, T1 - .12, .3);
+  },
+
+  dispute(si, L) {
+    const T0 = sStart(si), T1 = sEnd(si), g = el('g', {}, $('mid'));
+    const a = pill(g, 240, 760, L.a, { size: 44, fill: C.card, stroke: '#6EE7B7' });
+    const b = pill(g, 830, 760, L.b, { size: 44, fill: C.card, stroke: C.accent });
+    pop(a, T0 + .05, { gain: .6 }); pop(b, T0 + .45, { gain: .6 });
+    const q = text(g, 540, 760, '?', 200, C.accent2, 'middle', { filter: 'url(#glow)' });
+    hide(q);
+    tl.to(q, { opacity: 1, duration: .2 }, pS(si, 1));
+    tl.to(q, { rotation: -12, transformOrigin: '540px 760px', duration: .15, yoyo: true, repeat: 3, ease: 'sine.inOut' }, pS(si, 1) + .25);
+    sfx('tick', pS(si, 1), .6);
+    hitAt(pS(si, 1));
+    fadeOut(g, T1 - .12, .3);
+  },
+
+  outro(si, L) {
+    const T0 = sStart(si), T1 = DUR, g = el('g', {}, $('mid'));
+    sfx('whoosh', T0 - .1, .6);
+    const drop = el('g', {}, g);
+    el('path', { d: 'M0 -90 C-60 -20 -70 20 -70 40 A70 70 0 1 0 70 40 C70 20 60 -20 0 -90Z', fill: C.rain, filter: 'url(#glow)' }, drop);
+    el('ellipse', { cx: -22, cy: 10, rx: 14, ry: 26, fill: '#fff', opacity: .35 }, drop);
+    drop.setAttribute('transform', 'translate(540 640)');
+    pop(drop, T0, { from: .2, sound: 'pop' });
+    tl.to(drop, { y: -18, duration: 1, ease: 'sine.inOut', yoyo: true, repeat: -1 }, T0 + .5);
+    const c1 = pill(g, 330, 1040, L.comment, { size: 60, fill: '#FFFFFF', stroke: '#FFFFFF', color: C.ink });
+    const c2 = pill(g, 750, 1040, L.share, { size: 60, fill: C.accent2, stroke: '#FFC2C2', color: C.ink });
+    pop(c1, pS(si, 1) + .05, { gain: .7 }); pop(c2, pS(si, 1) + .45, { gain: .7 });
+    sfx('chime', pS(si, 1) + .05, .8);
+    fadeOut(g, T1 - .15, .3);
+  },
+};
+sentences.forEach((s, si) => scenes[s.scene](si, s.labels || {}));
+
+// ================================================================= CAPTIONS
+const capBox = $('captions'), MAXCH = 30;
+TIM.phrases.forEach((ph, pi) => {
+  const pages = []; let cur = [];
+  ph.words.forEach(w => { const len = cur.reduce((a, b) => a + b.w.length + 1, 0); if (cur.length && len + w.w.length > MAXCH) { pages.push(cur); cur = []; } cur.push(w); });
+  if (cur.length) pages.push(cur);
+  const next = pi + 1 < TIM.phrases.length ? TIM.phrases[pi + 1].start : DUR;
+  pages.forEach((words, k) => {
+    const page = document.createElement('div'); page.className = 'page'; capBox.appendChild(page);
+    const tOut = k + 1 < pages.length ? pages[k + 1][0].t - .2 : (pi + 1 < TIM.phrases.length ? Math.min(next - .06, ph.end + .9) : DUR + 1);
+    tl.set(page, { opacity: 1 }, Math.max(0, words[0].t - .08));
+    words.forEach((w, j) => {
+      const s = document.createElement('span'); s.className = 'w'; s.textContent = w.w; page.appendChild(s);
+      tl.set(s, { opacity: 0, y: 28, scale: .82 }, 0);
+      tl.to(s, { opacity: 1, y: 0, scale: 1, duration: .22, ease: 'back.out(2.5)' }, Math.max(0, w.t - .06));
+      tl.set(s, { color: C.accent }, Math.max(0, w.t - .06));
+      tl.set(s, { color: '#FFFFFF' }, j + 1 < words.length ? words[j + 1].t - .06 : tOut);
+    });
+    tl.to(page, { opacity: 0, y: -18, duration: .1 }, tOut); tl.set(page, { y: 0 }, tOut + .15);
+  });
+});
+
+// ================================================================= RENDER (time-only)
+function render(t) {
+  // rain: falling streaks, red after the hook starts
+  drops.forEach((d, i) => {
+    const sp = .9 + (i % 7) * .08, u = (t * sp + i / DROPS) % 1, x = (i * 137) % 1080, y = -80 + u * 2100, len = 40 + (i % 5) * 12;
+    d.setAttribute('x1', x); d.setAttribute('y1', y); d.setAttribute('x2', x - 8); d.setAttribute('y2', y - len);
+    d.setAttribute('stroke', RAIN.red > .5 ? C.rain : C.cool);
+    d.setAttribute('opacity', (RAIN.on * (.55 + .3 * (i % 3) / 2)).toFixed(3));
+  });
+  // a few background glow pulses
+  bl.forEach((b, i) => b.setAttribute('opacity', (.7 + .2 * Math.sin(t * .8 + i)).toFixed(3)));
+  PPL.forEach(p => p.render(t, p.speakFn ? p.speakFn(t) : 0));
+}
+tl.seek(DUR, false); tl.seek(0, false); render(0);
+window.seek = t => { tl.seek(Math.max(0, Math.min(DUR, t)), false); render(t); };
+window.DURATION = DUR; window.SFX = SFX.sort((a, b) => a.t - b.t); window.CONFIG = CFG; window.READY = true;
+const q = new URLSearchParams(location.search);
+if (q.has('guides')) { const st = $('stage'); [['0', '0', '1080px', '230px'], ['0', '1520px', '1080px', '400px'], ['940px', '0', '140px', '1920px']].forEach(([l, tp, w, h]) => { const d = document.createElement('div'); d.className = 'guide'; Object.assign(d.style, { left: l, top: tp, width: w, height: h }); st.appendChild(d); }); }
+if (q.has('t')) window.seek(parseFloat(q.get('t')));
+})();
+</script>
+</body>
+</html>
