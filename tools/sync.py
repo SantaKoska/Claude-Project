@@ -94,6 +94,26 @@ def align(isl, weights):
     return segs[::-1]
 
 
+def beat_grid(phr, mcfg):
+    """Choose tempo + phase so sentence starts (scene changes) fall as close to beats as possible.
+    The page snaps visual hits to this grid; the music is written on it."""
+    starts = [p["start"] for i, p in enumerate(phr) if i == 0 or p["sentence"] != phr[i - 1]["sentence"]]
+    others = [p["start"] for i, p in enumerate(phr) if not (i == 0 or p["sentence"] != phr[i - 1]["sentence"])]
+    want = mcfg.get("bpm", 100)
+    lo, hi = mcfg.get("bpmRange", [want - 10, want + 10])
+    best = None
+    for bpm in np.arange(lo, hi + 0.01, 0.5):
+        beat = 60 / bpm
+        for ph in np.arange(0, beat, 0.005):
+            d1 = [abs(((s - ph + beat / 2) % beat) - beat / 2) for s in starts]
+            d2 = [abs(((s - ph + beat / 2) % beat) - beat / 2) for s in others]
+            cost = np.mean(d1) + 0.3 * np.mean(d2 or [0]) + 0.002 * abs(bpm - want)
+            if best is None or cost < best[0]:
+                best = (cost, bpm, ph, np.mean(d1))
+    _, bpm, ph, err = best
+    return {"bpm": float(bpm), "t0": round(float(ph), 3), "err_ms": int(err * 1000)}
+
+
 def word_weight(w):
     wt = 0.0
     for ch in w:
@@ -182,7 +202,10 @@ def main():
         out_phr.append({"text": ph["text"], "sentence": ph["sentence"],
                         "start": round(a / tempo, 3), "end": round(b / tempo, 3), "words": wl})
 
-    timings = {"duration": round(dur, 3), "audio": f"build/{STEM}/voice_cut.wav", "phrases": out_phr}
+    timings = {"duration": round(dur, 3), "audio": f"build/{STEM}/voice_cut.wav", "phrases": out_phr,
+               "beat": beat_grid(out_phr, cfg.get("music", {}))}
+    print(f"Beat grid: {timings['beat']['bpm']} BPM, downbeat {timings['beat']['t0']}s, "
+          f"sentence starts off-beat by {timings['beat']['err_ms']} ms on average")
     block = json.dumps(timings, ensure_ascii=False, indent=1)
     html = re.sub(r'(<script id="timings" type="application/json">)(.*?)(</script>)',
                   lambda m: m.group(1) + "\n" + block + "\n" + m.group(3), html, flags=re.S)

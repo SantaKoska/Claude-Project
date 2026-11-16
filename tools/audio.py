@@ -72,9 +72,10 @@ def music(dur, cfg):
     bpm = cfg.get("bpm", 96); beat = 60 / bpm; bar = beat * 4
     chords = cfg.get("chords", ["D", "A", "Bm", "G"])
     N = int(dur * SR); dry = np.zeros((2, N)); drums = np.zeros((2, N))
-    nbars = int(np.ceil(dur / bar)) + 1
+    phase = cfg.get("t0", 0.0) % bar        # downbeat phase from the beat grid
+    nbars = int(np.ceil(dur / bar)) + 2
     for b in range(nbars):
-        t0 = b * bar
+        t0 = phase + (b - 1) * bar
         root, tri = chord(chords[b % len(chords)])
         # warm pad
         for k, n in enumerate(tri):
@@ -160,6 +161,11 @@ def sfx_sig(kind):
         cr = (rng.random(len(t)) > 0.9993) * rng.standard_normal(len(t)) * 3
         cr = onepole_lp(cr, 3000)
         return (n + cr) * np.minimum(t / .2, 1) * np.exp(-t * 1.2), 0
+    if kind == "hit":                      # downbeat impact for scene changes
+        t = tt(1.2); f = 42 + 90 * np.exp(-t * 22)
+        boom = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 4.5)
+        crash = onepole_lp(rng.standard_normal(len(t)), 7000) * np.exp(-t * 3.2) * 0.35
+        return boom + crash, 0
     if kind == "ping":                     # table-tennis ball contact
         t = tt(0.09)
         body = (np.sin(2 * np.pi * 2350 * t) + 0.6 * np.sin(2 * np.pi * 3900 * t)) * np.exp(-t * 90)
@@ -175,7 +181,7 @@ def sfx_sig(kind):
 
 
 SFX_GAIN = {"whoosh": .10, "pop": .13, "tick": .05, "thud": .16, "chime": .10, "shimmer": .07, "fire": .09,
-            "ping": .10, "door": .10, "shutter": .13}
+            "ping": .10, "door": .10, "shutter": .13, "hit": .22}
 
 
 def loudness(path):
@@ -194,7 +200,9 @@ def main():
     v = v / (np.abs(v).max() + 1e-9) * 0.7
     voice = np.vstack([v, v])
 
-    m = music(dur, meta.get("music", {}))
+    mcfg = dict(meta.get("music", {}))
+    if meta.get("beat"): mcfg.update(bpm=meta["beat"]["bpm"], t0=meta["beat"]["t0"])
+    m = music(dur, mcfg)
     # level: music ~13 dB under the voice (RMS of speech parts)
     vr = np.sqrt(np.mean(v[np.abs(v) > 0.02] ** 2)); mr = np.sqrt(np.mean(m ** 2))
     m *= (vr / mr) * 10 ** (-13 / 20) * meta.get("music", {}).get("level", 1.0)

@@ -23,7 +23,7 @@ const FR = path.join(BUILD, 'frames');
   const first = await open();
   const dur = await first.evaluate(() => window.DURATION);
   fs.writeFileSync(path.join(BUILD, 'sfx.json'), JSON.stringify(
-    { duration: dur, sfx: await first.evaluate(() => window.SFX), music: await first.evaluate(() => window.CONFIG.music) }, null, 1));
+    { duration: dur, sfx: await first.evaluate(() => window.SFX), music: await first.evaluate(() => window.CONFIG.music), beat: await first.evaluate(() => window.BEAT || null) }, null, 1));
   const N = Math.round(dur * FPS);
   console.log(`duration ${dur}s -> ${N} frames, ${WORKERS} workers`);
   const pages = [first]; for (let i = 1; i < WORKERS; i++) pages.push(await open());
