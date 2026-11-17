@@ -1,0 +1,1099 @@
+<!doctype html>
+<html lang="ml">
+<head>
+<meta charset="utf-8">
+<title>Gardner Heist Reel</title>
+<meta name="viewport" content="width=1080, initial-scale=1">
+
+<!-- =====================================================================
+     CONFIG — documentary-style 2D reel. Build: tools/build.sh heist.html, then add grain (see README).
+     ===================================================================== -->
+<script id="config" type="application/json">
+{
+ "title": "ബെൽ മുഴങ്ങിയ രാത്രി",
+ "voice": "audio/heist.mp3",
+ "voiceTempo": 1.06,
+ "timing": {
+  "phraseGap": 0.24,
+  "sentenceGap": 0.45,
+  "head": 0.08,
+  "tail": 2.0
+ },
+ "music": {
+  "bpm": 80,
+  "chords": [
+   "Am",
+   "F",
+   "Dm",
+   "E"
+  ],
+  "level": 0.8
+ },
+ "font": "FreeSans",
+ "palette": {
+  "accent": "#FF9A4A",
+  "teal": "#0E2A33",
+  "paper": "#E9E1D0",
+  "ink": "#1A1410",
+  "red": "#C8332E",
+  "blue": "#2F7BFF",
+  "gold": "#FFC94A"
+ },
+ "sentences": [
+  {
+   "scene": "door",
+   "phrases": [
+    "1990 മാർച്ച് 18. പാതിരാത്രി. ബോസ്റ്റണിലെ ഒരു മ്യൂസിയത്തിന്റെ വാതിൽക്കൽ...",
+    "ബെൽ മുഴങ്ങി."
+   ],
+   "labels": {
+    "date": "18.03.1990",
+    "city": "ബോസ്റ്റൺ"
+   }
+  },
+  {
+   "scene": "cops",
+   "phrases": [
+    "പുറത്ത് രണ്ട് പോലീസുകാർ.",
+    "ഒരു പ്രശ്നം അന്വേഷിക്കാൻ വന്നതാണെന്ന് അവർ പറഞ്ഞു."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "guard",
+   "phrases": [
+    "അകത്ത് ഡ്യൂട്ടിയിൽ, ഇരുപത്തിമൂന്ന് വയസ്സുള്ള ഒരു കാവൽക്കാരൻ.",
+    "അയാൾ വാതിൽ തുറന്നു."
+   ],
+   "labels": {
+    "age": "23 വയസ്സ്"
+   }
+  },
+  {
+   "scene": "cuffs",
+   "phrases": [
+    "അടുത്ത നിമിഷം...",
+    "കാവൽക്കാർക്ക് കൈവിലങ്ങ്.",
+    "അവരെ ബേസ്മെന്റിൽ കെട്ടിയിട്ടു."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "reveal",
+   "phrases": [
+    "കാരണം ആ രണ്ടുപേർ...",
+    "പോലീസ് ആയിരുന്നില്ല."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "gallery",
+   "phrases": [
+    "അവർ നടന്നത് ലോകത്തിലെ ഏറ്റവും വിലയേറിയ ചിത്രങ്ങൾക്കിടയിലൂടെ.",
+    "റെംബ്രാന്റ്...",
+    "വെർമീർ..."
+   ],
+   "labels": {
+    "rembrandt": "റെംബ്രാന്റ്",
+    "vermeer": "വെർമീർ"
+   }
+  },
+  {
+   "scene": "cut",
+   "phrases": [
+    "പതിമൂന്ന് കലാസൃഷ്ടികൾ.",
+    "ചിലത് ഫ്രെയിമിൽ നിന്ന് മുറിച്ചെടുത്തു."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "value",
+   "phrases": [
+    "ഏകദേശം അമ്പത് കോടി ഡോളർ...",
+    "ചരിത്രത്തിലെ ഏറ്റവും വലിയ കലാമോഷണം."
+   ],
+   "labels": {
+    "stamp1": "ചരിത്രത്തിലെ ഏറ്റവും വലിയ",
+    "stamp2": "കലാമോഷണം"
+   }
+  },
+  {
+   "scene": "years",
+   "phrases": [
+    "മുപ്പത്തിയാറ് വർഷം കഴിഞ്ഞു.",
+    "ഒരു കോടി ഡോളർ പ്രതിഫലം.",
+    "എന്നിട്ടും...",
+    "ഒരു ചിത്രം പോലും തിരിച്ചുകിട്ടിയില്ല."
+   ],
+   "labels": {
+    "reward": "പ്രതിഫലം",
+    "recovered": "തിരിച്ചുകിട്ടിയ ചിത്രങ്ങൾ"
+   }
+  },
+  {
+   "scene": "frames",
+   "phrases": [
+    "ഇന്നും ആ ചുമരുകളിൽ, ഒഴിഞ്ഞ ഫ്രെയിമുകൾ തൂങ്ങിക്കിടക്കുന്നു...",
+    "ആ രാത്രി മുഴങ്ങിയ ബെല്ലിന്റെ ഓർമയായി."
+   ],
+   "labels": {
+    "span": "ബോസ്റ്റൺ · 1990"
+   }
+  }
+ ]
+}
+</script>
+<!-- ======================= END OF CONFIG ================================ -->
+
+<script id="timings" type="application/json">
+{
+ "duration": 52.556,
+ "audio": "build/heist/voice_cut.wav",
+ "phrases": [
+  {
+   "text": "1990 മാർച്ച് 18. പാതിരാത്രി. ബോസ്റ്റണിലെ ഒരു മ്യൂസിയത്തിന്റെ വാതിൽക്കൽ...",
+   "sentence": 0,
+   "start": 0.104,
+   "end": 6.66,
+   "words": [
+    {
+     "w": "1990",
+     "t": 0.104
+    },
+    {
+     "w": "മാർച്ച്",
+     "t": 1.104
+    },
+    {
+     "w": "18.",
+     "t": 1.61
+    },
+    {
+     "w": "പാതിരാത്രി.",
+     "t": 2.11
+    },
+    {
+     "w": "ബോസ്റ്റണിലെ",
+     "t": 3.314
+    },
+    {
+     "w": "ഒരു",
+     "t": 4.674
+    },
+    {
+     "w": "മ്യൂസിയത്തിന്റെ",
+     "t": 4.909
+    },
+    {
+     "w": "വാതിൽക്കൽ...",
+     "t": 5.955
+    }
+   ]
+  },
+  {
+   "text": "ബെൽ മുഴങ്ങി.",
+   "sentence": 0,
+   "start": 6.887,
+   "end": 7.642,
+   "words": [
+    {
+     "w": "ബെൽ",
+     "t": 6.887
+    },
+    {
+     "w": "മുഴങ്ങി.",
+     "t": 7.126
+    }
+   ]
+  },
+  {
+   "text": "പുറത്ത് രണ്ട് പോലീസുകാർ.",
+   "sentence": 1,
+   "start": 8.066,
+   "end": 9.547,
+   "words": [
+    {
+     "w": "പുറത്ത്",
+     "t": 8.066
+    },
+    {
+     "w": "രണ്ട്",
+     "t": 8.56
+    },
+    {
+     "w": "പോലീസുകാർ.",
+     "t": 8.921
+    }
+   ]
+  },
+  {
+   "text": "ഒരു പ്രശ്നം അന്വേഷിക്കാൻ വന്നതാണെന്ന് അവർ പറഞ്ഞു.",
+   "sentence": 1,
+   "start": 9.774,
+   "end": 12.085,
+   "words": [
+    {
+     "w": "ഒരു",
+     "t": 9.774
+    },
+    {
+     "w": "പ്രശ്നം",
+     "t": 9.94
+    },
+    {
+     "w": "അന്വേഷിക്കാൻ",
+     "t": 10.298
+    },
+    {
+     "w": "വന്നതാണെന്ന്",
+     "t": 10.919
+    },
+    {
+     "w": "അവർ",
+     "t": 11.539
+    },
+    {
+     "w": "പറഞ്ഞു.",
+     "t": 11.752
+    }
+   ]
+  },
+  {
+   "text": "അകത്ത് ഡ്യൂട്ടിയിൽ, ഇരുപത്തിമൂന്ന് വയസ്സുള്ള ഒരു കാവൽക്കാരൻ.",
+   "sentence": 2,
+   "start": 12.509,
+   "end": 15.5,
+   "words": [
+    {
+     "w": "അകത്ത്",
+     "t": 12.509
+    },
+    {
+     "w": "ഡ്യൂട്ടിയിൽ,",
+     "t": 12.843
+    },
+    {
+     "w": "ഇരുപത്തിമൂന്ന്",
+     "t": 13.393
+    },
+    {
+     "w": "വയസ്സുള്ള",
+     "t": 14.261
+    },
+    {
+     "w": "ഒരു",
+     "t": 14.762
+    },
+    {
+     "w": "കാവൽക്കാരൻ.",
+     "t": 14.929
+    }
+   ]
+  },
+  {
+   "text": "അയാൾ വാതിൽ തുറന്നു.",
+   "sentence": 2,
+   "start": 15.726,
+   "end": 16.858,
+   "words": [
+    {
+     "w": "അയാൾ",
+     "t": 15.726
+    },
+    {
+     "w": "വാതിൽ",
+     "t": 16.04
+    },
+    {
+     "w": "തുറന്നു.",
+     "t": 16.386
+    }
+   ]
+  },
+  {
+   "text": "അടുത്ത നിമിഷം...",
+   "sentence": 3,
+   "start": 17.283,
+   "end": 18.009,
+   "words": [
+    {
+     "w": "അടുത്ത",
+     "t": 17.283
+    },
+    {
+     "w": "നിമിഷം...",
+     "t": 17.673
+    }
+   ]
+  },
+  {
+   "text": "കാവൽക്കാർക്ക് കൈവിലങ്ങ്.",
+   "sentence": 3,
+   "start": 18.236,
+   "end": 19.491,
+   "words": [
+    {
+     "w": "കാവൽക്കാർക്ക്",
+     "t": 18.236
+    },
+    {
+     "w": "കൈവിലങ്ങ്.",
+     "t": 18.993
+    }
+   ]
+  },
+  {
+   "text": "അവരെ ബേസ്മെന്റിൽ കെട്ടിയിട്ടു.",
+   "sentence": 3,
+   "start": 19.717,
+   "end": 20.991,
+   "words": [
+    {
+     "w": "അവരെ",
+     "t": 19.717
+    },
+    {
+     "w": "ബേസ്മെന്റിൽ",
+     "t": 19.939
+    },
+    {
+     "w": "കെട്ടിയിട്ടു.",
+     "t": 20.453
+    }
+   ]
+  },
+  {
+   "text": "കാരണം ആ രണ്ടുപേർ...",
+   "sentence": 4,
+   "start": 21.406,
+   "end": 22.792,
+   "words": [
+    {
+     "w": "കാരണം",
+     "t": 21.406
+    },
+    {
+     "w": "ആ",
+     "t": 21.805
+    },
+    {
+     "w": "രണ്ടുപേർ...",
+     "t": 22.139
+    }
+   ]
+  },
+  {
+   "text": "പോലീസ് ആയിരുന്നില്ല.",
+   "sentence": 4,
+   "start": 23.019,
+   "end": 23.906,
+   "words": [
+    {
+     "w": "പോലീസ്",
+     "t": 23.019
+    },
+    {
+     "w": "ആയിരുന്നില്ല.",
+     "t": 23.299
+    }
+   ]
+  },
+  {
+   "text": "അവർ നടന്നത് ലോകത്തിലെ ഏറ്റവും വിലയേറിയ ചിത്രങ്ങൾക്കിടയിലൂടെ.",
+   "sentence": 5,
+   "start": 24.33,
+   "end": 28.179,
+   "words": [
+    {
+     "w": "അവർ",
+     "t": 24.33
+    },
+    {
+     "w": "നടന്നത്",
+     "t": 24.6
+    },
+    {
+     "w": "ലോകത്തിലെ",
+     "t": 25.113
+    },
+    {
+     "w": "ഏറ്റവും",
+     "t": 25.849
+    },
+    {
+     "w": "വിലയേറിയ",
+     "t": 26.303
+    },
+    {
+     "w": "ചിത്രങ്ങൾക്കിടയിലൂടെ.",
+     "t": 26.848
+    }
+   ]
+  },
+  {
+   "text": "റെംബ്രാന്റ്...",
+   "sentence": 5,
+   "start": 28.406,
+   "end": 29.104,
+   "words": [
+    {
+     "w": "റെംബ്രാന്റ്...",
+     "t": 28.406
+    }
+   ]
+  },
+  {
+   "text": "വെർമീർ...",
+   "sentence": 5,
+   "start": 29.33,
+   "end": 29.887,
+   "words": [
+    {
+     "w": "വെർമീർ...",
+     "t": 29.33
+    }
+   ]
+  },
+  {
+   "text": "പതിമൂന്ന് കലാസൃഷ്ടികൾ.",
+   "sentence": 6,
+   "start": 30.283,
+   "end": 31.585,
+   "words": [
+    {
+     "w": "പതിമൂന്ന്",
+     "t": 30.283
+    },
+    {
+     "w": "കലാസൃഷ്ടികൾ.",
+     "t": 30.846
+    }
+   ]
+  },
+  {
+   "text": "ചിലത് ഫ്രെയിമിൽ നിന്ന് മുറിച്ചെടുത്തു.",
+   "sentence": 6,
+   "start": 31.811,
+   "end": 33.538,
+   "words": [
+    {
+     "w": "ചിലത്",
+     "t": 31.811
+    },
+    {
+     "w": "ഫ്രെയിമിൽ",
+     "t": 32.082
+    },
+    {
+     "w": "നിന്ന്",
+     "t": 32.55
+    },
+    {
+     "w": "മുറിച്ചെടുത്തു.",
+     "t": 32.846
+    }
+   ]
+  },
+  {
+   "text": "ഏകദേശം അമ്പത് കോടി ഡോളർ...",
+   "sentence": 7,
+   "start": 33.962,
+   "end": 35.877,
+   "words": [
+    {
+     "w": "ഏകദേശം",
+     "t": 33.962
+    },
+    {
+     "w": "അമ്പത്",
+     "t": 34.516
+    },
+    {
+     "w": "കോടി",
+     "t": 35.164
+    },
+    {
+     "w": "ഡോളർ...",
+     "t": 35.483
+    }
+   ]
+  },
+  {
+   "text": "ചരിത്രത്തിലെ ഏറ്റവും വലിയ കലാമോഷണം.",
+   "sentence": 7,
+   "start": 36.104,
+   "end": 38.519,
+   "words": [
+    {
+     "w": "ചരിത്രത്തിലെ",
+     "t": 36.104
+    },
+    {
+     "w": "ഏറ്റവും",
+     "t": 36.979
+    },
+    {
+     "w": "വലിയ",
+     "t": 37.579
+    },
+    {
+     "w": "കലാമോഷണം.",
+     "t": 37.914
+    }
+   ]
+  },
+  {
+   "text": "മുപ്പത്തിയാറ് വർഷം കഴിഞ്ഞു.",
+   "sentence": 8,
+   "start": 38.943,
+   "end": 40.226,
+   "words": [
+    {
+     "w": "മുപ്പത്തിയാറ്",
+     "t": 38.943
+    },
+    {
+     "w": "വർഷം",
+     "t": 39.611
+    },
+    {
+     "w": "കഴിഞ്ഞു.",
+     "t": 39.856
+    }
+   ]
+  },
+  {
+   "text": "ഒരു കോടി ഡോളർ പ്രതിഫലം.",
+   "sentence": 8,
+   "start": 40.453,
+   "end": 41.981,
+   "words": [
+    {
+     "w": "ഒരു",
+     "t": 40.453
+    },
+    {
+     "w": "കോടി",
+     "t": 40.701
+    },
+    {
+     "w": "ഡോളർ",
+     "t": 40.987
+    },
+    {
+     "w": "പ്രതിഫലം.",
+     "t": 41.341
+    }
+   ]
+  },
+  {
+   "text": "എന്നിട്ടും...",
+   "sentence": 8,
+   "start": 42.208,
+   "end": 42.689,
+   "words": [
+    {
+     "w": "എന്നിട്ടും...",
+     "t": 42.208
+    }
+   ]
+  },
+  {
+   "text": "ഒരു ചിത്രം പോലും തിരിച്ചുകിട്ടിയില്ല.",
+   "sentence": 8,
+   "start": 42.915,
+   "end": 44.623,
+   "words": [
+    {
+     "w": "ഒരു",
+     "t": 42.915
+    },
+    {
+     "w": "ചിത്രം",
+     "t": 43.093
+    },
+    {
+     "w": "പോലും",
+     "t": 43.399
+    },
+    {
+     "w": "തിരിച്ചുകിട്ടിയില്ല.",
+     "t": 43.629
+    }
+   ]
+  },
+  {
+   "text": "ഇന്നും ആ ചുമരുകളിൽ, ഒഴിഞ്ഞ ഫ്രെയിമുകൾ തൂങ്ങിക്കിടക്കുന്നു...",
+   "sentence": 9,
+   "start": 45.047,
+   "end": 48.302,
+   "words": [
+    {
+     "w": "ഇന്നും",
+     "t": 45.047
+    },
+    {
+     "w": "ആ",
+     "t": 45.379
+    },
+    {
+     "w": "ചുമരുകളിൽ,",
+     "t": 45.46
+    },
+    {
+     "w": "ഒഴിഞ്ഞ",
+     "t": 46.037
+    },
+    {
+     "w": "ഫ്രെയിമുകൾ",
+     "t": 46.62
+    },
+    {
+     "w": "തൂങ്ങിക്കിടക്കുന്നു...",
+     "t": 47.226
+    }
+   ]
+  },
+  {
+   "text": "ആ രാത്രി മുഴങ്ങിയ ബെല്ലിന്റെ ഓർമയായി.",
+   "sentence": 9,
+   "start": 48.528,
+   "end": 50.632,
+   "words": [
+    {
+     "w": "ആ",
+     "t": 48.528
+    },
+    {
+     "w": "രാത്രി",
+     "t": 48.618
+    },
+    {
+     "w": "മുഴങ്ങിയ",
+     "t": 48.979
+    },
+    {
+     "w": "ബെല്ലിന്റെ",
+     "t": 49.52
+    },
+    {
+     "w": "ഓർമയായി.",
+     "t": 50.123
+    }
+   ]
+  }
+ ],
+ "beat": {
+  "bpm": 81.5,
+  "t0": 0.095,
+  "err_ms": 81
+ }
+}
+</script>
+
+<style>
+  html, body { margin: 0; background: #050608; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  #world { position: absolute; inset: 0; }
+  #capShade { position: absolute; left: 0; right: 0; top: 1180px; height: 740px;
+    background: linear-gradient(to bottom, rgba(5,6,8,0) 0%, rgba(5,6,8,.55) 40%, rgba(5,6,8,.75) 100%); }
+  #captions { position: absolute; left: 50px; width: 860px; top: 1290px; height: 220px; }
+  .page { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center;
+    justify-content: center; text-align: center; opacity: 0; }
+  .w { display: inline-block; font-weight: 700; font-size: 76px; line-height: 1.32; color: #F3EEE4;
+    margin: 0 12px; opacity: 0;
+    text-shadow: 0 6px 22px rgba(0,0,0,.7), 0 0 3px rgba(0,0,0,.9); }
+  svg text { font-weight: 700; }
+  .guide { position: absolute; background: rgba(255,0,80,.25); pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="world" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+    <defs id="defs">
+      <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1A20"/><stop offset=".6" stop-color="#0E2A33"/><stop offset="1" stop-color="#07090C"/></linearGradient>
+      <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050A12"/><stop offset="1" stop-color="#14303A"/></linearGradient>
+      <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A2228"/><stop offset="1" stop-color="#0A0E11"/></linearGradient>
+      <linearGradient id="sunset" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B1240"/><stop offset=".45" stop-color="#B8336A"/><stop offset=".75" stop-color="#FF8A3D"/><stop offset="1" stop-color="#FFC46B"/></linearGradient>
+      <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE29A"/><stop offset="1" stop-color="#D9A02B"/></linearGradient>
+      <radialGradient id="vig" cx=".5" cy=".45" r=".72"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".7"/></radialGradient>
+      <radialGradient id="leak"><stop offset="0" stop-color="#FF9A4A" stop-opacity=".35"/><stop offset="1" stop-color="#FF9A4A" stop-opacity="0"/></radialGradient>
+      <radialGradient id="redGlow"><stop offset="0" stop-color="#FF3B3B" stop-opacity=".8"/><stop offset="1" stop-color="#FF3B3B" stop-opacity="0"/></radialGradient>
+      <radialGradient id="blueGlow"><stop offset="0" stop-color="#3B7BFF" stop-opacity=".8"/><stop offset="1" stop-color="#3B7BFF" stop-opacity="0"/></radialGradient>
+      <filter id="sepia"><feColorMatrix type="matrix" values=".39 .77 .19 0 0  .35 .69 .17 0 0  .27 .53 .13 0 0  0 0 0 1 0"/></filter>
+      <filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+      <filter id="blur20"><feGaussianBlur stdDeviation="20"/></filter>
+      <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    </defs>
+    <rect width="1080" height="1920" fill="url(#bgG)"/>
+    <g id="cam"></g>
+    <rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+    <circle id="leakC" cx="980" cy="300" r="520" fill="url(#leak)" pointer-events="none"/>
+    <rect y="0" width="1080" height="70" fill="#000"/>
+    <rect y="1850" width="1080" height="70" fill="#000"/>
+    <g id="front"></g>
+    <rect id="flash" width="1080" height="1920" fill="#fff" opacity="0"/>
+  </svg>
+  <div id="capShade"></div>
+  <div id="captions"></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="lib/people.js"></script>
+<script>
+(async function () {
+const CFG = JSON.parse(document.getElementById('config').textContent);
+const TIM = JSON.parse(document.getElementById('timings').textContent);
+const C = CFG.palette, FONT = CFG.font;
+const NS = 'http://www.w3.org/2000/svg';
+const DUR = TIM.duration;
+const SFX = [];
+const $ = id => document.getElementById(id);
+window.BEAT = TIM.beat || null;
+const BEAT = window.BEAT;
+const snapT = t => { if (!BEAT) return t; const g = 30 / BEAT.bpm; return Math.max(0, BEAT.t0 + Math.ceil((t - .08 - BEAT.t0) / g) * g); };
+const FREE = new Set(['tick', 'wave', 'dip', 'shimmer', 'siren', 'type']);
+const sfx = (type, t, gain = 1, extra = {}) => SFX.push(Object.assign({ type, t: +Math.max(0, FREE.has(type) ? t : snapT(t)).toFixed(3), gain }, extra));
+const hit = t => sfx('hit', t, .8);
+
+await document.fonts.load(`700 80px ${FONT}`, 'മലയാളം');
+document.body.style.fontFamily = FONT;
+
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function text(parent, x, y, str, size, fill, anchor = 'middle', extra = {}) { const t = el('text', Object.assign({ x, y, 'font-size': size, fill, 'text-anchor': anchor, 'font-family': FONT, 'dominant-baseline': 'central' }, extra), parent); t.textContent = str; return t; }
+
+// ---------------------------------------------------------------- timing
+const sentences = CFG.sentences.map((s, si) => { const ph = TIM.phrases.filter(p => p.sentence === si); return Object.assign({}, s, { ph, words: ph.flatMap(p => p.words) }); });
+const sStart = si => sentences[si].ph[0].start;
+const sEnd = si => si + 1 < sentences.length ? sStart(si + 1) : DUR;
+const pS = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].start;
+const pE = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].end;
+const wT = (si, k) => { const w = sentences[si].words; return w[Math.max(0, Math.min(k, w.length - 1))].t; };
+const wIdx = (si, j, k = 0) => sentences[si].ph.slice(0, j).reduce((a, p) => a + p.words.length, 0) + k;
+const lastW = si => wT(si, sentences[si].words.length - 1);
+
+const tl = gsap.timeline({ paused: true });
+tl.to({}, { duration: DUR }, 0);
+const hide = e => tl.set(e, { opacity: 0 }, 0);
+const show = (e, t, d = .5) => { hide(e); tl.to(e, { opacity: 1, duration: d, ease: 'power1.out' }, t); };
+const fadeOut = (e, t, d = .5) => tl.to(e, { opacity: 0, duration: d, ease: 'power1.in' }, t);
+function stamp(e, t, o = {}) { t = snapT(t); tl.set(e, { opacity: 0, scale: 2.2, transformOrigin: o.origin || '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: .28, ease: 'power4.out' }, t); sfx('thud', t + .2, .8); }
+function counter(tEl, from, to, t, d, fmt, ticks = 14) { const o = { v: from }; tEl.textContent = fmt(from); tl.to(o, { v: to, duration: d, ease: 'power2.out', onUpdate: () => tEl.textContent = fmt(o.v) }, t); for (let k = 0; k < ticks; k++) sfx('tick', t + d * (1 - Math.sqrt(1 - k / ticks)), .5); }
+const flash = (t, a = .35) => { tl.set($('flash'), { opacity: a }, t); tl.to($('flash'), { opacity: 0, duration: .5 }, t + .03); };
+// typewriter line: reveals left to right with a key click per step
+let clipN = 0;
+function typeLine(parent, x, y, str, size, fill, t, d = .9, anchor = 'start') {
+  const id = 'tw' + (clipN++), cp = el('clipPath', { id }, $('defs')); const r = el('rect', { x: anchor === 'middle' ? 0 : x - 4, y: y - size, width: 0, height: size * 2 }, cp);
+  const g = el('g', { 'clip-path': `url(#${id})` }, parent); const tx = text(g, x, y, str, size, fill, anchor, { 'letter-spacing': 3 });
+  const w = tx.getBBox().width + 12, x0 = anchor === 'middle' ? x - w / 2 : x - 4; r.setAttribute('x', x0);
+  const o = { w: 0 }; tl.to(o, { w, duration: d, ease: 'steps(' + Math.max(6, str.length) + ')', onUpdate: () => r.setAttribute('width', o.w) }, t);
+  for (let k = 0; k < Math.min(12, str.length); k++) sfx('type', t + k * d / Math.min(12, str.length), .5);
+  return g;
+}
+// lower-third location card: thin orange line + typewriter text
+function lowerThird(parent, line1, line2, t) {
+  const g = el('g', {}, parent);
+  const bar = el('rect', { x: 80, y: 300, width: 0, height: 5, fill: C.accent }, g);
+  tl.to(bar, { attr: { width: 120 }, duration: .4, ease: 'power2.out' }, t);
+  typeLine(g, 84, 352, line1, 46, '#F3EEE4', t + .2, .8);
+  if (line2) typeLine(g, 84, 418, line2, 40, C.accent, t + .9, .5);
+  return g;
+}
+
+// ---------------------------------------------------------------- camera (Ken Burns)
+const CAM = { s: 1, x: 0, y: 0, r: 0 };
+const camTo = (t, v, d, ease = 'sine.inOut') => tl.to(CAM, Object.assign({ duration: d, ease }, v), t);
+const camSet = (t, v) => tl.set(CAM, v, t);
+const scene = name => { const g = el('g', { id: 'sc_' + name }, $('cam')); hide(g); return g; };
+const PPL = [];
+function person(parent, opts, state) { const p = Person(parent, opts); Object.assign(p.S, { raise: 0 }, state); p.baseArm = state.armN || null; PPL.push(p); return p; }
+
+// ---------------------------------------------------------------- drawn pieces
+function policeCar(parent, x, y, s = 1) {      // side view, facing right
+  const g = el('g', { transform: `translate(${x} ${y}) scale(${s})` }, parent);
+  el('path', { d: 'M-230 20 L-230 -40 Q-226 -62 -190 -66 L-110 -70 L-70 -122 Q-60 -134 -36 -134 L80 -134 Q104 -134 116 -118 L150 -72 L206 -64 Q232 -58 234 -30 L234 20 Z', fill: '#E9EEF2' }, g);
+  el('path', { d: 'M-230 -10 H234 V20 H-230Z', fill: '#16233A' }, g);
+  el('path', { d: 'M-60 -118 L-30 -124 L40 -124 L40 -74 L-96 -74Z M54 -124 L96 -124 L132 -76 L54 -76Z', fill: '#2B3B48' }, g);
+  el('rect', { x: -40, y: -150, width: 90, height: 16, rx: 6, fill: '#222' }, g);
+  const red = el('rect', { x: -38, y: -148, width: 42, height: 12, rx: 4, fill: '#FF3B3B' }, g);
+  const blue = el('rect', { x: 6, y: -148, width: 42, height: 12, rx: 4, fill: '#3B7BFF' }, g);
+  [-150, 150].forEach(wx => { el('circle', { cx: wx, cy: 22, r: 40, fill: '#0B0D10' }, g); el('circle', { cx: wx, cy: 22, r: 17, fill: '#8C96A3' }, g); });
+  el('rect', { x: 210, y: -44, width: 22, height: 14, rx: 4, fill: '#FFF4C2' }, g);
+  return { g, red, blue };
+}
+function cityBlocks(parent, x0, y0, w, h, cell, rnd, colA = '#173A44', colB = '#1E4652') {
+  const g = el('g', {}, parent);
+  el('rect', { x: x0, y: y0, width: w, height: h, fill: '#0A1418' }, g);
+  for (let gx = 0; gx < w / cell; gx++) for (let gy = 0; gy < h / cell; gy++) {
+    const bx = x0 + gx * cell + 14, by = y0 + gy * cell + 14, bw = cell - 28;
+    el('rect', { x: bx, y: by, width: bw, height: bw, rx: 8, fill: rnd() > .5 ? colA : colB }, g);
+    for (let k = 0; k < 4; k++) el('rect', { x: bx + 10 + (k % 2) * (bw / 2 - 4), y: by + 10 + Math.floor(k / 2) * (bw / 2 - 4), width: bw / 2 - 16, height: bw / 2 - 16, rx: 4, fill: '#0F2A31', opacity: .8 }, g);
+  }
+  return g;
+}
+function skyline(parent, baseY, color, rnd, n = 14, hmax = 360, windows = true) {
+  const g = el('g', {}, parent); let x = -20;
+  for (let i = 0; i < n; i++) {
+    const w = 60 + rnd() * 70, h = 120 + rnd() * hmax; el('rect', { x, y: baseY - h, width: w, height: h, fill: color }, g);
+    if (windows) for (let wy = baseY - h + 20; wy < baseY - 20; wy += 34) for (let wx = x + 12; wx < x + w - 14; wx += 22) if (rnd() > .62) el('rect', { x: wx, y: wy, width: 9, height: 14, fill: '#FFD08A', opacity: .55 + rnd() * .4 }, g);
+    x += w + 6;
+  }
+  return g;
+}
+function card(parent, cx, cy, label, kind) {      // choice card: police badge or thief mask
+  const g = el('g', {}, parent);
+  el('rect', { x: cx - 170, y: cy - 210, width: 340, height: 420, rx: 26, fill: '#121B20', stroke: kind === 'cop' ? C.blue : C.accent, 'stroke-width': 6, filter: 'url(#shadow)' }, g);
+  if (kind === 'cop') { el('path', { d: `M${cx} ${cy - 130} L${cx + 85} ${cy - 95} L${cx + 75} ${cy + 10} Q${cx + 60} ${cy + 70} ${cx} ${cy + 95} Q${cx - 60} ${cy + 70} ${cx - 75} ${cy + 10} L${cx - 85} ${cy - 95}Z`, fill: C.blue }, g); el('path', { d: `M${cx} ${cy - 60} l18 36 40 6 -29 28 7 40 -36 -19 -36 19 7 -40 -29 -28 40 -6Z`, fill: '#E9EEF2' }, g); }
+  else { el('path', { d: `M${cx - 110} ${cy - 40} Q${cx} ${cy - 110} ${cx + 110} ${cy - 40} Q${cx + 100} ${cy + 30} ${cx + 40} ${cy + 20} Q${cx} ${cy} ${cx - 40} ${cy + 20} Q${cx - 100} ${cy + 30} ${cx - 110} ${cy - 40}Z`, fill: '#1A1A1A', stroke: C.accent, 'stroke-width': 5 }, g); [-50, 50].forEach(dx => el('ellipse', { cx: cx + dx, cy: cy - 30, rx: 28, ry: 16, fill: '#FFE6C2' }, g)); }
+  text(g, cx, cy + 150, label, 58, '#F3EEE4');
+  return g;
+}
+
+const rnd = (() => { let s = 13; return () => (s = (s * 16807) % 2147483647) / 2147483647; })();
+const police = [];
+const DAY = { d: 0 };
+
+// ================================================================= SCENES
+const RAIN = [];
+function rainGroup(parent, n = 70, color = '#9FB6C6') { const g = el('g', { opacity: .55 }, parent); for (let i = 0; i < n; i++) RAIN.push({ l: el('line', { stroke: color, 'stroke-width': 3, 'stroke-linecap': 'round' }, g), i }); return g; }
+function goldFrame(parent, x, y, w, h) {
+  const g = el('g', { filter: 'url(#shadow)' }, parent);
+  el('rect', { x: x - 34, y: y - 34, width: w + 68, height: h + 68, fill: 'url(#goldG)' }, g);
+  el('rect', { x: x - 20, y: y - 20, width: w + 40, height: h + 40, fill: 'none', stroke: '#8A6420', 'stroke-width': 6 }, g);
+  el('rect', { x: x - 8, y: y - 8, width: w + 16, height: h + 16, fill: '#3A2A12' }, g);
+  return g;
+}
+function seascape(parent, x, y, w, h) {
+  const g = el('g', {}, parent), id = 'sea' + (clipN++), cp = el('clipPath', { id }, $('defs')); el('rect', { x, y, width: w, height: h }, cp); g.setAttribute('clip-path', `url(#${id})`);
+  el('rect', { x, y, width: w, height: h, fill: '#2C3A33' }, g);
+  el('ellipse', { cx: x + w * .7, cy: y + h * .18, rx: w * .3, ry: h * .12, fill: '#C9B98A', opacity: .55 }, g);
+  for (let k = 0; k < 4; k++) el('path', { d: `M${x} ${y + h * (.55 + k * .12)} q${w * .2} ${-h * .12} ${w * .4} 0 t${w * .4} 0 t${w * .4} 0 V${y + h} H${x}Z`, fill: ['#1E3A3A', '#244644', '#183230', '#12261F'][k] }, g);
+  el('path', { d: `M${x + w * .15} ${y + h * .55} q${w * .2} ${-h * .12} ${w * .4} 0`, stroke: '#E7E1C8', 'stroke-width': 5, fill: 'none', opacity: .7 }, g);
+  const b = el('g', { transform: `translate(${x + w * .45} ${y + h * .5}) rotate(-18)` }, g);
+  el('path', { d: 'M-70 0 Q0 30 70 0 L55 -14 L-55 -14Z', fill: '#3A2614' }, b); el('path', { d: 'M0 -14 V-120', stroke: '#2A1A0C', 'stroke-width': 5 }, b); el('path', { d: 'M3 -116 L60 -40 L3 -40Z', fill: '#D8CBA4', opacity: .9 }, b);
+  return g;
+}
+function musicRoom(parent, x, y, w, h) {
+  const g = el('g', {}, parent), id = 'mr' + (clipN++), cp = el('clipPath', { id }, $('defs')); el('rect', { x, y, width: w, height: h }, cp); g.setAttribute('clip-path', `url(#${id})`);
+  el('rect', { x, y, width: w, height: h, fill: '#6D5A3A' }, g);
+  el('rect', { x: x + w * .05, y: y + h * .1, width: w * .28, height: h * .45, fill: '#E8D9A8', opacity: .8 }, g);
+  for (let i = 0; i < 6; i++) for (let j = 0; j < 3; j++) el('rect', { x: x + i * w / 6, y: y + h * .72 + j * h * .093, width: w / 12, height: h * .093, fill: (i + j) % 2 ? '#2A2016' : '#CFC2A0', transform: `translate(${(j % 2) * w / 12} 0)` }, g);
+  el('rect', { x: x + w * .42, y: y + h * .48, width: w * .45, height: h * .14, fill: '#3A2A1A' }, g);
+  el('circle', { cx: x + w * .5, cy: y + h * .36, r: w * .05, fill: '#E6C9A0' }, g); el('path', { d: `M${x + w * .43} ${y + h * .62} q${w * .07} ${-h * .22} ${w * .14} 0Z`, fill: '#C9A84A' }, g);
+  el('circle', { cx: x + w * .75, cy: y + h * .34, r: w * .05, fill: '#E6C9A0' }, g); el('path', { d: `M${x + w * .68} ${y + h * .62} q${w * .07} ${-h * .24} ${w * .14} 0Z`, fill: '#5A3A5A' }, g);
+  return g;
+}
+function portrait(parent, x, y, w, h) {
+  const g = el('g', {}, parent), id = 'pt' + (clipN++), cp = el('clipPath', { id }, $('defs')); el('rect', { x, y, width: w, height: h }, cp); g.setAttribute('clip-path', `url(#${id})`);
+  el('rect', { x, y, width: w, height: h, fill: '#1E1A16' }, g);
+  el('ellipse', { cx: x + w / 2, cy: y + h * .38, rx: w * .17, ry: h * .14, fill: '#C9A27A' }, g);
+  el('path', { d: `M${x + w * .15} ${y + h} Q${x + w / 2} ${y + h * .45} ${x + w * .85} ${y + h}Z`, fill: '#0E0C0A' }, g);
+  el('ellipse', { cx: x + w / 2, cy: y + h * .66, rx: w * .16, ry: h * .05, fill: '#E8E0CC' }, g);
+  return g;
+}
+function silhouettes(parent, cx, baseY, s, color, caps) {
+  const g = el('g', {}, parent), capEls = [];
+  [-1, 1].forEach(k => {
+    const x = cx + k * 120 * s, p = el('g', {}, g);
+    el('path', { d: `M${x - 95 * s} ${baseY} L${x - 80 * s} ${baseY - 260 * s} Q${x} ${baseY - 320 * s} ${x + 80 * s} ${baseY - 260 * s} L${x + 95 * s} ${baseY}Z`, fill: color }, p);
+    el('circle', { cx: x, cy: baseY - 360 * s, r: 62 * s, fill: color }, p);
+    if (caps) { const c = el('g', {}, g); el('path', { d: `M${x - 74 * s} ${baseY - 392 * s} Q${x} ${baseY - 470 * s} ${x + 74 * s} ${baseY - 392 * s}Z`, fill: '#0B1630' }, c); el('rect', { x: x - 86 * s, y: baseY - 398 * s, width: 172 * s, height: 16 * s, rx: 6 * s, fill: '#0B1630' }, c); el('path', { d: `M${x} ${baseY - 452 * s} l9 14 16 2 -12 11 3 16 -16 -8 -16 8 3 -16 -12 -11 16 -2Z`, fill: '#E2C25A' }, c); capEls.push(c); }
+  });
+  return { g, capEls };
+}
+const BULB = { on: 0 }, BELL = { glow: 0 };
+const bulbs = [], bells = [];
+function doorbell(parent, x, y) { const g = el('g', {}, parent); el('rect', { x: x - 26, y: y - 40, width: 52, height: 80, rx: 10, fill: '#3A3226', stroke: '#8A7A5A', 'stroke-width': 3 }, g); const b = el('circle', { cx: x, cy: y, r: 14, fill: '#FFD08A' }, g); const halo = el('circle', { cx: x, cy: y, r: 60, fill: 'url(#leak)' }, g); bells.push({ b, halo }); return g; }
+
+const scenes = {
+  door(si, L) {
+    const g = el('g', { id: 'sc_door' }, $('cam')), T1 = sEnd(si);
+    el('rect', { x: -100, y: -100, width: 1280, height: 2120, fill: 'url(#nightSky)' }, g);
+    el('rect', { x: 60, y: 360, width: 960, height: 1000, fill: '#2A2622' }, g);
+    for (let i = 0; i < 4; i++) for (let j = 0; j < 2; j++) { const wx = 120 + i * 230 + (i > 1 ? 120 : 0), wy = 430 + j * 330; if (i === 1 || i === 2) continue; el('path', { d: `M${wx} ${wy + 220} V${wy + 60} Q${wx + 60} ${wy} ${wx + 120} ${wy + 60} V${wy + 220}Z`, fill: j ? '#0E1418' : '#1A2228' }, g); }
+    el('path', { d: 'M380 1360 V860 Q540 700 700 860 V1360Z', fill: '#4A2E1A', stroke: '#6E4A2A', 'stroke-width': 10 }, g);
+    el('path', { d: 'M540 760 V1360', stroke: '#2E1C10', 'stroke-width': 6 }, g);
+    [500, 580].forEach(x => el('circle', { cx: x, cy: 1110, r: 9, fill: '#C9A84A' }, g));
+    const lamp = el('g', {}, g); el('rect', { x: 520, y: 640, width: 40, height: 56, rx: 6, fill: '#FFD08A' }, lamp); el('circle', { cx: 540, cy: 670, r: 180, fill: 'url(#leak)' }, lamp);
+    doorbell(g, 760, 1080);
+    el('path', { d: 'M-100 1360 H1180 V2000 H-100Z', fill: '#101418' }, g);
+    el('ellipse', { cx: 540, cy: 1400, rx: 260, ry: 26, fill: '#FFD08A', opacity: .12, filter: 'url(#blur8)' }, g);
+    rainGroup(g, 80);
+    camSet(0, { s: 1.0, x: 0, y: 0 }); camTo(0, { s: 1.28, x: -40, y: -140 }, T1, 'sine.inOut');
+    const lt = lowerThird($('front'), L.date, L.city, .3); fadeOut(lt, T1 - .2, .25); sfx('wave', 0, .5); hit(.02);
+    const tb = pS(si, 1); tl.to(BELL, { glow: 1, duration: .08 }, snapT(tb)); tl.to(BELL, { glow: 0, duration: 1.4 }, snapT(tb) + .1); sfx('chime', tb, .9);
+    fadeOut(g, T1 - .2, .25);
+  },
+  cops(si, L) {
+    const g = scene('cops'), T0 = sStart(si), T1 = sEnd(si);
+    el('rect', { x: -100, y: -100, width: 1280, height: 2120, fill: '#2A1C10' }, g);
+    el('rect', { x: 170, y: 330, width: 740, height: 900, rx: 12, fill: '#3A2A1C', stroke: '#6E4A2A', 'stroke-width': 14 }, g);
+    const glass = el('g', {}, g); el('rect', { x: 230, y: 390, width: 620, height: 780, fill: '#6E7E86' }, glass); el('rect', { x: 230, y: 390, width: 620, height: 780, fill: '#C9D4D8', opacity: .25 }, glass);
+    const sil = el('g', { filter: 'url(#blur8)' }, glass); silhouettes(sil, 540, 1170, 1.0, '#1A2228', true);
+    const glint = el('circle', { cx: 420, cy: 760, r: 26, fill: '#FFE9A8', filter: 'url(#glow)', opacity: 0 }, g);
+    show(g, T0 - .05, .3); camSet(T0 - .05, { s: 1.08, x: 0, y: 20 }); camTo(T0, { s: 1.0, y: 0 }, T1 - T0);
+    tl.to(glint, { opacity: 1, duration: .15, yoyo: true, repeat: 1 }, snapT(pS(si, 0) + .5)); sfx('shimmer', pS(si, 0) + .5, .4);
+    fadeOut(g, T1 - .2, .25);
+  },
+  guard(si, L) {
+    const g = scene('guard'), T0 = sStart(si), T1 = sEnd(si);
+    el('rect', { x: -100, y: -100, width: 1280, height: 2120, fill: '#0C1216' }, g);
+    for (let i = 0; i < 4; i++) { const mx = 180 + (i % 2) * 380, my = 360 + Math.floor(i / 2) * 260; el('rect', { x: mx, y: my, width: 340, height: 220, rx: 12, fill: '#1A2228', stroke: '#33424A', 'stroke-width': 6 }, g); el('rect', { x: mx + 16, y: my + 16, width: 308, height: 188, fill: '#2E4A55', opacity: .9 }, g); el('path', { d: `M${mx + 120} ${my + 204} V${my + 90} Q${mx + 170} ${my + 50} ${mx + 220} ${my + 90} V${my + 204}`, fill: 'none', stroke: '#9FB6C6', 'stroke-width': 4, opacity: .6 }, g); }
+    const guard = person(g, { hairStyle: 'short', hair: '#2A1E16', skin: '#E7B793', top: '#2C3A5A', topStyle: 'jacket', pants: '#1E2433', shoes: '#111' }, { x: 420, y: 1240, s: 1.05, face: 1, sit: 1, smile: .3, armN: [55, 35] });
+    el('rect', { x: 230, y: 1050, width: 640, height: 40, fill: '#3A2E22' }, g);
+    const btn = el('circle', { cx: 700, cy: 1040, r: 22, fill: C.red }, g), bh = el('circle', { cx: 700, cy: 1040, r: 80, fill: 'url(#redGlow)', opacity: 0 }, g);
+    const age = el('g', {}, g); el('rect', { x: 120, y: 820, width: 220, height: 76, rx: 38, fill: '#121B20', stroke: C.accent, 'stroke-width': 4 }, age); text(age, 230, 858, L.age, 42, '#F3EEE4');
+    show(g, T0 - .05, .3); camSet(T0 - .05, { s: 1.0, x: 0, y: 0 }); camTo(T0, { s: 1.07, x: -20 }, T1 - T0);
+    show(age, snapT(wT(si, 2)), .3); sfx('pop', wT(si, 2), .5);
+    const tp = pS(si, 1); tl.set(guard.S, { raise: 0 }, 0); tl.to(bh, { opacity: 1, duration: .1, yoyo: true, repeat: 3 }, snapT(tp + .5)); tl.to(btn, { attr: { r: 18 }, duration: .1, yoyo: true, repeat: 1 }, snapT(tp + .5)); sfx('thud', tp + .5, .6); sfx('door', tp + .6, .6);
+    fadeOut(g, T1 - .2, .25);
+  },
+  cuffs(si, L) {
+    const g = scene('cuffs'), T0 = sStart(si), T1 = sEnd(si);
+    el('rect', { x: -100, y: -100, width: 1280, height: 2120, fill: '#0A0B0C' }, g);
+    el('path', { d: 'M140 1300 L400 700 H680 L940 1300Z', fill: '#16181A' }, g); el('path', { d: 'M400 700 V320 H680 V700', fill: '#101214' }, g);
+    const bulbG = el('g', {}, g); el('path', { d: 'M540 230 V330', stroke: '#333', 'stroke-width': 4 }, bulbG); const bulb = el('circle', { cx: 540, cy: 350, r: 22, fill: '#FFE6A0' }, bulbG); const bl = el('circle', { cx: 540, cy: 420, r: 420, fill: 'url(#leak)' }, bulbG); bulbs.push({ bulb, bl });
+    const g1 = person(g, { hairStyle: 'short', hair: '#2A1E16', skin: '#C9A07E', top: '#2C3A5A', topStyle: 'jacket', pants: '#1E2433' }, { x: 400, y: 1180, s: .85, face: 1, sit: 1, smile: 0 });
+    const g2 = person(g, { hairStyle: 'buzz', hair: '#3A2A1E', skin: '#B88A66', top: '#2C3A5A', topStyle: 'jacket', pants: '#1E2433' }, { x: 680, y: 1180, s: .85, face: -1, sit: 1, smile: 0 });
+    const cuffs = el('g', { filter: 'url(#glow)' }, g); [-1, 1].forEach(k => el('circle', { cx: 540 + k * 70, cy: 780, r: 52, fill: 'none', stroke: '#C9D1D8', 'stroke-width': 14 }, cuffs)); el('path', { d: 'M470 780 H610', stroke: '#C9D1D8', 'stroke-width': 8, 'stroke-dasharray': '14 8' }, cuffs);
+    show(g, T0 - .05, .1); sfx('dip', T0, 1, { dur: T1 - T0 + .1 }); sfx('thud', T0, .7);
+    tl.set(cuffs, { opacity: 0, scale: 1.8, transformOrigin: '540px 780px' }, 0); tl.to(cuffs, { opacity: 1, scale: 1, duration: .22, ease: 'power4.out' }, snapT(pS(si, 1))); sfx('shutter', pS(si, 1) + .15, .9); sfx('thud', pS(si, 1) + .18, .8);
+    tl.to(cuffs, { opacity: 0, duration: .4 }, pS(si, 2) + .3);
+    camSet(T0 - .05, { s: 1.0, x: 0, y: 0 }); camTo(T0, { s: 1.06, y: 20 }, T1 - T0);
+    fadeOut(g, T1 - .15, .2);
+  },
+  reveal(si, L) {
+    const g = scene('reveal'), T0 = sStart(si), T1 = sEnd(si);
+    el('rect', { x: -100, y: -100, width: 1280, height: 2120, fill: '#0E1418' }, g);
+    const s = silhouettes(g, 540, 1240, 1.25, '#1A2228', true);
+    show(g, T0 - .05, .2); camSet(T0 - .05, { s: 1.0, x: 0, y: 0 }); camTo(T0, { s: 1.06, y: 40 }, T1 - T0);
+    const t1 = snapT(pS(si, 1));
+    s.capEls.forEach((c, k) => tl.to(c, { y: 380, rotation: k ? 40 : -40, transformOrigin: '50% 50%', opacity: 0, duration: .6, ease: 'power2.in' }, t1 + k * .06));
+    tl.to(s.g, { attr: { fill: '#3A0E10' }, duration: .3 }, t1);
+    s.g.querySelectorAll('path,circle').forEach(e => { if (e.getAttribute('fill') === '#1A2228') tl.to(e, { attr: { fill: '#4A1214' }, duration: .3 }, t1); });
+    hit(t1); flash(t1, .35); sfx('dip', T0, 1, { dur: t1 - T0 });
+    fadeOut(g, T1 - .2, .25);
+  },
+  gallery(si, L) {
+    const g = scene('gallery'), T0 = sStart(si), T1 = sEnd(si);
+    el('rect', { x: -400, y: -100, width: 2200, height: 2120, fill: '#1A1410' }, g);
+    for (let i = 0; i < 9; i++) el('rect', { x: -400 + i * 240, y: 300, width: 6, height: 1000, fill: '#241C16' }, g);
+    goldFrame(g, 110, 470, 420, 520); seascape(g, 110, 470, 420, 520);
+    goldFrame(g, 650, 520, 360, 420); musicRoom(g, 650, 520, 360, 420);
+    goldFrame(g, 1130, 500, 300, 400); portrait(g, 1130, 500, 300, 400);
+    const beam = el('circle', { cx: 300, cy: 720, r: 300, fill: 'url(#leak)', opacity: .9 }, g); window.__beam = beam;
+    const lr = el('g', {}, $('front')); text(lr, 540, 1140, L.rembrandt, 60, C.gold, 'middle', { filter: 'url(#glow)' }); const lv = el('g', {}, $('front')); text(lv, 540, 1140, L.vermeer, 60, C.gold, 'middle', { filter: 'url(#glow)' });
+    show(g, T0 - .05, .4); camSet(T0 - .05, { s: 1.0, x: 90, y: 0 }); camTo(T0, { x: -150 }, T1 - T0 + .3, 'sine.inOut');
+    show(lr, snapT(pS(si, 1)), .25); sfx('pop', pS(si, 1), .5); fadeOut(lr, snapT(pS(si, 2)) - .05, .1); show(lv, snapT(pS(si, 2)), .25); sfx('pop', pS(si, 2), .5); fadeOut(lv, T1 - .2, .25);
+    tl.to(BEAM, { x: 1, duration: T1 - T0, ease: 'sine.inOut' }, T0);
+    fadeOut(g, T1 - .2, .25);
+  },
+  cut(si, L) {
+    const g = scene('cut'), T0 = sStart(si), T1 = sEnd(si);
+    el('rect', { x: -100, y: -100, width: 1280, height: 2120, fill: '#1A1410' }, g);
+    goldFrame(g, 220, 430, 640, 640);
+    el('rect', { x: 220, y: 430, width: 640, height: 640, fill: '#2A2016' }, g);
+    const canvasG = el('g', {}, g); seascape(canvasG, 220, 430, 640, 640);
+    const knife = el('path', { d: 'M250 460 H830 V1040 H250 Z', fill: 'none', stroke: '#F3EEE4', 'stroke-width': 5, 'stroke-dasharray': '18 10' }, g);
+    const L0 = knife.getTotalLength(); knife.setAttribute('stroke-dasharray', L0 + ' ' + L0); tl.set(knife, { attr: { 'stroke-dashoffset': L0 } }, 0);
+    const tk = pS(si, 1); tl.to(knife, { attr: { 'stroke-dashoffset': 0 }, duration: 1.2, ease: 'none' }, tk);
+    for (let k = 0; k < 6; k++) sfx('tick', tk + k * .2, .5);
+    tl.to(canvasG, { y: -120, opacity: 0, duration: .6, ease: 'power2.in' }, tk + 1.25); tl.to(knife, { opacity: 0, duration: .3 }, tk + 1.25); sfx('whoosh', tk + 1.25, .5);
+    const ct = text(g, 540, 1180, '0', 110, C.gold, 'middle', { filter: 'url(#glow)' });
+    show(g, T0 - .05, .3); counter(ct, 0, 13, T0 + .1, Math.max(.8, pE(si, 0) - T0 - .1), v => Math.round(v) + ' / 13', 13);
+    camSet(T0 - .05, { s: 1.0, x: 0, y: 0 }); camTo(T0, { s: 1.05 }, T1 - T0);
+    fadeOut(g, T1 - .2, .25);
+  },
+  value(si, L) {
+    const g = scene('value'), T0 = sStart(si), T1 = sEnd(si);
+    for (let i = 0; i < 40; i++) el('circle', { cx: (i * 137) % 1080, cy: 300 + (i * 211) % 1000, r: 3 + (i % 4), fill: C.gold, opacity: .25 + (i % 5) * .08, class: 'dust' }, g);
+    const ct = text(g, 540, 600, '$0', 100, C.gold, 'middle', { filter: 'url(#glow)' });
+    counter(ct, 0, 5e8, T0 + .1, Math.max(1, pE(si, 0) - T0), v => '$' + Math.round(v).toLocaleString('en-US'), 16);
+    const st = el('g', {}, g); el('rect', { x: 140, y: 780, width: 800, height: 230, rx: 14, fill: 'none', stroke: C.red, 'stroke-width': 10 }, st); text(st, 540, 850, L.stamp1, 50, C.red); text(st, 540, 945, L.stamp2, 80, C.red);
+    tl.set(st, { rotation: -5, svgOrigin: '540 895' }, 0); stamp(st, pS(si, 1) + .3, { origin: '540px 895px' }); hit(pS(si, 1) + .3); flash(snapT(pS(si, 1) + .3) + .1, .3);
+    show(g, T0 - .05, .3); camSet(T0 - .05, { s: 1.05, x: 0, y: 10 }); camTo(T0, { s: 1.0, y: 0 }, T1 - T0);
+    fadeOut(g, T1 - .2, .25);
+  },
+  years(si, L) {
+    const g = scene('years'), T0 = sStart(si), T1 = sEnd(si);
+    const yt = text(g, 540, 430, '1990', 150, '#F3EEE4', 'middle', { filter: 'url(#glow)' });
+    counter(yt, 1990, 2026, T0 + .1, Math.max(1, pE(si, 0) - T0), v => String(Math.round(v)), 12);
+    const poster = el('g', { filter: 'url(#shadow)' }, g); el('rect', { x: 250, y: 560, width: 580, height: 400, fill: C.paper }, poster); text(poster, 540, 650, L.reward, 66, C.ink); text(poster, 540, 780, '$10,000,000', 84, C.red); el('rect', { x: 290, y: 860, width: 500, height: 12, fill: '#B9AE96' }, poster); el('rect', { x: 290, y: 890, width: 380, height: 12, fill: '#B9AE96' }, poster);
+    tl.set(poster, { rotation: 3, svgOrigin: '540 760' }, 0); stamp(poster, pS(si, 1), { origin: '540px 760px' });
+    sfx('dip', pS(si, 2), 1, { dur: pS(si, 3) - pS(si, 2) + .3 });
+    const zero = el('g', {}, g); text(zero, 540, 1080, '0', 150, C.red, 'middle', { filter: 'url(#glow)' }); text(zero, 540, 1190, L.recovered, 44, '#F3EEE4');
+    hide(zero); tl.to(zero, { opacity: 1, duration: .3 }, snapT(wT(si, wIdx(si, 3, 2)))); hit(wT(si, wIdx(si, 3, 2)));
+    show(g, T0 - .05, .3); camSet(T0 - .05, { s: 1.0, x: 0, y: 0 }); camTo(T0, { s: 1.05, y: -10 }, T1 - T0);
+    fadeOut(g, T1 - .2, .25);
+  },
+  frames(si, L) {
+    const g = scene('frames'), T0 = sStart(si);
+    el('rect', { x: -400, y: -100, width: 2200, height: 2120, fill: '#16110D' }, g);
+    for (let i = 0; i < 9; i++) el('rect', { x: -400 + i * 240, y: 300, width: 6, height: 1000, fill: '#201812' }, g);
+    goldFrame(g, 150, 470, 380, 480); el('rect', { x: 150, y: 470, width: 380, height: 480, fill: '#2A2016' }, g);
+    goldFrame(g, 650, 520, 300, 380); el('rect', { x: 650, y: 520, width: 300, height: 380, fill: '#2A2016' }, g);
+    doorbell(g, 540, 1130);
+    const sp = el('g', {}, g); typeLine(sp, 540, 1230, L.span, 44, C.accent, lastW(si) + .5, .6, 'middle');
+    show(g, T0 - .05, .6); camSet(T0 - .05, { s: 1.12, x: 0, y: 30 }); camTo(T0, { s: 1.0, y: 0 }, DUR - T0, 'sine.out');
+    const tb = wT(si, wIdx(si, 1, 3)); tl.to(BELL, { glow: 1, duration: .08 }, snapT(tb)); tl.to(BELL, { glow: 0, duration: 1.8 }, snapT(tb) + .1); sfx('chime', tb, .9);
+    sfx('dip', T0, 1, { dur: .1 });
+  },
+};
+const BEAM = { x: 0 };
+
+sentences.forEach((s, si) => scenes[s.scene](si, s.labels || {}));
+
+// ---------------------------------------------------------------- captions
+const capBox = $('captions'), MAXCH = 30;
+TIM.phrases.forEach((ph, pi) => {
+  const pages = []; let cur = [];
+  ph.words.forEach(w => { const len = cur.reduce((a, b) => a + b.w.length + 1, 0); if (cur.length && len + w.w.length > MAXCH) { pages.push(cur); cur = []; } cur.push(w); });
+  if (cur.length) pages.push(cur);
+  const next = pi + 1 < TIM.phrases.length ? TIM.phrases[pi + 1].start : DUR;
+  pages.forEach((words, k) => {
+    const page = document.createElement('div'); page.className = 'page'; capBox.appendChild(page);
+    const tOut = k + 1 < pages.length ? pages[k + 1][0].t - .2 : (pi + 1 < TIM.phrases.length ? Math.min(next - .06, ph.end + .9) : DUR + 1);
+    tl.set(page, { opacity: 1 }, Math.max(0, words[0].t - .08));
+    words.forEach((w, j) => {
+      const s = document.createElement('span'); s.className = 'w'; s.textContent = w.w; page.appendChild(s);
+      tl.set(s, { opacity: 0, y: 20, scale: .9 }, 0);
+      tl.to(s, { opacity: 1, y: 0, scale: 1, duration: .25, ease: 'power2.out' }, Math.max(0, w.t - .06));
+      tl.set(s, { color: C.accent }, Math.max(0, w.t - .06));
+      tl.set(s, { color: '#F3EEE4' }, j + 1 < words.length ? words[j + 1].t - .06 : tOut);
+    });
+    tl.to(page, { opacity: 0, duration: .15 }, tOut);
+  });
+});
+
+// ---------------------------------------------------------------- time-only render
+function render(t) {
+  $('cam').setAttribute('transform', `translate(540 960) scale(${CAM.s}) rotate(${CAM.r}) translate(${-540 + CAM.x} ${-960 + CAM.y})`);
+  const on = Math.floor(t * 6) % 2;                         // police lights alternate 6x/s
+  police.forEach(p => {
+    if (p.car) { p.car.red.setAttribute('opacity', on ? 1 : .25); p.car.blue.setAttribute('opacity', on ? .25 : 1); p.glowR.setAttribute('opacity', on ? .9 : .1); p.glowB.setAttribute('opacity', on ? .1 : .9); p.rr.setAttribute('opacity', on ? .9 : .2); p.rb.setAttribute('opacity', on ? .2 : .9); }
+    if (p.top) { p.top.cr.setAttribute('opacity', on ? 1 : .2); p.top.cb.setAttribute('opacity', on ? .2 : 1); p.top.copGlow.setAttribute('fill', on ? 'url(#redGlow)' : 'url(#blueGlow)'); }
+  });
+  if (window.__ISO) { const k = window.__ISO.k, { city, fx } = window.__iso;
+    city.setAttribute('transform', `translate(${fx} 760) scale(1 ${1 - .45 * k}) rotate(${45 * k}) translate(${-fx} -760)`);
+    city.querySelectorAll('.top').forEach(r => { const h = +r.getAttribute('data-h') * k; r.setAttribute('transform', `translate(${-h * .6} ${-h})`); }); }
+  document.querySelectorAll('.dust').forEach((d, i) => d.setAttribute('cy', (300 + ((i * 211 + t * (18 + i % 7 * 6)) % 1000)).toFixed(1)));
+  $('leakC').setAttribute('cx', (900 + 140 * Math.sin(t * .23)).toFixed(1)); $('leakC').setAttribute('cy', (320 + 120 * Math.cos(t * .19)).toFixed(1));
+  if (window.__day) window.__day.textContent = String(DAY.d);
+  RAIN.forEach(r => { const n = 80, u = (t * 1.15 + r.i / n) % 1, x = (r.i * 137) % 1120 - 20 - u * 40, y = 180 + u * 1350; r.l.setAttribute('x1', x.toFixed(1)); r.l.setAttribute('y1', y.toFixed(1)); r.l.setAttribute('x2', (x - 10).toFixed(1)); r.l.setAttribute('y2', (y - 48).toFixed(1)); });
+  const fl = (Math.sin(t * 37) + Math.sin(t * 11.3) + Math.sin(t * 5.1)) > -1.6 ? 1 : .15;
+  bulbs.forEach(b => { b.bulb.setAttribute('opacity', fl); b.bl.setAttribute('opacity', fl * .9); });
+  bells.forEach(b => { b.b.setAttribute('opacity', .45 + .55 * BELL.glow); b.halo.setAttribute('r', 60 + 120 * BELL.glow); b.halo.setAttribute('opacity', .25 + .75 * BELL.glow); });
+  if (window.__beam) { window.__beam.setAttribute('cx', (300 + BEAM.x * 950).toFixed(1)); window.__beam.setAttribute('cy', (720 + 50 * Math.sin(t * .9)).toFixed(1)); }
+  PPL.forEach(p => { p.S.armN = p.S.raise ? [150, 20 + 10 * Math.sin(t * 8)] : (p.baseArm || null); p.render(t, 0); });
+}
+tl.seek(DUR, false); tl.seek(0, false); render(0);
+window.seek = t => { tl.seek(Math.max(0, Math.min(DUR, t)), false); render(t); };
+window.DURATION = DUR; window.SFX = SFX.sort((a, b) => a.t - b.t); window.CONFIG = CFG; window.READY = true;
+const q = new URLSearchParams(location.search);
+if (q.has('guides')) { const st = $('stage'); [['0', '0', '1080px', '230px'], ['0', '1520px', '1080px', '400px'], ['940px', '0', '140px', '1920px']].forEach(([l, tp, w, h]) => { const d = document.createElement('div'); d.className = 'guide'; Object.assign(d.style, { left: l, top: tp, width: w, height: h }); st.appendChild(d); }); }
+if (q.has('t')) window.seek(parseFloat(q.get('t')));
+})();
+</script>
+</body>
+</html>
