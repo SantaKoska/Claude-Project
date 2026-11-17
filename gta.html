@@ -682,7 +682,9 @@ function lowerThird(parent, line1, line2, t) {
 
 // ---------------------------------------------------------------- camera (Ken Burns)
 const CAM = { s: 1, x: 0, y: 0, r: 0 };
-const camTo = (t, v, d, ease = 'sine.inOut') => tl.to(CAM, Object.assign({ duration: d, ease }, v), t);
+const CUTS = sentences.map((s, si) => sStart(si) - .05).concat([DUR]);
+// a camera drift must finish before the next scene's camSet, or two tweens fight and the frame shakes
+const camTo = (t, v, d, ease = 'sine.inOut') => { const nx = CUTS.find(c => c > t + .02) ?? DUR; const dd = Math.max(.05, Math.min(d, nx - .08 - t)); return tl.to(CAM, Object.assign({ duration: dd, ease }, v), t); };
 const camSet = (t, v) => tl.set(CAM, v, t);
 const scene = name => { const g = el('g', { id: 'sc_' + name }, $('cam')); hide(g); return g; };
 const PPL = [];
