@@ -51,6 +51,8 @@ Nothing here is posted automatically. You review and post every item.
 
 ## Rules we keep
 
+- No calls to action in scripts: no follow, comment or share requests. End on a strong line or a callback to the hook instead.
+
 - No bought followers, no follow-for-follow farms, no mass follow/unfollow bots. They get accounts restricted.
 - Every fact checked against sources before it goes in a script (we already do this).
 - Never post a video the owner hasn't approved.

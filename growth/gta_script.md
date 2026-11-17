@@ -21,7 +21,7 @@ GTA ആദ്യം ഒരു പോലീസ് ഗെയിം ആയിരു
 
 ഇപ്പോൾ ലോകം കാത്തിരിക്കുന്നത് ഒന്നിന്... നവംബർ 19-ന് ഇറങ്ങുന്ന GTA 6!
 
-നിങ്ങളുടെ പ്രിയപ്പെട്ട GTA ഏതാണ്? കമന്റ് ചെയ്യൂ, ഒരു ഗെയിമർ സുഹൃത്തിന് അയക്കൂ!
+എല്ലാം തുടങ്ങിയത്... ആർക്കും പോലീസ് ആകേണ്ട എന്ന ഒരൊറ്റ കാരണത്താൽ!
 ```
 
 ## English
@@ -34,7 +34,7 @@ GTA ആദ്യം ഒരു പോലീസ് ഗെയിം ആയിരു
 6. The first GTA came out in 1997. In 1998, Rockstar Games was born in New York. In 2001, GTA III turned the whole city 3D.
 7. In 2013, GTA V made one billion dollars in just three days... a world record!
 8. Now the world is waiting for one thing... GTA 6, out on 19 November!
-9. What's your favourite GTA? Comment, and send this to a gamer friend!
+9. And it all started... because nobody wanted to be the police!
 
 ## Storyboard (2D style, animated people, beat-locked)
 
@@ -48,7 +48,7 @@ GTA ആദ്യം ഒരു പോലീസ് ഗെയിം ആയിരു
 | 6 | Timeline: 1997 top-down city -> 1998 New York skyline pin -> 2001 the city tilts from flat to 3D |
 | 7 | Gold "$1,000,000,000" counter fills in 3 days, "World Record" stamp |
 | 8 | Calendar flips to "Nov 19", a sunset-and-palm-trees Florida-style skyline glows |
-| 9 | Comment bubble and share arrow |
+| 9 | Callback: the dark cop button from scene 4, then the lit criminal button turns into the GTA title (loops to the hook) |
 
 No Rockstar logos, game screenshots or game characters: all visuals are our own drawings.
 
