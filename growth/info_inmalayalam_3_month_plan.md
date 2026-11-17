@@ -51,6 +51,8 @@ Nothing here is posted automatically. You review and post every item.
 
 ## Rules we keep
 
+- From Video 8 on, every script is a story (see `.claude/skills/story-script`): cold open on a moment, a person, a problem, rising tension, one turn, a payoff, and a callback to the first line.
+
 - No calls to action in scripts: no follow, comment or share requests. End on a strong line or a callback to the hook instead.
 
 - No bought followers, no follow-for-follow farms, no mass follow/unfollow bots. They get accounts restricted.
