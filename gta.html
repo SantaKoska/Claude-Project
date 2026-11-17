@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="ml">
+<head>
+<meta charset="utf-8">
+<title>GTA Documentary Reel</title>
+<meta name="viewport" content="width=1080, initial-scale=1">
+
+<!-- =====================================================================
+     CONFIG — documentary-style 2D reel. Build: tools/build.sh gta.html, then add grain (see README).
+     ===================================================================== -->
+<script id="config" type="application/json">
+{
+  "title": "GTA: ഒരു പോലീസ് ഗെയിം",
+  "voice": "audio/gta.mp3",
+  "voiceTempo": 1.07,
+  "timing": { "phraseGap": 0.24, "sentenceGap": 0.42, "head": 0.08, "tail": 1.8 },
+  "music": { "bpm": 84, "chords": ["Am", "F", "C", "Em"], "level": 0.8 },
+  "font": "FreeSans",
+  "palette": { "accent": "#FF9A4A", "teal": "#0E2A33", "paper": "#E9E1D0", "ink": "#1A1410", "red": "#C8332E", "blue": "#2F7BFF", "gold": "#FFC94A" },
+  "sentences": [
+    { "scene": "hook", "phrases": ["GTA ആദ്യം ഒരു പോലീസ് ഗെയിം ആയിരുന്നു എന്ന് നിങ്ങൾക്കറിയാമോ?"], "labels": {} },
+    { "scene": "office", "phrases": ["1995-ൽ, സ്കോട്ട്ലൻഡിലെ ഡണ്ടിയിൽ, ഒരു ചെറിയ കമ്പനി \"റേസ് ആൻഡ് ചേസ്\" എന്ന ഗെയിം ഉണ്ടാക്കിത്തുടങ്ങി."],
+      "labels": { "place": "ഡണ്ടി, സ്കോട്ട്ലൻഡ്", "year": "1995", "working": "RACE'N'CHASE" } },
+    { "scene": "chase", "phrases": ["കളിക്കാരൻ പോലീസ്...", "കള്ളന്മാരെ പിടിക്കണം."], "labels": { "cop": "പോലീസ്", "thief": "കള്ളൻ" } },
+    { "scene": "playtest", "phrases": ["പക്ഷേ കളിച്ചുനോക്കിയപ്പോൾ ഒരു പ്രശ്നം...", "ആർക്കും പോലീസ് ആകേണ്ട!", "എല്ലാവർക്കും കള്ളനാകണം!"], "labels": { "cop": "പോലീസ്", "thief": "കള്ളൻ" } },
+    { "scene": "rename", "phrases": ["അങ്ങനെ കഥ തന്നെ മറിച്ചിട്ടു.", "പേരും മാറ്റി...", "\"ഗ്രാൻഡ് തെഫ്റ്റ് ഓട്ടോ\" — അമേരിക്കയിൽ വാഹനമോഷണത്തിന്റെ നിയമപ്പേര്."],
+      "labels": { "old": "RACE'N'CHASE", "new1": "GRAND THEFT", "new2": "AUTO", "def": "= വാഹനമോഷണം", "defSub": "അമേരിക്കൻ നിയമപ്പേര്" } },
+    { "scene": "timeline", "phrases": ["1997-ൽ ആദ്യ GTA ഇറങ്ങി.", "1998-ൽ ന്യൂയോർക്കിൽ റോക്ക്സ്റ്റാർ ഗെയിംസ് പിറന്നു.", "2001-ൽ GTA 3, നഗരത്തെ മുഴുവൻ 3D ആക്കി."],
+      "labels": { "y1": "1997", "y2": "1998", "y3": "2001", "c1": "ആദ്യ GTA", "c2": "റോക്ക്സ്റ്റാർ ഗെയിംസ്", "c2b": "ന്യൂയോർക്ക്", "c3": "GTA 3 · 3D" } },
+    { "scene": "record", "phrases": ["2013-ൽ GTA 5, വെറും മൂന്ന് ദിവസം കൊണ്ട് നൂറ് കോടി ഡോളർ നേടി...", "ലോക റെക്കോർഡ്!"],
+      "labels": { "year": "2013 · GTA 5", "day": "ദിവസം", "stamp": "ലോക റെക്കോർഡ്" } },
+    { "scene": "next", "phrases": ["ഇപ്പോൾ ലോകം കാത്തിരിക്കുന്നത് ഒന്നിന്...", "നവംബർ 19-ന് ഇറങ്ങുന്ന GTA 6!"], "labels": { "month": "നവംബർ", "title": "GTA 6" } },
+    { "scene": "callback", "phrases": ["എല്ലാം തുടങ്ങിയത്...", "ആർക്കും പോലീസ് ആകേണ്ട എന്ന ഒരൊറ്റ കാരണത്താൽ!"], "labels": { "cop": "പോലീസ്", "thief": "കള്ളൻ", "span": "1995 → 2026" } }
+  ]
+}
+</script>
+<!-- ======================= END OF CONFIG ================================ -->
+
+<script id="timings" type="application/json">
+{
+ "duration": 56.0,
+ "audio": "build/gta/voice_cut.wav",
+ "phrases": [
+  {
+   "text": "GTA ആദ്യം ഒരു പോലീസ് ഗെയിം ആയിരുന്നു എന്ന് നിങ്ങൾക്കറിയാമോ?",
+   "sentence": 0,
+   "start": 0.093,
+   "end": 3.318,
+   "words": [
+    {
+     "w": "GTA",
+     "t": 0.093
+    },
+    {
+     "w": "ആദ്യം",
+     "t": 0.465
+    },
+    {
+     "w": "ഒരു",
+     "t": 0.854
+    },
+    {
+     "w": "പോലീസ്",
+     "t": 1.035
+    },
+    {
+     "w": "ഗെയിം",
+     "t": 1.349
+    },
+    {
+     "w": "ആയിരുന്നു",
+     "t": 1.678
+    },
+    {
+     "w": "എന്ന്",
+     "t": 2.173
+    },
+    {
+     "w": "നിങ്ങൾക്കറിയാമോ?",
+     "t": 2.459
+    }
+   ]
+  },
+  {
+   "text": "1995-ൽ, സ്കോട്ട്ലൻഡിലെ ഡണ്ടിയിൽ, ഒരു ചെറിയ കമ്പനി \"റേസ് ആൻഡ് ചേസ്\" എന്ന ഗെയിം ഉണ്ടാക്കിത്തുടങ്ങി.",
+   "sentence": 1,
+   "start": 3.71,
+   "end": 10.579,
+   "words": [
+    {
+     "w": "1995-ൽ,",
+     "t": 3.71
+    },
+    {
+     "w": "സ്കോട്ട്ലൻഡിലെ",
+     "t": 4.777
+    },
+    {
+     "w": "ഡണ്ടിയിൽ,",
+     "t": 5.914
+    },
+    {
+     "w": "ഒരു",
+     "t": 6.501
+    },
+    {
+     "w": "ചെറിയ",
+     "t": 6.729
+    },
+    {
+     "w": "കമ്പനി",
+     "t": 7.274
+    },
+    {
+     "w": "\"റേസ്",
+     "t": 7.73
+    },
+    {
+     "w": "ആൻഡ്",
+     "t": 7.992
+    },
+    {
+     "w": "ചേസ്\"",
+     "t": 8.457
+    },
+    {
+     "w": "എന്ന",
+     "t": 8.718
+    },
+    {
+     "w": "ഗെയിം",
+     "t": 9.043
+    },
+    {
+     "w": "ഉണ്ടാക്കിത്തുടങ്ങി.",
+     "t": 9.339
+    }
+   ]
+  },
+  {
+   "text": "കളിക്കാരൻ പോലീസ്...",
+   "sentence": 2,
+   "start": 10.972,
+   "end": 11.953,
+   "words": [
+    {
+     "w": "കളിക്കാരൻ",
+     "t": 10.972
+    },
+    {
+     "w": "പോലീസ്...",
+     "t": 11.595
+    }
+   ]
+  },
+  {
+   "text": "കള്ളന്മാരെ പിടിക്കണം.",
+   "sentence": 2,
+   "start": 12.178,
+   "end": 13.047,
+   "words": [
+    {
+     "w": "കള്ളന്മാരെ",
+     "t": 12.178
+    },
+    {
+     "w": "പിടിക്കണം.",
+     "t": 12.644
+    }
+   ]
+  },
+  {
+   "text": "പക്ഷേ കളിച്ചുനോക്കിയപ്പോൾ ഒരു പ്രശ്നം...",
+   "sentence": 3,
+   "start": 13.439,
+   "end": 15.364,
+   "words": [
+    {
+     "w": "പക്ഷേ",
+     "t": 13.439
+    },
+    {
+     "w": "കളിച്ചുനോക്കിയപ്പോൾ",
+     "t": 13.725
+    },
+    {
+     "w": "ഒരു",
+     "t": 14.792
+    },
+    {
+     "w": "പ്രശ്നം...",
+     "t": 14.974
+    }
+   ]
+  },
+  {
+   "text": "ആർക്കും പോലീസ് ആകേണ്ട!",
+   "sentence": 3,
+   "start": 15.589,
+   "end": 16.841,
+   "words": [
+    {
+     "w": "ആർക്കും",
+     "t": 15.589
+    },
+    {
+     "w": "പോലീസ്",
+     "t": 16.047
+    },
+    {
+     "w": "ആകേണ്ട!",
+     "t": 16.415
+    }
+   ]
+  },
+  {
+   "text": "എല്ലാവർക്കും കള്ളനാകണം!",
+   "sentence": 3,
+   "start": 17.065,
+   "end": 18.374,
+   "words": [
+    {
+     "w": "എല്ലാവർക്കും",
+     "t": 17.065
+    },
+    {
+     "w": "കള്ളനാകണം!",
+     "t": 17.79
+    }
+   ]
+  },
+  {
+   "text": "അങ്ങനെ കഥ തന്നെ മറിച്ചിട്ടു.",
+   "sentence": 4,
+   "start": 18.766,
+   "end": 20.131,
+   "words": [
+    {
+     "w": "അങ്ങനെ",
+     "t": 18.766
+    },
+    {
+     "w": "കഥ",
+     "t": 19.196
+    },
+    {
+     "w": "തന്നെ",
+     "t": 19.335
+    },
+    {
+     "w": "മറിച്ചിട്ടു.",
+     "t": 19.592
+    }
+   ]
+  },
+  {
+   "text": "പേരും മാറ്റി...",
+   "sentence": 4,
+   "start": 20.355,
+   "end": 21.028,
+   "words": [
+    {
+     "w": "പേരും",
+     "t": 20.355
+    },
+    {
+     "w": "മാറ്റി...",
+     "t": 20.644
+    }
+   ]
+  },
+  {
+   "text": "\"ഗ്രാൻഡ് തെഫ്റ്റ് ഓട്ടോ\" — അമേരിക്കയിൽ വാഹനമോഷണത്തിന്റെ നിയമപ്പേര്.",
+   "sentence": 4,
+   "start": 21.252,
+   "end": 25.346,
+   "words": [
+    {
+     "w": "\"ഗ്രാൻഡ്",
+     "t": 21.252
+    },
+    {
+     "w": "തെഫ്റ്റ്",
+     "t": 21.692
+    },
+    {
+     "w": "ഓട്ടോ\"",
+     "t": 22.162
+    },
+    {
+     "w": "—",
+     "t": 22.484
+    },
+    {
+     "w": "അമേരിക്കയിൽ",
+     "t": 22.553
+    },
+    {
+     "w": "വാഹനമോഷണത്തിന്റെ",
+     "t": 23.649
+    },
+    {
+     "w": "നിയമപ്പേര്.",
+     "t": 24.702
+    }
+   ]
+  },
+  {
+   "text": "1997-ൽ ആദ്യ GTA ഇറങ്ങി.",
+   "sentence": 5,
+   "start": 25.738,
+   "end": 28.925,
+   "words": [
+    {
+     "w": "1997-ൽ",
+     "t": 25.738
+    },
+    {
+     "w": "ആദ്യ",
+     "t": 27.135
+    },
+    {
+     "w": "GTA",
+     "t": 27.719
+    },
+    {
+     "w": "ഇറങ്ങി.",
+     "t": 28.329
+    }
+   ]
+  },
+  {
+   "text": "1998-ൽ ന്യൂയോർക്കിൽ റോക്ക്സ്റ്റാർ ഗെയിംസ് പിറന്നു.",
+   "sentence": 5,
+   "start": 29.15,
+   "end": 32.972,
+   "words": [
+    {
+     "w": "1998-ൽ",
+     "t": 29.15
+    },
+    {
+     "w": "ന്യൂയോർക്കിൽ",
+     "t": 30.199
+    },
+    {
+     "w": "റോക്ക്സ്റ്റാർ",
+     "t": 31.202
+    },
+    {
+     "w": "ഗെയിംസ്",
+     "t": 32.07
+    },
+    {
+     "w": "പിറന്നു.",
+     "t": 32.49
+    }
+   ]
+  },
+  {
+   "text": "2001-ൽ GTA 3, നഗരത്തെ മുഴുവൻ 3D ആക്കി.",
+   "sentence": 5,
+   "start": 33.196,
+   "end": 37.776,
+   "words": [
+    {
+     "w": "2001-ൽ",
+     "t": 33.196
+    },
+    {
+     "w": "GTA",
+     "t": 34.56
+    },
+    {
+     "w": "3,",
+     "t": 35.102
+    },
+    {
+     "w": "നഗരത്തെ",
+     "t": 35.721
+    },
+    {
+     "w": "മുഴുവൻ",
+     "t": 36.364
+    },
+    {
+     "w": "3D",
+     "t": 36.895
+    },
+    {
+     "w": "ആക്കി.",
+     "t": 37.358
+    }
+   ]
+  },
+  {
+   "text": "2013-ൽ GTA 5, വെറും മൂന്ന് ദിവസം കൊണ്ട് നൂറ് കോടി ഡോളർ നേടി...",
+   "sentence": 6,
+   "start": 38.168,
+   "end": 43.589,
+   "words": [
+    {
+     "w": "2013-ൽ",
+     "t": 38.168
+    },
+    {
+     "w": "GTA",
+     "t": 39.418
+    },
+    {
+     "w": "5,",
+     "t": 39.963
+    },
+    {
+     "w": "വെറും",
+     "t": 40.247
+    },
+    {
+     "w": "മൂന്ന്",
+     "t": 40.948
+    },
+    {
+     "w": "ദിവസം",
+     "t": 41.408
+    },
+    {
+     "w": "കൊണ്ട്",
+     "t": 41.828
+    },
+    {
+     "w": "നൂറ്",
+     "t": 42.288
+    },
+    {
+     "w": "കോടി",
+     "t": 42.595
+    },
+    {
+     "w": "ഡോളർ",
+     "t": 42.902
+    },
+    {
+     "w": "നേടി...",
+     "t": 43.282
+    }
+   ]
+  },
+  {
+   "text": "ലോക റെക്കോർഡ്!",
+   "sentence": 6,
+   "start": 43.813,
+   "end": 44.701,
+   "words": [
+    {
+     "w": "ലോക",
+     "t": 43.813
+    },
+    {
+     "w": "റെക്കോർഡ്!",
+     "t": 44.052
+    }
+   ]
+  },
+  {
+   "text": "ഇപ്പോൾ ലോകം കാത്തിരിക്കുന്നത് ഒന്നിന്...",
+   "sentence": 7,
+   "start": 45.093,
+   "end": 46.953,
+   "words": [
+    {
+     "w": "ഇപ്പോൾ",
+     "t": 45.093
+    },
+    {
+     "w": "ലോകം",
+     "t": 45.454
+    },
+    {
+     "w": "കാത്തിരിക്കുന്നത്",
+     "t": 45.661
+    },
+    {
+     "w": "ഒന്നിന്...",
+     "t": 46.566
+    }
+   ]
+  },
+  {
+   "text": "നവംബർ 19-ന് ഇറങ്ങുന്ന GTA 6!",
+   "sentence": 7,
+   "start": 47.178,
+   "end": 49.832,
+   "words": [
+    {
+     "w": "നവംബർ",
+     "t": 47.178
+    },
+    {
+     "w": "19-ന്",
+     "t": 47.638
+    },
+    {
+     "w": "ഇറങ്ങുന്ന",
+     "t": 48.311
+    },
+    {
+     "w": "GTA",
+     "t": 49.058
+    },
+    {
+     "w": "6!",
+     "t": 49.567
+    }
+   ]
+  },
+  {
+   "text": "എല്ലാം തുടങ്ങിയത്...",
+   "sentence": 8,
+   "start": 50.224,
+   "end": 51.234,
+   "words": [
+    {
+     "w": "എല്ലാം",
+     "t": 50.224
+    },
+    {
+     "w": "തുടങ്ങിയത്...",
+     "t": 50.581
+    }
+   ]
+  },
+  {
+   "text": "ആർക്കും പോലീസ് ആകേണ്ട എന്ന ഒരൊറ്റ കാരണത്താൽ!",
+   "sentence": 8,
+   "start": 51.458,
+   "end": 54.28,
+   "words": [
+    {
+     "w": "ആർക്കും",
+     "t": 51.458
+    },
+    {
+     "w": "പോലീസ്",
+     "t": 51.915
+    },
+    {
+     "w": "ആകേണ്ട",
+     "t": 52.282
+    },
+    {
+     "w": "എന്ന",
+     "t": 52.707
+    },
+    {
+     "w": "ഒരൊറ്റ",
+     "t": 53.011
+    },
+    {
+     "w": "കാരണത്താൽ!",
+     "t": 53.642
+    }
+   ]
+  }
+ ],
+ "beat": {
+  "bpm": 93.0,
+  "t0": 0.58,
+  "err_ms": 77
+ }
+}
+</script>
+
+<style>
+  html, body { margin: 0; background: #050608; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  #world { position: absolute; inset: 0; }
+  #capShade { position: absolute; left: 0; right: 0; top: 1180px; height: 740px;
+    background: linear-gradient(to bottom, rgba(5,6,8,0) 0%, rgba(5,6,8,.55) 40%, rgba(5,6,8,.75) 100%); }
+  #captions { position: absolute; left: 50px; width: 860px; top: 1290px; height: 220px; }
+  .page { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center;
+    justify-content: center; text-align: center; opacity: 0; }
+  .w { display: inline-block; font-weight: 700; font-size: 76px; line-height: 1.32; color: #F3EEE4;
+    margin: 0 12px; opacity: 0;
+    text-shadow: 0 6px 22px rgba(0,0,0,.7), 0 0 3px rgba(0,0,0,.9); }
+  svg text { font-weight: 700; }
+  .guide { position: absolute; background: rgba(255,0,80,.25); pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="world" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+    <defs id="defs">
+      <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1A20"/><stop offset=".6" stop-color="#0E2A33"/><stop offset="1" stop-color="#07090C"/></linearGradient>
+      <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050A12"/><stop offset="1" stop-color="#14303A"/></linearGradient>
+      <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A2228"/><stop offset="1" stop-color="#0A0E11"/></linearGradient>
+      <linearGradient id="sunset" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B1240"/><stop offset=".45" stop-color="#B8336A"/><stop offset=".75" stop-color="#FF8A3D"/><stop offset="1" stop-color="#FFC46B"/></linearGradient>
+      <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE29A"/><stop offset="1" stop-color="#D9A02B"/></linearGradient>
+      <radialGradient id="vig" cx=".5" cy=".45" r=".72"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".7"/></radialGradient>
+      <radialGradient id="leak"><stop offset="0" stop-color="#FF9A4A" stop-opacity=".35"/><stop offset="1" stop-color="#FF9A4A" stop-opacity="0"/></radialGradient>
+      <radialGradient id="redGlow"><stop offset="0" stop-color="#FF3B3B" stop-opacity=".8"/><stop offset="1" stop-color="#FF3B3B" stop-opacity="0"/></radialGradient>
+      <radialGradient id="blueGlow"><stop offset="0" stop-color="#3B7BFF" stop-opacity=".8"/><stop offset="1" stop-color="#3B7BFF" stop-opacity="0"/></radialGradient>
+      <filter id="sepia"><feColorMatrix type="matrix" values=".39 .77 .19 0 0  .35 .69 .17 0 0  .27 .53 .13 0 0  0 0 0 1 0"/></filter>
+      <filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+      <filter id="blur20"><feGaussianBlur stdDeviation="20"/></filter>
+      <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    </defs>
+    <rect width="1080" height="1920" fill="url(#bgG)"/>
+    <g id="cam"></g>
+    <rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+    <circle id="leakC" cx="980" cy="300" r="520" fill="url(#leak)" pointer-events="none"/>
+    <rect y="0" width="1080" height="70" fill="#000"/>
+    <rect y="1850" width="1080" height="70" fill="#000"/>
+    <g id="front"></g>
+    <rect id="flash" width="1080" height="1920" fill="#fff" opacity="0"/>
+  </svg>
+  <div id="capShade"></div>
+  <div id="captions"></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="lib/people.js"></script>
+<script>
+(async function () {
+const CFG = JSON.parse(document.getElementById('config').textContent);
+const TIM = JSON.parse(document.getElementById('timings').textContent);
+const C = CFG.palette, FONT = CFG.font;
+const NS = 'http://www.w3.org/2000/svg';
+const DUR = TIM.duration;
+const SFX = [];
+const $ = id => document.getElementById(id);
+window.BEAT = TIM.beat || null;
+const BEAT = window.BEAT;
+const snapT = t => { if (!BEAT) return t; const g = 30 / BEAT.bpm; return Math.max(0, BEAT.t0 + Math.ceil((t - .08 - BEAT.t0) / g) * g); };
+const FREE = new Set(['tick', 'wave', 'dip', 'shimmer', 'siren', 'type']);
+const sfx = (type, t, gain = 1, extra = {}) => SFX.push(Object.assign({ type, t: +Math.max(0, FREE.has(type) ? t : snapT(t)).toFixed(3), gain }, extra));
+const hit = t => sfx('hit', t, .8);
+
+await document.fonts.load(`700 80px ${FONT}`, 'മലയാളം');
+document.body.style.fontFamily = FONT;
+
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function text(parent, x, y, str, size, fill, anchor = 'middle', extra = {}) { const t = el('text', Object.assign({ x, y, 'font-size': size, fill, 'text-anchor': anchor, 'font-family': FONT, 'dominant-baseline': 'central' }, extra), parent); t.textContent = str; return t; }
+
+// ---------------------------------------------------------------- timing
+const sentences = CFG.sentences.map((s, si) => { const ph = TIM.phrases.filter(p => p.sentence === si); return Object.assign({}, s, { ph, words: ph.flatMap(p => p.words) }); });
+const sStart = si => sentences[si].ph[0].start;
+const sEnd = si => si + 1 < sentences.length ? sStart(si + 1) : DUR;
+const pS = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].start;
+const pE = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].end;
+const wT = (si, k) => { const w = sentences[si].words; return w[Math.max(0, Math.min(k, w.length - 1))].t; };
+const wIdx = (si, j, k = 0) => sentences[si].ph.slice(0, j).reduce((a, p) => a + p.words.length, 0) + k;
+const lastW = si => wT(si, sentences[si].words.length - 1);
+
+const tl = gsap.timeline({ paused: true });
+tl.to({}, { duration: DUR }, 0);
+const hide = e => tl.set(e, { opacity: 0 }, 0);
+const show = (e, t, d = .5) => { hide(e); tl.to(e, { opacity: 1, duration: d, ease: 'power1.out' }, t); };
+const fadeOut = (e, t, d = .5) => tl.to(e, { opacity: 0, duration: d, ease: 'power1.in' }, t);
+function stamp(e, t, o = {}) { t = snapT(t); tl.set(e, { opacity: 0, scale: 2.2, transformOrigin: o.origin || '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: .28, ease: 'power4.out' }, t); sfx('thud', t + .2, .8); }
+function counter(tEl, from, to, t, d, fmt, ticks = 14) { const o = { v: from }; tEl.textContent = fmt(from); tl.to(o, { v: to, duration: d, ease: 'power2.out', onUpdate: () => tEl.textContent = fmt(o.v) }, t); for (let k = 0; k < ticks; k++) sfx('tick', t + d * (1 - Math.sqrt(1 - k / ticks)), .5); }
+const flash = (t, a = .35) => { tl.set($('flash'), { opacity: a }, t); tl.to($('flash'), { opacity: 0, duration: .5 }, t + .03); };
+// typewriter line: reveals left to right with a key click per step
+let clipN = 0;
+function typeLine(parent, x, y, str, size, fill, t, d = .9, anchor = 'start') {
+  const id = 'tw' + (clipN++), cp = el('clipPath', { id }, $('defs')); const r = el('rect', { x: anchor === 'middle' ? 0 : x - 4, y: y - size, width: 0, height: size * 2 }, cp);
+  const g = el('g', { 'clip-path': `url(#${id})` }, parent); const tx = text(g, x, y, str, size, fill, anchor, { 'letter-spacing': 3 });
+  const w = tx.getBBox().width + 12, x0 = anchor === 'middle' ? x - w / 2 : x - 4; r.setAttribute('x', x0);
+  const o = { w: 0 }; tl.to(o, { w, duration: d, ease: 'steps(' + Math.max(6, str.length) + ')', onUpdate: () => r.setAttribute('width', o.w) }, t);
+  for (let k = 0; k < Math.min(12, str.length); k++) sfx('type', t + k * d / Math.min(12, str.length), .5);
+  return g;
+}
+// lower-third location card: thin orange line + typewriter text
+function lowerThird(parent, line1, line2, t) {
+  const g = el('g', {}, parent);
+  const bar = el('rect', { x: 80, y: 300, width: 0, height: 5, fill: C.accent }, g);
+  tl.to(bar, { attr: { width: 120 }, duration: .4, ease: 'power2.out' }, t);
+  typeLine(g, 84, 352, line1, 46, '#F3EEE4', t + .2, .8);
+  if (line2) typeLine(g, 84, 418, line2, 40, C.accent, t + .9, .5);
+  return g;
+}
+
+// ---------------------------------------------------------------- camera (Ken Burns)
+const CAM = { s: 1, x: 0, y: 0, r: 0 };
+const camTo = (t, v, d, ease = 'sine.inOut') => tl.to(CAM, Object.assign({ duration: d, ease }, v), t);
+const camSet = (t, v) => tl.set(CAM, v, t);
+const scene = name => { const g = el('g', { id: 'sc_' + name }, $('cam')); hide(g); return g; };
+const PPL = [];
+function person(parent, opts, state) { const p = Person(parent, opts); Object.assign(p.S, { raise: 0 }, state); p.baseArm = state.armN || null; PPL.push(p); return p; }
+
+// ---------------------------------------------------------------- drawn pieces
+function policeCar(parent, x, y, s = 1) {      // side view, facing right
+  const g = el('g', { transform: `translate(${x} ${y}) scale(${s})` }, parent);
+  el('path', { d: 'M-230 20 L-230 -40 Q-226 -62 -190 -66 L-110 -70 L-70 -122 Q-60 -134 -36 -134 L80 -134 Q104 -134 116 -118 L150 -72 L206 -64 Q232 -58 234 -30 L234 20 Z', fill: '#E9EEF2' }, g);
+  el('path', { d: 'M-230 -10 H234 V20 H-230Z', fill: '#16233A' }, g);
+  el('path', { d: 'M-60 -118 L-30 -124 L40 -124 L40 -74 L-96 -74Z M54 -124 L96 -124 L132 -76 L54 -76Z', fill: '#2B3B48' }, g);
+  el('rect', { x: -40, y: -150, width: 90, height: 16, rx: 6, fill: '#222' }, g);
+  const red = el('rect', { x: -38, y: -148, width: 42, height: 12, rx: 4, fill: '#FF3B3B' }, g);
+  const blue = el('rect', { x: 6, y: -148, width: 42, height: 12, rx: 4, fill: '#3B7BFF' }, g);
+  [-150, 150].forEach(wx => { el('circle', { cx: wx, cy: 22, r: 40, fill: '#0B0D10' }, g); el('circle', { cx: wx, cy: 22, r: 17, fill: '#8C96A3' }, g); });
+  el('rect', { x: 210, y: -44, width: 22, height: 14, rx: 4, fill: '#FFF4C2' }, g);
+  return { g, red, blue };
+}
+function cityBlocks(parent, x0, y0, w, h, cell, rnd, colA = '#173A44', colB = '#1E4652') {
+  const g = el('g', {}, parent);
+  el('rect', { x: x0, y: y0, width: w, height: h, fill: '#0A1418' }, g);
+  for (let gx = 0; gx < w / cell; gx++) for (let gy = 0; gy < h / cell; gy++) {
+    const bx = x0 + gx * cell + 14, by = y0 + gy * cell + 14, bw = cell - 28;
+    el('rect', { x: bx, y: by, width: bw, height: bw, rx: 8, fill: rnd() > .5 ? colA : colB }, g);
+    for (let k = 0; k < 4; k++) el('rect', { x: bx + 10 + (k % 2) * (bw / 2 - 4), y: by + 10 + Math.floor(k / 2) * (bw / 2 - 4), width: bw / 2 - 16, height: bw / 2 - 16, rx: 4, fill: '#0F2A31', opacity: .8 }, g);
+  }
+  return g;
+}
+function skyline(parent, baseY, color, rnd, n = 14, hmax = 360, windows = true) {
+  const g = el('g', {}, parent); let x = -20;
+  for (let i = 0; i < n; i++) {
+    const w = 60 + rnd() * 70, h = 120 + rnd() * hmax; el('rect', { x, y: baseY - h, width: w, height: h, fill: color }, g);
+    if (windows) for (let wy = baseY - h + 20; wy < baseY - 20; wy += 34) for (let wx = x + 12; wx < x + w - 14; wx += 22) if (rnd() > .62) el('rect', { x: wx, y: wy, width: 9, height: 14, fill: '#FFD08A', opacity: .55 + rnd() * .4 }, g);
+    x += w + 6;
+  }
+  return g;
+}
+function card(parent, cx, cy, label, kind) {      // choice card: police badge or thief mask
+  const g = el('g', {}, parent);
+  el('rect', { x: cx - 170, y: cy - 210, width: 340, height: 420, rx: 26, fill: '#121B20', stroke: kind === 'cop' ? C.blue : C.accent, 'stroke-width': 6, filter: 'url(#shadow)' }, g);
+  if (kind === 'cop') { el('path', { d: `M${cx} ${cy - 130} L${cx + 85} ${cy - 95} L${cx + 75} ${cy + 10} Q${cx + 60} ${cy + 70} ${cx} ${cy + 95} Q${cx - 60} ${cy + 70} ${cx - 75} ${cy + 10} L${cx - 85} ${cy - 95}Z`, fill: C.blue }, g); el('path', { d: `M${cx} ${cy - 60} l18 36 40 6 -29 28 7 40 -36 -19 -36 19 7 -40 -29 -28 40 -6Z`, fill: '#E9EEF2' }, g); }
+  else { el('path', { d: `M${cx - 110} ${cy - 40} Q${cx} ${cy - 110} ${cx + 110} ${cy - 40} Q${cx + 100} ${cy + 30} ${cx + 40} ${cy + 20} Q${cx} ${cy} ${cx - 40} ${cy + 20} Q${cx - 100} ${cy + 30} ${cx - 110} ${cy - 40}Z`, fill: '#1A1A1A', stroke: C.accent, 'stroke-width': 5 }, g); [-50, 50].forEach(dx => el('ellipse', { cx: cx + dx, cy: cy - 30, rx: 28, ry: 16, fill: '#FFE6C2' }, g)); }
+  text(g, cx, cy + 150, label, 58, '#F3EEE4');
+  return g;
+}
+
+const rnd = (() => { let s = 13; return () => (s = (s * 16807) % 2147483647) / 2147483647; })();
+const police = [];   // flashing lightbars, updated in render
+const DAY = { d: 17 };
+
+// ================================================================= SCENES
+const scenes = {
+  hook(si, L) {
+    const g = el('g', { id: 'sc_hook' }, $('cam')), T1 = sEnd(si);
+    el('rect', { x: -100, y: -100, width: 1280, height: 2120, fill: 'url(#nightSky)' }, g);
+    skyline(g, 1060, '#0C1A20', rnd, 16, 520);
+    el('path', { d: 'M-100 1060 H1180 V2000 H-100Z', fill: 'url(#road)' }, g);
+    for (let i = 0; i < 6; i++) el('rect', { x: 80 + i * 190, y: 1180, width: 110, height: 10, fill: '#E8C25A', opacity: .55 }, g);
+    const refl = el('g', { filter: 'url(#blur20)', opacity: .7 }, g);
+    const rr = el('ellipse', { cx: 470, cy: 1200, rx: 180, ry: 40, fill: '#FF3B3B' }, refl), rb = el('ellipse', { cx: 600, cy: 1210, rx: 180, ry: 40, fill: '#3B7BFF' }, refl);
+    const car = policeCar(g, 540, 1080, 1.35);
+    const glowR = el('circle', { cx: 510, cy: 870, r: 320, fill: 'url(#redGlow)' }, g), glowB = el('circle', { cx: 600, cy: 870, r: 320, fill: 'url(#blueGlow)' }, g);
+    police.push({ car, glowR, glowB, rr, rb });
+    const big = el('g', { opacity: 0 }, g); text(big, 540, 470, 'GTA', 230, 'none', 'middle', { stroke: '#F3EEE4', 'stroke-width': 4, 'letter-spacing': 30 });
+    camSet(0, { s: 1.18, x: 0, y: 60 }); camTo(0, { s: 1.0, y: 0 }, T1, 'sine.out');
+    tl.to(big, { opacity: .85, duration: 1.2 }, wT(si, 0)); hit(.02); sfx('siren', .1, .55); sfx('whoosh', 0, .4);
+    fadeOut(g, T1 - .25, .3);
+  },
+  office(si, L) {
+    const g = scene('office'), T0 = sStart(si), T1 = sEnd(si);
+    const photo = el('g', { filter: 'url(#shadow)' }, g);
+    el('rect', { x: 120, y: 470, width: 840, height: 700, fill: C.paper }, photo);
+    const pic = el('g', {}, photo);
+    const clip = el('clipPath', { id: 'officeClip' }, $('defs')); el('rect', { x: 150, y: 500, width: 780, height: 600 }, clip);
+    const inner = el('g', { 'clip-path': 'url(#officeClip)', filter: 'url(#sepia)' }, pic);
+    el('rect', { x: 150, y: 500, width: 780, height: 600, fill: '#6E6A60' }, inner);
+    el('rect', { x: 560, y: 540, width: 300, height: 200, fill: '#A9B4B8' }, inner);
+    for (let i = 0; i < 18; i++) el('path', { d: `M${570 + (i * 37) % 280} ${550 + (i * 23) % 150} l-10 26`, stroke: '#D9E0E3', 'stroke-width': 3 }, inner);
+    el('rect', { x: 556, y: 536, width: 308, height: 208, fill: 'none', stroke: '#3E3A33', 'stroke-width': 10 }, inner);
+    const dev1 = person(inner, { hairStyle: 'short', hair: '#2A1E16', skin: '#E7B793', top: '#4A5A6A', topStyle: 'jacket', pants: '#2B2B33', shoes: '#222' }, { x: 330, y: 1080, s: .92, face: 1, sit: 1, armN: [60, 40], armF: [55, 35], speed: .7 });
+    const dev2 = person(inner, { hairStyle: 'long', hair: '#5B3A1E', skin: '#EBC3A0', top: '#7A4E3A', topStyle: 'tee', pants: '#2F3A4A', shoes: '#333' }, { x: 720, y: 1080, s: .92, face: -1, sit: 1, armN: [60, 40], armF: [55, 35] });
+    [[420, 900], [630, 900]].forEach(([dx, dy]) => { el('rect', { x: dx - 110, y: dy, width: 220, height: 24, fill: '#4A3A2A' }, inner); el('rect', { x: dx - 60, y: dy - 110, width: 120, height: 100, rx: 10, fill: '#CFC8B6' }, inner); el('rect', { x: dx - 46, y: dy - 98, width: 92, height: 72, rx: 6, fill: '#2E3A2E' }, inner); el('rect', { x: dx - 20, y: dy - 10, width: 40, height: 12, fill: '#BDB6A4' }, inner); });
+    tl.set(photo, { rotation: -2, svgOrigin: '540 820' }, 0);
+    show(g, T0 - .05, .5); sfx('shutter', T0, .6);
+    camSet(T0 - .05, { s: 1.0, x: 0, y: 0 }); camTo(T0, { s: 1.08, x: -20, y: -10 }, T1 - T0);
+    lowerThird(g, L.place, L.year, T0 + .2);
+    const st = el('g', {}, g); el('rect', { x: 520, y: 1010, width: 400, height: 96, rx: 8, fill: 'none', stroke: C.red, 'stroke-width': 7 }, st); text(st, 720, 1058, L.working, 48, C.red, 'middle', { 'letter-spacing': 4 });
+    tl.set(st, { rotation: -8, svgOrigin: '720 1058' }, 0);
+    stamp(st, wT(si, 6) - .05, { origin: '720px 1058px' });
+    fadeOut(g, T1 - .25, .3);
+  },
+  chase(si, L) {
+    const g = scene('chase'), T0 = sStart(si), T1 = sEnd(si);
+    cityBlocks(g, 60, 300, 960, 1000, 160, rnd);
+    const path = el('path', { d: 'M120 1220 L120 860 L620 860 L620 460 L960 460', fill: 'none', stroke: 'none' }, g);
+    const L0 = path.getTotalLength();
+    const thief = el('g', {}, g); el('rect', { x: -22, y: -40, width: 44, height: 80, rx: 10, fill: C.accent }, thief); el('rect', { x: -16, y: -24, width: 32, height: 26, rx: 4, fill: '#2B2B2B' }, thief);
+    const cop = el('g', {}, g); el('rect', { x: -22, y: -40, width: 44, height: 80, rx: 10, fill: '#E9EEF2' }, cop); el('rect', { x: -16, y: -6, width: 32, height: 20, rx: 4, fill: '#16233A' }, cop);
+    const cr = el('rect', { x: -18, y: -30, width: 16, height: 10, rx: 3, fill: '#FF3B3B' }, cop), cb = el('rect', { x: 2, y: -30, width: 16, height: 10, rx: 3, fill: '#3B7BFF' }, cop);
+    const copGlow = el('circle', { r: 110, fill: 'url(#redGlow)', opacity: .6 }, g); g.insertBefore(copGlow, cop);
+    police.push({ top: { cr, cb, copGlow } });
+    const st = { u: 0 };
+    const placeCars = () => { const pt = d => { const a = path.getPointAtLength(Math.max(0, Math.min(L0, d))), b = path.getPointAtLength(Math.max(0, Math.min(L0, d + 2))); return [a.x, a.y, Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI + 90]; };
+      const [tx, ty, ta] = pt(st.u * L0 + 190), [cx, cy, ca] = pt(st.u * L0);
+      thief.setAttribute('transform', `translate(${tx} ${ty}) rotate(${ta})`); cop.setAttribute('transform', `translate(${cx} ${cy}) rotate(${ca})`); copGlow.setAttribute('cx', cx); copGlow.setAttribute('cy', cy); };
+    placeCars();
+    tl.to(st, { u: .72, duration: T1 - T0 + .2, ease: 'none', onUpdate: placeCars }, T0);
+    show(g, T0 - .05, .4); sfx('siren', T0 + .1, .5); sfx('whoosh', T0, .4);
+    camSet(T0 - .05, { s: 1.12, x: 120, y: 160 }); camTo(T0, { s: 1.0, x: 0, y: 0 }, T1 - T0);
+    const lc = el('g', {}, g); el('rect', { x: 150, y: 1010, width: 230, height: 76, rx: 38, fill: '#16233A', stroke: C.blue, 'stroke-width': 4 }, lc); text(lc, 265, 1048, L.cop, 46, '#F3EEE4');
+    const lt = el('g', {}, g); el('rect', { x: 640, y: 330, width: 210, height: 76, rx: 38, fill: '#2A1A10', stroke: C.accent, 'stroke-width': 4 }, lt); text(lt, 745, 368, L.thief, 46, '#F3EEE4');
+    show(lc, snapT(pS(si, 0) + .2), .3); sfx('pop', pS(si, 0) + .2, .5); show(lt, snapT(pS(si, 1)), .3); sfx('pop', pS(si, 1), .5);
+    fadeOut(g, T1 - .25, .3);
+  },
+  playtest(si, L) {
+    const g = scene('playtest'), T0 = sStart(si), T1 = sEnd(si);
+    const cc = card(g, 300, 650, L.cop, 'cop'), tc = card(g, 780, 650, L.thief, 'thief');
+    window.__cards = { cc, tc };
+    const dev1 = person(g, { hairStyle: 'short', hair: '#2A1E16', skin: '#E7B793', top: '#4A5A6A', topStyle: 'jacket', pants: '#2B2B33', shoes: '#222' }, { x: 420, y: 1230, s: .95, face: 1, smile: .3 });
+    const dev2 = person(g, { hairStyle: 'long', hair: '#5B3A1E', skin: '#EBC3A0', top: '#7A4E3A', topStyle: 'tee', pants: '#2F3A4A', shoes: '#333' }, { x: 660, y: 1230, s: .95, face: -1, smile: .3 });
+    window.__devs = [dev1, dev2];
+    show(g, T0 - .05, .4); camSet(T0 - .05, { s: 1.04, x: 0, y: 0 }); camTo(T0, { s: 1.0 }, T1 - T0);
+    sfx('dip', T0, 1, { dur: pS(si, 1) - T0 + .3 });
+    const t1 = pS(si, 1), t2 = pS(si, 2);
+    tl.to(cc, { opacity: .3, duration: .4 }, snapT(t1)); sfx('thud', t1, .7);
+    const x = el('g', { filter: 'url(#glow)' }, g); [[-1, -1, 1, 1], [1, -1, -1, 1]].forEach(([a, b, c, d]) => el('path', { d: `M${300 + a * 90} ${650 + b * 90}L${300 + c * 90} ${650 + d * 90}`, stroke: C.red, 'stroke-width': 18, 'stroke-linecap': 'round' }, x));
+    stamp(x, t1 + .15, { origin: '300px 650px' });
+    tl.to(dev1.S, { look: 1, duration: .1 }, t1); tl.set(dev1.S, { smile: 0 }, t1); tl.set(dev2.S, { smile: 0 }, t1);
+    const tg = el('circle', { cx: 780, cy: 650, r: 300, fill: 'url(#leak)', opacity: 0 }, g); g.insertBefore(tg, tc);
+    tl.to(tg, { opacity: 1, duration: .3 }, snapT(t2)); tl.to(tc, { scale: 1.08, transformOrigin: '780px 650px', duration: .3, ease: 'back.out(2)' }, snapT(t2)); hit(t2);
+    tl.set(dev1.S, { smile: 1, raise: 1 }, snapT(t2)); tl.set(dev2.S, { smile: 1, raise: 1 }, snapT(t2) + .1);
+    fadeOut(g, T1 - .25, .3);
+  },
+  rename(si, L) {
+    const g = scene('rename'), T0 = sStart(si), T1 = sEnd(si);
+    const ca = card(g, 300, 650, CFG.sentences[3].labels.cop, 'cop'), cb = card(g, 780, 650, CFG.sentences[3].labels.thief, 'thief');
+    tl.set(ca, { opacity: .3 }, 0);
+    show(g, T0 - .05, .3);
+    tl.to(ca, { x: 480, rotation: 180, svgOrigin: '300 650', opacity: 0, duration: .8, ease: 'power2.inOut' }, snapT(T0 + .2));
+    tl.to(cb, { x: -240, duration: .8, ease: 'power2.inOut' }, snapT(T0 + .2)); sfx('whoosh', T0 + .2, .6);
+    tl.to([ca, cb], { opacity: 0, duration: .3 }, pS(si, 1) - .3);
+    const plate = el('g', {}, g); el('rect', { x: 110, y: 470, width: 860, height: 330, rx: 20, fill: '#0D1418', stroke: '#F3EEE4', 'stroke-width': 4, filter: 'url(#shadow)' }, plate);
+    const oldT = text(plate, 540, 635, L.old, 82, '#F3EEE4', 'middle', { 'letter-spacing': 6 });
+    const n1 = text(plate, 540, 590, L.new1, 92, C.accent, 'middle', { 'letter-spacing': 8 }), n2 = text(plate, 540, 700, L.new2, 104, C.accent, 'middle', { 'letter-spacing': 22 });
+    hide(n1); hide(n2);
+    const t1 = pS(si, 1); show(plate, t1 - .1, .3);
+    tl.to(plate, { scaleY: 0, transformOrigin: '540px 635px', duration: .18, ease: 'power2.in' }, snapT(t1 + .6));
+    tl.set(oldT, { opacity: 0 }, snapT(t1 + .6) + .18); tl.set([n1, n2], { opacity: 1 }, snapT(t1 + .6) + .18);
+    tl.to(plate, { scaleY: 1, duration: .3, ease: 'back.out(2)' }, snapT(t1 + .6) + .18); hit(t1 + .6); flash(snapT(t1 + .6) + .18, .25);
+    const t2 = pS(si, 2), def = el('g', {}, g);
+    typeLine(def, 540, 905, L.def, 64, '#F3EEE4', t2 + .5, .7, 'middle');
+    typeLine(def, 540, 990, L.defSub, 44, C.accent, t2 + 1.2, .6, 'middle');
+    camSet(T0 - .05, { s: 1.0, x: 0, y: 0 }); camTo(T0, { s: 1.05, y: -10 }, T1 - T0);
+    fadeOut(g, T1 - .25, .3);
+  },
+  timeline(si, L) {
+    const g = scene('timeline'), T0 = sStart(si), T1 = sEnd(si);
+    const strip = el('g', {}, g);
+    el('rect', { x: 0, y: 500, width: 2200, height: 520, fill: '#0B0B0C' }, strip);
+    for (let i = 0; i < 70; i++) { el('rect', { x: 10 + i * 32, y: 516, width: 18, height: 26, rx: 4, fill: '#2A2A2C' }, strip); el('rect', { x: 10 + i * 32, y: 978, width: 18, height: 26, rx: 4, fill: '#2A2A2C' }, strip); }
+    const frames = [];
+    [0, 1, 2].forEach(i => { const fx = 240 + i * 640; const fr = el('g', {}, strip); el('rect', { x: fx - 260, y: 560, width: 520, height: 400, fill: '#1A2A30' }, fr); frames.push({ fr, fx }); });
+    // frame 1: top-down city
+    { const f = frames[0], cl = el('clipPath', { id: 'f1c' }, $('defs')); el('rect', { x: f.fx - 260, y: 560, width: 520, height: 400 }, cl); const gg = el('g', { 'clip-path': 'url(#f1c)' }, f.fr); cityBlocks(gg, f.fx - 260, 560, 520, 400, 100, rnd); const c = el('rect', { x: f.fx - 12, y: 720, width: 24, height: 44, rx: 6, fill: C.accent }, gg); }
+    // frame 2: New York skyline
+    { const f = frames[1], cl = el('clipPath', { id: 'f2c' }, $('defs')); el('rect', { x: f.fx - 260, y: 560, width: 520, height: 400 }, cl); const gg = el('g', { 'clip-path': 'url(#f2c)' }, f.fr); el('rect', { x: f.fx - 260, y: 560, width: 520, height: 400, fill: '#21323A' }, gg); const sk = skyline(gg, 960, '#0E1A1F', rnd, 9, 260); sk.setAttribute('transform', `translate(${f.fx - 270} 0)`); el('circle', { cx: f.fx + 150, cy: 640, r: 36, fill: '#F3E7C8', opacity: .8 }, gg); }
+    // frame 3: the city tilts into 3D
+    const iso = el('g', {}, frames[2].fr);
+    { const f = frames[2], cl = el('clipPath', { id: 'f3c' }, $('defs')); el('rect', { x: f.fx - 260, y: 560, width: 520, height: 400 }, cl); iso.setAttribute('clip-path', 'url(#f3c)'); el('rect', { x: f.fx - 260, y: 560, width: 520, height: 400, fill: '#1A2A30' }, iso);
+      const city = el('g', {}, iso); window.__iso = { city, fx: f.fx };
+      for (let i = 0; i < 5; i++) for (let j = 0; j < 4; j++) { const h = 30 + ((i * 7 + j * 3) % 5) * 22, bx = f.fx - 200 + i * 80, by = 620 + j * 80; const b = el('g', {}, city); el('rect', { x: bx, y: by, width: 56, height: 56, fill: '#2E5966' }, b); const top = el('rect', { x: bx, y: by, width: 56, height: 56, fill: '#4A8796', class: 'top', 'data-h': h }, b); } }
+    const years = [L.y1, L.y2, L.y3], caps = [L.c1, L.c2, L.c3];
+    const ylabels = years.map((y, i) => { const gg = el('g', {}, strip); text(gg, frames[i].fx, 430, y, 120, C.gold, 'middle', { filter: 'url(#glow)' }); text(gg, frames[i].fx, 1090, caps[i], 50, '#F3EEE4'); if (i === 1) text(gg, frames[i].fx, 1160, L.c2b, 40, C.accent); hide(gg); return gg; });
+    show(g, T0 - .05, .4); sfx('shutter', T0, .5);
+    const SX = { x: 300 }; const placeStrip = () => strip.setAttribute('transform', `translate(${SX.x} 0)`); placeStrip();
+    [0, 1, 2].forEach(i => { const t = pS(si, i); tl.to(SX, { x: 300 - i * 640, duration: .8, ease: 'power3.inOut', onUpdate: placeStrip }, t - .25); show(ylabels[i], snapT(t), .3); sfx('whoosh', t - .25, .45); sfx('tick', t, .7); });
+    const ISO = { k: 0 }; window.__ISO = ISO; tl.to(ISO, { k: 1, duration: 1.2, ease: 'power2.inOut' }, wT(si, wIdx(si, 2, 5)) - .2); hit(wT(si, wIdx(si, 2, 5)));
+    camSet(T0 - .05, { s: 1.0, x: 0, y: 0 });
+    fadeOut(g, T1 - .25, .3);
+  },
+  record(si, L) {
+    const g = scene('record'), T0 = sStart(si), T1 = sEnd(si);
+    for (let i = 0; i < 40; i++) el('circle', { cx: (i * 137) % 1080, cy: 300 + (i * 211) % 1000, r: 3 + (i % 4), fill: C.gold, opacity: .25 + (i % 5) * .08, class: 'dust' }, g);
+    typeLine(g, 540, 380, L.year, 56, C.accent, T0 + .1, .6, 'middle');
+    const ct = text(g, 540, 620, '$0', 104, C.gold, 'middle', { filter: 'url(#glow)' });
+    const dd = Math.max(1.2, wT(si, wIdx(si, 0, 9)) - T0 - .2);
+    counter(ct, 0, 1e9, T0 + .4, dd, v => '$' + Math.round(v).toLocaleString('en-US'), 18);
+    const days = el('g', {}, g); const dl = [1, 2, 3].map(k => { const gg = el('g', {}, days); el('rect', { x: 200 + (k - 1) * 240, y: 760, width: 200, height: 120, rx: 16, fill: '#121B20', stroke: C.gold, 'stroke-width': 4 }, gg); text(gg, 300 + (k - 1) * 240, 800, L.day, 36, '#F3EEE4'); text(gg, 300 + (k - 1) * 240, 848, String(k), 52, C.gold); hide(gg); return gg; });
+    dl.forEach((d, k) => { const t = T0 + .4 + dd * (k + 1) / 3.3; show(d, snapT(t), .2); sfx('pop', t, .5); });
+    const st = el('g', {}, g); el('rect', { x: 230, y: 960, width: 620, height: 130, rx: 12, fill: 'none', stroke: C.red, 'stroke-width': 9 }, st); text(st, 540, 1025, L.stamp, 76, C.red);
+    tl.set(st, { rotation: -6, svgOrigin: '540 1025' }, 0); stamp(st, pS(si, 1), { origin: '540px 1025px' }); hit(pS(si, 1)); flash(snapT(pS(si, 1)) + .1, .3);
+    show(g, T0 - .05, .4); camSet(T0 - .05, { s: 1.06, x: 0, y: 20 }); camTo(T0, { s: 1.0, y: 0 }, T1 - T0);
+    fadeOut(g, T1 - .25, .3);
+  },
+  next(si, L) {
+    const g = scene('next'), T0 = sStart(si), T1 = sEnd(si);
+    el('rect', { x: -100, y: -100, width: 1280, height: 2120, fill: 'url(#sunset)' }, g);
+    const sun = el('circle', { cx: 540, cy: 900, r: 170, fill: '#FFE3A0', opacity: .9 }, g);
+    el('rect', { x: -100, y: 1000, width: 1280, height: 1000, fill: '#2A1430' }, g);
+    for (let i = 0; i < 9; i++) el('rect', { x: 300 + i * 50, y: 1010 + i * 22, width: 480 - i * 100 > 40 ? 480 - i * 100 : 40, height: 6, fill: '#FFD08A', opacity: .5 - i * .05 }, g);
+    const sk = skyline(g, 1005, '#3A1838', rnd, 16, 300); sk.setAttribute('opacity', .95);
+    [[110, 1005, 1.2], [930, 1005, 1.0], [780, 1005, .8]].forEach(([px, py, s]) => { const p = el('g', { transform: `translate(${px} ${py}) scale(${s})` }, g); el('path', { d: 'M0 0 Q-10 -180 12 -360', stroke: '#1A0C1E', 'stroke-width': 18, fill: 'none' }, p); for (let k = 0; k < 7; k++) { const a = -150 + k * 40; el('path', { d: `M12 -360 q${Math.cos(a * Math.PI / 180) * 60} ${-40 + Math.sin(a * Math.PI / 180) * 30} ${Math.cos(a * Math.PI / 180) * 140} ${Math.sin(a * Math.PI / 180) * 80 + 20}`, stroke: '#1A0C1E', 'stroke-width': 14, fill: 'none', 'stroke-linecap': 'round' }, p); } });
+    const cal = el('g', { filter: 'url(#shadow)' }, g);
+    el('rect', { x: 380, y: 300, width: 320, height: 300, rx: 22, fill: '#F3EEE4' }, cal); el('rect', { x: 380, y: 300, width: 320, height: 80, rx: 22, fill: C.red }, cal);
+    text(cal, 540, 340, L.month, 46, '#fff');
+    const dayT = text(cal, 540, 495, '17', 150, C.ink); window.__day = dayT;
+    show(g, T0 - .05, .5); camSet(T0 - .05, { s: 1.1, x: 0, y: 40 }); camTo(T0, { s: 1.0, y: 0 }, T1 - T0, 'sine.out');
+    [18, 19].forEach((d, k) => { const t = pS(si, 0) + .7 + k * .55; tl.set(DAY, { d }, snapT(t)); tl.fromTo(cal, { scaleY: .85 }, { scaleY: 1, transformOrigin: '540px 300px', duration: .2, immediateRender: false }, snapT(t)); sfx('tick', t, .8); });
+    const t1 = pS(si, 1), title = text(g, 540, 690, L.title, 170, '#FFF4DE', 'middle', { stroke: '#2B1240', 'stroke-width': 10, 'paint-order': 'stroke', 'letter-spacing': 12 });
+    hide(title); tl.to(title, { opacity: 1, duration: .6 }, snapT(wT(si, wIdx(si, 1, 3)))); hit(wT(si, wIdx(si, 1, 3))); sfx('shimmer', wT(si, wIdx(si, 1, 3)), .6);
+    tl.to(sun, { attr: { cy: 940 }, duration: T1 - T0, ease: 'none' }, T0);
+    fadeOut(g, T1 - .3, .35);
+  },
+  callback(si, L) {
+    const g = scene('callback'), T0 = sStart(si);
+    const cc = card(g, 300, 650, L.cop, 'cop'), tc = card(g, 780, 650, L.thief, 'thief');
+    tl.set(cc, { opacity: .3 }, 0);
+    const gl = el('circle', { cx: 780, cy: 650, r: 320, fill: 'url(#leak)' }, g); g.insertBefore(gl, tc);
+    show(g, T0 - .05, .5); camSet(T0 - .05, { s: 1.0, x: 0, y: 0 }); camTo(T0, { s: 1.08, x: 0 }, DUR - T0);
+    const t1 = pS(si, 1);
+    tl.to(cc, { opacity: .12, duration: .6 }, t1);
+    const word = wT(si, wIdx(si, 1, 1));
+    tl.to([tc, cc, gl], { opacity: 0, duration: .5 }, lastW(si) + .2);
+    const gta = text(g, 540, 650, 'GTA', 220, C.accent, 'middle', { filter: 'url(#glow)', 'letter-spacing': 26 }); hide(gta);
+    tl.to(gta, { opacity: 1, duration: .6 }, lastW(si) + .4); hit(lastW(si) + .4);
+    const sp = el('g', {}, g); typeLine(sp, 540, 860, L.span, 54, '#F3EEE4', lastW(si) + .8, .6, 'middle');
+    sfx('chime', lastW(si) + .45, .8); sfx('dip', T0, 1, { dur: t1 - T0 + .2 });
+  },
+};
+sentences.forEach((s, si) => scenes[s.scene](si, s.labels || {}));
+
+// ---------------------------------------------------------------- captions
+const capBox = $('captions'), MAXCH = 30;
+TIM.phrases.forEach((ph, pi) => {
+  const pages = []; let cur = [];
+  ph.words.forEach(w => { const len = cur.reduce((a, b) => a + b.w.length + 1, 0); if (cur.length && len + w.w.length > MAXCH) { pages.push(cur); cur = []; } cur.push(w); });
+  if (cur.length) pages.push(cur);
+  const next = pi + 1 < TIM.phrases.length ? TIM.phrases[pi + 1].start : DUR;
+  pages.forEach((words, k) => {
+    const page = document.createElement('div'); page.className = 'page'; capBox.appendChild(page);
+    const tOut = k + 1 < pages.length ? pages[k + 1][0].t - .2 : (pi + 1 < TIM.phrases.length ? Math.min(next - .06, ph.end + .9) : DUR + 1);
+    tl.set(page, { opacity: 1 }, Math.max(0, words[0].t - .08));
+    words.forEach((w, j) => {
+      const s = document.createElement('span'); s.className = 'w'; s.textContent = w.w; page.appendChild(s);
+      tl.set(s, { opacity: 0, y: 20, scale: .9 }, 0);
+      tl.to(s, { opacity: 1, y: 0, scale: 1, duration: .25, ease: 'power2.out' }, Math.max(0, w.t - .06));
+      tl.set(s, { color: C.accent }, Math.max(0, w.t - .06));
+      tl.set(s, { color: '#F3EEE4' }, j + 1 < words.length ? words[j + 1].t - .06 : tOut);
+    });
+    tl.to(page, { opacity: 0, duration: .15 }, tOut);
+  });
+});
+
+// ---------------------------------------------------------------- time-only render
+function render(t) {
+  $('cam').setAttribute('transform', `translate(540 960) scale(${CAM.s}) rotate(${CAM.r}) translate(${-540 + CAM.x} ${-960 + CAM.y})`);
+  const on = Math.floor(t * 6) % 2;                         // police lights alternate 6x/s
+  police.forEach(p => {
+    if (p.car) { p.car.red.setAttribute('opacity', on ? 1 : .25); p.car.blue.setAttribute('opacity', on ? .25 : 1); p.glowR.setAttribute('opacity', on ? .9 : .1); p.glowB.setAttribute('opacity', on ? .1 : .9); p.rr.setAttribute('opacity', on ? .9 : .2); p.rb.setAttribute('opacity', on ? .2 : .9); }
+    if (p.top) { p.top.cr.setAttribute('opacity', on ? 1 : .2); p.top.cb.setAttribute('opacity', on ? .2 : 1); p.top.copGlow.setAttribute('fill', on ? 'url(#redGlow)' : 'url(#blueGlow)'); }
+  });
+  if (window.__ISO) { const k = window.__ISO.k, { city, fx } = window.__iso;
+    city.setAttribute('transform', `translate(${fx} 760) scale(1 ${1 - .45 * k}) rotate(${45 * k}) translate(${-fx} -760)`);
+    city.querySelectorAll('.top').forEach(r => { const h = +r.getAttribute('data-h') * k; r.setAttribute('transform', `translate(${-h * .6} ${-h})`); }); }
+  document.querySelectorAll('.dust').forEach((d, i) => d.setAttribute('cy', (300 + ((i * 211 + t * (18 + i % 7 * 6)) % 1000)).toFixed(1)));
+  $('leakC').setAttribute('cx', (900 + 140 * Math.sin(t * .23)).toFixed(1)); $('leakC').setAttribute('cy', (320 + 120 * Math.cos(t * .19)).toFixed(1));
+  if (window.__day) window.__day.textContent = String(DAY.d);
+  PPL.forEach(p => { p.S.armN = p.S.raise ? [150, 20 + 10 * Math.sin(t * 8)] : (p.baseArm || null); p.render(t, 0); });
+}
+tl.seek(DUR, false); tl.seek(0, false); render(0);
+window.seek = t => { tl.seek(Math.max(0, Math.min(DUR, t)), false); render(t); };
+window.DURATION = DUR; window.SFX = SFX.sort((a, b) => a.t - b.t); window.CONFIG = CFG; window.READY = true;
+const q = new URLSearchParams(location.search);
+if (q.has('guides')) { const st = $('stage'); [['0', '0', '1080px', '230px'], ['0', '1520px', '1080px', '400px'], ['940px', '0', '140px', '1920px']].forEach(([l, tp, w, h]) => { const d = document.createElement('div'); d.className = 'guide'; Object.assign(d.style, { left: l, top: tp, width: w, height: h }); st.appendChild(d); }); }
+if (q.has('t')) window.seek(parseFloat(q.get('t')));
+})();
+</script>
+</body>
+</html>

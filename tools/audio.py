@@ -161,6 +161,14 @@ def sfx_sig(kind):
         cr = (rng.random(len(t)) > 0.9993) * rng.standard_normal(len(t)) * 3
         cr = onepole_lp(cr, 3000)
         return (n + cr) * np.minimum(t / .2, 1) * np.exp(-t * 1.2), 0
+    if kind == "siren":                    # distant two-tone siren wail
+        t = tt(2.4); f = 760 + 180 * np.sign(np.sin(2 * np.pi * 1.4 * t))
+        f = onepole_lp(f, 30)
+        sig = np.sin(2 * np.pi * np.cumsum(f) / SR) + .3 * np.sin(4 * np.pi * np.cumsum(f) / SR)
+        return onepole_lp(sig, 2500) * np.minimum(t / .3, 1) * np.minimum((2.4 - t) / .6, 1) * .5, -0.3
+    if kind == "type":                     # typewriter key
+        t = tt(0.05); n = rng.standard_normal(len(t))
+        return (n * np.exp(-t * 260) + .5 * np.sin(2 * np.pi * 1800 * t) * np.exp(-t * 300)) * .7, 0.1
     if kind == "hit":                      # downbeat impact for scene changes
         t = tt(1.2); f = 42 + 90 * np.exp(-t * 22)
         boom = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 4.5)
@@ -190,7 +198,7 @@ def sfx_sig(kind):
 
 
 SFX_GAIN = {"whoosh": .10, "pop": .13, "tick": .05, "thud": .16, "chime": .10, "shimmer": .07, "fire": .09,
-            "ping": .10, "door": .10, "shutter": .13, "hit": .22, "coin": .12, "wave": .08}
+            "ping": .10, "door": .10, "shutter": .13, "hit": .22, "coin": .12, "wave": .08, "siren": .07, "type": .06}
 
 
 def loudness(path):
