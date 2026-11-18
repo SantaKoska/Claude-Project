@@ -28,3 +28,21 @@ Caption:
 കേരളത്തിന്റെ ഈ ചരിത്രം നിങ്ങൾക്ക് അറിയാമായിരുന്നോ? കമന്റ് ചെയ്യൂ.
 
 #Muziris #KeralaHistory #Pepper #RomanEmpire #Malayalam
+
+## 4. GTA started as a police game (Video 7)
+
+### Instagram (caption field)
+GTA ആദ്യം ഒരു പോലീസ് ഗെയിം ആയിരുന്നു. 1995-ൽ സ്കോട്ട്ലൻഡിലെ ഒരു ചെറിയ ഓഫീസിൽ തുടങ്ങിയ കഥ.
+
+ആർക്കും പോലീസ് ആകേണ്ട, എല്ലാവർക്കും കള്ളനാകണം. ആ ഒരൊറ്റ കാര്യം ഗെയിമിനെ മാറ്റിമറിച്ചു. നവംബർ 19-ന് GTA 6.
+
+#GTA6 #GTA #Rockstar #GamingHistory #Malayalam
+
+### YouTube Shorts
+Title (max 100 characters, one line):
+GTA ആദ്യം ഒരു പോലീസ് ഗെയിം ആയിരുന്നു! 🚓 #GTA6 #Shorts
+
+Description:
+1995-ൽ സ്കോട്ട്ലൻഡിലെ ഒരു ചെറിയ ഓഫീസിൽ "റേസ് ആൻഡ് ചേസ്" എന്ന പേരിൽ തുടങ്ങിയ ഗെയിം. ആർക്കും പോലീസ് ആകേണ്ട, എല്ലാവർക്കും കള്ളനാകണം. അങ്ങനെ പിറന്നു ഗ്രാൻഡ് തെഫ്റ്റ് ഓട്ടോ. GTA 6 നവംബർ 19-ന്.
+
+#GTA6 #GTA #GamingHistory #Malayalam #Rockstar
