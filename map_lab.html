@@ -1,0 +1,129 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Map lab</title>
+<style>html,body{margin:0;background:#000;overflow:hidden}svg{display:block}text{font-family:FreeSans,sans-serif;font-weight:700}</style>
+<script src="lib/maps/india_kerala.js"></script>
+</head><body>
+<svg id="v" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <radialGradient id="sea" cx=".5" cy=".42" r=".8"><stop offset="0" stop-color="#14506B"/><stop offset=".6" stop-color="#0B2E47"/><stop offset="1" stop-color="#061726"/></radialGradient>
+  <linearGradient id="indiaTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3C98B"/><stop offset="1" stop-color="#E59A5B"/></linearGradient>
+  <linearGradient id="keralaTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7BE495"/><stop offset="1" stop-color="#2FA36B"/></linearGradient>
+  <filter id="coastGlow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="18"/></filter>
+  <filter id="neon" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <radialGradient id="vig" cx=".5" cy=".5" r=".75"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".6"/></radialGradient>
+  <radialGradient id="light" cx=".3" cy=".2" r=".7"><stop offset="0" stop-color="#FFE7B8" stop-opacity=".22"/><stop offset="1" stop-color="#FFE7B8" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1080" height="1920" fill="url(#sea)"/>
+<g id="waves"></g>
+<g id="cam"></g>
+<rect width="1080" height="1920" fill="url(#light)"/>
+<g id="ui"></g>
+<rect width="1080" height="1920" fill="url(#vig)"/>
+</svg>
+<script>
+const NS = 'http://www.w3.org/2000/svg', $ = id => document.getElementById(id), M = window.MAP;
+const el = (tag, a = {}, p) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+const txt = (p, x, y, s, size, fill, a = {}) => { const e = el('text', Object.assign({ x, y, 'font-size': size, fill, 'text-anchor': 'middle', 'dominant-baseline': 'central' }, a), p); e.textContent = s; return e; };
+const cl = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v)), seg = (t, a, b) => cl((t - a) / (b - a)), lerp = (a, b, u) => a + (b - a) * u;
+const E = { outExpo: u => u >= 1 ? 1 : 1 - Math.pow(2, -10 * u), inOut: u => -(Math.cos(Math.PI * u) - 1) / 2, outCubic: u => 1 - Math.pow(1 - u, 3),
+  outBack: u => { const c = 1.7; return 1 + (c + 1) * Math.pow(u - 1, 3) + c * Math.pow(u - 1, 2); }, inOutQuart: u => u < .5 ? 8 * u * u * u * u : 1 - Math.pow(-2 * u + 2, 4) / 2 };
+const set = (e, a) => { for (const k in a) e.setAttribute(k, a[k]); };
+const NSS = { 'vector-effect': 'non-scaling-stroke' };
+const DUR = 12.5;
+
+/* sea: drifting latitude lines in screen space */
+const W = []; for (let i = 0; i < 26; i++) W.push(el('path', { fill: 'none', stroke: '#5FC6E8', 'stroke-width': 2, opacity: .12 }, $('waves')));
+
+/* camera group (map space) */
+const cam = $('cam');
+el('path', Object.assign({ d: M.land, fill: '#1B4A5E', stroke: '#2C6A82', 'stroke-width': 1.5 }, NSS), cam);
+const indiaShadow = el('path', { d: M.india, fill: '#000', opacity: .5, filter: 'url(#shadow)' }, cam);
+const coast = el('path', Object.assign({ d: M.india, fill: 'none', stroke: '#7FE3FF', 'stroke-width': 14, opacity: .5, filter: 'url(#coastGlow)' }, NSS), cam);
+const extr = []; for (let i = 0; i < 12; i++) extr.push(el('path', { d: M.india, fill: i < 11 ? '#8A4E2A' : '#6B3A1E' }, cam));
+const stG = el('g', {}, cam);
+const ST = M.states.filter(s => s.name !== 'Kerala').map((s, i) => { const h = 22 + (i * 37) % 24, l = 66 + (i * 13) % 12;
+  return el('path', Object.assign({ d: s.d, fill: `hsl(${h} 80% ${l}%)`, stroke: '#7A4526', 'stroke-width': 1.2, 'stroke-opacity': .55 }, NSS), stG); });
+// Kerala: lifted slab (extrusion) + districts on top
+const klG = el('g', {}, cam);
+const klShadow = el('path', { d: M.kerala.d, fill: '#000', opacity: 0, filter: 'url(#shadow)' }, klG);
+const klExtr = []; for (let i = 0; i < 14; i++) klExtr.push(el('path', { d: M.kerala.d, fill: i < 13 ? '#1E6B45' : '#155033' }, klG));
+const klTop = el('path', Object.assign({ d: M.kerala.d, fill: 'url(#keralaTop)', stroke: '#E9FFF0', 'stroke-width': 2 }, NSS), klG);
+const DG = el('g', {}, klG);
+const order = M.districts.slice().sort((a, b) => a.cy - b.cy);
+const DP = order.map((d, i) => el('path', Object.assign({ d: d.d, fill: `hsl(${142 - i * 3} ${52 + (i % 3) * 8}% ${50 + (i % 2) * 9}%)`, stroke: '#F2FFF5', 'stroke-width': 2 }, NSS), DG));
+const klLine = el('path', Object.assign({ d: M.kerala.d, fill: 'none', stroke: '#FFFFFF', 'stroke-width': 4, filter: 'url(#neon)' }, NSS), klG);
+
+/* UI in screen space (constant size, follows camera) */
+const ui = $('ui');
+const title = el('g', {}, ui); const tBg = el('rect', { x: 290, y: 250, width: 500, height: 150, rx: 75, fill: '#0A1F33', opacity: .85 }, title); const tTxt = txt(title, 540, 325, 'ഇന്ത്യ', 96, '#FFD27A');
+const lblSea = txt(ui, 0, 0, 'അറബിക്കടൽ', 46, '#9FE6FF', { opacity: 0, 'letter-spacing': 4 });
+const lblKA = txt(ui, 0, 0, 'കർണാടക', 40, '#7A4526', { opacity: 0 }), lblTN = txt(ui, 0, 0, 'തമിഴ്നാട്', 40, '#7A4526', { opacity: 0 });
+const DL = order.map(d => { const g = el('g', { opacity: 0 }, ui); const w = Math.max(120, d.ml.length * 17 + 30);
+  el('rect', { x: -w / 2, y: -24, width: w, height: 48, rx: 24, fill: '#0B2A1C', opacity: .78 }, g); txt(g, 0, 0, d.ml, 28, '#FFFFFF'); return g; });
+const route = el('path', { fill: 'none', stroke: '#FFD27A', 'stroke-width': 7, 'stroke-linecap': 'round', filter: 'url(#neon)' }, ui);
+const ship = el('g', {}, ui); el('path', { d: 'M-26 0 Q0 16 30 0 L20 -4 L-20 -4Z', fill: '#FFF' }, ship); el('path', { d: 'M-4 -6 L-4 -40 L16 -10Z', fill: '#FFF' }, ship);
+const pin = el('g', { opacity: 0 }, ui); const pinR = el('circle', { r: 0, fill: 'none', stroke: '#FF6B4A', 'stroke-width': 6 }, pin);
+el('path', { d: 'M0 0 C-22 -30 -26 -48 -26 -60 A26 26 0 1 1 26 -60 C26 -48 22 -30 0 0Z', fill: '#FF6B4A' }, pin); el('circle', { cx: 0, cy: -60, r: 10, fill: '#fff' }, pin);
+const pinCard = el('g', {}, pin); el('rect', { x: 40, y: -130, width: 330, height: 110, rx: 22, fill: '#FFFFFF' }, pinCard);
+txt(pinCard, 205, -95, 'കാപ്പാട്', 48, '#0A1F33'); txt(pinCard, 205, -48, '20 മെയ് 1498', 32, '#FF6B4A');
+const KAP = M.xy(75.72, 11.38);
+
+/* camera keys: [time, centerX, centerY, zoom] in map space; zoom interpolated in log space */
+const IND = [540, 930], KL = [(M.kerala.box[0] + M.kerala.box[2]) / 2 + 2, (M.kerala.box[1] + M.kerala.box[3]) / 2];
+const KEYS = [[0, IND[0], IND[1] + 40, .95], [3.0, IND[0], IND[1], 1.15], [6.2, KL[0], KL[1], 7.0, 26], [12.5, KL[0] - 2, KL[1] - 6, 7.6, 26]];
+function camAt(t) { let i = 0; while (i < KEYS.length - 2 && t > KEYS[i + 1][0]) i++; const a = KEYS[i], b = KEYS[i + 1];
+  const u = seg(t, a[0], b[0]), e = i === 1 ? E.inOutQuart(u) : E.inOut(u);
+  return { x: lerp(a[1], b[1], e), y: lerp(a[2], b[2], e), z: Math.exp(lerp(Math.log(a[3]), Math.log(b[3]), e)), r: lerp(a[4] || 0, b[4] || 0, e) }; }
+
+function render(t) {
+  const C = camAt(t), tilt = C.r + Math.sin(t * .4) * .6;
+  cam.setAttribute('transform', `translate(540 960) rotate(${tilt}) scale(${C.z}) translate(${-C.x} ${-C.y})`);
+  const S = p => { const dx = (p[0] - C.x) * C.z, dy = (p[1] - C.y) * C.z, r = tilt * Math.PI / 180; return [540 + dx * Math.cos(r) - dy * Math.sin(r), 960 + dx * Math.sin(r) + dy * Math.cos(r)]; };
+  // sea lines drift
+  W.forEach((w, i) => { const y = ((i * 80 + t * 18) % 2080) - 80; let d = `M-20 ${y}`; for (let x = 0; x <= 1100; x += 60) d += ` L${x} ${y + Math.sin(x / 140 + t * .9 + i) * 10}`; w.setAttribute('d', d); });
+  // India rises out of the sea (0 - 1.6s): extrusion grows, top lifts
+  const rise = E.outCubic(seg(t, .05, 1.4)), depth = 1.1 / C.z;
+  extr.forEach((p, i) => { p.setAttribute('transform', `translate(0 ${(12 - i) * depth * rise})`); p.setAttribute('opacity', rise); });
+  stG.setAttribute('opacity', rise);
+  indiaShadow.setAttribute('transform', `translate(${10 / C.z} ${26 / C.z * rise})`); indiaShadow.setAttribute('opacity', .55 * rise);
+  coast.setAttribute('opacity', (.35 + .2 * Math.sin(t * 3)) * rise);
+  // big blur filters on huge zoomed paths are very slow to rasterise: switch them off once we are deep in
+  const deep = C.z > 2.2; indiaShadow.setAttribute('display', deep ? 'none' : 'inline'); coast.setAttribute('display', deep ? 'none' : 'inline');
+  // dim the rest of India as we fly to Kerala
+  const fly = seg(t, 3.2, 6.0);
+  stG.setAttribute('opacity', rise * (1 - .45 * fly));
+  // Kerala lifts up as its own slab
+  const lift = E.outBack(seg(t, 4.6, 6.0)), klDepth = (1 + 1.6 * lift) / C.z;
+  klExtr.forEach((p, i) => p.setAttribute('transform', `translate(0 ${(14 - i) * klDepth * (.3 + .7 * rise)})`));
+  klG.setAttribute('transform', `translate(0 ${-14 * lift / C.z})`);
+  klShadow.setAttribute('opacity', .6 * lift); klShadow.setAttribute('transform', `translate(${8 / C.z} ${30 * lift / C.z})`);
+  klTop.setAttribute('opacity', rise);
+  klLine.setAttribute('opacity', seg(t, 4.8, 5.6) * (.6 + .4 * Math.sin(t * 4)));
+  // districts drop in north -> south
+  DP.forEach((p, i) => { const u = seg(t, 6.2 + i * .1, 6.75 + i * .1), y = -30 * (1 - E.outCubic(u)) / C.z;
+    p.setAttribute('transform', `translate(0 ${y})`); p.setAttribute('opacity', u); });
+  // title
+  const ti = seg(t, .3, .8), to = seg(t, 2.9, 3.3);
+  title.setAttribute('opacity', ti * (1 - to)); title.setAttribute('transform', `translate(540 325) scale(${lerp(.6, 1, E.outBack(ti))}) translate(-540 -325)`);
+  if (t > 4.4) { tTxt.textContent = 'കേരളം'; tTxt.setAttribute('fill', '#7BE495'); const k2 = seg(t, 4.4, 4.9), ko = seg(t, 6.6, 7.0); title.setAttribute('opacity', k2 * (1 - ko)); title.setAttribute('transform', `translate(540 325) scale(${lerp(.6, 1, E.outBack(k2))}) translate(-540 -325)`); }
+  else tTxt.textContent = 'ഇന്ത്യ', tTxt.setAttribute('fill', '#FFD27A');
+  // context labels
+  const sp = S(M.xy(75.0, 9.6)); set(lblSea, { x: sp[0], y: sp[1], opacity: seg(t, 5.6, 6.2) * .9 * (1 - seg(t, 9.0, 9.4)), transform: `rotate(-64 ${sp[0]} ${sp[1]})` });
+  const ka = S(M.xy(76.3, 12.45)), tn = S(M.xy(78.0, 9.7));
+  set(lblKA, { x: ka[0], y: ka[1], opacity: seg(t, 5.8, 6.3) }); set(lblTN, { x: tn[0], y: tn[1], opacity: seg(t, 5.9, 6.4) });
+  // district labels
+  DL.forEach((g, i) => { const d = order[i], p = S([d.cx, d.cy]), u = seg(t, 6.5 + i * .1, 6.9 + i * .1), lo = seg(t, 9.2, 9.6);
+    const big = /Kozhikode|Ernakulam|Thiruvananthapuram|Kannur|Thrissur|Idukki|Kollam|Palakkad/.test(d.name); g.setAttribute('opacity', (big ? u : 0) * (1 - lo)); g.setAttribute('transform', `translate(${p[0]} ${p[1]}) scale(${lerp(.5, 1, E.outBack(u))})`); });
+  // sea route to Kappad
+  const kp = S(KAP), a = [kp[0] - 300, kp[1] + 620], c = [kp[0] - 380, kp[1] + 120];
+  const r = E.inOut(seg(t, 9.3, 11.0)); const N = 40; let d = ''; let last = a;
+  for (let j = 0; j <= N * r; j++) { const u = j / N, x = (1 - u) * (1 - u) * a[0] + 2 * (1 - u) * u * c[0] + u * u * kp[0], y = (1 - u) * (1 - u) * a[1] + 2 * (1 - u) * u * c[1] + u * u * kp[1]; d += (j ? ' L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1); last = [x, y]; }
+  route.setAttribute('d', r > 0 ? d : ''); ship.setAttribute('transform', `translate(${last[0]} ${last[1] + Math.sin(t * 5) * 3})`); ship.setAttribute('opacity', r > 0 && r < 1 ? 1 : 0);
+  const pu = seg(t, 10.9, 11.3); pin.setAttribute('opacity', pu); pin.setAttribute('transform', `translate(${kp[0]} ${kp[1]}) scale(${E.outBack(pu)})`);
+  const rr = ((t - 11.0) % 1.2) / 1.2; set(pinR, { r: t > 11 ? 12 + 70 * E.outExpo(rr) : 0, opacity: t > 11 ? 1 - rr : 0 });
+}
+window.DURATION = DUR; window.SFX = []; window.CONFIG = { music: null };
+window.seek = t => render(t); render(0); window.READY = true;
+</script>
+</body></html>

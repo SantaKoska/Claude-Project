@@ -31,7 +31,7 @@ const FR = path.join(BUILD, 'frames');
   await Promise.all(pages.map(async (p, w) => {
     for (let f = w; f < N; f += WORKERS) {
       await p.evaluate(t => window.seek(t), f / FPS);
-      await p.screenshot({ path: path.join(FR, `f${String(f).padStart(5, '0')}.jpg`), type: 'jpeg', quality: 95 });
+      await p.screenshot({ path: path.join(FR, `f${String(f).padStart(5, '0')}.jpg`), type: 'jpeg', quality: 95, timeout: 180000 });
       if (++done % 100 === 0) console.log(`  ${done}/${N}  ${((Date.now() - t0) / 1000).toFixed(0)}s`);
     }
   }));

@@ -1,0 +1,210 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>People lab</title>
+<style>html,body{margin:0;background:#000;overflow:hidden}svg{display:block}text{font-family:FreeSans,sans-serif;font-weight:700}</style>
+<script src="lib/people.js"></script>
+</head><body>
+<svg id="v" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="nightWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#141A33"/><stop offset="1" stop-color="#0A0D1C"/></linearGradient>
+  <radialGradient id="lampPool" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFC978" stop-opacity=".55"/><stop offset="1" stop-color="#FFC978" stop-opacity="0"/></radialGradient>
+  <radialGradient id="phoneGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#9FD8FF" stop-opacity=".9"/><stop offset="1" stop-color="#9FD8FF" stop-opacity="0"/></radialGradient>
+  <linearGradient id="beam" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE2A8" stop-opacity=".35"/><stop offset="1" stop-color="#FFE2A8" stop-opacity="0"/></linearGradient>
+  <linearGradient id="shopWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5A2E1C"/><stop offset="1" stop-color="#2A140C"/></linearGradient>
+  <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A5530"/><stop offset=".08" stop-color="#6B3E20"/><stop offset="1" stop-color="#3A2010"/></linearGradient>
+  <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8E98A3"/><stop offset=".35" stop-color="#F2F5F8"/><stop offset=".6" stop-color="#B8C1CA"/><stop offset="1" stop-color="#6E7883"/></linearGradient>
+  <linearGradient id="copper" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7A3A1A"/><stop offset=".4" stop-color="#E39A5C"/><stop offset="1" stop-color="#6B2F12"/></linearGradient>
+  <filter id="dofA" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur id="dofAb" stdDeviation="2"/></filter>
+  <filter id="dofB" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur id="dofBb" stdDeviation="6"/></filter>
+  <filter id="bokeh" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+  <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+  <radialGradient id="vig" cx=".5" cy=".48" r=".72"><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".7"/></radialGradient>
+</defs>
+<g id="A"></g>
+<g id="B"></g>
+<rect id="flash" width="1080" height="1920" fill="#EAF6FF" opacity="0"/>
+<rect width="1080" height="1920" fill="url(#vig)"/>
+<rect id="barT" x="0" y="0" width="1080" height="0" fill="#000"/><rect id="barB" x="0" y="1920" width="1080" height="0" fill="#000"/>
+<g id="ui"></g>
+</svg>
+<script>
+const NS = 'http://www.w3.org/2000/svg', $ = id => document.getElementById(id);
+const el = (tag, a = {}, p) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+const txt = (p, x, y, s, size, fill, a = {}) => { const e = el('text', Object.assign({ x, y, 'font-size': size, fill, 'text-anchor': 'middle', 'dominant-baseline': 'central' }, a), p); e.textContent = s; return e; };
+const cl = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v)), seg = (t, a, b) => cl((t - a) / (b - a)), lerp = (a, b, u) => a + (b - a) * u;
+const E = { inOut: u => -(Math.cos(Math.PI * u) - 1) / 2, outCubic: u => 1 - Math.pow(1 - u, 3), outBack: u => { const c = 1.7; return 1 + (c + 1) * Math.pow(u - 1, 3) + c * Math.pow(u - 1, 2); }, outExpo: u => u >= 1 ? 1 : 1 - Math.pow(2, -10 * u), inCubic: u => u * u * u };
+const rnd = (i, k = 1) => { const x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453; return x - Math.floor(x); };
+const set = (e, a) => { for (const k in a) e.setAttribute(k, a[k]); };
+const ptIn = (node, target, x = 0, y = 0) => { const m = target.getCTM().inverse().multiply(node.getCTM()); return [m.a * x + m.c * y + m.e, m.b * x + m.d * y + m.f]; };
+const DUR = 13;
+const CUT = 5.4;
+
+/* ================= SHOT A: night desk, the phone buzzes ================= */
+const A = $('A'), Acam = el('g', {}, A);
+const Abg = el('g', { filter: 'url(#dofA)' }, Acam);
+el('rect', { x: -200, y: -200, width: 1480, height: 2320, fill: 'url(#nightWall)' }, Abg);
+const win = el('g', {}, Abg); el('rect', { x: 600, y: 360, width: 420, height: 620, rx: 8, fill: '#0F2347' }, win);
+for (let i = 0; i < 22; i++) el('circle', { cx: 620 + rnd(i, 1) * 380, cy: 600 + rnd(i, 2) * 360, r: 8 + rnd(i, 3) * 18, fill: ['#FFB85C', '#6FC3FF', '#FF7AA2'][i % 3], opacity: .55, filter: 'url(#bokeh)' }, win);
+el('rect', { x: 600, y: 360, width: 420, height: 620, rx: 8, fill: 'none', stroke: '#2A3358', 'stroke-width': 18 }, win); el('rect', { x: 803, y: 360, width: 14, height: 620, fill: '#2A3358' }, win);
+const shelf = el('g', {}, Abg); el('rect', { x: 60, y: 520, width: 360, height: 16, fill: '#2A2440' }, shelf);
+[[80, 60, '#C0392B'], [150, 80, '#2E86AB'], [196, 70, '#F4D35E'], [250, 90, '#5D5D81'], [320, 66, '#3BB273']].forEach(([x, h, c]) => el('rect', { x, y: 520 - h, width: 40, height: h, rx: 4, fill: c, opacity: .7 }, shelf));
+const Amid = el('g', {}, Acam);
+const lampPool = el('ellipse', { cx: 760, cy: 1240, rx: 520, ry: 380, fill: 'url(#lampPool)' }, Amid);
+// chair
+el('rect', { x: 230, y: 1340, width: 230, height: 30, rx: 10, fill: '#2B2238' }, Amid); el('rect', { x: 220, y: 1040, width: 34, height: 330, rx: 12, fill: '#2B2238' }, Amid);
+el('rect', { x: 330, y: 1370, width: 20, height: 170, fill: '#1E1828' }, Amid);
+const Pman = Person(Amid, { skin: '#B97A4E', hair: '#16110E', hairStyle: 'side', top: '#3D5A80', topStyle: 'tee', pants: '#232B3E', shoes: '#DDDDDD' });
+Object.assign(Pman.S, { x: 360, y: 1540, s: 2.05, face: 1, sit: 1, armN: [40, 70], armF: [30, 60], smile: .3, blinkSeed: 1.2 });
+// desk (in front of the man's legs)
+const desk = el('g', {}, Amid);
+el('rect', { x: 520, y: 1262, width: 640, height: 34, rx: 6, fill: '#5B3A26' }, desk); el('rect', { x: 520, y: 1290, width: 640, height: 300, fill: '#3E281A' }, desk);
+// lamp
+const lamp = el('g', {}, desk); el('rect', { x: 960, y: 1236, width: 90, height: 26, rx: 8, fill: '#222' }, lamp); el('path', { d: 'M1000 1240 L960 1080 L900 1040', stroke: '#222', 'stroke-width': 12, fill: 'none' }, lamp);
+el('path', { d: 'M850 1010 L950 1000 L930 1080 L840 1070Z', fill: '#E0A848' }, lamp); const bulb = el('ellipse', { cx: 888, cy: 1078, rx: 40, ry: 12, fill: '#FFF2C8' }, lamp);
+// mug
+el('rect', { x: 790, y: 1200, width: 60, height: 64, rx: 10, fill: '#E8E3D8' }, desk); el('path', { d: 'M850 1214 q28 4 0 34', stroke: '#E8E3D8', 'stroke-width': 10, fill: 'none' }, desk);
+// phone: flat on the desk, then in the hand
+const phoneDesk = el('g', {}, desk); el('rect', { x: -40, y: -9, width: 80, height: 14, rx: 6, fill: '#111' }, phoneDesk); const pdGlow = el('ellipse', { cx: 0, cy: -10, rx: 70, ry: 16, fill: 'url(#phoneGlow)', opacity: 0 }, phoneDesk);
+const rings = [0, 1, 2].map(() => el('ellipse', { cx: 0, cy: -6, rx: 0, ry: 0, fill: 'none', stroke: '#9FD8FF', 'stroke-width': 3 }, phoneDesk));
+const phoneHand = el('g', {}); el('rect', { x: -22, y: -42, width: 44, height: 84, rx: 8, fill: '#111' }, phoneHand); const phScreen = el('rect', { x: -18, y: -37, width: 36, height: 74, rx: 5, fill: '#BFE6FF' }, phoneHand);
+const phoneHold = Pman.hold(phoneHand, 'N'); phoneHand.setAttribute('opacity', 0);
+const faceGlow = el('circle', { r: 160, fill: 'url(#phoneGlow)', opacity: 0 }, Amid);
+const dust = el('g', {}, Acam); const D = []; for (let i = 0; i < 30; i++) D.push(el('circle', { r: 2 + rnd(i, 4) * 3, fill: '#FFE6B0', opacity: .5 }, dust));
+const PHONE = [665, 1258];
+
+/* ================= SHOT B: Kerala tea shop, the pulled tea ================= */
+const B = $('B'), Bcam = el('g', {}, B);
+const Bbg = el('g', { filter: 'url(#dofB)' }, Bcam);
+el('rect', { x: -200, y: -200, width: 1480, height: 2320, fill: 'url(#shopWall)' }, Bbg);
+const sh2 = el('g', {}, Bbg); [520, 760].forEach(y => { el('rect', { x: -40, y, width: 1160, height: 18, fill: '#3A1E10' }, sh2);
+  for (let i = 0; i < 9; i++) { const x = 20 + i * 120; el('rect', { x, y: y - 120, width: 80, height: 120, rx: 14, fill: '#D9EEF5', opacity: .35 }, sh2); el('rect', { x: x + 4, y: y - 70, width: 72, height: 66, rx: 10, fill: ['#E9A23B', '#C0392B', '#F4D35E', '#8E5A2B'][i % 4], opacity: .75 }, sh2); } });
+// hanging bananas
+const ban = el('g', {}, Bbg); el('path', { d: 'M820 140 L820 300', stroke: '#2A160B', 'stroke-width': 6 }, ban);
+for (let i = 0; i < 14; i++) el('path', { d: `M${800 + (i % 4) * 14} ${300 + Math.floor(i / 4) * 40} q-30 30 -10 70 q12 -30 30 -60Z`, fill: i % 2 ? '#E2C33A' : '#C9A52A' }, ban);
+const bulbs = el('g', {}, Bbg); const BL = []; for (let i = 0; i < 9; i++) { const x = 40 + i * 125, y = 120 + Math.sin(i * .9) * 30; BL.push(el('circle', { cx: x, cy: y, r: 26, fill: '#FFD27A', filter: 'url(#bokeh)' }, bulbs)); }
+const beamG = el('g', {}, Bcam); const beam = el('path', { d: 'M1080 80 L1080 420 L200 1500 L-100 1500Z', fill: 'url(#beam)' }, beamG);
+// samovar
+const samo = el('g', {}, Bcam); el('rect', { x: 40, y: 980, width: 190, height: 380, rx: 70, fill: 'url(#copper)' }, samo); el('rect', { x: 100, y: 940, width: 70, height: 50, rx: 10, fill: '#5A2810' }, samo);
+el('rect', { x: 210, y: 1250, width: 60, height: 16, rx: 6, fill: '#5A2810' }, samo);
+const steam = []; for (let i = 0; i < 10; i++) steam.push(el('circle', { r: 20, fill: '#FFFFFF', opacity: 0, filter: 'url(#soft)' }, samo));
+const Bmid = el('g', {}, Bcam);
+const Pchay = Person(Bmid, { skin: '#9C6440', hair: '#121010', hairStyle: 'short', top: '#F2EEE3', topStyle: 'tee', pants: '#F2EEE3', shoes: '#333', height: 1.02 });
+Object.assign(Pchay.S, { x: 420, y: 1800, s: 2.6, face: 1, smile: .5, blinkSeed: 2.7 });
+const Pcust = Person(Bmid, { skin: '#C68B5E', hair: '#2A1C14', hairStyle: 'buzz', top: '#2E8B57', topStyle: 'shirt', pants: '#3B3B58', shoes: '#222' });
+Object.assign(Pcust.S, { x: 900, y: 1800, s: 2.55, face: -1, smile: .5, blinkSeed: .4, armN: [8, 12], armF: [4, 10] });
+// counter in front
+const counter = el('g', {}, Bcam); el('rect', { x: -40, y: 1480, width: 1160, height: 40, rx: 6, fill: '#9A6236' }, counter); el('rect', { x: -40, y: 1516, width: 1160, height: 500, fill: 'url(#wood)' }, counter);
+for (let i = 0; i < 8; i++) el('rect', { x: -40 + i * 150, y: 1530, width: 6, height: 480, fill: '#2A160B', opacity: .5 }, counter);
+const glassOnCounter = el('g', { transform: 'translate(560 1404)' }, counter);
+// tumblers
+function tumbler(fill) { const g = el('g', {}); const inner = el('g', {}, g);
+  el('path', { d: 'M-24 -46 L24 -46 L19 34 L-19 34Z', fill: 'url(#steel)' }, inner);
+  const tea = el('path', { d: '', fill: '#C98A4B' }, inner); const foam = el('ellipse', { cx: 0, cy: 0, rx: 0, ry: 5, fill: '#F1D9B5' }, inner);
+  el('ellipse', { cx: 0, cy: -46, rx: 24, ry: 6, fill: 'none', stroke: '#E8EDF2', 'stroke-width': 3 }, inner);
+  const lip = el('g', { transform: 'translate(-22 -46)' }, inner);
+  return { g, inner, tea, foam, lip, level: fill }; }
+const tumbUp = tumbler(1), tumbLo = tumbler(.2);
+function fillT(T) { const top = lerp(30, -40, T.level), w = lerp(19, 23, (top + 46) / -80 + 1); T.tea.setAttribute('d', `M${-lerp(19, 24, (34 - top) / 80)} ${top} L${lerp(19, 24, (34 - top) / 80)} ${top} L19 34 L-19 34Z`); set(T.foam, { cy: top, rx: lerp(19, 24, (34 - top) / 80) - 1 }); }
+Pchay.hold(tumbUp.g, 'N'); const loWrapChay = Pchay.hold(tumbLo.g, 'F');
+const stream = el('path', { d: '', fill: 'none', stroke: '#C98A4B', 'stroke-width': 9, 'stroke-linecap': 'round' }, Bmid);
+const streamHi = el('path', { d: '', fill: 'none', stroke: '#F1D2A6', 'stroke-width': 3, opacity: .7, 'stroke-linecap': 'round' }, Bmid);
+const splash = []; for (let i = 0; i < 10; i++) splash.push(el('circle', { r: 3 + rnd(i, 9) * 4, fill: '#E8C39A' }, Bmid));
+const loose = el('g', {}, Bmid); // the full glass while it travels between hands (drawn in world space)
+const cupSteam = []; for (let i = 0; i < 6; i++) cupSteam.push(el('circle', { r: 12, fill: '#FFF', opacity: 0, filter: 'url(#soft)' }, Bmid));
+
+/* UI */
+const ui = $('ui');
+const hookA = el('g', { opacity: 0 }, ui); el('rect', { x: 170, y: 270, width: 740, height: 130, rx: 65, fill: '#0B1026', opacity: .85 }, hookA); txt(hookA, 540, 335, 'രാത്രി 2 മണി.', 72, '#FFFFFF');
+const hookB = el('g', { opacity: 0 }, ui); el('rect', { x: 210, y: 270, width: 660, height: 130, rx: 65, fill: '#2A120A', opacity: .85 }, hookB); txt(hookB, 540, 335, 'അടിച്ച ചായ', 80, '#FFD27A');
+
+function render(t) {
+  const inA = t < CUT + .05;
+  A.setAttribute('display', inA ? 'inline' : 'none'); B.setAttribute('display', inA ? 'none' : 'inline');
+  // thin letterbox bars slide in for the cinematic feel
+  const bar = 90 * E.outCubic(seg(t, 0, .8)); set($('barT'), { height: bar }); set($('barB'), { y: 1920 - bar, height: bar });
+  // white flash cut between the shots
+  $('flash').setAttribute('opacity', Math.max(0, 1 - Math.abs(t - CUT) / .18) * .9);
+
+  if (inA) {
+    // camera: slow push towards the face + handheld drift; punch on the surprise
+    const push = 1 + .22 * E.inOut(seg(t, .2, CUT)), punch = .06 * Math.sin(Math.PI * seg(t, 2.55, 2.95));
+    const fx = lerp(540, 520, seg(t, 0, CUT)), fy = lerp(960, 1080, E.inOut(seg(t, .2, CUT)));
+    const hx = Math.sin(t * .9) * 6 + Math.sin(t * 2.3) * 2, hy = Math.cos(t * .7) * 5;
+    Acam.setAttribute('transform', `translate(${540 + hx} ${960 + hy}) scale(${push + punch}) translate(${-fx} ${-fy})`);
+    // rack focus: background blurs as the moment lands
+    $('dofAb').setAttribute('stdDeviation', lerp(2, 9, E.inOut(seg(t, 2.4, 3.4))));
+    // lamp flicker
+    const fl = .85 + .15 * Math.sin(t * 37) * (Math.sin(t * 3.1) > .7 ? 1 : 0);
+    lampPool.setAttribute('opacity', fl); bulb.setAttribute('opacity', fl);
+    // phone buzzes on the desk
+    const buzz = t > .5 && t < 1.25 ? Math.sin(t * 90) * 4 : 0;
+    phoneDesk.setAttribute('transform', `translate(${PHONE[0] + buzz} ${PHONE[1]})`);
+    pdGlow.setAttribute('opacity', t > .5 && t < 1.5 ? .9 : 0);
+    rings.forEach((r, i) => { const u = ((t - .5 - i * .25) % .75) / .75, on = t > .5 + i * .25 && t < 1.3; set(r, { rx: on ? 30 + 70 * u : 0, ry: on ? 8 + 18 * u : 0, opacity: on ? 1 - u : 0 }); });
+    // man: notices (head turns down), reaches, picks up, brings to face, shock
+    const S = Pman.S;
+    S.headTilt = lerp(0, 14, E.inOut(seg(t, .7, 1.0))) * (1 - seg(t, 1.9, 2.3)) + (t > 2.3 ? -4 * seg(t, 2.6, 2.8) : 0);
+    S.lean = lerp(0, 14, E.inOut(seg(t, .9, 1.4))) * (1 - E.inOut(seg(t, 1.7, 2.3))) - 6 * E.outBack(seg(t, 2.6, 2.85));
+    const grab = t >= 1.5;
+    const reachW = E.inOut(seg(t, .95, 1.45));
+    const toFace = E.inOut(seg(t, 1.55, 2.35));
+    S.reachN = { x: lerp(PHONE[0], 560, toFace), y: lerp(PHONE[1] - 10, 1010, toFace), w: reachW };
+    S.look = lerp(0, 1, seg(t, .7, 1)) ;
+    S.surprise = E.outBack(seg(t, 2.55, 2.85)) * (1 - .3 * seg(t, 4.5, CUT));
+    S.smile = .3 * (1 - seg(t, 2.5, 2.7));
+    phoneDesk.setAttribute('opacity', grab ? 0 : 1); phoneHand.setAttribute('opacity', grab ? 1 : 0);
+    phScreen.setAttribute('fill', t > 2.5 ? '#FFFFFF' : '#BFE6FF');
+    Pman.render(t, 0);
+    // phone light on the face once it is up
+    const ph = Pman.handIn(Amid, 'N'); set(faceGlow, { cx: ph[0] - 40, cy: ph[1] - 30, opacity: grab ? .55 * toFace + .25 * seg(t, 2.5, 2.7) : 0 });
+    D.forEach((d, i) => set(d, { cx: 600 + rnd(i, 5) * 500 + Math.sin(t * .5 + i) * 30, cy: 900 + ((rnd(i, 6) * 600 - t * 14 * (1 + rnd(i, 7))) % 600 + 600) % 600, opacity: .25 + .3 * Math.sin(t * 1.3 + i) }));
+    // hook text
+    const ho = seg(t, .25, .6) * (1 - seg(t, 2.2, 2.5)); hookA.setAttribute('opacity', ho); hookA.setAttribute('transform', `translate(0 ${lerp(-30, 0, E.outCubic(seg(t, .25, .6)))})`);
+  } else {
+    const lt = t - CUT;
+    // speed ramp: the pour plays in slow motion in the middle
+    const ramp = u => u < 1.6 ? u : u < 3.6 ? 1.6 + (u - 1.6) * .45 : 2.5 + (u - 3.6);
+    const T = ramp(lt);
+    // camera: slow dolly right + push
+    const z = 1.04 + .1 * E.inOut(seg(lt, 0, 7.6)), cx = lerp(600, 640, E.inOut(seg(lt, 0, 7.6))), cy = lerp(1170, 1130, E.inOut(seg(lt, 0, 7.6)));
+    Bcam.setAttribute('transform', `translate(540 960) scale(${z}) translate(${-cx} ${-cy})`);
+    $('dofBb').setAttribute('stdDeviation', 6 + 2 * Math.sin(lt * .5));
+    BL.forEach((b, i) => b.setAttribute('opacity', .55 + .35 * Math.sin(t * 1.7 + i * 1.3)));
+    beam.setAttribute('opacity', .8 + .2 * Math.sin(t * .8));
+    steam.forEach((s, i) => { const u = ((T * .5 + i / 10) % 1); set(s, { cx: 135 + Math.sin(u * 6 + i) * 20, cy: 930 - u * 260, r: 14 + u * 30, opacity: .35 * (1 - u) * Math.min(1, u * 4) }); });
+    // the chaya maker pulls the tea: near hand rises high and falls, glass tilts to pour
+    const C = Pchay.S, pull = seg(T, .3, 3.3), cyc = Math.sin(pull * Math.PI * 2 - Math.PI / 2) * .5 + .5; // 0 low -> 1 high
+    const pouring = T > .3 && T < 3.3;
+    const hi = pouring ? E.inOut(cyc) : 0;
+    const give = E.inOut(seg(T, 3.6, 4.4));       // hands the full glass over
+    C.reachN = { x: lerp(585, 610, hi), y: lerp(1290, 975, hi) - 30 * seg(T, 3.3, 3.6), w: E.inOut(seg(T, 0, .35)) * (1 - E.inOut(seg(T, 3.4, 3.9))) };
+    C.reachF = { x: lerp(580, 690, give), y: lerp(1385, 1300, give), w: E.inOut(seg(T, 0, .35)) };
+    C.headTilt = lerp(-4, 8, hi) + 6 * give; C.look = 1; C.smile = .5 + .4 * seg(T, 4.6, 5.0);
+    C.lean = 4 + 8 * give;
+    tumbUp.inner.setAttribute('transform', `rotate(${pouring ? 62 * Math.min(1, pull * 8, (1 - pull) * 8) : 0})`);
+    tumbUp.level = lerp(1, .15, pull) + .85 * seg(T, 3.3, 3.31) * 0; tumbLo.level = lerp(.2, .95, pull);
+    fillT(tumbUp); fillT(tumbLo);
+    // customer reaches for the glass, takes it, sips
+    const P2 = Pcust.S, take = T >= 4.45;
+    const sip = E.inOut(seg(T, 4.6, 5.4)); P2.reachN = { x: take ? lerp(694, 838, sip) : lerp(760, 694, seg(T, 3.9, 4.4)), y: take ? lerp(1300, 1062, sip) : 1300, w: E.inOut(seg(T, 3.7, 4.3)) };
+    P2.headTilt = take ? -12 * E.inOut(seg(T, 5.2, 5.6)) : 0; P2.look = 1;
+    P2.smile = .5 + .5 * seg(T, 5.8, 6.3); P2.surprise = 0;
+    if (take && tumbLo.g.parentNode === loWrapChay) { Pchay.release('F'); Pcust.hold(tumbLo.g, 'N'); }
+    if (!take && tumbLo.g.parentNode !== loWrapChay) { Pcust.release('N'); loWrapChay.appendChild(tumbLo.g); Pchay.S.holdF = loWrapChay; }
+    Pchay.render(t, 0); Pcust.render(t, 0);
+    // the stream: from the upper glass lip to the lower glass mouth, with wobble
+    if (pouring && pull > .06 && pull < .94) {
+      const a = ptIn(tumbUp.lip, Bmid), b = ptIn(tumbLo.foam, Bmid), wob = Math.sin(t * 30) * 3;
+      const d = `M${a[0]} ${a[1]} C${a[0] - 6} ${a[1] + 40} ${b[0] + wob} ${b[1] - 60} ${b[0] + wob * .5} ${b[1]}`;
+      stream.setAttribute('d', d); streamHi.setAttribute('d', d); stream.setAttribute('stroke-width', 7 + 2 * Math.sin(t * 20));
+      splash.forEach((s, i) => { const u = ((t * 3 + rnd(i, 3)) % 1); set(s, { cx: b[0] + (rnd(i, 1) - .5) * 60 * u, cy: b[1] - 30 * Math.sin(u * Math.PI) - 4, opacity: 1 - u }); });
+    } else { stream.setAttribute('d', ''); streamHi.setAttribute('d', ''); splash.forEach(s => s.setAttribute('opacity', 0)); }
+    // steam from the customer's glass
+    const cp = ptIn(tumbLo.foam, Bmid);
+    cupSteam.forEach((s, i) => { const u = ((t * .7 + i / 6) % 1); set(s, { cx: cp[0] + Math.sin(u * 5 + i) * 10, cy: cp[1] - 20 - u * 120, r: 8 + u * 16, opacity: T > 3.4 ? .45 * (1 - u) : 0 }); });
+    const hb = seg(lt, .2, .55) * (1 - seg(lt, 3.2, 3.6)); hookB.setAttribute('opacity', hb); hookB.setAttribute('transform', `translate(540 335) scale(${lerp(.7, 1, E.outBack(seg(lt, .2, .55)))}) translate(-540 -335)`);
+  }
+}
+window.DURATION = DUR; window.SFX = []; window.CONFIG = { music: null };
+window.seek = t => render(t); render(0); window.READY = true;
+</script>
+</body></html>
