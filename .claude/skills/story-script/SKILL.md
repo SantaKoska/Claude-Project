@@ -5,6 +5,20 @@ description: Write the voiceover script for an info.inmalayalam reel as a story,
 
 # story-script
 
+## OUR WAY (the owner's rule: "this is our way of story telling")
+
+Every script follows the table-tennis pattern, our best reel:
+
+1. **Hook = small cause -> giant effect, in the first breath.** Say the impossible-sounding result before any context.
+   "ഒരു പയ്യൻ ബസ് മാറിക്കയറി... ആ ഒരു തെറ്റ്, ലോകത്തിലെ രണ്ട് വൻശക്തികളെ വീണ്ടും അടുപ്പിച്ചു!"
+   "ഒരു മഴ... കേരളത്തിലെ ഒരു മലയെ തന്നെ ഒലിച്ചുകൊണ്ടുപോയി!"
+2. **Then tell how:** a year and place, a person (or a thing we follow), the problem, short rising beats.
+3. **A silence beat** ("..." / music drop) right before the turn.
+4. **One surprise twist** the viewer didn't see coming (the gift on the bus, "Top Station").
+5. **Payoff + callback** to the hook. No CTA, ever.
+
+Never open with a quiet mystery that has no stakes, the topic name, or "did you know".
+
 From Video 8 on, every script is a story. Facts are the evidence inside the story, never the story itself. The goal: people stay to the end, feel something, and want the next one.
 
 ## The shape (35-45 s, 8-11 spoken lines)
