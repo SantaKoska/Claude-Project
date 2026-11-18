@@ -1,5 +1,56 @@
 # The 1924 flood: Munnar's vanished train (Video 10)
 
+## v2 (use this one): the table-tennis hook pattern
+
+The table-tennis reel (best so far) opened with **a small thing and a huge result in one breath, before any context**:
+"ഒരു പയ്യൻ ബസ് മാറിക്കയറി... ആ ഒരു തെറ്റ്, ലോകത്തിലെ രണ്ട് വൻശക്തികളെ വീണ്ടും അടുപ്പിച്ചു!"
+Small cause -> giant effect, said in the first 3 seconds, so the viewer has to stay to learn *how*. Then a person, a silence, and a surprise twist (the gift).
+v1 opened on a quiet mystery ("a train once ran in Munnar"), which has no stakes yet. v2 puts the impossible-sounding result first.
+
+**Hook card:** ഒരു മഴ. ഒരു മല. ഒരു തീവണ്ടി.
+
+```
+ഒരു മഴ...
+
+കേരളത്തിലെ ഒരു മലയെ തന്നെ ഒലിച്ചുകൊണ്ടുപോയി!
+
+ഒപ്പം ഒരു തീവണ്ടിപ്പാതയെ, എന്നന്നേക്കുമായി.
+
+1924. മൂന്നാർ. ചായപ്പെട്ടികളുമായി മല കയറുന്ന ഒരു കുഞ്ഞു തീവണ്ടി.
+
+അതിന്റെ തുടക്കം... ഇന്ത്യയിലെ ആദ്യത്തെ മോണോറെയിലായിട്ടായിരുന്നു.
+
+ജൂലൈയിൽ മഴ തുടങ്ങി. പക്ഷേ നിന്നില്ല.
+
+ദിവസങ്ങളോളം പെയ്തു. പെരിയാർ കരകവിഞ്ഞു.
+
+പിന്നെ... കരിന്തിരി എന്ന മല, ഒന്നാകെ താഴേക്ക് ഒഴുകി. മൂന്നാറിലേക്കുള്ള റോഡും കൂടെപ്പോയി.
+
+മഴ തോർന്നപ്പോൾ...
+
+ആ തീവണ്ടിപ്പാത, ഇല്ലായിരുന്നു. പിന്നീടൊരിക്കലും അത് പണിതില്ല.
+
+കൊല്ലവർഷം 1099. കേരളം ഇന്നും വിളിക്കുന്നു... തൊണ്ണൂറ്റിയൊമ്പതിലെ വെള്ളപ്പൊക്കം.
+
+ആ തീവണ്ടി ഇന്ന് ബാക്കിയുള്ളത് ഒരു പേരിൽ മാത്രം... "ടോപ്പ് സ്റ്റേഷൻ".
+```
+
+| # | beat | English |
+| --- | --- | --- |
+| 1-3 | hook: small cause, huge effect | One rain... washed away a whole hill in Kerala! And a railway line, forever. |
+| 4-5 | the "person" (the train) | 1924. Munnar. A little train climbing the hills with tea chests. It began as India's first monorail. |
+| 6-7 | problem, rising | In July the rain started, and didn't stop. It rained for days. The Periyar burst its banks. |
+| 8 | rising (the hook pays off) | Then Karinthiri hill slid down whole. The road to Munnar went with it. |
+| 9-10 | pause, the turn | When the rain stopped... the railway was gone. It was never built again. |
+| 11 | payoff | Kollam Era 1099. Kerala still calls it the flood of 99. |
+| 12 | callback / surprise | All that's left of the train is one name... "Top Station". |
+
+Visual for the hook: bright misty tea hills (frame 0 lit), a hill shape on screen, a slam "ഒരു മല" and the hill dissolves downward like mud, then the little train fades off its track. About 80 words, 38-42 s.
+
+---
+
+## v1 (kept for reference)
+
 **Emotion:** awe that turns into loss, then pride (Kerala remembers, and stood back up). **Share reason:** every Malayali family has heard "തൊണ്ണൂറ്റിയൊമ്പതിലെ വെള്ളപ്പൊക്കം" from grandparents, and 2018 brought it back.
 
 **Hook card (0-3 s on screen):** മൂന്നാറിലെ മാഞ്ഞുപോയ തീവണ്ടി
