@@ -53,6 +53,8 @@ Nothing here is posted automatically. You review and post every item.
 
 - From Video 8 on, every script is a story (see `.claude/skills/story-script`): cold open on a moment, a person, a problem, rising tension, one turn, a payoff, and a callback to the first line.
 
+- Read `growth/log.md` before every script. From the GTA numbers (61% skip): open on a person or moment, bright first frame with a big hook card for 0-3 s, 35-45 s long, one share reason.
+
 - No calls to action in scripts: no follow, comment or share requests. End on a strong line or a callback to the hook instead.
 
 - No bought followers, no follow-for-follow farms, no mass follow/unfollow bots. They get accounts restricted.

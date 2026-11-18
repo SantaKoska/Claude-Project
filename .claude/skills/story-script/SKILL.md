@@ -7,7 +7,7 @@ description: Write the voiceover script for an info.inmalayalam reel as a story,
 
 From Video 8 on, every script is a story. Facts are the evidence inside the story, never the story itself. The goal: people stay to the end, feel something, and want the next one.
 
-## The shape (35-50 s, 8-12 spoken lines)
+## The shape (35-45 s, 8-11 spoken lines)
 
 | beat | time | job | how |
 | --- | --- | --- | --- |
@@ -31,6 +31,23 @@ From Video 8 on, every script is a story. Facts are the evidence inside the stor
 - **No calls to action.** No follow, like, comment or share requests anywhere. End on the callback or a punchline.
 - **Pauses are part of the script.** Use "..." where the voice should hold. ElevenLabs turns each blank line into a breath; the sync tool uses them to cut scenes.
 
+## The first 3 seconds (from real numbers)
+
+The GTA "police game" reel had a **61% skip rate** while its save rate was above typical: people who stayed liked it, but most left before the story began. It opened on the topic name and "നിങ്ങൾക്കറിയാമോ?" over a dark frame. The table-tennis reel (best so far) opened bright, on a person doing something. Check `growth/log.md` before every script.
+
+- **Line 1 is a person or a moment, said within 0.3 s.** Never the topic name, never "did you know". Bad: "GTA ആദ്യം ഒരു പോലീസ് ഗെയിം ആയിരുന്നു." Good: "ഒരു 17 വയസ്സുകാരൻ. ഒരു ഹോട്ടൽ മുറി. ലോകം ഞെട്ടി."
+- **Line 1 must be strange enough to stop a thumb:** a number that feels wrong, a contradiction, a stake. If it could be a textbook sentence, rewrite it.
+- **Write a hook card** with each script: 3-6 Malayalam words that sit big on screen for 0-3 s (the visual promise of the story), separate from the word captions.
+- **Give it a share reason:** a Kerala/India/Mallu link, or a moment a viewer wants to show a friend. This is not a CTA; never ask for the share.
+- **Length 35-45 s raw.** Cut a beat before going over.
+
+### Build rules for the opening (for the video page)
+
+- Frame 0 is fully lit and colourful: no fade from black, no dark grade for the first 3 s (the documentary grade can settle in after).
+- Something moves in frame 0 (camera push, object entering).
+- The hook card is on screen from frame 0 to about 3 s, at least 90 px, high contrast, inside the safe area.
+- No empty caption gaps in the first 3 s.
+
 ## Truth rules (unchanged, and stricter for stories)
 
 - Research first, keep sources. A story feels true only if it is true.
@@ -50,6 +67,8 @@ From Video 8 on, every script is a story. Facts are the evidence inside the stor
 ## Checklist before showing the user
 
 - [ ] First line is a moment, not the topic or "did you know"
+- [ ] Hook card written (3-6 words for 0-3 s) and a share reason named
+- [ ] Raw length 35-45 s
 - [ ] There is a person (or group) to follow and something at stake
 - [ ] Every 5-7 s something changes
 - [ ] Exactly one big turn, set up by a pause
