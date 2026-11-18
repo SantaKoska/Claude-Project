@@ -1,0 +1,218 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Style lab</title>
+<style>html,body{margin:0;background:#000;overflow:hidden}svg{display:block}text{font-family:FreeSans,sans-serif;font-weight:700}</style>
+</head><body>
+<svg id="v" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="hookBg" x1="0" y1="0" x2="0" y2="1"><stop id="hb1" offset="0" stop-color="#FF6B2C"/><stop id="hb2" offset="1" stop-color="#C2185B"/></linearGradient>
+  <radialGradient id="glow"><stop offset="0" stop-color="#FFF6D0" stop-opacity="1"/><stop offset=".35" stop-color="#FFD27A" stop-opacity=".6"/><stop offset="1" stop-color="#FFB040" stop-opacity="0"/></radialGradient>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B2D6E"/><stop offset=".45" stop-color="#E8628A"/><stop offset=".8" stop-color="#FFB25B"/></linearGradient>
+  <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F59A5C"/><stop offset=".4" stop-color="#7A4C8C"/><stop offset="1" stop-color="#1D2350"/></linearGradient>
+  <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFB98A" stop-opacity="0"/><stop offset="1" stop-color="#FFB98A" stop-opacity=".55"/></linearGradient>
+  <linearGradient id="mapBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E3B5C"/><stop offset="1" stop-color="#0A1F3D"/></linearGradient>
+  <filter id="mb1" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur id="mb1b" stdDeviation="0 0"/></filter>
+  <filter id="mb2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur id="mb2b" stdDeviation="0 0"/></filter>
+  <filter id="mb3" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur id="mb3b" stdDeviation="0 0"/></filter>
+  <filter id="whip" x="-20%" y="-5%" width="140%" height="110%"><feGaussianBlur id="whipb" stdDeviation="0 0"/></filter>
+  <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+  <filter id="neon" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <clipPath id="iris"><circle id="irisC" cx="540" cy="900" r="0"/></clipPath>
+  <radialGradient id="vig" cx=".5" cy=".5" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient>
+</defs>
+<g id="world">
+  <g id="shot3"></g>
+  <g id="shot2"></g>
+  <g id="shot1"></g>
+</g>
+<rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+<g id="tag"></g>
+</svg>
+<script>
+const NS = 'http://www.w3.org/2000/svg', $ = id => document.getElementById(id);
+const el = (tag, a = {}, p) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+const txt = (p, x, y, s, size, fill, a = {}) => { const e = el('text', Object.assign({ x, y, 'font-size': size, fill, 'text-anchor': 'middle', 'dominant-baseline': 'central' }, a), p); e.textContent = s; return e; };
+const cl = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const seg = (t, a, b) => cl((t - a) / (b - a));
+const lerp = (a, b, u) => a + (b - a) * u;
+const E = {
+  outExpo: u => u >= 1 ? 1 : 1 - Math.pow(2, -10 * u),
+  outBack: u => { const c = 1.9; return 1 + (c + 1) * Math.pow(u - 1, 3) + c * Math.pow(u - 1, 2); },
+  inOut: u => -(Math.cos(Math.PI * u) - 1) / 2,
+  inCubic: u => u * u * u,
+  outCubic: u => 1 - Math.pow(1 - u, 3),
+  elastic: u => u === 0 || u === 1 ? u : Math.pow(2, -10 * u) * Math.sin((u * 10 - .75) * (2 * Math.PI / 3)) + 1,
+};
+const rnd = (i, k = 1) => { const x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453; return x - Math.floor(x); };
+const set = (e, a) => { for (const k in a) e.setAttribute(k, a[k]); };
+const DUR = 12.2;
+
+/* ---------- SHOT 1: kinetic hook (0 - 3.9s) ---------- */
+const s1 = $('shot1');
+el('rect', { width: 1080, height: 1920, fill: 'url(#hookBg)' }, s1);
+const rays = el('g', { opacity: .18 }, s1);
+for (let i = 0; i < 24; i++) el('path', { d: 'M540 900 L' + (540 + 2000 * Math.cos(i * Math.PI / 12 - .06)) + ' ' + (900 + 2000 * Math.sin(i * Math.PI / 12 - .06)) + ' L' + (540 + 2000 * Math.cos(i * Math.PI / 12 + .06)) + ' ' + (900 + 2000 * Math.sin(i * Math.PI / 12 + .06)) + 'Z', fill: '#FFF' }, rays);
+const parts = el('g', {}, s1), P = [];
+for (let i = 0; i < 46; i++) P.push(el('circle', { r: 4 + rnd(i) * 9, fill: i % 3 ? '#FFE3A3' : '#FFFFFF' }, parts));
+const ring = el('circle', { cx: 540, cy: 860, r: 0, fill: 'none', stroke: '#FFF', 'stroke-width': 14 }, s1);
+const yearG = el('g', { filter: 'url(#mb1)' }, s1);
+const yShadow = txt(yearG, 552, 872, '1498', 330, '#7A0F3A', { opacity: .45 });
+const year = txt(yearG, 540, 860, '1498', 330, '#FFFFFF');
+const placeG = el('g', { filter: 'url(#mb2)' }, s1);
+const pill = el('rect', { x: 170, y: 1070, width: 740, height: 140, rx: 70, fill: '#1A1240' }, placeG);
+txt(placeG, 540, 1140, 'കോഴിക്കോട് തീരം', 76, '#FFD27A');
+const words = ['ലോകം', 'മാറിയ', 'ദിവസം'].map((w, i) => { const g = el('g', {}, s1); txt(g, 0, 0, w, 120, '#FFFFFF'); return g; });
+const wordX = [540, 540, 540], wordY = [1320, 1460, 1600];
+
+/* ---------- SHOT 2: layered parallax scene (3.6 - 8.1s) ---------- */
+const s2w = el('g', { 'clip-path': 'url(#iris)' }, $('shot2'));
+const s2 = el('g', { filter: 'url(#whip)' }, s2w);
+el('rect', { width: 1080, height: 1920, fill: 'url(#sky)' }, s2);
+const L = {};
+L.sun = el('g', {}, s2); el('circle', { cx: 0, cy: 0, r: 420, fill: 'url(#glow)' }, L.sun); el('circle', { cx: 0, cy: 0, r: 110, fill: '#FFF1C9' }, L.sun);
+const hill = (p, base, amp, col, seed, w = 2600) => { let d = `M-600 1920 L-600 ${base}`; for (let x = -600; x <= w; x += 60) d += ` L${x} ${base - amp * (.5 + .5 * Math.sin(x / 260 + seed)) - amp * .4 * Math.sin(x / 97 + seed * 2)}`; d += ` L${w} 1920Z`; return el('path', { d, fill: col }, p); };
+L.far = el('g', {}, s2); hill(L.far, 1040, 90, '#B86A8E', 1);
+L.hz1 = el('rect', { x: -600, y: 700, width: 3200, height: 400, fill: 'url(#haze)' }, s2);
+L.mid = el('g', {}, s2); hill(L.mid, 1110, 60, '#7E3F6E', 3);
+L.hz2 = el('rect', { x: -600, y: 820, width: 3200, height: 320, fill: 'url(#haze)', opacity: .7 }, s2);
+L.water = el('g', {}, s2); el('rect', { x: -600, y: 1120, width: 3200, height: 800, fill: 'url(#water)' }, L.water);
+const shimmer = []; for (let i = 0; i < 38; i++) shimmer.push(el('rect', { x: 0, y: 1150 + rnd(i, 2) * 700, width: 40 + rnd(i, 3) * 120, height: 5 + rnd(i, 4) * 5, rx: 3, fill: '#FFE0B0', opacity: .5 }, L.water));
+const sunPath = el('rect', { x: 0, y: 1130, width: 160, height: 780, fill: '#FFE6B5', opacity: .22, filter: 'url(#soft)' }, L.water);
+// ship
+L.ship = el('g', {}, s2);
+const shipBody = el('g', {}, L.ship);
+el('path', { d: 'M-190 0 Q-150 70 0 72 Q150 70 210 -10 L150 -6 L-160 -6Z', fill: '#3B1F2B' }, shipBody);
+el('rect', { x: -150, y: -12, width: 300, height: 10, fill: '#5A2E3C' }, shipBody);
+[[-80, 260], [30, 330], [130, 220]].forEach(([x, h], i) => el('rect', { x: x - 5, y: -h, width: 10, height: h, fill: '#2A1520' }, shipBody));
+const sails = [[-80, 240, 120], [30, 310, 150], [130, 200, 100]].map(([x, h, w]) => { const g = el('g', { transform: `translate(${x} ${-h + 20})` }, shipBody); const s = el('path', { d: '', fill: '#F6E7D0' }, g); el('path', { d: `M${-w / 2 + 6} ${h * .32} L${w / 2 - 6} ${h * .32}`, stroke: '#C0392B', 'stroke-width': 0 }, g); const cross = el('g', {}, g); el('rect', { x: -6, y: h * .2, width: 12, height: h * .3, fill: '#C0392B' }, cross); el('rect', { x: -w * .18, y: h * .3, width: w * .36, height: 12, fill: '#C0392B' }, cross); return { s, w, h: h * .75 }; });
+const wake = el('path', { d: '', fill: 'none', stroke: '#FFE6C4', 'stroke-width': 6, 'stroke-linecap': 'round', opacity: .6 }, L.ship);
+// palms foreground
+L.palms = el('g', {}, s2); const palms = [];
+[[-60, 1.15], [1130, 1.2], [1420, .95], [1750, 1.1]].forEach(([x, k], i) => {
+  const g = el('g', { transform: `translate(${x} 1880) scale(${k})` }, L.palms);
+  const trunk = el('path', { d: 'M0 0 Q40 -300 10 -620', stroke: '#2A1426', 'stroke-width': 34, fill: 'none', 'stroke-linecap': 'round' }, g);
+  const crown = el('g', { transform: 'translate(10 -620)' }, g);
+  const fr = []; for (let j = 0; j < 7; j++) { const a = -170 + j * 50 + rnd(j, i) * 10; fr.push(el('path', { d: 'M0 0 Q90 -50 210 40 Q100 -10 0 18Z', fill: j % 2 ? '#1F0E1E' : '#2D1630', transform: `rotate(${a})` }, crown)); }
+  palms.push({ crown, fr, i, base: fr.map((_, j) => -170 + j * 50 + rnd(j, i) * 10) });
+});
+L.grass = el('g', {}, s2); hill(L.grass, 1880, 40, '#1A0B18', 7, 3000);
+const birds = []; for (let i = 0; i < 5; i++) birds.push(el('path', { d: '', fill: 'none', stroke: '#2A1A3A', 'stroke-width': 5, 'stroke-linecap': 'round' }, s2));
+const lt = el('g', {}, s2); el('rect', { x: 70, y: 260, width: 10, height: 120, fill: '#FFD27A' }, lt); txt(lt, 100, 300, 'കാപ്പാട്', 64, '#FFFFFF', { 'text-anchor': 'start' }); txt(lt, 100, 360, '20 മെയ് 1498', 40, '#FFE3C4', { 'text-anchor': 'start', 'font-weight': 400 });
+
+/* ---------- SHOT 3: animated route infographic (7.9 - 12.2s) ---------- */
+const s3w = el('g', {}, $('shot3'));
+const s3 = el('g', { filter: 'url(#whip)' }, s3w);
+el('rect', { width: 1080, height: 1920, fill: 'url(#mapBg)' }, s3);
+const grid = el('g', { opacity: .12 }, s3); for (let i = 0; i < 20; i++) { el('line', { x1: i * 60, y1: 0, x2: i * 60, y2: 1920, stroke: '#7FD3FF', 'stroke-width': 2 }, grid); }
+for (let i = 0; i < 34; i++) el('line', { x1: 0, y1: i * 60, x2: 1080, y2: i * 60, stroke: '#7FD3FF', 'stroke-width': 2 }, grid);
+const land = el('g', {}, s3);
+el('path', { d: 'M90 330 Q180 260 300 300 Q360 380 330 470 Q270 560 220 640 Q150 700 120 620 Q60 520 90 330Z', fill: '#1F5A7A' }, land); // iberia
+el('path', { d: 'M260 620 Q420 600 520 700 Q560 900 500 1150 Q440 1350 360 1420 Q300 1300 280 1100 Q220 900 260 620Z', fill: '#1F5A7A' }, land); // africa
+el('path', { d: 'M760 620 Q880 600 920 700 Q900 820 840 900 Q800 980 790 900 Q760 800 760 620Z', fill: '#1F5A7A' }, land); // india
+const route = el('path', { d: 'M110 450 Q30 800 170 1150 Q250 1490 380 1500 Q530 1480 570 1200 Q610 990 790 880', fill: 'none', stroke: '#FFD27A', 'stroke-width': 9, 'stroke-linecap': 'round', filter: 'url(#neon)', 'stroke-dasharray': '1 1' }, s3);
+const RL = route.getTotalLength();
+route.setAttribute('stroke-dasharray', RL + ' ' + RL);
+const pinA = el('g', { transform: 'translate(110 450)' }, s3); el('circle', { r: 16, fill: '#FFF' }, pinA); txt(pinA, 100, -44, 'ലിസ്ബൺ', 40, '#CFEFFF');
+const pinB = el('g', { transform: 'translate(790 880)' }, s3); const pinBr = el('circle', { r: 0, fill: 'none', stroke: '#FF7A59', 'stroke-width': 6 }, pinB); el('circle', { r: 18, fill: '#FF7A59' }, pinB); const pinBt = txt(pinB, 0, -56, 'കോഴിക്കോട്', 46, '#FFFFFF');
+const dot = el('g', {}, s3); el('circle', { r: 26, fill: '#FFD27A', opacity: .35 }, dot); el('circle', { r: 13, fill: '#FFF' }, dot);
+const card = el('g', {}, s3);
+el('rect', { x: 140, y: 1540, width: 800, height: 230, rx: 34, fill: '#FFFFFF' }, card);
+const num = txt(card, 420, 1650, '0', 150, '#0A1F3D');
+txt(card, 700, 1650, 'ദിവസം', 70, '#FF7A59');
+const s3title = el('g', {}, s3); txt(s3title, 540, 240, 'കടൽ വഴി ഇന്ത്യയിലേക്ക്', 66, '#FFFFFF');
+
+/* tag */
+const tag = $('tag'); el('rect', { x: 60, y: 1700, width: 0, height: 0 }, tag);
+
+/* ---------- render(t): everything is a pure function of t ---------- */
+function render(t) {
+  // ===== SHOT 1 =====
+  const s1on = t < 4.1; s1.setAttribute('display', s1on ? 'inline' : 'none');
+  if (s1on) {
+    const hue = seg(t, 0, 4);
+    $('hb1').setAttribute('stop-color', `hsl(${lerp(22, 38, hue)} 100% 58%)`);
+    $('hb2').setAttribute('stop-color', `hsl(${lerp(335, 320, hue)} 78% 42%)`);
+    rays.setAttribute('transform', `rotate(${t * 12} 540 900)`);
+    // camera punch on the slam + decaying shake
+    const slam = .08, sh = Math.max(0, 1 - (t - slam - .18) * 3) * (t > slam + .18 ? 1 : 0);
+    const shx = Math.sin(t * 90) * 18 * sh, shy = Math.cos(t * 77) * 12 * sh;
+    const push = 1 + .06 * seg(t, 0, 4);
+    s1.setAttribute('transform', `translate(${540 + shx} ${960 + shy}) scale(${push}) translate(-540 -960)`);
+    // 1498: scale from 3x with vertical motion blur -> overshoot
+    const u = seg(t, slam, slam + .22), k = lerp(3.2, 1, E.inCubic(u)), k2 = u < 1 ? k : 1 + .08 * Math.sin(seg(t, slam + .22, slam + .6) * Math.PI) * (1 - seg(t, slam + .22, slam + .6));
+    yearG.setAttribute('transform', `translate(540 860) scale(${k2}) translate(-540 -860)`);
+    yearG.setAttribute('opacity', u > 0 ? 1 : 0);
+    $('mb1b').setAttribute('stdDeviation', `0 ${u < 1 ? 26 * (1 - u) : 0}`);
+    // shockwave ring
+    const r = seg(t, slam + .22, slam + .9);
+    set(ring, { r: 140 + 700 * E.outExpo(r), opacity: r > 0 && r < 1 ? (1 - r) : 0, 'stroke-width': 30 * (1 - r) + 2 });
+    // particles burst
+    P.forEach((c, i) => { const a = rnd(i, 5) * Math.PI * 2, sp = 300 + rnd(i, 6) * 700, pu = seg(t, slam + .2, slam + 1.6 + rnd(i, 7)); const d = sp * E.outExpo(pu);
+      set(c, { cx: 540 + Math.cos(a) * d, cy: 860 + Math.sin(a) * d + 300 * pu * pu, opacity: pu > 0 ? (1 - pu) : 0 }); });
+    // place pill whips in from the right with horizontal blur
+    const v = seg(t, .75, 1.05), px = lerp(1100, 0, E.outExpo(v));
+    placeG.setAttribute('transform', `translate(${px} 0) skewX(${-18 * (1 - E.outCubic(v))})`);
+    $('mb2b').setAttribute('stdDeviation', `${v < 1 ? 40 * (1 - v) : 0} 0`);
+    // words drop one by one with squash & stretch
+    words.forEach((g, i) => { const w = seg(t, 1.45 + i * .22, 1.85 + i * .22); const y = lerp(-200, wordY[i], E.outCubic(Math.min(1, w * 1.6)));
+      const land = seg(t, 1.45 + i * .22 + .25, 1.45 + i * .22 + .55); const sq = land > 0 && land < 1 ? Math.sin(land * Math.PI) * (1 - land) : 0;
+      g.setAttribute('transform', `translate(${wordX[i]} ${y}) scale(${1 + sq * .35} ${1 - sq * .3 + (w < .6 && w > 0 ? .25 : 0)})`); g.setAttribute('opacity', w > 0 ? 1 : 0); });
+    // exit: everything scales into the iris
+    const ex = seg(t, 3.55, 4.05);
+    s1.setAttribute('opacity', 1 - E.inCubic(ex));
+  }
+
+  // ===== SHOT 2 =====
+  const s2on = t > 3.5 && t < 8.4; s2w.setAttribute('display', s2on ? 'inline' : 'none');
+  if (s2on) {
+    const ir = seg(t, 3.55, 4.15); $('irisC').setAttribute('r', 1300 * E.inOut(ir) + (ir > 0 ? 1 : 0));
+    const lt2 = t - 3.55;
+    // camera: slow truck left + push in; each layer moves by its depth
+    const cam = 260 * E.inOut(seg(t, 3.6, 8.1)), zoom = 1 + .08 * E.inOut(seg(t, 3.6, 8.1));
+    const lay = (g, depth, y = 0) => g.setAttribute('transform', `translate(${540} ${960}) scale(${1 + (zoom - 1) * depth}) translate(${-540 - cam * depth} ${-960 + y})`);
+    lay(L.sun, .05); L.sun.firstChild.setAttribute('cx', 0); L.sun.setAttribute('transform', L.sun.getAttribute('transform') + ' translate(720 820)');
+    lay(L.far, .15); lay(L.hz1, .2); lay(L.mid, .3); lay(L.hz2, .35); lay(L.water, .5); lay(L.ship, .55); lay(L.palms, 1.25); lay(L.grass, 1.35);
+    sunPath.setAttribute('x', 640 + cam * .45);
+    shimmer.forEach((r, i) => { const ph = lt2 * (0.6 + rnd(i, 8)) + rnd(i, 9) * 6; r.setAttribute('x', -200 + ((rnd(i, 1) * 1500 + ph * 40) % 1700)); r.setAttribute('opacity', .2 + .4 * (.5 + .5 * Math.sin(ph * 3))); });
+    // ship sails in, bobs and the sails breathe
+    const sx = lerp(1450, 640, E.outCubic(seg(t, 3.7, 7.6))), bob = Math.sin(t * 2.2) * 8, roll = Math.sin(t * 1.7) * 2.2;
+    shipBody.setAttribute('transform', `translate(${sx} ${1240 + bob}) rotate(${roll}) scale(1.15)`);
+    sails.forEach((s, i) => { const b = .5 + .5 * Math.sin(t * 2.4 + i); const bulge = s.w * (.18 + .1 * b);
+      s.s.setAttribute('d', `M${-s.w / 2} 0 Q0 ${-12} ${s.w / 2} 0 Q${s.w / 2 + bulge * .4} ${s.h / 2} ${s.w / 2} ${s.h} L${-s.w / 2} ${s.h} Q${-s.w / 2 + bulge} ${s.h / 2} ${-s.w / 2} 0Z`); });
+    let wd = ''; for (let j = 0; j < 3; j++) { const wx = sx + 200 + j * 60; wd += `M${wx} ${1290 + j * 6} q30 ${-6 + Math.sin(t * 4 + j) * 4} 60 0 `; } wake.setAttribute('d', wd);
+    // palms sway (secondary motion: fronds lag the trunk)
+    palms.forEach(p => { const sw = Math.sin(t * 1.3 + p.i) * 4; p.crown.setAttribute('transform', `translate(10 -620) rotate(${sw})`);
+      p.fr.forEach((f, j) => f.setAttribute('transform', `rotate(${p.base[j] + Math.sin(t * 1.3 + p.i - .5 - j * .15) * 6})`)); });
+    birds.forEach((b, i) => { const bx = lerp(-100, 1200, (seg(t, 3.6 + i * .25, 8.4) * 1.1)) - cam * .4, by = 520 + i * 45 + Math.sin(t + i) * 15, f = Math.sin(t * 9 + i * 2) * 14;
+      b.setAttribute('d', `M${bx - 22} ${by - f} Q${bx - 10} ${by - 6} ${bx} ${by} Q${bx + 10} ${by - 6} ${bx + 22} ${by - f}`); });
+    // lower third slides in
+    const lu = seg(t, 4.4, 4.9); lt.setAttribute('transform', `translate(${lerp(-500, 0, E.outExpo(lu))} 0)`); lt.setAttribute('opacity', lu > 0 ? 1 : 0);
+    // whip-pan exit
+    const wp = seg(t, 7.85, 8.15); s2.setAttribute('transform', `translate(${-1300 * E.inCubic(wp)} 0)`);
+    $('whipb').setAttribute('stdDeviation', `${70 * Math.sin(Math.PI * Math.min(1, seg(t, 7.85, 8.45)))} 0`);
+  }
+
+  // ===== SHOT 3 =====
+  const s3on = t > 7.9; s3w.setAttribute('display', s3on ? 'inline' : 'none');
+  if (s3on) {
+    const wi = seg(t, 7.95, 8.35); s3.setAttribute('transform', `translate(${1300 * (1 - E.outExpo(wi))} 0)`);
+    s3.setAttribute('filter', t < 8.45 ? 'url(#whip)' : 'none');
+    const z = 1 + .05 * seg(t, 8, 12.2); s3w.setAttribute('transform', `translate(540 960) scale(${z}) translate(-540 -960)`);
+    const d = E.inOut(seg(t, 8.5, 11.0));
+    route.setAttribute('stroke-dashoffset', RL * (1 - d));
+    const pt = route.getPointAtLength(RL * d); dot.setAttribute('transform', `translate(${pt.x} ${pt.y})`); dot.setAttribute('opacity', d > 0 && d < 1 ? 1 : 0);
+    const n = Math.round(316 * d); num.textContent = n;
+    const ar = seg(t, 11.0, 11.8); set(pinBr, { r: 18 + 70 * E.outExpo(ar), opacity: ar > 0 ? 1 - ar : 0 });
+    const pb = seg(t, 11.0, 11.4); pinB.setAttribute('transform', `translate(790 880) scale(${E.outBack(pb)})`);
+    const cu = seg(t, 8.6, 9.0); card.setAttribute('transform', `translate(0 ${lerp(400, 0, E.outBack(cu))})`);
+    const ti = seg(t, 8.4, 8.8); s3title.setAttribute('opacity', ti); s3title.setAttribute('transform', `translate(0 ${lerp(-40, 0, E.outCubic(ti))})`);
+    const pop = seg(t, 11.0, 11.35); num.setAttribute('transform', `translate(420 1650) scale(${1 + .25 * Math.sin(pop * Math.PI)}) translate(-420 -1650)`);
+  }
+}
+window.DURATION = DUR;
+window.SFX = [];
+window.CONFIG = { music: null };
+window.seek = t => render(t);
+render(0);
+window.READY = true;
+</script>
+</body></html>
