@@ -1,3 +1,67 @@
+# Video 9 (v2): CyberLeek now, and the boy before him
+
+Opens on today's anonymous leaker (CyberLeek), then flashes back to the 2022 hotel-room leak. Story-script, no CTA.
+
+## ElevenLabs paste block (v2, use this one)
+
+```
+ഇപ്പോൾ ഇന്റർനെറ്റിൽ ഒരു പേര് കറങ്ങുന്നുണ്ട്... സൈബർലീക്ക്.
+
+ആരാണെന്ന് പുറത്തറിയില്ല. പക്ഷേ മാസങ്ങളായി, GTA 6-ന്റെ രഹസ്യ വീഡിയോകൾ ഒന്നൊന്നായി പുറത്തുവരുന്നു.
+
+റോക്ക്സ്റ്റാർ പറഞ്ഞു... ഇത് ഞങ്ങളുടെ ടീമിന് ഹൃദയഭേദകമാണ്.
+
+പക്ഷേ... ഇതാദ്യമായല്ല.
+
+നാല് വർഷം മുൻപ്. 2022 സെപ്റ്റംബർ. ഇംഗ്ലണ്ടിലെ ഒരു ഹോട്ടൽ മുറി.
+
+അകത്ത് ഒരു പതിനേഴുകാരൻ. പഴയ ഹാക്കിങ് കേസിൽ ജാമ്യത്തിലാണ്... പോലീസ് നിരീക്ഷണത്തിലും.
+
+റിപ്പോർട്ടുകൾ പ്രകാരം, കയ്യിലുള്ളത് ഒരു ഫോൺ... ഹോട്ടലിലെ ടിവി... പിന്നെ ഒരു ആമസോൺ ഫയർ സ്റ്റിക്ക്.
+
+ഒരു രാത്രി... GTA 6-ന്റെ തൊണ്ണൂറോളം രഹസ്യ വീഡിയോകൾ ഇന്റർനെറ്റിൽ! ഒരു ദൃശ്യം പോലും ഔദ്യോഗികമായി കാണിക്കുന്നതിന് മുൻപേ.
+
+അവൻ പിടിക്കപ്പെട്ടു. 2023-ൽ, കോടതി അവനെ അനിശ്ചിതകാലത്തേക്ക് ഒരു സുരക്ഷിത ആശുപത്രിയിലേക്ക് അയച്ചു.
+
+ഇന്ന് ഒരാൾ പേരില്ലാതെ ലീക്ക് ചെയ്യുന്നു... പക്ഷേ ഗെയിമിങ് ചരിത്രത്തിലെ ഏറ്റവും വലിയ ലീക്കുകളിൽ ഒന്ന് വന്നത്, ഒരു ഹോട്ടൽ മുറിയിലെ ടിവിയിൽ നിന്നായിരുന്നു.
+```
+
+## English (v2), by beat
+
+1. COLD OPEN (now): Right now, one name is going around the internet... CyberLeek.
+2. Nobody publicly knows who it is. But for months, secret GTA 6 videos have been coming out, one after another.
+3. Rockstar said... this is heartbreaking for our team.
+4. TURN: But... this isn't the first time.
+5. FLASHBACK: Four years ago. September 2022. A hotel room in England.
+6. THE PERSON: Inside, a 17-year-old. On bail in an earlier hacking case... and under police watch.
+7. TOOLS: According to reports, all he had was a phone... the hotel TV... and an Amazon Fire Stick.
+8. PAYOFF: One night... about ninety secret GTA 6 videos on the internet! Before a single frame had been officially shown.
+9. He was caught. In 2023, a court sent him to a secure hospital indefinitely.
+10. CALLBACK (now vs then): Today, someone leaks without a name... but one of the biggest leaks in gaming history came from a TV in a hotel room.
+
+## Visual notes (v2)
+
+1. Phone screen scrolling a social feed, a glitching "CYBERLEEK" text (plain font), notification pings.
+2. A hooded faceless silhouette made of static; video thumbnails dropping in one by one with a counter.
+3. Plain quote card "ഹൃദയഭേദകം" — Rockstar (text only, no logo).
+4. Freeze, the screen rewinds (VHS rewind lines), music drops.
+5-10. Same as v1 storyboard below, ending on the glowing hotel TV, then a quick cut back to the phone feed with "CYBERLEEK" before black.
+
+## Extra sources (v2)
+
+- Rockstar statement on the CyberLeek leaks ("heartbreaking for our team"): https://kotaku.com/rockstar-gta-6-leaks-grand-theft-auto-cyberleek-official-statement-2000728341 and https://www.thegamer.com/rockstar-statement-gta-6-leak-cyberleek/
+- CyberLeek kept posting after the statement: https://videocardz.com/newz/rockstar-finally-responds-to-gta-6-leaker-cyberleek-immediately-posts-another-gameplay
+- Fake "free GTA VI" downloads using the CyberLeek name: https://www.welivesecurity.com/en/cybersecurity/gta-vi-isnt-out-yet-scams-full-swing/
+
+## Accuracy notes (v2)
+
+- CyberLeek's identity: no source names them; the script says "not publicly known".
+- "For months": the leaks were reported from about August 2026, with around 19 clips catalogued by mid-October.
+- "One of the biggest leaks in gaming history" (not "the biggest").
+- Optional safety line if wanted: security researchers say "free GTA 6 download" links using the CyberLeek name are scams.
+
+---
+
 # Video 9: The hotel room that leaked GTA 6
 
 Emotion: disbelief and suspense ("from a hotel room, with a TV stick?!").
