@@ -16,3 +16,4 @@ Example hook: "ഒരു പയ്യൻ ബസ് മാറിക്കയറ�
 - Visuals: `.claude/skills/reel-visuals/SKILL.md` (kinetic hook, cinematic camera, parallax, India/Kerala map kit, 3D-shaded people with object interaction). The low-poly night 3D style was rejected; don't use it.
 - Text stays out of the top 230 px, bottom 400 px and right 140 px. Master about -10 LUFS.
 - Read `growth/log.md` before every script and add new insights to it.
+- Posting: `growth/posting_strategy.md` (7:30 PM IST weekdays, 5 hashtags max on Instagram, keyword-first YouTube titles, bilingual captions: English hook + Malayalam line + keywords).
