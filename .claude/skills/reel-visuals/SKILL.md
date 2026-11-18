@@ -52,6 +52,8 @@ Build 5-8 depth layers (sky, sun, far hills, haze, mid, water, subject, foregrou
 - Acting: `headTilt` (nod or sip back), `look`, `surprise` 0-1 (wide eyes, brows up, "o" mouth), `frown`, `smile`, `lean` (anticipation before a reach, recoil after a shock). Breathing is automatic.
 - Beats that read: notice (head turns), anticipate (lean), act (reach), react (surprise with a punch-in). Every object a character uses must be touched by a hand; nothing floats.
 - Side view: keep a raised near arm forward of the face so it doesn't cover it.
+- **2.5D look (v3):** limbs and torso are cylinder-shaded, head and hands sphere-shaded, with occlusion at shoulders, joints and neck, a soft contact shadow and eyes with an iris and a catchlight. Set `rim` to the scene's back-light colour (cool blue at night, warm amber indoors) and `rimOpacity` about .35-.45. Kerala dress: `lower: 'mundu'` (kasavu border follows the legs), `mustache: true`.
+- Free 3D rigged characters on GitHub (CC0 GLB packs) are all low-poly, the look the owner rejected; we stay with this shaded SVG rig.
 - Scale: a person should be 55-70% of the frame height in a medium shot (S.s about 2.5); small people in a big room read as empty.
 
 ## 6. Checks before rendering
