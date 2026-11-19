@@ -13,7 +13,7 @@ Example hook: "ഒരു പയ്യൻ ബസ് മാറിക്കയറ�
 - No calls to action anywhere (no follow, like, comment or share asks).
 - Research first, keep sources, never invent facts, people or dialogue (`growth/<topic>_script.md` holds sources and accuracy notes).
 - 35-45 s. Bright first frame, big hook card for 0-3 s (`growth/log.md` has the numbers behind this).
-- Visuals: `.claude/skills/reel-visuals/SKILL.md` (kinetic hook, cinematic camera, parallax, India/Kerala map kit, 3D-shaded people with object interaction). The low-poly night 3D style was rejected; don't use it.
+- Visuals: `.claude/skills/reel-visuals/SKILL.md` (kinetic hook, cinematic camera, parallax, India/Kerala map kit, 3D-shaded people with object interaction). The low-poly night 3D style was rejected; don't use it. For machines and "how it works" reels use the installed `teardown` (real 3D) and `anatomy` (isometric exploded) skills; `hyperframes` for ready-made blocks (never run its telemetry).
 - Text stays out of the top 230 px, bottom 400 px and right 140 px. Master about -10 LUFS.
 - Read `growth/log.md` before every script and add new insights to it.
 - Posting: `growth/posting_strategy.md` (7:30 PM IST weekdays, 5 hashtags max on Instagram, keyword-first YouTube titles, bilingual captions: English hook + Malayalam line + keywords).

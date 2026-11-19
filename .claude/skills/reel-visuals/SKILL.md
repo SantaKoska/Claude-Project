@@ -56,6 +56,16 @@ Build 5-8 depth layers (sky, sun, far hills, haze, mid, water, subject, foregrou
 - Free 3D rigged characters on GitHub (CC0 GLB packs) are all low-poly, the look the owner rejected; we stay with this shaded SVG rig.
 - Scale: a person should be 55-70% of the frame height in a medium shot (S.s about 2.5); small people in a big room read as empty.
 
+## 7. Installed GitHub skills (use them for machines and "how it works")
+
+| skill | use it for | notes here |
+| --- | --- | --- |
+| `teardown` (elvarofficial/teardown, MIT) | Real 3D machines that work: watch movements, engines, gears. Studio light, cutaways, the part doing the work opens up; one input drives every part with real ratios | `cd .claude/skills/teardown && npm install` once (never `playwright install`). Run capture with `CHROMIUM=/opt/pw-browsers/chromium`. Its overlay is laid out for 1600x900: for reels, render the machine at 1080x1920 and put our own Malayalam labels on top. SwiftShader works but is slow. |
+| `anatomy` (wheresryan22/anatomy, MIT) | Isometric exploded "anatomy" figures: many small precise parts, four-tone shading, parts coming apart in order | Examples build with `node examples/<name>/build.mjs` (`--light` for a light theme; light reads better in a feed). |
+| `hyperframes` (+ `-cli`, `-registry`; heygen-com/hyperframes, Apache-2.0) | Its registry of about 450 ready blocks (transitions, titles, kinetic type, camera moves) and its motion references | Never run its telemetry (`events`, `feedback`). We keep our own pipeline; borrow blocks and ideas. |
+
+Qwen3-TTS (QwenLM, Apache-2.0) was checked and not installed: it speaks 10 languages, none of them Malayalam, and needs a GPU. ElevenLabs stays the voice.
+
 ## 6. Checks before rendering
 
 - Screenshot 6-10 moments with `PAGE=x.html node tools/shots.js outdir t1 t2 ...` and look at them as a contact sheet.
