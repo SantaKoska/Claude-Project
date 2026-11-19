@@ -1,0 +1,1208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>One Tiny Crystal</title>
+<meta name="viewport" content="width=1080, initial-scale=1">
+
+<!-- =====================================================================
+     CONFIG — documentary-style 2D reel. Build: tools/build.sh leak.html, then add grain (see README).
+     ===================================================================== -->
+<script id="config" type="application/json">
+{
+ "title": "One Tiny Crystal",
+ "voice": "audio/watch.mp3",
+ "voiceTempo": 1.1,
+ "timing": {
+  "phraseGap": 0.2,
+  "sentenceGap": 0.4,
+  "head": 0.08,
+  "tail": 2.0
+ },
+ "music": {
+  "bpm": 96,
+  "chords": ["Am", "F", "C", "G"],
+  "level": 0.7
+ },
+ "font": "FreeSans",
+ "palette": {
+  "accent": "#FF7A2A",
+  "teal": "#0E2A33",
+  "paper": "#F4EFE6",
+  "ink": "#1A1410",
+  "red": "#D52B1E",
+  "blue": "#2F55C8",
+  "gold": "#E2B04E"
+ },
+ "sentences": [
+  {"scene": "crystal", "phrases": ["One tiny crystal...", "cost more than sixty thousand people in Switzerland their jobs."], "labels": {"hook1": "ONE TINY CRYSTAL", "jobs": "60,000+ JOBS"}},
+  {"scene": "open", "phrases": ["How?", "Let's open a watch."], "labels": {}},
+  {"scene": "spring", "phrases": ["A mechanical watch has no battery.", "Just a tightly coiled spring."], "labels": {"noBatt": "NO BATTERY", "spring": "MAINSPRING"}},
+  {"scene": "gears", "phrases": ["As it unwinds, the gears turn.", "But to stop it unwinding all at once...", "there's this.", "The balance wheel."], "labels": {"train": "GEAR TRAIN", "balance": "BALANCE WHEEL"}},
+  {"scene": "balance", "phrases": ["It swings eight times every second,", "letting time out one tiny step at a time."], "labels": {"rate": "8 SWINGS A SECOND", "slow": "SLOW MOTION"}},
+  {"scene": "auto", "phrases": ["In an automatic watch, every move of your wrist spins a rotor,", "and the rotor winds the spring for you."], "labels": {"rotor": "ROTOR", "auto": "AUTOMATIC"}},
+  {"scene": "seiko", "phrases": ["Then, Christmas Day, 1969.", "In Japan, Seiko released a new kind of watch."], "labels": {"date": "25 DEC 1969", "place": "TOKYO, JAPAN"}},
+  {"scene": "quartz", "phrases": ["Inside was a quartz crystal.", "Touch it with a battery,", "and it vibrates over thirty-two thousand times a second."], "labels": {"crystal": "QUARTZ CRYSTAL", "batt": "BATTERY", "per": "TIMES A SECOND"}},
+  {"scene": "twist", "phrases": ["That's why an ordinary quartz watch keeps better time than a Rolex."], "labels": {"q": "QUARTZ", "qv": "about 20 s a month", "r": "ROLEX", "rv": "up to 60 s a month"}},
+  {"scene": "swiss", "phrases": ["Swiss watchmakers shut down one after another.", "Ninety thousand jobs in 1970.", "Twenty-eight thousand by 1988."], "labels": {"title": "SWISS WATCH JOBS"}},
+  {"scene": "callback", "phrases": ["All because of...", "one tiny crystal."], "labels": {"end": "ONE TINY CRYSTAL"}}
+ ]
+}
+</script>
+
+<script id="timings" type="application/json">
+{
+ "duration": 56.109,
+ "audio": "build/watch/voice_cut.wav",
+ "phrases": [
+  {
+   "text": "One tiny crystal...",
+   "sentence": 0,
+   "start": 0.091,
+   "end": 1.518,
+   "words": [
+    {
+     "w": "One",
+     "t": 0.091
+    },
+    {
+     "w": "tiny",
+     "t": 0.397
+    },
+    {
+     "w": "crystal...",
+     "t": 0.805
+    }
+   ]
+  },
+  {
+   "text": "cost more than sixty thousand people in Switzerland their jobs.",
+   "sentence": 0,
+   "start": 1.7,
+   "end": 5.045,
+   "words": [
+    {
+     "w": "cost",
+     "t": 1.7
+    },
+    {
+     "w": "more",
+     "t": 1.952
+    },
+    {
+     "w": "than",
+     "t": 2.205
+    },
+    {
+     "w": "sixty",
+     "t": 2.457
+    },
+    {
+     "w": "thousand",
+     "t": 2.773
+    },
+    {
+     "w": "people",
+     "t": 3.278
+    },
+    {
+     "w": "in",
+     "t": 3.657
+    },
+    {
+     "w": "Switzerland",
+     "t": 3.783
+    },
+    {
+     "w": "their",
+     "t": 4.477
+    },
+    {
+     "w": "jobs.",
+     "t": 4.793
+    }
+   ]
+  },
+  {
+   "text": "How?",
+   "sentence": 1,
+   "start": 5.409,
+   "end": 5.7,
+   "words": [
+    {
+     "w": "How?",
+     "t": 5.409
+    }
+   ]
+  },
+  {
+   "text": "Let's open a watch.",
+   "sentence": 1,
+   "start": 5.882,
+   "end": 6.755,
+   "words": [
+    {
+     "w": "Let's",
+     "t": 5.882
+    },
+    {
+     "w": "open",
+     "t": 6.131
+    },
+    {
+     "w": "a",
+     "t": 6.381
+    },
+    {
+     "w": "watch.",
+     "t": 6.443
+    }
+   ]
+  },
+  {
+   "text": "A mechanical watch has no battery.",
+   "sentence": 2,
+   "start": 7.118,
+   "end": 9.018,
+   "words": [
+    {
+     "w": "A",
+     "t": 7.118
+    },
+    {
+     "w": "mechanical",
+     "t": 7.186
+    },
+    {
+     "w": "watch",
+     "t": 7.865
+    },
+    {
+     "w": "has",
+     "t": 8.204
+    },
+    {
+     "w": "no",
+     "t": 8.407
+    },
+    {
+     "w": "battery.",
+     "t": 8.543
+    }
+   ]
+  },
+  {
+   "text": "Just a tightly coiled spring.",
+   "sentence": 2,
+   "start": 9.2,
+   "end": 10.845,
+   "words": [
+    {
+     "w": "Just",
+     "t": 9.2
+    },
+    {
+     "w": "a",
+     "t": 9.474
+    },
+    {
+     "w": "tightly",
+     "t": 9.543
+    },
+    {
+     "w": "coiled",
+     "t": 10.023
+    },
+    {
+     "w": "spring.",
+     "t": 10.434
+    }
+   ]
+  },
+  {
+   "text": "As it unwinds, the gears turn.",
+   "sentence": 3,
+   "start": 11.209,
+   "end": 13.064,
+   "words": [
+    {
+     "w": "As",
+     "t": 11.209
+    },
+    {
+     "w": "it",
+     "t": 11.37
+    },
+    {
+     "w": "unwinds,",
+     "t": 11.532
+    },
+    {
+     "w": "the",
+     "t": 12.096
+    },
+    {
+     "w": "gears",
+     "t": 12.338
+    },
+    {
+     "w": "turn.",
+     "t": 12.741
+    }
+   ]
+  },
+  {
+   "text": "But to stop it unwinding all at once...",
+   "sentence": 3,
+   "start": 13.245,
+   "end": 15.227,
+   "words": [
+    {
+     "w": "But",
+     "t": 13.245
+    },
+    {
+     "w": "to",
+     "t": 13.45
+    },
+    {
+     "w": "stop",
+     "t": 13.587
+    },
+    {
+     "w": "it",
+     "t": 13.86
+    },
+    {
+     "w": "unwinding",
+     "t": 13.997
+    },
+    {
+     "w": "all",
+     "t": 14.612
+    },
+    {
+     "w": "at",
+     "t": 14.817
+    },
+    {
+     "w": "once...",
+     "t": 14.954
+    }
+   ]
+  },
+  {
+   "text": "there's this.",
+   "sentence": 3,
+   "start": 15.409,
+   "end": 16.082,
+   "words": [
+    {
+     "w": "there's",
+     "t": 15.409
+    },
+    {
+     "w": "this.",
+     "t": 15.813
+    }
+   ]
+  },
+  {
+   "text": "The balance wheel.",
+   "sentence": 3,
+   "start": 16.264,
+   "end": 17.173,
+   "words": [
+    {
+     "w": "The",
+     "t": 16.264
+    },
+    {
+     "w": "balance",
+     "t": 16.445
+    },
+    {
+     "w": "wheel.",
+     "t": 16.87
+    }
+   ]
+  },
+  {
+   "text": "It swings eight times every second,",
+   "sentence": 4,
+   "start": 17.536,
+   "end": 19.609,
+   "words": [
+    {
+     "w": "It",
+     "t": 17.536
+    },
+    {
+     "w": "swings",
+     "t": 17.679
+    },
+    {
+     "w": "eight",
+     "t": 18.108
+    },
+    {
+     "w": "times",
+     "t": 18.466
+    },
+    {
+     "w": "every",
+     "t": 18.823
+    },
+    {
+     "w": "second,",
+     "t": 19.18
+    }
+   ]
+  },
+  {
+   "text": "letting time out one tiny step at a time.",
+   "sentence": 4,
+   "start": 19.791,
+   "end": 22.3,
+   "words": [
+    {
+     "w": "letting",
+     "t": 19.791
+    },
+    {
+     "w": "time",
+     "t": 20.34
+    },
+    {
+     "w": "out",
+     "t": 20.653
+    },
+    {
+     "w": "one",
+     "t": 20.889
+    },
+    {
+     "w": "tiny",
+     "t": 21.124
+    },
+    {
+     "w": "step",
+     "t": 21.437
+    },
+    {
+     "w": "at",
+     "t": 21.751
+    },
+    {
+     "w": "a",
+     "t": 21.908
+    },
+    {
+     "w": "time.",
+     "t": 21.986
+    }
+   ]
+  },
+  {
+   "text": "In an automatic watch, every move of your wrist spins a rotor,",
+   "sentence": 5,
+   "start": 22.664,
+   "end": 26.064,
+   "words": [
+    {
+     "w": "In",
+     "t": 22.664
+    },
+    {
+     "w": "an",
+     "t": 22.796
+    },
+    {
+     "w": "automatic",
+     "t": 22.928
+    },
+    {
+     "w": "watch,",
+     "t": 23.522
+    },
+    {
+     "w": "every",
+     "t": 24.016
+    },
+    {
+     "w": "move",
+     "t": 24.346
+    },
+    {
+     "w": "of",
+     "t": 24.611
+    },
+    {
+     "w": "your",
+     "t": 24.743
+    },
+    {
+     "w": "wrist",
+     "t": 25.007
+    },
+    {
+     "w": "spins",
+     "t": 25.337
+    },
+    {
+     "w": "a",
+     "t": 25.667
+    },
+    {
+     "w": "rotor,",
+     "t": 25.733
+    }
+   ]
+  },
+  {
+   "text": "and the rotor winds the spring for you.",
+   "sentence": 5,
+   "start": 26.245,
+   "end": 28.0,
+   "words": [
+    {
+     "w": "and",
+     "t": 26.245
+    },
+    {
+     "w": "the",
+     "t": 26.415
+    },
+    {
+     "w": "rotor",
+     "t": 26.585
+    },
+    {
+     "w": "winds",
+     "t": 26.868
+    },
+    {
+     "w": "the",
+     "t": 27.151
+    },
+    {
+     "w": "spring",
+     "t": 27.321
+    },
+    {
+     "w": "for",
+     "t": 27.66
+    },
+    {
+     "w": "you.",
+     "t": 27.83
+    }
+   ]
+  },
+  {
+   "text": "Then, Christmas Day, 1969.",
+   "sentence": 6,
+   "start": 28.364,
+   "end": 30.936,
+   "words": [
+    {
+     "w": "Then,",
+     "t": 28.364
+    },
+    {
+     "w": "Christmas",
+     "t": 28.983
+    },
+    {
+     "w": "Day,",
+     "t": 29.946
+    },
+    {
+     "w": "1969.",
+     "t": 30.267
+    }
+   ]
+  },
+  {
+   "text": "In Japan, Seiko released a new kind of watch.",
+   "sentence": 6,
+   "start": 31.118,
+   "end": 33.827,
+   "words": [
+    {
+     "w": "In",
+     "t": 31.118
+    },
+    {
+     "w": "Japan,",
+     "t": 31.265
+    },
+    {
+     "w": "Seiko",
+     "t": 31.631
+    },
+    {
+     "w": "released",
+     "t": 32.143
+    },
+    {
+     "w": "a",
+     "t": 32.729
+    },
+    {
+     "w": "new",
+     "t": 32.802
+    },
+    {
+     "w": "kind",
+     "t": 33.022
+    },
+    {
+     "w": "of",
+     "t": 33.314
+    },
+    {
+     "w": "watch.",
+     "t": 33.461
+    }
+   ]
+  },
+  {
+   "text": "Inside was a quartz crystal.",
+   "sentence": 7,
+   "start": 34.191,
+   "end": 35.945,
+   "words": [
+    {
+     "w": "Inside",
+     "t": 34.191
+    },
+    {
+     "w": "was",
+     "t": 34.649
+    },
+    {
+     "w": "a",
+     "t": 34.877
+    },
+    {
+     "w": "quartz",
+     "t": 34.954
+    },
+    {
+     "w": "crystal.",
+     "t": 35.411
+    }
+   ]
+  },
+  {
+   "text": "Touch it with a battery,",
+   "sentence": 7,
+   "start": 36.127,
+   "end": 37.082,
+   "words": [
+    {
+     "w": "Touch",
+     "t": 36.127
+    },
+    {
+     "w": "it",
+     "t": 36.378
+    },
+    {
+     "w": "with",
+     "t": 36.479
+    },
+    {
+     "w": "a",
+     "t": 36.68
+    },
+    {
+     "w": "battery,",
+     "t": 36.73
+    }
+   ]
+  },
+  {
+   "text": "and it vibrates over thirty-two thousand times a second.",
+   "sentence": 7,
+   "start": 37.218,
+   "end": 40.3,
+   "words": [
+    {
+     "w": "and",
+     "t": 37.218
+    },
+    {
+     "w": "it",
+     "t": 37.419
+    },
+    {
+     "w": "vibrates",
+     "t": 37.553
+    },
+    {
+     "w": "over",
+     "t": 38.089
+    },
+    {
+     "w": "thirty-two",
+     "t": 38.357
+    },
+    {
+     "w": "thousand",
+     "t": 38.96
+    },
+    {
+     "w": "times",
+     "t": 39.496
+    },
+    {
+     "w": "a",
+     "t": 39.831
+    },
+    {
+     "w": "second.",
+     "t": 39.898
+    }
+   ]
+  },
+  {
+   "text": "That's why an ordinary quartz watch keeps better time than a Rolex.",
+   "sentence": 8,
+   "start": 40.664,
+   "end": 43.918,
+   "words": [
+    {
+     "w": "That's",
+     "t": 40.664
+    },
+    {
+     "w": "why",
+     "t": 40.965
+    },
+    {
+     "w": "an",
+     "t": 41.146
+    },
+    {
+     "w": "ordinary",
+     "t": 41.266
+    },
+    {
+     "w": "quartz",
+     "t": 41.748
+    },
+    {
+     "w": "watch",
+     "t": 42.11
+    },
+    {
+     "w": "keeps",
+     "t": 42.411
+    },
+    {
+     "w": "better",
+     "t": 42.713
+    },
+    {
+     "w": "time",
+     "t": 43.074
+    },
+    {
+     "w": "than",
+     "t": 43.315
+    },
+    {
+     "w": "a",
+     "t": 43.556
+    },
+    {
+     "w": "Rolex.",
+     "t": 43.617
+    }
+   ]
+  },
+  {
+   "text": "Swiss watchmakers shut down one after another.",
+   "sentence": 9,
+   "start": 44.282,
+   "end": 46.909,
+   "words": [
+    {
+     "w": "Swiss",
+     "t": 44.282
+    },
+    {
+     "w": "watchmakers",
+     "t": 44.619
+    },
+    {
+     "w": "shut",
+     "t": 45.36
+    },
+    {
+     "w": "down",
+     "t": 45.629
+    },
+    {
+     "w": "one",
+     "t": 45.899
+    },
+    {
+     "w": "after",
+     "t": 46.101
+    },
+    {
+     "w": "another.",
+     "t": 46.437
+    }
+   ]
+  },
+  {
+   "text": "Ninety thousand jobs in 1970.",
+   "sentence": 9,
+   "start": 47.091,
+   "end": 49.354,
+   "words": [
+    {
+     "w": "Ninety",
+     "t": 47.091
+    },
+    {
+     "w": "thousand",
+     "t": 47.608
+    },
+    {
+     "w": "jobs",
+     "t": 48.298
+    },
+    {
+     "w": "in",
+     "t": 48.643
+    },
+    {
+     "w": "1970.",
+     "t": 48.816
+    }
+   ]
+  },
+  {
+   "text": "Twenty-eight thousand by 1988.",
+   "sentence": 9,
+   "start": 49.536,
+   "end": 51.518,
+   "words": [
+    {
+     "w": "Twenty-eight",
+     "t": 49.536
+    },
+    {
+     "w": "thousand",
+     "t": 50.336
+    },
+    {
+     "w": "by",
+     "t": 50.918
+    },
+    {
+     "w": "1988.",
+     "t": 51.064
+    }
+   ]
+  },
+  {
+   "text": "All because of...",
+   "sentence": 10,
+   "start": 51.882,
+   "end": 52.718,
+   "words": [
+    {
+     "w": "All",
+     "t": 51.882
+    },
+    {
+     "w": "because",
+     "t": 52.091
+    },
+    {
+     "w": "of...",
+     "t": 52.579
+    }
+   ]
+  },
+  {
+   "text": "one tiny crystal.",
+   "sentence": 10,
+   "start": 52.9,
+   "end": 54.254,
+   "words": [
+    {
+     "w": "one",
+     "t": 52.9
+    },
+    {
+     "w": "tiny",
+     "t": 53.19
+    },
+    {
+     "w": "crystal.",
+     "t": 53.577
+    }
+   ]
+  }
+ ],
+ "beat": {
+  "bpm": 102.0,
+  "t0": 0.095,
+  "err_ms": 64
+ }
+}
+</script>
+
+<style>
+  html, body { margin: 0; background: #050608; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  #world { position: absolute; inset: 0; }
+  #gl { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+  #capShade { position: absolute; left: 0; right: 0; top: 1180px; height: 740px;
+    background: linear-gradient(to bottom, rgba(5,6,8,0) 0%, rgba(5,6,8,.55) 40%, rgba(5,6,8,.75) 100%); }
+  #captions { position: absolute; left: 50px; width: 860px; top: 1290px; height: 220px; }
+  .page { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center;
+    justify-content: center; text-align: center; opacity: 0; }
+  .w { display: inline-block; font-weight: 700; font-size: 76px; line-height: 1.32; color: #F3EEE4;
+    margin: 0 12px; opacity: 0;
+    text-shadow: 0 6px 22px rgba(0,0,0,.7), 0 0 3px rgba(0,0,0,.9); }
+  svg text { font-weight: 700; }
+  .guide { position: absolute; background: rgba(255,0,80,.25); pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <svg id="world" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+    <defs id="defs">
+      <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1A20"/><stop offset=".6" stop-color="#0E2A33"/><stop offset="1" stop-color="#07090C"/></linearGradient>
+      <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050A12"/><stop offset="1" stop-color="#14303A"/></linearGradient>
+      <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A2228"/><stop offset="1" stop-color="#0A0E11"/></linearGradient>
+      <linearGradient id="sunset" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B1240"/><stop offset=".45" stop-color="#B8336A"/><stop offset=".75" stop-color="#FF8A3D"/><stop offset="1" stop-color="#FFC46B"/></linearGradient>
+      <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE29A"/><stop offset="1" stop-color="#D9A02B"/></linearGradient>
+      <radialGradient id="vig" cx=".5" cy=".45" r=".72"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".7"/></radialGradient>
+      <radialGradient id="leak"><stop offset="0" stop-color="#FF9A4A" stop-opacity=".35"/><stop offset="1" stop-color="#FF9A4A" stop-opacity="0"/></radialGradient>
+      <radialGradient id="redGlow"><stop offset="0" stop-color="#FF3B3B" stop-opacity=".8"/><stop offset="1" stop-color="#FF3B3B" stop-opacity="0"/></radialGradient>
+      <radialGradient id="blueGlow"><stop offset="0" stop-color="#3B7BFF" stop-opacity=".8"/><stop offset="1" stop-color="#3B7BFF" stop-opacity="0"/></radialGradient>
+      <filter id="sepia"><feColorMatrix type="matrix" values=".39 .77 .19 0 0  .35 .69 .17 0 0  .27 .53 .13 0 0  0 0 0 1 0"/></filter>
+      <filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+      <filter id="blur20"><feGaussianBlur stdDeviation="20"/></filter>
+      <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    </defs>
+    <rect id="bgRect" width="1080" height="1920" fill="url(#bgG)" opacity="0"/>
+    <g id="cam"></g>
+    <rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+    <circle id="leakC" cx="980" cy="300" r="520" fill="url(#leak)" pointer-events="none" opacity=".5"/>
+    <rect y="0" width="1080" height="70" fill="#000"/>
+    <rect y="1850" width="1080" height="70" fill="#000"/>
+    <g id="front"></g>
+    <rect id="flash" width="1080" height="1920" fill="#fff" opacity="0"/>
+  </svg>
+  <div id="capShade"></div>
+  <div id="captions"></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="lib/watch3d.js"></script>
+<script src="lib/people.js"></script>
+<script>
+(async function () {
+const CFG = JSON.parse(document.getElementById('config').textContent);
+const TIM = JSON.parse(document.getElementById('timings').textContent);
+const C = CFG.palette, FONT = CFG.font;
+const NS = 'http://www.w3.org/2000/svg';
+const DUR = TIM.duration;
+const SFX = [];
+const $ = id => document.getElementById(id);
+window.BEAT = TIM.beat || null;
+const BEAT = window.BEAT;
+const snapT = t => { if (!BEAT) return t; const g = 30 / BEAT.bpm; return Math.max(0, BEAT.t0 + Math.ceil((t - .08 - BEAT.t0) / g) * g); };
+const FREE = new Set(['tick', 'wave', 'dip', 'shimmer', 'siren', 'type']);
+const sfx = (type, t, gain = 1, extra = {}) => SFX.push(Object.assign({ type, t: +Math.max(0, FREE.has(type) ? t : snapT(t)).toFixed(3), gain }, extra));
+const hit = t => sfx('hit', t, .8);
+
+await document.fonts.load(`700 80px ${FONT}`, 'Crystal');
+document.body.style.fontFamily = FONT;
+
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function text(parent, x, y, str, size, fill, anchor = 'middle', extra = {}) { const t = el('text', Object.assign({ x, y, 'font-size': size, fill, 'text-anchor': anchor, 'font-family': FONT, 'dominant-baseline': 'central' }, extra), parent); t.textContent = str; return t; }
+
+// ---------------------------------------------------------------- timing
+const sentences = CFG.sentences.map((s, si) => { const ph = TIM.phrases.filter(p => p.sentence === si); return Object.assign({}, s, { ph, words: ph.flatMap(p => p.words) }); });
+const sStart = si => sentences[si].ph[0].start;
+const sEnd = si => si + 1 < sentences.length ? sStart(si + 1) : DUR;
+const pS = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].start;
+const pE = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].end;
+const wT = (si, k) => { const w = sentences[si].words; return w[Math.max(0, Math.min(k, w.length - 1))].t; };
+const wIdx = (si, j, k = 0) => sentences[si].ph.slice(0, j).reduce((a, p) => a + p.words.length, 0) + k;
+const lastW = si => wT(si, sentences[si].words.length - 1);
+
+const tl = gsap.timeline({ paused: true });
+tl.to({}, { duration: DUR }, 0);
+const hide = e => tl.set(e, { opacity: 0 }, 0);
+const show = (e, t, d = .5) => { hide(e); tl.to(e, { opacity: 1, duration: d, ease: 'power1.out' }, t); };
+const fadeOut = (e, t, d = .5) => tl.to(e, { opacity: 0, duration: d, ease: 'power1.in' }, t);
+function stamp(e, t, o = {}) { t = snapT(t); tl.set(e, { opacity: 0, scale: 2.2, transformOrigin: o.origin || '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: .28, ease: 'power4.out' }, t); sfx('thud', t + .2, .8); }
+function counter(tEl, from, to, t, d, fmt, ticks = 14) { const o = { v: from }; tEl.textContent = fmt(from); tl.to(o, { v: to, duration: d, ease: 'power2.out', onUpdate: () => tEl.textContent = fmt(o.v) }, t); for (let k = 0; k < ticks; k++) sfx('tick', t + d * (1 - Math.sqrt(1 - k / ticks)), .5); }
+const flash = (t, a = .35) => { tl.set($('flash'), { opacity: a }, t); tl.to($('flash'), { opacity: 0, duration: .5 }, t + .03); };
+// typewriter line: reveals left to right with a key click per step
+let clipN = 0;
+function typeLine(parent, x, y, str, size, fill, t, d = .9, anchor = 'start') {
+  const id = 'tw' + (clipN++), cp = el('clipPath', { id }, $('defs')); const r = el('rect', { x: anchor === 'middle' ? 0 : x - 4, y: y - size, width: 0, height: size * 2 }, cp);
+  const g = el('g', { 'clip-path': `url(#${id})` }, parent); const tx = text(g, x, y, str, size, fill, anchor, { 'letter-spacing': 3 });
+  const w = tx.getBBox().width + 12, x0 = anchor === 'middle' ? x - w / 2 : x - 4; r.setAttribute('x', x0);
+  const o = { w: 0 }; tl.to(o, { w, duration: d, ease: 'steps(' + Math.max(6, str.length) + ')', onUpdate: () => r.setAttribute('width', o.w) }, t);
+  for (let k = 0; k < Math.min(12, str.length); k++) sfx('type', t + k * d / Math.min(12, str.length), .5);
+  return g;
+}
+// lower-third location card: thin orange line + typewriter text
+function lowerThird(parent, line1, line2, t) {
+  const g = el('g', {}, parent);
+  const bar = el('rect', { x: 80, y: 300, width: 0, height: 5, fill: C.accent }, g);
+  tl.to(bar, { attr: { width: 120 }, duration: .4, ease: 'power2.out' }, t);
+  typeLine(g, 84, 352, line1, 46, '#F3EEE4', t + .2, .8);
+  if (line2) typeLine(g, 84, 418, line2, 40, C.accent, t + .9, .5);
+  return g;
+}
+
+// ---------------------------------------------------------------- camera (Ken Burns)
+const CAM = { s: 1, x: 0, y: 0, r: 0 };
+const CUTS = sentences.map((s, si) => sStart(si) - .05).concat([DUR]);
+// a camera drift must finish before the next scene's camSet, or two tweens fight and the frame shakes
+const camTo = (t, v, d, ease = 'sine.inOut') => { const nx = CUTS.find(c => c > t + .02) ?? DUR; const dd = Math.max(.05, Math.min(d, nx - .08 - t)); return tl.to(CAM, Object.assign({ duration: dd, ease }, v), t); };
+const camSet = (t, v) => tl.set(CAM, v, t);
+const scene = name => { const g = el('g', { id: 'sc_' + name }, $('cam')); hide(g); return g; };
+const PPL = [];
+function person(parent, opts, state) { const p = Person(parent, opts); Object.assign(p.S, { raise: 0 }, state); p.baseArm = state.armN || null; PPL.push(p); return p; }
+
+// ================================================================= 3D + SCENES (watch)
+const W3 = Watch3D($('gl')), ST = W3.ST, PARTS = W3.parts;
+const v3 = (t, o) => tl.set(ST, o, Math.max(0, t));
+const c3 = (t, cam) => tl.set(ST.cam, cam, Math.max(0, t));
+const m3 = (t, cam, d, ease = 'sine.inOut') => { const nx = CUTS.find(c => c > t + .02) ?? DUR; const dd = Math.max(.05, Math.min(d, nx - .08 - t)); return tl.to(ST.cam, Object.assign({ duration: dd, ease }, cam), t); };
+const go3 = (t, o, d, ease = 'power2.inOut') => tl.to(ST, Object.assign({ duration: d, ease }, o), t);
+const RESET = { skip: 0, watch: 0, mech: 0, quartz: 0, hero: 0, rotorOn: 0, explode: 0, hlAmt: 0, quartzOn: 0, flip: 0, open: 0, orbit: 0, bg: '#DCD3C6' };
+const shot3 = (t, o, cam) => { v3(t, Object.assign({}, RESET, o)); c3(t, cam); };
+const RATE = [[0, 1]], TICKS = [];
+const bal = PARTS.balG.position, bar = PARTS.W.barrel.g.position, esc = PARTS.W.escape.g.position;
+function pill(parent, cx, cy, str, size, fg = '#FFFFFF', bg = '#14181D', pad = 44) {
+  const g = el('g', {}, parent), tx = text(g, cx, cy, str, size, fg, 'middle', { 'letter-spacing': 3 });
+  const w = tx.getBBox().width + pad * 2; g.insertBefore(el('rect', { x: cx - w / 2, y: cy - size * .9, width: w, height: size * 1.8, rx: size * .9, fill: bg, opacity: .92 }), tx); return g;
+}
+function pop(e, t, d = .35) { tl.set(e, { opacity: 0, scale: .55, transformOrigin: '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: d, ease: 'back.out(2.2)' }, Math.max(0, t)); sfx('pop', t, .6); }
+function slam(e, t) { tl.set(e, { opacity: 0, scale: 2.6, transformOrigin: '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: .26, ease: 'power4.out' }, Math.max(0, t)); sfx('thud', t + .18, .9); }
+const overlay = (si) => { const g = el('g', {}, $('front')); tl.set(g, { opacity: 1 }, 0); tl.set(g, { opacity: 0 }, 0); tl.set(g, { opacity: 1 }, Math.max(0, sStart(si) - .05)); tl.set(g, { opacity: 0 }, sEnd(si) - .03); return g; };
+
+const scenes = {
+  crystal(si, L) {
+    const T0 = 0;
+    shot3(T0, { hero: 1, heroGlow: 1, heroVib: 1, bg: '#F2E4CC', orbit: 7 }, { px: 3, py: 20, pz: 30, tx: 1, ty: 0, tz: 0, fov: 34 });
+    m3(.05, { pz: 23, py: 15 }, pS(si, 1) - .1, 'sine.out');
+    const o = overlay(si);
+    const hook = pill(o, 540, 420, L.hook1, 92, '#FFFFFF', '#14181D', 54); slam(hook, .04);
+    // the cost: a Swiss-red panel wipes up, a crowd of workers, the counter
+    const t1 = pS(si, 1), sw = el('g', {}, o);
+    const panel = el('g', {}, sw); el('rect', { x: -10, y: -10, width: 1100, height: 1940, fill: C.red }, panel);
+    el('rect', { x: 470, y: 330, width: 140, height: 420, rx: 6, fill: '#FFFFFF' }, panel); el('rect', { x: 330, y: 470, width: 420, height: 140, rx: 6, fill: '#FFFFFF' }, panel);
+    tl.set(panel, { y: 1940 }, 0); tl.to(panel, { y: 0, duration: .38, ease: 'power3.out' }, t1 - .05); sfx('whoosh', t1 - .05, .8);
+    v3(t1 + .4, { skip: 1 });
+    const num = text(panel, 540, 920, '0', 150, '#FFFFFF', 'middle', { 'letter-spacing': 2 }); text(panel, 540, 1030, 'JOBS LOST', 54, '#FFE3DF', 'middle', { 'letter-spacing': 8 });
+    counter(num, 0, 60000, t1 + .3, 2.2, v => (v >= 59999 ? '60,000+' : Math.round(v / 100) * 100 >= 1000 ? Math.round(v).toLocaleString('en-US') : String(Math.round(v))), 12);
+    const crowd = el('g', {}, panel), rows = [];
+    for (let r = 0; r < 2; r++) { const row = el('g', {}, crowd); rows.push(row);
+      for (let k = 0; k < 6; k++) person(row, { skin: ['#C68B5E', '#E0B38C', '#B97A4E', '#F1C9A0'][(k + r) % 4], hair: '#2A1C14', hairStyle: ['short', 'long', 'buzz', 'side', 'bun'][(k + 2 * r) % 5], top: ['#F4F1EA', '#2F55C8', '#3A3A3A', '#E2B04E'][(k + r) % 4], topStyle: k % 2 ? 'shirt' : 'tee', pants: '#2A2F3A', rim: '#FFD9D0' }, { x: 150 + k * 156 + r * 40, y: 1250 + r * 150, s: .5, face: k % 2 ? -1 : 1, smile: .1 }); }
+    rows.forEach((row, r) => { tl.to(row, { opacity: .12, duration: .5 }, t1 + 1.6 + r * .5); sfx('thud', t1 + 1.6 + r * .5, .5); });
+  },
+  open(si) {
+    const T0 = sStart(si);
+    shot3(T0 - .05, { watch: 1, orbit: 5, timeH: 10, timeM: 10 }, { px: 0, py: 74, pz: 50, tx: 0, ty: 0, tz: 0, fov: 32 });
+    m3(T0, { pz: 44, py: 68 }, 1.2);
+    const o = overlay(si); const how = pill(o, 540, 420, 'HOW?', 110, '#14181D', '#FFFFFF', 60); pop(how, T0);
+    tl.to(how, { opacity: 0, duration: .3 }, pS(si, 1));
+    const t1 = pS(si, 1);
+    go3(t1, { flip: 1 }, .9, 'power2.inOut'); sfx('whoosh', t1, .7);
+    m3(t1, { px: 16, py: 66, pz: 40, ty: 3 }, 1.0);
+    go3(t1 + .9, { open: 1 }, 1.6, 'power2.inOut'); sfx('shutter', t1 + 1.0, .6);
+    flash(sEnd(si) - .08, .5);
+  },
+  spring(si, L) {
+    const T0 = sStart(si);
+    shot3(T0 - .05, { mech: 1, wind: .95, hl: 1, hlAmt: 0, orbit: 6 }, { px: bar.x + 13, py: 26, pz: bar.z + 20, tx: bar.x + 1, ty: 1, tz: bar.z, fov: 30 });
+    RATE.push([T0 - .05, .3]);
+    m3(T0, { px: bar.x + 10, py: 20, pz: bar.z + 15 }, sEnd(si) - T0);
+    const o = overlay(si);
+    const nb = el('g', {}, o); const b = el('g', {}, nb);
+    el('rect', { x: 420, y: 330, width: 200, height: 110, rx: 14, fill: 'none', stroke: '#14181D', 'stroke-width': 12 }, b); el('rect', { x: 620, y: 360, width: 26, height: 50, rx: 6, fill: '#14181D' }, b);
+    el('rect', { x: 440, y: 350, width: 70, height: 70, rx: 6, fill: '#3BB273' }, b);
+    el('line', { x1: 390, y1: 470, x2: 690, y2: 300, stroke: C.red, 'stroke-width': 18, 'stroke-linecap': 'round' }, nb);
+    const nbT = pill(nb, 540, 560, L.noBatt, 64, '#FFFFFF', C.red, 40);
+    slam(nb, T0 + .25);
+    tl.to(nb, { opacity: 0, duration: .25 }, pS(si, 1) - .1);
+    const ms = pill(o, 540, 420, L.spring, 72, '#FFFFFF', '#14181D'); pop(ms, pS(si, 1));
+    go3(pS(si, 1), { hlAmt: .45 }, .4, 'power1.out');
+  },
+  gears(si, L) {
+    const T0 = sStart(si);
+    shot3(T0 - .05, { mech: 1, wind: .9, hl: 2, hlAmt: 1, orbit: 9 }, { px: 2, py: 40, pz: 30, tx: 1, ty: 1, tz: -2, fov: 33 });
+    RATE.push([T0, 1], [T0 + .4, 14], [pS(si, 1) - .2, 14], [pS(si, 1) + .4, 1]);
+    go3(T0, { wind: .45 }, pS(si, 1) - T0, 'none');
+    const o = overlay(si); const gt = pill(o, 540, 420, L.train, 72); pop(gt, T0 + .1); tl.to(gt, { opacity: 0, duration: .25 }, pS(si, 1));
+    sfx('whoosh', T0 + .3, .5);
+    // "but to stop it unwinding all at once..." -> escapement
+    const t1 = pS(si, 1); v3(t1, { hl: 3 });
+    m3(t1, { px: esc.x + 9, py: 16, pz: esc.z + 12, tx: esc.x - 1, ty: 2, tz: esc.z + 1, fov: 30 }, pS(si, 2) - t1);
+    // "there's this. The balance wheel."
+    const t2 = pS(si, 2); v3(t2, { hl: 4 });
+    m3(t2, { px: bal.x + 12, py: 17, pz: bal.z + 14, tx: bal.x + 1.5, ty: 2.5, tz: bal.z - 1, fov: 30 }, sEnd(si) - t2, 'power2.inOut');
+    const bw = pill(o, 540, 420, L.balance, 72, '#FFFFFF', C.accent); pop(bw, pS(si, 3));
+  },
+  balance(si, L) {
+    const T0 = sStart(si);
+    shot3(T0 - .05, { mech: 1, wind: .5, hl: 4, hlAmt: .3, orbit: 4 }, { px: bal.x + 12, py: 17, pz: bal.z + 14, tx: bal.x + 1.5, ty: 2.5, tz: bal.z - 1, fov: 30 });
+    m3(T0, { px: bal.x + 10, py: 15, pz: bal.z + 12 }, sEnd(si) - T0);
+    const tReal = pS(si, 1) - .2;
+    RATE.push([T0 - .05, .12], [tReal - .3, .12], [tReal, 1]);
+    TICKS.push([tReal, sEnd(si)]);
+    const o = overlay(si);
+    const sm = pill(o, 540, 700, L.slow, 44, '#14181D', '#FFFFFF', 30); pop(sm, T0 + .1); tl.to(sm, { opacity: 0, duration: .2 }, tReal);
+    const big = el('g', {}, o); el('rect', { x: 170, y: 290, width: 740, height: 330, rx: 40, fill: '#14181D', opacity: .9 }, big);
+    text(big, 540, 420, '8', 180, C.accent, 'middle'); text(big, 540, 560, L.rate, 50, '#FFFFFF', 'middle', { 'letter-spacing': 6 });
+    slam(big, wT(si, 3));
+  },
+  auto(si, L) {
+    const T0 = sStart(si);
+    shot3(T0 - .05, { mech: 1, rotorOn: 1, rotorAng: 0, wind: .35, hl: 5, hlAmt: 1, orbit: 10 }, { px: -20, py: 36, pz: 32, tx: 0, ty: 3, tz: 0, fov: 34 });
+    RATE.push([T0 - .05, .5]);
+    let tt = T0 + .2, k = 0; while (tt < sEnd(si) - .3) { tl.to(ST, { rotorAng: (k % 2 ? -1 : 1) * (1.4 + .4 * Math.sin(k)), duration: .62, ease: 'sine.inOut' }, tt); tt += .62; k++; }
+    go3(pS(si, 1), { wind: .95 }, sEnd(si) - pS(si, 1), 'power1.inOut'); v3(pS(si, 1), { hl: 1 });
+    m3(T0, { px: -16, py: 30, pz: 26 }, sEnd(si) - T0);
+    const o = overlay(si); const au = pill(o, 540, 420, L.auto, 76, '#FFFFFF', '#14181D'); pop(au, T0 + .1);
+    tl.to(au, { opacity: 0, duration: .2 }, pS(si, 1)); const ro = pill(o, 540, 420, 'WINDS THE SPRING', 64, '#FFFFFF', C.accent); pop(ro, pS(si, 1) + .1);
+  },
+  seiko(si, L) {
+    const T0 = sStart(si);
+    shot3(T0 - .05, { watch: 1, flip: 0, open: 0, orbit: 14, timeH: 10, timeM: 9, bg: '#E6DDD0' }, { px: 0, py: 60, pz: 60, tx: 0, ty: 0, tz: 0, fov: 32 });
+    RATE.push([T0 - .05, 1]);
+    m3(T0, { py: 52, pz: 48 }, sEnd(si) - T0);
+    flash(T0 - .02, .35);
+    const o = overlay(si); const d = pill(o, 540, 400, L.date, 96, '#FFFFFF', C.red, 50); slam(d, wT(si, 1));
+    const pl = pill(o, 540, 560, L.place, 52, '#14181D', '#FFFFFF', 34); pop(pl, pS(si, 1));
+  },
+  quartz(si, L) {
+    const T0 = sStart(si), X = { x: 5.5, y: 1.4, z: -7.5 };
+    shot3(T0 - .05, { quartz: 1, quartzOn: 0, hl: 6, hlAmt: 1, orbit: 5, bg: '#DCD3C6' }, { px: X.x + 9, py: 16, pz: X.z + 13, tx: X.x, ty: X.y, tz: X.z, fov: 30 });
+    m3(T0, { px: X.x + 6, py: 11, pz: X.z + 9 }, pS(si, 1) - T0);
+    const o = overlay(si); const qc = pill(o, 540, 420, L.crystal, 72); pop(qc, T0 + .1); tl.to(qc, { opacity: 0, duration: .2 }, pS(si, 1));
+    const t1 = pS(si, 1); v3(t1, { hl: 8 });
+    m3(t1, { px: 4, py: 46, pz: 30, tx: 0, ty: 0, tz: -1, fov: 34 }, .9, 'power2.inOut');
+    go3(t1 + .5, { quartzOn: 1 }, .4, 'power1.out'); sfx('ping', t1 + .5, .6);
+    const ba = pill(o, 540, 420, L.batt, 72, '#FFFFFF', '#3BB273'); pop(ba, t1 + .1); tl.to(ba, { opacity: 0, duration: .2 }, pS(si, 2));
+    const t2 = pS(si, 2); v3(t2, { hl: 6 });
+    m3(t2, { px: X.x + 7, py: 13, pz: X.z + 10, tx: X.x, ty: X.y, tz: X.z, fov: 30 }, sEnd(si) - t2);
+    const big = el('g', {}, o); el('rect', { x: 150, y: 300, width: 780, height: 330, rx: 40, fill: '#14181D', opacity: .9 }, big);
+    const num = text(big, 540, 440, '0', 150, C.accent, 'middle'); text(big, 540, 565, L.per, 50, '#FFFFFF', 'middle', { 'letter-spacing': 6 });
+    pop(big, t2); counter(num, 0, 32768, t2 + .1, 1.8, v => Math.round(v).toLocaleString('en-US'), 14);
+    for (let s = Math.ceil(t1 + 1); s < sEnd(si); s++) sfx('tick', s, .5);
+  },
+  twist(si, L) {
+    const T0 = sStart(si), g = scene('twist');
+    v3(T0 + .3, { skip: 1 });
+    el('rect', { x: -10, y: -10, width: 1100, height: 1940, fill: '#F4EFE6' }, g);
+    sfx('dip', T0 - .7, 1, { dur: 1.0 });
+    const face = (cx, label, val, col, tick) => {
+      const f = el('g', {}, g); el('circle', { cx, cy: 820, r: 210, fill: '#FFFFFF', stroke: '#14181D', 'stroke-width': 16 }, f);
+      for (let i = 0; i < 12; i++) { const a = i * Math.PI / 6; el('line', { x1: cx + Math.sin(a) * 170, y1: 820 - Math.cos(a) * 170, x2: cx + Math.sin(a) * 192, y2: 820 - Math.cos(a) * 192, stroke: '#14181D', 'stroke-width': i % 3 ? 5 : 10 }, f); }
+      el('line', { x1: cx, y1: 820, x2: cx + 90, y2: 760, stroke: '#14181D', 'stroke-width': 12, 'stroke-linecap': 'round' }, f);
+      el('line', { x1: cx, y1: 820, x2: cx - 30, y2: 690, stroke: '#14181D', 'stroke-width': 9, 'stroke-linecap': 'round' }, f);
+      const sec = el('line', { x1: cx, y1: 850, x2: cx, y2: 640, stroke: col, 'stroke-width': 5, 'stroke-linecap': 'round', class: tick ? 'secT' : 'secS', 'data-cx': cx }, f); el('circle', { cx, cy: 820, r: 12, fill: col }, f);
+      text(f, cx, 1100, label, 66, '#14181D'); text(f, cx, 1175, val, 46, col);
+      return f; };
+    const q = face(290, L.q, L.qv, C.accent, true), r = face(790, L.r, L.rv, '#4A5560', false);
+    pop(q, T0 + .1); pop(r, T0 + .35);
+    const win = pill(g, 290, 420, 'MORE ACCURATE', 50, '#FFFFFF', '#3BB273', 30); slam(win, lastW(si) - .1);
+    show(g, T0 - .05, .3); tl.set(g, { opacity: 0 }, sEnd(si) - .03); camSet(T0 - .05, { s: 1, x: 0, y: 0 }); camTo(T0, { s: 1.05 }, sEnd(si) - T0);
+  },
+  swiss(si, L) {
+    const T0 = sStart(si), g = scene('swiss');
+    el('rect', { x: -10, y: -10, width: 1100, height: 1940, fill: '#0E1A2B' }, g);
+    el('path', { d: 'M-20 1500 L140 1180 L300 1360 L480 1080 L700 1330 L880 1140 L1100 1400 L1100 1940 L-20 1940Z', fill: '#16263B' }, g);
+    el('path', { d: 'M480 1080 L430 1180 L470 1170 L520 1190Z M880 1140 L840 1220 L900 1210Z', fill: '#E8EEF5', opacity: .7 }, g);
+    const wins = [], wg = el('g', {}, g);
+    for (let r = 0; r < 7; r++) for (let c = 0; c < 9; c++) { const w = el('rect', { x: 120 + c * 96, y: 700 + r * 62, width: 64, height: 40, rx: 4, fill: '#FFD27A' }, wg); wins.push(w); }
+    el('rect', { x: 100, y: 680, width: 880, height: 450, fill: 'none', stroke: '#2A3B55', 'stroke-width': 10 }, wg);
+    text(g, 540, 300, L.title, 48, '#9FB3CC', 'middle', { 'letter-spacing': 8 });
+    const num = text(g, 540, 420, '90,000', 140, '#FFFFFF'), yr = text(g, 540, 560, '1970', 70, C.accent);
+    const order = wins.map((w, i) => [w, Math.abs(Math.sin(i * 12.9898) * 43758.5453) % 1]).sort((a, b) => a[1] - b[1]);
+    const t1 = pS(si, 1), t2 = pS(si, 2), off = Math.round(wins.length * (1 - 28 / 90));
+    order.slice(0, off).forEach(([w], i) => tl.to(w, { attr: { fill: '#1C2A3E' }, duration: .08 }, T0 + .3 + (t2 + 1.2 - T0 - .3) * i / off));
+    counter(num, 90000, 28000, t2 - .1, 1.4, v => Math.round(v / 1000) * 1000 === 28000 && v < 28500 ? '28,000' : (Math.round(v / 1000) * 1000).toLocaleString('en-US'), 10);
+    const yo = { y: 1970 }; tl.to(yo, { y: 1988, duration: 1.4, ease: 'power2.out', onUpdate: () => yr.textContent = String(Math.round(yo.y)) }, t2 - .1);
+    pop(num, t1);
+    show(g, T0 - .05, .3); tl.set(g, { opacity: 0 }, sEnd(si) - .03); camSet(T0 - .05, { s: 1, x: 0, y: 0 }); camTo(T0, { s: 1.06, y: -20 }, sEnd(si) - T0);
+  },
+  callback(si, L) {
+    const T0 = sStart(si);
+    shot3(T0 - .05, { hero: 1, heroGlow: .5, heroVib: 1, bg: '#F2E4CC', orbit: -6 }, { px: -3, py: 24, pz: 34, tx: 1, ty: 0, tz: 0, fov: 34 });
+    go3(pS(si, 1), { heroGlow: 1.2 }, .6, 'power2.out');
+    m3(T0, { py: 16, pz: 24 }, DUR - T0, 'sine.out');
+    const o = el('g', {}, $('front')); tl.set(o, { opacity: 0 }, 0); tl.set(o, { opacity: 1 }, T0 - .05);
+    const e = pill(o, 540, 420, L.end, 92, '#FFFFFF', '#14181D', 54); slam(e, pS(si, 1) + .05);
+    sfx('chime', lastW(si) + .1, .9);
+  },
+};
+
+sentences.forEach((s, si) => scenes[s.scene](si, s.labels || {}));
+W3.setRate(RATE);
+// mechanical tick on every beat while the balance runs in real time
+TICKS.forEach(([a, b]) => { let last = Math.floor(W3.clock(a) * 8); for (let t = a; t < b; t += 1 / 60) { const k = Math.floor(W3.clock(t) * 8); if (k !== last) { sfx('tick', t, .28); last = k; } } });
+
+// ---------------------------------------------------------------- captions
+const capBox = $('captions'), MAXCH = 24;
+TIM.phrases.forEach((ph, pi) => {
+  const pages = []; let cur = [];
+  ph.words.forEach(w => { const len = cur.reduce((a, b) => a + b.w.length + 1, 0); if (cur.length && len + w.w.length > MAXCH) { pages.push(cur); cur = []; } cur.push(w); });
+  if (cur.length) pages.push(cur);
+  const next = pi + 1 < TIM.phrases.length ? TIM.phrases[pi + 1].start : DUR;
+  pages.forEach((words, k) => {
+    const page = document.createElement('div'); page.className = 'page'; capBox.appendChild(page);
+    const tOut = k + 1 < pages.length ? pages[k + 1][0].t - .2 : (pi + 1 < TIM.phrases.length ? Math.min(next - .06, ph.end + .9) : DUR + 1);
+    tl.set(page, { opacity: 1 }, Math.max(0, words[0].t - .08));
+    words.forEach((w, j) => {
+      const s = document.createElement('span'); s.className = 'w'; s.textContent = w.w; page.appendChild(s);
+      tl.set(s, { opacity: 0, y: 20, scale: .9 }, 0);
+      tl.to(s, { opacity: 1, y: 0, scale: 1, duration: .25, ease: 'power2.out' }, Math.max(0, w.t - .06));
+      tl.set(s, { color: C.accent }, Math.max(0, w.t - .06));
+      tl.set(s, { color: '#F3EEE4' }, j + 1 < words.length ? words[j + 1].t - .06 : tOut);
+    });
+    tl.to(page, { opacity: 0, duration: .15 }, tOut);
+  });
+});
+
+// ---------------------------------------------------------------- time-only render
+function render(t) {
+  $('cam').setAttribute('transform', `translate(540 960) scale(${CAM.s}) rotate(${CAM.r}) translate(${-540 + CAM.x} ${-960 + CAM.y})`);
+  $('leakC').setAttribute('cx', (900 + 140 * Math.sin(t * .23)).toFixed(1)); $('leakC').setAttribute('cy', (320 + 120 * Math.cos(t * .19)).toFixed(1));
+  document.querySelectorAll('.secT').forEach(l => { const cx = +l.getAttribute('data-cx'); l.setAttribute('transform', `rotate(${Math.floor(t) * 6} ${cx} 820)`); });
+  document.querySelectorAll('.secS').forEach(l => { const cx = +l.getAttribute('data-cx'); l.setAttribute('transform', `rotate(${(t * 48) % 360} ${cx} 820)`); });
+  PPL.forEach(p => p.render(t, 0));
+  W3.render(t);
+}
+tl.seek(DUR, false); tl.seek(0, false); render(0);
+window.seek = t => { tl.seek(Math.max(0, Math.min(DUR, t)), false); render(t); };
+window.DURATION = DUR; window.SFX = SFX.sort((a, b) => a.t - b.t); window.CONFIG = CFG; window.READY = true;
+const q = new URLSearchParams(location.search);
+if (q.has('guides')) { const st = $('stage'); [['0', '0', '1080px', '230px'], ['0', '1520px', '1080px', '400px'], ['940px', '0', '140px', '1920px']].forEach(([l, tp, w, h]) => { const d = document.createElement('div'); d.className = 'guide'; Object.assign(d.style, { left: l, top: tp, width: w, height: h }); st.appendChild(d); }); }
+if (q.has('t')) window.seek(parseFloat(q.get('t')));
+})();
+</script>
+</body>
+</html>
