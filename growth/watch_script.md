@@ -85,3 +85,35 @@
 ## Length
 
 About 95 Malayalam words, roughly 45 s. If the voice comes out over 48 s, cut line 7 (automatic) to "ഓട്ടോമാറ്റിക് വാച്ചിൽ കൈയുടെ ചലനം തന്നെ സ്പ്രിംഗ് മുറുക്കും."
+
+## English voiceover version (for an English narration)
+
+```
+One tiny crystal...
+
+cost more than sixty thousand people in Switzerland their jobs.
+
+How? Let's open a watch.
+
+A mechanical watch has no battery. Just a tightly coiled spring.
+
+As it unwinds, the gears turn. But to stop it unwinding all at once... there's this. The balance wheel.
+
+It swings eight times every second, letting time out one tiny step at a time.
+
+In an automatic watch, every move of your wrist spins a rotor, and the rotor winds the spring for you.
+
+Then, Christmas Day, 1969. In Japan, Seiko released a new kind of watch.
+
+Inside was a quartz crystal. Touch it with a battery, and it vibrates over thirty-two thousand times a second.
+
+...
+
+That's why an ordinary quartz watch keeps better time than a Rolex.
+
+Swiss watchmakers shut down one after another. Ninety thousand jobs in 1970. Twenty-eight thousand by 1988.
+
+All because of... one tiny crystal.
+```
+
+About 110 words, roughly 42-45 s at a steady narration pace. Same facts and sources as the Malayalam version above.
