@@ -64,3 +64,22 @@ Description:
 2022 സെപ്റ്റംബർ. ഇംഗ്ലണ്ടിലെ ഒരു ഹോട്ടൽ മുറിയിൽ ഇരുന്ന് ഒരു 17 വയസ്സുകാരൻ GTA 6-ന്റെ 90 വീഡിയോകൾ ലീക്ക് ചെയ്തു. കയ്യിലുണ്ടായിരുന്നത് ഒരു ഫോൺ, ഹോട്ടൽ ടിവി, ഒരു ഫയർ സ്റ്റിക്ക്. 2023-ൽ കോടതി അവനെ അനിശ്ചിതകാലത്തേക്ക് സുരക്ഷിത ആശുപത്രിയിലേക്ക് അയച്ചു.
 
 #GTA6 #GTA6Leak #RockstarGames #GamingHistory #Malayalam
+
+## 6. One tiny crystal: how watches work (Video 11, English voice)
+
+### Instagram
+One tiny crystal cost 60,000 Swiss watchmakers their jobs. ⌚
+
+Inside every watch: a coiled spring, a balance wheel swinging 8 times a second, or a quartz crystal vibrating 32,768 times a second. And that's why an ordinary quartz watch keeps better time than a Rolex.
+
+How watches work, mechanical vs automatic vs quartz, the quartz crisis, Seiko Astron 1969.
+
+#HowItWorks #Watches #QuartzCrisis #WatchFacts #Malayalam
+
+### YouTube Shorts
+Title: How a watch works: the crystal that broke Switzerland ⌚ #Shorts
+
+Description:
+Mechanical, automatic and quartz watches explained in 3D. A coiled spring, a balance wheel swinging 8 times a second, and a quartz crystal vibrating 32,768 times a second. On Christmas Day 1969 Seiko released the first quartz watch, and Swiss watch jobs fell from 90,000 (1970) to 28,000 (1988).
+
+#HowItWorks #Watches #QuartzCrisis #WatchFacts #Shorts
