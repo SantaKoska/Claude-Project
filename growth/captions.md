@@ -83,3 +83,22 @@ Description:
 Mechanical, automatic and quartz watches explained in 3D. A coiled spring, a balance wheel swinging 8 times a second, and a quartz crystal vibrating 32,768 times a second. On Christmas Day 1969 Seiko released the first quartz watch, and Swiss watch jobs fell from 90,000 (1970) to 28,000 (1988).
 
 #HowItWorks #Watches #QuartzCrisis #WatchFacts #Shorts
+
+## 7. Munnar's vanished train: the 1924 flood (Video 12, Malayalam voice)
+
+### Instagram
+Munnar once had a train. One monsoon washed away the whole line, and it was never rebuilt. 🚂🌧️
+മൂന്നാറിൽ ഒരിക്കൽ ഒരു തീവണ്ടി ഓടിയിരുന്നു... 1924-ലെ മഴ അതിനെ ഒന്നാകെ കൊണ്ടുപോയി. ബാക്കിയായത് ഒരു പേര് മാത്രം: ടോപ്പ് സ്റ്റേഷൻ.
+
+Munnar train history, 1924 Kerala flood, great flood of 99, Kundala Valley Railway, Top Station, Periyar flood, Karinthiri landslide.
+
+#Munnar #KeralaHistory #KeralaFlood #Idukki #Malayalam
+
+### YouTube Shorts
+Title: Munnar train 1924 flood: the railway that vanished | 99-ലെ വെള്ളപ്പൊക്കം #Shorts
+
+Description:
+Munnar had a railway: first a monorail, then a narrow-gauge steam line carrying tea up the hills. In July 1924 the rain didn't stop, the Periyar overflowed and Karinthiri hill slid away with the road and the line. It was never rebuilt. In the Malayalam calendar it was the year 1099, which is why Keralites call it the flood of '99. Today only a name remains: Top Station.
+മൂന്നാറിലെ മാഞ്ഞുപോയ തീവണ്ടിയുടെ കഥ, 3D-യിൽ.
+
+#Munnar #KeralaHistory #KeralaFlood #Malayalam #Shorts
