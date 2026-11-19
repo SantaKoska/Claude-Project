@@ -8,6 +8,15 @@ Every script uses the table-tennis pattern (see `.claude/skills/story-script/SKI
 small cause -> giant effect stated in the first breath, then how (year, place, person, problem, rising beats), a silence beat, one surprise twist, payoff and a callback to the hook.
 Example hook: "ഒരു പയ്യൻ ബസ് മാറിക്കയറി... ആ ഒരു തെറ്റ്, ലോകത്തിലെ രണ്ട് വൻശക്തികളെ വീണ്ടും അടുപ്പിച്ചു!"
 
+## Quality bar (owner, 19 Nov 2026)
+
+The watch anatomy test (`out/watch_anatomy_test.mp4`, `anatomy_lab.html`) is the standard every future reel is judged against. The owner's words: clarity, quality and cinematic camera movement "mean a lot for the viewers" and grow views and subscribers.
+
+- Classy, premium-looking shots first: real 3D with micro-textured materials, bevels, reflections, ambient occlusion, soft depth of field. Never flat or "2D-feeling" objects.
+- Whenever a topic has a physical object, show its anatomy so people look deeper: the whole object, then it separating into labelled parts, still working, then snapping back.
+- Cinematic camera: slow orbits, push-ins, rises to a 3/4 view, light sweeping across surfaces. Nothing static.
+- Check frames for clarity before every render: readable labels, no haze, nothing cut off.
+
 ## Other rules
 
 - No calls to action anywhere (no follow, like, comment or share asks).
