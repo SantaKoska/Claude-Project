@@ -7,7 +7,7 @@ HTML=${1:-index.html}
 STEM=$(basename "$HTML" .html)
 OUT=${2:-out/$STEM.mp4}
 python3 tools/sync.py "$HTML"
-node tools/render.js "$HTML" 30 4
+node tools/render.js "$HTML" 30 ${WORKERS:-4}
 python3 tools/audio.py "$STEM"
 mkdir -p "$(dirname "$OUT")"
 ffmpeg -v error -y -i "build/$STEM/video.mp4" -i "build/$STEM/mix.wav" -map 0:v -map 1:a -c:v copy \
