@@ -16,6 +16,7 @@ The watch anatomy test (`out/watch_anatomy_test.mp4`, `anatomy_lab.html`) is the
 - Whenever a topic has a physical object, show its anatomy so people look deeper: the whole object, then it separating into labelled parts, still working, then snapping back.
 - Cinematic camera: slow orbits, push-ins, rises to a 3/4 view, light sweeping across surfaces. Nothing static.
 - Check frames for clarity before every render: readable labels, no haze, nothing cut off.
+- When a script or voice arrives, run the `visual-research` skill first: search GitHub for skills and repos that fit this topic, choose the 3D approach and the cinematic shot for every line, save `growth/<topic>_visual_plan.md`, then build. Never cartoon-looking: real materials, real light, real proportions, so viewers think "wow".
 
 ## Other rules
 
