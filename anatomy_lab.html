@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Anatomy lab</title>
+<style>html,body{margin:0;background:#000;overflow:hidden}#stage{position:relative;width:1080px;height:1920px}canvas,svg{position:absolute;left:0;top:0}text{font-family:FreeSans,sans-serif;font-weight:700}</style>
+<script type="importmap">{"imports":{"three":"./vendor/three186/build/three.module.js","three/addons/":"./vendor/three186/examples/jsm/"}}</script>
+</head><body><div id="stage"><canvas id="gl" width="1080" height="1920"></canvas>
+<svg id="ui" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg"><g id="labels"></g>
+<rect x="0" y="0" width="1080" height="70" fill="#000"/><rect x="0" y="1850" width="1080" height="70" fill="#000"/></svg></div>
+<script type="module">
+import { Studio, THREE } from './lib/anatomy3d.js';
+import { buildWatch } from './lib/watch_anatomy.js';
+const st = new Studio(document.getElementById('gl'), { bg: ['#F3EADB', '#5E554B'], floorY: -48 });
+const w = buildWatch(st.scene); w.ex.spread = .8;
+const DUR = 13;
+const cl = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v)), seg = (t, a, b) => cl((t - a) / (b - a)), sm = u => u * u * (3 - 2 * u), lerp = (a, b, u) => a + (b - a) * u;
+const NS = 'http://www.w3.org/2000/svg', L = document.getElementById('labels');
+const el = (tag, a, p) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); p.appendChild(e); return e; };
+const labs = w.ex.anchors().map(({ p }) => { const g = el('g', { opacity: 0 }, L); const line = el('polyline', { fill: 'none', stroke: '#1A1410', 'stroke-width': 3 }, g); const dot = el('circle', { r: 7, fill: '#FF6B2C', stroke: '#fff', 'stroke-width': 3 }, g);
+  const bg = el('rect', { rx: 10, fill: '#1A1410', opacity: .88 }, g); const tx = el('text', { 'font-size': 34, fill: '#FFFFFF', 'dominant-baseline': 'central' }, g); tx.textContent = p.label; return { p, g, line, dot, bg, tx }; });
+function render(t) {
+  const k = sm(seg(t, 2.6, 6.6)) - sm(seg(t, 11.2, 12.4));          // explode, then snap back together
+  w.ex.set(k); w.live(t, t * (t < 7 || t > 11 ? 1 : .18), Math.sin(t * 1.3) * .9);
+  // camera: hero low orbit -> rises to a 3/4 view of the whole stack -> back
+  const up = sm(seg(t, 2.4, 6.8)) - sm(seg(t, 11.0, 12.6));
+  const radius = lerp(72, 172, up), height = lerp(50, 50, up), ty = lerp(0, 5, up), fov = lerp(30, 32, up);
+  st.orbit(t, radius, height, lerp(10, 7, up), -18, 0, ty, 0, fov);
+  st.glint.position.set(40 * Math.cos(t * .9), 30, 40 * Math.sin(t * .9)); st.glint.intensity = 350 * (1 - up);
+  if (st.bokeh) st.bokeh.uniforms.aperture.value = lerp(.00005, .00002, up);
+  st.render();
+  // labels with leader lines once the parts have separated; each side's labels are pushed apart so none overlap
+  const pts = labs.map(l => { const a = l.p.obj.localToWorld(l.p.anchor.clone()); const [x, y] = st.project(a); return { l, x, y, ly: y }; });
+  [-1, 1].forEach(side => { const col = pts.filter(q => q.l.p.side === side).sort((a, b) => a.y - b.y); for (let i = 1; i < col.length; i++) col[i].ly = Math.max(col[i].ly, col[i - 1].ly + 64); for (let i = col.length - 2; i >= 0; i--) if (col[i].ly > col[i + 1].ly - 64) col[i].ly = col[i + 1].ly - 64; });
+  pts.forEach(({ l, x, y, ly }) => { const on = cl((l.p.u - .85) / .15) * cl((up - .6) / .3), side = l.p.side;
+    const bw = l.tx.getComputedTextLength() + 32, edge = side > 0 ? 1080 - 40 : 40, bx = side > 0 ? edge - bw : edge, lineEnd = side > 0 ? bx : bx + bw;
+    l.line.setAttribute('points', `${x},${y} ${lineEnd + (side > 0 ? -30 : 30)},${ly} ${lineEnd},${ly}`); l.dot.setAttribute('cx', x); l.dot.setAttribute('cy', y);
+    l.tx.setAttribute('x', bx + 16); l.tx.setAttribute('y', ly); l.tx.setAttribute('text-anchor', 'start');
+    l.bg.setAttribute('x', bx); l.bg.setAttribute('y', ly - 26); l.bg.setAttribute('width', bw); l.bg.setAttribute('height', 52);
+    l.g.setAttribute('opacity', on.toFixed(3)); });
+}
+window.DURATION = DUR; window.SFX = []; window.CONFIG = { music: null };
+window.seek = t => render(t); render(0); window.READY = true;
+</script></body></html>

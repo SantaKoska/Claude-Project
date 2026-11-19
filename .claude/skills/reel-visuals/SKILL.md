@@ -66,6 +66,18 @@ Build 5-8 depth layers (sky, sun, far hills, haze, mid, water, subject, foregrou
 
 Qwen3-TTS (QwenLM, Apache-2.0) was checked and not installed: it speaks 10 languages, none of them Malayalam, and needs a GPU. ElevenLabs stays the voice.
 
+## 8. Anatomy standard (owner, 19 Nov 2026: "one piece separates into multiple pieces", "feel like pure original")
+
+Every "how it works" reel has at least one **real 3D exploded anatomy shot**: the whole object, then every part separating along its axis in true order, labelled, then snapping back. 2D drawings are for text cards only, never for the object itself.
+
+- Kit: `lib/anatomy3d.js` (ES module, three r186 in `vendor/three186`, import map in the page). `Studio` = lit backdrop with falloff, RoomEnvironment reflections, soft key + warm and cool rims, contact floor, GTAO ambient occlusion, light bloom, depth of field. `Exploded` = parts with `off`, `at`, `len`, `label`, `anchor`, `side`; `ex.spread` scales the whole stack. Helpers: `gearGeo`, `bridgeGeo` (rounded hull of pivot circles), `spiralTube`, `ribbonSpiral`, and textures `tex.cotes / perlage / sunburst / dialPrint`.
+- Model example: `lib/watch_anatomy.js` (about 30 parts: crystal, bezel, hands, sunburst dial with applied indices, perlage plate, gear train, barrel and mainspring, escapement, balance and hairspring, Côtes de Genève bridges with jewels and blued screws, rotor, case with crown, display case back). Page example: `anatomy_lab.html`.
+- Make it read as real: micro texture on every metal (stripes, perlage, sunburst), bevels on every edge, jewels and screws, reflections from an environment, AO in the gaps. Flat colours and missing bevels are what made earlier shots feel 2D.
+- Layout: the exploded stack runs vertically and fills the 9:16 frame; camera at about 15-20 degrees above the layers so every top surface shows; labels in two columns with leader lines, pushed apart so they never overlap and kept inside 40 px of the edges; nothing behind the black bars.
+- Keep bloom low (about 0.07) and the glint light soft, or the frame turns to haze. Keep the floor below the lowest exploded part.
+- Moving parts keep working while exploded (balance swings, wheels turn by ratio): it reads as a living machine, not a diagram.
+- For any new object, build it the same way: real part list from a reference (photo, cutaway, manual), real proportions, real order, then the exploded offsets.
+
 ## 6. Checks before rendering
 
 - Screenshot 6-10 moments with `PAGE=x.html node tools/shots.js outdir t1 t2 ...` and look at them as a contact sheet.
