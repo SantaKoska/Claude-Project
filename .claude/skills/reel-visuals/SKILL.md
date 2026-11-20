@@ -52,6 +52,15 @@ The owner caught a 3D Kerala map that was upside down and mirrored (sea on the r
 - Frame the whole state; keep labels out of the caption zone; flood or highlight overlays need `side: DoubleSide` (a flat ShapeGeometry faces down after the rotation).
 - Before the full render, screenshot every map shot and check: sea on the left, Kasaragod at the top, Thiruvananthapuram at the bottom.
 
+### Long machines in a 9:16 frame, cutaways and x-ray (lesson from the maglev reel, 20 Nov 2026)
+
+- A vertical frame is only ~13° wide at fov 24. A train or any long object never fits side-on: frame it **nose-first at 30-45° off its axis**, with the camera target on the nose, so the body recedes into depth. Check which end is which with a top-down or side test shot before choosing cameras.
+- **Cutaway instead of a wall in the way**: hide the near wall (`cutNear`) to see what sits between the vehicle and the track; **x-ray** hides outer shells (`xray`) so the working coils show; the fresnel ghost body (from the `teardown` skill) shows what's inside a car.
+- The money shot for "how it works" is the part doing the work, opened and glowing (the linear motor: wall coils in front, the train's N/S magnets glowing behind).
+- Front view down a guideway with a long lens (fov ~15) is the clearest levitation/guidance diagram: up arrows, inward arrows.
+- Light-sky outdoor scenes: put numbers on a dark plate; white counters vanish against the sky.
+- Speed without strobing: scroll the world at ~75 m/s (not the real 167 m/s) and swap the ground to a pre-smeared copy of its texture.
+
 ## 5. People (lib/people.js v2)
 
 - `p.S.reachN / reachF = { x, y, w }` - two-bone IK: the hand goes to a point in the parent's coordinates; `w` blends from the pose. Arm reach is about 180 units x scale (0.62 x height x S.s); keep targets inside it or the arm locks straight.

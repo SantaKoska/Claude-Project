@@ -106,3 +106,12 @@ Munnar had a railway: first a monorail, then a narrow-gauge steam line carrying 
 മൂന്നാറിലെ മാഞ്ഞുപോയ തീവണ്ടിയുടെ കഥ, 3D-യിൽ.
 
 #Munnar #KeralaHistory #KeralaFlood #Malayalam #Shorts
+
+## 8. Two magnets that refuse to touch: how a maglev works (Video 13, English voice)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram (93): `Two magnets that refuse to touch. 603 km/h 🧲 കാന്തത്തിൽ ഒഴുകുന്ന തീവണ്ടി #Maglev #HowItWorks`
+- YouTube Shorts title (79): `How a maglev train works: 603 km/h 🧲 കാന്ത തീവണ്ടി #Maglev #HowItWorks #Shorts`
+
+### YouTube description (optional, longer field)
+How a superconducting maglev floats, steers and moves, in 3D: superconducting magnets cooled to about -269 °C, figure-eight coils in the guideway walls that lift the train about 10 cm and keep it centred, and propulsion coils that make the track itself the motor. The twist: it still has rubber tyres for low speed. Record: 603 km/h, Yamanashi, Japan, 21 April 2015.

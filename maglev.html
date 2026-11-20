@@ -1,0 +1,1304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Maglev Anatomy</title>
+<meta name="viewport" content="width=1080, initial-scale=1">
+<!-- How a maglev train works (English). Build: WORKERS=3 tools/build.sh maglev.html build/maglev_nograin.mp4, then the grain pass. -->
+<script id="config" type="application/json">
+{
+ "title": "How a maglev train works",
+ "voice": "audio/maglev.mp3",
+ "voiceTempo": 1.1,
+ "timing": {
+  "phraseGap": 0.2,
+  "sentenceGap": 0.36,
+  "head": 0.08,
+  "tail": 1.6
+ },
+ "music": {
+  "bpm": 92,
+  "chords": [
+   "Am",
+   "F",
+   "C",
+   "G"
+  ],
+  "level": 0.7
+ },
+ "font": "Inter",
+ "palette": {
+  "accent": "#3FB6FF",
+  "red": "#E5413A",
+  "blue": "#2B5BD6",
+  "ink": "#12161A",
+  "paper": "#F4EFE6",
+  "gold": "#FFB238"
+ },
+ "sentences": [
+  {
+   "scene": "magnets",
+   "phrases": [
+    "Two magnets...",
+    "pushing each other away."
+   ],
+   "labels": {
+    "hook1": "TWO MAGNETS",
+    "hook2": "603 KM/H"
+   }
+  },
+  {
+   "scene": "lift",
+   "phrases": [
+    "That's all it took to lift a train into the air, and make it the fastest train on Earth."
+   ],
+   "labels": {
+    "fast": "FASTEST TRAIN ON EARTH"
+   }
+  },
+  {
+   "scene": "apart",
+   "phrases": [
+    "How?",
+    "Let's take one apart."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "patent",
+   "phrases": [
+    "1934.",
+    "A German engineer, Hermann Kemper, patents a train with no wheels."
+   ],
+   "labels": {
+    "year": "1934",
+    "who": "HERMANN KEMPER",
+    "stamp": "NO WHEELS"
+   }
+  },
+  {
+   "scene": "japan",
+   "phrases": [
+    "Decades later, Japan builds its own."
+   ],
+   "labels": {
+    "place": "JAPAN",
+    "what": "SUPERCONDUCTING MAGLEV"
+   }
+  },
+  {
+   "scene": "scm",
+   "phrases": [
+    "Under every car, superconducting magnets, cooled to -269 degrees."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "coils",
+   "phrases": [
+    "In the walls of the track, figure-eight coils.",
+    "As the magnets rush past, the coils push the train up 10 centimetres...",
+    "and hold it in the centre."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "motor",
+   "phrases": [
+    "And there's no engine on board.",
+    "The track is the motor.",
+    "Its coils flip north and south, pulling the train from the front, pushing it from behind."
+   ],
+   "labels": {},
+   "holdAfter": 1.0
+  },
+  {
+   "scene": "wheels",
+   "phrases": [
+    "But here's the surprise.",
+    "This train has wheels.",
+    "Rubber tyres.",
+    "Until it's fast enough, it can't float at all.",
+    "It rolls, then lifts off, like a plane."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "record",
+   "phrases": [
+    "April 21st, 2015.",
+    "Yamanashi, Japan.",
+    "603 km/h."
+   ],
+   "labels": {
+    "date": "21 APRIL 2015",
+    "place": "YAMANASHI, JAPAN"
+   }
+  },
+  {
+   "scene": "callback",
+   "phrases": [
+    "All from two magnets...",
+    "that refuse to touch."
+   ],
+   "labels": {}
+  }
+ ],
+ "say": {
+  "1934.": "nineteen thirty-four.",
+  "Under every car, superconducting magnets, cooled to -269 degrees.": "Under every car, superconducting magnets, cooled to minus two hundred and sixty-nine degrees.",
+  "As the magnets rush past, the coils push the train up 10 centimetres...": "As the magnets rush past, the coils push the train up ten centimetres...",
+  "April 21st, 2015.": "April twenty-first, twenty fifteen.",
+  "603 km/h.": "six hundred and three kilometres an hour."
+ }
+}
+</script>
+<script id="timings" type="application/json">
+{
+ "duration": 59.263,
+ "audio": "build/maglev/voice_cut.wav",
+ "phrases": [
+  {
+   "text": "Two magnets...",
+   "sentence": 0,
+   "start": 0.1,
+   "end": 1.009,
+   "words": [
+    {
+     "w": "Two",
+     "t": 0.1
+    },
+    {
+     "w": "magnets...",
+     "t": 0.373
+    }
+   ]
+  },
+  {
+   "text": "pushing each other away.",
+   "sentence": 0,
+   "start": 1.191,
+   "end": 2.418,
+   "words": [
+    {
+     "w": "pushing",
+     "t": 1.191
+    },
+    {
+     "w": "each",
+     "t": 1.62
+    },
+    {
+     "w": "other",
+     "t": 1.866
+    },
+    {
+     "w": "away.",
+     "t": 2.173
+    }
+   ]
+  },
+  {
+   "text": "That's all it took to lift a train into the air, and make it the fastest train on Earth.",
+   "sentence": 1,
+   "start": 2.745,
+   "end": 7.409,
+   "words": [
+    {
+     "w": "That's",
+     "t": 2.745
+    },
+    {
+     "w": "all",
+     "t": 3.079
+    },
+    {
+     "w": "it",
+     "t": 3.28
+    },
+    {
+     "w": "took",
+     "t": 3.413
+    },
+    {
+     "w": "to",
+     "t": 3.68
+    },
+    {
+     "w": "lift",
+     "t": 3.814
+    },
+    {
+     "w": "a",
+     "t": 4.081
+    },
+    {
+     "w": "train",
+     "t": 4.147
+    },
+    {
+     "w": "into",
+     "t": 4.481
+    },
+    {
+     "w": "the",
+     "t": 4.748
+    },
+    {
+     "w": "air,",
+     "t": 4.948
+    },
+    {
+     "w": "and",
+     "t": 5.149
+    },
+    {
+     "w": "make",
+     "t": 5.54
+    },
+    {
+     "w": "it",
+     "t": 5.807
+    },
+    {
+     "w": "the",
+     "t": 5.94
+    },
+    {
+     "w": "fastest",
+     "t": 6.141
+    },
+    {
+     "w": "train",
+     "t": 6.608
+    },
+    {
+     "w": "on",
+     "t": 6.942
+    },
+    {
+     "w": "Earth.",
+     "t": 7.075
+    }
+   ]
+  },
+  {
+   "text": "How?",
+   "sentence": 2,
+   "start": 7.736,
+   "end": 8.036,
+   "words": [
+    {
+     "w": "How?",
+     "t": 7.736
+    }
+   ]
+  },
+  {
+   "text": "Let's take one apart.",
+   "sentence": 2,
+   "start": 8.218,
+   "end": 9.091,
+   "words": [
+    {
+     "w": "Let's",
+     "t": 8.218
+    },
+    {
+     "w": "take",
+     "t": 8.436
+    },
+    {
+     "w": "one",
+     "t": 8.655
+    },
+    {
+     "w": "apart.",
+     "t": 8.818
+    }
+   ]
+  },
+  {
+   "text": "1934.",
+   "sentence": 3,
+   "start": 9.418,
+   "end": 10.473,
+   "words": [
+    {
+     "w": "1934.",
+     "t": 9.418
+    }
+   ]
+  },
+  {
+   "text": "A German engineer, Hermann Kemper, patents a train with no wheels.",
+   "sentence": 3,
+   "start": 10.654,
+   "end": 14.664,
+   "words": [
+    {
+     "w": "A",
+     "t": 10.655
+    },
+    {
+     "w": "German",
+     "t": 10.724
+    },
+    {
+     "w": "engineer,",
+     "t": 11.141
+    },
+    {
+     "w": "Hermann",
+     "t": 11.824
+    },
+    {
+     "w": "Kemper,",
+     "t": 12.31
+    },
+    {
+     "w": "patents",
+     "t": 12.927
+    },
+    {
+     "w": "a",
+     "t": 13.413
+    },
+    {
+     "w": "train",
+     "t": 13.483
+    },
+    {
+     "w": "with",
+     "t": 13.83
+    },
+    {
+     "w": "no",
+     "t": 14.108
+    },
+    {
+     "w": "wheels.",
+     "t": 14.247
+    }
+   ]
+  },
+  {
+   "text": "Decades later, Japan builds its own.",
+   "sentence": 4,
+   "start": 14.991,
+   "end": 17.218,
+   "words": [
+    {
+     "w": "Decades",
+     "t": 14.991
+    },
+    {
+     "w": "later,",
+     "t": 15.482
+    },
+    {
+     "w": "Japan",
+     "t": 16.024
+    },
+    {
+     "w": "builds",
+     "t": 16.376
+    },
+    {
+     "w": "its",
+     "t": 16.797
+    },
+    {
+     "w": "own.",
+     "t": 17.007
+    }
+   ]
+  },
+  {
+   "text": "Under every car, superconducting magnets, cooled to -269 degrees.",
+   "sentence": 5,
+   "start": 17.545,
+   "end": 22.864,
+   "words": [
+    {
+     "w": "Under",
+     "t": 17.545
+    },
+    {
+     "w": "every",
+     "t": 18.007
+    },
+    {
+     "w": "car,",
+     "t": 18.468
+    },
+    {
+     "w": "superconducting",
+     "t": 18.836
+    },
+    {
+     "w": "magnets,",
+     "t": 20.401
+    },
+    {
+     "w": "cooled",
+     "t": 21.047
+    },
+    {
+     "w": "to",
+     "t": 21.601
+    },
+    {
+     "w": "-269",
+     "t": 21.785
+    },
+    {
+     "w": "degrees.",
+     "t": 22.218
+    }
+   ]
+  },
+  {
+   "text": "In the walls of the track, figure-eight coils.",
+   "sentence": 6,
+   "start": 23.191,
+   "end": 25.473,
+   "words": [
+    {
+     "w": "In",
+     "t": 23.191
+    },
+    {
+     "w": "the",
+     "t": 23.309
+    },
+    {
+     "w": "walls",
+     "t": 23.486
+    },
+    {
+     "w": "of",
+     "t": 23.782
+    },
+    {
+     "w": "the",
+     "t": 23.9
+    },
+    {
+     "w": "track,",
+     "t": 24.077
+    },
+    {
+     "w": "figure-eight",
+     "t": 24.527
+    },
+    {
+     "w": "coils.",
+     "t": 25.177
+    }
+   ]
+  },
+  {
+   "text": "As the magnets rush past, the coils push the train up 10 centimetres...",
+   "sentence": 6,
+   "start": 25.654,
+   "end": 29.654,
+   "words": [
+    {
+     "w": "As",
+     "t": 25.654
+    },
+    {
+     "w": "the",
+     "t": 25.79
+    },
+    {
+     "w": "magnets",
+     "t": 25.994
+    },
+    {
+     "w": "rush",
+     "t": 26.469
+    },
+    {
+     "w": "past,",
+     "t": 26.74
+    },
+    {
+     "w": "the",
+     "t": 27.012
+    },
+    {
+     "w": "coils",
+     "t": 27.406
+    },
+    {
+     "w": "push",
+     "t": 27.746
+    },
+    {
+     "w": "the",
+     "t": 28.017
+    },
+    {
+     "w": "train",
+     "t": 28.221
+    },
+    {
+     "w": "up",
+     "t": 28.56
+    },
+    {
+     "w": "10",
+     "t": 28.696
+    },
+    {
+     "w": "centimetres...",
+     "t": 28.908
+    }
+   ]
+  },
+  {
+   "text": "and hold it in the centre.",
+   "sentence": 6,
+   "start": 29.836,
+   "end": 30.973,
+   "words": [
+    {
+     "w": "and",
+     "t": 29.836
+    },
+    {
+     "w": "hold",
+     "t": 30.007
+    },
+    {
+     "w": "it",
+     "t": 30.234
+    },
+    {
+     "w": "in",
+     "t": 30.348
+    },
+    {
+     "w": "the",
+     "t": 30.461
+    },
+    {
+     "w": "centre.",
+     "t": 30.632
+    }
+   ]
+  },
+  {
+   "text": "And there's no engine on board.",
+   "sentence": 7,
+   "start": 31.3,
+   "end": 32.627,
+   "words": [
+    {
+     "w": "And",
+     "t": 31.3
+    },
+    {
+     "w": "there's",
+     "t": 31.466
+    },
+    {
+     "w": "no",
+     "t": 31.798
+    },
+    {
+     "w": "engine",
+     "t": 31.908
+    },
+    {
+     "w": "on",
+     "t": 32.24
+    },
+    {
+     "w": "board.",
+     "t": 32.351
+    }
+   ]
+  },
+  {
+   "text": "The track is the motor.",
+   "sentence": 7,
+   "start": 32.809,
+   "end": 34.091,
+   "words": [
+    {
+     "w": "The",
+     "t": 32.809
+    },
+    {
+     "w": "track",
+     "t": 33.023
+    },
+    {
+     "w": "is",
+     "t": 33.379
+    },
+    {
+     "w": "the",
+     "t": 33.521
+    },
+    {
+     "w": "motor.",
+     "t": 33.735
+    }
+   ]
+  },
+  {
+   "text": "Its coils flip north and south, pulling the train from the front, pushing it from behind.",
+   "sentence": 7,
+   "start": 34.273,
+   "end": 38.982,
+   "words": [
+    {
+     "w": "Its",
+     "t": 34.273
+    },
+    {
+     "w": "coils",
+     "t": 34.454
+    },
+    {
+     "w": "flip",
+     "t": 34.755
+    },
+    {
+     "w": "north",
+     "t": 34.996
+    },
+    {
+     "w": "and",
+     "t": 35.298
+    },
+    {
+     "w": "south,",
+     "t": 35.479
+    },
+    {
+     "w": "pulling",
+     "t": 35.78
+    },
+    {
+     "w": "the",
+     "t": 36.403
+    },
+    {
+     "w": "train",
+     "t": 36.583
+    },
+    {
+     "w": "from",
+     "t": 36.885
+    },
+    {
+     "w": "the",
+     "t": 37.126
+    },
+    {
+     "w": "front,",
+     "t": 37.307
+    },
+    {
+     "w": "pushing",
+     "t": 37.609
+    },
+    {
+     "w": "it",
+     "t": 38.258
+    },
+    {
+     "w": "from",
+     "t": 38.379
+    },
+    {
+     "w": "behind.",
+     "t": 38.62
+    }
+   ]
+  },
+  {
+   "text": "But here's the surprise.",
+   "sentence": 8,
+   "start": 39.891,
+   "end": 41.1,
+   "words": [
+    {
+     "w": "But",
+     "t": 39.891
+    },
+    {
+     "w": "here's",
+     "t": 40.082
+    },
+    {
+     "w": "the",
+     "t": 40.4
+    },
+    {
+     "w": "surprise.",
+     "t": 40.591
+    }
+   ]
+  },
+  {
+   "text": "This train has wheels.",
+   "sentence": 8,
+   "start": 41.282,
+   "end": 42.536,
+   "words": [
+    {
+     "w": "This",
+     "t": 41.282
+    },
+    {
+     "w": "train",
+     "t": 41.561
+    },
+    {
+     "w": "has",
+     "t": 41.909
+    },
+    {
+     "w": "wheels.",
+     "t": 42.118
+    }
+   ]
+  },
+  {
+   "text": "Rubber tyres.",
+   "sentence": 8,
+   "start": 42.718,
+   "end": 43.682,
+   "words": [
+    {
+     "w": "Rubber",
+     "t": 42.718
+    },
+    {
+     "w": "tyres.",
+     "t": 43.244
+    }
+   ]
+  },
+  {
+   "text": "Until it's fast enough, it can't float at all.",
+   "sentence": 8,
+   "start": 43.864,
+   "end": 46.1,
+   "words": [
+    {
+     "w": "Until",
+     "t": 43.864
+    },
+    {
+     "w": "it's",
+     "t": 44.192
+    },
+    {
+     "w": "fast",
+     "t": 44.39
+    },
+    {
+     "w": "enough,",
+     "t": 44.653
+    },
+    {
+     "w": "it",
+     "t": 45.048
+    },
+    {
+     "w": "can't",
+     "t": 45.179
+    },
+    {
+     "w": "float",
+     "t": 45.442
+    },
+    {
+     "w": "at",
+     "t": 45.771
+    },
+    {
+     "w": "all.",
+     "t": 45.903
+    }
+   ]
+  },
+  {
+   "text": "It rolls, then lifts off, like a plane.",
+   "sentence": 8,
+   "start": 46.282,
+   "end": 48.909,
+   "words": [
+    {
+     "w": "It",
+     "t": 46.282
+    },
+    {
+     "w": "rolls,",
+     "t": 46.439
+    },
+    {
+     "w": "then",
+     "t": 46.833
+    },
+    {
+     "w": "lifts",
+     "t": 47.32
+    },
+    {
+     "w": "off,",
+     "t": 47.713
+    },
+    {
+     "w": "like",
+     "t": 47.949
+    },
+    {
+     "w": "a",
+     "t": 48.437
+    },
+    {
+     "w": "plane.",
+     "t": 48.516
+    }
+   ]
+  },
+  {
+   "text": "April 21st, 2015.",
+   "sentence": 9,
+   "start": 49.236,
+   "end": 51.118,
+   "words": [
+    {
+     "w": "April",
+     "t": 49.236
+    },
+    {
+     "w": "21st,",
+     "t": 49.811
+    },
+    {
+     "w": "2015.",
+     "t": 50.4
+    }
+   ]
+  },
+  {
+   "text": "Yamanashi, Japan.",
+   "sentence": 9,
+   "start": 51.3,
+   "end": 52.382,
+   "words": [
+    {
+     "w": "Yamanashi,",
+     "t": 51.3
+    },
+    {
+     "w": "Japan.",
+     "t": 51.995
+    }
+   ]
+  },
+  {
+   "text": "603 km/h.",
+   "sentence": 9,
+   "start": 52.564,
+   "end": 54.673,
+   "words": [
+    {
+     "w": "603",
+     "t": 52.564
+    },
+    {
+     "w": "km/h.",
+     "t": 53.85
+    }
+   ]
+  },
+  {
+   "text": "All from two magnets...",
+   "sentence": 10,
+   "start": 55.0,
+   "end": 56.354,
+   "words": [
+    {
+     "w": "All",
+     "t": 55.0
+    },
+    {
+     "w": "from",
+     "t": 55.239
+    },
+    {
+     "w": "two",
+     "t": 55.558
+    },
+    {
+     "w": "magnets...",
+     "t": 55.797
+    }
+   ]
+  },
+  {
+   "text": "that refuse to touch.",
+   "sentence": 10,
+   "start": 56.536,
+   "end": 57.773,
+   "words": [
+    {
+     "w": "that",
+     "t": 56.536
+    },
+    {
+     "w": "refuse",
+     "t": 56.827
+    },
+    {
+     "w": "to",
+     "t": 57.264
+    },
+    {
+     "w": "touch.",
+     "t": 57.409
+    }
+   ]
+  }
+ ],
+ "beat": {
+  "bpm": 96.0,
+  "t0": 0.045,
+  "err_ms": 82
+ }
+}
+</script>
+<style>
+  html, body { margin: 0; background: #050608; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  #world { position: absolute; inset: 0; }
+  #gl { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+  #capShade { position: absolute; left: 0; right: 0; top: 1240px; height: 680px;
+    background: linear-gradient(to bottom, rgba(5,6,8,0) 0%, rgba(5,6,8,.42) 45%, rgba(5,6,8,.62) 100%); }
+  #captions { position: absolute; left: 60px; width: 840px; top: 1300px; height: 210px; }
+  .page { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center;
+    justify-content: center; text-align: center; opacity: 0; }
+  .w { display: inline-block; font-weight: 800; font-size: 70px; line-height: 1.22; color: #F3EEE4;
+    margin: 0 10px; opacity: 0; letter-spacing: -.5px;
+    text-shadow: 0 6px 22px rgba(0,0,0,.65), 0 0 3px rgba(0,0,0,.9); }
+  svg text { font-weight: 800; }
+  .guide { position: absolute; background: rgba(255,0,80,.25); pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <svg id="world" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+    <defs id="defs">
+      <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1A20"/><stop offset=".6" stop-color="#0E2A33"/><stop offset="1" stop-color="#07090C"/></linearGradient>
+      <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050A12"/><stop offset="1" stop-color="#14303A"/></linearGradient>
+      <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A2228"/><stop offset="1" stop-color="#0A0E11"/></linearGradient>
+      <linearGradient id="sunset" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B1240"/><stop offset=".45" stop-color="#B8336A"/><stop offset=".75" stop-color="#FF8A3D"/><stop offset="1" stop-color="#FFC46B"/></linearGradient>
+      <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE29A"/><stop offset="1" stop-color="#D9A02B"/></linearGradient>
+      <radialGradient id="vig" cx=".5" cy=".45" r=".72"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".7"/></radialGradient>
+      <radialGradient id="leak"><stop offset="0" stop-color="#FF9A4A" stop-opacity=".35"/><stop offset="1" stop-color="#FF9A4A" stop-opacity="0"/></radialGradient>
+      <radialGradient id="redGlow"><stop offset="0" stop-color="#FF3B3B" stop-opacity=".8"/><stop offset="1" stop-color="#FF3B3B" stop-opacity="0"/></radialGradient>
+      <radialGradient id="blueGlow"><stop offset="0" stop-color="#3B7BFF" stop-opacity=".8"/><stop offset="1" stop-color="#3B7BFF" stop-opacity="0"/></radialGradient>
+      <filter id="sepia"><feColorMatrix type="matrix" values=".39 .77 .19 0 0  .35 .69 .17 0 0  .27 .53 .13 0 0  0 0 0 1 0"/></filter>
+      <filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+      <filter id="blur20"><feGaussianBlur stdDeviation="20"/></filter>
+      <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    </defs>
+    <rect id="bgRect" width="1080" height="1920" fill="url(#bgG)" opacity="0"/>
+    <g id="cam"></g>
+    <g id="labels"></g>
+    <rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+        <rect y="0" width="1080" height="70" fill="#000"/>
+    <rect y="1850" width="1080" height="70" fill="#000"/>
+    <g id="front"></g>
+    <rect id="flash" width="1080" height="1920" fill="#fff" opacity="0"/>
+  </svg>
+  <div id="capShade"></div>
+  <div id="captions"></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script type="importmap">{"imports":{"three":"./vendor/three186/build/three.module.js","three/addons/":"./vendor/three186/examples/jsm/"}}</script>
+<script type="module">
+import { MaglevWorld } from './lib/maglev3d.js';
+(async function () {
+const CFG = JSON.parse(document.getElementById('config').textContent);
+const TIM = JSON.parse(document.getElementById('timings').textContent);
+const C = CFG.palette, FONT = CFG.font;
+const NS = 'http://www.w3.org/2000/svg';
+const DUR = TIM.duration;
+const SFX = [];
+const $ = id => document.getElementById(id);
+window.BEAT = TIM.beat || null;
+const BEAT = window.BEAT;
+const snapT = t => { if (!BEAT) return t; const g = 30 / BEAT.bpm; return Math.max(0, BEAT.t0 + Math.ceil((t - .08 - BEAT.t0) / g) * g); };
+const FREE = new Set(['tick', 'wave', 'dip', 'shimmer', 'siren', 'type']);
+const sfx = (type, t, gain = 1, extra = {}) => SFX.push(Object.assign({ type, t: +Math.max(0, FREE.has(type) ? t : snapT(t)).toFixed(3), gain }, extra));
+const hit = t => sfx('hit', t, .8);
+
+await document.fonts.load(`700 80px ${FONT}`, 'Maglev'); await document.fonts.load(`800 80px Inter`, 'Maglev'); await document.fonts.load(`500 40px "Courier 10 Pitch"`, 'Maglev');
+document.body.style.fontFamily = FONT;
+
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function text(parent, x, y, str, size, fill, anchor = 'middle', extra = {}) { const t = el('text', Object.assign({ x, y, 'font-size': size, fill, 'text-anchor': anchor, 'font-family': FONT, 'dominant-baseline': 'central' }, extra), parent); t.textContent = str; return t; }
+
+// ---------------------------------------------------------------- timing
+const sentences = CFG.sentences.map((s, si) => { const ph = TIM.phrases.filter(p => p.sentence === si); return Object.assign({}, s, { ph, words: ph.flatMap(p => p.words) }); });
+const sStart = si => sentences[si].ph[0].start;
+const sEnd = si => si + 1 < sentences.length ? sStart(si + 1) : DUR;
+const pS = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].start;
+const pE = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].end;
+const wT = (si, k) => { const w = sentences[si].words; return w[Math.max(0, Math.min(k, w.length - 1))].t; };
+const wIdx = (si, j, k = 0) => sentences[si].ph.slice(0, j).reduce((a, p) => a + p.words.length, 0) + k;
+const lastW = si => wT(si, sentences[si].words.length - 1);
+
+const tl = gsap.timeline({ paused: true });
+tl.to({}, { duration: DUR }, 0);
+const hide = e => tl.set(e, { opacity: 0 }, 0);
+const show = (e, t, d = .5) => { hide(e); tl.to(e, { opacity: 1, duration: d, ease: 'power1.out' }, t); };
+const fadeOut = (e, t, d = .5) => tl.to(e, { opacity: 0, duration: d, ease: 'power1.in' }, t);
+function stamp(e, t, o = {}) { t = snapT(t); tl.set(e, { opacity: 0, scale: 2.2, transformOrigin: o.origin || '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: .28, ease: 'power4.out' }, t); sfx('thud', t + .2, .8); }
+function counter(tEl, from, to, t, d, fmt, ticks = 14) { const o = { v: from }; tEl.textContent = fmt(from); tl.to(o, { v: to, duration: d, ease: 'power2.out', onUpdate: () => tEl.textContent = fmt(o.v) }, t); for (let k = 0; k < ticks; k++) sfx('tick', t + d * (1 - Math.sqrt(1 - k / ticks)), .5); }
+const flash = (t, a = .35) => { tl.set($('flash'), { opacity: a }, t); tl.to($('flash'), { opacity: 0, duration: .5 }, t + .03); };
+// typewriter line: reveals left to right with a key click per step
+let clipN = 0;
+function typeLine(parent, x, y, str, size, fill, t, d = .9, anchor = 'start') {
+  const id = 'tw' + (clipN++), cp = el('clipPath', { id }, $('defs')); const r = el('rect', { x: anchor === 'middle' ? 0 : x - 4, y: y - size, width: 0, height: size * 2 }, cp);
+  const g = el('g', { 'clip-path': `url(#${id})` }, parent); const tx = text(g, x, y, str, size, fill, anchor, { 'letter-spacing': 3 });
+  const w = tx.getBBox().width + 12, x0 = anchor === 'middle' ? x - w / 2 : x - 4; r.setAttribute('x', x0);
+  const o = { w: 0 }; tl.to(o, { w, duration: d, ease: 'steps(' + Math.max(6, str.length) + ')', onUpdate: () => r.setAttribute('width', o.w) }, t);
+  for (let k = 0; k < Math.min(12, str.length); k++) sfx('type', t + k * d / Math.min(12, str.length), .5);
+  return g;
+}
+// lower-third location card: thin orange line + typewriter text
+function lowerThird(parent, line1, line2, t) {
+  const g = el('g', {}, parent);
+  const bar = el('rect', { x: 80, y: 300, width: 0, height: 5, fill: C.accent }, g);
+  tl.to(bar, { attr: { width: 120 }, duration: .4, ease: 'power2.out' }, t);
+  typeLine(g, 84, 352, line1, 46, '#F3EEE4', t + .2, .8);
+  if (line2) typeLine(g, 84, 418, line2, 40, C.accent, t + .9, .5);
+  return g;
+}
+
+// ---------------------------------------------------------------- camera (Ken Burns)
+const CAM = { s: 1, x: 0, y: 0, r: 0 };
+const CUTS = sentences.map((s, si) => sStart(si) - .05).concat([DUR]);
+// a camera drift must finish before the next scene's camSet, or two tweens fight and the frame shakes
+const camTo = (t, v, d, ease = 'sine.inOut') => { const nx = CUTS.find(c => c > t + .02) ?? DUR; const dd = Math.max(.05, Math.min(d, nx - .08 - t)); return tl.to(CAM, Object.assign({ duration: dd, ease }, v), t); };
+const camSet = (t, v) => tl.set(CAM, v, t);
+const scene = name => { const g = el('g', { id: 'sc_' + name }, $('cam')); hide(g); return g; };
+
+// ================================================================= 3D MAGLEV + SCENES
+const W = new MaglevWorld($('gl')), ST = W.ST;
+const v3 = (t, o) => tl.set(ST, o, Math.max(0, t));
+const c3 = (t, cam) => tl.set(ST.cam, cam, Math.max(0, t));
+const m3 = (t, cam, d, ease = 'sine.inOut') => { const nx = CUTS.find(c => c > t + .02) ?? DUR; const dd = Math.max(.05, Math.min(d, nx - .08 - t)); return tl.to(ST.cam, Object.assign({ duration: dd, ease }, cam), Math.max(0, t)); };
+const go3 = (t, o, d, ease = 'power2.inOut') => tl.to(ST, Object.assign({ duration: d, ease }, o), Math.max(0, t));
+function pill(parent, cx, cy, str, size, fg = '#FFFFFF', bg = '#12161A', pad = 40) { const g = el('g', {}, parent), tx = text(g, cx, cy, str, size, fg, 'middle', { 'letter-spacing': 1.5 }); const w = tx.getBBox().width + pad * 2; g.insertBefore(el('rect', { x: cx - w / 2, y: cy - size * .9, width: w, height: size * 1.8, rx: size * .9, fill: bg, opacity: .92 }), tx); return g; }
+function pop(e, t, d = .35) { tl.set(e, { opacity: 0, scale: .6, transformOrigin: '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: d, ease: 'back.out(2)' }, Math.max(0, t)); sfx('pop', t, .45); }
+function slam(e, t) { tl.set(e, { opacity: 0, scale: 2.4, transformOrigin: '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: .26, ease: 'power4.out' }, Math.max(0, t)); sfx('thud', t + .18, .8); }
+const overlay = si => { const g = el('g', {}, $('front')); tl.set(g, { opacity: 0 }, 0); tl.set(g, { opacity: 1 }, Math.max(0, sStart(si) - .05)); tl.set(g, { opacity: 0 }, sEnd(si) - .03); return g; };
+const live = e => { for (let n = e; n && n.style; n = n.parentNode) { if (n.id === 'stage') break; if (n.style.opacity !== '' && +n.style.opacity < .01) return false; } return true; };
+const wordIdx = (si, word) => sentences[si].words.findIndex(w => w.w.toLowerCase().replace(/[^a-z0-9-]/g, '').startsWith(word));
+const wAt = (si, word, fb = 0) => { const k = wordIdx(si, word); return k >= 0 ? wT(si, k) : sStart(si) + fb; };
+// a location / date tag: dark pill, accent rule, typed in
+function tag(o, a, b, t, row = 0) { const y = 330 + row * 92; const g = el('g', {}, o); const p1 = pill(g, 0, 0, a, 50, '#FFFFFF', C.ink, 34); const bb = p1.getBBox(); p1.setAttribute('transform', `translate(${80 + bb.width / 2} ${y})`); pop(p1, t); if (b) { const p2 = pill(g, 0, 0, b, 36, C.ink, '#FFFFFF', 26); const b2 = p2.getBBox(); p2.setAttribute('transform', `translate(${80 + b2.width / 2} ${y + 86})`); pop(p2, t + .35); } return g; }
+const STUDIO = { mode: 1, xray: 0, explode: 0, bodyLift: 0, ghost: 0, gwY: 0, gwLen: 42, cutNear: 0, f8: 0, prop: 0, forces: 0, pushPull: 0, cold: 0, sweep: 0, shake: 0, streak: 0, speed: 0, aperture: .00002, exposure: .9 };
+
+// ---- callouts: a dot on a 3D feature, a leader and a label box that follows it every frame
+const CALL = [];
+function callout(parent, name, label, t, side = 1, dy = -150, col = '#12161A') {
+  const g = el('g', {}, parent); const line = el('polyline', { fill: 'none', stroke: '#FFFFFF', 'stroke-width': 4, opacity: .95 }, g);
+  const dot = el('circle', { r: 9, fill: C.accent, stroke: '#fff', 'stroke-width': 4 }, g);
+  const box = el('rect', { rx: 14, fill: col, opacity: .92 }, g); const tx = text(g, 0, 0, label, 38, '#FFFFFF', 'start', { 'letter-spacing': 1 });
+  tl.set(g, { opacity: 0 }, 0); tl.to(g, { opacity: 1, duration: .3 }, Math.max(0, t)); sfx('pop', t, .35);
+  CALL.push({ g, name, side, dy, line, dot, box, tx }); return g;
+}
+function placeCallouts() {
+  CALL.forEach(c => { if (!live(c.g)) return; const [x, y] = W.screen(c.name); const w = c.tx.getComputedTextLength() + 36;
+    const ly = Math.max(300, Math.min(1180, y + c.dy)), bx = c.side > 0 ? Math.min(940 - w, Math.max(60, x + 40)) : Math.max(60, Math.min(940 - w, x - 40 - w)), end = c.side > 0 ? bx : bx + w;
+    c.line.setAttribute('points', `${x.toFixed(1)},${y.toFixed(1)} ${end.toFixed(1)},${ly.toFixed(1)}`); c.dot.setAttribute('cx', x.toFixed(1)); c.dot.setAttribute('cy', y.toFixed(1));
+    c.box.setAttribute('x', bx); c.box.setAttribute('y', ly - 32); c.box.setAttribute('width', w); c.box.setAttribute('height', 64); c.tx.setAttribute('x', bx + 18); c.tx.setAttribute('y', ly + 1); });
+}
+// ---- exploded-view labels (the hero bogie), shown in time windows
+const EXW = []; let EXL = null;
+function explodedLabels(t0, t1, only) { EXW.push([t0, t1, only]); }
+function placeExploded(t) {
+  if (!EXL) { EXL = W.explodedLabels().map(() => { const g = el('g', { opacity: 0 }, $('labels')); const line = el('polyline', { fill: 'none', stroke: '#12161A', 'stroke-width': 3.5 }, g); const dot = el('circle', { r: 8, fill: C.accent, stroke: '#fff', 'stroke-width': 3 }, g); const bg = el('rect', { rx: 12, fill: '#12161A', opacity: .9 }, g); const tx = text(g, 0, 0, '', 36, '#FFFFFF', 'start'); return { g, line, dot, bg, tx }; }); }
+  const win = EXW.find(([a, b]) => t >= a && t < b); const L = W.explodedLabels();
+  if (!win) { EXL.forEach(l => l.g.setAttribute('opacity', 0)); return; }
+  const fade = Math.min(1, (t - win[0]) / .35, (win[1] - t) / .2);
+  const pts = L.map((p, i) => ({ p, l: EXL[i], ly: p.y, on: (!win[2] || win[2].includes(p.label)) && p.z < 1 ? Math.max(0, Math.min(1, (p.u - .85) / .15)) : 0 }));
+  [-1, 1].forEach(side => { const col = pts.filter(q => q.p.side === side && q.on > 0).sort((a, b) => a.p.y - b.p.y); for (let i = 1; i < col.length; i++) col[i].ly = Math.max(col[i].ly, col[i - 1].ly + 74); for (let i = col.length - 2; i >= 0; i--) if (col[i].ly > col[i + 1].ly - 74) col[i].ly = col[i + 1].ly - 74; });
+  pts.forEach(({ p, l, ly, on }) => { on *= fade; if (l.tx.textContent !== p.label) l.tx.textContent = p.label;
+    ly = Math.max(290, Math.min(1190, ly)); const bw = l.tx.getComputedTextLength() + 32, bx = p.side > 0 ? 940 - bw : 60, end = p.side > 0 ? bx : bx + bw;
+    l.line.setAttribute('points', `${p.x.toFixed(1)},${p.y.toFixed(1)} ${(end + (p.side > 0 ? -34 : 34)).toFixed(1)},${ly.toFixed(1)} ${end},${ly.toFixed(1)}`); l.dot.setAttribute('cx', p.x.toFixed(1)); l.dot.setAttribute('cy', p.y.toFixed(1));
+    l.tx.setAttribute('x', bx + 16); l.tx.setAttribute('y', ly + 1); l.bg.setAttribute('x', bx); l.bg.setAttribute('y', ly - 30); l.bg.setAttribute('width', bw); l.bg.setAttribute('height', 60); l.g.setAttribute('opacity', on.toFixed(3)); });
+}
+// ---- a dimension mark between two world points (the 10 cm lift)
+const DIMS = [];
+function dimension(parent, a, b, label, t) { const g = el('g', {}, parent); const l1 = el('line', { stroke: '#FFB238', 'stroke-width': 4 }, g), l2 = el('line', { stroke: '#FFB238', 'stroke-width': 4, 'stroke-dasharray': '10 8' }, g), ar = el('line', { stroke: '#FFB238', 'stroke-width': 5 }, g); const p = pill(g, 0, 0, label, 40, '#12161A', '#FFB238', 26); tl.set(g, { opacity: 0 }, 0); tl.to(g, { opacity: 1, duration: .3 }, t); DIMS.push({ g, a, b, l1, l2, ar, p }); }
+function placeDims() { DIMS.forEach(d => { if (!live(d.g)) return; const A = W.studio.project(d.a()), B = W.studio.project(d.b()); const x0 = A[0] - 150, x1 = A[0] + 150; d.l1.setAttribute('x1', x0); d.l1.setAttribute('x2', x1); d.l1.setAttribute('y1', A[1]); d.l1.setAttribute('y2', A[1]); d.l2.setAttribute('x1', x0); d.l2.setAttribute('x2', x1); d.l2.setAttribute('y1', B[1]); d.l2.setAttribute('y2', B[1]); d.ar.setAttribute('x1', x1 + 20); d.ar.setAttribute('x2', x1 + 20); d.ar.setAttribute('y1', A[1]); d.ar.setAttribute('y2', B[1]); d.p.setAttribute('transform', `translate(${x1 + 130} ${(A[1] + B[1]) / 2})`); }); }
+
+const scenes = {
+  magnets(si, L) {
+    v3(0, { mode: 0, magY: 6.2, field: 0, magBob: 0, exposure: .95, aperture: .00005 });
+    c3(0, { px: 9, py: 3.2, pz: 17.8, tx: 0, ty: 2.0, tz: 0, fov: 22 }); m3(.05, { px: 7.6, py: 2.9, pz: 15, ty: 1.95 }, sEnd(si) - .1);
+    go3(.05, { magY: 1.95 }, .75, 'power2.in'); go3(.8, { magY: 2.25 }, .9, 'back.out(4)'); tl.set(ST, { magBob: 1 }, 1.6);
+    go3(.72, { field: 1 }, .7, 'power2.out'); sfx('shimmer', .72, .6); sfx('whoosh', .75, .5);
+    // hook card, frame 0 to ~3 s
+    const h = el('g', {}, $('front')); const hs = { 'font-family': 'Inter', 'letter-spacing': -2, stroke: '#FFFFFF', 'stroke-width': 10, 'paint-order': 'stroke', 'stroke-linejoin': 'round' }; const a = text(h, 540, 318, L.hook1, 112, C.ink, 'middle', hs); const b = text(h, 540, 440, L.hook2, 112, '#1C7FD6', 'middle', hs);
+    tl.set(a, { opacity: 1 }, 0); slam(b, wT(si, 0) + .55); tl.to(h, { opacity: 0, duration: .3 }, Math.max(3.0, sStart(si + 1) + .5));
+  },
+  lift(si, L) {
+    const T0 = sStart(si);
+    flash(T0 - .02, .5); sfx('whoosh', T0 - .1, .7);
+    v3(T0 - .05, Object.assign({}, STUDIO, { lev: 0, wheels: 1, dist: 0 }));
+    c3(T0 - .05, { px: 30, py: 2.2, pz: 9, tx: 8, ty: 2.8, tz: 0, fov: 30 }); m3(T0, { px: 25, py: 3.6, pz: 15, tx: 6, ty: 2.6 }, sEnd(si) - T0);
+    go3(T0 + .5, { lev: 1, wheels: 0 }, 1.8); go3(T0 + .4, { f8: .7 }, .8); go3(T0 + 2.4, { f8: 0 }, 1.2);
+    v3(T0 - .05, { sweep: 0 }); go3(T0 + .2, { sweep: 1 }, sEnd(si) - T0 - .3, 'sine.inOut');
+    const o = overlay(si); const f = pill(o, 540, 360, L.fast, 58, '#FFFFFF', C.ink, 40); pop(f, wAt(si, 'fastest', 2));
+  },
+  apart(si) {
+    const T0 = sStart(si);
+    v3(T0 - .05, Object.assign({}, STUDIO, { lev: 1, wheels: 1, aperture: .00001 }));
+    c3(T0 - .05, { px: 16, py: 3.8, pz: 15, tx: 0, ty: 1.7, tz: 0, fov: 30 }); m3(T0, { px: 12, py: 9, pz: 14, ty: 1.6, tz: .2 }, sEnd(si) - T0 + .3, 'power2.inOut');
+    go3(T0 + .05, { ghost: .9 }, .5); go3(T0 + .15, { bodyLift: 1 }, .9); go3(T0 + .1, { gwY: -3.4 }, .9, 'power2.in');
+    go3(pS(si, 1) - .1, { explode: 1 }, Math.max(1, sEnd(si) - pS(si, 1) - .1), 'power2.inOut');
+    sfx('whoosh', T0, .5); sfx('whoosh', pS(si, 1), .6);
+    explodedLabels(pS(si, 1) + .55, sEnd(si) - .03);
+  },
+  patent(si, L) {
+    const T0 = sStart(si);
+    flash(T0 - .02, .3); v3(T0 - .05, { mode: 2, exposure: .92, aperture: .00004, sweep: 0 });
+    c3(T0 - .05, { px: .55, py: 5.6, pz: 2.0, tx: .05, ty: 0, tz: .15, fov: 30 }); m3(T0, { px: .3, py: 4.4, pz: 1.5 }, sEnd(si) - T0);
+    const o = overlay(si); const y = pill(o, 540, 360, L.year, 96, '#FFFFFF', C.ink, 50); slam(y, wT(si, 0));
+    const who = pill(o, 540, 1150, L.who, 46, C.ink, '#FFFFFF', 30); pop(who, wAt(si, 'hermann', 1.2));
+    const st = el('g', { transform: 'rotate(-9 540 760)' }, o); el('rect', { x: 290, y: 690, width: 500, height: 140, rx: 10, fill: 'none', stroke: C.red, 'stroke-width': 10 }, st); text(st, 540, 762, L.stamp, 76, C.red, 'middle', { 'letter-spacing': 6 });
+    stamp(st, wAt(si, 'wheels', 2) - .1);
+  },
+  japan(si, L) {
+    const T0 = sStart(si);
+    flash(T0 - .02, .3); v3(T0 - .05, Object.assign({}, STUDIO, { lev: 1, wheels: 0, gwLen: 60 }));
+    c3(T0 - .05, { px: 44, py: 12, pz: 10, tx: 4, ty: 2, tz: 0, fov: 26 }); m3(T0, { px: 40, py: 4.5, pz: 18, tx: 8, ty: 2.5 }, sEnd(si) - T0 + .2);
+    go3(T0, { dist: 6 }, sEnd(si) - T0, 'none'); go3(T0 + .1, { sweep: 1 }, sEnd(si) - T0, 'sine.inOut');
+    const o = overlay(si); tag(o, L.place, L.what, T0 + .25);
+  },
+  scm(si) {
+    const T0 = sStart(si);
+    v3(T0 - .05, Object.assign({}, STUDIO, { lev: 1, wheels: 0, ghost: .88, gwY: -3.4, aperture: .00004 }));
+    c3(T0 - .05, { px: 8, py: 2.8, pz: 11, tx: 0, ty: 1.4, tz: 1.6, fov: 30 }); m3(T0, { px: 6.5, py: 2.4, pz: 9, ty: 1.6, tz: 1.8 }, sEnd(si) - T0);
+    go3(T0 + .5, { explode: .62 }, 1.6, 'power2.inOut'); go3(wAt(si, 'cooled', 2), { cold: 1 }, 1.4, 'power1.out');
+    sfx('whoosh', T0 + .5, .5);
+    explodedLabels(T0 + 1.7, sEnd(si) - .03, ['Superconducting magnet', 'Cryostat shell', 'NbTi coils', 'Liquid-helium tank']);
+    const o = overlay(si); const g = el('g', {}, o); const tx = text(g, 540, 380, '+20°C', 120, '#FFFFFF', 'middle', { 'font-family': 'Inter', stroke: 'rgba(0,0,0,.35)', 'stroke-width': 6, 'paint-order': 'stroke' });
+    show(g, wAt(si, 'cooled', 2) - .1, .2); counter(tx, 20, -269, wAt(si, 'cooled', 2), 1.6, v => (v > 0 ? '+' : '−') + Math.abs(Math.round(v)) + '°C');
+    tl.set(tx, { attr: { fill: '#9FDBFF' } }, wAt(si, 'cooled', 2) + 1.6);
+  },
+  coils(si) {
+    const T0 = sStart(si), t1 = pS(si, 1), t2 = pS(si, 2);
+    v3(T0 - .05, Object.assign({}, STUDIO, { lev: 1, wheels: 0, aperture: .00003 }));
+    c3(T0 - .05, { px: 7.5, py: .95, pz: .8, tx: 0, ty: .78, tz: 1.6, fov: 34 }); m3(T0, { px: 5.6, py: .92, pz: .9 }, t1 - T0);
+    go3(wAt(si, 'figure', 1), { f8: 1 }, .5, 'power2.out'); sfx('shimmer', wAt(si, 'figure', 1), .5);
+    const o = overlay(si); const c1 = callout(o, 'wallF8', 'FIGURE-8 COILS', wAt(si, 'figure', 1) + .1, -1, -260); tl.to(c1, { opacity: 0, duration: .2 }, t1 - .1);
+    // front view down the guideway: the magnets rush past, the coils push the train up 10 cm and centre it
+    c3(t1 - .05, { px: 30, py: .95, pz: 0, tx: 0, ty: 1.25, tz: 0, fov: 15 }); m3(t1, { px: 27, py: .95 }, sEnd(si) - t1);
+    v3(t1 - .05, { lev: 0, wheels: 1, f8: 1 }); go3(t1, { dist: 34 }, sEnd(si) - t1, 'none');
+    const tp = wAt(si, 'push', 1.2); go3(tp, { lev: 1, wheels: 0 }, 1.3); go3(tp, { forces: .5 }, .5); sfx('whoosh', tp, .4);
+    const up = pill(o, 540, 360, '↑ 10 CM', 64, '#12161A', '#FFB238', 40); pop(up, wAt(si, 'centimetres', 2.2) - .1); tl.to(up, { opacity: 0, duration: .2 }, t2 - .05);
+    go3(t2, { forces: 1 }, .5); const c2 = pill(o, 540, 360, 'HELD IN THE CENTRE', 50, '#12161A', '#4FD8FF', 32); pop(c2, t2 + .2);
+  },
+  motor(si) {
+    const T0 = sStart(si), t1 = pS(si, 1), t2 = pS(si, 2);
+    v3(T0 - .05, Object.assign({}, STUDIO, { lev: 1, wheels: 0, ghost: .88, aperture: .00002 }));
+    c3(T0 - .05, { px: 24, py: 14, pz: -12, tx: 1, ty: 1.6, tz: 0, fov: 28 }); m3(T0, { px: 21, py: 12.5, pz: -11.5 }, t1 - T0);
+    const o = overlay(si); const ne = pill(o, 540, 360, 'NO ENGINE ON BOARD', 54, '#FFFFFF', C.ink, 36); pop(ne, wAt(si, 'engine', .8)); tl.to(ne, { opacity: 0, duration: .2 }, t1 - .1);
+    // the track is the motor: near wall cut away, the far wall's propulsion coils run a north/south wave
+    v3(t1 - .05, { ghost: 0, cutNear: 1, xray: 1, prop: 0 }); c3(t1 - .05, { px: 5.5, py: 1.1, pz: -4, tx: -.5, ty: .8, tz: -1.4, fov: 34 }); m3(t1, { px: 4.6, py: 1.0, pz: -3.6 }, sEnd(si) - t1);
+    go3(t1 + .1, { prop: 1 }, .5, 'power2.out'); sfx('shimmer', t1 + .1, .5);
+    const tm = pill(o, 540, 360, 'THE TRACK IS THE MOTOR', 54, '#FFFFFF', C.ink, 36); pop(tm, t1 + .25); tl.to(tm, { opacity: 0, duration: .2 }, t2 - .1);
+    go3(t2, { dist: 12, propPhase: 0 }, sEnd(si) - t2 - .9, 'power1.inOut');
+    const pf = pill(o, 270, 470, '← PULL', 56, '#FFFFFF', C.blue, 34); pop(pf, wAt(si, 'pulling', 1)); const pb = pill(o, 750, 470, '← PUSH', 56, '#FFFFFF', C.red, 34); pop(pb, wAt(si, 'pushing', 2.2));
+    sfx('whoosh', wAt(si, 'pulling', 1), .4);
+    const ns = pill(o, 540, 360, 'N  ·  S', 64, '#FFFFFF', C.ink, 40); pop(ns, wAt(si, 'north', .5)); tl.to(ns, { opacity: 0, duration: .2 }, wAt(si, 'pulling', 1) - .1);
+  },
+  wheels(si) {
+    const T0 = sStart(si), t1 = pS(si, 1), t2 = pS(si, 2), t3 = pS(si, 3), t4 = pS(si, 4);
+    v3(T0 - .05, Object.assign({}, STUDIO, { lev: 1, wheels: 0, aperture: .00003 }));
+    c3(T0 - .05, { px: 30, py: .95, pz: 0, tx: 0, ty: 1.25, tz: 0, fov: 15 }); m3(T0, { px: 26 }, t1 - T0);
+    // the wheels drop: macro
+    c3(t1 - .05, { px: 4.6, py: .62, pz: -1.05, tx: 1.2, ty: .45, tz: -.62, fov: 30 }); m3(t1, { px: 3.7, py: .55, pz: -1.0 }, t3 - t1);
+    v3(t1 - .05, { aperture: .00012 }); go3(t1 + .1, { lev: 0, wheels: 1 }, 1.0, 'power2.inOut'); sfx('thud', t1 + 1.0, .6);
+    const o = overlay(si); const big = pill(o, 540, 360, 'IT HAS WHEELS', 64, '#FFFFFF', C.red, 40); slam(big, wAt(si, 'wheels', 1.2));
+    tl.to(big, { opacity: 0, duration: .2 }, t2 - .1); const rt = callout(o, 'wheel', 'RUBBER TYRES', t2 + .05, 1, -220); tl.to(rt, { opacity: 0, duration: .2 }, t3 - .1);
+    // rolling, faster and faster, then lift-off
+    c3(t3 - .05, { px: 5.8, py: .75, pz: -1.0, tx: 1.2, ty: .6, tz: -.62, fov: 34 }); v3(t3 - .05, { aperture: .00006 });
+    go3(t3, { dist: 70 }, sEnd(si) - t3, 'power2.in'); m3(t3, { px: 5.0, py: .85 }, sEnd(si) - t3);
+    const tl1 = wAt(si, 'lifts', 1); go3(tl1, { lev: 1, wheels: 0 }, 1.2, 'power2.inOut'); sfx('whoosh', tl1, .6);
+  },
+  record(si, L) {
+    const T0 = sStart(si), t2 = pS(si, 2);
+    flash(T0 - .02, .5); sfx('whoosh', T0 - .1, .9);
+    v3(T0 - .05, Object.assign({}, STUDIO, { mode: 3, lev: 1, wheels: 0, gwLen: 170, dist: 0, streak: 1, speed: 1, shake: .015, aperture: .00001, exposure: .8 }));
+    c3(T0 - .05, { px: 34, py: 15, pz: 30, tx: 2, ty: 10, tz: 0, fov: 30 }); m3(T0, { px: 26, py: 12.5, pz: 30, tx: 0, ty: 10 }, sEnd(si) - T0);
+    go3(T0, { dist: 75 * (sEnd(si) - T0) }, sEnd(si) - T0, 'none');
+    const o = overlay(si); tag(o, L.date, null, T0 + .1); tag(o, L.place, null, wAt(si, 'yamanashi', 1.8), 1);
+    const g = el('g', {}, o); el('rect', { x: 250, y: 500, width: 580, height: 330, rx: 40, fill: '#12161A', opacity: .88 }, g); const n = text(g, 540, 640, '0', 190, '#FFFFFF', 'middle', { 'font-family': 'Inter', 'letter-spacing': -6 }); text(g, 540, 775, 'KM/H', 64, C.accent, 'middle', { 'letter-spacing': 10 });
+    show(g, t2 - .5, .2); counter(n, 0, 603, t2 - .45, 1.0, v => String(Math.round(v)), 18); sfx('hit', t2 + .55, .9);
+  },
+  callback(si) {
+    const T0 = sStart(si);
+    flash(T0 - .02, .35); v3(T0 - .05, { mode: 0, magY: 2.25, field: 1, magBob: 1, exposure: .95, aperture: .00005, sweep: 0, shake: 0, streak: 0 });
+    c3(T0 - .05, { px: 4.6, py: 2.3, pz: 9, tx: 0, ty: 1.7, tz: 0, fov: 22 }); m3(T0, { px: 9, py: 3.2, pz: 17.8, ty: 2.0 }, sEnd(si) - T0 + .5, 'sine.inOut');
+    sfx('shimmer', T0 + .2, .5);
+  },
+};
+const THREE = await import('three');
+sentences.forEach((s, si) => scenes[s.scene](si, s.labels || {}));
+
+// ---------------------------------------------------------------- captions
+const capBox = $('captions'), MAXCH = 26;
+TIM.phrases.forEach((ph, pi) => {
+  const pages = []; let cur = [];
+  ph.words.forEach(w => { const len = cur.reduce((a, b) => a + b.w.length + 1, 0); if (cur.length && len + w.w.length > MAXCH) { pages.push(cur); cur = []; } cur.push(w); });
+  if (cur.length) pages.push(cur);
+  const next = pi + 1 < TIM.phrases.length ? TIM.phrases[pi + 1].start : DUR;
+  pages.forEach((words, k) => {
+    const page = document.createElement('div'); page.className = 'page'; capBox.appendChild(page);
+    const tOut = k + 1 < pages.length ? pages[k + 1][0].t - .2 : (pi + 1 < TIM.phrases.length ? Math.min(next - .06, ph.end + .9) : DUR + 1);
+    tl.set(page, { opacity: 1 }, Math.max(0, words[0].t - .08));
+    words.forEach((w, j) => {
+      const s = document.createElement('span'); s.className = 'w'; s.textContent = w.w; page.appendChild(s);
+      tl.set(s, { opacity: 0, y: 20, scale: .9 }, 0);
+      tl.to(s, { opacity: 1, y: 0, scale: 1, duration: .25, ease: 'power2.out' }, Math.max(0, w.t - .06));
+      tl.set(s, { color: C.accent }, Math.max(0, w.t - .06));
+      tl.set(s, { color: '#F3EEE4' }, j + 1 < words.length ? words[j + 1].t - .06 : tOut);
+    });
+    tl.to(page, { opacity: 0, duration: .15 }, tOut);
+  });
+});
+
+// ---------------------------------------------------------------- time-only render
+function render(t) { W.render(t); placeCallouts(); placeExploded(t); placeDims(); }
+tl.seek(DUR, false); tl.seek(0, false); render(0);
+window.seek = t => { tl.seek(Math.max(0, Math.min(DUR, t)), false); render(t); };
+window.DURATION = DUR; window.SFX = SFX.sort((a, b) => a.t - b.t); window.CONFIG = CFG; window.READY = true;
+const q = new URLSearchParams(location.search);
+if (q.has('guides')) { const st = $('stage'); [['0', '0', '1080px', '230px'], ['0', '1520px', '1080px', '400px'], ['940px', '0', '140px', '1920px']].forEach(([l, tp, w, h]) => { const d = document.createElement('div'); d.className = 'guide'; Object.assign(d.style, { left: l, top: tp, width: w, height: h }); st.appendChild(d); }); }
+if (q.has('t')) window.seek(parseFloat(q.get('t')));
+
+})();
+</script>
+</body>
+</html>

@@ -144,7 +144,8 @@ def main():
     if len(coarse) == want:
         segs = coarse
     else:
-        segs = align(islands(x, -45, 0.08, 0.03), [sum(word_weight(w) for w in p["text"].split()) for p in phrases])
+        say = cfg.get("say", {})   # how numbers are spoken, so "603 km/h." weighs like "six hundred and three kilometres an hour"
+        segs = align(islands(x, -45, 0.08, 0.03), [sum(word_weight(w) for w in say.get(p["text"], p["text"]).split()) for p in phrases])
     print(f"Found {len(segs)} phrases (want {want})")
 
     # --- tighten pauses -----------------------------------------------------
@@ -164,6 +165,8 @@ def main():
         if i < len(segs) - 1:
             orig_gap = segs[i + 1][0] - b
             gap = min(orig_gap, g_out if sent_end[i] else g_in)
+            hold = cfg["sentences"][phrases[i]["sentence"]].get("holdAfter") if sent_end[i] else None
+            if hold: gap = float(hold)               # a deliberate silence beat (e.g. before the twist)
             gap = max(gap - 2 * pad, 0.02)
             pieces.append(np.zeros(int(gap * SR), np.float32)); cursor += gap
     pieces.append(np.zeros(int(tail * SR), np.float32))

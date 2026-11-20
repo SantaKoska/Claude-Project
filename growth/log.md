@@ -21,3 +21,9 @@ Numbers from the owner's Instagram and YouTube insights. Add a row after every p
 2. First frame: bright, high contrast, something moving, and a big hook line on screen from frame 0 to about 3 s. No fade from black, no dark empty frame, no caption gaps in the first 3 s.
 3. Keep it 35-45 s. 56 s is too long for a cold audience.
 4. Give every script one share reason: a Kerala/India link, or a moment people want to show a friend. (Still no CTA lines.)
+
+## Tools learned (20 Nov 2026)
+
+- **Speech-to-text works offline here**: Whisper base.en as ONNX via `sherpa-onnx` (pip) with the model from the k2-fsa/sherpa-onnx GitHub releases (Hugging Face is blocked). Use it to confirm a voice MP3 matches the script before syncing.
+- `tools/sync.py` now takes `"say"` (how numbers are spoken, so "603 km/h." is weighed like "six hundred and three kilometres an hour") and per-sentence `"holdAfter"` (a deliberate silence beat before the twist).
+- The English maglev voice ran 68.7 s raw; tempo 1.1 + tightened pauses brought it to 59 s. For 35-45 s, English scripts need ~95 words at Roger's laid-back pace, not 125.
