@@ -128,6 +128,17 @@ def music(dur, cfg):
 
 # --------------------------------------------------------------- sfx
 def sfx_sig(kind):
+    if kind == "hiss":                     # cold-gas jet: a sharp burst of bright noise that tails off
+        t = tt(1.1); n = rng.standard_normal(len(t)); n = n - onepole_lp(n, 1800)
+        return onepole_lp(n, 9000) * np.minimum(t / .015, 1) * np.exp(-t * 2.6) * 1.6, 0.1
+    if kind == "click":                    # solenoid valve snapping open
+        t = tt(0.06)
+        return (np.sin(2 * np.pi * 3400 * t) * np.exp(-t * 260) + 0.6 * rng.standard_normal(len(t)) * np.exp(-t * 700)) * .9, 0
+    if kind == "hum":                      # ducted fans spinning up
+        t = tt(1.6); f = 90 + 260 * np.minimum(t / 1.0, 1)
+        sig = np.sin(2 * np.pi * np.cumsum(f) / SR) + .4 * np.sin(2 * np.pi * np.cumsum(f * 9) / SR)
+        air = onepole_lp(rng.standard_normal(len(t)), 1500) * .5
+        return (sig * .5 + air) * np.minimum(t / .3, 1) * np.minimum((1.6 - t) / .4, 1) * .8, 0
     if kind == "whoosh":
         d = 0.6; t = tt(d); u = t / d
         cut = 300 + 3800 * np.sin(np.pi * u) ** 2

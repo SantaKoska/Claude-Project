@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Roadster lab</title>
+<style>html,body{margin:0;background:#000;overflow:hidden}#stage{position:relative;width:1080px;height:1920px}canvas,svg{position:absolute;left:0;top:0}</style>
+<script type="importmap">{"imports":{"three":"./vendor/three186/build/three.module.js","three/addons/":"./vendor/three186/examples/jsm/"}}</script>
+</head><body><div id="stage"><canvas id="gl" width="1080" height="1920"></canvas></div>
+<script type="module">
+import { RoadsterWorld } from './lib/roadster3d.js';
+const W = window.W = new RoadsterWorld(document.getElementById('gl'));
+const D = JSON.parse(JSON.stringify(W.ST));
+window.shot = (o, t = 1) => { const S = W.ST; Object.assign(S, JSON.parse(JSON.stringify(D))); Object.keys(o).forEach(k => { if (k === 'cam') Object.assign(S.cam, o.cam); else S[k] = o[k]; }); W.render(t); };
+W.render(0); window.READY = true;
+</script></body></html>
