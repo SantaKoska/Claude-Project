@@ -74,3 +74,6 @@ Hashtag pool (pick 5): #KeralaHistory #Kerala #Malayalam #Malayali #MalayalamFac
 - YouTube hashtags: https://subscribr.ai/p/youtube-shorts-hashtags-virality , https://www.opus.pro/blog/maximize-your-views-choosing-the-right-hashtags-for-youtube-shorts , https://subscribr.ai/youtube-strategy/youtube-shorts-seo-guide
 - Meta Reel translation languages: https://www.indiatvnews.com/technology/news/instagram-expands-meta-ai-reel-translations-to-bengali-tamil-telugu-kannada-and-marathi-2026-01-17-1026257 , https://about.fb.com/news/2025/11/instagram-empowers-creators-to-go-global-with-local-voice-translations-and-fonts/embed/
 - GitHub: searched for posting-time and hashtag tools; found only scraping API lists (against Instagram's terms), nothing worth using.
+
+## Length limit (owner, 20 Nov 2026)
+Keep both the Instagram caption and the YouTube Shorts title to **100 characters or fewer**, hashtags included (an emoji counts as 2). Check with: `python3 -c "import sys;print(len(sys.argv[1].encode('utf-16-le'))//2)" '<text>'`

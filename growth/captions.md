@@ -86,6 +86,10 @@ Mechanical, automatic and quartz watches explained in 3D. A coiled spring, a bal
 
 ## 7. Munnar's vanished train: the 1924 flood (Video 12, Malayalam voice)
 
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram (93): `Munnar had a train. 1924 flood took it 🚂 മാഞ്ഞുപോയ തീവണ്ടി #Munnar #KeralaHistory #Malayalam`
+- YouTube Shorts title (94): `Munnar's lost train: 1924 flood 🚂 മൂന്നാറിലെ മാഞ്ഞുപോയ തീവണ്ടി #Munnar #KeralaHistory #Shorts`
+
 ### Instagram
 Munnar once had a train. One monsoon washed away the whole line, and it was never rebuilt. 🚂🌧️
 മൂന്നാറിൽ ഒരിക്കൽ ഒരു തീവണ്ടി ഓടിയിരുന്നു... 1924-ലെ മഴ അതിനെ ഒന്നാകെ കൊണ്ടുപോയി. ബാക്കിയായത് ഒരു പേര് മാത്രം: ടോപ്പ് സ്റ്റേഷൻ.
