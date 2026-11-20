@@ -855,8 +855,9 @@ const scenes = {
   name(si, L) {
     const T0 = sStart(si);
     v3(T0 - .05, { show: 1, mapFlood: 0, storm: 0, rain: 0, exposure: .9 });
-    c3(T0 - .05, { px: 40, py: 300, pz: -240, tx: 0, ty: 0, tz: 5, fov: 34 });
-    m3(T0, { px: 30, py: 250, pz: -200 }, sEnd(si) - T0);
+    c3(T0 - .05, { px: 22, py: 360, pz: 250, tx: 0, ty: 0, tz: 16, fov: 34 });
+    m3(T0, { px: 8, py: 320, pz: 220 }, sEnd(si) - T0);
+    mapLabels(si, pS(si, 1) + .4);
     go3(pS(si, 1), { mapFlood: 1 }, 2.0, 'power2.out'); sfx('wave', pS(si, 1), .7);
     flash(T0 - .02, .3);
     const o = overlay(si); const y = pill(o, 540, 420, '1099', 110, '#FFFFFF', '#14181D', 56); slam(y, wT(si, 1));
@@ -864,8 +865,9 @@ const scenes = {
   },
   y2018(si) {
     const T0 = sStart(si);
-    c3(T0 - .05, { px: -40, py: 250, pz: -210, tx: 0, ty: 0, tz: 5, fov: 34 });
-    m3(T0, { px: -30, py: 210, pz: -170 }, sEnd(si) - T0);
+    c3(T0 - .05, { px: -14, py: 335, pz: 235, tx: 0, ty: 0, tz: 16, fov: 34 });
+    m3(T0, { px: -2, py: 300, pz: 205 }, sEnd(si) - T0);
+    mapLabels(si, T0 + .9);
     tl.set(ST, { mapFlood: .15 }, T0 - .05); go3(T0 + .3, { mapFlood: 1 }, 1.8, 'power2.out'); sfx('wave', T0 + .3, .6);
     const o = overlay(si); const y = pill(o, 540, 420, '2018', 110, '#FFFFFF', '#2F55C8', 56); slam(y, wT(si, 0));
   },
@@ -904,12 +906,34 @@ TIM.phrases.forEach((ph, pi) => {
   });
 });
 
+// ---------------------------------------------------------------- map labels that follow the 3D map
+function ML() { return window.__ML || (window.__ML = []); }
+function mapLabels(si, tDist) {
+  const o = overlay(si), mk = (name, g, t) => { tl.set(g, { opacity: 0 }, 0); tl.to(g, { opacity: 1, duration: .35 }, t); ML().push({ name, g }); };
+  const L0 = F.mapLabels();
+  ['sea', 'Karnataka', 'Tamil Nadu'].forEach(n => { const g = el('g', {}, o); const big = n === 'sea'; text(g, 0, 0, L0[n].ml, big ? 40 : 34, big ? '#A9DCEC' : '#FFE6D2', 'middle', { 'letter-spacing': 2, 'font-style': big ? 'italic' : 'normal', opacity: .9, stroke: 'rgba(0,0,0,.25)', 'stroke-width': 3, 'paint-order': 'stroke' }); mk(n, g, sStart(si) + .15); });
+  F.affected.forEach((n, i) => { const g = pill(o, 0, 0, L0[n].ml, 38, '#FFFFFF', '#14181D', 22); mk(n, g, tDist + i * .12); });
+}
+function placeMapLabels() {
+  if (!ML().length || ST.show !== 1) return; const L = F.mapLabels();
+  const placed = [];
+  ML().forEach(m => {
+    const p = L[m.name]; if (!p) return; let x = p[0], y = p[1] - 6;
+    const off = x < 60 || x > 900 || y < 250 || y > 1500; m.g.style.visibility = off ? 'hidden' : 'visible'; if (off) return;
+    const w = m.g.getBBox().width / 2 + 10;
+    for (let k = 0; k < 6; k++) { const hit = placed.find(q => Math.abs(q.y - y) < 74 && Math.abs(q.x - x) < q.w + w); if (!hit) break; y = hit.y + (y >= hit.y ? 76 : -76); }
+    x = Math.max(w + 20, Math.min(920 - w, x)); placed.push({ x, y, w });
+    m.g.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)})`);
+  });
+}
+
 // ---------------------------------------------------------------- time-only render
 function render(t) {
   $('cam').setAttribute('transform', `translate(540 960) scale(${CAM.s}) rotate(${CAM.r}) translate(${-540 + CAM.x} ${-960 + CAM.y})`);
   $('leakC').setAttribute('cx', (900 + 140 * Math.sin(t * .23)).toFixed(1)); $('leakC').setAttribute('cy', (320 + 120 * Math.cos(t * .19)).toFixed(1));
   PPL.forEach(p => p.render(t, 0));
   F.render(t);
+  placeMapLabels();
 }
 tl.seek(DUR, false); tl.seek(0, false); render(0);
 window.seek = t => { tl.seek(Math.max(0, Math.min(DUR, t)), false); render(t); };

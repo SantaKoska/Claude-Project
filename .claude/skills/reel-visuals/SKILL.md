@@ -44,6 +44,14 @@ Build 5-8 depth layers (sky, sun, far hills, haze, mid, water, subject, foregrou
 - Turn off big blur filters (shadow, coast glow) once zoom > 2.2, or frames take minutes and the render times out.
 - To regenerate: `npm i mapshaper d3-geo` somewhere, then `NODE_PATH=<that>/node_modules node tools/mapgen.mjs`. Other states or district sets: filter `India-Districts-2011Census.shp` from datameet/maps (`Survey-of-India-Index-Maps/Boundaries`).
 
+### 3D maps (three.js), lesson from the flood reel (20 Nov 2026)
+
+The owner caught a 3D Kerala map that was upside down and mirrored (sea on the right): the camera sat on the north side (negative z) looking south. Rules:
+- Build map geometry with SVG x -> world x (east) and SVG y -> world z (south = +z); `rotateX(PI/2)` keeps the top face up. **Cameras always sit on the south side (positive z) and look north**, so north is up and the Arabian Sea is on the left.
+- Use the same palette as the 2D kit the owner liked (`map_lab.html`): dark teal sea (rough, low env reflection so there is no white glare), terracotta neighbouring states, green districts with thin white borders, Malayalam labels in dark pills that follow the 3D map (`F.mapLabels()` -> projected screen points, de-overlapped).
+- Frame the whole state; keep labels out of the caption zone; flood or highlight overlays need `side: DoubleSide` (a flat ShapeGeometry faces down after the rotation).
+- Before the full render, screenshot every map shot and check: sea on the left, Kasaragod at the top, Thiruvananthapuram at the bottom.
+
 ## 5. People (lib/people.js v2)
 
 - `p.S.reachN / reachF = { x, y, w }` - two-bone IK: the hand goes to a point in the parent's coordinates; `w` blends from the pose. Arm reach is about 180 units x scale (0.62 x height x S.s); keep targets inside it or the arm locks straight.
