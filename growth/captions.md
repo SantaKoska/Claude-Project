@@ -115,3 +115,13 @@ Munnar had a railway: first a monorail, then a narrow-gauge steam line carrying 
 
 ### YouTube description (optional, longer field)
 How a superconducting maglev floats, steers and moves, in 3D: superconducting magnets cooled to about -269 °C, figure-eight coils in the guideway walls that lift the train about 10 cm and keep it centred, and propulsion coils that make the track itself the motor. The twist: it still has rubber tyres for low speed. Record: 603 km/h, Yamanashi, Japan, 21 April 2015.
+
+## 9. The night the doorbell rang: Gardner Museum heist (Video 8, Malayalam voice)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram (93): `The doorbell rang. $500M of art vanished 🖼️ ആ രാത്രിയിലെ ബെൽ #ArtHeist #TrueCrime #Malayalam`
+- YouTube Shorts title (84): `Biggest art theft ever: 1990 Gardner heist 🖼️ കലാമോഷണം #ArtHeist #TrueCrime #Shorts`
+
+### YouTube description (optional, longer field)
+18 March 1990, Boston: two men dressed as police talked their way into the Isabella Stewart Gardner Museum, tied up the guards and took 13 works, including Rembrandt and Vermeer, worth about $500 million. A $10 million reward stands, and not one piece has come back. The empty frames still hang on the walls.
+ചരിത്രത്തിലെ ഏറ്റവും വലിയ കലാമോഷണത്തിന്റെ കഥ.
