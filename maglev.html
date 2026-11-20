@@ -1102,8 +1102,10 @@ const scene = name => { const g = el('g', { id: 'sc_' + name }, $('cam')); hide(
 // ================================================================= 3D MAGLEV + SCENES
 const W = new MaglevWorld($('gl')), ST = W.ST;
 const v3 = (t, o) => tl.set(ST, o, Math.max(0, t));
-const c3 = (t, cam) => tl.set(ST.cam, cam, Math.max(0, t));
-const m3 = (t, cam, d, ease = 'sine.inOut') => { const nx = CUTS.find(c => c > t + .02) ?? DUR; const dd = Math.max(.05, Math.min(d, nx - .08 - t)); return tl.to(ST.cam, Object.assign({ duration: dd, ease }, cam), Math.max(0, t)); };
+// a camera move must end before the next camera set (even inside a scene), or render workers that skip frames land on different values and the shot jitters
+const CAMTW = [];
+const c3 = (t, cam) => { t = Math.max(0, t); CAMTW.forEach(w => { const st = w.startTime(); if (st < t && st + w.duration() > t - .03) w.duration(Math.max(.05, t - .03 - st)); }); return tl.set(ST.cam, cam, t); };
+const m3 = (t, cam, d, ease = 'sine.inOut') => { const nx = CUTS.find(c => c > t + .02) ?? DUR; const dd = Math.max(.05, Math.min(d, nx - .08 - t)); tl.to(ST.cam, Object.assign({ duration: dd, ease }, cam), Math.max(0, t)); CAMTW.push(tl.recent()); return tl; };
 const go3 = (t, o, d, ease = 'power2.inOut') => tl.to(ST, Object.assign({ duration: d, ease }, o), Math.max(0, t));
 function pill(parent, cx, cy, str, size, fg = '#FFFFFF', bg = '#12161A', pad = 40) { const g = el('g', {}, parent), tx = text(g, cx, cy, str, size, fg, 'middle', { 'letter-spacing': 1.5 }); const w = tx.getBBox().width + pad * 2; g.insertBefore(el('rect', { x: cx - w / 2, y: cy - size * .9, width: w, height: size * 1.8, rx: size * .9, fill: bg, opacity: .92 }), tx); return g; }
 function pop(e, t, d = .35) { tl.set(e, { opacity: 0, scale: .6, transformOrigin: '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: d, ease: 'back.out(2)' }, Math.max(0, t)); sfx('pop', t, .45); }

@@ -27,3 +27,9 @@ Numbers from the owner's Instagram and YouTube insights. Add a row after every p
 - **Speech-to-text works offline here**: Whisper base.en as ONNX via `sherpa-onnx` (pip) with the model from the k2-fsa/sherpa-onnx GitHub releases (Hugging Face is blocked). Use it to confirm a voice MP3 matches the script before syncing.
 - `tools/sync.py` now takes `"say"` (how numbers are spoken, so "603 km/h." is weighed like "six hundred and three kilometres an hour") and per-sentence `"holdAfter"` (a deliberate silence beat before the twist).
 - The English maglev voice ran 68.7 s raw; tempo 1.1 + tightened pauses brought it to 59 s. For 35-45 s, English scripts need ~95 words at Roger's laid-back pace, not 125.
+
+## Render lesson: shaking shot from overlapping camera moves (maglev, 20 Nov 2026)
+- Symptom: in the maglev coils front shot every third frame jumped sideways (looked like shaking).
+- Cause: a camera move (`m3`) ran past the next camera set (`c3`) inside the same scene. The render splits frames across 3 workers that each skip ahead 3 frames, so one worker landed on the old move's value.
+- Fix: `c3` now shortens any earlier camera move so it ends before the set (`tl.recent()` gives the tween; `tl.to` returns the timeline, not the tween).
+- Check before every full render: seek the page in the 3-worker pattern and compare the state against sequential seeking (scratchpad `stride_all.js`); any mismatch means a frame will jitter.
