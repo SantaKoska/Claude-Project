@@ -3,31 +3,33 @@
 **Our way:** small cause -> giant effect in the first breath (a tank of air flips a car over five others), then how (October 2026, Texas, the upside-down ramp, suction fans, carbon-fibre air tanks, ten thrusters), a silence, the twist (nothing burns: no fuel, no flame, just air you refill), payoff (cleared five vehicles, nobody inside) and callback.
 **Emotion:** wonder, then "wait, it's only air?". **Share reason:** "SpaceX thrusters" sounds like rocket fire; the twist that it's compressed air is the line people send to a friend.
 **Hook card (0-3 s):** A TANK OF AIR. 5 CARS CLEARED.
-**Length:** about 100 words, aimed at 40-45 s at Roger's pace (log: ~95 words for 35-45 s).
+**Length:** about 98 words, aimed at 38-44 s at Roger's pace (log: ~95 words for 35-45 s).
 
 ## ElevenLabs paste block
 
 ```
 A tank of air... flipped a car over five others.
 
-October 2026, Texas. Tesla's new Roadster drives up a ramp... upside down.
+October 2026, Texas. Tesla's new Roadster climbs a ramp... upside down.
 
 How? Let's take it apart.
 
-Under the floor, fans suck the car onto the track, hard enough to hold it upside down.
+Under the floor, fans suck it to the track.
 
-Behind the seats, carbon-fibre tanks. Six hundred litres of air, squeezed to hundreds of times normal pressure.
+Behind the seats, carbon-fibre tanks of squeezed air.
 
-Around the body, ten thrusters. A valve snaps open, air blasts out, and the car is pushed the other way. Fire one corner... and it spins.
+Around the body, ten thrusters. A valve snaps open, air blasts out, the car moves the other way. Fire one corner... it spins.
 
 ...
 
-But here's the surprise. Nothing burns. No fuel, no flame. It's just air, and you fill it up again.
+The surprise? Nothing burns. No fuel. No flame. Just air.
 
 It cleared a Cybercab, a Cybertruck, a Semi, a Model Y and a Model 3. With no one inside.
 
 All from a tank of air.
 ```
+
+About 98 words, aimed at 38-44 s. On-screen text carries the numbers the voice drops: "600 L", "HOLDS IT UPSIDE DOWN", "HUNDREDS × AIR PRESSURE", "REFILLABLE".
 
 ## Line by line
 
@@ -37,10 +39,10 @@ All from a tank of air.
 | 2 | year, place | October 2026, Texas. The Roadster drives up a ramp, upside down. | Low 3/4: the car climbs an inverted curved ramp, hanging from it |
 | 3 | open loop | How? Let's take it apart. | Body turns to ghost, the chassis separates into labelled layers |
 | 4 | how: suction | Fans under the floor suck it to the track. | Cutaway of the floor: fan rotors spinning, airflow arrows pulling down to the surface |
-| 5 | how: storage | Carbon-fibre tanks, 600 litres, hundreds of times normal pressure. | Exploded tank: liner, carbon overwrap layers, end boss, valve; pressure gauge needle climbs |
+| 5 | how: storage | Carbon-fibre tanks of squeezed air (on screen: 600 L, hundreds × air pressure). | Exploded tank: liner, carbon overwrap layers, end boss, valve; pressure gauge needle climbs |
 | 6 | how: thrusters | Ten thrusters; a valve snaps open, air blasts out, push the other way; fire one corner, it spins. | Exploded thruster: solenoid, poppet valve, nozzle; a white jet, opposite push arrow; top view, one corner fires, the car rotates |
 | 7 | silence | ... | Hold: the car hanging mid-air, still, music drop |
-| 8 | twist | Nothing burns. No fuel, no flame. Just air you refill. | Jet turns clear (no flame), "NO FUEL · NO FLAME", a fill hose clicks onto the port |
+| 8 | twist | Nothing burns. No fuel. No flame. Just air. | Jet turns clear (no flame), "NO FUEL · NO FLAME", a fill hose clicks onto the port |
 | 9 | payoff | Cleared five vehicles, nobody inside. | Side tracking shot: the arc over five vehicle silhouettes, empty seat close-up |
 | 10 | callback | All from a tank of air. | Back to the tank in the studio, a last hiss |
 
@@ -60,7 +62,7 @@ All from a tank of air.
 
 - Several pages could not be opened from here (network blocks); facts above are from search summaries of those outlets. Re-check the key figures (10 thrusters, 600 litres, five vehicles) against TechCrunch or Electrek before posting.
 - **Gas:** Tesla says compressed air; MotorTrend and InsideEVs report nitrogen. The script says "air", which is what Tesla says.
-- **Pressure:** reports range from 5,500 psi (on the car's screen) to "up to 10,000 psi". Both are hundreds of times normal air pressure (about 375-680 times), so the script says "hundreds of times".
+- **Pressure:** reports range from 5,500 psi (on the car's screen) to "up to 10,000 psi". Both are hundreds of times normal air pressure (about 375-680 times), so the on-screen text says "hundreds × air pressure".
 - **Tank layout differs by source** (two tanks totalling 600 L, or 200 L behind the seats plus 400 L in place of the passenger seat on the single-seat "Rocket" trim). The script says "tanks behind the seats" only loosely; the visual shows tanks, not an exact layout.
 - **Thruster count by trim:** 10 thrusters is the "Rocket" trim; the "Thrust" trim has rear thrusters only. The demo car is the 10-thruster setup.
 - **0-60 figures conflict** (under 1 s, 0.81 s, under 0.59 s), so the script leaves them out.
