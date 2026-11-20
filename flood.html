@@ -919,6 +919,7 @@ function placeMapLabels() {
   const placed = [];
   ML().forEach(m => {
     const p = L[m.name]; if (!p) return; let x = p[0], y = p[1] - 6;
+    const live = e => e && (e.style.opacity === '' || +e.style.opacity > .01); if (!live(m.g) || !live(m.g.parentNode)) return;
     const off = x < 60 || x > 900 || y < 250 || y > 1500; m.g.style.visibility = off ? 'hidden' : 'visible'; if (off) return;
     const w = m.g.getBBox().width / 2 + 10;
     for (let k = 0; k < 6; k++) { const hit = placed.find(q => Math.abs(q.y - y) < 74 && Math.abs(q.x - x) < q.w + w); if (!hit) break; y = hit.y + (y >= hit.y ? 76 : -76); }
