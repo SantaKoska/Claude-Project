@@ -125,3 +125,13 @@ How a superconducting maglev floats, steers and moves, in 3D: superconducting ma
 ### YouTube description (optional, longer field)
 18 March 1990, Boston: two men dressed as police talked their way into the Isabella Stewart Gardner Museum, tied up the guards and took 13 works, including Rembrandt and Vermeer, worth about $500 million. A $10 million reward stands, and not one piece has come back. The empty frames still hang on the walls.
 ചരിത്രത്തിലെ ഏറ്റവും വലിയ കലാമോഷണത്തിന്റെ കഥ.
+
+## 10. A tank of air: how the 2026 Tesla Roadster flips (Video 14, English voice)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram (99): `A tank of air flipped a car over 5 others 💨 വായു കൊണ്ട് പറക്കുന്ന കാർ #Tesla #HowItWorks #Roadster`
+- YouTube Shorts title (77): `How the Tesla Roadster flips on air 💨 വായു മാത്രം #Tesla #HowItWorks #Shorts`
+
+### YouTube description (optional, longer field)
+At its October 2026 unveiling in Texas, Tesla's new Roadster drove up a ramp upside down and flipped over five vehicles. How it works, in 3D: suction fans in the floor hold it to the track, carbon-fibre tanks behind the seats store about 600 litres of compressed air, and ten cold-gas thrusters fire it out to push the car the other way. Nothing burns: no fuel, no flame, just air. Nobody was inside during the stunts. The car in the video is our own design; the inner parts of the tank and thrusters show how this kind of system works, not Tesla's own drawings.
+വായു മാത്രം ഉപയോഗിച്ച് പറക്കുന്ന കാറിന്റെ ഉൾഭാഗം, 3D-യിൽ.

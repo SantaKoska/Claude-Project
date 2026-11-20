@@ -33,3 +33,13 @@ Numbers from the owner's Instagram and YouTube insights. Add a row after every p
 - Cause: a camera move (`m3`) ran past the next camera set (`c3`) inside the same scene. The render splits frames across 3 workers that each skip ahead 3 frames, so one worker landed on the old move's value.
 - Fix: `c3` now shortens any earlier camera move so it ends before the set (`tl.recent()` gives the tween; `tl.to` returns the timeline, not the tween).
 - Check before every full render: seek the page in the 3-worker pattern and compare the state against sequential seeking (scratchpad `stride_all.js`); any mismatch means a frame will jitter.
+
+## Build lessons: Roadster thrusters reel (20 Nov 2026)
+- Owner's direction: not many different shots; one set, one event, seen from several angles. Built as one hangar (car pad, loop ramp, five clay vehicles, hero tank) and every scene is a camera move inside it.
+- Lofted bodies: check the triangle winding (a flipped index order shows the inside of the shell and looks like a hollow trough). Canvas textures are flipped (canvas y = (1 - v) * h).
+- Cut-away wheel arches: discard fragments in object space inside each arch circle, then close the hole with a dark half-cylinder liner.
+- A camera roll must be reset on every cut (c3 now defaults roll to 0), or it tilts every later shot.
+- Macro shots need a near plane close to the camera (near = distance × 0.06).
+- Cold-gas jets on a pale set: white mist disappears; a cyan-tinted plume that darkens along its length reads clearly. Keep the cone narrow (about 0.2 m at 1.6 m) or a close camera ends up inside it.
+- Anything parented to a hidden group disappears with it (the jets lived in the car's insides group).
+- In a 9:16 frame the horizontal field of view is only about 56 % of the vertical one: aim the target at the object itself, not beside it.
