@@ -209,7 +209,8 @@ def sfx_sig(kind):
 
 
 SFX_GAIN = {"whoosh": .10, "pop": .13, "tick": .05, "thud": .16, "chime": .10, "shimmer": .07, "fire": .09,
-            "ping": .10, "door": .10, "shutter": .13, "hit": .22, "coin": .12, "wave": .08, "siren": .07, "type": .06}
+            "ping": .10, "door": .10, "shutter": .13, "hit": .22, "coin": .12, "wave": .08, "siren": .07, "type": .06,
+            "hiss": .10, "click": .09, "hum": .06}
 
 
 def loudness(path):
