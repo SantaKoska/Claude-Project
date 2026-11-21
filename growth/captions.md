@@ -135,3 +135,13 @@ How a superconducting maglev floats, steers and moves, in 3D: superconducting ma
 ### YouTube description (optional, longer field)
 At its October 2026 unveiling in Texas, Tesla's new Roadster drove up a ramp upside down and flipped over five vehicles. How it works, in 3D: suction fans in the floor hold it to the track, carbon-fibre tanks behind the seats store about 600 litres of compressed air, and ten cold-gas thrusters fire it out to push the car the other way. Nothing burns: no fuel, no flame, just air. Nobody was inside during the stunts. The car in the video is our own design; the inner parts of the tank and thrusters show how this kind of system works, not Tesla's own drawings.
 വായു മാത്രം ഉപയോഗിച്ച് പറക്കുന്ന കാറിന്റെ ഉൾഭാഗം, 3D-യിൽ.
+
+## 11. The war that should have lifted gold: why gold is falling (Video 15, Malayalam voice)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram (99): `War, yet gold fell ₹8,840 in a week 📉 സ്വർണ്ണവില എന്തുകൊണ്ട് ഇടിഞ്ഞു? #GoldPrice #GoldRate #Kerala`
+- YouTube Shorts title (89): `Why gold price is falling now (Nov 2026) 📉 സ്വർണ്ണവില ഇടിവ് #GoldPrice #GoldRate #Shorts`
+
+### YouTube description (optional, longer field)
+Gold usually rises in a war. This time it fell: in Kerala, 22K dropped from about ₹1,00,920 to ₹92,080 a pavan between 14 and 20 November 2026, and the world price is about 36% below its January record. Why: the war pushed oil up, oil pushed US inflation up, markets now expect a US rate hike, savings pay 4-5% while gold pays nothing, and big investors moved to the dollar. Then AI shares crashed, and investors who had borrowed sold gold to cover losses, because it is the fastest thing to turn into cash. Not investment advice; rates change daily.
+യുദ്ധകാലത്ത് സ്വർണ്ണവില ഇടിഞ്ഞതിന്റെ കാരണം, ഒരു തുലാസിൽ.
