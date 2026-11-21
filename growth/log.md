@@ -43,3 +43,11 @@ Numbers from the owner's Instagram and YouTube insights. Add a row after every p
 - Cold-gas jets on a pale set: white mist disappears; a cyan-tinted plume that darkens along its length reads clearly. Keep the cone narrow (about 0.2 m at 1.6 m) or a close camera ends up inside it.
 - Anything parented to a hidden group disappears with it (the jets lived in the car's insides group).
 - In a 9:16 frame the horizontal field of view is only about 56 % of the vertical one: aim the target at the object itself, not beside it.
+
+## Build lessons: gold price reel (21 Nov 2026)
+- Economics topics still get one physical set: a jeweller's counter where a brass scale carries the story (each cause drops onto the right pan, the gold pan rises). A metaphor the viewer can watch beats a slideshow of charts.
+- Malayalam voice check without ASR: if the coarse speech islands (−40 dB, 0.25 s gaps) count exactly the script's phrases, the take matches line by line. 57.2 s raw -> 45.9 s at tempo 1.17 with tight gaps.
+- In 9:16 a wide object (a scale beam) only fits from a 3/4 angle (about 45-55° off its axis); straight-on the pans fall outside the frame.
+- Polished floors and clearcoat walls catch the key light as a white hot spot that blooms; roughness .34 on marble and a matte walnut wall fixed it.
+- Caption pages overlapped for a few frames: fade the old page out before the next phrase's first word (next start − 0.22 s).
+- A sound effect name must be in SFX_GAIN in tools/audio.py, or the mix fails after hours of rendering (the Roadster build lost its mix step this way).
