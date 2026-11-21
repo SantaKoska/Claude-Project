@@ -44,7 +44,7 @@
 | --- | --- | --- | --- | --- |
 | 1 | hook, small cause | ലോകത്ത് ഒരു യുദ്ധം നടക്കുന്നു... സാധാരണ, സ്വർണ്ണവില കുതിക്കേണ്ട സമയം. | There's a war in the world... normally, the time gold should shoot up. | Bright frame: a polished 22K gold bangle and coin stack on a jeweller's counter, slow push-in, light sweep; hook card |
 | 2 | giant effect | പക്ഷേ കേരളത്തിൽ, ഒരാഴ്ച കൊണ്ട്... ഒരു പവന് എണ്ണായിരത്തിലധികം രൂപ കുറഞ്ഞു! | But in Kerala, in one week... a pavan fell by more than ₹8,000! | Jeweller's rate board flips ₹1,00,920 → ₹92,080, a red arrow drops |
-| 3 | context | ഈ ജനുവരിയിൽ സ്വർണ്ണം ലോക റെക്കോർഡിലായിരുന്നു. ഇപ്പോൾ... മൂന്നിലൊന्न् താഴെ. | This January gold was at a world record. Now... a third lower. | A 3D gold-bar "chart": bars rise to the Jan 2026 peak ($5,589/oz), then a third of the stack slides away ($3,514) |
+| 3 | context | ഈ ജനുവരിയിൽ സ്വർണ്ണം ലോക റെക്കോർഡിലായിരുന്നു. ഇപ്പോൾ... മൂന്നിലൊന്ന് താഴെ. | This January gold was at a world record. Now... a third lower. | A 3D gold-bar "chart": bars rise to the Jan 2026 peak ($5,589/oz), then a third of the stack slides away ($3,514) |
 | 4 | open loop | എന്താണ് സംഭവിച്ചത്? | What happened? | Camera pulls back from the bar |
 | 5 | step 1 | യുദ്ധം വന്നപ്പോൾ, എണ്ണവില കത്തിക്കയറി. | When the war came, oil prices shot up. | Oil barrel / tanker, price tag climbs (Brent ~$112 in October) |
 | 6 | step 2 | എണ്ണ കൂടിയാൽ, എല്ലാത്തിനും വില കൂടും. അമേരിക്കയിൽ വിലക്കയറ്റം. | When oil rises, everything costs more. Inflation in America. | Chain reaction: barrel tips into a row of price tags (fuel, food, transport) |
