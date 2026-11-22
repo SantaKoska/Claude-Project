@@ -8,7 +8,7 @@ Every script uses the table-tennis pattern (see `.claude/skills/story-script/SKI
 small cause -> giant effect stated in the first breath, then how (year, place, person, problem, rising beats), a silence beat, one surprise twist, payoff and a callback to the hook.
 Example hook: "ഒരു പയ്യൻ ബസ് മാറിക്കയറി... ആ ഒരു തെറ്റ്, ലോകത്തിലെ രണ്ട് വൻശക്തികളെ വീണ്ടും അടുപ്പിച്ചു!"
 
-Exception: the **Kerala Yatra** travel series uses a calm narrator/navigator style instead (how we get there, what we see, why it matters, one tip), not the hook-twist pattern. Rules in `growth/kerala_yatra_series.md`.
+Exception: the **Kerala Yatra** travel series uses a calm narrator/navigator style instead (how we get there, what we see, why it matters, one tip), not the hook-twist pattern. Rules in the `kerala-yatra` skill (`.claude/skills/kerala-yatra/SKILL.md`): real satellite maps (NASA Blue Marble, Sentinel-2), India's official boundary (datameet, Survey of India), all 14 districts outlined, a traveller marker on a blue navigation line, photo pop-ups at each stop.
 
 ## Quality bar (owner, 19 Nov 2026)
 

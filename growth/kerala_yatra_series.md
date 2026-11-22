@@ -1,5 +1,7 @@
 # Kerala Yatra: series format (owner's direction, 22 Nov 2026)
 
+**The full, current rules (script, satellite map, navigation, pop-ups, data sources) live in the project skill `.claude/skills/kerala-yatra/SKILL.md`.** This file is the short summary.
+
 A travel-guide series: one district a day, all 14 districts of Kerala in road order, then the next state. **Not a vlog, and not the explainer reels' hook-twist pattern.** The voice is a calm narrator and navigator, in the spirit of a travel documentary: it tells us where we are, how we get to the next place, what we see there, why it matters, and one practical tip.
 
 ## Voice and script rules
