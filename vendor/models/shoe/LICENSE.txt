@@ -1,0 +1,3 @@
+MaterialsVariantsShoe by Shopify (2021), from KhronosGroup/glTF-Sample-Assets.
+License: CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Recoloured to dark leather and given studs in lib/football3d.js.

@@ -865,7 +865,7 @@ const camSet = (t, v) => tl.set(CAM, v, t);
 const scene = name => { const g = el('g', { id: 'sc_' + name }, $('cam')); hide(g); return g; };
 
 // ================================================================= 3D DESK + SCENES
-const W = new FootballWorld($('gl')), ST = W.ST;
+const W = new FootballWorld($('gl')), ST = W.ST; await W.load();
 const STTW = [];
 const v3 = (t, o) => { t = Math.max(0, t); STTW.forEach(([w, keys]) => { const st = w.startTime(); if (st < t && st + w.duration() > t - .03 && keys.some(k => k in o)) w.duration(Math.max(.05, t - .03 - st)); }); return tl.set(ST, o, t); };
 // a camera move must end before the next camera set (even inside a scene), or render workers that skip frames land on different values and the shot jitters
@@ -972,7 +972,7 @@ const scenes = {
     go3(T0 + .05, { unroll: .75 }, tb - T0 + .4, 'power1.out'); sfx('hiss', T0 + .05, .4);
     const o = overlay(si); const bf = pill(o, 470, 380, 'BAREFOOT', 84, C.ink, C.accent, 46); slam(bf, wT(si, 3)); tl.to(bf, { opacity: 0, duration: .12 }, tb - .1);
     // b) London 1948: the old leather ball beside the bandages
-    flash(tb, .12); c3(tb, { px: -.02, py: .3, pz: .5, tx: -.24, ty: .06, tz: -.03, fov: 36 }); m3(tb + .02, { px: -.1, py: .26, pz: .44 }, sEnd(si) - tb);
+    flash(tb, .12); c3(tb, { px: -.06, py: .34, pz: .5, tx: -.3, ty: .08, tz: -.1, fov: 36 }); m3(tb + .02, { px: -.12, py: .3, pz: .46 }, sEnd(si) - tb);
     go3(tb, { ballSpin: .5, unroll: 1 }, sEnd(si) - tb, 'sine.inOut'); go3(tb + .3, { sweep: 1 }, 2, 'sine.inOut');
     tag(o, 'LONDON OLYMPICS 1948', 'INDIA v FRANCE', tb + .05);
     callout(o, 'strip', 'BANDAGED FEET', wAt(si, 'bandaged', 3), 1, -40, C.ink);
@@ -1008,7 +1008,7 @@ const scenes = {
     go3(wAt(si, 'weren', .3) - .1, { bootsOut: 1 }, .7, 'power2.in'); sfx('whoosh', wAt(si, 'weren', .3), .7);
     const o = overlay(si); const tw = pill(o, 470, 360, 'THE TWIST', 62, C.ink, C.accent, 40); pop(tw, T0 + .05); const nr = pill(o, 470, 1150, 'BOOTS WEREN’T THE REASON', 54, '#FFFFFF', C.red, 36); slam(nr, wAt(si, 'reason', 1)); [tw, nr].forEach(e => tl.to(e, { opacity: 0, duration: .12 }, tb - .1));
     // b) their star defender: back to the 1948 ball and the bandages
-    flash(tb, .12); v3(tb, { bootsOut: 1, ballSpin: .5 }); c3(tb, { px: -.12, py: .2, pz: .3, tx: -.32, ty: .09, tz: -.12, fov: 34 }); m3(tb + .02, { px: -.18, py: .18, pz: .25 }, sEnd(si) - tb); go3(tb, { ballSpin: .9 }, sEnd(si) - tb, 'none');
+    flash(tb, .12); v3(tb, { bootsOut: 1, ballSpin: .5 }); c3(tb, { px: -.08, py: .26, pz: .42, tx: -.34, ty: .1, tz: -.14, fov: 34 }); m3(tb + .02, { px: -.14, py: .24, pz: .36 }, sEnd(si) - tb); go3(tb, { ballSpin: .9 }, sEnd(si) - tb, 'none');
     tag(o, 'SAILEN MANNA', 'INDIA’S STAR DEFENDER', tb + .05); tl.to(o.lastChild, { opacity: 0, duration: .15 }, tc - .1);
     // c) the quote
     v3(tc, { exposure: .78 }); go3(tc, { sweep: 1 }, 2, 'sine.inOut');

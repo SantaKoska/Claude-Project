@@ -64,6 +64,7 @@ Numbers from the owner's Instagram and YouTube insights. Add a row after every p
 - English voice (Roger): 104 words ran 51.9 s raw; tempo 1.1 + tight gaps gave 43.1 s. Offline Whisper (sherpa-onnx) confirmed the take word for word before syncing.
 - The barefoot myth works as the twist: set up "the story everyone tells" with an object (the boots), hold the silence, then remove the object.
 - A period football reads as real when built as a cube-sphere (BoxGeometry spherified) with three strips per face and the radius pushed in along strip seams; alternate the strip direction per face.
-- Boots: a single bent loft looked like a pipe. A lasted foot (flat sole, toe box, instep) plus a separate elliptical ankle shaft, overlapping, reads as a boot.
+- Owner feedback: procedural boots and the period 18-panel ball "don't look like boots or football". Viewers recognise an object by its familiar silhouette, not period accuracy: the panelled ball and a real scanned shoe with studs fixed it. For any everyday object with a complex shape (shoes, hands, food), use a licensed scan (Khronos glTF-Sample-Assets, CC0/CC BY) before building it in code, and show the owner a still before the 2-hour render.
+- GLB on a file:// page: fetch() is refused; load the bytes with XMLHttpRequest and GLTFLoader.parseAsync. The vendored three needed GLTFLoader.js + SkeletonUtils.js from three@0.186.0.
 - A row of name blocks in 9:16: shoot along the row from its front-left end (about 40° off its axis), not straight on.
 - Metallic brass plates with an emissive glow bloom into an unreadable blob; use a less metallic plate (metalness .35) and a small glow.

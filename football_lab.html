@@ -6,7 +6,7 @@
 <script type="module">
 import { FootballWorld } from './lib/football3d.js';
 await document.fonts.load('800 80px Inter','A'); await document.fonts.load('bold 80px "DejaVu Serif"','A');
-const W = window.W = new FootballWorld(document.getElementById('gl'));
+const W = window.W = new FootballWorld(document.getElementById('gl')); await W.load();
 const D = JSON.parse(JSON.stringify(W.ST));
 window.shot = (o, t = 1) => { const S = W.ST; Object.assign(S, JSON.parse(JSON.stringify(D))); Object.keys(o).forEach(k => { if (k === 'cam') Object.assign(S.cam, o.cam); else S[k] = o[k]; }); W.render(t); };
 W.render(0); window.READY = true;

@@ -9,10 +9,10 @@ The cricket reel's grammar (one physical set, many angles) on a football federat
 - **The 1950 entry card** "WORLD CUP · BRAZIL 1950 · QUALIFIED NATION: INDIA": a rubber stamp slams **WITHDRAWN** (hook, callback).
 - **A desk globe** with Natural Earth coastlines (world-atlas 2.0.2, now with Brazil, Myanmar, Indonesia, Philippines, France): Brazil lights up as host.
 - **Four brass name blocks**: BURMA, INDONESIA, PHILIPPINES topple one after another; INDIA stands and catches the light.
-- **An 18-panel laced leather ball** of the period, built as a cube-sphere with three strips per face, real seam grooves, stitch rows and a rawhide lace slot.
+- **A panelled leather football** (12 dark pentagons, 20 tan hexagons, pressed seams). The owner found the period 18-panel ball read as a volleyball; the panelled pattern reads as "football" instantly.
 - **Cotton bandage rolls**, one unrolling across the desk (the barefoot 1948 team).
 - **A sea-passage ticket** "INDIA → RIO DE JANEIRO": stamped **DECLINED**.
-- **A pair of 1950 leather boots** (lasted foot + ankle shaft, leather studs, brass eyelets, laces): drop onto the desk for "the story everyone tells", slide off for "boots weren't the reason".
+- **A pair of leather football boots**: a real scanned shoe (Khronos glTF sample "Materials Variants Shoe", Shopify, CC BY 4.0) recoloured to dark leather with cream laces and a dark sole, plus studs. They drop onto the desk for "the story everyone tells", slide off for "boots weren't the reason".
 - **The 1954 entry form** (Switzerland): stamped **NOT ACCEPTED**.
 
 No faces, no FIFA or Olympic marks. The Manna quote is a text card credited "as reported".
@@ -22,7 +22,7 @@ No faces, no FIFA or Olympic marks. The Manna quote is a text card credited "as 
 | search | result | decision |
 | --- | --- | --- |
 | football / soccer ball three.js procedural | only modern 32-panel ball demos, mostly unlicensed | Built in code: period 18-panel ball (cube-sphere, displaced seams) |
-| boot / shoe 3D procedural three.js | no licensed procedural shoe | Built in code: lofted foot + elliptical shaft |
+| boot / shoe 3D model | procedural boots were rejected by the owner ("doesn't look like boots"); Poly Haven blocked; Khronos glTF-Sample-Assets reachable | **Used** MaterialsVariantsShoe (CC BY 4.0, credit in the description), recoloured + studs |
 | globe | world-atlas 2.0.2 (ISC, Natural Earth public domain) already in use | Extended `lib/maps/world50.js` |
 | installed: `anatomy3d.js` Studio, `cricket3d.js` patterns | ours | Use: studio, AO, DOF, bloom, stamp, cards, globe, callouts |
 
