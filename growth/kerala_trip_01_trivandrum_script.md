@@ -1,11 +1,9 @@
-# Kerala journey, episode 1: Thiruvananthapuram (top 5)
+# Kerala Yatra, episode 1/14: Thiruvananthapuram
 
-**Series:** one episode per district, in road order: Thiruvananthapuram, then Kollam, then north, until all 14 districts are covered. The traveller arrives like a visitor seeing Kerala for the first time, but the voice never says "foreigner".
-**Language:** Malayalam voice (the gold reel, in Malayalam, got the most views), with English place names, distances and transport chips on screen so outside visitors can follow too.
-**Length:** about 160 Malayalam words, aimed at 80-85 s raw, synced to about 65-70 s.
-**Our way (adapted for travel):** the hook states the giant promise in the first breath (one district holds the sea, a mountain above the clouds, and a treasure that shocked the world). Then the route, one stop at a time. The silence beat sits before the temple vault reveal. The payoff is the cliff at Varkala, and the callback hands off to the next district.
-**Hook card (0-3 s):** ഒരു ജില്ല... കടലും, മലയും, നിധിയും!
-**Share reason:** a ready-made one-day route with real distances and bus or train tips, which people save and send to friends planning a trip. (No CTA in the reel.)
+**Series style (owner, 22 Nov 2026): a narrator and navigator, not the explainer pattern.** See `growth/kerala_yatra_series.md`. Calm first-person-plural guide ("നമ്മൾ"), like a travel documentary narrator: where we are, how we get to the next place, what we see, why it matters, one practical tip. No hook-twist structure, no shock lines.
+**Language:** Malayalam voice; English place names, distances and transport chips on screen.
+**Length:** 137 Malayalam words, about 85-90 s raw at a calm pace, synced to about 70 s.
+**Opening card (0-3 s):** KERALA YATRA · EP 1/14 · THIRUVANANTHAPURAM
 
 ## Route (real road distances, OSRM, 22 Nov 2026)
 
@@ -21,44 +19,41 @@
 ## ElevenLabs paste block
 
 ```
-ഒരു ജില്ല... അതിൽ കടലുണ്ട്, മേഘങ്ങൾക്ക് മുകളിൽ ഒരു മലയുണ്ട്, ലോകത്തെ ഞെട്ടിച്ച ഒരു നിധിയുമുണ്ട്!
+ഭൂമി. അതിൽ ഇന്ത്യ. ഇന്ത്യയുടെ തെക്കേ അറ്റത്ത്, പച്ചപ്പ് നിറഞ്ഞ ഒരു ചെറിയ സംസ്ഥാനം... കേരളം.
 
-ഇന്ത്യയുടെ തെക്കേ അറ്റത്ത്, കേരളം. പതിനാല് ജില്ലകൾ, ഒരൊറ്റ യാത്ര. ആദ്യ സ്റ്റോപ്പ്... തിരുവനന്തപുരം!
+ഈ യാത്രയിൽ, നമ്മൾ കേരളത്തിലെ പതിനാല് ജില്ലകളിലൂടെയും സഞ്ചരിക്കുന്നു. ഓരോ ജില്ലയിലും, കണ്ടിരിക്കേണ്ട അഞ്ച് സ്ഥലങ്ങൾ. എങ്ങനെ പോകാം, എന്ത് കാണാം.
 
-എയർപോർട്ടിൽ നിന്ന് വെറും പന്ത്രണ്ട് കിലോമീറ്റർ. കോവളം. ലൈറ്റ്ഹൗസിന് താഴെ, ചന്ദ്രക്കല പോലെ വളഞ്ഞ ബീച്ചുകൾ.
+നമ്മുടെ വിമാനം ഇറങ്ങുന്നത്, തിരുവനന്തപുരം അന്താരാഷ്ട്ര വിമാനത്താവളത്തിൽ.
 
-ഇനി നഗരത്തിലേക്ക്. കിഴക്കേക്കോട്ടയിൽ, ശ്രീ പത്മനാഭസ്വാമി ക്ഷേത്രം. അനന്തന്റെ മേൽ ശയിക്കുന്ന മഹാവിഷ്ണു.
+എയർപോർട്ടിൽ നിന്ന് ടാക്സിയിൽ ഇരുപത് മിനിറ്റ്. ആദ്യ സ്റ്റോപ്പ്, കോവളം. ലൈറ്റ്ഹൗസിന് താഴെ, ചന്ദ്രക്കല പോലെ വളഞ്ഞ ബീച്ചുകൾ.
 
-...
+ഇനി നഗരത്തിലേക്ക്. കിഴക്കേക്കോട്ടയിൽ, ശ്രീ പത്മനാഭസ്വാമി ക്ഷേത്രം. ഈ നഗരത്തിന്റെ പേര് പോലും വന്നത് ഇവിടെ നിന്നാണ്: അനന്തന്റെ നഗരം.
 
-രണ്ടായിരത്തി പതിനൊന്നിൽ, ഇവിടുത്തെ നിലവറകൾ തുറന്നു. കണ്ടത്... ഒരു ലക്ഷം കോടിയിലധികം രൂപയുടെ നിധി! ഒരു നിലവറ, ഇന്നും തുറന്നിട്ടില്ല.
+രണ്ടായിരത്തി പതിനൊന്നിൽ, ഇവിടുത്തെ നിലവറകളിൽ ഒരു ലക്ഷം കോടിയിലധികം രൂപയുടെ നിധി കണ്ടെത്തി. ദർശനത്തിന് പുരുഷന്മാർക്ക് മുണ്ട്, സ്ത്രീകൾക്ക് സാരി.
 
-അഞ്ച് കിലോമീറ്റർ അപ്പുറം, നേപ്പിയർ മ്യൂസിയം. ആയിരത്തി എണ്ണൂറ്റി എൺപതിൽ തുറന്ന കെട്ടിടം. തിങ്കളാഴ്ച അവധിയാണ്.
+അവിടെ നിന്ന് ഓട്ടോയിൽ പത്ത് മിനിറ്റ്. നേപ്പിയർ മ്യൂസിയം. ആയിരത്തി എണ്ണൂറ്റി എൺപതിൽ തുറന്ന, വർണ്ണ ഇഷ്ടികകളിൽ തീർത്ത ഈ കെട്ടിടം തന്നെ ഒരു കാഴ്ചയാണ്. തിങ്കളാഴ്ച അവധി.
 
-ഇനി മലകയറ്റം. ഇരുപത്തിരണ്ട് ഹെയർപിൻ വളവുകൾ കടന്ന്... പൊന്മുടി. ആയിരത്തി ഒരുനൂറ് മീറ്റർ ഉയരത്തിൽ, മേഘങ്ങൾക്കിടയിൽ.
+ഇനി മലകയറ്റം. തമ്പാനൂരിൽ നിന്ന് കെഎസ്ആർടിസി ബസ്സുണ്ട്. ഇരുപത്തിരണ്ട് ഹെയർപിൻ വളവുകൾ കടന്ന്, പൊന്മുടി. ആയിരത്തി ഒരുനൂറ് മീറ്റർ ഉയരത്തിൽ, കോടമഞ്ഞിനിടയിൽ.
 
-അവസാനം, കടലിലേക്ക് ഇറങ്ങുന്ന ചുവന്ന പാറക്കെട്ടുകൾ. വർക്കല. ഇന്ത്യയുടെ ദേശീയ ജിയോ ഹെറിറ്റേജ് സൈറ്റ്.
+അവസാനം, തീരത്തേക്ക് തിരിച്ച്. വർക്കല. കടലിലേക്ക് നേരെ ഇറങ്ങുന്ന ചുവന്ന പാറക്കെട്ടുകൾ. നഗരത്തിൽ നിന്ന് ട്രെയിനിൽ ഒരു മണിക്കൂർ.
 
-നഗരത്തിൽ ബസ്സും ഓട്ടോയും മതി. പൊന്മുടിക്ക് തമ്പാനൂരിൽ നിന്ന് കെഎസ്ആർടിസി. വർക്കലയ്ക്ക് ട്രെയിനിൽ ഒരു മണിക്കൂർ.
-
-അഞ്ച് സ്ഥലങ്ങൾ. ഒരു ജില്ല. അടുത്ത സ്റ്റോപ്പ്... കൊല്ലം.
+തിരുവനന്തപുരം ഇവിടെ തീരുന്നു. നമ്മുടെ യാത്ര തുടരുന്നു... വടക്കോട്ട്, കൊല്ലത്തേക്ക്.
 ```
 
 ## Line by line
 
-| # | beat | Malayalam | English | visual |
-| --- | --- | --- | --- | --- |
-| 1 | hook: the giant promise | ഒരു ജില്ല... അതിൽ കടലുണ്ട്, മേഘങ്ങൾക്ക് മുകളിൽ ഒരു മലയുണ്ട്, ലോകത്തെ ഞെട്ടിച്ച ഒരു നിധിയുമുണ്ട്! | One district... it has the sea, a mountain above the clouds, and a treasure that shocked the world! | Bright quick cuts: Kovalam sea, Ponmudi mist, temple tower; hook card |
-| 2 | the journey begins | ഇന്ത്യയുടെ തെക്കേ അറ്റത്ത്, കേരളം. പതിനാല് ജില്ലകൾ, ഒരൊറ്റ യാത്ര. ആദ്യ സ്റ്റോപ്പ്... തിരുവനന്തപുരം! | At the southern tip of India, Kerala. Fourteen districts, one journey. First stop... Thiruvananthapuram! | 3D Earth spins, zooms to India, Kerala lights up with its 14 districts, Thiruvananthapuram glows; a plane lands at the airport pin; "EPISODE 1 · THIRUVANANTHAPURAM" |
-| 3 | stop 1 | എയർപോർട്ടിൽ നിന്ന് വെറും പന്ത്രണ്ട് കിലോമീറ്റർ. കോവളം. ലൈറ്റ്ഹൗസിന് താഴെ, ചന്ദ്രക്കല പോലെ വളഞ്ഞ ബീച്ചുകൾ. | Just 12 km from the airport: Kovalam. Crescent-shaped beaches below the lighthouse. | Navigation map: route line draws airport -> Kovalam with a car marker, "12 km · 20 min"; pin pops a photo card "KOVALAM BEACH" |
-| 4 | stop 2 | ഇനി നഗരത്തിലേക്ക്. കിഴക്കേക്കോട്ടയിൽ, ശ്രീ പത്മനാഭസ്വാമി ക്ഷേത്രം. അനന്തന്റെ മേൽ ശയിക്കുന്ന മഹാവിഷ്ണു. | Now into the city. At East Fort, Sree Padmanabhaswamy Temple: Vishnu reclining on the serpent Ananta. | Route Kovalam -> East Fort "11 km"; photo card of the temple tower; "DRESS CODE: MUNDU / SAREE" chip |
-| 5 | silence | ... | | Hold on the temple tower, music drop |
-| 6 | twist | രണ്ടായിരത്തി പതിനൊന്നിൽ, ഇവിടുത്തെ നിലവറകൾ തുറന്നു. കണ്ടത്... ഒരു ലക്ഷം കോടിയിലധികം രൂപയുടെ നിധി! ഒരു നിലവറ, ഇന്നും തുറന്നിട്ടില്ല. | In 2011 its vaults were opened. Inside... treasure worth more than ₹1 lakh crore! One vault has still never been opened. | "2011" stamp; counter to "₹1,00,000 CRORE+"; "VAULT B: STILL CLOSED" |
-| 7 | stop 3 | അഞ്ച് കിലോമീറ്റർ അപ്പുറം, നേപ്പിയർ മ്യൂസിയം. ആയിരത്തി എണ്ണൂറ്റി എൺപതിൽ തുറന്ന കെട്ടിടം. തിങ്കളാഴ്ച അവധിയാണ്. | 5 km away, Napier Museum, opened in 1880. Closed on Mondays. | Route "4.5 km"; photo card; "CLOSED MONDAYS" chip |
-| 8 | stop 4 | ഇനി മലകയറ്റം. ഇരുപത്തിരണ്ട് ഹെയർപിൻ വളവുകൾ കടന്ന്... പൊന്മുടി. ആയിരത്തി ഒരുനൂറ് മീറ്റർ ഉയരത്തിൽ, മേഘങ്ങൾക്കിടയിൽ. | Now the climb. Past 22 hairpin bends... Ponmudi, 1,100 m up, among the clouds. | Map tilts to 3D terrain; the route snakes up; bike marker; "59 km · 1 h 20 min"; photo card; "1,100 m" |
-| 9 | stop 5 (payoff) | അവസാനം, കടലിലേക്ക് ഇറങ്ങുന്ന ചുവന്ന പാറക്കെട്ടുകൾ. വർക്കല. ഇന്ത്യയുടെ ദേശീയ ജിയോ ഹെറിറ്റേജ് സൈറ്റ്. | Finally, red cliffs dropping into the sea: Varkala, a National Geo-heritage Site of India. | Route back to the coast "80 km"; photo card; "NATIONAL GEO-HERITAGE SITE" |
-| 10 | how to travel | നഗരത്തിൽ ബസ്സും ഓട്ടോയും മതി. പൊന്മുടിക്ക് തമ്പാനൂരിൽ നിന്ന് കെഎസ്ആർടിസി. വർക്കലയ്ക്ക് ട്രെയിനിൽ ഒരു മണിക്കൂർ. | In the city, buses and autos are enough. For Ponmudi, KSRTC from Thampanoor. To Varkala, about an hour by train. | Whole route on the map with transport chips: bus, auto, KSRTC, train |
-| 11 | callback / next | അഞ്ച് സ്ഥലങ്ങൾ. ഒരു ജില്ല. അടുത്ത സ്റ്റോപ്പ്... കൊല്ലം. | Five places. One district. Next stop... Kollam. | The car drives off the district border north; Kollam lights up; "NEXT: KOLLAM" |
+| # | beat | English | on screen |
+| --- | --- | --- | --- |
+| 1 | from space | Earth. On it, India. At India's southern tip, a small green state... Kerala. | 3D Earth turns, zooms to India; Kerala glows |
+| 2 | the purpose | On this journey we travel through all 14 districts of Kerala. In each, five places worth seeing: how to get there, what to see. | Kerala with 14 district outlines, numbered 1-14 in road order; "KERALA YATRA · 14 DISTRICTS" |
+| 3 | landing | Our flight lands at Thiruvananthapuram International Airport. | A plane glides onto the airport pin; "EP 1/14 · THIRUVANANTHAPURAM" |
+| 4 | stop 1 | 20 minutes by taxi from the airport. First stop, Kovalam: crescent beaches below the lighthouse. | Navigation map: taxi marker drives the real road, "12 km · 20 min · TAXI"; pin drops, photo card "1 · KOVALAM" |
+| 5 | stop 2 | Into the city. At East Fort, Sree Padmanabhaswamy Temple. Even the city's name comes from here: the city of Ananta. | Route "11 km"; photo card "2 · PADMANABHASWAMY TEMPLE"; "THIRU-ANANTHA-PURAM = CITY OF ANANTA" |
+| 6 | stop 2, detail | In 2011, treasure worth more than ₹1 lakh crore was found in its vaults. For darshan: mundu for men, saree for women. | "₹1 LAKH CRORE+ · 2011" chip; "DRESS CODE" chip |
+| 7 | stop 3 | Ten minutes by auto. Napier Museum: opened in 1880, the patterned-brick building itself is a sight. Closed Mondays. | Auto marker, "4.5 km · AUTO"; photo card "3 · NAPIER MUSEUM"; "CLOSED MONDAYS" |
+| 8 | stop 4 | Now the climb. KSRTC buses from Thampanoor. Past 22 hairpin bends, Ponmudi: 1,100 m up, in the mist. | Bus marker climbs a winding road, map tilts into hills, "59 km · KSRTC · THAMPANOOR"; photo card "4 · PONMUDI"; "1,100 m · 22 HAIRPINS" |
+| 9 | stop 5 | Finally, back to the coast. Varkala: red cliffs dropping straight into the sea. One hour by train from the city. | Train marker on the coast line, "~1 h · TRAIN"; photo card "5 · VARKALA CLIFF" |
+| 10 | handoff | Thiruvananthapuram ends here. Our journey goes on... north, to Kollam. | All five pins with the full route; the marker drives north over the district border; Kollam lights up "NEXT · EP 2/14 · KOLLAM" |
 
 ## Sources (searched 22 Nov 2026)
 
@@ -72,7 +67,7 @@
 ## Accuracy notes
 
 - **Treasure value:** estimates in 2011 reporting vary; "more than ₹1 lakh crore" is the widely reported figure. Higher dollar figures online are unreliable; don't use them.
-- **Vault B:** reported as still unopened. Say "one vault", not a date it will open.
+- **City name:** Thiruvananthapuram is widely glossed as "the city of Lord Ananta" (the serpent on which Padmanabha reclines); keep it as the common meaning, not an etymology claim beyond that.
 - **Temple entry:** sources disagree on access for non-Hindus, so the script doesn't say who can enter; the dress code (mundu for men, saree for women; salwar kameez later allowed) goes on screen as a chip.
 - **Hairpin bends:** most sources say 22; Kerala Tourism says 23. Use 22.
 - **Napier Museum:** opened 1880; the 1855/1857 dates online refer to the earlier museum and zoo grounds. Opening hours vary by source; only "closed on Mondays" goes in.

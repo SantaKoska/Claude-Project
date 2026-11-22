@@ -8,6 +8,8 @@ Every script uses the table-tennis pattern (see `.claude/skills/story-script/SKI
 small cause -> giant effect stated in the first breath, then how (year, place, person, problem, rising beats), a silence beat, one surprise twist, payoff and a callback to the hook.
 Example hook: "ഒരു പയ്യൻ ബസ് മാറിക്കയറി... ആ ഒരു തെറ്റ്, ലോകത്തിലെ രണ്ട് വൻശക്തികളെ വീണ്ടും അടുപ്പിച്ചു!"
 
+Exception: the **Kerala Yatra** travel series uses a calm narrator/navigator style instead (how we get there, what we see, why it matters, one tip), not the hook-twist pattern. Rules in `growth/kerala_yatra_series.md`.
+
 ## Quality bar (owner, 19 Nov 2026)
 
 The watch anatomy test (`out/watch_anatomy_test.mp4`, `anatomy_lab.html`) is the standard every future reel is judged against. The owner's words: clarity, quality and cinematic camera movement "mean a lot for the viewers" and grow views and subscribers.
