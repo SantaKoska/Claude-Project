@@ -59,3 +59,11 @@ Numbers from the owner's Instagram and YouTube insights. Add a row after every p
 - Cream walls + paper under a strong key light blow out: key 13 (not 22), bloom .035, darker paper (#E6D8BC), exposure .92-.95.
 - Overlapping flat objects (envelopes) only read when the top one is fully visible: cascade them, don't fan them.
 - In 9:16 a row of objects (coin stacks, scoreboard) needs a high 3/4 view along the row, or only one fits across.
+
+## Build lessons: 1950 football reel (22 Nov 2026)
+- English voice (Roger): 104 words ran 51.9 s raw; tempo 1.1 + tight gaps gave 43.1 s. Offline Whisper (sherpa-onnx) confirmed the take word for word before syncing.
+- The barefoot myth works as the twist: set up "the story everyone tells" with an object (the boots), hold the silence, then remove the object.
+- A period football reads as real when built as a cube-sphere (BoxGeometry spherified) with three strips per face and the radius pushed in along strip seams; alternate the strip direction per face.
+- Boots: a single bent loft looked like a pipe. A lasted foot (flat sole, toe box, instep) plus a separate elliptical ankle shaft, overlapping, reads as a boot.
+- A row of name blocks in 9:16: shoot along the row from its front-left end (about 40° off its axis), not straight on.
+- Metallic brass plates with an emissive glow bloom into an unreadable blob; use a less metallic plate (metalness .35) and a small glow.

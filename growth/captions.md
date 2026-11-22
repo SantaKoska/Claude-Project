@@ -155,3 +155,13 @@ Gold usually rises in a war. This time it fell: in Kerala, 22K dropped from abou
 ### YouTube description (optional, longer field)
 25 June 1983, Lord's: India, 66-1 outsiders, beat the West Indies to win the World Cup. Before the final, BCCI president NKP Salve was refused a few extra passes. He took it as an insult, joined hands with Pakistan, and in 1987 the World Cup left England for the first time. The twist: after the 1983 win the board had no money to reward its players; Lata Mangeshkar sang a free concert and each squad member got ₹1 lakh. Today the BCCI takes 38.5% of ICC revenue (2024-27); no other board gets even 10%.
 1983-ലെ ലോർഡ്സിൽ നിഷേധിച്ച കുറച്ച് പാസുകളുടെ കഥ.
+
+## 13. India qualified for the 1950 World Cup and never went (Video 17, English voice)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram (97): `India qualified for 1950 World Cup, never went ⚽ ബൂട്ട് ആയിരുന്നില്ല കാരണം #IndianFootball #FIFA`
+- YouTube Shorts title (89): `Why India skipped the 1950 FIFA World Cup ⚽ ബൂട്ട് കഥ ഒരു മിത്ത് #IndianFootball #Shorts`
+
+### YouTube description (optional, longer field)
+1950: India qualified for the World Cup in Brazil after every Asian rival in its qualifying group withdrew, then pulled out itself. Most of this team had played barefoot at the 1948 London Olympics, and FIFA offered to cover most of the travel costs. The story everyone tells is that FIFA demanded boots and India refused. But star defender Sailen Manna later said, as reported, "For us, the Olympics was everything." FIFA turned down India's entry for 1954, and 76 years on India's men have never played a World Cup. Sources disagree on whether a FIFA barefoot rule existed at all.
+ഇന്ത്യ 1950 ലോകകപ്പിന് യോഗ്യത നേടി, പക്ഷേ പോയില്ല: യഥാർത്ഥ കാരണം.
