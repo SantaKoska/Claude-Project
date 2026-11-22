@@ -77,3 +77,15 @@ Hashtag pool (pick 5): #KeralaHistory #Kerala #Malayalam #Malayali #MalayalamFac
 
 ## Length limit (owner, 20 Nov 2026)
 Keep both the Instagram caption and the YouTube Shorts title to **100 characters or fewer**, hashtags included (an emoji counts as 2). Check with: `python3 -c "import sys;print(len(sys.argv[1].encode('utf-16-le'))//2)" '<text>'`
+
+## 5. Two posts a day (owner's plan, 22 Nov 2026)
+
+| lane | what | slot (IST) | why this slot |
+| --- | --- | --- | --- |
+| **A. Explainer** | "What is this? Why is it happening?": news, cricket, football, world events, history | **7:30 PM** | Our biggest format (the gold reel) gets the prime slot; trending topics need the evening crowd the same day |
+| **B. Kerala Yatra series** | One district a day in road order, top 5 places with map, route, photos and how to travel | **1:00 PM** | Travel plans get saved and shared over lunch; 6.5 h apart, so the two posts don't compete |
+
+- Series order (road order, 14 days): Thiruvananthapuram, Kollam, Pathanamthitta, Alappuzha, Kottayam, Idukki, Ernakulam, Thrissur, Palakkad, Malappuram, Kozhikode, Wayanad, Kannur, Kasaragod. Then the next state.
+- Every series post is labelled the same way: "KERALA YATRA · EP 1/14 · THIRUVANANTHAPURAM", the same title format and one series hashtag (#KeralaYatra), and a YouTube playlist. The countdown makes people look for the next one without any call to action.
+- Keep a buffer of 2 finished series episodes, so a slow explainer day never breaks the daily chain.
+- Log each lane separately in `growth/log.md` (views, skip rate, saves, shares) and swap the slots if lane B beats lane A.
