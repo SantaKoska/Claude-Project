@@ -51,3 +51,11 @@ Numbers from the owner's Instagram and YouTube insights. Add a row after every p
 - Polished floors and clearcoat walls catch the key light as a white hot spot that blooms; roughness .34 on marble and a matte walnut wall fixed it.
 - Caption pages overlapped for a few frames: fade the old page out before the next phrase's first word (next start − 0.22 s).
 - A sound effect name must be in SFX_GAIN in tools/audio.py, or the mix fails after hours of rendering (the Roadster build lost its mix step this way).
+
+## Build lessons: 1983 cricket reel (22 Nov 2026)
+- History stories also work as one physical set: a 1983 board president's desk where every beat is an object (pass + rubber stamp, wall scoreboard, ball arcing into the cup, desk globe, cash box, microphone, envelopes, coin-stack chart). No faces of real people needed.
+- A desk globe with real coastlines: world-atlas 2.0.2 (Natural Earth, public domain) converted once to `lib/maps/world50.js`; highlight countries with a second transparent sphere (an emissive map on the base sphere washed out under tone mapping).
+- InstancedMesh whose count starts at 0 gets an empty bounding sphere and is culled forever: set `frustumCulled = false` for growing stacks.
+- Cream walls + paper under a strong key light blow out: key 13 (not 22), bloom .035, darker paper (#E6D8BC), exposure .92-.95.
+- Overlapping flat objects (envelopes) only read when the top one is fully visible: cascade them, don't fan them.
+- In 9:16 a row of objects (coin stacks, scoreboard) needs a high 3/4 view along the row, or only one fits across.

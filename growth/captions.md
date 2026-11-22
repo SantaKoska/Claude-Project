@@ -145,3 +145,13 @@ At its October 2026 unveiling in Texas, Tesla's new Roadster drove up a ramp ups
 ### YouTube description (optional, longer field)
 Gold usually rises in a war. This time it fell: in Kerala, 22K dropped from about ₹1,00,920 to ₹92,080 a pavan between 14 and 20 November 2026, and the world price is about 36% below its January record. Why: the war pushed oil up, oil pushed US inflation up, markets now expect a US rate hike, savings pay 4-5% while gold pays nothing, and big investors moved to the dollar. Then AI shares crashed, and investors who had borrowed sold gold to cover losses, because it is the fastest thing to turn into cash. Not investment advice; rates change daily.
 യുദ്ധകാലത്ത് സ്വർണ്ണവില ഇടിഞ്ഞതിന്റെ കാരണം, ഒരു തുലാസിൽ.
+
+## 12. The passes that moved cricket to India: 1983 (Video 16, Malayalam voice)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram (94): `Refused passes at Lord's, 1983 🏏 ആ ഒരു 'നോ' ക്രിക്കറ്റിനെ മാറ്റി #Cricket #1983WorldCup #BCCI`
+- YouTube Shorts title (98): `1983: the passes that moved cricket to India 🏏 ക്രിക്കറ്റ് ചരിത്രം #Cricket #1983WorldCup #Shorts`
+
+### YouTube description (optional, longer field)
+25 June 1983, Lord's: India, 66-1 outsiders, beat the West Indies to win the World Cup. Before the final, BCCI president NKP Salve was refused a few extra passes. He took it as an insult, joined hands with Pakistan, and in 1987 the World Cup left England for the first time. The twist: after the 1983 win the board had no money to reward its players; Lata Mangeshkar sang a free concert and each squad member got ₹1 lakh. Today the BCCI takes 38.5% of ICC revenue (2024-27); no other board gets even 10%.
+1983-ലെ ലോർഡ്സിൽ നിഷേധിച്ച കുറച്ച് പാസുകളുടെ കഥ.
