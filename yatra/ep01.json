@@ -1,0 +1,17 @@
+{
+  "ep": 1, "of": 14, "district": "Thiruvananthapuram", "next": "Kollam", "nextDir": "north",
+  "start": {"name": "Trivandrum International Airport", "short": "AIRPORT", "lat": 8.4821, "lon": 76.9201},
+  "stops": [
+    {"n": 1, "name": "Kovalam", "card": "KOVALAM BEACH", "line": "Crescent beaches below the lighthouse", "chip": "LIGHTHOUSE BEACH", "lat": 8.3844, "lon": 76.9790,
+     "legs": [{"mode": "taxi", "from": "start"}], "nav": "12 km · 20 min · TAXI", "photos": "Kovalam beach lighthouse"},
+    {"n": 2, "name": "Padmanabhaswamy Temple", "card": "SREE PADMANABHASWAMY TEMPLE", "line": "East Fort · the city is named after its deity", "chip": "DRESS CODE: MUNDU / SAREE", "lat": 8.4828, "lon": 76.9437,
+     "legs": [{"mode": "taxi"}], "nav": "11 km · 15 min · TAXI", "photos": "Padmanabhaswamy Temple gopuram"},
+    {"n": 3, "name": "Napier Museum", "card": "NAPIER MUSEUM", "line": "Opened 1880 · patterned brick architecture", "chip": "CLOSED MONDAYS", "lat": 8.5089, "lon": 76.9553,
+     "legs": [{"mode": "auto"}], "nav": "4.5 km · 10 min · AUTO", "photos": "Napier Museum Thiruvananthapuram"},
+    {"n": 4, "name": "Ponmudi", "card": "PONMUDI HILLS", "line": "Hill station in the mist", "chip": "1,100 m · 22 HAIRPINS", "lat": 8.7600, "lon": 77.1160,
+     "legs": [{"mode": "bus"}], "nav": "59 km · KSRTC · THAMPANOOR", "photos": "Ponmudi hills"},
+    {"n": 5, "name": "Varkala", "card": "VARKALA CLIFF", "line": "Red cliffs dropping into the sea", "chip": "NATIONAL GEO-HERITAGE SITE", "lat": 8.7340, "lon": 76.7030,
+     "legs": [{"mode": "bus", "to": {"lat": 8.4875, "lon": 76.9525, "name": "Thiruvananthapuram Central"}}, {"mode": "train"}], "nav": "TRAIN · ~1 h FROM THE CITY", "photos": "Varkala cliff beach"}
+  ],
+  "nextPoint": {"lat": 8.8932, "lon": 76.6141}
+}
