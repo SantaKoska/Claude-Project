@@ -177,3 +177,24 @@ Kerala Yatra, episode 1 of 14: a one-day route through Thiruvananthapuram. Airpo
 തിരുവനന്തപുരത്തെ അഞ്ച് സ്ഥലങ്ങൾ, എങ്ങനെ പോകാം, എന്ത് കാണാം.
 
 Map credits: satellite imagery Sentinel-2 cloudless 2016 by EOX IT Services GmbH (CC BY 4.0, contains modified Copernicus Sentinel data 2016) and NASA Blue Marble Next Generation (public domain); routes © OpenStreetMap contributors via OSRM; India and Kerala boundaries: datameet. Photo credits: `yatra/ep01_photo_credits.md`.
+
+## 15. Kerala Yatra EP 2/14: Kollam (series, Malayalam narrator, post 1:00 PM)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram: `Kerala Yatra EP 2/14: Kollam 🗺️ 5 സ്ഥലങ്ങൾ, എങ്ങനെ പോകാം #KeralaYatra #Kollam`
+- YouTube Shorts title: `Kollam top 5 places | Kerala Yatra EP 2 🗺️ കൊല്ലം #KeralaYatra #KeralaTourism #Shorts`
+
+### YouTube description
+Kerala Yatra, episode 2 of 14: a one-day route through Kollam, continuing from Varkala. Thangassery Lighthouse (lit in 1902, Portuguese fort ruins nearby; about 30 min by train from Varkala) -> Munroe Island (eight islets where Ashtamudi Lake meets the Kallada river; about 20 min by train from Kollam) -> Sasthamcotta Lake (Kerala's largest freshwater lake, Kollam's drinking water) -> Jatayu Earth's Center, Chadayamangalam (the world's largest bird sculpture, cable car to the top) -> Thenmala (India's first planned ecotourism destination). Next episode: Pathanamthitta.
+കൊല്ലത്തെ അഞ്ച് സ്ഥലങ്ങൾ, എങ്ങനെ പോകാം, എന്ത് കാണാം.
+
+Map: Sentinel-2 cloudless 2016 by EOX IT Services GmbH (CC BY 4.0, contains modified Copernicus Sentinel data 2016); NASA Blue Marble (public domain); routes © OpenStreetMap contributors via OSRM; boundaries: datameet.
+
+Photos (Wikimedia Commons):
+Thangassery: Arunvrparavur (CC BY-SA 4.0, CC BY-SA 3.0)
+Munroe Island: Timothy A. Gonsalves (CC BY-SA 4.0)
+Sasthamcotta Lake: Arunelectra (CC BY-SA 3.0), Mayachempakam (CC BY-SA 4.0)
+Jatayu Earth's Center: BinoBose (CC BY-SA 4.0), athulnair (CC BY-SA 4.0)
+Thenmala: Ajeeshkumar4u (CC BY-SA 4.0), Vis M (CC BY-SA 4.0)
+
+Instagram post body line: `Map: EOX Sentinel-2, NASA, © OpenStreetMap. Photos: Wikimedia Commons (credits on YouTube).`
