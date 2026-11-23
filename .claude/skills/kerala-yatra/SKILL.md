@@ -55,3 +55,14 @@ Road order: 1 Thiruvananthapuram · 2 Kollam · 3 Pathanamthitta · 4 Alappuzha 
 - Same house rules: text out of the top 230 px, bottom 400 px, right 140 px; Malayalam captions for the voice; English names on the map and cards; about -10 LUFS; bright first frame.
 - Credits for every episode in the YouTube description: Sentinel-2 cloudless (EOX, CC BY 4.0), NASA Blue Marble (public domain), © OpenStreetMap contributors, datameet, and each photo's author + licence.
 - Before the full render: screenshot every stop and check readability; run the stride check (0 mismatches).
+
+## 6. The build, step by step (from episode 1)
+
+1. Script + sources in `growth/kerala_trip_NN_<district>_script.md`; voice MP3 to `audio/yatraNN.mp3`.
+2. Episode definition `yatra/epNN.json`: start point, 5 stops (name, card title, one line, chip, lat/lon, legs with mode, photo search words), next district point.
+3. `python3 tools/yatra_data.py yatra/epNN.json` -> `build/yatra/epNN/` (OSRM routes, Blue Marble globe + India, Sentinel-2 Kerala / district / city mosaics, outlines, `data.js`). Tiles are cached in `build/tiles/`.
+4. `python3 -u tools/yatra_photos.py yatra/epNN.json 3` -> 3 candidates per stop with licence + author. **Wikimedia allows about 600 KB per minute from this machine**, so it runs about 2 photos a minute (the script paces itself); it needs `commons.wikimedia.org` and `thumb.wikimedia.org` allowed. Look at a contact sheet, put the picks in the page's `<script id="photos">`, write `yatra/epNN_photo_credits.md`.
+5. Copy `yatra01.html` to `yatraNN.html`, change the config phrases, the data import path and the scenes that differ (episode 1's space intro becomes "<previous district>-ൽ നിന്ന് നമ്മുടെ യാത്ര തുടരുന്നു" on the Kerala map), then `python3 tools/sync.py yatraNN.html`. If the sync's phrase lengths look wrong (a 1-word phrase of 3 s), merge the phrases where the voice does not pause.
+6. Screenshot every stop; stride check (0 mismatches); render with `WORKERS=3 tools/build.sh`.
+
+Engine notes (`lib/yatra.js`): every state key must start as a number in `ST` (GSAP turns a key it has never seen into the string "0", which is truthy). Finer imagery layers fade in by camera height, so no imagery rectangle shows from far away. India's simplified outline is for the India view only; fade it out at the Kerala step.

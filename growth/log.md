@@ -68,3 +68,9 @@ Numbers from the owner's Instagram and YouTube insights. Add a row after every p
 - GLB on a file:// page: fetch() is refused; load the bytes with XMLHttpRequest and GLTFLoader.parseAsync. The vendored three needed GLTFLoader.js + SkeletonUtils.js from three@0.186.0.
 - A row of name blocks in 9:16: shoot along the row from its front-left end (about 40° off its axis), not straight on.
 - Metallic brass plates with an emissive glow bloom into an unreadable blob; use a less metallic plate (metalness .35) and a small glow.
+
+## Build lessons: Kerala Yatra EP 1 (23 Nov 2026)
+- A series needs its own engine: `lib/yatra.js` + `tools/yatra_data.py` + `tools/yatra_photos.py` make every later district mostly data (stops, photos, voice).
+- Real satellite imagery works and looks premium: NASA Blue Marble (GIBS) for the globe and India, Sentinel-2 cloudless 2016 (EOX, CC BY 4.0) for Kerala down to the city. Grade it up (brightness 1.18, contrast 1.18, saturation 1.45) or it looks dull.
+- Draw lines, pins and the marker as SVG projected through the three.js camera each frame: crisp at every zoom, and easy to style like a maps app.
+- Wikimedia Commons rate-limits scripts hard (about 600 KB/min); use the API's own thumbnail URL and pace downloads, or it fails with 400/429.
