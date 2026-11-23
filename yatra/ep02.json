@@ -1,0 +1,17 @@
+{
+  "ep": 2, "of": 14, "district": "Kollam", "next": "Pathanamthitta", "nextDir": "north",
+  "start": {"name": "Varkala Cliff", "short": "VARKALA", "lat": 8.7340, "lon": 76.7030},
+  "stops": [
+    {"n": 1, "name": "Thangassery", "card": "THANGASSERY LIGHTHOUSE", "line": "Lit in 1902 · Portuguese fort ruins nearby", "chip": "SINCE 1902", "lat": 8.8825, "lon": 76.5677,
+     "legs": [{"mode": "train"}], "photos": "Tangasseri lighthouse Kollam"},
+    {"n": 2, "name": "Munroe Island", "card": "MUNROE ISLAND", "line": "Eight islets where Ashtamudi Lake meets the Kallada river", "chip": "CANAL BOAT RIDE", "lat": 8.9947, "lon": 76.6080,
+     "legs": [{"mode": "train"}], "photos": "Munroe Island Kollam"},
+    {"n": 3, "name": "Sasthamcotta Lake", "card": "SASTHAMCOTTA LAKE", "line": "Kerala's largest freshwater lake", "chip": "KOLLAM'S DRINKING WATER", "lat": 9.0397, "lon": 76.6345,
+     "legs": [{"mode": "auto"}], "photos": "Sasthamcotta lake"},
+    {"n": 4, "name": "Jatayu Earth's Center", "card": "JATAYU EARTH'S CENTER", "line": "Chadayamangalam · the world's largest bird sculpture", "chip": "CABLE CAR TO THE TOP", "lat": 8.8717, "lon": 76.8656,
+     "legs": [{"mode": "taxi"}], "photos": "Jatayu Earth's Center"},
+    {"n": 5, "name": "Thenmala", "card": "THENMALA", "line": "India's first planned ecotourism destination", "chip": "HANGING BRIDGE · DAM · FOREST", "lat": 8.9568, "lon": 77.0627,
+     "legs": [{"mode": "bus"}], "photos": "Thenmala"}
+  ],
+  "nextPoint": {"lat": 9.2648, "lon": 76.7870}
+}
