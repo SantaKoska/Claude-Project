@@ -198,3 +198,15 @@ Jatayu Earth's Center: BinoBose (CC BY-SA 4.0), athulnair (CC BY-SA 4.0)
 Thenmala: Ajeeshkumar4u (CC BY-SA 4.0), Vis M (CC BY-SA 4.0)
 
 Instagram post body line: `Map: EOX Sentinel-2, NASA, © OpenStreetMap. Photos: Wikimedia Commons (credits on YouTube).`
+
+## 16. One mask, ₹48 crore: Avengers: Doomsday in India (explainer, Malayalam, post 7:30 PM)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram (98): `One mask, ₹48 crore of tickets a month early 🎬 ഒരു മുഖംമൂടിയുടെ കഥ #AvengersDoomsday #Marvel #RDJ`
+- YouTube Shorts title (84): `Avengers Doomsday India advance booking record 🎬 ₹48 കോടി #AvengersDoomsday #Shorts`
+
+### YouTube description
+A month before its 17 December release in India, Avengers: Doomsday has sold about ₹48 crore of advance tickets (trade-tracker estimate), passing Spider-Man: Brand New Day's record. Why: in Endgame (2019) Iron Man died saving the universe, and India bought tickets at a peak of 18 a second. At San Diego Comic-Con in July 2024, a villain in a green cloak took off his mask: Robert Downey Jr., returning as Doctor Doom. In Thiruvananthapuram the first show is at 12:01 AM.
+ഒരു മുഖംമൂടി, 48 കോടിയുടെ ടിക്കറ്റുകൾ: എന്തുകൊണ്ട്?
+
+Photos (Wikimedia Commons): Robert Downey Jr. and Iron Man cosplay by Gage Skidmore (CC BY-SA 2.0); Hall H by Matt Boulton (CC BY-SA 2.0); Doctor Doom cosplay by Super Festivals (CC BY 2.0). Logos are trademarks of Marvel / Disney, shown for news reporting. Not affiliated with Marvel or Disney.

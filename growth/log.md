@@ -74,3 +74,9 @@ Numbers from the owner's Instagram and YouTube insights. Add a row after every p
 - Real satellite imagery works and looks premium: NASA Blue Marble (GIBS) for the globe and India, Sentinel-2 cloudless 2016 (EOX, CC BY 4.0) for Kerala down to the city. Grade it up (brightness 1.18, contrast 1.18, saturation 1.45) or it looks dull.
 - Draw lines, pins and the marker as SVG projected through the three.js camera each frame: crisp at every zoom, and easy to style like a maps app.
 - Wikimedia Commons rate-limits scripts hard (about 600 KB/min); use the API's own thumbnail URL and pace downloads, or it fails with 400/429.
+
+## Build lessons: Avengers: Doomsday reel (23 Nov 2026)
+- Owner: premium and dark, not overlit; show the real logos and photos. A dark cinema hall lit only by its screen gives that mood for any film/entertainment story, and the screen carries the real images.
+- A 16:9 screen inside a 9:16 reel shows only its middle: compose screen images for the middle 44% (logos sized to it, portrait photos at full height on a blurred backdrop, stacked numbers).
+- Stepped seat rows: put every camera at eye height for its row (row floor + 1.15 m), or the camera ends up inside the seats and the frame goes black.
+- Wikimedia Commons has many film logos as public-domain text logos and CC photos of actors at Comic-Con (Gage Skidmore); `tools/commons_fetch.py` fetches named files with credits.
