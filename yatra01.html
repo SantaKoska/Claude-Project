@@ -1074,7 +1074,7 @@
  }
 }
 </script>
-<script id="photos" type="application/json">{"1":[0,1],"2":[0,1,2],"3":[0,1],"4":[0,1],"5":[0,1]}</script>
+<script id="photos" type="application/json">{"1": [0, 1], "2": [2, 0], "3": [2, 1], "4": [2, 0], "5": [0, 2]}</script>
 <style>
   html, body { margin: 0; background: #071A2E; }
   #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: radial-gradient(ellipse at 50% 40%, #12335A 0%, #071A2E 70%); }
@@ -1193,7 +1193,7 @@ function arrive(i, t) { v3(t, { visited: i + 1, bounceI: i, bounce: 0 }); go3(t,
 const scenes = {
   space(si) {
     // the Earth turns, the camera dives to India; India's official outline traces; then the flat satellite map takes over
-    v3(0, { globe: 1, india: 0, kerala: 0, dists: 0, labels: 0, route: 0, marker: 0, pinsOn: 0, plane: 0, follow: 0, distHi: 0, nextHi: 0, exitU: 0, visited: 0, leg: -1, u: 0, bounce: 0, bounceI: -1 });
+    v3(0, { labelNext: 0, globe: 1, india: 0, kerala: 0, dists: 0, labels: 0, route: 0, marker: 0, pinsOn: 0, plane: 0, follow: 0, distHi: 0, nextHi: 0, exitU: 0, visited: 0, leg: -1, u: 0, bounce: 0, bounceI: -1 });
     gSet(0, { lat: 10, lon: 28, dist: 5.4 }); gTo(.05, { lat: 21, lon: 80, dist: 2.05 }, pS(si, 2) + .3, 'power2.inOut');
     go3(pS(si, 1) + .05, { india: 1 }, 1.4, 'power1.inOut'); sfx('shimmer', pS(si, 1), .6);
     const tx = pS(si, 2) + .1; go3(tx, { globe: 0 }, .7, 'power1.inOut'); sfx('whoosh', tx, .5);
@@ -1207,12 +1207,12 @@ const scenes = {
   },
   purpose(si) {
     // all 14 districts draw in, numbered in road order; Thiruvananthapuram lights up
-    camTo(sStart(si), camAt(KC[0] + .0003, KC[1] + .0015, 20.5), sEnd(si) - sStart(si), 'sine.inOut');
+    camTo(sStart(si), camAt(KC[0] + .0003, KC[1] + .0021, 20.5), sEnd(si) - sStart(si), 'sine.inOut');
     go3(pS(si, 1) - .1, { dists: 1, labels: 1 }, 3.0, 'none'); for (let k = 0; k < 14; k++) sfx('tick', pS(si, 1) + k * 3 / 14, .5);
     const a = pill(UI, 500, 330, '14 DISTRICTS', 60, '#FFFFFF', '#14110C', 40); pop(a, pS(si, 1) + .5); hide(a, pS(si, 3) - .1);
     const b = pill(UI, 500, 330, '5 PLACES IN EACH', 60, '#14110C', '#FFC94A', 40); pop(b, pS(si, 3)); hide(b, pS(si, 4) - .1);
     const c1 = pill(UI, 500, 310, 'HOW TO GET THERE', 46, '#FFFFFF', '#1A73E8', 34); pop(c1, pS(si, 4)); const c2 = pill(UI, 500, 405, 'WHAT TO SEE', 46, '#FFFFFF', '#188038', 34); pop(c2, pS(si, 5)); hide(c1, sEnd(si) - .2); hide(c2, sEnd(si) - .2);
-    go3(pS(si, 4), { distHi: 1 }, .8);
+    go3(pS(si, 4), { distHi: 1 }, .8); go3(sStart(si), { india: 0 }, .8);
   },
   land(si) {
     // drop into Thiruvananthapuram; the plane glides onto the airport; the day's five pins drop
@@ -1240,10 +1240,10 @@ const scenes = {
     // the whole day on the map, then the traveller drives north and Kollam lights up
     const T0 = sStart(si);
     camTo(T0, camAt(D.pts.next[0] * .5 + distBox[0] * .5, distBox[1] - .0002, 5.6, 12), 2.2, 'power2.inOut');
-    v3(T0, { follow: 0 }); go3(T0 + .2, { labels: 1 }, 1.0, 'none'); go3(pS(si, 1), { exitU: 1 }, pS(si, 3) - pS(si, 1) + .1, 'power1.inOut'); sfx('whoosh', pS(si, 1), .4);
+    v3(T0, { follow: 0, labelNext: 1 }); go3(T0 + .2, { labels: 1 }, 1.0, 'none'); go3(pS(si, 1), { exitU: 1 }, pS(si, 3) - pS(si, 1) + .1, 'power1.inOut'); sfx('whoosh', pS(si, 1), .4);
     go3(pS(si, 3), { nextHi: 1 }, .6); sfx('chime', pS(si, 3), .6);
     const p = pill(UI, 500, 330, 'NEXT · EP 2/14 · KOLLAM', 56, '#FFFFFF', '#188038', 38); pop(p, pS(si, 3) + .05);
-    const d = pill(UI, 500, 430, '5 PLACES · 1 DAY', 40, '#14110C', '#FFC94A', 30); pop(d, T0 + .4);
+    const d = pill(UI, 500, 460, '5 PLACES · 1 DAY', 40, '#14110C', '#FFC94A', 30); pop(d, T0 + .4);
   },
 };
 // one stop: preview dashed line, nav bar, drive with the camera following, arrive, place card with photos and chips
