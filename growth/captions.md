@@ -165,3 +165,15 @@ Gold usually rises in a war. This time it fell: in Kerala, 22K dropped from abou
 ### YouTube description (optional, longer field)
 1950: India qualified for the World Cup in Brazil after every Asian rival in its qualifying group withdrew, then pulled out itself. Most of this team had played barefoot at the 1948 London Olympics, and FIFA offered to cover most of the travel costs. The story everyone tells is that FIFA demanded boots and India refused. But star defender Sailen Manna later said, as reported, "For us, the Olympics was everything." FIFA turned down India's entry for 1954, and 76 years on India's men have never played a World Cup. Sources disagree on whether a FIFA barefoot rule existed at all. Boot model: "Materials Variants Shoe" by Shopify, CC BY 4.0 (recoloured, studs added).
 ഇന്ത്യ 1950 ലോകകപ്പിന് യോഗ്യത നേടി, പക്ഷേ പോയില്ല: യഥാർത്ഥ കാരണം.
+
+## 14. Kerala Yatra EP 1/14: Thiruvananthapuram (series, Malayalam narrator, post 1:00 PM)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram (88): `Kerala Yatra EP 1/14: Trivandrum 🗺️ 5 സ്ഥലങ്ങൾ, എങ്ങനെ പോകാം #KeralaYatra #Trivandrum`
+- YouTube Shorts title (97): `Trivandrum top 5 places | Kerala Yatra EP 1 🗺️ തിരുവനന്തപുരം #KeralaYatra #KeralaTourism #Shorts`
+
+### YouTube description (optional, longer field)
+Kerala Yatra, episode 1 of 14: a one-day route through Thiruvananthapuram. Airport -> Kovalam (15 km, taxi) -> Sree Padmanabhaswamy Temple, East Fort (dress code: mundu / saree) -> Napier Museum (closed Mondays) -> Ponmudi (KSRTC buses from Thampanoor, 22 hairpin bends, 1,100 m) -> Varkala Cliff (about 1 h by train from the city). Next episode: Kollam.
+തിരുവനന്തപുരത്തെ അഞ്ച് സ്ഥലങ്ങൾ, എങ്ങനെ പോകാം, എന്ത് കാണാം.
+
+Map credits: satellite imagery Sentinel-2 cloudless 2016 by EOX IT Services GmbH (CC BY 4.0, contains modified Copernicus Sentinel data 2016) and NASA Blue Marble Next Generation (public domain); routes © OpenStreetMap contributors via OSRM; India and Kerala boundaries: datameet. Photo credits: see `build/yatra/ep01/photos/credits.md` (generated with the picks).

@@ -2,7 +2,7 @@
 """Kerala Yatra photos: free-licence images from Wikimedia Commons for each stop, with credits.
 
 Usage: python3 tools/yatra_photos.py yatra/ep01.json [N candidates per stop]
-Downloads candidates to build/yatra/epNN/photos/s<n>_<k>.jpg (1280 px wide) and writes candidates.json with
+Downloads candidates to build/yatra/epNN/photos/s<n>_<k>.jpg (1280 px wide, the API's thumbnail) and writes candidates.json with
 author, licence and source page for each. Pick the ones to use in yatra/epNN.json ("pick": [k, k]); credits.md is
 written from the picks. Only CC0 / Public domain / CC BY / CC BY-SA files are kept.
 """
@@ -27,7 +27,7 @@ def strip(s): return html.unescape(re.sub(r'<[^>]+>', '', s or '')).strip()
 cands = {}
 for s in EP['stops']:
     q = urllib.parse.urlencode({'action': 'query', 'format': 'json', 'generator': 'search', 'gsrsearch': s['photos'] + ' filetype:bitmap', 'gsrnamespace': 6, 'gsrlimit': 30,
-                                'prop': 'imageinfo', 'iiprop': 'url|size|extmetadata', 'iiurlwidth': 1600})
+                                'prop': 'imageinfo', 'iiprop': 'url|size|extmetadata', 'iiurlwidth': 1280})
     pages = json.loads(get('https://commons.wikimedia.org/w/api.php?' + q)).get('query', {}).get('pages', {})
     rows = sorted(pages.values(), key=lambda p: p.get('index', 99)); got = []
     for p in rows:
@@ -35,8 +35,7 @@ for s in EP['stops']:
         lic = strip(md.get('LicenseShortName', {}).get('value'))
         if not OK.match(lic) or ii.get('width', 0) < 1600 or ii.get('width', 0) < ii.get('height', 1) * 1.1: continue
         k = len(got); fn = 's%d_%d.jpg' % (s['n'], k)
-        u = ii['url']; base = u.split('/')[-1]; th = u.replace('/wikipedia/commons/', '/wikipedia/commons/thumb/') + '/1280px-' + base  # 1280 is a standard bucket on upload.wikimedia.org
-        if not re.search(r'\.(jpe?g|png)$', base, re.I): th += '.jpg'  # tif/webp thumbs are served as jpg
+        th = ii['thumburl']  # the API's own 1280 px thumbnail (thumb.wikimedia.org)
         try: b = get(th)
         except Exception as e: print('skip', p['title'][:60], e); continue
         open(os.path.join(OUT, fn), 'wb').write(b)
