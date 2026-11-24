@@ -238,6 +238,11 @@ Kerala Yatra, episode 3 of 14: a one-day route through Pathanamthitta, continuin
 
 Map: Sentinel-2 cloudless 2016 by EOX IT Services GmbH (CC BY 4.0, contains modified Copernicus Sentinel data 2016); NASA Blue Marble (public domain); routes © OpenStreetMap contributors via OSRM; boundaries: datameet.
 
-Photos (Wikimedia Commons): see `yatra/ep03_photo_credits.md` (filled in after the photo picks).
+Photos (Wikimedia Commons):
+Konni Elephant Camp: Gannu03 (CC BY-SA 4.0)
+Adavi: Dr. Chinchu C. (CC BY 4.0)
+Perunthenaruvi: Sujithnairv (CC BY 3.0), Prajaneeshp (CC BY-SA 3.0)
+Maramon: Noblevmy (CC BY-SA 3.0)
+Aranmula: rajaraman sundaram (CC BY 3.0)
 
 Instagram post body line: `Map: EOX Sentinel-2, NASA, © OpenStreetMap. Photos: Wikimedia Commons (credits on YouTube).`
