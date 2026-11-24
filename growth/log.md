@@ -90,3 +90,6 @@ Numbers from the owner's Instagram and YouTube insights. Add a row after every p
 
 ## Kerala Yatra: owner feedback (24 Nov 2026)
 - Every episode needs the space intro (Earth -> India -> Kerala -> 14 districts), not just EP 1. EP 2 skipped it and the owner asked for it back: a series needs the same opening every time so a new viewer knows what the series is. Fixed intro voice is in the kerala-yatra skill; budget about 12 s for it.
+
+## Topic choice: owner feedback (24 Nov 2026)
+- Owner rejected a serious geopolitics topic (Strait of Hormuz and India's LPG): "people won't get interested". For news reels, pick the story people are already talking about and feel good or amazed by (a record, a person, a big launch), not a worrying policy story, even if it touches their kitchen. Offer 3-4 fresh topics and let the owner pick before writing.
