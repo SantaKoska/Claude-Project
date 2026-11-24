@@ -246,3 +246,16 @@ Maramon: Noblevmy (CC BY-SA 3.0)
 Aranmula: rajaraman sundaram (CC BY 3.0)
 
 Instagram post body line: `Map: EOX Sentinel-2, NASA, © OpenStreetMap. Photos: Wikimedia Commons (credits on YouTube).`
+
+## 19. Strait of Hormuz and India's LPG (explainer, post 7:30 PM)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram (89): `A 39 km sea, half our gas cylinders, now a war zone 🔥 നമ്മുടെ ഗ്യാസ് #Hormuz #LPG #India`
+- YouTube Shorts title (94): `Strait of Hormuz: why your LPG cylinder is at risk 🔥 ഗ്യാസ് യുദ്ധക്കടൽ കടന്ന് #Hormuz #Shorts`
+
+### YouTube description
+Half of the LPG cylinders used for home cooking in India come through the Strait of Hormuz, just 39 km wide at its narrowest (IEA, World Energy Outlook 2026). Since the war began in February 2026, ships there have been attacked, 37 in October alone. On 16 November the LPG tanker Tara Gas, with 24 Indians on board, was hit twice; one Indian seafarer is still missing (MEA, as of 18 Nov). India's LPG buffer covers just over ten days, and Indian Navy warships have escorted gas ships through the strait (Operation Urja Suraksha).
+നമ്മുടെ അടുക്കളയിലെ ഗ്യാസ് എവിടെ നിന്ന് വരുന്നു?
+
+Sources: IEA World Energy Outlook 2026; MEA statements; Riviera Maritime Media; Gulf News; NPR; USNI News; Washington Institute (links in growth/hormuz_lpg_script.md). The ship and map are illustrative 3D models.
+
