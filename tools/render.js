@@ -11,7 +11,9 @@ const FPS = +(process.argv[3] || 30), WORKERS = +(process.argv[4] || 4);
 const FR = path.join(BUILD, 'frames');
 
 (async () => {
-  fs.rmSync(FR, { recursive: true, force: true }); fs.mkdirSync(FR, { recursive: true });
+  // RESUME=1 keeps frames already on disk (e.g. after a timeout) and renders only the missing ones
+  if (!process.env.RESUME) fs.rmSync(FR, { recursive: true, force: true });
+  fs.mkdirSync(FR, { recursive: true });
   const browser = await chromium.launch({ args: ['--allow-file-access-from-files', '--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
   const open = async () => {
     const p = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
@@ -30,6 +32,8 @@ const FR = path.join(BUILD, 'frames');
   let done = 0; const t0 = Date.now();
   await Promise.all(pages.map(async (p, w) => {
     for (let f = w; f < N; f += WORKERS) {
+      const fp = path.join(FR, `f${String(f).padStart(5, '0')}.jpg`);
+      if (process.env.RESUME && fs.existsSync(fp) && fs.statSync(fp).size > 0) { done++; continue; }
       await p.evaluate(t => window.seek(t), f / FPS);
       await p.screenshot({ path: path.join(FR, `f${String(f).padStart(5, '0')}.jpg`), type: 'jpeg', quality: 95, timeout: 180000 });
       if (++done % 100 === 0) console.log(`  ${done}/${N}  ${((Date.now() - t0) / 1000).toFixed(0)}s`);
