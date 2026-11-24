@@ -214,8 +214,8 @@ Photos (Wikimedia Commons): Robert Downey Jr. and Iron Man cosplay by Gage Skidm
 ## 17. One man walked back in: Nvidia and Jensen Huang (explainer, Malayalam, post 7:30 PM)
 
 ### Short versions (100 characters max, emoji counts as 2)
-- Instagram (91): `Fired... then back in 11 days: Nvidia's $1 trillion man 💥 ഹുവാങ് തിരിച്ചെത്തി #Nvidia #AI`
-- YouTube Shorts title (95): `Nvidia CEO Jensen Huang back in 11 days, why? 💥 $1 ട്രില്യൺ കഥ #Nvidia #JensenHuang #Shorts`
+- Instagram (87): `Quit, then back in 11 days: Nvidia's $1 trillion man 💥 ഹുവാങ് തിരിച്ചെത്തി #Nvidia #AI`
+- YouTube Shorts title (92): `Nvidia CEO Jensen Huang back in 11 days, why? 💥 $1 ട്രില്യൺ കഥ #Nvidia #JensenHuang #Shorts`
 
 ### YouTube description
 Jensen Huang co-founded Nvidia in 1993 and ran it for 33 years; its chips power AI like ChatGPT. On 12 November 2026 he resigned after reports of extramarital affairs, including one with a woman US intelligence officials reportedly believe was recruited by China's spy agency (he admitted infidelity; no charges). In 11 days Nvidia's value fell from over $4 trillion to about $3 trillion. On 23 November the board unanimously reinstated him, with President Trump saying "I made the deal". The stock jumped 31% that day, adding about $950 billion. Huang told staff he'd be "a better CEO the second time around". US House committees still plan a closed-door interview on 1 December.
