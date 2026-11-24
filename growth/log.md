@@ -80,3 +80,10 @@ Numbers from the owner's Instagram and YouTube insights. Add a row after every p
 - A 16:9 screen inside a 9:16 reel shows only its middle: compose screen images for the middle 44% (logos sized to it, portrait photos at full height on a blurred backdrop, stacked numbers).
 - Stepped seat rows: put every camera at eye height for its row (row floor + 1.15 m), or the camera ends up inside the seats and the frame goes black.
 - Wikimedia Commons has many film logos as public-domain text logos and CC photos of actors at Comic-Con (Gage Skidmore); `tools/commons_fetch.py` fetches named files with credits.
+
+## Build lessons: Nvidia / Jensen Huang reel (24 Nov 2026)
+- A business/news story also works as one physical set: a keynote stage with an LED wall (real logo + photos), a hero object on a plinth (the GPU, with a real exploded anatomy) and a 3D "data object" (a glass column filled to the market value) that rises and drains on the beats.
+- Malayalam script read by Roger (English voice): 95 words ran 71 s raw; tempo 1.2 + tight gaps gave 52.3 s. For 35-45 s with this voice, write about 75 Malayalam words.
+- An LED wall seen from a 9:16 close camera shows only ~30% of its width; compose wall text and logos for that column, and shift text (ox) when the camera looks off-centre at another object.
+- Labels clamped at the frame edge collapse onto each other: frame the exploded object so all label anchors sit between y 300 and 1150 (aim the camera lower than the object's centre).
+- Pick Commons photos with no burned-in captions (one H100 photo carried a Chinese price overlay).

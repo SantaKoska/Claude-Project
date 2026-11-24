@@ -210,3 +210,18 @@ A month before its 17 December release in India, Avengers: Doomsday has sold abo
 ഒരു മുഖംമൂടി, 48 കോടിയുടെ ടിക്കറ്റുകൾ: എന്തുകൊണ്ട്?
 
 Photos (Wikimedia Commons): Robert Downey Jr. and Iron Man cosplay by Gage Skidmore (CC BY-SA 2.0); Hall H by Matt Boulton (CC BY-SA 2.0); Doctor Doom cosplay by Super Festivals (CC BY 2.0). Logos are trademarks of Marvel / Disney, shown for news reporting. Not affiliated with Marvel or Disney.
+
+## 17. One man walked back in: Nvidia and Jensen Huang (explainer, Malayalam, post 7:30 PM)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram (91): `Fired... then back in 11 days: Nvidia's $1 trillion man 💥 ഹുവാങ് തിരിച്ചെത്തി #Nvidia #AI`
+- YouTube Shorts title (95): `Nvidia CEO Jensen Huang back in 11 days, why? 💥 $1 ട്രില്യൺ കഥ #Nvidia #JensenHuang #Shorts`
+
+### YouTube description
+Jensen Huang co-founded Nvidia in 1993 and ran it for 33 years; its chips power AI like ChatGPT. On 12 November 2026 he resigned after reports of extramarital affairs, including one with a woman US intelligence officials reportedly believe was recruited by China's spy agency (he admitted infidelity; no charges). In 11 days Nvidia's value fell from over $4 trillion to about $3 trillion. On 23 November the board unanimously reinstated him, with President Trump saying "I made the deal". The stock jumped 31% that day, adding about $950 billion. Huang told staff he'd be "a better CEO the second time around". US House committees still plan a closed-door interview on 1 December.
+11 ദിവസം, ഒരു ലക്ഷം കോടി ഡോളർ: എന്തുകൊണ്ട് ഹുവാങ് തിരിച്ചെത്തി?
+
+Sources: Nvidia press releases and SEC 8-K; Bloomberg; Fortune; CNN; CNBC; NPR; Al Jazeera (links in growth/nvidia_huang_script.md).
+Photos (Wikimedia Commons): Jensen Huang by Anders Eidesvik (CC BY 4.0); Nvidia Endeavor HQ by Daniel J. Prostak (CC BY-SA 4.0); H100 cards by Geekerwan (CC BY 3.0); Donald Trump official portrait by Daniel Torok, White House (public domain). Nvidia logo: Nvidia (Apache 2.0), a trademark of Nvidia, shown for news reporting. The 3D chip is an illustrative model, not an exact Nvidia design. Not affiliated with Nvidia.
+
+Instagram post body line: `Photos: Wikimedia Commons (Anders Eidesvik CC BY 4.0, Geekerwan CC BY 3.0, White House PD).`

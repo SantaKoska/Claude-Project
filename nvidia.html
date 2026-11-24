@@ -1,0 +1,1199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nvidia Huang Return</title>
+<meta name="viewport" content="width=1080, initial-scale=1">
+<!-- Nvidia / Jensen Huang return (Malayalam). Build: WORKERS=3 tools/build.sh nvidia.html build/nvidia_nograin.mp4, then the grain pass. -->
+<script id="config" type="application/json">
+{
+ "title": "One man walked back in: Nvidia and Jensen Huang",
+ "voice": "audio/nvidia.mp3",
+ "voiceTempo": 1.2,
+ "timing": {
+  "phraseGap": 0.08,
+  "sentenceGap": 0.18,
+  "head": 0.08,
+  "tail": 1.2
+ },
+ "music": {
+  "bpm": 100,
+  "chords": [
+   "Am",
+   "F",
+   "C",
+   "G"
+  ],
+  "level": 0.7
+ },
+ "font": "FreeSans",
+ "palette": {
+  "accent": "#76D13A",
+  "red": "#E23636",
+  "blue": "#2C7BE5",
+  "ink": "#0B0D12",
+  "paper": "#F4EFE6",
+  "gold": "#FFB238",
+  "green": "#76B900"
+ },
+ "sentences": [
+  {
+   "scene": "hook",
+   "phrases": [
+    "ഒരാൾ ഓഫീസിലേക്ക് തിരിച്ചു നടന്നു കയറി...",
+    "അത്രമാത്രം.",
+    "ആ ഒറ്റ ദിവസം,",
+    "ഒരു കമ്പനിയുടെ മൂല്യം കൂടിയത്,",
+    "ഏകദേശം ഒരു ലക്ഷം കോടി ഡോളർ!"
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "origin",
+   "phrases": [
+    "1993.",
+    "മൂന്ന് എഞ്ചിനീയർമാർ ചേർന്ന് എൻവിഡിയ തുടങ്ങി.",
+    "സിഇഒ,",
+    "ജെൻസൺ ഹുവാങ്."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "chips",
+   "phrases": [
+    "മുപ്പത്തിമൂന്ന് വർഷം,",
+    "ഒരേയൊരു സിഇഒ.",
+    "ചാറ്റ്ജിപിടി പോലുള്ള എഐകൾക്ക് പിന്നിൽ,",
+    "അവരുടെ ചിപ്പുകൾ."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "scandal",
+   "phrases": [
+    "2026 നവംബർ പന്ത്രണ്ട്.",
+    "വിവാഹേതര ബന്ധങ്ങളുടെ വാർത്ത പുറത്തുവന്നു.",
+    "അതിലൊരാൾക്ക് ചൈനീസ് ചാരസംഘടനയുമായി ബന്ധമുണ്ടെന്ന്",
+    "അമേരിക്കൻ ഇന്റലിജൻസ് കരുതുന്നു.",
+    "ഹുവാങ് രാജിവച്ചു."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "fall",
+   "phrases": [
+    "പതിനൊന്ന് ദിവസം.",
+    "കമ്പനിയുടെ മൂല്യം,",
+    "നാല് ലക്ഷം കോടി ഡോളറിന് മുകളിൽ നിന്ന്,",
+    "മൂന്നിലേക്ക്."
+   ],
+   "labels": {},
+   "holdAfter": 1.0
+  },
+  {
+   "scene": "twist",
+   "phrases": [
+    "നവംബർ ഇരുപത്തിമൂന്ന്.",
+    "ബോർഡ് അദ്ദേഹത്തെ തിരിച്ചെടുത്തു.",
+    "പിന്നിൽ,",
+    "അമേരിക്കൻ പ്രസിഡന്റ് ഡോണൾഡ് ട്രംപ്."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "payoff",
+   "phrases": [
+    "അന്ന് ഓഹരി കുതിച്ചത് മുപ്പത്തിയൊന്ന് ശതമാനം.",
+    "ഒരു മനുഷ്യന്,",
+    "വാൾ സ്ട്രീറ്റ് ഇട്ട വില."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "quote",
+   "phrases": [
+    "ഹുവാങ് പറഞ്ഞു:",
+    "രണ്ടാം തവണ,",
+    "ഞാൻ കൂടുതൽ നല്ല സിഇഒ ആകും.",
+    "പക്ഷേ,",
+    "അമേരിക്കൻ കോൺഗ്രസിന്റെ ചോദ്യങ്ങൾ ഇനിയും ബാക്കി."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "callback",
+   "phrases": [
+    "ഒരാൾ തിരിച്ചു നടന്നു കയറി...",
+    "ലോകം അതിനിട്ട വില,",
+    "ഒരു ലക്ഷം കോടി ഡോളർ."
+   ],
+   "labels": {}
+  }
+ ],
+ "say": {
+  "1993.": "ആയിരത്തി തൊള്ളായിരത്തി തൊണ്ണൂറ്റിമൂന്ന്.",
+  "2026 നവംബർ പന്ത്രണ്ട്.": "രണ്ടായിരത്തി ഇരുപത്തിയാറ് നവംബർ പന്ത്രണ്ട്."
+ }
+}
+</script>
+<script id="timings" type="application/json">
+{
+ "duration": 52.275,
+ "audio": "build/nvidia/voice_cut.wav",
+ "phrases": [
+  {
+   "text": "ഒരാൾ ഓഫീസിലേക്ക് തിരിച്ചു നടന്നു കയറി...",
+   "sentence": 0,
+   "start": 0.1,
+   "end": 1.917,
+   "words": [
+    {
+     "w": "ഒരാൾ",
+     "t": 0.1
+    },
+    {
+     "w": "ഓഫീസിലേക്ക്",
+     "t": 0.348
+    },
+    {
+     "w": "തിരിച്ചു",
+     "t": 0.921
+    },
+    {
+     "w": "നടന്നു",
+     "t": 1.321
+    },
+    {
+     "w": "കയറി...",
+     "t": 1.669
+    }
+   ]
+  },
+  {
+   "text": "അത്രമാത്രം.",
+   "sentence": 0,
+   "start": 2.0,
+   "end": 2.55,
+   "words": [
+    {
+     "w": "അത്രമാത്രം.",
+     "t": 2.0
+    }
+   ]
+  },
+  {
+   "text": "ആ ഒറ്റ ദിവസം,",
+   "sentence": 0,
+   "start": 2.633,
+   "end": 3.542,
+   "words": [
+    {
+     "w": "ആ",
+     "t": 2.633
+    },
+    {
+     "w": "ഒറ്റ",
+     "t": 2.746
+    },
+    {
+     "w": "ദിവസം,",
+     "t": 3.124
+    }
+   ]
+  },
+  {
+   "text": "ഒരു കമ്പനിയുടെ മൂല്യം കൂടിയത്,",
+   "sentence": 0,
+   "start": 3.625,
+   "end": 5.083,
+   "words": [
+    {
+     "w": "ഒരു",
+     "t": 3.625
+    },
+    {
+     "w": "കമ്പനിയുടെ",
+     "t": 3.807
+    },
+    {
+     "w": "മൂല്യം",
+     "t": 4.379
+    },
+    {
+     "w": "കൂടിയത്,",
+     "t": 4.693
+    }
+   ]
+  },
+  {
+   "text": "ഏകദേശം ഒരു ലക്ഷം കോടി ഡോളർ!",
+   "sentence": 0,
+   "start": 5.167,
+   "end": 7.1,
+   "words": [
+    {
+     "w": "ഏകദേശം",
+     "t": 5.167
+    },
+    {
+     "w": "ഒരു",
+     "t": 5.708
+    },
+    {
+     "w": "ലക്ഷം",
+     "t": 5.978
+    },
+    {
+     "w": "കോടി",
+     "t": 6.404
+    },
+    {
+     "w": "ഡോളർ!",
+     "t": 6.714
+    }
+   ]
+  },
+  {
+   "text": "1993.",
+   "sentence": 1,
+   "start": 7.25,
+   "end": 8.758,
+   "words": [
+    {
+     "w": "1993.",
+     "t": 7.25
+    }
+   ]
+  },
+  {
+   "text": "മൂന്ന് എഞ്ചിനീയർമാർ ചേർന്ന് എൻവിഡിയ തുടങ്ങി.",
+   "sentence": 1,
+   "start": 8.842,
+   "end": 11.0,
+   "words": [
+    {
+     "w": "മൂന്ന്",
+     "t": 8.842
+    },
+    {
+     "w": "എഞ്ചിനീയർമാർ",
+     "t": 9.128
+    },
+    {
+     "w": "ചേർന്ന്",
+     "t": 9.792
+    },
+    {
+     "w": "എൻവിഡിയ",
+     "t": 10.24
+    },
+    {
+     "w": "തുടങ്ങി.",
+     "t": 10.643
+    }
+   ]
+  },
+  {
+   "text": "സിഇഒ,",
+   "sentence": 1,
+   "start": 11.083,
+   "end": 11.675,
+   "words": [
+    {
+     "w": "സിഇഒ,",
+     "t": 11.083
+    }
+   ]
+  },
+  {
+   "text": "ജെൻസൺ ഹുവാങ്.",
+   "sentence": 1,
+   "start": 11.758,
+   "end": 12.642,
+   "words": [
+    {
+     "w": "ജെൻസൺ",
+     "t": 11.758
+    },
+    {
+     "w": "ഹുവാങ്.",
+     "t": 12.216
+    }
+   ]
+  },
+  {
+   "text": "മുപ്പത്തിമൂന്ന് വർഷം,",
+   "sentence": 2,
+   "start": 12.792,
+   "end": 13.808,
+   "words": [
+    {
+     "w": "മുപ്പത്തിമൂന്ന്",
+     "t": 12.792
+    },
+    {
+     "w": "വർഷം,",
+     "t": 13.562
+    }
+   ]
+  },
+  {
+   "text": "ഒരേയൊരു സിഇഒ.",
+   "sentence": 2,
+   "start": 13.892,
+   "end": 14.858,
+   "words": [
+    {
+     "w": "ഒരേയൊരു",
+     "t": 13.892
+    },
+    {
+     "w": "സിഇഒ.",
+     "t": 14.473
+    }
+   ]
+  },
+  {
+   "text": "ചാറ്റ്ജിപിടി പോലുള്ള എഐകൾക്ക് പിന്നിൽ,",
+   "sentence": 2,
+   "start": 14.942,
+   "end": 16.825,
+   "words": [
+    {
+     "w": "ചാറ്റ്ജിപിടി",
+     "t": 14.942
+    },
+    {
+     "w": "പോലുള്ള",
+     "t": 15.554
+    },
+    {
+     "w": "എഐകൾക്ക്",
+     "t": 15.936
+    },
+    {
+     "w": "പിന്നിൽ,",
+     "t": 16.443
+    }
+   ]
+  },
+  {
+   "text": "അവരുടെ ചിപ്പുകൾ.",
+   "sentence": 2,
+   "start": 16.908,
+   "end": 17.683,
+   "words": [
+    {
+     "w": "അവരുടെ",
+     "t": 16.908
+    },
+    {
+     "w": "ചിപ്പുകൾ.",
+     "t": 17.247
+    }
+   ]
+  },
+  {
+   "text": "2026 നവംബർ പന്ത്രണ്ട്.",
+   "sentence": 3,
+   "start": 17.833,
+   "end": 19.867,
+   "words": [
+    {
+     "w": "2026",
+     "t": 17.833
+    },
+    {
+     "w": "നവംബർ",
+     "t": 18.768
+    },
+    {
+     "w": "പന്ത്രണ്ട്.",
+     "t": 19.175
+    }
+   ]
+  },
+  {
+   "text": "വിവാഹേതര ബന്ധങ്ങളുടെ വാർത്ത പുറത്തുവന്നു.",
+   "sentence": 3,
+   "start": 19.95,
+   "end": 21.867,
+   "words": [
+    {
+     "w": "വിവാഹേതര",
+     "t": 19.95
+    },
+    {
+     "w": "ബന്ധങ്ങളുടെ",
+     "t": 20.366
+    },
+    {
+     "w": "വാർത്ത",
+     "t": 20.943
+    },
+    {
+     "w": "പുറത്തുവന്നു.",
+     "t": 21.266
+    }
+   ]
+  },
+  {
+   "text": "അതിലൊരാൾക്ക് ചൈനീസ് ചാരസംഘടനയുമായി ബന്ധമുണ്ടെന്ന്",
+   "sentence": 3,
+   "start": 21.95,
+   "end": 24.633,
+   "words": [
+    {
+     "w": "അതിലൊരാൾക്ക്",
+     "t": 21.95
+    },
+    {
+     "w": "ചൈനീസ്",
+     "t": 22.648
+    },
+    {
+     "w": "ചാരസംഘടനയുമായി",
+     "t": 22.971
+    },
+    {
+     "w": "ബന്ധമുണ്ടെന്ന്",
+     "t": 23.828
+    }
+   ]
+  },
+  {
+   "text": "അമേരിക്കൻ ഇന്റലിജൻസ് കരുതുന്നു.",
+   "sentence": 3,
+   "start": 24.717,
+   "end": 26.133,
+   "words": [
+    {
+     "w": "അമേരിക്കൻ",
+     "t": 24.717
+    },
+    {
+     "w": "ഇന്റലിജൻസ്",
+     "t": 25.181
+    },
+    {
+     "w": "കരുതുന്നു.",
+     "t": 25.712
+    }
+   ]
+  },
+  {
+   "text": "ഹുവാങ് രാജിവച്ചു.",
+   "sentence": 3,
+   "start": 26.217,
+   "end": 27.183,
+   "words": [
+    {
+     "w": "ഹുവാങ്",
+     "t": 26.217
+    },
+    {
+     "w": "രാജിവച്ചു.",
+     "t": 26.591
+    }
+   ]
+  },
+  {
+   "text": "പതിനൊന്ന് ദിവസം.",
+   "sentence": 4,
+   "start": 27.333,
+   "end": 28.075,
+   "words": [
+    {
+     "w": "പതിനൊന്ന്",
+     "t": 27.333
+    },
+    {
+     "w": "ദിവസം.",
+     "t": 27.803
+    }
+   ]
+  },
+  {
+   "text": "കമ്പനിയുടെ മൂല്യം,",
+   "sentence": 4,
+   "start": 28.158,
+   "end": 29.017,
+   "words": [
+    {
+     "w": "കമ്പനിയുടെ",
+     "t": 28.158
+    },
+    {
+     "w": "മൂല്യം,",
+     "t": 28.713
+    }
+   ]
+  },
+  {
+   "text": "നാല് ലക്ഷം കോടി ഡോളറിന് മുകളിൽ നിന്ന്,",
+   "sentence": 4,
+   "start": 29.1,
+   "end": 31.058,
+   "words": [
+    {
+     "w": "നാല്",
+     "t": 29.1
+    },
+    {
+     "w": "ലക്ഷം",
+     "t": 29.331
+    },
+    {
+     "w": "കോടി",
+     "t": 29.647
+    },
+    {
+     "w": "ഡോളറിന്",
+     "t": 29.878
+    },
+    {
+     "w": "മുകളിൽ",
+     "t": 30.31
+    },
+    {
+     "w": "നിന്ന്,",
+     "t": 30.712
+    }
+   ]
+  },
+  {
+   "text": "മൂന്നിലേക്ക്.",
+   "sentence": 4,
+   "start": 31.142,
+   "end": 31.692,
+   "words": [
+    {
+     "w": "മൂന്നിലേക്ക്.",
+     "t": 31.142
+    }
+   ]
+  },
+  {
+   "text": "നവംബർ ഇരുപത്തിമൂന്ന്.",
+   "sentence": 5,
+   "start": 32.525,
+   "end": 33.583,
+   "words": [
+    {
+     "w": "നവംബർ",
+     "t": 32.525
+    },
+    {
+     "w": "ഇരുപത്തിമൂന്ന്.",
+     "t": 32.844
+    }
+   ]
+  },
+  {
+   "text": "ബോർഡ് അദ്ദേഹത്തെ തിരിച്ചെടുത്തു.",
+   "sentence": 5,
+   "start": 33.667,
+   "end": 34.967,
+   "words": [
+    {
+     "w": "ബോർഡ്",
+     "t": 33.667
+    },
+    {
+     "w": "അദ്ദേഹത്തെ",
+     "t": 33.901
+    },
+    {
+     "w": "തിരിച്ചെടുത്തു.",
+     "t": 34.369
+    }
+   ]
+  },
+  {
+   "text": "പിന്നിൽ,",
+   "sentence": 5,
+   "start": 35.05,
+   "end": 35.325,
+   "words": [
+    {
+     "w": "പിന്നിൽ,",
+     "t": 35.05
+    }
+   ]
+  },
+  {
+   "text": "അമേരിക്കൻ പ്രസിഡന്റ് ഡോണൾഡ് ട്രംപ്.",
+   "sentence": 5,
+   "start": 35.408,
+   "end": 37.05,
+   "words": [
+    {
+     "w": "അമേരിക്കൻ",
+     "t": 35.408
+    },
+    {
+     "w": "പ്രസിഡന്റ്",
+     "t": 35.907
+    },
+    {
+     "w": "ഡോണൾഡ്",
+     "t": 36.431
+    },
+    {
+     "w": "ട്രംപ്.",
+     "t": 36.763
+    }
+   ]
+  },
+  {
+   "text": "അന്ന് ഓഹരി കുതിച്ചത് മുപ്പത്തിയൊന്ന് ശതമാനം.",
+   "sentence": 6,
+   "start": 37.2,
+   "end": 39.517,
+   "words": [
+    {
+     "w": "അന്ന്",
+     "t": 37.2
+    },
+    {
+     "w": "ഓഹരി",
+     "t": 37.489
+    },
+    {
+     "w": "കുതിച്ചത്",
+     "t": 37.751
+    },
+    {
+     "w": "മുപ്പത്തിയൊന്ന്",
+     "t": 38.25
+    },
+    {
+     "w": "ശതമാനം.",
+     "t": 39.15
+    }
+   ]
+  },
+  {
+   "text": "ഒരു മനുഷ്യന്,",
+   "sentence": 6,
+   "start": 39.6,
+   "end": 40.258,
+   "words": [
+    {
+     "w": "ഒരു",
+     "t": 39.6
+    },
+    {
+     "w": "മനുഷ്യന്,",
+     "t": 39.784
+    }
+   ]
+  },
+  {
+   "text": "വാൾ സ്ട്രീറ്റ് ഇട്ട വില.",
+   "sentence": 6,
+   "start": 40.342,
+   "end": 41.267,
+   "words": [
+    {
+     "w": "വാൾ",
+     "t": 40.342
+    },
+    {
+     "w": "സ്ട്രീറ്റ്",
+     "t": 40.489
+    },
+    {
+     "w": "ഇട്ട",
+     "t": 40.91
+    },
+    {
+     "w": "വില.",
+     "t": 41.12
+    }
+   ]
+  },
+  {
+   "text": "ഹുവാങ് പറഞ്ഞു:",
+   "sentence": 7,
+   "start": 41.417,
+   "end": 42.042,
+   "words": [
+    {
+     "w": "ഹുവാങ്",
+     "t": 41.417
+    },
+    {
+     "w": "പറഞ്ഞു:",
+     "t": 41.706
+    }
+   ]
+  },
+  {
+   "text": "രണ്ടാം തവണ,",
+   "sentence": 7,
+   "start": 42.125,
+   "end": 42.825,
+   "words": [
+    {
+     "w": "രണ്ടാം",
+     "t": 42.125
+    },
+    {
+     "w": "തവണ,",
+     "t": 42.527
+    }
+   ]
+  },
+  {
+   "text": "ഞാൻ കൂടുതൽ നല്ല സിഇഒ ആകും.",
+   "sentence": 7,
+   "start": 42.908,
+   "end": 44.558,
+   "words": [
+    {
+     "w": "ഞാൻ",
+     "t": 42.908
+    },
+    {
+     "w": "കൂടുതൽ",
+     "t": 43.144
+    },
+    {
+     "w": "നല്ല",
+     "t": 43.615
+    },
+    {
+     "w": "സിഇഒ",
+     "t": 43.951
+    },
+    {
+     "w": "ആകും.",
+     "t": 44.287
+    }
+   ]
+  },
+  {
+   "text": "പക്ഷേ,",
+   "sentence": 7,
+   "start": 44.642,
+   "end": 44.992,
+   "words": [
+    {
+     "w": "പക്ഷേ,",
+     "t": 44.642
+    }
+   ]
+  },
+  {
+   "text": "അമേരിക്കൻ കോൺഗ്രസിന്റെ ചോദ്യങ്ങൾ ഇനിയും ബാക്കി.",
+   "sentence": 7,
+   "start": 45.075,
+   "end": 47.258,
+   "words": [
+    {
+     "w": "അമേരിക്കൻ",
+     "t": 45.075
+    },
+    {
+     "w": "കോൺഗ്രസിന്റെ",
+     "t": 45.572
+    },
+    {
+     "w": "ചോദ്യങ്ങൾ",
+     "t": 46.19
+    },
+    {
+     "w": "ഇനിയും",
+     "t": 46.687
+    },
+    {
+     "w": "ബാക്കി.",
+     "t": 46.973
+    }
+   ]
+  },
+  {
+   "text": "ഒരാൾ തിരിച്ചു നടന്നു കയറി...",
+   "sentence": 8,
+   "start": 47.408,
+   "end": 48.575,
+   "words": [
+    {
+     "w": "ഒരാൾ",
+     "t": 47.408
+    },
+    {
+     "w": "തിരിച്ചു",
+     "t": 47.641
+    },
+    {
+     "w": "നടന്നു",
+     "t": 48.016
+    },
+    {
+     "w": "കയറി...",
+     "t": 48.342
+    }
+   ]
+  },
+  {
+   "text": "ലോകം അതിനിട്ട വില,",
+   "sentence": 8,
+   "start": 48.658,
+   "end": 49.842,
+   "words": [
+    {
+     "w": "ലോകം",
+     "t": 48.658
+    },
+    {
+     "w": "അതിനിട്ട",
+     "t": 48.946
+    },
+    {
+     "w": "വില,",
+     "t": 49.591
+    }
+   ]
+  },
+  {
+   "text": "ഒരു ലക്ഷം കോടി ഡോളർ.",
+   "sentence": 8,
+   "start": 49.925,
+   "end": 51.242,
+   "words": [
+    {
+     "w": "ഒരു",
+     "t": 49.925
+    },
+    {
+     "w": "ലക്ഷം",
+     "t": 50.181
+    },
+    {
+     "w": "കോടി",
+     "t": 50.583
+    },
+    {
+     "w": "ഡോളർ.",
+     "t": 50.877
+    }
+   ]
+  }
+ ],
+ "beat": {
+  "bpm": 101.5,
+  "t0": 0.1,
+  "err_ms": 76
+ }
+}
+</script>
+<style>
+  html, body { margin: 0; background: #050608; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  #world { position: absolute; inset: 0; }
+  #gl { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+  #capShade { position: absolute; left: 0; right: 0; top: 1240px; height: 680px;
+    background: linear-gradient(to bottom, rgba(5,6,8,0) 0%, rgba(5,6,8,.42) 45%, rgba(5,6,8,.62) 100%); }
+  #captions { position: absolute; left: 60px; width: 840px; top: 1300px; height: 210px; }
+  .page { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center;
+    justify-content: center; text-align: center; opacity: 0; }
+  .w { display: inline-block; font-family: FreeSans, sans-serif; font-weight: 700; font-size: 74px; line-height: 1.3; color: #F3EEE4;
+    margin: 0 10px; opacity: 0; letter-spacing: -.5px;
+    text-shadow: 0 6px 22px rgba(0,0,0,.65), 0 0 3px rgba(0,0,0,.9); }
+  svg text { font-weight: 800; }
+  .guide { position: absolute; background: rgba(255,0,80,.25); pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <svg id="world" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+    <defs id="defs">
+      <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1A20"/><stop offset=".6" stop-color="#0E2A33"/><stop offset="1" stop-color="#07090C"/></linearGradient>
+      <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050A12"/><stop offset="1" stop-color="#14303A"/></linearGradient>
+      <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A2228"/><stop offset="1" stop-color="#0A0E11"/></linearGradient>
+      <linearGradient id="sunset" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B1240"/><stop offset=".45" stop-color="#B8336A"/><stop offset=".75" stop-color="#FF8A3D"/><stop offset="1" stop-color="#FFC46B"/></linearGradient>
+      <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE29A"/><stop offset="1" stop-color="#D9A02B"/></linearGradient>
+      <radialGradient id="vig" cx=".5" cy=".45" r=".72"><stop offset=".62" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".32"/></radialGradient>
+      <radialGradient id="leakG"><stop offset="0" stop-color="#FF9A4A" stop-opacity=".35"/><stop offset="1" stop-color="#FF9A4A" stop-opacity="0"/></radialGradient>
+      <radialGradient id="redGlow"><stop offset="0" stop-color="#FF3B3B" stop-opacity=".8"/><stop offset="1" stop-color="#FF3B3B" stop-opacity="0"/></radialGradient>
+      <radialGradient id="blueGlow"><stop offset="0" stop-color="#3B7BFF" stop-opacity=".8"/><stop offset="1" stop-color="#3B7BFF" stop-opacity="0"/></radialGradient>
+      <filter id="sepia"><feColorMatrix type="matrix" values=".39 .77 .19 0 0  .35 .69 .17 0 0  .27 .53 .13 0 0  0 0 0 1 0"/></filter>
+      <filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+      <filter id="blur20"><feGaussianBlur stdDeviation="20"/></filter>
+      <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    </defs>
+    <rect id="bgRect" width="1080" height="1920" fill="url(#bgG)" opacity="0"/>
+    <g id="cam"></g>
+    <g id="labels"></g>
+    <rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+        <rect y="0" width="1080" height="70" fill="#000"/>
+    <rect y="1850" width="1080" height="70" fill="#000"/>
+    <g id="front"></g>
+    <rect id="flash" width="1080" height="1920" fill="#fff" opacity="0"/>
+  </svg>
+  <div id="capShade"></div>
+  <div id="captions"></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script type="importmap">{"imports":{"three":"./vendor/three186/build/three.module.js","three/addons/":"./vendor/three186/examples/jsm/"}}</script>
+<script type="module">
+import { KeynoteWorld } from './lib/keynote3d.js';
+(async function () {
+const CFG = JSON.parse(document.getElementById('config').textContent);
+const TIM = JSON.parse(document.getElementById('timings').textContent);
+const C = CFG.palette, FONT = CFG.font;
+const NS = 'http://www.w3.org/2000/svg';
+const DUR = TIM.duration;
+const SFX = [];
+const $ = id => document.getElementById(id);
+window.BEAT = TIM.beat || null;
+const BEAT = window.BEAT;
+const snapT = t => { if (!BEAT) return t; const g = 30 / BEAT.bpm; return Math.max(0, BEAT.t0 + Math.ceil((t - .08 - BEAT.t0) / g) * g); };
+const FREE = new Set(['tick', 'wave', 'dip', 'shimmer', 'siren', 'type']);
+const sfx = (type, t, gain = 1, extra = {}) => SFX.push(Object.assign({ type, t: +Math.max(0, FREE.has(type) ? t : snapT(t)).toFixed(3), gain }, extra));
+const hit = t => sfx('hit', t, .8);
+
+await document.fonts.load(`700 80px ${FONT}`, 'മലയാളം'); await document.fonts.load(`900 80px Inter`, 'GOLD ₹'); await document.fonts.load(`800 80px Inter`, 'GOLD ₹'); await document.fonts.load('bold 80px "DejaVu Serif"', 'A');
+document.body.style.fontFamily = FONT;
+
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function text(parent, x, y, str, size, fill, anchor = 'middle', extra = {}) { const t = el('text', Object.assign({ x, y, 'font-size': size, fill, 'text-anchor': anchor, 'font-family': /[\u0D00-\u0D7F]/.test(str) ? FONT : 'Inter', 'dominant-baseline': 'central' }, extra), parent); t.textContent = str; return t; }
+
+// ---------------------------------------------------------------- timing
+const sentences = CFG.sentences.map((s, si) => { const ph = TIM.phrases.filter(p => p.sentence === si); return Object.assign({}, s, { ph, words: ph.flatMap(p => p.words) }); });
+const sStart = si => sentences[si].ph[0].start;
+const sEnd = si => si + 1 < sentences.length ? sStart(si + 1) : DUR;
+const pS = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].start;
+const pE = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].end;
+const wT = (si, k) => { const w = sentences[si].words; return w[Math.max(0, Math.min(k, w.length - 1))].t; };
+const wIdx = (si, j, k = 0) => sentences[si].ph.slice(0, j).reduce((a, p) => a + p.words.length, 0) + k;
+const lastW = si => wT(si, sentences[si].words.length - 1);
+
+const tl = gsap.timeline({ paused: true });
+tl.to({}, { duration: DUR }, 0);
+const hide = e => tl.set(e, { opacity: 0 }, 0);
+const show = (e, t, d = .5) => { hide(e); tl.to(e, { opacity: 1, duration: d, ease: 'power1.out' }, t); };
+const fadeOut = (e, t, d = .5) => tl.to(e, { opacity: 0, duration: d, ease: 'power1.in' }, t);
+function stamp(e, t, o = {}) { t = snapT(t); tl.set(e, { opacity: 0, scale: 2.2, transformOrigin: o.origin || '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: .28, ease: 'power4.out' }, t); sfx('thud', t + .2, .8); }
+function counter(tEl, from, to, t, d, fmt, ticks = 14) { const o = { v: from }; tEl.textContent = fmt(from); tl.to(o, { v: to, duration: d, ease: 'power2.out', onUpdate: () => tEl.textContent = fmt(o.v) }, t); for (let k = 0; k < ticks; k++) sfx('tick', t + d * (1 - Math.sqrt(1 - k / ticks)), .5); }
+const flash = (t, a = .35) => { tl.set($('flash'), { opacity: a }, t); tl.to($('flash'), { opacity: 0, duration: .5 }, t + .03); };
+// typewriter line: reveals left to right with a key click per step
+let clipN = 0;
+function typeLine(parent, x, y, str, size, fill, t, d = .9, anchor = 'start') {
+  const id = 'tw' + (clipN++), cp = el('clipPath', { id }, $('defs')); const r = el('rect', { x: anchor === 'middle' ? 0 : x - 4, y: y - size, width: 0, height: size * 2 }, cp);
+  const g = el('g', { 'clip-path': `url(#${id})` }, parent); const tx = text(g, x, y, str, size, fill, anchor, { 'letter-spacing': 3 });
+  const w = tx.getBBox().width + 12, x0 = anchor === 'middle' ? x - w / 2 : x - 4; r.setAttribute('x', x0);
+  const o = { w: 0 }; tl.to(o, { w, duration: d, ease: 'steps(' + Math.max(6, str.length) + ')', onUpdate: () => r.setAttribute('width', o.w) }, t);
+  for (let k = 0; k < Math.min(12, str.length); k++) sfx('type', t + k * d / Math.min(12, str.length), .5);
+  return g;
+}
+// lower-third location card: thin orange line + typewriter text
+function lowerThird(parent, line1, line2, t) {
+  const g = el('g', {}, parent);
+  const bar = el('rect', { x: 80, y: 300, width: 0, height: 5, fill: C.accent }, g);
+  tl.to(bar, { attr: { width: 120 }, duration: .4, ease: 'power2.out' }, t);
+  typeLine(g, 84, 352, line1, 46, '#F3EEE4', t + .2, .8);
+  if (line2) typeLine(g, 84, 418, line2, 40, C.accent, t + .9, .5);
+  return g;
+}
+
+// ---------------------------------------------------------------- camera (Ken Burns)
+const CAM = { s: 1, x: 0, y: 0, r: 0 };
+const CUTS = sentences.map((s, si) => sStart(si) - .05).concat([DUR]);
+// a camera drift must finish before the next scene's camSet, or two tweens fight and the frame shakes
+const camTo = (t, v, d, ease = 'sine.inOut') => { const nx = CUTS.find(c => c > t + .02) ?? DUR; const dd = Math.max(.05, Math.min(d, nx - .08 - t)); return tl.to(CAM, Object.assign({ duration: dd, ease }, v), t); };
+const camSet = (t, v) => tl.set(CAM, v, t);
+const scene = name => { const g = el('g', { id: 'sc_' + name }, $('cam')); hide(g); return g; };
+
+// ================================================================= 3D KEYNOTE STAGE + SCENES
+const IMG = src => new Promise(ok => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => ok(null); i.src = src; });
+const B = 'build/nvidia/', IM = {}; for (const k of ['logo.png', 'jh005.jpg', 'jh025.jpg', 'jh001.jpg', 'jh018.jpg', 'trump.jpg', 'hq.jpg', 'h100a.png', 'h100b.png', 'h100c.png']) IM[k.split('.')[0]] = await IMG(B + k);
+const SCR = { logo: 0, jhw: 1, jhp: 2, hq: 3, y1993: 4, h100: 5, nov12: 6, fall: 7, black: 8, back: 9, trump: 10, up31: 11, jhq: 12, jhgrey: 13 };
+const SCREENS = [{ kind: 'logo', img: IM.logo, bg: '#16260C' }, { kind: 'photo', img: IM.jh025 }, { kind: 'photo', img: IM.jh005 }, { kind: 'photo', img: IM.hq },
+  { kind: 'text', text: '1993', sub: 'NVIDIA IS FOUNDED', fg: '#76D13A', bg: '#0E1A0A' }, { kind: 'photo', img: IM.h100b, grade: 'brightness(.55) contrast(1.1)' },
+  { kind: 'text', text: '12 NOV', sub: 'NVIDIA CEO RESIGNS', fg: '#FF4A4A', bg: '#2A0608' }, { kind: 'text', text: '11 DAYS', sub: 'MARKET VALUE FALLS', fg: '#FF4A4A', bg: '#22060A', ox: -.045, vw: .22 }, { kind: 'text', text: '', bg: '#000000' },
+  { kind: 'text', text: '23 NOV', sub: 'HUANG REINSTATED', fg: '#76D13A', bg: '#0E1C0A' }, { kind: 'photo', img: IM.trump }, { kind: 'text', text: '+31%', sub: 'NVIDIA SHARES · ONE DAY', fg: '#76D13A', bg: '#0C1A08', ox: -.11, vw: .22 },
+  { kind: 'photo', img: IM.jh018 }, { kind: 'photo', img: IM.jh005, grade: 'grayscale(1) brightness(.8)' }]
+  .map(s => (s.kind === 'text' || s.img) ? s : { kind: 'text', text: '', bg: '#05060A' });
+const W = new KeynoteWorld($('gl'), SCREENS), ST = W.ST;
+const STTW = [];
+const v3 = (t, o) => { t = Math.max(0, t); STTW.forEach(([w, keys]) => { const st = w.startTime(); if (st < t && st + w.duration() > t - .03 && keys.some(k => k in o)) w.duration(Math.max(.05, t - .03 - st)); }); return tl.set(ST, o, t); };
+const CAMTW = [];
+const c3 = (t, cam) => { t = Math.max(0, t); cam = Object.assign({ roll: 0 }, cam); CAMTW.forEach(w => { const st = w.startTime(); if (st < t && st + w.duration() > t - .03) w.duration(Math.max(.05, t - .03 - st)); }); return tl.set(ST.cam, cam, t); };
+const m3 = (t, cam, d, ease = 'sine.inOut') => { const nx = CUTS.find(c => c > t + .02) ?? DUR; const dd = Math.max(.05, Math.min(d, nx - .08 - t)); tl.to(ST.cam, Object.assign({ duration: dd, ease }, cam), Math.max(0, t)); CAMTW.push(tl.recent()); return tl; };
+const go3 = (t, o, d, ease = 'power2.inOut') => { tl.to(ST, Object.assign({ duration: d, ease }, o), Math.max(0, t)); STTW.push([tl.recent(), Object.keys(o)]); return tl; };
+function pill(parent, cx, cy, str, size, fg = '#FFFFFF', bg = '#12161A', pad = 40) { const g = el('g', {}, parent), tx = text(g, cx, cy, str, size, fg, 'middle', { 'letter-spacing': 1.5 }); const w = tx.getBBox().width + pad * 2; g.insertBefore(el('rect', { x: cx - w / 2, y: cy - size * .9, width: w, height: size * 1.8, rx: size * .9, fill: bg, opacity: .92 }), tx); return g; }
+function pop(e, t, d = .35) { tl.set(e, { opacity: 0, scale: .6, transformOrigin: '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: d, ease: 'back.out(2)' }, Math.max(0, t)); sfx('pop', t, .45); }
+function slam(e, t) { tl.set(e, { opacity: 0, scale: 2.4, transformOrigin: '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: .26, ease: 'power4.out' }, Math.max(0, t)); sfx('thud', t + .18, .8); }
+const overlay = si => { const g = el('g', {}, $('front')); tl.set(g, { opacity: 0 }, 0); tl.set(g, { opacity: 1 }, Math.max(0, sStart(si) - .05)); tl.set(g, { opacity: 0 }, sEnd(si) - .03); return g; };
+const out = (e, t) => tl.to(e, { opacity: 0, duration: .15 }, t - .1);
+function tag(o, a, b, t, row = 0) { const y = 330 + row * 92; const g = el('g', {}, o); const p1 = pill(g, 0, 0, a, 50, '#FFFFFF', C.ink, 34); const bb = p1.getBBox(); p1.setAttribute('transform', `translate(${80 + bb.width / 2} ${y})`); pop(p1, t); if (b) { const p2 = pill(g, 0, 0, b, 36, C.ink, '#FFFFFF', 26); const b2 = p2.getBBox(); p2.setAttribute('transform', `translate(${80 + b2.width / 2} ${y + 86})`); pop(p2, t + .35); } return g; }
+// ---- exploded-view labels (the GPU), shown in time windows
+const EXW = []; let EXL = null;
+function explodedLabels(t0, t1, only) { EXW.push([t0, t1, only]); }
+function placeExploded(t) {
+  if (!EXL) { EXL = W.explodedLabels().map(() => { const g = el('g', { opacity: 0 }, $('labels')); const line = el('polyline', { fill: 'none', stroke: '#FFFFFF', 'stroke-width': 3.5, opacity: .9 }, g); const dot = el('circle', { r: 8, fill: C.accent, stroke: '#fff', 'stroke-width': 3 }, g); const bg = el('rect', { rx: 12, fill: '#12161A', opacity: .9 }, g); const tx = text(g, 0, 0, '', 34, '#FFFFFF', 'start', { 'letter-spacing': 1 }); return { g, line, dot, bg, tx }; }); }
+  const win = EXW.find(([a, b]) => t >= a && t < b); const L = W.explodedLabels();
+  if (!win) { EXL.forEach(l => l.g.setAttribute('opacity', 0)); return; }
+  const fade = Math.min(1, (t - win[0]) / .35, (win[1] - t) / .2);
+  const pts = L.map((p, i) => ({ p, l: EXL[i], ly: p.y, on: (!win[2] || win[2].includes(p.label)) && p.z < 1 ? Math.max(0, Math.min(1, (p.u - .85) / .15)) : 0 }));
+  pts.forEach(q => { if (q.p.label === 'CIRCUIT BOARD') q.on = Math.max(0, Math.min(1, (ST.explode - .8) / .2)) * (q.p.z < 1 ? 1 : 0); });
+  [-1, 1].forEach(side => { const col = pts.filter(q => q.p.side === side && q.on > 0).sort((a, b) => a.p.y - b.p.y); for (let i = 1; i < col.length; i++) col[i].ly = Math.max(col[i].ly, col[i - 1].ly + 74); for (let i = col.length - 2; i >= 0; i--) if (col[i].ly > col[i + 1].ly - 74) col[i].ly = col[i + 1].ly - 74; });
+  pts.forEach(({ p, l, ly, on }) => { on *= fade; if (l.tx.textContent !== p.label) l.tx.textContent = p.label;
+    ly = Math.max(290, Math.min(1190, ly)); const bw = l.tx.getComputedTextLength() + 32, bx = p.side > 0 ? 920 - bw : 60, end = p.side > 0 ? bx : bx + bw;
+    l.line.setAttribute('points', `${p.x.toFixed(1)},${p.y.toFixed(1)} ${(end + (p.side > 0 ? -34 : 34)).toFixed(1)},${ly.toFixed(1)} ${end},${ly.toFixed(1)}`); l.dot.setAttribute('cx', p.x.toFixed(1)); l.dot.setAttribute('cy', p.y.toFixed(1));
+    l.tx.setAttribute('x', bx + 16); l.tx.setAttribute('y', ly + 1); l.bg.setAttribute('x', bx); l.bg.setAttribute('y', ly - 30); l.bg.setAttribute('width', bw); l.bg.setAttribute('height', 60); l.g.setAttribute('opacity', on.toFixed(3)); });
+}
+// ---- market-value readout that rides the top of the glass column
+const CAPW = []; const capG = el('g', { opacity: 0 }, $('labels')); const capBg = el('rect', { rx: 16, fill: '#0B0D12', opacity: .92 }, capG); const capTx = text(capG, 0, 0, '', 58, '#FFFFFF', 'start', { 'font-weight': 900 }); const capSub = text(capG, 0, 0, 'NVIDIA MARKET VALUE', 24, '#B8C2B0', 'start', { 'letter-spacing': 2 });
+const capFmt = v => v > 3.995 ? (ST.capPlus ? '$4T+' : '$4T') : v < 3.02 ? '~$3T' : '$' + v.toFixed(1) + 'T';
+function capWindow(t0, t1) { CAPW.push([t0, t1]); }
+function placeCap(t) { const win = CAPW.find(([a, b]) => t >= a && t < b); if (!win) { capG.setAttribute('opacity', 0); return; }
+  const f = Math.min(1, (t - win[0]) / .3, (win[1] - t) / .2); const [x, y] = W.screen('colTop'); capTx.textContent = capFmt(ST.cap); capTx.setAttribute('fill', ST.red > .5 ? '#FF6A6A' : '#9BE35A');
+  const bx = Math.min(920 - 300, x + 70), by = Math.max(660, Math.min(1180, y)); capTx.setAttribute('x', bx + 22); capTx.setAttribute('y', by - 8); capSub.setAttribute('x', bx + 22); capSub.setAttribute('y', by + 40);
+  capBg.setAttribute('x', bx); capBg.setAttribute('y', by - 56); capBg.setAttribute('width', Math.max(capTx.getComputedTextLength(), capSub.getComputedTextLength()) + 44); capBg.setAttribute('height', 124); capG.setAttribute('opacity', f.toFixed(3)); }
+
+const HS = { 'font-weight': 900, 'letter-spacing': 0, stroke: '#0B0D12', 'stroke-width': 14, 'paint-order': 'stroke', 'stroke-linejoin': 'round' };
+const CREDIT = { [SCR.jhw]: 'Photo: Anders Eidesvik · CC BY 4.0', [SCR.jhp]: 'Photo: Anders Eidesvik · CC BY 4.0', [SCR.jhq]: 'Photo: Anders Eidesvik · CC BY 4.0', [SCR.jhgrey]: 'Photo: Anders Eidesvik · CC BY 4.0', [SCR.hq]: 'Photo: Nvidia Endeavor HQ · CC BY-SA 4.0', [SCR.h100]: 'Photo: Geekerwan · CC BY 3.0', [SCR.trump]: 'Photo: White House · public domain' };
+const STUDIO = { scrA: 0, scrB: 0, scrMix: 0, scrOn: 1, scrZoom: 0, explode: 0, spin: 0, rim: 1, red: 0, cap: 3.0, colOn: 1, chipOn: 1, chipGlow: 0, house: 1, aperture: .00002, exposure: 1.0, capPlus: 0 };
+const fitW = (e, w) => { const bw = e.getBBox().width; if (bw > w) e.setAttribute('font-size', (+e.getAttribute('font-size') * w / bw).toFixed(1)); return e; };
+const scrTo = (t, k, d = .45) => { tl.set(ST, { scrB: k, scrMix: 0 }, t); tl.to(ST, { scrMix: 1, duration: d, ease: 'power1.inOut' }, t); tl.set(ST, { scrA: k, scrMix: 0 }, t + d + .01); };
+function credit(k, t0, t1) { if (!CREDIT[k]) return; const g = el('g', {}, $('front')); text(g, 80, 1488, CREDIT[k], 24, '#CFC8BC', 'start', { 'font-weight': 600, opacity: .85 }); tl.set(g, { opacity: 0 }, 0); tl.to(g, { opacity: 1, duration: .3 }, t0); tl.to(g, { opacity: 0, duration: .2 }, t1 - .2); }
+function hookCard() { const h = el('g', {}, $('front')); fitW(text(h, 470, 330, 'ഒരാൾ തിരിച്ചെത്തി...', 112, '#FFFFFF', 'middle', HS), 840); fitW(text(h, 470, 475, '$1 ട്രില്യൺ!', 150, C.accent, 'middle', HS), 840); return h; }
+function leak(t, d = 1.4) { const g = el('g', { style: 'mix-blend-mode:screen' }, $('front')); el('circle', { cx: 960, cy: 260, r: 520, fill: 'url(#leakG)' }, g); tl.set(g, { opacity: 0 }, 0); tl.to(g, { opacity: 1, duration: d * .4 }, t); tl.to(g, { opacity: 0, duration: d * .6 }, t + d * .4); }
+function flare(t, d = 1.2, y = 760) { const g = el('g', { style: 'mix-blend-mode:screen' }, $('front')); const id = 'fl' + Math.round(t * 100);
+  const lg = el('linearGradient', { id, x1: 0, x2: 1, y1: 0, y2: 0 }, $('defs')); [[0, 0], [.35, .5], [.5, 1], [.65, .5], [1, 0]].forEach(([o, a]) => el('stop', { offset: o, 'stop-color': '#C8FF9E', 'stop-opacity': a }, lg));
+  el('rect', { x: -200, y: y - 7, width: 1480, height: 14, fill: `url(#${id})` }, g); el('ellipse', { cx: 540, cy: y, rx: 160, ry: 60, fill: '#E4FFD0', opacity: .55, filter: 'url(#blur20)' }, g);
+  tl.set(g, { opacity: 0, scaleX: .3, transformOrigin: `540px ${y}px` }, 0); tl.to(g, { opacity: 1, scaleX: 1, duration: d * .35, ease: 'power2.out' }, t); tl.to(g, { opacity: 0, duration: d * .65, ease: 'power1.in' }, t + d * .35); }
+// stock cameras
+const WIDE = { px: 0, py: 2.3, pz: 10.5, tx: 0, ty: 2.9, tz: -2, fov: 44 };
+const COLCAM = { px: -.5, py: 2.0, pz: 6.4, tx: -1.25, ty: 2.15, tz: 0, fov: 42 };
+function capSurge(t0, d, from, to) { v3(t0, { cap: from }); go3(t0 + .02, { cap: to }, d, 'power2.out'); for (let k = 0; k < 16; k++) sfx('tick', t0 + d * (1 - Math.sqrt(1 - k / 16)), .45); }
+const scenes = {
+  hook(si) {
+    // bright first frame: Huang on the LED wall; the hook card; then the market-value column surges $3T -> $4T
+    v3(0, Object.assign({}, STUDIO, { scrA: SCR.jhw, scrB: SCR.jhw, exposure: 1.08 }));
+    c3(0, { px: .4, py: 2.9, pz: 8.6, tx: 0, ty: 3.6, tz: -3, fov: 40 }); m3(.02, { px: .2, py: 2.6, pz: 7.2 }, pS(si, 3) - .1); credit(SCR.jhw, .2, pS(si, 3) - .05);
+    const H = hookCard(); tl.set(H, { opacity: 1 }, 0); tl.to(H, { opacity: 0, duration: .25 }, pS(si, 3) - .2);
+    const t3 = pS(si, 3) - .05; flash(t3, .15); scrTo(t3, SCR.logo, .3); v3(t3, { exposure: 1 });
+    c3(t3, Object.assign({}, COLCAM, { px: -.7, pz: 5.9 })); m3(t3 + .02, { px: -1.1, py: 2.3, pz: 5.0 }, sEnd(si) - t3);
+    capSurge(t3 + .1, sEnd(si) - t3 - .4, 3.0, 3.98); capWindow(t3 + .1, sEnd(si) - .05);
+    const o = overlay(si); const p = pill(o, 470, 1130, '+$950 BN · IN ONE DAY', 56, C.ink, C.accent, 38); slam(p, pS(si, 4) + .2); const q = pill(o, 470, 1235, 'NVIDIA · 23 NOV 2026', 32, '#FFFFFF', C.ink, 26); pop(q, pS(si, 4) + .55);
+  },
+  origin(si) {
+    const T0 = sStart(si), tH = pS(si, 1) - .05, tJ = pS(si, 2) - .05;
+    flash(T0 - .02, .2); scrTo(T0 - .05, SCR.y1993, .25);
+    c3(T0 - .05, Object.assign({}, WIDE)); m3(T0, { px: .3, py: 2.6, pz: 9.0 }, tH - T0);
+    const o = overlay(si); const g1 = tag(o, '1993', 'CO-FOUNDED BY 3 ENGINEERS', T0 + .05); out(g1, tJ);
+    scrTo(tH, SCR.hq, .5); credit(SCR.hq, tH + .2, tJ); m3(tH, { px: -.3, py: 2.9, pz: 8.0, ty: 3.4 }, tJ - tH);
+    scrTo(tJ, SCR.jhp, .4); credit(SCR.jhp, tJ + .2, sEnd(si)); c3(tJ, { px: 0, py: 3.3, pz: 6.0, tx: 0, ty: 4.0, tz: -5, fov: 40 }); m3(tJ + .02, { px: 0, py: 3.6, pz: 4.9 }, sEnd(si) - tJ);
+    const n = pill(o, 470, 1150, 'JENSEN HUANG', 70, C.ink, C.accent, 44); slam(n, pS(si, 3)); const r = pill(o, 470, 1255, 'CO-FOUNDER & CEO', 36, '#FFFFFF', C.ink, 26); pop(r, pS(si, 3) + .3);
+  },
+  chips(si) {
+    // the anatomy shot: the AI chip comes apart into labelled parts while it turns, then snaps back together
+    const T0 = sStart(si), tE = sEnd(si);
+    flash(T0 - .02, .2); scrTo(T0 - .05, SCR.h100, .3); credit(SCR.h100, T0, tE);
+    v3(T0 - .05, { colOn: 0, spin: -.5, explode: 0, chipGlow: .3, aperture: .00003 });
+    c3(T0 - .05, { px: 2.0, py: 3.1, pz: 5.0, tx: 0, ty: 1.4, tz: 0, fov: 42 }); m3(T0, { px: 1.2, py: 3.3, pz: 5.3 }, tE - T0);
+    go3(T0 + .1, { spin: .35 }, tE - T0, 'none'); go3(T0 + .25, { explode: 1 }, 2.0, 'power2.inOut'); sfx('whoosh', T0 + .3, .5);
+    explodedLabels(T0 + 1.6, pS(si, 3) + .1); go3(pS(si, 3) + .15, { explode: 0, chipGlow: 1 }, Math.max(.4, tE - pS(si, 3) - .25), 'power3.in');
+    sfx('thud', tE - .12, .7);
+    const o = overlay(si); const g1 = tag(o, '33 YEARS · ONE CEO', null, T0 + .05); out(g1, pS(si, 2) + .05);
+    const p = pill(o, 470, 330, 'THE CHIPS BEHIND AI LIKE CHATGPT', 42, C.ink, C.accent, 30); pop(p, pS(si, 2) + .1);
+  },
+  scandal(si) {
+    const T0 = sStart(si), tR = pS(si, 4) - .05;
+    flash(T0 - .02, .25); sfx('hit', T0, .8); scrTo(T0 - .05, SCR.nov12, .2);
+    v3(T0 - .05, { colOn: 1, explode: 0, chipGlow: 0, spin: .35, aperture: .00002 }); go3(T0, { red: 1, rim: .8 }, .8, 'power2.out');
+    c3(T0 - .05, { px: 0, py: 2.0, pz: 7.6, tx: 0, ty: 2.6, tz: -2, fov: 44 }); m3(T0, { px: .5, py: 1.8, pz: 6.2 }, tR - T0);
+    const o = overlay(si); tag(o, '12 NOV 2026', null, T0 + .05);
+    const a = pill(o, 470, 1120, 'REPORTS: EXTRAMARITAL AFFAIRS', 44, '#FFFFFF', '#5A0E12', 30); pop(a, pS(si, 1) + .2);
+    const b = pill(o, 470, 1222, "ONE WOMAN TIED TO CHINA'S SPY AGENCY", 38, '#FFFFFF', C.ink, 28); pop(b, pS(si, 2) + .3); const b2 = pill(o, 470, 1300, 'US INTELLIGENCE BELIEVES · AS REPORTED', 26, '#E6E0D6', '#2A2E36', 22); pop(b2, pS(si, 3) + .2);
+    [a, b, b2].forEach(e => out(e, tR));
+    scrTo(tR, SCR.jhgrey, .5); credit(SCR.jhgrey, tR + .2, sEnd(si)); c3(tR, { px: 0, py: 3.3, pz: 6.2, tx: 0, ty: 4.0, tz: -5, fov: 40 }); m3(tR + .02, { px: 0, py: 3.5, pz: 5.4 }, sEnd(si) - tR);
+    const r = pill(o, 470, 1150, 'HUANG RESIGNS', 72, '#FFFFFF', C.red, 44); slam(r, tR + .25);
+  },
+  fall(si) {
+    const T0 = sStart(si), tE = pE(si, 3);
+    flash(T0 - .02, .15); scrTo(T0 - .05, SCR.fall, .25);
+    c3(T0 - .05, { px: -.3, py: 2.6, pz: 7.4, tx: -1.1, ty: 2.4, tz: 0, fov: 44 }); m3(T0, { px: -.6, py: 2.2, pz: 6.7 }, tE - T0 + .2);
+    v3(T0 - .05, { cap: 4.3, capPlus: 1 }); go3(pS(si, 1), { cap: 3.0 }, tE - pS(si, 1) + .1, 'power2.in'); for (let k = 0; k < 14; k++) sfx('tick', pS(si, 1) + k * (tE - pS(si, 1)) / 14, .45); capWindow(T0 + .1, tE + .25);
+    const o = overlay(si); tag(o, '12 → 23 NOV', '11 DAYS', T0 + .05);
+    // the silence: the wall dies, the stage goes dark, a thin flare builds
+    go3(tE + .1, { scrOn: .05, house: .12 }, sEnd(si) - tE - .1, 'power1.in'); sfx('dip', tE + .1, .6); flare(sEnd(si) - .5, 1.1);
+  },
+  twist(si) {
+    const T0 = sStart(si), tT = pS(si, 2) - .05;
+    flash(T0 - .03, .55); leak(T0, 1.6); v3(T0 - .04, { scrA: SCR.back, scrB: SCR.back, scrMix: 0, red: 0, capPlus: 0 }); go3(T0 - .03, { scrOn: 1, house: 1, rim: 1.2 }, .4, 'power2.out'); sfx('hit', T0, .9);
+    c3(T0 - .04, Object.assign({}, WIDE, { pz: 9.6 })); m3(T0, { px: .4, py: 2.5, pz: 8.4 }, tT - T0);
+    const o = overlay(si); const g1 = tag(o, '23 NOV 2026', 'HUANG IS BACK AS CEO', T0 + .05); const v = pill(o, 470, 1150, 'BOARD VOTE: UNANIMOUS', 54, C.ink, C.accent, 38); slam(v, pS(si, 1) + .4); [g1, v].forEach(e => out(e, tT));
+    scrTo(tT, SCR.trump, .4); credit(SCR.trump, tT + .2, sEnd(si)); c3(tT, { px: 0, py: 3.4, pz: 6.0, tx: 0, ty: 4.1, tz: -5, fov: 40 }); m3(tT + .02, { px: 0, py: 3.6, pz: 5.2 }, sEnd(si) - tT);
+    const n = pill(o, 470, 1150, 'DONALD TRUMP', 70, '#FFFFFF', C.ink, 44); slam(n, pS(si, 3) + .2); const q = pill(o, 470, 1255, '“I MADE THE DEAL”', 42, C.ink, '#FFFFFF', 30); pop(q, pS(si, 3) + .7);
+  },
+  payoff(si) {
+    const T0 = sStart(si);
+    flash(T0 - .02, .25); scrTo(T0 - .05, SCR.up31, .25); v3(T0 - .05, { chipGlow: .6 });
+    c3(T0 - .05, Object.assign({}, COLCAM, { px: -.4, py: 1.6, pz: 6.0, ty: 2.3 })); m3(T0, { px: -1.0, py: 2.4, pz: 5.0, ty: 2.4 }, sEnd(si) - T0);
+    capSurge(T0 + .15, pE(si, 0) - T0, 3.0, 3.98); capWindow(T0 + .1, sEnd(si) - .05);
+    const o = overlay(si); const p = pill(o, 470, 1120, '+31% · +$950 BN', 64, C.ink, C.accent, 40); slam(p, pS(si, 0) + 1.1);
+    const q = pill(o, 470, 1230, 'THE PRICE OF ONE MAN', 44, '#FFFFFF', C.ink, 30); pop(q, pS(si, 1) + .1);
+  },
+  quote(si) {
+    const T0 = sStart(si), tB = pS(si, 3) - .05;
+    flash(T0 - .02, .15); scrTo(T0 - .05, SCR.jhq, .3); credit(SCR.jhq, T0, sEnd(si));
+    c3(T0 - .05, { px: -.8, py: 2.4, pz: 5.4, tx: 0, ty: 2.6, tz: -3, fov: 42 }); m3(T0, { px: .2, py: 2.8, pz: 4.6 }, sEnd(si) - T0 + .1);
+    const o = overlay(si); const qg = el('g', {}, o); el('rect', { x: 70, y: 270, width: 860, height: 330, rx: 26, fill: '#0B0D12', opacity: .9 }, qg); el('rect', { x: 70, y: 270, width: 10, height: 330, fill: C.accent }, qg);
+    text(qg, 120, 345, '“I’M GOING TO BE A', 50, '#FFFFFF', 'start', { 'font-weight': 900 }); text(qg, 120, 412, 'BETTER CEO THE SECOND', 50, '#FFFFFF', 'start', { 'font-weight': 900 }); text(qg, 120, 479, 'TIME AROUND.”', 50, C.accent, 'start', { 'font-weight': 900 }); text(qg, 120, 552, '— JENSEN HUANG, TO NVIDIA STAFF, 23 NOV', 26, '#B8C2B0', 'start', { 'letter-spacing': 1.5 });
+    pop(qg, pS(si, 1)); out(qg, tB + .4);
+    const c = pill(o, 470, 1150, '1 DEC · US HOUSE COMMITTEES', 46, '#FFFFFF', '#5A0E12', 30); pop(c, pS(si, 4) + .1); const c2 = pill(o, 470, 1250, 'CLOSED-DOOR INTERVIEW WITH HUANG', 34, C.ink, '#FFFFFF', 26); pop(c2, pS(si, 4) + .45);
+  },
+  callback(si) {
+    const T0 = sStart(si);
+    flash(T0 - .02, .25); scrTo(T0 - .05, SCR.logo, .3); v3(T0 - .05, { cap: 3.98, chipGlow: .8, colOn: 1 });
+    c3(T0 - .05, { px: 1.2, py: 1.6, pz: 6.8, tx: -.4, ty: 2.3, tz: -2, fov: 44 }); m3(T0, { px: 0, py: 2.6, pz: 10.5, tx: 0, ty: 2.9 }, sEnd(si) - T0 + .3, 'sine.inOut');
+    const H = hookCard(); tl.set(H, { opacity: 0 }, 0); tl.to(H, { opacity: 1, duration: .4 }, pS(si, 1) - .1); sfx('thud', pS(si, 2), .7);
+  },
+};
+const THREE = await import('three');
+sentences.forEach((s, si) => scenes[s.scene](si, s.labels || {}));
+
+// ---------------------------------------------------------------- captions
+const capBox = $('captions'), MAXCH = 30;
+TIM.phrases.forEach((ph, pi) => {
+  const pages = []; let cur = [];
+  ph.words.forEach(w => { const len = cur.reduce((a, b) => a + b.w.length + 1, 0); if (cur.length && len + w.w.length > MAXCH) { pages.push(cur); cur = []; } cur.push(w); });
+  if (cur.length) pages.push(cur);
+  const next = pi + 1 < TIM.phrases.length ? TIM.phrases[pi + 1].start : DUR;
+  pages.forEach((words, k) => {
+    const page = document.createElement('div'); page.className = 'page'; capBox.appendChild(page);
+    const tOut = k + 1 < pages.length ? pages[k + 1][0].t - .2 : (pi + 1 < TIM.phrases.length ? Math.min(next - .22, ph.end + .9) : DUR + 1);
+    tl.set(page, { opacity: 1 }, Math.max(0, words[0].t - .08));
+    words.forEach((w, j) => {
+      const s = document.createElement('span'); s.className = 'w'; s.textContent = w.w; page.appendChild(s);
+      tl.set(s, { opacity: 0, y: 20, scale: .9 }, 0);
+      tl.to(s, { opacity: 1, y: 0, scale: 1, duration: .25, ease: 'power2.out' }, Math.max(0, w.t - .06));
+      tl.set(s, { color: C.accent }, Math.max(0, w.t - .06));
+      tl.set(s, { color: '#F3EEE4' }, j + 1 < words.length ? words[j + 1].t - .06 : tOut);
+    });
+    tl.to(page, { opacity: 0, duration: .12 }, tOut);
+  });
+});
+
+// ---------------------------------------------------------------- time-only render
+function render(t) { W.render(t); placeExploded(t); placeCap(t); }
+tl.seek(DUR, false); tl.seek(0, false); render(0);
+window.seek = t => { tl.seek(Math.max(0, Math.min(DUR, t)), false); render(t); };
+window.DURATION = DUR; window.SFX = SFX.sort((a, b) => a.t - b.t); window.CONFIG = CFG; window.READY = true;
+const q = new URLSearchParams(location.search);
+if (q.has('guides')) { const st = $('stage'); [['0', '0', '1080px', '230px'], ['0', '1520px', '1080px', '400px'], ['940px', '0', '140px', '1920px']].forEach(([l, tp, w, h]) => { const d = document.createElement('div'); d.className = 'guide'; Object.assign(d.style, { left: l, top: tp, width: w, height: h }); st.appendChild(d); }); }
+if (q.has('t')) window.seek(parseFloat(q.get('t')));
+
+})();
+</script>
+</body>
+</html>
