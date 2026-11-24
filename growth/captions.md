@@ -225,3 +225,19 @@ Sources: Nvidia press releases and SEC 8-K; Bloomberg; Fortune; CNN; CNBC; NPR; 
 Photos (Wikimedia Commons): Jensen Huang by Anders Eidesvik (CC BY 4.0); Nvidia Endeavor HQ by Daniel J. Prostak (CC BY-SA 4.0); H100 cards by Geekerwan (CC BY 3.0); Donald Trump official portrait by Daniel Torok, White House (public domain). Nvidia logo: Nvidia (Apache 2.0), a trademark of Nvidia, shown for news reporting. The 3D chip is an illustrative model, not an exact Nvidia design. Not affiliated with Nvidia.
 
 Instagram post body line: `Photos: Wikimedia Commons (Anders Eidesvik CC BY 4.0, Geekerwan CC BY 3.0, White House PD).`
+
+## 18. Kerala Yatra EP 3/14: Pathanamthitta (series, Malayalam narrator, post 1:00 PM)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram: `Kerala Yatra EP 3/14: Pathanamthitta 🗺️ 5 സ്ഥലങ്ങൾ, എങ്ങനെ പോകാം #KeralaYatra #Pathanamthitta`
+- YouTube Shorts title: `Pathanamthitta top 5 places | Kerala Yatra EP 3 🗺️ പത്തനംതിട്ട #KeralaYatra #Shorts`
+
+### YouTube description
+Kerala Yatra, episode 3 of 14: a one-day route through Pathanamthitta, continuing from Thenmala. Konni Elephant Camp (elephants up close and an elephant museum; about 1 h by KSRTC bus via Punalur) -> Adavi (coracle rides on the Kallar river; long rides only in the monsoon) -> Perunthenaruvi Falls, Vechoochira (its water joins the Pamba) -> Maramon, Kozhencherry (every February, one of Asia's largest Christian gatherings on the Pamba sandbank) -> Aranmula (Parthasarathy temple, the Onam snake-boat regatta, and the Aranmula kannadi metal mirror, GI tag). Next episode: Alappuzha.
+പത്തനംതിട്ടയിലെ അഞ്ച് സ്ഥലങ്ങൾ, എങ്ങനെ പോകാം, എന്ത് കാണാം.
+
+Map: Sentinel-2 cloudless 2016 by EOX IT Services GmbH (CC BY 4.0, contains modified Copernicus Sentinel data 2016); NASA Blue Marble (public domain); routes © OpenStreetMap contributors via OSRM; boundaries: datameet.
+
+Photos (Wikimedia Commons): see `yatra/ep03_photo_credits.md` (filled in after the photo picks).
+
+Instagram post body line: `Map: EOX Sentinel-2, NASA, © OpenStreetMap. Photos: Wikimedia Commons (credits on YouTube).`

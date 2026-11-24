@@ -1,0 +1,17 @@
+{
+  "ep": 3, "of": 14, "district": "Pathanamthitta", "next": "Alappuzha", "nextDir": "west",
+  "start": {"name": "Thenmala", "short": "THENMALA", "lat": 8.9568, "lon": 77.0627},
+  "stops": [
+    {"n": 1, "name": "Konni", "card": "KONNI ELEPHANT CAMP", "line": "Elephants up close · and a museum of their story", "chip": "ELEPHANT MUSEUM", "lat": 9.228182, "lon": 76.851883,
+     "legs": [{"mode": "bus"}], "photos": "Konni elephant"},
+    {"n": 2, "name": "Adavi", "card": "ADAVI", "line": "Coracle rides on the Kallar river", "chip": "LONG RIDES: MONSOON ONLY", "lat": 9.2644, "lon": 76.9355,
+     "legs": [{"mode": "auto"}], "photos": "Adavi coracle"},
+    {"n": 3, "name": "Perunthenaruvi", "card": "PERUNTHENARUVI FALLS", "line": "A wide waterfall foaming through the rocks", "chip": "FLOWS INTO THE PAMBA", "lat": 9.4131, "lon": 76.8763,
+     "legs": [{"mode": "taxi"}], "photos": "Perunthenaruvi"},
+    {"n": 4, "name": "Maramon", "card": "MARAMON", "line": "One of Asia's largest Christian gatherings", "chip": "EVERY FEBRUARY · PAMBA SANDBANK", "lat": 9.3367, "lon": 76.7075,
+     "legs": [{"mode": "bus"}], "photos": "Maramon Convention"},
+    {"n": 5, "name": "Aranmula", "card": "ARANMULA", "line": "Parthasarathy temple · snake boats · the metal mirror", "chip": "ARANMULA KANNADI · GI TAG", "lat": 9.328, "lon": 76.687614,
+     "legs": [{"mode": "auto"}], "photos": "Aranmula"}
+  ],
+  "nextPoint": {"lat": 9.4981, "lon": 76.3388}
+}
