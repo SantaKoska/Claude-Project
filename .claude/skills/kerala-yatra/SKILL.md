@@ -13,9 +13,9 @@ Road order: 1 Thiruvananthapuram · 2 Kollam · 3 Pathanamthitta · 4 Alappuzha 
 
 - Malayalam, first person plural ("നമ്മൾ", "നമ്മുടെ യാത്ര"), calm and warm, like a travel documentary narrator sitting next to you. No shock lines, no twist, no CTA. Never say we are foreigners or tourists.
 - Every stop has the same four beats: **how we get there** (taxi / auto / KSRTC bus / train / bike + time) -> **name** -> **what we see** -> **one fact or tip** (dress code, closed day, best time, how to get up).
-- Episode 1 opens from space (Earth -> India -> Kerala -> "14 districts" -> landing at the airport). Later episodes open on the map where the last one ended: "<previous district>-ൽ നിന്ന് നമ്മുടെ യാത്ര തുടരുന്നു".
+- **Every episode opens from space (owner, 24 Nov 2026: "needed for every video").** Earth -> India -> Kerala -> all 14 districts lit, with the done districts ticked and the current one highlighted, in about 10-12 s. Fixed series intro voice for episodes 2 onwards: "ഭൂമി. അതിൽ ഇന്ത്യ. ഇന്ത്യയുടെ തെക്കേ അറ്റത്ത്, പച്ചപ്പ് നിറഞ്ഞ കേരളം. പതിനാല് ജില്ലകളിലൂടെ, നമ്മുടെ യാത്ര. ഓരോ ജില്ലയിലും, കണ്ടിരിക്കേണ്ട അഞ്ച് സ്ഥലങ്ങൾ." Then the camera drops to where the last episode ended: "<previous district>-ൽ നിന്ന് നമ്മുടെ യാത്ര തുടരുന്നു. ജില്ല <n>... <district>." Episode 1 instead lands at the airport.
 - Ending handoff: "<district> ഇവിടെ തീരുന്നു. നമ്മുടെ യാത്ര തുടരുന്നു... <direction>, <next district>-ലേക്ക്."
-- About 130-140 words, synced to about 70 s (calm tempo, about 1.15).
+- About 120-130 words including the intro, synced to about 70 s (calm tempo, about 1.15).
 - Research rules as always: keep sources in `growth/kerala_trip_NN_<district>_script.md`, real road distances from OSRM, nothing invented, no fares (they change).
 
 ## 2. The map: real, exact, satellite (never a hand-drawn map)
@@ -62,7 +62,7 @@ Road order: 1 Thiruvananthapuram · 2 Kollam · 3 Pathanamthitta · 4 Alappuzha 
 2. Episode definition `yatra/epNN.json`: start point, 5 stops (name, card title, one line, chip, lat/lon, legs with mode, photo search words), next district point.
 3. `python3 tools/yatra_data.py yatra/epNN.json` -> `build/yatra/epNN/` (OSRM routes, Blue Marble globe + India, Sentinel-2 Kerala / district / city mosaics, outlines, `data.js`). Tiles are cached in `build/tiles/`.
 4. `python3 -u tools/yatra_photos.py yatra/epNN.json 3` -> 3 candidates per stop with licence + author. **Wikimedia allows about 600 KB per minute from this machine**, so it runs about 2 photos a minute (the script paces itself); it needs `commons.wikimedia.org` and `thumb.wikimedia.org` allowed. Look at a contact sheet, put the picks in the page's `<script id="photos">`, write `yatra/epNN_photo_credits.md`.
-5. Copy `yatra01.html` to `yatraNN.html`, change the config phrases, the data import path and the scenes that differ (episode 1's space intro becomes "<previous district>-ൽ നിന്ന് നമ്മുടെ യാത്ര തുടരുന്നു" on the Kerala map), then `python3 tools/sync.py yatraNN.html`. If the sync's phrase lengths look wrong (a 1-word phrase of 3 s), merge the phrases where the voice does not pause.
+5. Copy `yatra01.html` to `yatraNN.html`, change the config phrases, the data import path and the scenes that differ (keep episode 1's space intro, end it on the Kerala map with the done districts ticked instead of the airport landing, then "<previous district>-ൽ നിന്ന് നമ്മുടെ യാത്ര തുടരുന്നു"), then `python3 tools/sync.py yatraNN.html`. If the sync's phrase lengths look wrong (a 1-word phrase of 3 s), merge the phrases where the voice does not pause.
 6. Screenshot every stop; stride check (0 mismatches); render with `WORKERS=3 tools/build.sh`.
 
 Engine notes (`lib/yatra.js`): every state key must start as a number in `ST` (GSAP turns a key it has never seen into the string "0", which is truthy). Finer imagery layers fade in by camera height, so no imagery rectangle shows from far away. India's simplified outline is for the India view only; fade it out at the Kerala step.

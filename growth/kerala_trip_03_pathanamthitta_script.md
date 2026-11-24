@@ -2,8 +2,9 @@
 
 **Style:** narrator and navigator (see the `kerala-yatra` skill). Calm "നമ്മൾ" voice; each stop = how we get there -> name -> what we see -> one fact or tip.
 **Language:** Malayalam voice; English names, distances and chips on screen.
-**Length:** 106 Malayalam words (EP 2: 95 words = 62.6 s raw), so about 70 s raw, synced to about 62-65 s.
-**Opening card:** KERALA YATRA · EP 3/14 · PATHANAMTHITTA (opens on the Kerala map at Thenmala, where episode 2 ended).
+**Length:** 124 Malayalam words with the series intro (EP 2: 95 words = 62.6 s raw), so about 82 s raw, synced to about 70-72 s.
+**Opening (every episode from now on, owner 24 Nov):** the space intro, Earth -> India -> Kerala -> 14 districts, then down to Thenmala.
+**Opening card:** KERALA YATRA · EP 3/14 · PATHANAMTHITTA (after the space intro, lands on the Kerala map at Thenmala, where episode 2 ended).
 **Thread:** the Pamba river ties the last three stops together (Perunthenaruvi flows into it, Maramon sits on its sandbank, Aranmula on its bank).
 
 ## Route (OSRM road distances, 24 Nov 2026)
@@ -20,6 +21,8 @@
 ## ElevenLabs paste block
 
 ```
+ഭൂമി. അതിൽ ഇന്ത്യ. ഇന്ത്യയുടെ തെക്കേ അറ്റത്ത്, പച്ചപ്പ് നിറഞ്ഞ കേരളം. പതിനാല് ജില്ലകളിലൂടെ, നമ്മുടെ യാത്ര. ഓരോ ജില്ലയിലും, കണ്ടിരിക്കേണ്ട അഞ്ച് സ്ഥലങ്ങൾ.
+
 തെന്മലയിൽ നിന്ന് നമ്മുടെ യാത്ര തുടരുന്നു. ജില്ല മൂന്ന്... പത്തനംതിട്ട. ശബരിമലയുടെ ജില്ല. ഇപ്പോൾ, മണ്ഡലകാലം.
 
 പുനലൂർ വഴി, കെഎസ്ആർടിസി ബസിൽ ഒരു മണിക്കൂർ. ആദ്യ സ്റ്റോപ്പ്, കോന്നി ആനക്കൂട്. ആനകളെ അടുത്ത് കാണാം. കൂടെ, ആനകളുടെ കഥ പറയുന്ന ഒരു മ്യൂസിയവും.
@@ -39,6 +42,7 @@
 
 | # | beat | English | on screen |
 | --- | --- | --- | --- |
+| 0 | series intro | Earth. In it, India. At India's southern tip, green Kerala. Our journey, through 14 districts. In each district, five places to see. | 3D Blue Marble Earth turns, dive to India (official outline traces), Kerala glows, 14 districts outline and number; Thiruvananthapuram and Kollam ticked "DONE", Pathanamthitta highlighted; card "KERALA YATRA · EP 3/14" |
 | 1 | handoff in | Our journey continues from Thenmala. District three... Pathanamthitta. The district of Sabarimala. It's Mandala season now. | Kerala map, marker at Thenmala; Pathanamthitta lights up; "KERALA YATRA · EP 3/14 · PATHANAMTHITTA"; small chip "SABARIMALA · MANDALA SEASON" |
 | 2 | stop 1 | Via Punalur, an hour by KSRTC bus. First stop, the Konni elephant camp. See the elephants up close, and a museum that tells their story. | Bus marker, nav bar "KONNI · 49 km · 1 h · KSRTC"; card "1 · KONNI ELEPHANT CAMP"; chip "ELEPHANT MUSEUM" |
 | 3 | stop 2 | 20 minutes by auto from there. Adavi: a ride on the Kallar river in a coracle (bowl boat). Short rides all year; long rides only in the monsoon. | Auto marker; card "2 · ADAVI"; chip "LONG RIDES: MONSOON ONLY" |

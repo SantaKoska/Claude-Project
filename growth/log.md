@@ -87,3 +87,6 @@ Numbers from the owner's Instagram and YouTube insights. Add a row after every p
 - An LED wall seen from a 9:16 close camera shows only ~30% of its width; compose wall text and logos for that column, and shift text (ox) when the camera looks off-centre at another object.
 - Labels clamped at the frame edge collapse onto each other: frame the exploded object so all label anchors sit between y 300 and 1150 (aim the camera lower than the object's centre).
 - Pick Commons photos with no burned-in captions (one H100 photo carried a Chinese price overlay).
+
+## Kerala Yatra: owner feedback (24 Nov 2026)
+- Every episode needs the space intro (Earth -> India -> Kerala -> 14 districts), not just EP 1. EP 2 skipped it and the owner asked for it back: a series needs the same opening every time so a new viewer knows what the series is. Fixed intro voice is in the kerala-yatra skill; budget about 12 s for it.
