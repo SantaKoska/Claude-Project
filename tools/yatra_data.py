@@ -93,14 +93,24 @@ def osrm(a, b):
     u = 'https://router.project-osrm.org/route/v1/driving/%f,%f;%f,%f?overview=full&geometries=geojson' % (a['lon'], a['lat'], b['lon'], b['lat'])
     r = json.loads(get(u))['routes'][0]; return r['geometry']['coordinates'], r['distance'], r['duration']
 
+def water(a, b, via):
+    # a boat leg: a smooth line over the water through hand-picked waypoints [[lat, lon], ...] (OSRM only knows roads)
+    import math
+    P = [(a['lon'], a['lat'])] + [(lo, la) for la, lo in via] + [(b['lon'], b['lat'])]; out = []
+    for i in range(len(P) - 1):
+        for k in range(12): u = k / 12; out.append((P[i][0] + (P[i + 1][0] - P[i][0]) * u, P[i][1] + (P[i + 1][1] - P[i][1]) * u))
+    out.append(P[-1]); sm = [out[0]] + [((out[i - 1][0] + out[i][0] * 2 + out[i + 1][0]) / 4, (out[i - 1][1] + out[i][1] * 2 + out[i + 1][1]) / 4) for i in range(1, len(out) - 1)] + [out[-1]]
+    d = sum(6371000 * math.hypot(math.radians(sm[i + 1][0] - sm[i][0]) * math.cos(math.radians(sm[i][1])), math.radians(sm[i + 1][1] - sm[i][1])) for i in range(len(sm) - 1))
+    return [list(c) for c in sm], d, d / 3.0  # houseboat speed about 11 km/h
+
 # ---- 1. routes
 legs = []; prev = EP['start']
 for s in EP['stops']:
     for lg in s['legs']:
-        to = lg.get('to', s); coords, dist, dur = osrm(prev, to)
+        to = lg.get('to', s); coords, dist, dur = water(prev, to, lg['via']) if 'via' in lg else osrm(prev, to)
         legs.append({'stop': s['n'], 'mode': lg['mode'], 'km': round(dist / 1000, 1), 'min': round(dur / 60), 'pts': [[round(x, 7), round(y, 7)] for x, y in (merc(lo, la) for lo, la in coords)]})
         print('leg', s['n'], lg['mode'], legs[-1]['km'], 'km', len(coords), 'pts'); prev = to; time.sleep(.5)
-coords, _, _ = osrm(prev, EP['nextPoint']); exitLeg = [[round(x, 7), round(y, 7)] for x, y in (merc(lo, la) for lo, la in coords)]
+coords, _, _ = water(prev, EP['nextPoint'], EP['exitVia']) if 'exitVia' in EP else osrm(prev, EP['nextPoint']); exitLeg = [[round(x, 7), round(y, 7)] for x, y in (merc(lo, la) for lo, la in coords)]
 
 # ---- 2. imagery
 lats = [EP['start']['lat']] + [s['lat'] for s in EP['stops']]; lons = [EP['start']['lon']] + [s['lon'] for s in EP['stops']]
