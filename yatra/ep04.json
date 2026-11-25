@@ -1,0 +1,17 @@
+{
+  "ep": 4, "of": 14, "district": "Alappuzha", "next": "Kottayam", "nextDir": "east",
+  "start": {"name": "Aranmula", "short": "ARANMULA", "lat": 9.328, "lon": 76.687614},
+  "stops": [
+    {"n": 1, "name": "Krishnapuram", "card": "KRISHNAPURAM PALACE", "line": "Kayamkulam · the Gajendra Moksham mural", "chip": "GAJENDRA MOKSHAM MURAL", "lat": 9.1503, "lon": 76.5086,
+     "legs": [{"mode": "bus"}], "photos": "Krishnapuram Palace"},
+    {"n": 2, "name": "Ambalappuzha", "card": "AMBALAPPUZHA TEMPLE", "line": "Sri Krishna temple · the famous palpayasam", "chip": "AMBALAPPUZHA PALPAYASAM", "lat": 9.3833, "lon": 76.3673,
+     "legs": [{"mode": "bus"}], "photos": "Ambalappuzha temple"},
+    {"n": 3, "name": "Alappuzha Beach", "card": "ALAPPUZHA BEACH", "line": "An old pier into the sea · the 1862 lighthouse", "chip": "LIGHTHOUSE · SINCE 1862", "lat": 9.4930, "lon": 76.3172,
+     "legs": [{"mode": "auto"}], "photos": "Alappuzha beach"},
+    {"n": 4, "name": "Punnamada", "card": "PUNNAMADA LAKE", "line": "Home of the Nehru Trophy snake boat race", "chip": "NEHRU TROPHY · EVERY AUGUST", "lat": 9.5070, "lon": 76.3500,
+     "legs": [{"mode": "auto"}], "photos": "Nehru Trophy boat race"},
+    {"n": 5, "name": "Kuttanad", "card": "KUTTANAD", "line": "Rice grown below sea level · Kerala's rice bowl", "chip": "BELOW SEA LEVEL · FAO HERITAGE", "lat": 9.4667, "lon": 76.3833,
+     "legs": [{"mode": "boat"}], "photos": "Kuttanad"}
+  ],
+  "nextPoint": {"lat": 9.6175, "lon": 76.4301}
+}
