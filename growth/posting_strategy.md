@@ -89,3 +89,10 @@ Keep both the Instagram caption and the YouTube Shorts title to **100 characters
 - Every series post is labelled the same way: "KERALA YATRA · EP 1/14 · THIRUVANANTHAPURAM", the same title format and one series hashtag (#KeralaYatra), and a YouTube playlist. The countdown makes people look for the next one without any call to action.
 - Keep a buffer of 2 finished series episodes, so a slow explainer day never breaks the daily chain.
 - Log each lane separately in `growth/log.md` (views, skip rate, saves, shares) and swap the slots if lane B beats lane A.
+
+## The three series and the daily plan (owner, 25 Nov 2026)
+1. **Kerala Yatra** (travel series, calm narrator): one episode **every day**, 1:00 PM IST.
+2. **News / explainers** (the hook-twist reels we started with: latest news, information, "how it works").
+3. **Split series** ("ഒരു രൂപയുടെ കണക്ക്": split the price of an everyday thing, how much the seller actually makes).
+
+Every day = **one Kerala Yatra + one more reel, either a news explainer or a split episode**, whichever is stronger that day, at 7:30 PM IST. When a news story is trending hard (like Avengers: Doomsday or Sooryavanshi's 204), the news reel takes the slot; on quieter news days, post a split episode. Keep a split episode ready in reserve so a slow news day never leaves the slot empty.

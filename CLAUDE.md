@@ -12,6 +12,8 @@ Exception: the **Kerala Yatra** travel series uses a calm narrator/navigator sty
 
 Second exception: the **split series** ("ഒരു രൂപയുടെ കണക്ക്", from 25 Nov 2026) splits the price of an everyday thing (a ₹15 tea, a ticket, a litre of petrol) into its real costs: a real 3D object separates into labelled cost layers while a coin stack shrinks to the seller's profit. Hook = the price everyone knows, twist = the surprising part, payoff = what the seller keeps and the break-even volume. One example business, our own calculation from sourced prices, "EXAMPLE · APPROX." on screen, no advice or income promises; scripts in `growth/split_NN_<topic>_script.md`.
 
+**Daily plan (owner, 25 Nov 2026):** three series. Every day one Kerala Yatra (1 PM) plus one more reel (7:30 PM): a news explainer when the news is trending hard, otherwise a split episode. Details in `growth/posting_strategy.md`.
+
 ## Quality bar (owner, 19 Nov 2026)
 
 The watch anatomy test (`out/watch_anatomy_test.mp4`, `anatomy_lab.html`) is the standard every future reel is judged against. The owner's words: clarity, quality and cinematic camera movement "mean a lot for the viewers" and grow views and subscribers.
