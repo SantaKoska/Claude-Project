@@ -785,6 +785,25 @@ function placeExploded(t) {
 const HS = { 'font-weight': 900, 'letter-spacing': 0, stroke: '#0B0D12', 'stroke-width': 14, 'paint-order': 'stroke', 'stroke-linejoin': 'round' };
 const fitW = (e, w) => { const bw = e.getBBox().width; if (bw > w) e.setAttribute('font-size', (+e.getAttribute('font-size') * w / bw).toFixed(1)); return e; };
 function hookCard() { const h = el('g', {}, $('front')); fitW(text(h, 470, 330, 'ഒരു തുണ്ട് ഭൂമി...', 112, '#FFFFFF', 'middle', HS), 840); fitW(text(h, 470, 475, '53 പന്തിൽ 204!', 150, C.accent, 'middle', HS), 840); return h; }
+// ---- real photos (Wikimedia Commons; credits in growth/sooryavanshi_photo_credits.md): polaroid cards with a slow push-in
+const PH = 'build/svphotos/';
+const IMG = src => new Promise(ok => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => ok(null); i.src = src; });
+const PHOTOS = {}; for (const k of ['c_vaibhav', 'c_family', 'c_junction', 'c_field']) PHOTOS[k] = await IMG(PH + k + '.jpg');
+W.setPhotos({ player: PHOTOS.c_vaibhav });
+function photoCard(parent, key, cx, cy, w, h, cap, credit, t, tOut, rot = 0) {
+  const id = 'ph' + (clipN++), cp = el('clipPath', { id }, $('defs')); el('rect', { x: -w / 2, y: -h / 2, width: w, height: h, rx: 10 }, cp);
+  const g = el('g', { transform: `translate(${cx} ${cy}) rotate(${rot})` }, parent), inner = el('g', {}, g);
+  el('rect', { x: -w / 2 - 14, y: -h / 2 - 14, width: w + 28, height: h + 74, rx: 16, fill: '#F7F3EA', filter: 'url(#shadow)' }, inner);
+  const ig = el('g', { 'clip-path': `url(#${id})` }, inner);
+  const im = el('image', { href: PH + key + '.jpg', x: -w / 2, y: -h / 2, width: w, height: h, preserveAspectRatio: 'xMidYMid slice' }, ig);
+  const kb = { s: 1 }; tl.to(kb, { s: 1.1, duration: tOut - t + .4, ease: 'none', onUpdate: () => im.setAttribute('transform', `scale(${kb.s.toFixed(4)})`) }, t);
+  text(inner, -w / 2 + 2, h / 2 + 31, credit, 21, '#5B5448', 'start', { 'letter-spacing': .5 });
+  if (cap) { const c = pill(inner, 0, 0, cap, 34, '#FFFFFF', C.ink, 24); const bb = c.getBBox(); c.setAttribute('transform', `translate(${-w / 2 + 20 + bb.width / 2} ${h / 2 - 44})`); }
+  pop(inner, t, .4); tl.to(inner, { opacity: 0, scale: .94, duration: .2, ease: 'power1.in' }, tOut - .2);
+  return g;
+}
+const CR = { pmo: 'Photo: PMO India · GODL-India', jn: 'Photo: Dheerajj.12 · CC BY-SA 4.0', field: 'Photo: LIRNEasia · CC BY 2.0' };
+function boardCredit(o, t, tOut) { const c = text(o, 80, 1490, 'Screen photo: PMO India · GODL-India', 22, '#FFFFFF', 'start', { opacity: .75 }); tl.set(c, { opacity: 0 }, 0); tl.set(c, { opacity: .75 }, t); tl.set(c, { opacity: 0 }, tOut); }
 function leak(t, d = 1.4) { const g = el('g', { style: 'mix-blend-mode:screen' }, $('front')); el('circle', { cx: 960, cy: 260, r: 520, fill: 'url(#leakG)' }, g); tl.set(g, { opacity: 0 }, 0); tl.to(g, { opacity: 1, duration: d * .4 }, t); tl.to(g, { opacity: 0, duration: d * .6 }, t + d * .4); }
 function counterSfx(t, d, n = 14) { for (let k = 0; k < n; k++) sfx('tick', t + d * (1 - Math.sqrt(1 - k / n)), .45); }
 const BASE = { bx: 0, by: 0, bz: 0, farm: 1, stadium: 0, night: 0, explode: 0, ballOn: 0, ballSpin: 0, ballGlow: 0, sixes: 0, rain: 0, board: 0, price: 0, runs: 0, balls: 0, six: 0, overs: 0, peg: 1, batOn: 1, aperture: .00002, exposure: 1.0 };
@@ -798,6 +817,7 @@ const scenes = {
     const tb = pS(si, 2) - .1; v3(tb, { ballOn: 0, ballGlow: 1, bx: -1.2, by: -.9, bz: 1.5 }); go3(tb, { ballOn: 1 }, .45, 'back.out(2)'); go3(tb, { by: .6 }, sEnd(si) - tb + .3, 'power2.out'); go3(tb, { ballSpin: 5 }, sEnd(si) - tb + .4, 'none'); sfx('whoosh', tb, .5); leak(tb, 1.2);
     go3(tb + .5, { ballGlow: .25 }, .8);
     const o = overlay(si); const a = pill(o, 470, 1130, 'ONE SMALL PIECE OF LAND', 48, '#FFFFFF', C.ink, 34); pop(a, pS(si, 1) + .2); out(a, tb + .1);
+    photoCard(o, 'c_vaibhav', 470, 715, 500, 600, 'VAIBHAV SOORYAVANSHI', CR.pmo, pS(si, 3) - .05, sEnd(si), -2);
     const b = pill(o, 470, 1130, 'TODAY: A WORLD RECORD', 58, C.ink, C.accent, 38); slam(b, pS(si, 3) + .2);
   },
   origin(si) {
@@ -805,6 +825,9 @@ const scenes = {
     v3(T0 - .05, { ballOn: 0, ballGlow: 0, exposure: 1.0, bx: 0, by: 0, bz: 0 });
     c3(T0 - .05, { px: -7.4, py: 1.7, pz: 12.6, tx: -4.7, ty: .7, tz: 8.7, fov: 38 }); m3(T0, { px: -6.6, py: 1.9, pz: 11.0 }, tS - T0);
     const o = overlay(si); const g1 = tag(o, 'SAMASTIPUR · BIHAR', 'FARMER SANJIV SOORYAVANSHI', T0 + .05);
+    photoCard(o, 'c_junction', 470, 770, 760, 534, 'SAMASTIPUR JN.', CR.jn, T0 + .3, pS(si, 1) - .05, 2);
+    photoCard(o, 'c_field', 470, 770, 760, 534, 'FARMLAND · SAMASTIPUR', CR.field, pS(si, 1), pS(si, 2) - .05, -2);
+    photoCard(o, 'c_family', 470, 760, 440, 528, 'VAIBHAV WITH HIS FAMILY', CR.pmo, pS(si, 2), tS, 2);
     const t1 = pill(o, 470, 1130, "MONEY FOR HIS SON'S CRICKET TRAINING", 40, '#FFFFFF', C.ink, 30); pop(t1, pS(si, 2) + .2); out(t1, tS);
     // "he sold the land": cut to the SOLD peg
     c3(tS, { px: -2.1, py: 1.35, pz: 12.2, tx: -3.2, ty: 1.15, tz: 10.6, fov: 34 }); m3(tS + .02, { px: -2.3, py: 1.3, pz: 11.7 }, sEnd(si) - tS); v3(tS, { peg: .4 }); go3(tS + .05, { peg: 1 }, .35, 'back.out(3)'); sfx('thud', tS + .1, .8);
@@ -816,7 +839,7 @@ const scenes = {
     c3(T0 - .05, { px: 0, py: 4, pz: 22, tx: 0, ty: 4, tz: -20, fov: 50 }); m3(T0, { px: 0, py: 10, pz: 40, tx: 0, ty: 12, tz: -40 }, tE - T0 + .2, 'power1.inOut');
     go3(T0 - .05, { night: 1 }, 1.6, 'power1.inOut'); go3(T0, { stadium: 1 }, 1.9, 'power2.out'); go3(T0 + .2, { farm: 0 }, 1.4, 'power1.inOut'); sfx('whoosh', T0, .6); sfx('thud', T0 + 1.5, .8);
     v3(T0 + .9, { board: 1, price: 0 }); go3(pS(si, 2) - .1, { price: 1.1 }, Math.max(.6, pE(si, 2) - pS(si, 2) + .2), 'power2.out'); counterSfx(pS(si, 2) - .1, pE(si, 2) - pS(si, 2) + .2);
-    const o = overlay(si); tag(o, 'AGE 13', 'IPL 2025 AUCTION', T0 + .05);
+    const o = overlay(si); tag(o, 'AGE 13', 'IPL 2025 AUCTION', T0 + .05); boardCredit(o, T0 + .9, sEnd(si));
     const p = pill(o, 470, 1130, '₹1.1 CRORE', 72, C.ink, C.accent, 44); slam(p, pS(si, 2) + .4);
   },
   today(si) {
@@ -835,9 +858,9 @@ const scenes = {
   twist(si) {
     // AGE 15; 28 glowing sixes arc out over the stands while the scoreboard races
     const T0 = sStart(si), t2 = pS(si, 2), t3 = pS(si, 3), t4e = pE(si, 4);
-    flash(T0 - .02, .5); leak(T0, 1.4); v3(T0 - .04, { ballOn: 0, explode: 0, ballGlow: 0, board: 3, runs: 0, balls: 0, six: 0, sixes: 0, aperture: .00002 });
+    flash(T0 - .02, .5); leak(T0, 1.4); v3(T0 - .04, { ballOn: 0, explode: 0, ballGlow: 0, board: 5, runs: 0, balls: 0, six: 0, sixes: 0, aperture: .00002 }); v3(t2 - .05, { board: 3 });
     c3(T0 - .04, { px: -6, py: 4.5, pz: 25, tx: 0, ty: 9, tz: -20, fov: 54 }); m3(T0, { px: 5, py: 7, pz: 23, ty: 11 }, sEnd(si) - T0 + .3, 'sine.inOut');
-    const o = overlay(si); const ag = pill(o, 470, 1110, 'AGE 15', 110, C.ink, C.accent, 56); slam(ag, pS(si, 1) + .05); out(ag, t2 + .1);
+    const o = overlay(si); boardCredit(o, t2, sEnd(si)); photoCard(o, 'c_vaibhav', 470, 680, 500, 600, null, CR.pmo, T0 + .05, t2 + .1, -2); const ag = pill(o, 470, 1110, 'AGE 15', 110, C.ink, C.accent, 56); slam(ag, pS(si, 1) + .05); out(ag, t2 + .1);
     go3(t2, { runs: 100, balls: 28 }, pE(si, 2) - t2 + .2, 'none'); counterSfx(t2, pE(si, 2) - t2, 12);
     const c1 = pill(o, 470, 1130, '100 IN 28 BALLS', 64, '#FFFFFF', C.ink, 40); pop(c1, pS(si, 2) + .4); out(c1, t3);
     go3(t3, { runs: 204, balls: 53 }, t4e - t3 + .1, 'none'); counterSfx(t3, t4e - t3, 12);

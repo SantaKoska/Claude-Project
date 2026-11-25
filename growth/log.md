@@ -93,3 +93,7 @@ Numbers from the owner's Instagram and YouTube insights. Add a row after every p
 
 ## Topic choice: owner feedback (24 Nov 2026)
 - Owner rejected a serious geopolitics topic (Strait of Hormuz and India's LPG): "people won't get interested". For news reels, pick the story people are already talking about and feel good or amazed by (a record, a person, a big launch), not a worrying policy story, even if it touches their kitchen. Offer 3-4 fresh topics and let the owner pick before writing.
+
+## Owner feedback: Sooryavanshi reel (25 Nov 2026)
+- The first cut used only the 3D farm and stadium, with no real photos. The owner: "this is not the same approach... we didn't use the real life photos". Since Doomsday and Nvidia, every explainer about a real person or event needs real photos inside the 3D set (a screen in the world carries them) plus photo cards at the beats that name a person or place, with credits on screen. Check this before rendering: does the person's real face appear in the first 5 s?
+- Sources for real people: Wikimedia Commons (PMO India / PIB photos are GODL-India; Gage Skidmore and similar CC BY-SA). The Commons search API rate-limits after 1-2 queries; pace searches about 20 s apart.
