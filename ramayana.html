@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ramayana Garage</title>
+<meta name="viewport" content="width=1080, initial-scale=1">
+<!-- A garage to ₹1,000 crore: Namit Malhotra, DNEG and Ramayana (Malayalam, Adam). Cinema-hall set from the Doomsday reel. Build: WORKERS=3 tools/build.sh ramayana.html build/ramayana_nograin.mp4, then the grain pass. -->
+<script id="config" type="application/json">
+{
+ "title": "A garage to ₹1,000 crore: Namit Malhotra and Ramayana",
+ "voice": "audio/ramayana.mp3",
+ "voiceTempo": 1.0,
+ "timing": {
+  "phraseGap": 0.14,
+  "sentenceGap": 0.3,
+  "head": 0.08,
+  "tail": 1.6
+ },
+ "music": {
+  "bpm": 100,
+  "chords": [
+   "Em",
+   "C",
+   "G",
+   "D"
+  ],
+  "level": 0.7
+ },
+ "font": "FreeSans",
+ "palette": {
+  "accent": "#FFC94A",
+  "red": "#E23636",
+  "blue": "#2C7BE5",
+  "ink": "#0B0D12",
+  "paper": "#F4EFE6",
+  "gold": "#FFB238",
+  "green": "#3FBF6F"
+ },
+ "sentences": [
+  {
+   "scene": "hook",
+   "phrases": [
+    "ഒരച്ഛന്റെ ഗാരേജിൽ തുടങ്ങിയ ഒരു ചെറിയ സ്റ്റുഡിയോ...",
+    "ഇന്ന്,",
+    "ആയിരം കോടിയുടെ പടിവാതിൽക്കൽ!"
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "garage",
+   "phrases": [
+    "ആയിരത്തിത്തൊള്ളായിരത്തി തൊണ്ണൂറ്റിയഞ്ച്.",
+    "മുംബൈ.",
+    "പത്തൊമ്പതുകാരൻ നമിത് മൽഹോത്ര,",
+    "അച്ഛന്റെ ഗാരേജിൽ ഒരു വീഡിയോ എഡിറ്റിംഗ് സ്റ്റുഡിയോ തുടങ്ങി.",
+    "അത് വളർന്ന്,",
+    "പ്രൈം ഫോക്കസ് ആയി."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "dneg",
+   "phrases": [
+    "രണ്ടായിരത്തി പതിനാലിൽ,",
+    "ലണ്ടനിലെ ഒരു വിഎഫ്എക്സ് കമ്പനിയെ വാങ്ങി.",
+    "ഇന്റർസ്റ്റെല്ലാറിനും ഡ്യൂണിനും ഓസ്കാർ നേടിയ ഡിനെഗ്."
+   ],
+   "labels": {},
+   "holdAfter": 1.3
+  },
+  {
+   "scene": "twist",
+   "phrases": [
+    "അതേ നമിത് നിർമ്മിച്ച സിനിമയാണ്,",
+    "രാമായണം.",
+    "ഇന്ത്യൻ സിനിമയിലെ ഏറ്റവും വലിയ ബജറ്റ്."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "payoff",
+   "phrases": [
+    "ഇരുപത് ദിവസം.",
+    "ഇന്ത്യയിൽ മാത്രം,",
+    "തൊള്ളായിരത്തി എഴുപത്തിമൂന്ന് കോടി."
+   ],
+   "labels": {}
+  },
+  {
+   "scene": "callback",
+   "phrases": [
+    "ഒരു ഗാരേജിൽ തുടങ്ങിയ സ്വപ്നം...",
+    "ഇന്ന്,",
+    "ആയിരം കോടിയുടെ തൊട്ടരികെ."
+   ],
+   "labels": {}
+  }
+ ]
+}
+</script>
+<script id="timings" type="application/json">
+{
+ "duration": 38.22,
+ "audio": "build/ramayana/voice_cut.wav",
+ "phrases": [
+  {
+   "text": "ഒരച്ഛന്റെ ഗാരേജിൽ തുടങ്ങിയ ഒരു ചെറിയ സ്റ്റുഡിയോ...",
+   "sentence": 0,
+   "start": 0.12,
+   "end": 2.8,
+   "words": [
+    {
+     "w": "ഒരച്ഛന്റെ",
+     "t": 0.12
+    },
+    {
+     "w": "ഗാരേജിൽ",
+     "t": 0.73
+    },
+    {
+     "w": "തുടങ്ങിയ",
+     "t": 1.168
+    },
+    {
+     "w": "ഒരു",
+     "t": 1.692
+    },
+    {
+     "w": "ചെറിയ",
+     "t": 1.895
+    },
+    {
+     "w": "സ്റ്റുഡിയോ...",
+     "t": 2.216
+    }
+   ]
+  },
+  {
+   "text": "ഇന്ന്,",
+   "sentence": 0,
+   "start": 2.94,
+   "end": 3.3,
+   "words": [
+    {
+     "w": "ഇന്ന്,",
+     "t": 2.94
+    }
+   ]
+  },
+  {
+   "text": "ആയിരം കോടിയുടെ പടിവാതിൽക്കൽ!",
+   "sentence": 0,
+   "start": 3.44,
+   "end": 5.26,
+   "words": [
+    {
+     "w": "ആയിരം",
+     "t": 3.44
+    },
+    {
+     "w": "കോടിയുടെ",
+     "t": 3.804
+    },
+    {
+     "w": "പടിവാതിൽക്കൽ!",
+     "t": 4.335
+    }
+   ]
+  },
+  {
+   "text": "ആയിരത്തിത്തൊള്ളായിരത്തി തൊണ്ണൂറ്റിയഞ്ച്.",
+   "sentence": 1,
+   "start": 5.56,
+   "end": 7.32,
+   "words": [
+    {
+     "w": "ആയിരത്തിത്തൊള്ളായിരത്തി",
+     "t": 5.56
+    },
+    {
+     "w": "തൊണ്ണൂറ്റിയഞ്ച്.",
+     "t": 6.638
+    }
+   ]
+  },
+  {
+   "text": "മുംബൈ.",
+   "sentence": 1,
+   "start": 7.46,
+   "end": 7.92,
+   "words": [
+    {
+     "w": "മുംബൈ.",
+     "t": 7.46
+    }
+   ]
+  },
+  {
+   "text": "പത്തൊമ്പതുകാരൻ നമിത് മൽഹോത്ര,",
+   "sentence": 1,
+   "start": 8.06,
+   "end": 10.05,
+   "words": [
+    {
+     "w": "പത്തൊമ്പതുകാരൻ",
+     "t": 8.06
+    },
+    {
+     "w": "നമിത്",
+     "t": 9.122
+    },
+    {
+     "w": "മൽഹോത്ര,",
+     "t": 9.487
+    }
+   ]
+  },
+  {
+   "text": "അച്ഛന്റെ ഗാരേജിൽ ഒരു വീഡിയോ എഡിറ്റിംഗ് സ്റ്റുഡിയോ തുടങ്ങി.",
+   "sentence": 1,
+   "start": 10.19,
+   "end": 13.05,
+   "words": [
+    {
+     "w": "അച്ഛന്റെ",
+     "t": 10.19
+    },
+    {
+     "w": "ഗാരേജിൽ",
+     "t": 10.67
+    },
+    {
+     "w": "ഒരു",
+     "t": 11.071
+    },
+    {
+     "w": "വീഡിയോ",
+     "t": 11.257
+    },
+    {
+     "w": "എഡിറ്റിംഗ്",
+     "t": 11.578
+    },
+    {
+     "w": "സ്റ്റുഡിയോ",
+     "t": 12.114
+    },
+    {
+     "w": "തുടങ്ങി.",
+     "t": 12.649
+    }
+   ]
+  },
+  {
+   "text": "അത് വളർന്ന്,",
+   "sentence": 1,
+   "start": 13.19,
+   "end": 13.88,
+   "words": [
+    {
+     "w": "അത്",
+     "t": 13.19
+    },
+    {
+     "w": "വളർന്ന്,",
+     "t": 13.391
+    }
+   ]
+  },
+  {
+   "text": "പ്രൈം ഫോക്കസ് ആയി.",
+   "sentence": 1,
+   "start": 14.02,
+   "end": 14.94,
+   "words": [
+    {
+     "w": "പ്രൈം",
+     "t": 14.02
+    },
+    {
+     "w": "ഫോക്കസ്",
+     "t": 14.289
+    },
+    {
+     "w": "ആയി.",
+     "t": 14.733
+    }
+   ]
+  },
+  {
+   "text": "രണ്ടായിരത്തി പതിനാലിൽ,",
+   "sentence": 2,
+   "start": 15.24,
+   "end": 16.46,
+   "words": [
+    {
+     "w": "രണ്ടായിരത്തി",
+     "t": 15.24
+    },
+    {
+     "w": "പതിനാലിൽ,",
+     "t": 15.961
+    }
+   ]
+  },
+  {
+   "text": "ലണ്ടനിലെ ഒരു വിഎഫ്എക്സ് കമ്പനിയെ വാങ്ങി.",
+   "sentence": 2,
+   "start": 16.6,
+   "end": 18.77,
+   "words": [
+    {
+     "w": "ലണ്ടനിലെ",
+     "t": 16.6
+    },
+    {
+     "w": "ഒരു",
+     "t": 17.107
+    },
+    {
+     "w": "വിഎഫ്എക്സ്",
+     "t": 17.304
+    },
+    {
+     "w": "കമ്പനിയെ",
+     "t": 17.924
+    },
+    {
+     "w": "വാങ്ങി.",
+     "t": 18.431
+    }
+   ]
+  },
+  {
+   "text": "ഇന്റർസ്റ്റെല്ലാറിനും ഡ്യൂണിനും ഓസ്കാർ നേടിയ ഡിനെഗ്.",
+   "sentence": 2,
+   "start": 18.91,
+   "end": 21.97,
+   "words": [
+    {
+     "w": "ഇന്റർസ്റ്റെല്ലാറിനും",
+     "t": 18.91
+    },
+    {
+     "w": "ഡ്യൂണിനും",
+     "t": 20.248
+    },
+    {
+     "w": "ഓസ്കാർ",
+     "t": 20.792
+    },
+    {
+     "w": "നേടിയ",
+     "t": 21.237
+    },
+    {
+     "w": "ഡിനെഗ്.",
+     "t": 21.587
+    }
+   ]
+  },
+  {
+   "text": "അതേ നമിത് നിർമ്മിച്ച സിനിമയാണ്,",
+   "sentence": 3,
+   "start": 23.27,
+   "end": 24.92,
+   "words": [
+    {
+     "w": "അതേ",
+     "t": 23.27
+    },
+    {
+     "w": "നമിത്",
+     "t": 23.465
+    },
+    {
+     "w": "നിർമ്മിച്ച",
+     "t": 23.773
+    },
+    {
+     "w": "സിനിമയാണ്,",
+     "t": 24.388
+    }
+   ]
+  },
+  {
+   "text": "രാമായണം.",
+   "sentence": 3,
+   "start": 25.06,
+   "end": 25.68,
+   "words": [
+    {
+     "w": "രാമായണം.",
+     "t": 25.06
+    }
+   ]
+  },
+  {
+   "text": "ഇന്ത്യൻ സിനിമയിലെ ഏറ്റവും വലിയ ബജറ്റ്.",
+   "sentence": 3,
+   "start": 25.82,
+   "end": 28.1,
+   "words": [
+    {
+     "w": "ഇന്ത്യൻ",
+     "t": 25.82
+    },
+    {
+     "w": "സിനിമയിലെ",
+     "t": 26.309
+    },
+    {
+     "w": "ഏറ്റവും",
+     "t": 26.857
+    },
+    {
+     "w": "വലിയ",
+     "t": 27.41
+    },
+    {
+     "w": "ബജറ്റ്.",
+     "t": 27.697
+    }
+   ]
+  },
+  {
+   "text": "ഇരുപത് ദിവസം.",
+   "sentence": 4,
+   "start": 28.4,
+   "end": 29.28,
+   "words": [
+    {
+     "w": "ഇരുപത്",
+     "t": 28.4
+    },
+    {
+     "w": "ദിവസം.",
+     "t": 28.892
+    }
+   ]
+  },
+  {
+   "text": "ഇന്ത്യയിൽ മാത്രം,",
+   "sentence": 4,
+   "start": 29.42,
+   "end": 30.33,
+   "words": [
+    {
+     "w": "ഇന്ത്യയിൽ",
+     "t": 29.42
+    },
+    {
+     "w": "മാത്രം,",
+     "t": 29.998
+    }
+   ]
+  },
+  {
+   "text": "തൊള്ളായിരത്തി എഴുപത്തിമൂന്ന് കോടി.",
+   "sentence": 4,
+   "start": 30.47,
+   "end": 32.27,
+   "words": [
+    {
+     "w": "തൊള്ളായിരത്തി",
+     "t": 30.47
+    },
+    {
+     "w": "എഴുപത്തിമൂന്ന്",
+     "t": 31.218
+    },
+    {
+     "w": "കോടി.",
+     "t": 32.048
+    }
+   ]
+  },
+  {
+   "text": "ഒരു ഗാരേജിൽ തുടങ്ങിയ സ്വപ്നം...",
+   "sentence": 5,
+   "start": 32.57,
+   "end": 34.23,
+   "words": [
+    {
+     "w": "ഒരു",
+     "t": 32.57
+    },
+    {
+     "w": "ഗാരേജിൽ",
+     "t": 32.781
+    },
+    {
+     "w": "തുടങ്ങിയ",
+     "t": 33.234
+    },
+    {
+     "w": "സ്വപ്നം...",
+     "t": 33.777
+    }
+   ]
+  },
+  {
+   "text": "ഇന്ന്,",
+   "sentence": 5,
+   "start": 34.37,
+   "end": 34.74,
+   "words": [
+    {
+     "w": "ഇന്ന്,",
+     "t": 34.37
+    }
+   ]
+  },
+  {
+   "text": "ആയിരം കോടിയുടെ തൊട്ടരികെ.",
+   "sentence": 5,
+   "start": 34.88,
+   "end": 36.58,
+   "words": [
+    {
+     "w": "ആയിരം",
+     "t": 34.88
+    },
+    {
+     "w": "കോടിയുടെ",
+     "t": 35.262
+    },
+    {
+     "w": "തൊട്ടരികെ.",
+     "t": 35.819
+    }
+   ]
+  }
+ ],
+ "beat": {
+  "bpm": 98.0,
+  "t0": 0.05,
+  "err_ms": 81
+ }
+}
+</script>
+<style>
+  html, body { margin: 0; background: #050608; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  #world { position: absolute; inset: 0; }
+  #gl { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+  #capShade { position: absolute; left: 0; right: 0; top: 1240px; height: 680px;
+    background: linear-gradient(to bottom, rgba(5,6,8,0) 0%, rgba(5,6,8,.42) 45%, rgba(5,6,8,.62) 100%); }
+  #captions { position: absolute; left: 60px; width: 840px; top: 1300px; height: 210px; }
+  .page { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center;
+    justify-content: center; text-align: center; opacity: 0; }
+  .w { display: inline-block; font-family: FreeSans, sans-serif; font-weight: 700; font-size: 74px; line-height: 1.3; color: #F3EEE4;
+    margin: 0 10px; opacity: 0; letter-spacing: -.5px;
+    text-shadow: 0 6px 22px rgba(0,0,0,.65), 0 0 3px rgba(0,0,0,.9); }
+  svg text { font-weight: 800; }
+  .guide { position: absolute; background: rgba(255,0,80,.25); pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <svg id="world" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+    <defs id="defs">
+      <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1A20"/><stop offset=".6" stop-color="#0E2A33"/><stop offset="1" stop-color="#07090C"/></linearGradient>
+      <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050A12"/><stop offset="1" stop-color="#14303A"/></linearGradient>
+      <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A2228"/><stop offset="1" stop-color="#0A0E11"/></linearGradient>
+      <linearGradient id="sunset" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B1240"/><stop offset=".45" stop-color="#B8336A"/><stop offset=".75" stop-color="#FF8A3D"/><stop offset="1" stop-color="#FFC46B"/></linearGradient>
+      <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE29A"/><stop offset="1" stop-color="#D9A02B"/></linearGradient>
+      <radialGradient id="vig" cx=".5" cy=".45" r=".72"><stop offset=".62" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".32"/></radialGradient>
+      <radialGradient id="leak"><stop offset="0" stop-color="#FF9A4A" stop-opacity=".35"/><stop offset="1" stop-color="#FF9A4A" stop-opacity="0"/></radialGradient>
+      <radialGradient id="redGlow"><stop offset="0" stop-color="#FF3B3B" stop-opacity=".8"/><stop offset="1" stop-color="#FF3B3B" stop-opacity="0"/></radialGradient>
+      <radialGradient id="blueGlow"><stop offset="0" stop-color="#3B7BFF" stop-opacity=".8"/><stop offset="1" stop-color="#3B7BFF" stop-opacity="0"/></radialGradient>
+      <filter id="sepia"><feColorMatrix type="matrix" values=".39 .77 .19 0 0  .35 .69 .17 0 0  .27 .53 .13 0 0  0 0 0 1 0"/></filter>
+      <filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+      <filter id="blur20"><feGaussianBlur stdDeviation="20"/></filter>
+      <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    </defs>
+    <rect id="bgRect" width="1080" height="1920" fill="url(#bgG)" opacity="0"/>
+    <g id="cam"></g>
+    <g id="labels"></g>
+    <rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+        <rect y="0" width="1080" height="70" fill="#000"/>
+    <rect y="1850" width="1080" height="70" fill="#000"/>
+    <g id="front"></g>
+    <rect id="flash" width="1080" height="1920" fill="#fff" opacity="0"/>
+  </svg>
+  <div id="capShade"></div>
+  <div id="captions"></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script type="importmap">{"imports":{"three":"./vendor/three186/build/three.module.js","three/addons/":"./vendor/three186/examples/jsm/"}}</script>
+<script type="module">
+import { CinemaWorld } from './lib/cinema3d.js';
+(async function () {
+const CFG = JSON.parse(document.getElementById('config').textContent);
+const TIM = JSON.parse(document.getElementById('timings').textContent);
+const C = CFG.palette, FONT = CFG.font;
+const NS = 'http://www.w3.org/2000/svg';
+const DUR = TIM.duration;
+const SFX = [];
+const $ = id => document.getElementById(id);
+window.BEAT = TIM.beat || null;
+const BEAT = window.BEAT;
+const snapT = t => { if (!BEAT) return t; const g = 30 / BEAT.bpm; return Math.max(0, BEAT.t0 + Math.ceil((t - .08 - BEAT.t0) / g) * g); };
+const FREE = new Set(['tick', 'wave', 'dip', 'shimmer', 'siren', 'type']);
+const sfx = (type, t, gain = 1, extra = {}) => SFX.push(Object.assign({ type, t: +Math.max(0, FREE.has(type) ? t : snapT(t)).toFixed(3), gain }, extra));
+const hit = t => sfx('hit', t, .8);
+
+await document.fonts.load(`700 80px ${FONT}`, 'മലയാളം'); await document.fonts.load(`900 80px Inter`, 'GOLD ₹'); await document.fonts.load(`800 80px Inter`, 'GOLD ₹'); await document.fonts.load('bold 80px "DejaVu Serif"', 'A');
+document.body.style.fontFamily = FONT;
+
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function text(parent, x, y, str, size, fill, anchor = 'middle', extra = {}) { const t = el('text', Object.assign({ x, y, 'font-size': size, fill, 'text-anchor': anchor, 'font-family': /[\u0D00-\u0D7F]/.test(str) ? FONT : 'Inter', 'dominant-baseline': 'central' }, extra), parent); t.textContent = str; return t; }
+
+// ---------------------------------------------------------------- timing
+const sentences = CFG.sentences.map((s, si) => { const ph = TIM.phrases.filter(p => p.sentence === si); return Object.assign({}, s, { ph, words: ph.flatMap(p => p.words) }); });
+const sStart = si => sentences[si].ph[0].start;
+const sEnd = si => si + 1 < sentences.length ? sStart(si + 1) : DUR;
+const pS = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].start;
+const pE = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].end;
+const wT = (si, k) => { const w = sentences[si].words; return w[Math.max(0, Math.min(k, w.length - 1))].t; };
+const wIdx = (si, j, k = 0) => sentences[si].ph.slice(0, j).reduce((a, p) => a + p.words.length, 0) + k;
+const lastW = si => wT(si, sentences[si].words.length - 1);
+
+const tl = gsap.timeline({ paused: true });
+tl.to({}, { duration: DUR }, 0);
+const hide = e => tl.set(e, { opacity: 0 }, 0);
+const show = (e, t, d = .5) => { hide(e); tl.to(e, { opacity: 1, duration: d, ease: 'power1.out' }, t); };
+const fadeOut = (e, t, d = .5) => tl.to(e, { opacity: 0, duration: d, ease: 'power1.in' }, t);
+function stamp(e, t, o = {}) { t = snapT(t); tl.set(e, { opacity: 0, scale: 2.2, transformOrigin: o.origin || '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: .28, ease: 'power4.out' }, t); sfx('thud', t + .2, .8); }
+function counter(tEl, from, to, t, d, fmt, ticks = 14) { const o = { v: from }; tEl.textContent = fmt(from); tl.to(o, { v: to, duration: d, ease: 'power2.out', onUpdate: () => tEl.textContent = fmt(o.v) }, t); for (let k = 0; k < ticks; k++) sfx('tick', t + d * (1 - Math.sqrt(1 - k / ticks)), .5); }
+const flash = (t, a = .35) => { tl.set($('flash'), { opacity: a }, t); tl.to($('flash'), { opacity: 0, duration: .5 }, t + .03); };
+// typewriter line: reveals left to right with a key click per step
+let clipN = 0;
+function typeLine(parent, x, y, str, size, fill, t, d = .9, anchor = 'start') {
+  const id = 'tw' + (clipN++), cp = el('clipPath', { id }, $('defs')); const r = el('rect', { x: anchor === 'middle' ? 0 : x - 4, y: y - size, width: 0, height: size * 2 }, cp);
+  const g = el('g', { 'clip-path': `url(#${id})` }, parent); const tx = text(g, x, y, str, size, fill, anchor, { 'letter-spacing': 3 });
+  const w = tx.getBBox().width + 12, x0 = anchor === 'middle' ? x - w / 2 : x - 4; r.setAttribute('x', x0);
+  const o = { w: 0 }; tl.to(o, { w, duration: d, ease: 'steps(' + Math.max(6, str.length) + ')', onUpdate: () => r.setAttribute('width', o.w) }, t);
+  for (let k = 0; k < Math.min(12, str.length); k++) sfx('type', t + k * d / Math.min(12, str.length), .5);
+  return g;
+}
+// lower-third location card: thin orange line + typewriter text
+function lowerThird(parent, line1, line2, t) {
+  const g = el('g', {}, parent);
+  const bar = el('rect', { x: 80, y: 300, width: 0, height: 5, fill: C.accent }, g);
+  tl.to(bar, { attr: { width: 120 }, duration: .4, ease: 'power2.out' }, t);
+  typeLine(g, 84, 352, line1, 46, '#F3EEE4', t + .2, .8);
+  if (line2) typeLine(g, 84, 418, line2, 40, C.accent, t + .9, .5);
+  return g;
+}
+
+// ---------------------------------------------------------------- camera (Ken Burns)
+const CAM = { s: 1, x: 0, y: 0, r: 0 };
+const CUTS = sentences.map((s, si) => sStart(si) - .05).concat([DUR]);
+// a camera drift must finish before the next scene's camSet, or two tweens fight and the frame shakes
+const camTo = (t, v, d, ease = 'sine.inOut') => { const nx = CUTS.find(c => c > t + .02) ?? DUR; const dd = Math.max(.05, Math.min(d, nx - .08 - t)); return tl.to(CAM, Object.assign({ duration: dd, ease }, v), t); };
+const camSet = (t, v) => tl.set(CAM, v, t);
+const scene = name => { const g = el('g', { id: 'sc_' + name }, $('cam')); hide(g); return g; };
+
+// ================================================================= 3D DESK + SCENES
+const IMG = src => new Promise(ok => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => ok(null); i.src = src; });
+const B = 'build/ramayana/photos/', IM = {}; for (const k of ['namit', 'trio', 'dneg']) IM[k] = await IMG(B + k + '.jpg');
+// the screen's pictures: real photos (Wikimedia Commons, credited) where we have them, our own text cards otherwise (no film posters or stills)
+const ph = (k, fb) => IM[k] ? { kind: 'photo', img: IM[k] } : fb;
+const SCREENS = [
+  { kind: 'text', text: '₹1,000 CR', fg: '#FFC94A', bg: '#140A04' },
+  { kind: 'text', text: '1995', fg: '#FFFFFF', bg: '#0E0C0A' },
+  ph('namit', { kind: 'text', text: 'NAMIT', sub: 'NAMIT MALHOTRA · AGE 19', fg: '#FFFFFF', bg: '#0C0E14' }),
+  { kind: 'text', text: 'PRIME FOCUS', fg: '#FFB238', bg: '#0C0A08' },
+  IM.dneg ? { kind: 'logo', img: IM.dneg, bg: '#0B3A40' } : { kind: 'text', text: 'DNEG', sub: 'DOUBLE NEGATIVE · LONDON', fg: '#FFFFFF', bg: '#0A0A0C' },
+  { kind: 'text', text: 'OSCAR', fg: '#E9C46A', bg: '#0C0904' },
+  { kind: 'text', text: '', bg: '#000000' },
+  { kind: 'text', text: 'RAMAYANA', fg: '#FFC94A', bg: '#2A0A06' },
+  ph('trio', { kind: 'text', text: 'RAMAYANA', sub: 'YASH · SAI PALLAVI · RANBIR KAPOOR', fg: '#FFFFFF', bg: '#1A0A06' }),
+  ph('yash', { kind: 'text', text: 'RAVANA', sub: 'YASH', fg: '#FFFFFF', bg: '#1A0606' }),
+  ph('sai', { kind: 'text', text: 'SITA', sub: 'SAI PALLAVI', fg: '#FFFFFF', bg: '#1A0A0E' }),
+  { kind: 'text', text: '₹4,000 CR+', fg: '#FFC94A', bg: '#120804' },
+  { kind: 'text', text: '₹973 CR', sub: 'INDIA NET · 20 DAYS', fg: '#FFC94A', bg: '#0A0B10' },
+  { kind: 'text', text: '₹1,000 CR', fg: '#FFC94A', bg: '#140A04' }];
+const W = new CinemaWorld($('gl'), SCREENS, { ticket: { title: 'RAMAYANA', line: 'PART 1 · 20 DAYS · HOUSEFULL' } }), ST = W.ST;
+const STTW = [];
+const v3 = (t, o) => { t = Math.max(0, t); STTW.forEach(([w, keys]) => { const st = w.startTime(); if (st < t && st + w.duration() > t - .03 && keys.some(k => k in o)) w.duration(Math.max(.05, t - .03 - st)); }); return tl.set(ST, o, t); };
+// a camera move must end before the next camera set (even inside a scene), or render workers that skip frames land on different values and the shot jitters
+const CAMTW = [];
+const c3 = (t, cam) => { t = Math.max(0, t); cam = Object.assign({ roll: 0 }, cam); CAMTW.forEach(w => { const st = w.startTime(); if (st < t && st + w.duration() > t - .03) w.duration(Math.max(.05, t - .03 - st)); }); return tl.set(ST.cam, cam, t); };
+const m3 = (t, cam, d, ease = 'sine.inOut') => { const nx = CUTS.find(c => c > t + .02) ?? DUR; const dd = Math.max(.05, Math.min(d, nx - .08 - t)); tl.to(ST.cam, Object.assign({ duration: dd, ease }, cam), Math.max(0, t)); CAMTW.push(tl.recent()); return tl; };
+const go3 = (t, o, d, ease = 'power2.inOut') => { tl.to(ST, Object.assign({ duration: d, ease }, o), Math.max(0, t)); STTW.push([tl.recent(), Object.keys(o)]); return tl; };
+function pill(parent, cx, cy, str, size, fg = '#FFFFFF', bg = '#12161A', pad = 40) { const g = el('g', {}, parent), tx = text(g, cx, cy, str, size, fg, 'middle', { 'letter-spacing': 1.5 }); const w = tx.getBBox().width + pad * 2; g.insertBefore(el('rect', { x: cx - w / 2, y: cy - size * .9, width: w, height: size * 1.8, rx: size * .9, fill: bg, opacity: .92 }), tx); return g; }
+function pop(e, t, d = .35) { tl.set(e, { opacity: 0, scale: .6, transformOrigin: '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: d, ease: 'back.out(2)' }, Math.max(0, t)); sfx('pop', t, .45); }
+function slam(e, t) { tl.set(e, { opacity: 0, scale: 2.4, transformOrigin: '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: .26, ease: 'power4.out' }, Math.max(0, t)); sfx('thud', t + .18, .8); }
+const overlay = si => { const g = el('g', {}, $('front')); tl.set(g, { opacity: 0 }, 0); tl.set(g, { opacity: 1 }, Math.max(0, sStart(si) - .05)); tl.set(g, { opacity: 0 }, sEnd(si) - .03); return g; };
+const live = e => { for (let n = e; n && n.style; n = n.parentNode) { if (n.id === 'stage') break; if (n.style.opacity !== '' && +n.style.opacity < .01) return false; } return true; };
+const wordIdx = (si, word) => sentences[si].words.findIndex(w => w.w.toLowerCase().replace(/[^a-z0-9-]/g, '').startsWith(word));
+const wAt = (si, word, fb = 0) => { const k = wordIdx(si, word); return k >= 0 ? wT(si, k) : sStart(si) + fb; };
+// a location / date tag: dark pill, accent rule, typed in
+function tag(o, a, b, t, row = 0) { const y = 330 + row * 92; const g = el('g', {}, o); const p1 = pill(g, 0, 0, a, 50, '#FFFFFF', C.ink, 34); const bb = p1.getBBox(); p1.setAttribute('transform', `translate(${80 + bb.width / 2} ${y})`); pop(p1, t); if (b) { const p2 = pill(g, 0, 0, b, 36, C.ink, '#FFFFFF', 26); const b2 = p2.getBBox(); p2.setAttribute('transform', `translate(${80 + b2.width / 2} ${y + 86})`); pop(p2, t + .35); } return g; }
+
+// ---- callouts: a dot on a 3D feature, a leader and a label box that follows it every frame
+const CALL = [];
+function callout(parent, name, label, t, side = 1, dy = -150, col = '#12161A') {
+  const g = el('g', {}, parent); const line = el('polyline', { fill: 'none', stroke: '#FFFFFF', 'stroke-width': 4, opacity: .95 }, g);
+  const dot = el('circle', { r: 9, fill: C.accent, stroke: '#fff', 'stroke-width': 4 }, g);
+  const box = el('rect', { rx: 14, fill: col, opacity: .92 }, g); const tx = text(g, 0, 0, label, 38, '#FFFFFF', 'start', { 'letter-spacing': 1 });
+  tl.set(g, { opacity: 0 }, 0); tl.to(g, { opacity: 1, duration: .3 }, Math.max(0, t)); sfx('pop', t, .35);
+  CALL.push({ g, name, side, dy, line, dot, box, tx }); return g;
+}
+function placeCallouts() {
+  CALL.forEach(c => { if (!live(c.g)) return; const [x, y] = W.screen(c.name); const w = c.tx.getComputedTextLength() + 36;
+    const ly = Math.max(300, Math.min(1180, y + c.dy)), bx = c.side > 0 ? Math.min(940 - w, Math.max(60, x + 40)) : Math.max(60, Math.min(940 - w, x - 40 - w)), end = c.side > 0 ? bx : bx + w;
+    c.line.setAttribute('points', `${x.toFixed(1)},${y.toFixed(1)} ${end.toFixed(1)},${ly.toFixed(1)}`); c.dot.setAttribute('cx', x.toFixed(1)); c.dot.setAttribute('cy', y.toFixed(1));
+    c.box.setAttribute('x', bx); c.box.setAttribute('y', ly - 32); c.box.setAttribute('width', w); c.box.setAttribute('height', 64); c.tx.setAttribute('x', bx + 18); c.tx.setAttribute('y', ly + 1); });
+}
+// ---- exploded-view labels (the hero bogie), shown in time windows
+const EXW = []; let EXL = null;
+function explodedLabels(t0, t1, only) { EXW.push([t0, t1, only]); }
+function placeExploded(t) {
+  if (!EXL) { EXL = W.explodedLabels().map(() => { const g = el('g', { opacity: 0 }, $('labels')); const line = el('polyline', { fill: 'none', stroke: '#12161A', 'stroke-width': 3.5 }, g); const dot = el('circle', { r: 8, fill: C.accent, stroke: '#fff', 'stroke-width': 3 }, g); const bg = el('rect', { rx: 12, fill: '#12161A', opacity: .9 }, g); const tx = text(g, 0, 0, '', 36, '#FFFFFF', 'start'); return { g, line, dot, bg, tx }; }); }
+  const win = EXW.find(([a, b]) => t >= a && t < b); const L = W.explodedLabels();
+  if (!win) { EXL.forEach(l => l.g.setAttribute('opacity', 0)); return; }
+  const fade = Math.min(1, (t - win[0]) / .35, (win[1] - t) / .2);
+  const pts = L.map((p, i) => ({ p, l: EXL[i], ly: p.y, on: (!win[2] || win[2].includes(p.label)) && p.z < 1 ? Math.max(0, Math.min(1, (p.u - .85) / .15)) : 0 }));
+  [-1, 1].forEach(side => { const col = pts.filter(q => q.p.side === side && q.on > 0).sort((a, b) => a.p.y - b.p.y); for (let i = 1; i < col.length; i++) col[i].ly = Math.max(col[i].ly, col[i - 1].ly + 74); for (let i = col.length - 2; i >= 0; i--) if (col[i].ly > col[i + 1].ly - 74) col[i].ly = col[i + 1].ly - 74; });
+  pts.forEach(({ p, l, ly, on }) => { on *= fade; if (l.tx.textContent !== p.label) l.tx.textContent = p.label;
+    ly = Math.max(290, Math.min(1190, ly)); const bw = l.tx.getComputedTextLength() + 32, bx = p.side > 0 ? 940 - bw : 60, end = p.side > 0 ? bx : bx + bw;
+    l.line.setAttribute('points', `${p.x.toFixed(1)},${p.y.toFixed(1)} ${(end + (p.side > 0 ? -34 : 34)).toFixed(1)},${ly.toFixed(1)} ${end},${ly.toFixed(1)}`); l.dot.setAttribute('cx', p.x.toFixed(1)); l.dot.setAttribute('cy', p.y.toFixed(1));
+    l.tx.setAttribute('x', bx + 16); l.tx.setAttribute('y', ly + 1); l.bg.setAttribute('x', bx); l.bg.setAttribute('y', ly - 30); l.bg.setAttribute('width', bw); l.bg.setAttribute('height', 60); l.g.setAttribute('opacity', on.toFixed(3)); });
+}
+// ---- a dimension mark between two world points (the 10 cm lift)
+const DIMS = [];
+function dimension(parent, a, b, label, t) { const g = el('g', {}, parent); const l1 = el('line', { stroke: '#FFB238', 'stroke-width': 4 }, g), l2 = el('line', { stroke: '#FFB238', 'stroke-width': 4, 'stroke-dasharray': '10 8' }, g), ar = el('line', { stroke: '#FFB238', 'stroke-width': 5 }, g); const p = pill(g, 0, 0, label, 40, '#12161A', '#FFB238', 26); tl.set(g, { opacity: 0 }, 0); tl.to(g, { opacity: 1, duration: .3 }, t); DIMS.push({ g, a, b, l1, l2, ar, p }); }
+function placeDims() { DIMS.forEach(d => { if (!live(d.g)) return; const A = W.studio.project(d.a()), B = W.studio.project(d.b()); const x0 = A[0] - 150, x1 = A[0] + 150; d.l1.setAttribute('x1', x0); d.l1.setAttribute('x2', x1); d.l1.setAttribute('y1', A[1]); d.l1.setAttribute('y2', A[1]); d.l2.setAttribute('x1', x0); d.l2.setAttribute('x2', x1); d.l2.setAttribute('y1', B[1]); d.l2.setAttribute('y2', B[1]); d.ar.setAttribute('x1', x1 + 20); d.ar.setAttribute('x2', x1 + 20); d.ar.setAttribute('y1', A[1]); d.ar.setAttribute('y2', B[1]); d.p.setAttribute('transform', `translate(${x1 + 130} ${(A[1] + B[1]) / 2})`); }); }
+
+const HS = { 'font-weight': 900, 'letter-spacing': 0, stroke: '#0B0D12', 'stroke-width': 14, 'paint-order': 'stroke', 'stroke-linejoin': 'round' };
+const SCR = { k1000: 0, y1995: 1, namit: 2, prime: 3, dneg: 4, oscar: 5, black: 6, title: 7, ranbir: 8, yash: 9, sai: 10, budget: 11, cr973: 12, cr1000: 13 };
+const CREDIT = { 2: 'Photo: DNEG · CC BY-SA 4.0 · Wikimedia Commons', 4: 'Logo: DNEG · via Wikimedia Commons (CC BY-SA 4.0)', 8: 'Photo: Reaaaan · CC0 · Wikimedia Commons' };
+const STUDIO = { scrA: 0, scrB: 0, scrMix: 0, scrOn: 1, scrZoom: 0, beam: 1, tickets: 0, sconce: 1, aperture: .00002, exposure: 1.0 };
+const fitW = (e, w) => { const bw = e.getBBox().width; if (bw > w) e.setAttribute('font-size', (+e.getAttribute('font-size') * w / bw).toFixed(1)); return e; };
+// the screen cuts or crossfades to picture k at t
+const scrTo = (t, k, d = .45) => { tl.set(ST, { scrB: k, scrMix: 0 }, t); tl.to(ST, { scrMix: 1, duration: d, ease: 'power1.inOut' }, t); tl.set(ST, { scrA: k, scrMix: 0 }, t + d + .01); };
+// credit line for photos shown on the screen (bottom-left, inside the safe area)
+function credit(k, t0, t1) { if (!CREDIT[k]) return; const g = el('g', {}, $('front')); text(g, 80, 1488, CREDIT[k], 24, '#CFC8BC', 'start', { 'font-weight': 600, opacity: .85 }); tl.set(g, { opacity: 0 }, 0); tl.to(g, { opacity: 1, duration: .3 }, t0); tl.to(g, { opacity: 0, duration: .2 }, t1 - .2); }
+function hookCard() { const h = el('g', {}, $('front')); const a = fitW(text(h, 470, 330, 'ഒരു ഗാരേജ്...', 118, '#FFFFFF', 'middle', HS), 840); const b = fitW(text(h, 470, 470, '₹1,000 കോടി!', 140, C.accent, 'middle', HS), 840); return { h, a, b }; }
+// anamorphic flare: a long blue-white streak across the frame (screen blend)
+function flare(t, d = 1.2, y = 760) { const g = el('g', { style: 'mix-blend-mode:screen' }, $('front')); const id = 'fl' + Math.round(t * 100);
+  const lg = el('linearGradient', { id, x1: 0, x2: 1, y1: 0, y2: 0 }, $('defs')); [[0, 0], [.35, .5], [.5, 1], [.65, .5], [1, 0]].forEach(([o, a]) => el('stop', { offset: o, 'stop-color': '#9EC9FF', 'stop-opacity': a }, lg));
+  el('rect', { x: -200, y: y - 7, width: 1480, height: 14, fill: `url(#${id})` }, g); el('ellipse', { cx: 540, cy: y, rx: 160, ry: 60, fill: '#DCEBFF', opacity: .55, filter: 'url(#blur20)' }, g);
+  tl.set(g, { opacity: 0, scaleX: .3, transformOrigin: `540px ${y}px` }, 0); tl.to(g, { opacity: 1, scaleX: 1, duration: d * .35, ease: 'power2.out' }, t); tl.to(g, { opacity: 0, duration: d * .65, ease: 'power1.in' }, t + d * .35); }
+// warm light leak from a corner
+function leak(t, d = 1.4) { const g = el('g', { style: 'mix-blend-mode:screen' }, $('front')); el('circle', { cx: 960, cy: 260, r: 520, fill: 'url(#leak)' }, g); tl.set(g, { opacity: 0 }, 0); tl.to(g, { opacity: 1, duration: d * .4 }, t); tl.to(g, { opacity: 0, duration: d * .6 }, t + d * .4); }
+const SEAT = { px: 1.6, py: 3.45, pz: 7.4, tx: 0, ty: 3.2, tz: -4, fov: 40 };
+const scenes = {
+  hook(si) {
+    // a bright screen in a dark hall: ₹1,000 CR in gold; the hook card; a stack of Ramayana tickets grows on the armrest
+    v3(0, Object.assign({}, STUDIO, { scrA: SCR.k1000, scrB: SCR.k1000 }));
+    c3(0, { px: .9, py: 3.15, pz: 6.2, tx: 0, ty: 3.3, tz: -4, fov: 42 }); m3(.02, { px: .5, py: 2.7, pz: 4.6 }, pS(si, 1) - .1);
+    const H = hookCard(); tl.set(H.h, { opacity: 1 }, 0); tl.to(H.h, { opacity: 0, duration: .25 }, pS(si, 2) - .2);
+    const t3 = pS(si, 2) - .05; flash(t3, .15);
+    c3(t3, { px: .9, py: 1.65, pz: 1.75, tx: .34, ty: 1.3, tz: 1.2, fov: 34 }); m3(t3 + .02, { px: .8, py: 1.75, pz: 1.62 }, sEnd(si) - t3);
+    v3(t3, { exposure: .8 }); go3(t3 + .05, { tickets: 1 }, sEnd(si) - t3 - .1, 'power1.out'); for (let k = 0; k < 12; k++) sfx('tick', t3 + .05 + k * (sEnd(si) - t3 - .2) / 12, .5);
+    const o = overlay(si); const p = pill(o, 470, 360, 'RAMAYANA · NEAR ₹1,000 CRORE', 50, C.ink, C.accent, 36); slam(p, t3 + .15); const q = pill(o, 470, 470, 'INDIA NET · BOX OFFICE', 34, '#FFFFFF', C.ink, 26); pop(q, t3 + .5);
+  },
+  garage(si) {
+    // 1995, Mumbai: the screen turns to the year, then the man; the camera drifts back through the rows
+    const T0 = sStart(si), tN = pS(si, 2) - .05, tP = pS(si, 4) - .05;
+    flash(T0 - .02, .2); v3(T0 - .05, { exposure: 1, tickets: 0 }); scrTo(T0 - .05, SCR.y1995, .2);
+    c3(T0 - .05, { px: -2.6, py: 4.25, pz: 9.5, tx: 0, ty: 3.3, tz: -4, fov: 38 }); m3(T0, { px: -2.0, py: 3.85, pz: 8.0 }, tN - T0);
+    const o = overlay(si); const g1 = tag(o, '1995 · MUMBAI', "IN HIS FATHER'S GARAGE", T0 + .05);
+    scrTo(tN, SCR.namit, .5); credit(SCR.namit, tN + .2, tP); c3(tN, Object.assign({}, SEAT)); m3(tN + .02, { px: 1.2, py: 3.15, pz: 6.3 }, tP - tN);
+    const n = pill(o, 470, 1150, 'NAMIT MALHOTRA · AGE 19', 52, C.ink, C.accent, 36); slam(n, tN + .15); tl.to(n, { opacity: 0, duration: .15 }, tP - .1);
+    const v = pill(o, 470, 1150, 'A VIDEO EDITING STUDIO', 46, '#FFFFFF', C.ink, 30); pop(v, pS(si, 3) + .2); tl.to(v, { opacity: 0, duration: .15 }, tP - .1);
+    scrTo(tP, SCR.prime, .35); sfx('whoosh', tP, .4); c3(tP, { px: 3.2, py: 4.6, pz: 11.5, tx: 0, ty: 3.0, tz: -4, fov: 40 }); m3(tP + .02, { px: 2.6, py: 4.2, pz: 10.2 }, sEnd(si) - tP);
+    const pf = pill(o, 470, 1150, 'IT GREW INTO PRIME FOCUS', 50, '#FFFFFF', '#B06000', 34); pop(pf, pS(si, 5));
+  },
+  dneg(si) {
+    // 2014: London; the screen shows DNEG, then the Oscars; then the silence (screen and beam fade, a flare builds)
+    const T0 = sStart(si), tO = pS(si, 2) - .05, tH = pE(si, 2) + .15;
+    flash(T0 - .02, .2); scrTo(T0 - .05, SCR.dneg, .25); credit(SCR.dneg, T0, tO);
+    c3(T0 - .05, { px: -3.4, py: 4.45, pz: 10.5, tx: 0, ty: 3.2, tz: -4, fov: 40 }); m3(T0, { px: -2.6, py: 3.95, pz: 8.8 }, tO - T0);
+    const o = overlay(si); const g1 = tag(o, '2014 · LONDON', 'HE BUYS DOUBLE NEGATIVE (DNEG)', T0 + .05); tl.to(g1, { opacity: 0, duration: .15 }, tO - .1);
+    scrTo(tO, SCR.oscar, .4); go3(tO, { scrZoom: 1, sconce: .5 }, tH - tO + .3, 'sine.inOut');
+    c3(tO, { px: -.6, py: 3.5, pz: 7.6, tx: 0, ty: 3.4, tz: -4, fov: 38 }); m3(tO + .02, { px: -.3, py: 3.2, pz: 6.5 }, sEnd(si) - tO);
+    const os = pill(o, 470, 1150, 'OSCARS · INTERSTELLAR · DUNE', 48, C.ink, '#E9C46A', 34); slam(os, pS(si, 2) + .4); tl.to(os, { opacity: 0, duration: .2 }, tH);
+    go3(tH, { scrOn: .15, beam: .2, sconce: .15 }, sEnd(si) - tH - .2, 'power1.in'); sfx('dip', tH, .6); sfx('hum', tH, .5); flare(sEnd(si) - .55, 1.2);
+  },
+  twist(si) {
+    // the same man's film: RAMAYANA in gold; then the stars (real photos) and the budget
+    const T0 = sStart(si), tT = pS(si, 1) - .05, tB = pS(si, 2) + 1.0;
+    flash(T0 - .03, .55); leak(T0, 1.6); v3(T0 - .04, { scrA: SCR.title, scrB: SCR.title, scrMix: 0, scrZoom: 0 }); go3(T0 - .03, { scrOn: 1, beam: 1, sconce: .5 }, .4, 'power2.out'); sfx('hit', T0, .9);
+    c3(T0 - .04, { px: 0, py: 3.5, pz: 8.4, tx: 0, ty: 3.4, tz: -4, fov: 38 }); m3(T0, { px: 0, py: 3.3, pz: 7.4 }, tB - T0, 'sine.inOut');
+    const o = overlay(si); const n = pill(o, 470, 1150, 'PRODUCED BY NAMIT MALHOTRA', 40, C.ink, C.accent, 30); pop(n, T0 + .1); tl.to(n, { opacity: 0, duration: .15 }, tT - .05);
+    const r = pill(o, 470, 1150, 'RAMAYANA', 96, '#FFFFFF', '#7A1A0E', 54); slam(r, tT + .05); tl.to(r, { opacity: 0, duration: .15 }, tB - .1);
+    scrTo(tT, SCR.ranbir, .35); credit(SCR.ranbir, tT + .1, tB + .05); const cast = pill(o, 470, 470, 'YASH · SAI PALLAVI · RANBIR KAPOOR', 36, '#FFFFFF', C.ink, 26); pop(cast, tT + .3); tl.to(cast, { opacity: 0, duration: .15 }, tB - .1);
+    scrTo(tB, SCR.budget, .3); sfx('whoosh', tB, .4); c3(tB, { px: 2.2, py: 4.1, pz: 9.8, tx: 0, ty: 3.2, tz: -4, fov: 40 }); m3(tB + .02, { px: 1.6, py: 3.7, pz: 8.4 }, sEnd(si) - tB);
+    const bb = pill(o, 470, 1150, 'BIGGEST BUDGET IN INDIAN CINEMA', 44, C.ink, C.accent, 30); slam(bb, tB + .1); const rp = pill(o, 470, 1250, 'REPORTED · BOTH PARTS', 32, '#FFFFFF', C.ink, 24); pop(rp, tB + .4);
+  },
+  payoff(si) {
+    // 20 days: the screen counts to ₹973 CR; the ticket stack grows again in the front row
+    const T0 = sStart(si), tN = pS(si, 2) - .05;
+    flash(T0 - .02, .2); scrTo(T0 - .05, SCR.cr973, .3); go3(T0, { sconce: 1 }, .6);
+    c3(T0 - .05, { px: -2.0, py: 3.9, pz: 8.6, tx: 0, ty: 3.3, tz: -4, fov: 40 }); m3(T0, { px: -1.4, py: 3.5, pz: 7.2 }, tN - T0);
+    const o = overlay(si); tag(o, '20 DAYS', 'SINCE 5 NOVEMBER', T0 + .05);
+    flash(tN, .12); c3(tN, { px: .9, py: 1.65, pz: 1.75, tx: .34, ty: 1.3, tz: 1.2, fov: 34 }); m3(tN + .02, { px: .8, py: 1.75, pz: 1.62 }, sEnd(si) - tN); v3(tN, { exposure: .8, tickets: .4 }); go3(tN, { tickets: 1 }, sEnd(si) - tN, 'power1.out');
+    const c = pill(o, 470, 470, '₹973 CRORE · INDIA NET', 58, C.ink, C.accent, 40); slam(c, pS(si, 2) + .2); counterSfx(tN, sEnd(si) - tN - .3);
+  },
+  callback(si) {
+    const T0 = sStart(si);
+    flash(T0 - .02, .25); v3(T0 - .05, { aperture: .00002, tickets: 0, exposure: 1 }); scrTo(T0 - .05, SCR.cr1000, .3);
+    c3(T0 - .05, { px: 0, py: 5.0, pz: 12.5, tx: 0, ty: 3.3, tz: -4, fov: 40 }); m3(T0, { px: 0, py: 4.15, pz: 9.0 }, sEnd(si) - T0 + .3, 'sine.inOut');
+    const H = hookCard(); tl.set(H.h, { opacity: 0 }, 0); tl.to(H.h, { opacity: 1, duration: .4 }, pS(si, 2) - .1); sfx('thud', pS(si, 2), .7);
+    const o = overlay(si); const p = pill(o, 470, 1150, 'ONLY ₹27 CRORE TO GO', 54, '#FFFFFF', C.ink, 36); pop(p, pS(si, 2) + .3);
+  },
+};
+function counterSfx(t, d, n = 14) { for (let k = 0; k < n; k++) sfx('tick', t + d * (1 - Math.sqrt(1 - k / n)), .45); }
+const THREE = await import('three');
+sentences.forEach((s, si) => scenes[s.scene](si, s.labels || {}));
+
+// ---------------------------------------------------------------- captions
+const capBox = $('captions'), MAXCH = 30;
+TIM.phrases.forEach((ph, pi) => {
+  const pages = []; let cur = [];
+  ph.words.forEach(w => { const len = cur.reduce((a, b) => a + b.w.length + 1, 0); if (cur.length && len + w.w.length > MAXCH) { pages.push(cur); cur = []; } cur.push(w); });
+  if (cur.length) pages.push(cur);
+  const next = pi + 1 < TIM.phrases.length ? TIM.phrases[pi + 1].start : DUR;
+  pages.forEach((words, k) => {
+    const page = document.createElement('div'); page.className = 'page'; capBox.appendChild(page);
+    const tOut = k + 1 < pages.length ? pages[k + 1][0].t - .2 : (pi + 1 < TIM.phrases.length ? Math.min(next - .22, ph.end + .9) : DUR + 1);
+    tl.set(page, { opacity: 1 }, Math.max(0, words[0].t - .08));
+    words.forEach((w, j) => {
+      const s = document.createElement('span'); s.className = 'w'; s.textContent = w.w; page.appendChild(s);
+      tl.set(s, { opacity: 0, y: 20, scale: .9 }, 0);
+      tl.to(s, { opacity: 1, y: 0, scale: 1, duration: .25, ease: 'power2.out' }, Math.max(0, w.t - .06));
+      tl.set(s, { color: C.accent }, Math.max(0, w.t - .06));
+      tl.set(s, { color: '#F3EEE4' }, j + 1 < words.length ? words[j + 1].t - .06 : tOut);
+    });
+    tl.to(page, { opacity: 0, duration: .12 }, tOut);
+  });
+});
+
+// ---------------------------------------------------------------- time-only render
+function render(t) { W.render(t); placeCallouts(); placeExploded(t); placeDims(); }
+tl.seek(DUR, false); tl.seek(0, false); render(0);
+window.seek = t => { tl.seek(Math.max(0, Math.min(DUR, t)), false); render(t); };
+window.DURATION = DUR; window.SFX = SFX.sort((a, b) => a.t - b.t); window.CONFIG = CFG; window.READY = true;
+const q = new URLSearchParams(location.search);
+if (q.has('guides')) { const st = $('stage'); [['0', '0', '1080px', '230px'], ['0', '1520px', '1080px', '400px'], ['940px', '0', '140px', '1920px']].forEach(([l, tp, w, h]) => { const d = document.createElement('div'); d.className = 'guide'; Object.assign(d.style, { left: l, top: tp, width: w, height: h }); st.appendChild(d); }); }
+if (q.has('t')) window.seek(parseFloat(q.get('t')));
+
+})();
+</script>
+</body>
+</html>
