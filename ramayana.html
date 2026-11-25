@@ -769,7 +769,7 @@ const scenes = {
     c3(T0 - .05, { px: -2.6, py: 4.25, pz: 9.5, tx: 0, ty: 3.3, tz: -4, fov: 38 }); m3(T0, { px: -2.0, py: 3.85, pz: 8.0 }, tN - T0);
     const o = overlay(si); const g1 = tag(o, '1995 · MUMBAI', "IN HIS FATHER'S GARAGE", T0 + .05);
     scrTo(tN, SCR.namit, .5); credit(SCR.namit, tN + .2, tP); c3(tN, Object.assign({}, SEAT)); m3(tN + .02, { px: 1.2, py: 3.15, pz: 6.3 }, tP - tN);
-    const n = pill(o, 470, 1150, 'NAMIT MALHOTRA · AGE 19', 52, C.ink, C.accent, 36); slam(n, tN + .15); tl.to(n, { opacity: 0, duration: .15 }, tP - .1);
+    const n = pill(o, 470, 1150, 'NAMIT MALHOTRA · AGE 19', 52, C.ink, C.accent, 36); slam(n, tN + .15); tl.to(n, { opacity: 0, duration: .15 }, Math.min(tP - .1, pS(si, 3) + .05));
     const v = pill(o, 470, 1150, 'A VIDEO EDITING STUDIO', 46, '#FFFFFF', C.ink, 30); pop(v, pS(si, 3) + .2); tl.to(v, { opacity: 0, duration: .15 }, tP - .1);
     scrTo(tP, SCR.prime, .35); sfx('whoosh', tP, .4); c3(tP, { px: 3.2, py: 4.6, pz: 11.5, tx: 0, ty: 3.0, tz: -4, fov: 40 }); m3(tP + .02, { px: 2.6, py: 4.2, pz: 10.2 }, sEnd(si) - tP);
     const pf = pill(o, 470, 1150, 'IT GREW INTO PRIME FOCUS', 50, '#FFFFFF', '#B06000', 34); pop(pf, pS(si, 5));
