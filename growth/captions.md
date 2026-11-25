@@ -292,3 +292,15 @@ Punnamada / Nehru Trophy: Manoj Karingamadathil (CC BY-SA 3.0)
 Kuttanad: P.K.Niyogi (public domain), Bibin das (CC BY-SA 4.0)
 
 Instagram post body line: `Map: EOX Sentinel-2, NASA, © OpenStreetMap. Photos: Wikimedia Commons (credits on YouTube).`
+
+## 22. Ramayana near ₹1,000 crore: Namit Malhotra's garage (explainer, post 7:30 PM)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram: `From a garage to ₹1,000 crore: the man behind Ramayana 🎬 ഒരു ഗാരേജ് #Ramayana #DNEG`
+- YouTube Shorts title: `Ramayana box office near ₹1000 crore: from a Mumbai garage 🎬 നമിത് #Ramayana #Shorts`
+
+### YouTube description
+In 1995, 19-year-old Namit Malhotra started a video editing studio in his father's garage in Mumbai. It grew into Prime Focus, which in 2014 bought London's Double Negative (DNEG), the Oscar-winning VFX studio behind Interstellar and Dune. Now his Ramayana Part 1 has made ₹973 crore net in India in 20 days (Sacnilk, day 20), close to ₹1,000 crore.
+ഒരു ഗാരേജിൽ തുടങ്ങിയ സ്വപ്നം, ഇന്ന് ആയിരം കോടിയുടെ തൊട്ടരികെ.
+Ramayana box office, Namit Malhotra, DNEG, Prime Focus, Ranbir Kapoor, Yash, Malayalam explainer.
+Sources: Sacnilk, Outlook India, Wikipedia, The Better India, Quartz.
