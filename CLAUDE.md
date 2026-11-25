@@ -10,6 +10,8 @@ Example hook: "ഒരു പയ്യൻ ബസ് മാറിക്കയറ�
 
 Exception: the **Kerala Yatra** travel series uses a calm narrator/navigator style instead (how we get there, what we see, why it matters, one tip), not the hook-twist pattern. Rules in the `kerala-yatra` skill (`.claude/skills/kerala-yatra/SKILL.md`): real satellite maps (NASA Blue Marble, Sentinel-2), India's official boundary (datameet, Survey of India), all 14 districts outlined, a traveller marker on a blue navigation line, photo pop-ups at each stop.
 
+Second exception: the **split series** ("ഒരു രൂപയുടെ കണക്ക്", from 25 Nov 2026) splits the price of an everyday thing (a ₹15 tea, a ticket, a litre of petrol) into its real costs: a real 3D object separates into labelled cost layers while a coin stack shrinks to the seller's profit. Hook = the price everyone knows, twist = the surprising part, payoff = what the seller keeps and the break-even volume. One example business, our own calculation from sourced prices, "EXAMPLE · APPROX." on screen, no advice or income promises; scripts in `growth/split_NN_<topic>_script.md`.
+
 ## Quality bar (owner, 19 Nov 2026)
 
 The watch anatomy test (`out/watch_anatomy_test.mp4`, `anatomy_lab.html`) is the standard every future reel is judged against. The owner's words: clarity, quality and cinematic camera movement "mean a lot for the viewers" and grow views and subscribers.

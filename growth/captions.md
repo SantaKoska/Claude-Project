@@ -304,3 +304,15 @@ In 1995, 19-year-old Namit Malhotra started a video editing studio in his father
 ഒരു ഗാരേജിൽ തുടങ്ങിയ സ്വപ്നം, ഇന്ന് ആയിരം കോടിയുടെ തൊട്ടരികെ.
 Ramayana box office, Namit Malhotra, DNEG, Prime Focus, Ranbir Kapoor, Yash, Malayalam explainer.
 Sources: Sacnilk, Outlook India, Wikipedia, The Better India, Quartz.
+
+## 23. Split series EP 1: a ₹15 tea, split open (new series "ഒരു രൂപയുടെ കണക്ക്")
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram: `₹15 tea: how much does the tea shop keep? ☕ ഒരു രൂപയുടെ കണക്ക് #TeaShop #Business`
+- YouTube Shorts title: `₹15 chai cost breakdown: tea shop profit per glass ☕ ചായക്കട #Business #Shorts`
+
+### YouTube description
+Where does your ₹15 for a glass of tea go? An example small Kerala tea shop selling 200 glasses a day: milk ~₹3.90 (70 ml at Milma ₹56/L), sugar ₹0.60, gas ~₹0.60, rent ₹1.70, helper ₹2.50, power and water ₹0.25, and tea powder only ₹0.60. Profit: about ₹5 a glass, and the first ~95 glasses every day only pay rent and wages. Our calculation from Nov 2026 prices; every shop is different.
+ഒരു ₹15 ചായയുടെ കണക്ക്: ചായക്കാരന് കിട്ടുന്നത് എത്ര?
+Tea shop business Kerala, chaya kada profit, cost per cup, Malayalam business explainer.
+Sources: Milma, Madhyamam (LPG), Business Standard (sugar), IndiaMART (tea dust), Indeed (wages), Housing.com (rent).
