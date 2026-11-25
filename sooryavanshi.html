@@ -681,6 +681,7 @@
 </div>
 
 <script src="vendor/gsap.min.js"></script>
+<script src="lib/batter2d.js"></script>
 <script type="importmap">{"imports":{"three":"./vendor/three186/build/three.module.js","three/addons/":"./vendor/three186/examples/jsm/"}}</script>
 <script type="module">
 import { StadiumWorld } from './lib/stadium3d.js';
@@ -859,13 +860,19 @@ const scenes = {
     // AGE 15; 28 glowing sixes arc out over the stands while the scoreboard races
     const T0 = sStart(si), t2 = pS(si, 2), t3 = pS(si, 3), t4e = pE(si, 4);
     flash(T0 - .02, .5); leak(T0, 1.4); v3(T0 - .04, { ballOn: 0, explode: 0, ballGlow: 0, board: 5, runs: 0, balls: 0, six: 0, sixes: 0, aperture: .00002 }); v3(t2 - .05, { board: 3 });
-    c3(T0 - .04, { px: -6, py: 4.5, pz: 25, tx: 0, ty: 9, tz: -20, fov: 54 }); m3(T0, { px: 5, py: 7, pz: 23, ty: 11 }, sEnd(si) - T0 + .3, 'sine.inOut');
+    c3(T0 - .04, { px: -6, py: 4.5, pz: 25, tx: 0, ty: 3.4, tz: -20, fov: 54 }); m3(T0, { px: 5, py: 7, pz: 23, ty: 5 }, sEnd(si) - T0 + .3, 'sine.inOut');
     const o = overlay(si); boardCredit(o, t2, sEnd(si)); photoCard(o, 'c_vaibhav', 470, 680, 500, 600, null, CR.pmo, T0 + .05, t2 + .1, -2); const ag = pill(o, 470, 1110, 'AGE 15', 110, C.ink, C.accent, 56); slam(ag, pS(si, 1) + .05); out(ag, t2 + .1);
+    // the batter walks in as the photo card leaves, plays four lofted sixes, then raises his bat at "world record"
+    const tB = t2 - .15, P = 1.0, tC = pS(si, 6);
+    tl.set(BATG, { opacity: 0 }, 0); tl.to(BATG, { opacity: 1, duration: .25 }, tB); tl.fromTo(BAT.S, { y: 1700 }, { y: 1285, duration: .4, ease: 'power3.out', immediateRender: false }, tB);
+    tl.fromTo(BAT.S, { swing: 0 }, { swing: 4, duration: 4 * P, ease: 'none', immediateRender: false }, t2 + .05);
+    for (let k = 0; k < 4; k++) { sfx('hit', t2 + .05 + (k + BAT.impactPhase) * P, .9); sfx('whoosh', t2 + .05 + (k + BAT.impactPhase + .05) * P, .35); }
+    tl.fromTo(BAT.S, { celebrate: 0 }, { celebrate: 1, duration: .45, ease: 'power2.out', immediateRender: false }, Math.max(tC - .1, t2 + .05 + 3.85 * P)); sfx('shimmer', tC, .5);
     go3(t2, { runs: 100, balls: 28 }, pE(si, 2) - t2 + .2, 'none'); counterSfx(t2, pE(si, 2) - t2, 12);
-    const c1 = pill(o, 470, 1130, '100 IN 28 BALLS', 64, '#FFFFFF', C.ink, 40); pop(c1, pS(si, 2) + .4); out(c1, t3);
+    const c1 = pill(o, 470, 1215, '100 IN 28 BALLS', 58, '#FFFFFF', C.ink, 40); pop(c1, pS(si, 2) + .4); out(c1, t3);
     go3(t3, { runs: 204, balls: 53 }, t4e - t3 + .1, 'none'); counterSfx(t3, t4e - t3, 12);
-    const c2 = pill(o, 470, 1130, '204 OFF 53', 92, C.ink, C.accent, 50); slam(c2, pS(si, 4) + .1); out(c2, pS(si, 5));
-    const c3p = pill(o, 470, 1130, 'FASTEST 100 & 200 · LIST A', 46, '#FFFFFF', '#1F6B2E', 34); slam(c3p, pS(si, 6)); const c4 = pill(o, 470, 1232, 'WORLD RECORDS', 40, C.ink, '#FFFFFF', 28); pop(c4, pS(si, 6) + .35);
+    const c2 = pill(o, 470, 1215, '204 OFF 53', 76, C.ink, C.accent, 50); slam(c2, pS(si, 4) + .1); out(c2, pS(si, 5));
+    const c3p = pill(o, 470, 1150, 'FASTEST 100 & 200 · LIST A', 44, '#FFFFFF', '#1F6B2E', 34); slam(c3p, pS(si, 6)); const c4 = pill(o, 470, 1235, 'WORLD RECORDS', 38, C.ink, '#FFFFFF', 28); pop(c4, pS(si, 6) + .35);
     const pay = sentences.findIndex(s => s.scene === 'payoff'); const tEnd = pS(pay, 1);
     go3(t2, { sixes: 30.6 }, tEnd - t2, 'none'); go3(t2, { six: 28 }, tEnd - t2 - 1.2, 'none');
     for (let k = 0; k < 28; k++) sfx('whoosh', t2 + (k / 30.6) * (tEnd - t2), .18);
@@ -874,9 +881,10 @@ const scenes = {
     // crane up over the stadium; the scoreboard shows the result and the overs bar stops at 14.2
     const T0 = sStart(si);
     v3(T0 - .02, { board: 4, overs: 0 }); go3(pS(si, 1), { overs: 86 }, pE(si, 2) - pS(si, 1), 'power1.out'); counterSfx(pS(si, 1), pE(si, 2) - pS(si, 1), 12);
-    c3(T0 - .05, { px: 0, py: 18, pz: 58, tx: 0, ty: 12, tz: -40, fov: 50 }); m3(T0, { px: 0, py: 34, pz: 62, ty: 14 }, sEnd(si) - T0);
+    c3(T0 - .05, { px: 0, py: 18, pz: 58, tx: 0, ty: -7, tz: -40, fov: 50 }); m3(T0, { px: 0, py: 34, pz: 62, ty: 4 }, sEnd(si) - T0);
+    tl.to(BATG, { opacity: 0, duration: .3 }, sEnd(si) - .3);
     const o = overlay(si); tag(o, 'A 50-OVER MATCH', null, T0 + .05);
-    const p = pill(o, 470, 1130, 'WON IN 14.2 OVERS', 70, C.ink, C.accent, 44); slam(p, pS(si, 2) + .1);
+    const p = pill(o, 470, 1215, 'WON IN 14.2 OVERS', 62, C.ink, C.accent, 44); slam(p, pS(si, 2) + .1);
   },
   callback(si) {
     // the 28 balls fall back out of the sky into the plot; day returns, the land grows back; the hook card
@@ -888,6 +896,9 @@ const scenes = {
     const o = overlay(si); const p = pill(o, 470, 1130, '28 SIXES · A RECORD', 52, C.ink, C.accent, 36); pop(p, pS(si, 2) + .3);
   },
 };
+// the batter: a 2.5D figure with Vaibhav's real face (photo cut-out, PMO India, GODL-India), playing the sixes (owner's request)
+const BATG = el('g', {}, $('front')); $('front').insertBefore(BATG, $('front').firstChild);
+const BAT = Batter(BATG, { head: PH + 'head.png', left: true }); Object.assign(BAT.S, { x: 470, y: 1285, s: .66 }); tl.set(BATG, { opacity: 0 }, 0);
 const THREE = await import('three');
 sentences.forEach((s, si) => scenes[s.scene](si, s.labels || {}));
 
@@ -914,7 +925,7 @@ TIM.phrases.forEach((ph, pi) => {
 });
 
 // ---------------------------------------------------------------- time-only render
-function render(t) { W.render(t); placeExploded(t); }
+function render(t) { W.render(t); placeExploded(t); if (BAT) BAT.render(); }
 tl.seek(DUR, false); tl.seek(0, false); render(0);
 window.seek = t => { tl.seek(Math.max(0, Math.min(DUR, t)), false); render(t); };
 window.DURATION = DUR; window.SFX = SFX.sort((a, b) => a.t - b.t); window.CONFIG = CFG; window.READY = true;
