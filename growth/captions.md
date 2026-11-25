@@ -271,3 +271,24 @@ On 24 November 2026, 15-year-old Vaibhav Sooryavanshi scored 204 off 53 balls fo
 
 Sources: ESPNcricinfo, ICC, Outlook India, AP (links in growth/sooryavanshi_script.md). Stadium and players are illustrative 3D.
 
+
+## 21. Kerala Yatra EP 4/14: Alappuzha (series, Malayalam narrator, post 1:00 PM)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram: `Kerala Yatra EP 4/14: Alappuzha 🗺️ 5 സ്ഥലങ്ങൾ, എങ്ങനെ പോകാം #KeralaYatra #Alappuzha`
+- YouTube Shorts title: `Alappuzha top 5 places | Kerala Yatra EP 4 🗺️ ആലപ്പുഴ #KeralaYatra #Shorts`
+
+### YouTube description
+Kerala Yatra, episode 4 of 14: a one-day route through Alappuzha, continuing from Aranmula. Krishnapuram Palace, Kayamkulam (the Gajendra Moksham mural, one of Kerala's largest; about 1 h by KSRTC bus) -> Ambalappuzha Sri Krishna Temple (the famous Ambalappuzha palpayasam) -> Alappuzha Beach (an old pier into the sea and the 1862 lighthouse) -> Punnamada Lake (home of the Nehru Trophy snake boat race, every August) -> Kuttanad by houseboat (rice grown below sea level, Kerala's rice bowl, an FAO world agricultural heritage system). Next episode: Kottayam.
+ആലപ്പുഴയിലെ അഞ്ച് സ്ഥലങ്ങൾ, എങ്ങനെ പോകാം, എന്ത് കാണാം.
+
+Map: Sentinel-2 cloudless 2016 by EOX IT Services GmbH (CC BY 4.0, contains modified Copernicus Sentinel data 2016); NASA Blue Marble (public domain); routes © OpenStreetMap contributors via OSRM; boundaries: datameet.
+
+Photos (Wikimedia Commons):
+Krishnapuram Palace: Vijay Shankar (public domain), Noeljoe85 (CC BY-SA 3.0)
+Ambalappuzha Temple: Balagopal.k (GFDL)
+Alappuzha Beach: Mohanrangaphotography (CC BY-SA 4.0)
+Punnamada / Nehru Trophy: Manoj Karingamadathil (CC BY-SA 3.0)
+Kuttanad: P.K.Niyogi (public domain), Bibin das (CC BY-SA 4.0)
+
+Instagram post body line: `Map: EOX Sentinel-2, NASA, © OpenStreetMap. Photos: Wikimedia Commons (credits on YouTube).`

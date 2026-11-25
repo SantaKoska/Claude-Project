@@ -17,7 +17,7 @@ cred = json.load(open(cp)) if os.path.exists(cp) else {}
 for arg in sys.argv[2:]:
     key, title = arg.split('=', 1)
     if key in cred and os.path.exists(os.path.join(out, cred[key]['file'])): continue
-    q = urllib.parse.urlencode({'action': 'query', 'format': 'json', 'titles': 'File:' + title, 'prop': 'imageinfo', 'iiprop': 'url|size|extmetadata', 'iiurlwidth': 1280})
+    q = urllib.parse.urlencode({'action': 'query', 'format': 'json', 'titles': 'File:' + title, 'prop': 'imageinfo', 'iiprop': 'url|size|extmetadata', 'iiurlwidth': int(os.environ.get('CW', 1280))})
     pg = list(json.loads(get('https://commons.wikimedia.org/w/api.php?' + q))['query']['pages'].values())[0]; ii = pg['imageinfo'][0]; md = ii.get('extmetadata', {})
     th = ii['thumburl']; ext = os.path.splitext(th.split('?')[0])[1].lower() or '.jpg'
     open(os.path.join(out, key + ext), 'wb').write(get(th))
