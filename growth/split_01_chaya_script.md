@@ -2,9 +2,9 @@
 
 **New series (owner, 25 Nov 2026):** take something everyone buys every day and split its price into its real parts, the way the anatomy shots split an object. A real 3D object comes apart into labelled layers, each layer = one cost, and a coin stack shrinks until only the seller's profit is left. Hook = the price everyone knows; twist = the surprising part; payoff = what the seller really keeps. Runs alongside the daily news explainers and Kerala Yatra.
 **Hook card (0-3 s):** ₹15 ചായ... ചായക്കാരന് എത്ര?
-**Length:** 68 Malayalam words (Ramayana: 66 words = 40.2 s raw with Adam), so about 40-42 s raw, 36-40 s synced.
+**Length (v2, owner 25 Nov: use the longer Reels/Shorts limit, about 1-1.5 min):** 122 Malayalam words (Ramayana: 66 words = 40.2 s raw with Adam), so about 74 s raw, about 70-75 s synced. Both Reels and Shorts take up to 3 min; reach depends on retention, so the long version re-hooks every ~15 s: split -> twist (tea powder 60 paise) -> "but one thing" (100 a day = zero profit) -> "what does it take to start" (setup) -> the two papers -> callback. News explainers stay 35-45 s.
 
-## ElevenLabs paste block
+## ElevenLabs paste block (v2, longer: about 75 s)
 
 ```
 ഒരു ഗ്ലാസ് ചായ, പതിനഞ്ച് രൂപ. പക്ഷേ ചായക്കാരന് കിട്ടുന്നത് എത്ര? ഈ ഗ്ലാസ് നമുക്കൊന്ന് പിളർന്ന് നോക്കാം.
@@ -17,7 +17,13 @@
 
 ഇനി ചായപ്പൊടി. ചായയുടെ പേര് തന്നെ അതാണ്... പക്ഷേ വില, വെറും അറുപത് പൈസ!
 
-ബാക്കി, ഏകദേശം അഞ്ച് രൂപ. അതാണ് ലാഭം. അതും, ദിവസം ഇരുനൂറ് ചായ വിറ്റാൽ മാത്രം.
+ബാക്കി, ഏകദേശം അഞ്ച് രൂപ. അതാണ് ലാഭം.
+
+പക്ഷേ ഒരു കാര്യം. ദിവസം നൂറ് ചായ മാത്രം വിറ്റാൽ, ലാഭം ഏകദേശം പൂജ്യം. വാടകയും കൂലിയും കഴിഞ്ഞാൽ, ഒന്നും ബാക്കിയില്ല. ഇരുനൂറ് വിറ്റാൽ, മാസം ഏകദേശം ഇരുപത്തൊമ്പതിനായിരം രൂപ.
+
+ഇനി, ഇങ്ങനെ ഒരു കട തുടങ്ങാൻ എന്ത് വേണം? മൂന്ന് മാസത്തെ വാടക അഡ്വാൻസ്, മുപ്പതിനായിരം. ചായ ബോയിലർ, ഏകദേശം പതിനായിരം. കൊമേഴ്സ്യൽ ഗ്യാസ് കണക്ഷൻ, അയ്യായിരത്തിലധികം. പിന്നെ ഗ്ലാസും, കൗണ്ടറും, ബെഞ്ചും.
+
+പ്രധാനമായി രണ്ട് പേപ്പറുകൾ. ഓൺലൈനായി, എഫ്എസ്എസ്എഐ രജിസ്ട്രേഷൻ, വർഷം നൂറ് രൂപ. പിന്നെ പഞ്ചായത്തിൽ നിന്നോ നഗരസഭയിൽ നിന്നോ, ട്രേഡ് ലൈസൻസ്.
 
 അടുത്ത തവണ പതിനഞ്ച് രൂപ കൊടുക്കുമ്പോൾ ഓർക്കുക... ചായപ്പൊടിക്ക്, വെറും അറുപത് പൈസ.
 ```
@@ -31,7 +37,10 @@
 | 3 | shop costs | The shop's rent: ₹1.75 a glass. The helper's wage: ₹2.50. | Two more layers: RENT ₹1.70 / glass, HELPER ₹2.50 / glass (+ small "POWER & WATER ₹0.25" chip on screen only); the coin stack shrinks |
 | 4 | silence | ... | Hold: one thin dark layer left inside the glass, unlabelled |
 | 5 | twist | Now the tea powder. The drink is named after it... but its cost: just 60 paise! | The thinnest layer lifts: TEA POWDER ₹0.60 · 3 g; slam "TEA = ONLY ₹0.60" |
-| 6 | payoff | What's left: about ₹5. That's the profit. And only if the shop sells 200 teas a day. | The last coins glow gold: PROFIT ~₹4.85; a day meter: first ~95 glasses pay rent + helper, the rest is profit |
+| 6 | payoff | What's left: about ₹5. That's the profit. | The last coins glow gold: PROFIT ~₹4.85; a day meter: first ~95 glasses pay rent + helper, the rest is profit |
+| 6b | re-hook: volume | But one thing. Sell only 100 teas a day and the profit is about zero: after rent and wages nothing is left. Sell 200, and it's about ₹29,000 a month. | A day meter fills: 0-95 glasses grey (RENT + HELPER), 95-200 gold (PROFIT); two cards side by side: 100/DAY ≈ ₹0 · 200/DAY ≈ ₹29,000/MONTH |
+| 6c | re-hook: setup | So what does it take to start a shop like this? Three months' rent advance, ₹30,000. A tea boiler, about ₹10,000. A commercial gas connection, over ₹5,000. Then glasses, a counter and a bench. | The empty shop builds itself: each item drops in with a price tag, a "START-UP" counter adds up (₹30,000 · ₹10,000 · ₹5,500+); glasses/counter/bench drop in without prices ("VARIES") |
+| 6d | papers | Two main papers. Online, FSSAI registration, ₹100 a year. Then a trade licence from the panchayat or municipality. | Two documents get stamped: FSSAI REGISTRATION · ₹100/YEAR · ONLINE (FoSCoS); TRADE LICENCE (D&O) · PANCHAYAT / MUNICIPALITY |
 | 7 | callback | Next time you pay ₹15, remember... the tea powder costs just 60 paise. | The layers snap back into a whole glass; hook card returns |
 
 ## The model (our calculation; every input sourced, quantities are assumptions)
@@ -63,7 +72,13 @@ Break-even: fixed costs ₹26,500/month = ₹883/day; each glass leaves ₹9.27 
 - Rent: Housing.com listings (Kannur ~₹6,000-15,000; Minalur, Thrissur ₹10,000) https://housing.com/commercial/rent/commercial-shop-for-rent-in-kannur-MA4P14djww4bmddnpj9z ; https://housing.com/commercial/rent/100452795-shop-for-rent-in-minalur-thrissur-for-rs-10000
 - Per-cup cost range cross-check (₹3-8 ingredients; ₹3-5 net per cup at roadside stalls): https://tvanamm.com/blog/tea-shop-profit-per-month-india-2026 ; https://teaandhope.com/chai-business-profit/
 
+- Start-up (v2): tea/milk boiler, 20 L stainless commercial electric, about ₹8,500-13,000 (IndiaMART/Tradeindia/pricebefore listings https://m.indiamart.com/impcat/tea-boiler.html ; https://www.tradeindia.com/products/tea-milk-boiler-c10298022.html ; https://www.pricebefore.com/20l-electric-kettle-hot-water-boiler-p1093743.html); commercial 19 kg LPG connection: refundable cylinder deposit ₹2,400 + regulator ~₹250 + first refill ₹2,840 (BankBazaar https://bankbazaar.com/gas-connection/commercial-lpg-cylinders.html ; GoodReturns https://www.goodreturns.in/personal-finance/gas-cylinder-rules-indane-bharatgas-hp-gas-charges-lpg-surrender-25-day-45-day-30-day-lpg-png-rules-1516383.html); shop rent advance: 2-3 months is common in Kerala, some landlords ask 5+ (legal guides and listings: https://keralarealestate.com/details-commercial-building-for-rent-thoppumpady-ernakulam ; https://nobroker.in/forum/how-much-deposit-for-commercial-property).
+- Papers (v2): tea stalls are petty food businesses needing FSSAI basic registration, online on FoSCoS, fee ₹100/year (long-standing figure; the March 2026 FSSAI reform raised the basic-registration turnover ceiling to ₹1.5 crore; check FoSCoS for the current fee) (FSSAI press release https://fssai.gov.in/upload/uploadfiles/files/Press%20Release_FSSAI%20Reforms_130326.pdf ; Tally https://tallysolutions.com/business-guides/fssai-license-fees-cost-of-food-business-registration/); food establishments in Kerala need a trade (D&O) licence from the local body (IndiaFilings https://www.indiafilings.com/learn/kerala-trade-license ; K-SWIFT https://ksidc.org/?p=46563).
+- Platform length: YouTube Shorts up to 3 min since 15 Oct 2024; Instagram Reels up to 3 min for recommendation (Hootsuite https://blog.hootsuite.com/social-media-video-length/ ; Metricool https://metricool.com/instagram-reels-length/).
+
 ## Accuracy notes
+
+- **v2 additions:** "100 a day = about zero" uses the model's break-even (~95 glasses/day); "₹29,000 a month" = 200 × ₹4.85 × 30. Start-up: only three items get a price in the voice (advance ₹30,000 = 3 × ₹10,000 rent; boiler ~₹10,000; gas connection ₹5,000+ = deposit + regulator + first refill); glasses, counter and bench get no price (too variable). No total start-up figure and no payback claim. "Two main papers" = FSSAI registration + trade licence; other registrations (e.g. shops & establishments, if staff are employed) may apply, so the screen says "MAIN PAPERS".
 
 - This is **one example shop, our own calculation** from sourced prices. The screen says "EXAMPLE · APPROX. · VARIES BY SHOP" from the first frame of the split and "OUR CALCULATION" on the totals. Real shops differ (rent from ₹5,000 to ₹40,000, family members instead of a helper, more milk or less, snacks sold with tea).
 - **Milk 70 ml and tea 3 g per glass** are assumptions for a Kerala-style milky tea in a ~100 ml glass; the voice says "about ₹4" for milk.
