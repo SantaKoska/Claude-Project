@@ -312,7 +312,8 @@ Sources: Sacnilk, Outlook India, Wikipedia, The Better India, Quartz.
 - YouTube Shorts title: `₹15 chai cost breakdown: tea shop profit per glass ☕ ചായക്കട #Business #Shorts`
 
 ### YouTube description
-Where does your ₹15 for a glass of tea go? An example small Kerala tea shop selling 200 glasses a day: milk ~₹3.90 (70 ml at Milma ₹56/L), sugar ₹0.60, gas ~₹0.60, rent ₹1.70, helper ₹2.50, power and water ₹0.25, and tea powder only ₹0.60. Profit: about ₹5 a glass, and the first ~95 glasses every day only pay rent and wages. Our calculation from Nov 2026 prices; every shop is different.
+Where does your ₹15 for a glass of tea go? An example small Kerala tea shop selling 200 glasses a day: milk ~₹3.90 (70 ml at Milma ₹56/L), sugar ₹0.60, gas ~₹0.60, rent ₹1.70, helper ₹2.50, power and water ₹0.25, and tea powder only ₹0.60. Profit: about ₹5 a glass, and the first ~95 glasses every day only pay rent and wages. Starting one: about 3 months' rent advance (₹30,000 here), a tea boiler (~₹10,000), a commercial LPG connection (₹5,000+), glasses, counter and bench, plus FSSAI registration (online on FoSCoS, ₹100/year for basic) and a trade licence from your panchayat or municipality. Our calculation from Nov 2026 prices; every shop is different, and fees change, so check FoSCoS and your local body.
+Photo: "A village tea shop in Kerala", Shagil Kannur, CC BY-SA 4.0, Wikimedia Commons.
 ഒരു ₹15 ചായയുടെ കണക്ക്: ചായക്കാരന് കിട്ടുന്നത് എത്ര?
 Tea shop business Kerala, chaya kada profit, cost per cup, Malayalam business explainer.
 Sources: Milma, Madhyamam (LPG), Business Standard (sugar), IndiaMART (tea dust), Indeed (wages), Housing.com (rent).
