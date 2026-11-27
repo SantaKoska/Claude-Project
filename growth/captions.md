@@ -317,3 +317,24 @@ Photo: "A village tea shop in Kerala", Shagil Kannur, CC BY-SA 4.0, Wikimedia Co
 ഒരു ₹15 ചായയുടെ കണക്ക്: ചായക്കാരന് കിട്ടുന്നത് എത്ര?
 Tea shop business Kerala, chaya kada profit, cost per cup, Malayalam business explainer.
 Sources: Milma, Madhyamam (LPG), Business Standard (sugar), IndiaMART (tea dust), Indeed (wages), Housing.com (rent).
+
+## 24. Kerala Yatra EP 5/14: Kottayam (series, Malayalam narrator, post 1:00 PM)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram: `Kerala Yatra EP 5/14: Kottayam 🗺️ 5 സ്ഥലങ്ങൾ, എങ്ങനെ പോകാം #KeralaYatra #Kottayam`
+- YouTube Shorts title: `Kottayam top 5 places | Kerala Yatra EP 5 🗺️ കോട്ടയം #KeralaYatra #Shorts`
+
+### YouTube description
+Kerala Yatra, episode 5 of 14: a one-day route through Kottayam, the land of letters, latex and lakes, continuing from Kuttanad. By boat across Vembanad to Kumarakom Bird Sanctuary (migratory birds, November to February) -> Vaikom Mahadeva Temple (where the 1924 Vaikom Satyagraha fought for everyone's right to walk the temple roads; ~30 min by bus) -> Kottayam town (CMS College, 1817; India's first town with 100% literacy, 1989) -> Bharananganam (the tomb of St Alphonsa, India's first woman saint, canonised 2008) -> Illikkal Kallu by taxi (three rock hills and the Narakapalam ridge). About 130 km in a day. Next episode: Idukki.
+കോട്ടയത്തെ അഞ്ച് സ്ഥലങ്ങൾ, എങ്ങനെ പോകാം, എന്ത് കാണാം.
+
+Map: Sentinel-2 cloudless 2016 by EOX IT Services GmbH (CC BY 4.0, contains modified Copernicus Sentinel data 2016); NASA Blue Marble (public domain); routes © OpenStreetMap contributors via OSRM; boundaries: datameet.
+
+Photos (Wikimedia Commons):
+Kumarakom Bird Sanctuary: Ganesh Mohan T (CC BY-SA 4.0)
+Vaikom Mahadeva Temple: Georgekutty (public domain), Ganesh Mohan T (CC BY-SA 4.0)
+CMS College, Kottayam: Vijayanrajapuram (CC BY-SA 4.0), Vis M (CC BY-SA 4.0)
+Bharananganam: Princebpaul0484 (CC BY-SA 3.0)
+Illikkal Kallu: Hciteam1 (CC BY-SA 4.0)
+
+Instagram post body line: `Map: EOX Sentinel-2, NASA, © OpenStreetMap. Photos: Wikimedia Commons (credits on YouTube).`
