@@ -21,7 +21,15 @@ Owner's ask: real mysterious incidents (Kerala, India, world) told as stories, w
 - Look: night cinematics. Illustrated silhouettes walking through moonlit fog, a torch beam sweeping trees, layered forest depth, slow push-ins, deep blue-black with one red accent, heavy grain, vignette; real photos of the place and archive clippings where free; map pin at the start. Sound: low drone, footsteps, crickets that suddenly stop, heartbeat, silence before the cut.
 - Never: invented facts or dialogue, real names of private victims in recent cases, gore.
 
-## First stories (need research before scripting)
+## Season 1 (owner, 27 Nov: "Tell Me Why"-type classic mysteries; we pick)
+1. The Mary Celeste (1872): the ghost ship found drifting, ten people gone. Script ready: growth/mystery_01_mary_celeste_script.md
+2. Flannan Isles lighthouse (1900): three keepers vanish from a Scottish island; the famous "strange logbook" was later shown to be fabricated.
+3. Roopkund (India): the lake of skeletons; DNA showed groups who died centuries apart.
+4. Roanoke (1587-90): a whole English colony gone; one word carved on a post, CROATOAN.
+5. Dyatlov Pass (1959): nine hikers dead in the snow; the 2021 avalanche study.
+Later: Kodinhi (Kerala), Kuldhara, the Bermuda Triangle's Flight 19.
+
+## First stories (earlier list)
 - Kargachal (owner's idea): no record found yet; needs a source (paper, book, year, district). If it is a local story, it is told as "a story told in Kargachal".
 - Roopkund, Uttarakhand: the skeleton lake; DNA (2019) showed groups who died centuries apart. Strong 3-part twist.
 - Kodinhi, Malappuram: the village of twins.
