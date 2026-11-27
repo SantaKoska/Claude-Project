@@ -377,3 +377,24 @@ Where does a ₹160 cinema ticket go? An example Kerala theatre in a film's firs
 ഒരു ₹160 സിനിമാ ടിക്കറ്റിന്റെ കണക്ക്: തിയേറ്ററിന് കിട്ടുന്നത് എത്ര?
 Movie ticket price breakdown, theatre profit, popcorn margin, Kerala cinema, Malayalam business explainer.
 Sources: Onmanorama (ticket rates, entertainment tax), The News Minute (revenue share), PVR INOX FY26 results and earnings call, GST notification 15/2025.
+
+## 28. Kerala Yatra EP 6/14: Idukki (series, Malayalam narrator, post 1:00 PM)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram: `Kerala Yatra EP 6/14: Idukki 🗺️ 5 സ്ഥലങ്ങൾ, എങ്ങനെ പോകാം #KeralaYatra #Idukki`
+- YouTube Shorts title: `Idukki top 5 places | Kerala Yatra EP 6 🗺️ ഇടുക്കി #KeralaYatra #Shorts`
+
+### YouTube description
+Kerala Yatra, episode 6 of 14: a one-day route through Idukki, the land of hills and mist, continuing from Illikkal Kallu. Vagamon (meadows and a pine forest, about 1,100 m; 20 min by taxi) -> Thekkady (Periyar Tiger Reserve; boat ride on the lake, elephants and gaur on the banks) -> Idukki Arch Dam (a 168 m arch between the Kuravan and Kurathi hills) -> Munnar (tea gardens as far as the eye can see) -> Eravikulam National Park (home of the endangered Nilgiri tahr; closed in February and March for the calving season). About 230 km in a day. Next episode: Ernakulam.
+ഇടുക്കിയിലെ അഞ്ച് സ്ഥലങ്ങൾ, എങ്ങനെ പോകാം, എന്ത് കാണാം.
+
+Map: Sentinel-2 cloudless 2016 by EOX IT Services GmbH (CC BY 4.0, contains modified Copernicus Sentinel data 2016); NASA Blue Marble (public domain); routes © OpenStreetMap contributors via OSRM; boundaries: datameet.
+
+Photos (Wikimedia Commons):
+Vagamon: Manukrishnan80 (CC BY-SA 4.0)
+Thekkady: Jonathanawhite (public domain), Sreedevi512 (CC BY-SA 4.0)
+Idukki Arch Dam: Rameshng (CC BY-SA 3.0)
+Munnar: Rainer Halama (CC BY-SA 4.0), Ingo Mehling (CC BY-SA 4.0)
+Nilgiri tahr: Charles J. Sharp (CC BY-SA 4.0)
+
+Instagram post body line: `Map: EOX Sentinel-2, NASA, © OpenStreetMap. Photos: Wikimedia Commons (credits on YouTube).`
