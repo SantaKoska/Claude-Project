@@ -359,7 +359,7 @@ Photos (Wikimedia Commons): Raul John Aju by Raultherockstar (CC BY-SA 4.0); Vla
 - YouTube Shorts title: `Mary Celeste ghost ship mystery Part 1 🌊 ആളില്ലാത്ത കപ്പൽ #Mystery #Shorts`
 
 ### YouTube description
-December 1872, the middle of the Atlantic: the Dei Gratia finds the Mary Celeste drifting with no one at the wheel. Ten people had left New York a month earlier: Captain Benjamin Briggs, his wife Sarah, their two-year-old daughter Sophia and seven crew. Food and water for six months, clothes untouched. Only the lifeboat was gone. Then they opened the captain's cabin... Part 2 tomorrow, 9 PM.
+December 1872, the middle of the Atlantic: the Dei Gratia finds the Mary Celeste drifting with no one at the wheel. Ten people had left New York a month earlier: Captain Benjamin Briggs, his wife Sarah, their two-year-old daughter Sophia and seven crew. Food and water for six months, clothes untouched. Only the lifeboat was gone. Then they opened the captain's cabin... Part 2 is coming.
 1872-ൽ, അറ്റ്ലാന്റിക്കിന്റെ നടുവിൽ, ആരുമില്ലാതെ ഒഴുകിയ കപ്പൽ. ഭാഗം 1.
 Mary Celeste, ghost ship, unsolved mystery, Malayalam story, ഇരുട്ടിലെ കഥകൾ.
 Sources: Wikipedia, Britannica, Royal Museums Greenwich. Painting of the ship (1861, as Amazon): public domain, Wikimedia Commons.
