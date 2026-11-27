@@ -365,3 +365,15 @@ Mary Celeste, ghost ship, unsolved mystery, Malayalam story, ഇരുട്ട�
 Sources: Wikipedia, Britannica, Royal Museums Greenwich. Painting of the ship (1861, as Amazon): public domain, Wikimedia Commons.
 
 Link this reel to Part 2 when Part 2 is posted (Instagram linked reels; YouTube related video).
+
+## 27. Split series EP 2: a ₹160 cinema ticket, split open (post 7:30 PM)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram: `Your ₹160 movie ticket: who gets what? 🎬 ഒരു രൂപയുടെ കണക്ക് #Cinema #Business`
+- YouTube Shorts title: `Movie ticket cost breakdown: theatre share & popcorn 🍿 സിനിമാ ടിക്കറ്റ് #Business #Shorts`
+
+### YouTube description
+Where does a ₹160 cinema ticket go? An example Kerala theatre in a film's first week: GST about ₹23 (18% on tickets above ₹100), local-body entertainment tax about ₹11 (8.5%), then 60% of the rest (about ₹76) to the distributor. The theatre keeps about ₹50, before power, salaries, AC and the projector. The twist: at India's biggest multiplex chain, about a third of revenue comes from food, and popcorn and cola are 60% of food sales. After week one, the theatre's share grows to about half by week three. Our calculation from 2026 rates; every theatre and deal is different.
+ഒരു ₹160 സിനിമാ ടിക്കറ്റിന്റെ കണക്ക്: തിയേറ്ററിന് കിട്ടുന്നത് എത്ര?
+Movie ticket price breakdown, theatre profit, popcorn margin, Kerala cinema, Malayalam business explainer.
+Sources: Onmanorama (ticket rates, entertainment tax), The News Minute (revenue share), PVR INOX FY26 results and earnings call, GST notification 15/2025.
