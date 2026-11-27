@@ -351,3 +351,17 @@ Raul John Aju, the Malayali "AI Kid of India", started teaching himself AI at ni
 AI Kid of India, Raul John Aju, Putin selfie, AI Journey 2026, Kerala student, Malayalam explainer.
 Sources: Onmanorama, The Tribune, Business Today, AIR News, Russian Embassy in India.
 Photos (Wikimedia Commons): Raul John Aju by Raultherockstar (CC BY-SA 4.0); Vladimir Putin, kremlin.ru (CC BY 4.0); Kassym-Jomart Tokayev, government.ru (CC BY 4.0); Red Square, Moscow by Alvesgaspar (CC BY-SA 3.0). The opening phone shows a split screen of two photos, not the actual selfie.
+
+## 26. Mystery S1 · The Mary Celeste, Part 1/3 (series "ഇരുട്ടിലെ കഥകൾ", post 9:00 PM)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram: `A ship found sailing with no one aboard. Part 1/3 🌊 ആളില്ലാത്ത കപ്പൽ #MaryCeleste #Mystery`
+- YouTube Shorts title: `Mary Celeste ghost ship mystery Part 1 🌊 ആളില്ലാത്ത കപ്പൽ #Mystery #Shorts`
+
+### YouTube description
+December 1872, the middle of the Atlantic: the Dei Gratia finds the Mary Celeste drifting with no one at the wheel. Ten people had left New York a month earlier: Captain Benjamin Briggs, his wife Sarah, their two-year-old daughter Sophia and seven crew. Food and water for six months, clothes untouched. Only the lifeboat was gone. Then they opened the captain's cabin... Part 2 tomorrow, 9 PM.
+1872-ൽ, അറ്റ്ലാന്റിക്കിന്റെ നടുവിൽ, ആരുമില്ലാതെ ഒഴുകിയ കപ്പൽ. ഭാഗം 1.
+Mary Celeste, ghost ship, unsolved mystery, Malayalam story, ഇരുട്ടിലെ കഥകൾ.
+Sources: Wikipedia, Britannica, Royal Museums Greenwich. Painting of the ship (1861, as Amazon): public domain, Wikimedia Commons.
+
+Link this reel to Part 2 when Part 2 is posted (Instagram linked reels; YouTube related video).
