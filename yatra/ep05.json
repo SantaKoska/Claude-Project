@@ -1,0 +1,108 @@
+{
+ "ep": 5,
+ "of": 14,
+ "district": "Kottayam",
+ "next": "Idukki",
+ "nextDir": "east",
+ "start": {
+  "name": "Kuttanad",
+  "short": "KUTTANAD",
+  "lat": 9.4667,
+  "lon": 76.3833
+ },
+ "stops": [
+  {
+   "n": 1,
+   "name": "Kumarakom",
+   "card": "KUMARAKOM BIRD SANCTUARY",
+   "line": "On Vembanad Lake · migratory birds come in winter",
+   "chip": "MIGRANTS · NOV–FEB",
+   "lat": 9.6255,
+   "lon": 76.4235,
+   "legs": [
+    {
+     "mode": "boat",
+     "via": [
+      [
+       9.53,
+       76.4
+      ],
+      [
+       9.58,
+       76.405
+      ],
+      [
+       9.615,
+       76.414
+      ]
+     ]
+    }
+   ],
+   "photos": "Kumarakom bird sanctuary"
+  },
+  {
+   "n": 2,
+   "name": "Vaikom",
+   "card": "VAIKOM MAHADEVA TEMPLE",
+   "line": "Where the 1924 Vaikom Satyagraha began",
+   "chip": "VAIKOM SATYAGRAHA · 1924",
+   "lat": 9.7495,
+   "lon": 76.3933,
+   "legs": [
+    {
+     "mode": "bus"
+    }
+   ],
+   "photos": "Vaikom Mahadeva temple"
+  },
+  {
+   "n": 3,
+   "name": "Kottayam",
+   "card": "KOTTAYAM",
+   "line": "CMS College, 1817 · India's first 100% literate town",
+   "chip": "100% LITERACY · 1989",
+   "lat": 9.5957,
+   "lon": 76.5267,
+   "legs": [
+    {
+     "mode": "bus"
+    }
+   ],
+   "photos": "CMS College Kottayam"
+  },
+  {
+   "n": 4,
+   "name": "Bharananganam",
+   "card": "BHARANANGANAM",
+   "line": "The tomb of St Alphonsa, India's first woman saint",
+   "chip": "ST ALPHONSA · CANONISED 2008",
+   "lat": 9.6997,
+   "lon": 76.7254,
+   "legs": [
+    {
+     "mode": "bus"
+    }
+   ],
+   "photos": "Bharananganam"
+  },
+  {
+   "n": 5,
+   "name": "Illikkal Kallu",
+   "card": "ILLIKKAL KALLU",
+   "line": "Three rock hills and the Narakapalam ridge",
+   "chip": "3 HILLS · NARAKAPALAM",
+   "lat": 9.7697,
+   "lon": 76.8344,
+   "legs": [
+    {
+     "mode": "taxi"
+    }
+   ],
+   "photos": "Illikkal Kallu"
+  }
+ ],
+ "nextPoint": {
+  "lat": 9.79,
+  "lon": 76.94
+ }
+}
