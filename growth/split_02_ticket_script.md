@@ -1,31 +1,33 @@
-# Split series EP 2: a ₹200 cinema ticket, split open
+# Split series EP 2: a ₹160 cinema ticket, split open
 
 **Series:** "ഒരു രൂപയുടെ കണക്ക്" (split look: white tile wall -> here a cinema foyer wall, lime title bars, navy cards, navy caption box, one credited real photo).
 **Length:** 103 words, about 63 s raw, synced to about 58 s.
-**Hook:** the ₹200 everyone pays. **Twist:** the theatre's quiet money is popcorn. **Payoff:** what the theatre keeps from the ticket (≈ ₹63 before power, staff, AC, projector) and how its share grows after week one.
+**Hook:** the ₹160 everyone pays. **Twist:** the theatre's quiet money is popcorn. **Payoff:** what the theatre keeps from the ticket (≈ ₹50 before power, staff, AC, projector) and how its share grows after week one.
 
-## The model (one example: a Kerala single screen, ₹200 ticket, first week)
+## The model (one example: a Kerala theatre, ₹160 standard seat, first week)
 
 | Layer | ₹ | Basis |
 | --- | --- | --- |
-| GST | 28.46 | 18% on tickets above ₹100 (5% up to ₹100 since 22 Sep 2025) |
-| Local-body entertainment tax | 13.44 | 8.5% on tickets above ₹100 (Kerala, from 2019) |
-| Net after taxes | 158.10 | ₹200 / 1.265 (both taxes taken on the net) |
-| Distributor (week 1, 60%) | 94.86 | Kerala norm: 60% week 1, ~55% week 2, ~50% week 3 |
-| Theatre (week 1, 40%) | 63.24 | before power, staff, AC, projector, rent |
+| GST | 22.77 | 18% on tickets above ₹100 (5% up to ₹100 since 22 Sep 2025) |
+| Local-body entertainment tax | 10.75 | 8.5% on tickets above ₹100 (Kerala, from 2019) |
+| Net after taxes | 126.48 | ₹160 / 1.265 (both taxes taken on the net) |
+| Distributor (week 1, 60%) | 75.89 | Kerala norm: 60% week 1, ~55% week 2, ~50% week 3 |
+| Theatre (week 1, 40%) | 50.59 | before power, staff, AC, projector, rent |
+
+**Ticket price (real rate):** ₹160 = the standard seat at a new Kottayam multiplex (rates ₹400 / ₹160 / ₹105 by seat class), Onmanorama, 11 Mar 2026: https://www.onmanorama.com/news/kerala/2026/03/11/kottayam-rural-multiplex-cinema-screens-rise.html . BookMyShow itself could not be read from this machine (Cloudflare blocks automated access).
 
 Popcorn (largest chain, PVR INOX, FY26): F&B ≈ ₹2,088 cr of ≈ ₹6,700 cr revenue (≈ 31%, our division); popcorn + cola = 60% of F&B sales (management, Q2 FY27 call); F&B gross margin ≈ 74-78% (analyst estimate) -> "about ₹25 of every ₹100".
 
 ## ElevenLabs paste block
 
 ```
-ഒരു സിനിമാ ടിക്കറ്റ്, ഇരുനൂറ് രൂപ. പക്ഷേ തിയേറ്ററിന് കിട്ടുന്നത് എത്ര? ഈ ടിക്കറ്റ് നമുക്കൊന്ന് പിളർന്ന് നോക്കാം.
+ഒരു സിനിമാ ടിക്കറ്റ്, നൂറ്റിയറുപത് രൂപ. പക്ഷേ തിയേറ്ററിന് കിട്ടുന്നത് എത്ര? ഈ ടിക്കറ്റ് നമുക്കൊന്ന് പിളർന്ന് നോക്കാം.
 
-ആദ്യം നികുതി. ജിഎസ്ടി, ഏകദേശം ഇരുപത്തെട്ട് രൂപ. പിന്നെ പഞ്ചായത്തിനോ നഗരസഭയ്ക്കോ, വിനോദ നികുതി, ഏകദേശം പതിമൂന്ന് രൂപ.
+ആദ്യം നികുതി. ജിഎസ്ടി, ഏകദേശം ഇരുപത്തിമൂന്ന് രൂപ. പിന്നെ പഞ്ചായത്തിനോ നഗരസഭയ്ക്കോ, വിനോദ നികുതി, ഏകദേശം പതിനൊന്ന് രൂപ.
 
-ബാക്കി, നൂറ്റമ്പത്തെട്ട് രൂപ. ആദ്യ ആഴ്ച, അതിന്റെ അറുപത് ശതമാനം, സിനിമയുടെ വിതരണക്കാരന്. ഏകദേശം തൊണ്ണൂറ്റഞ്ച് രൂപ.
+ബാക്കി, നൂറ്റിയിരുപത്താറ് രൂപ. ആദ്യ ആഴ്ച, അതിന്റെ അറുപത് ശതമാനം, സിനിമയുടെ വിതരണക്കാരന്. ഏകദേശം എഴുപത്താറ് രൂപ.
 
-തിയേറ്ററിന്, ഏകദേശം അറുപത്തിമൂന്ന് രൂപ. അതിൽ നിന്ന് വേണം, കറന്റും, ശമ്പളവും, എസിയും, പ്രൊജക്ടറും.
+തിയേറ്ററിന്, ഏകദേശം അമ്പത് രൂപ. അതിൽ നിന്ന് വേണം, കറന്റും, ശമ്പളവും, എസിയും, പ്രൊജക്ടറും.
 
 ...
 
@@ -44,10 +46,10 @@ Popcorn (largest chain, PVR INOX, FY26): F&B ≈ ₹2,088 cr of ≈ ₹6,700 cr 
 
 | # | English | on screen |
 | --- | --- | --- |
-| 1 | A cinema ticket: ₹200. But how much does the theatre get? Let's split this ticket open. | A real-looking ticket stub on the foyer wall, title "ഒരു ടിക്കറ്റ് / ₹200"; "THEATRE = ?" pill; the ticket tears along its perforation |
-| 2 | First, tax. GST, about ₹28. Then entertainment tax to the panchayat or municipality, about ₹13. | The ticket separates into labelled bands (like the tea glass layers): GST ₹28, LOCAL TAX ₹13; "₹200 ൽ ബാക്കി" card counts down |
-| 3 | What's left: ₹158. In week one, 60% of it goes to the film's distributor: about ₹95. | Big distributor band (violet) "DISTRIBUTOR · 60%" |
-| 4 | The theatre gets about ₹63. From that come power, salaries, the AC and the projector. | Theatre band (lime) ₹63; four small cost icons nibble at it |
+| 1 | A cinema ticket: ₹160. But how much does the theatre get? Let's split this ticket open. | A real-looking ticket stub on the foyer wall, title "ഒരു ടിക്കറ്റ് / ₹160"; "THEATRE = ?" pill; the ticket tears along its perforation |
+| 2 | First, tax. GST, about ₹23. Then entertainment tax to the panchayat or municipality, about ₹11. | The ticket separates into labelled bands (like the tea glass layers): GST ₹23, LOCAL TAX ₹11; "₹160 ൽ ബാക്കി" card counts down |
+| 3 | What's left: ₹126. In week one, 60% of it goes to the film's distributor: about ₹76. | Big distributor band (violet) "DISTRIBUTOR · 60%" |
+| 4 | The theatre gets about ₹50. From that come power, salaries, the AC and the projector. | Theatre band (lime) ₹50; four small cost icons nibble at it |
 | 5 | (silence) | Lights dim like a hall before the film |
 | 6 | But there's a secret. Popcorn. | A popcorn bucket drops in, spotlight |
 | 7 | At India's biggest multiplex chain, about a third of revenue comes from food. More than half of that is popcorn and cola. | Navy bar chart "1/3 FOOD"; "POPCORN + COLA = 60%" |
@@ -63,8 +65,8 @@ Popcorn (largest chain, PVR INOX, FY26): F&B ≈ ₹2,088 cr of ≈ ₹6,700 cr 
 - Popcorn + Pepsi = 60% of F&B sales; F&B gross margin ~74% -> 77-78% (analyst): Multibagg (Q2 FY27 call) https://www.multibagg.ai/market-pulse/articles/pvr-inox-fb-margin-drivers-concall-cmw31vo0l000b2fo70t6lr0vx ; NSE call transcript https://nsearchives.nseindia.com/corporate/PVRINOXLTD_03112026181747_PVRINOXEarningsCallTranscript28102026.pdf
 
 ## Accuracy notes
-- One example: a ₹200 ticket at a Kerala single screen in week one. Multiplex deals can be lower than 60% (FEUOK). "EXAMPLE · APPROX." on screen.
-- Taxes: both computed on the net price (₹200 / 1.265). Whether the 8.5% applies in every local body today was not confirmed; it was in force from 2019 and still being protested in 2025.
+- One example: a ₹160 standard seat at a Kerala theatre in week one. Multiplex deals can be lower than 60% (FEUOK). "EXAMPLE · APPROX." on screen.
+- Taxes: both computed on the net price (₹160 / 1.265). Whether the 8.5% applies in every local body today was not confirmed; it was in force from 2019 and still being protested in 2025.
 - "A third of revenue from food" is our division of reported FY26 figures (≈31%), for PVR INOX only, said as "India's biggest multiplex chain".
 - "About ₹25 of every ₹100": from an analyst's F&B gross-margin estimate (~75%), said as "by one estimate" (കണക്ക്). Gross margin excludes staff and rent.
 - No claim about what any single theatre earns from food; the payoff says "for many theatres".
