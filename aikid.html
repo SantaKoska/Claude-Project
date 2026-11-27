@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="ml">
+<head>
+<meta charset="utf-8">
+<title>AI Kid Putin</title>
+<meta name="viewport" content="width=1080, initial-scale=1">
+<!-- News reel: Kerala's "AI Kid" and the Putin selfie, in the split-series look. Clean light-tile look (lime highlight bars, navy info cards, dark caption box). Fonts: Anek Malayalam + Baloo Chettan 2 (OFL, fonts/). -->
+<script id="config" type="application/json">
+{
+ "title": "Kerala's AI Kid and the Putin selfie",
+ "voice": "audio/aikid.mp3",
+ "voiceTempo": 1.04,
+ "timing": {
+  "phraseGap": 0.16,
+  "sentenceGap": 0.34,
+  "head": 0.08,
+  "tail": 1.6
+ },
+ "music": {
+  "bpm": 100,
+  "chords": [
+   "Am",
+   "F",
+   "C",
+   "G"
+  ],
+  "level": 0.6
+ },
+ "font": "Baloo Chettan 2",
+ "palette": {
+  "lime": "#C8F53A",
+  "navy": "#141A3C",
+  "violet": "#8E6CF0",
+  "ink": "#10131F",
+  "paper": "#FBFAF6",
+  "milk": "#F3E7CF",
+  "tea": "#B9772E"
+ },
+ "sentences": [
+  {
+   "scene": "hook",
+   "phrases": [
+    "ഒൻപതാം വയസ്സിൽ,",
+    "ഒരു മലയാളി പയ്യൻ സ്വയം എഐ പഠിക്കാൻ തുടങ്ങി.",
+    "ഈ ആഴ്ച, മോസ്കോയിൽ, അവൻ റഷ്യൻ പ്രസിഡന്റ് പുടിനൊപ്പം ഒരു സെൽഫി എടുത്തു!"
+   ]
+  },
+  {
+   "scene": "who",
+   "phrases": [
+    "പേര്,",
+    "റൗൾ ജോൺ അജു.",
+    "\"എഐ കിഡ് ഓഫ് ഇന്ത്യ\".",
+    "ഒരു പ്ലസ് ടു വിദ്യാർത്ഥി."
+   ]
+  },
+  {
+   "scene": "rise",
+   "phrases": [
+    "പഠിച്ചത്,",
+    "അവൻ മറ്റുള്ളവരെ പഠിപ്പിച്ചു.",
+    "അത് ഒരു സ്റ്റാർട്ടപ്പായി.",
+    "ഏകദേശം അഞ്ച് ലക്ഷം പേർക്ക് എഐ പരിശീലനം."
+   ]
+  },
+  {
+   "scene": "moscow",
+   "phrases": [
+    "മോസ്കോയിലെ എഐ ജേർണി സമ്മേളനത്തിൽ, റഷ്യയുടെയും കസാഖ്സ്ഥാന്റെയും പ്രസിഡന്റുമാരെ കണ്ട യുവപ്രതിഭകളിൽ, ഈ മലയാളിയും."
+   ],
+   "holdAfter": 1.2
+  },
+  {
+   "scene": "twist",
+   "phrases": [
+    "പക്ഷേ,",
+    "എഐ വിദ്യാഭ്യാസത്തിന് ഭീഷണിയാണോ എന്ന് പുടിൻ ചോദിച്ചപ്പോൾ,",
+    "ഈ എഐ കിഡിന്റെ മറുപടി...",
+    "ആദ്യം അടിസ്ഥാനം പഠിക്കണം.",
+    "എഐ, അതിനു ശേഷം."
+   ]
+  },
+  {
+   "scene": "callback",
+   "phrases": [
+    "ഒൻപതാം വയസ്സിൽ സ്വയം പഠിച്ചു തുടങ്ങിയ പയ്യൻ,",
+    "ഇന്ന് ലോകത്തോട് പറയുന്നതും അതുതന്നെ."
+   ]
+  }
+ ]
+}
+</script>
+<script id="timings" type="application/json">
+{
+ "duration": 43.692,
+ "audio": "build/aikid/voice_cut.wav",
+ "phrases": [
+  {
+   "text": "ഒൻപതാം വയസ്സിൽ,",
+   "sentence": 0,
+   "start": 0.115,
+   "end": 1.019,
+   "words": [
+    {
+     "w": "ഒൻപതാം",
+     "t": 0.115
+    },
+    {
+     "w": "വയസ്സിൽ,",
+     "t": 0.524
+    }
+   ]
+  },
+  {
+   "text": "ഒരു മലയാളി പയ്യൻ സ്വയം എഐ പഠിക്കാൻ തുടങ്ങി.",
+   "sentence": 0,
+   "start": 1.173,
+   "end": 3.856,
+   "words": [
+    {
+     "w": "ഒരു",
+     "t": 1.173
+    },
+    {
+     "w": "മലയാളി",
+     "t": 1.397
+    },
+    {
+     "w": "പയ്യൻ",
+     "t": 1.844
+    },
+    {
+     "w": "സ്വയം",
+     "t": 2.258
+    },
+    {
+     "w": "എഐ",
+     "t": 2.61
+    },
+    {
+     "w": "പഠിക്കാൻ",
+     "t": 2.8
+    },
+    {
+     "w": "തുടങ്ങി.",
+     "t": 3.375
+    }
+   ]
+  },
+  {
+   "text": "ഈ ആഴ്ച, മോസ്കോയിൽ, അവൻ റഷ്യൻ പ്രസിഡന്റ് പുടിനൊപ്പം ഒരു സെൽഫി എടുത്തു!",
+   "sentence": 0,
+   "start": 4.01,
+   "end": 8.375,
+   "words": [
+    {
+     "w": "ഈ",
+     "t": 4.01
+    },
+    {
+     "w": "ആഴ്ച,",
+     "t": 4.108
+    },
+    {
+     "w": "മോസ്കോയിൽ,",
+     "t": 4.437
+    },
+    {
+     "w": "അവൻ",
+     "t": 5.066
+    },
+    {
+     "w": "റഷ്യൻ",
+     "t": 5.361
+    },
+    {
+     "w": "പ്രസിഡന്റ്",
+     "t": 5.894
+    },
+    {
+     "w": "പുടിനൊപ്പം",
+     "t": 6.621
+    },
+    {
+     "w": "ഒരു",
+     "t": 7.284
+    },
+    {
+     "w": "സെൽഫി",
+     "t": 7.515
+    },
+    {
+     "w": "എടുത്തു!",
+     "t": 7.879
+    }
+   ]
+  },
+  {
+   "text": "പേര്,",
+   "sentence": 1,
+   "start": 8.702,
+   "end": 9.038,
+   "words": [
+    {
+     "w": "പേര്,",
+     "t": 8.702
+    }
+   ]
+  },
+  {
+   "text": "റൗൾ ജോൺ അജു.",
+   "sentence": 1,
+   "start": 9.192,
+   "end": 10.288,
+   "words": [
+    {
+     "w": "റൗൾ",
+     "t": 9.192
+    },
+    {
+     "w": "ജോൺ",
+     "t": 9.558
+    },
+    {
+     "w": "അജു.",
+     "t": 9.923
+    }
+   ]
+  },
+  {
+   "text": "\"എഐ കിഡ് ഓഫ് ഇന്ത്യ\".",
+   "sentence": 1,
+   "start": 10.442,
+   "end": 11.942,
+   "words": [
+    {
+     "w": "\"എഐ",
+     "t": 10.442
+    },
+    {
+     "w": "കിഡ്",
+     "t": 10.698
+    },
+    {
+     "w": "ഓഫ്",
+     "t": 11.042
+    },
+    {
+     "w": "ഇന്ത്യ\".",
+     "t": 11.342
+    }
+   ]
+  },
+  {
+   "text": "ഒരു പ്ലസ് ടു വിദ്യാർത്ഥി.",
+   "sentence": 1,
+   "start": 12.096,
+   "end": 13.154,
+   "words": [
+    {
+     "w": "ഒരു",
+     "t": 12.096
+    },
+    {
+     "w": "പ്ലസ്",
+     "t": 12.26
+    },
+    {
+     "w": "ടു",
+     "t": 12.519
+    },
+    {
+     "w": "വിദ്യാർത്ഥി.",
+     "t": 12.613
+    }
+   ]
+  },
+  {
+   "text": "പഠിച്ചത്,",
+   "sentence": 2,
+   "start": 13.481,
+   "end": 14.01,
+   "words": [
+    {
+     "w": "പഠിച്ചത്,",
+     "t": 13.481
+    }
+   ]
+  },
+  {
+   "text": "അവൻ മറ്റുള്ളവരെ പഠിപ്പിച്ചു.",
+   "sentence": 2,
+   "start": 14.163,
+   "end": 15.5,
+   "words": [
+    {
+     "w": "അവൻ",
+     "t": 14.163
+    },
+    {
+     "w": "മറ്റുള്ളവരെ",
+     "t": 14.373
+    },
+    {
+     "w": "പഠിപ്പിച്ചു.",
+     "t": 14.959
+    }
+   ]
+  },
+  {
+   "text": "അത് ഒരു സ്റ്റാർട്ടപ്പായി.",
+   "sentence": 2,
+   "start": 15.654,
+   "end": 16.942,
+   "words": [
+    {
+     "w": "അത്",
+     "t": 15.654
+    },
+    {
+     "w": "ഒരു",
+     "t": 15.819
+    },
+    {
+     "w": "സ്റ്റാർട്ടപ്പായി.",
+     "t": 16.138
+    }
+   ]
+  },
+  {
+   "text": "ഏകദേശം അഞ്ച് ലക്ഷം പേർക്ക് എഐ പരിശീലനം.",
+   "sentence": 2,
+   "start": 17.096,
+   "end": 19.933,
+   "words": [
+    {
+     "w": "ഏകദേശം",
+     "t": 17.096
+    },
+    {
+     "w": "അഞ്ച്",
+     "t": 17.605
+    },
+    {
+     "w": "ലക്ഷം",
+     "t": 18.006
+    },
+    {
+     "w": "പേർക്ക്",
+     "t": 18.407
+    },
+    {
+     "w": "എഐ",
+     "t": 19.06
+    },
+    {
+     "w": "പരിശീലനം.",
+     "t": 19.277
+    }
+   ]
+  },
+  {
+   "text": "മോസ്കോയിലെ എഐ ജേർണി സമ്മേളനത്തിൽ, റഷ്യയുടെയും കസാഖ്സ്ഥാന്റെയും പ്രസിഡന്റുമാരെ കണ്ട യുവപ്രതിഭകളിൽ, ഈ മലയാളിയും.",
+   "sentence": 3,
+   "start": 20.26,
+   "end": 27.452,
+   "words": [
+    {
+     "w": "മോസ്കോയിലെ",
+     "t": 20.26
+    },
+    {
+     "w": "എഐ",
+     "t": 20.892
+    },
+    {
+     "w": "ജേർണി",
+     "t": 21.079
+    },
+    {
+     "w": "സമ്മേളനത്തിൽ,",
+     "t": 21.426
+    },
+    {
+     "w": "റഷ്യയുടെയും",
+     "t": 22.306
+    },
+    {
+     "w": "കസാഖ്സ്ഥാന്റെയും",
+     "t": 23.263
+    },
+    {
+     "w": "പ്രസിഡന്റുമാരെ",
+     "t": 24.275
+    },
+    {
+     "w": "കണ്ട",
+     "t": 25.221
+    },
+    {
+     "w": "യുവപ്രതിഭകളിൽ,",
+     "t": 25.535
+    },
+    {
+     "w": "ഈ",
+     "t": 26.759
+    },
+    {
+     "w": "മലയാളിയും.",
+     "t": 26.852
+    }
+   ]
+  },
+  {
+   "text": "പക്ഷേ,",
+   "sentence": 4,
+   "start": 28.606,
+   "end": 29.01,
+   "words": [
+    {
+     "w": "പക്ഷേ,",
+     "t": 28.606
+    }
+   ]
+  },
+  {
+   "text": "എഐ വിദ്യാഭ്യാസത്തിന് ഭീഷണിയാണോ എന്ന് പുടിൻ ചോദിച്ചപ്പോൾ,",
+   "sentence": 4,
+   "start": 29.163,
+   "end": 32.442,
+   "words": [
+    {
+     "w": "എഐ",
+     "t": 29.163
+    },
+    {
+     "w": "വിദ്യാഭ്യാസത്തിന്",
+     "t": 29.344
+    },
+    {
+     "w": "ഭീഷണിയാണോ",
+     "t": 30.408
+    },
+    {
+     "w": "എന്ന്",
+     "t": 30.986
+    },
+    {
+     "w": "പുടിൻ",
+     "t": 31.319
+    },
+    {
+     "w": "ചോദിച്ചപ്പോൾ,",
+     "t": 31.653
+    }
+   ]
+  },
+  {
+   "text": "ഈ എഐ കിഡിന്റെ മറുപടി...",
+   "sentence": 4,
+   "start": 32.596,
+   "end": 34.096,
+   "words": [
+    {
+     "w": "ഈ",
+     "t": 32.596
+    },
+    {
+     "w": "എഐ",
+     "t": 32.711
+    },
+    {
+     "w": "കിഡിന്റെ",
+     "t": 32.94
+    },
+    {
+     "w": "മറുപടി...",
+     "t": 33.558
+    }
+   ]
+  },
+  {
+   "text": "ആദ്യം അടിസ്ഥാനം പഠിക്കണം.",
+   "sentence": 4,
+   "start": 34.25,
+   "end": 35.779,
+   "words": [
+    {
+     "w": "ആദ്യം",
+     "t": 34.25
+    },
+    {
+     "w": "അടിസ്ഥാനം",
+     "t": 34.6
+    },
+    {
+     "w": "പഠിക്കണം.",
+     "t": 35.206
+    }
+   ]
+  },
+  {
+   "text": "എഐ, അതിനു ശേഷം.",
+   "sentence": 4,
+   "start": 35.933,
+   "end": 37.163,
+   "words": [
+    {
+     "w": "എഐ,",
+     "t": 35.933
+    },
+    {
+     "w": "അതിനു",
+     "t": 36.18
+    },
+    {
+     "w": "ശേഷം.",
+     "t": 36.83
+    }
+   ]
+  },
+  {
+   "text": "ഒൻപതാം വയസ്സിൽ സ്വയം പഠിച്ചു തുടങ്ങിയ പയ്യൻ,",
+   "sentence": 5,
+   "start": 37.49,
+   "end": 39.99,
+   "words": [
+    {
+     "w": "ഒൻപതാം",
+     "t": 37.49
+    },
+    {
+     "w": "വയസ്സിൽ",
+     "t": 37.888
+    },
+    {
+     "w": "സ്വയം",
+     "t": 38.37
+    },
+    {
+     "w": "പഠിച്ചു",
+     "t": 38.683
+    },
+    {
+     "w": "തുടങ്ങിയ",
+     "t": 39.111
+    },
+    {
+     "w": "പയ്യൻ,",
+     "t": 39.622
+    }
+   ]
+  },
+  {
+   "text": "ഇന്ന് ലോകത്തോട് പറയുന്നതും അതുതന്നെ.",
+   "sentence": 5,
+   "start": 40.144,
+   "end": 42.115,
+   "words": [
+    {
+     "w": "ഇന്ന്",
+     "t": 40.144
+    },
+    {
+     "w": "ലോകത്തോട്",
+     "t": 40.454
+    },
+    {
+     "w": "പറയുന്നതും",
+     "t": 40.99
+    },
+    {
+     "w": "അതുതന്നെ.",
+     "t": 41.609
+    }
+   ]
+  }
+ ],
+ "beat": {
+  "bpm": 107.5,
+  "t0": 0.14,
+  "err_ms": 57
+ }
+}
+</script>
+<style>
+  @font-face { font-family: 'Anek'; src: url(fonts/anek-malayalam-malayalam-800-normal.woff2) format('woff2'); font-weight: 800; unicode-range: U+0D00-0D7F, U+200C-200D, U+25CC; }
+  @font-face { font-family: 'Anek'; src: url(fonts/anek-malayalam-latin-800-normal.woff2) format('woff2'); font-weight: 800; unicode-range: U+0000-00FF, U+20B9, U+2013-2014, U+2018-201D, U+2026, U+2248, U+00B7; }
+  @font-face { font-family: 'Baloo'; src: url(fonts/baloo-chettan-2-malayalam-800-normal.woff2) format('woff2'); font-weight: 800; unicode-range: U+0D00-0D7F, U+200C-200D, U+25CC; }
+  @font-face { font-family: 'Baloo'; src: url(fonts/baloo-chettan-2-latin-800-normal.woff2) format('woff2'); font-weight: 800; unicode-range: U+0000-00FF, U+20B9, U+2013-2014, U+2018-201D, U+2026, U+00B7; }
+  html, body { margin: 0; background: #F4F3EE; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #F4F3EE; }
+  #world { position: absolute; inset: 0; }
+  #captions { position: absolute; left: 70px; width: 860px; top: 1350px; height: 160px; }
+  .page { position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex; align-items: center; justify-content: center; opacity: 0; }
+  .box { background: #141A3C; border-radius: 30px; padding: 6px 34px 10px; text-align: center; max-width: 820px;
+    box-shadow: 0 14px 34px rgba(20,26,60,.28); }
+  .w { display: inline-block; font-family: Baloo, sans-serif; font-weight: 800; font-size: 68px; line-height: 1.32; color: #FFFFFF; margin: 0 9px; opacity: 0; position: relative; }
+  .w.num::after { content: ''; position: absolute; left: 4px; right: 4px; bottom: 8px; height: 7px; border-radius: 4px; background: #C8F53A; }
+  svg text { font-weight: 800; }
+  .guide { position: absolute; background: rgba(255,0,80,.25); pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="world" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+    <defs id="defs">
+      <pattern id="tiles" width="120" height="120" patternUnits="userSpaceOnUse">
+        <rect width="120" height="120" fill="#DCD9D0"/>
+        <rect x="3" y="3" width="114" height="114" rx="3" fill="#FAF9F5"/>
+        <rect x="3" y="3" width="114" height="10" rx="3" fill="#FFFFFF" opacity=".9"/>
+        <rect x="3" y="105" width="114" height="12" rx="3" fill="#EEEBE3"/>
+      </pattern>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9CD3EC"/><stop offset="1" stop-color="#DDF0F7"/></linearGradient>
+      <linearGradient id="wallShade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".10"/><stop offset=".12" stop-color="#000" stop-opacity="0"/><stop offset=".85" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".08"/></linearGradient>
+      <linearGradient id="woodTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C98F5E"/><stop offset="1" stop-color="#A86F44"/></linearGradient>
+      <linearGradient id="woodFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A5636"/><stop offset="1" stop-color="#5E3923"/></linearGradient>
+      <linearGradient id="cylShade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".28"/><stop offset=".22" stop-color="#fff" stop-opacity=".18"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset=".8" stop-color="#000" stop-opacity=".06"/><stop offset="1" stop-color="#000" stop-opacity=".30"/></linearGradient>
+      <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7E8892"/><stop offset=".25" stop-color="#E9EEF2"/><stop offset=".45" stop-color="#B7C0C8"/><stop offset=".75" stop-color="#F4F7F9"/><stop offset="1" stop-color="#717B85"/></linearGradient>
+      <linearGradient id="brass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9C6B1E"/><stop offset=".35" stop-color="#F2CF7A"/><stop offset="1" stop-color="#8E5E17"/></linearGradient>
+      <linearGradient id="redCyl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9E1B1B"/><stop offset=".3" stop-color="#F0524A"/><stop offset=".55" stop-color="#D63A33"/><stop offset="1" stop-color="#8A1515"/></linearGradient>
+      <linearGradient id="navyCard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B2350"/><stop offset="1" stop-color="#121839"/></linearGradient>
+      <radialGradient id="limeGlow"><stop offset="0" stop-color="#C8F53A" stop-opacity=".75"/><stop offset="1" stop-color="#C8F53A" stop-opacity="0"/></radialGradient>
+      <radialGradient id="softShadow"><stop offset="0" stop-color="#3A2414" stop-opacity=".38"/><stop offset="1" stop-color="#3A2414" stop-opacity="0"/></radialGradient>
+      <radialGradient id="vig" cx=".5" cy=".42" r=".75"><stop offset=".7" stop-color="#2A2010" stop-opacity="0"/><stop offset="1" stop-color="#2A2010" stop-opacity=".14"/></radialGradient>
+      <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#1A1A2A" flood-opacity=".28"/></filter>
+      <filter id="shadowS" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#1A1A2A" flood-opacity=".25"/></filter>
+      <filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
+      <filter id="blur14"><feGaussianBlur stdDeviation="14"/></filter>
+    </defs>
+    <g id="cam">
+      <g id="bg">
+        <rect id="wall" x="-200" y="0" width="1480" height="1220" fill="url(#tiles)"/>
+        <rect x="-200" y="0" width="1480" height="1220" fill="url(#wallShade)"/>
+        <g id="top"></g>
+        <g id="counter"></g>
+      </g>
+      <g id="sets"></g>
+    </g>
+    <g id="front"></g>
+    <rect width="1080" height="1920" fill="url(#vig)" pointer-events="none"/>
+    <rect id="flash" width="1080" height="1920" fill="#fff" opacity="0"/>
+  </svg>
+  <div id="captions"></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script id="credits" type="application/json">{"raul": {"author": "Raultherockstar", "license": "CC BY-SA 4.0"}, "tokayev": {"author": "government.ru", "license": "CC BY 4.0"}, "putin": {"author": "kremlin.ru", "license": "CC BY 4.0"}, "moscow": {"author": "Alvesgaspar", "license": "CC BY-SA 3.0"}}</script>
+<script>window.__CRED = JSON.parse(document.getElementById("credits").textContent);</script>
+<script>
+(async function () {
+const CFG = JSON.parse(document.getElementById('config').textContent);
+const TIM = JSON.parse(document.getElementById('timings').textContent);
+const C = CFG.palette;
+const NS = 'http://www.w3.org/2000/svg';
+const DUR = TIM.duration;
+const SFX = [];
+const $ = id => document.getElementById(id);
+const sfx = (type, t, gain = 1, extra = {}) => SFX.push(Object.assign({ type, t: +Math.max(0, t).toFixed(3), gain }, extra));
+
+for (const f of ['800 80px Anek', '800 80px Baloo']) await document.fonts.load(f, 'മലയാളം ₹15 ABC');
+await document.fonts.load('900 80px Inter', '₹15 ABC'); await document.fonts.load('800 80px Inter', '₹15 ABC');
+
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+const ML = s => /[ഀ-ൿ]/.test(s);
+function text(parent, x, y, str, size, fill, anchor = 'middle', extra = {}) { const t = el('text', Object.assign({ x, y, 'font-size': size, fill, 'text-anchor': anchor, 'font-family': ML(str) ? 'Baloo' : 'Inter', 'font-weight': 800, 'dominant-baseline': 'central' }, extra), parent); t.textContent = str; return t; }
+const fitW = (e, w) => { const bw = e.getBBox().width; if (bw > w) e.setAttribute('font-size', (+e.getAttribute('font-size') * w / bw).toFixed(1)); return e; };
+
+// ---------------------------------------------------------------- timing
+const sentences = CFG.sentences.map((s, si) => { const ph = TIM.phrases.filter(p => p.sentence === si); return Object.assign({}, s, { ph, words: ph.flatMap(p => p.words) }); });
+const SI = {}; sentences.forEach((s, i) => SI[s.scene] = i);
+const sStart = si => sentences[si].ph[0].start;
+const sEnd = si => si + 1 < sentences.length ? sStart(si + 1) : DUR;
+const pS = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].start;
+const pE = (si, j) => sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].end;
+const pW = (si, j, k) => { const w = sentences[si].ph[Math.min(j, sentences[si].ph.length - 1)].words; return w[Math.max(0, Math.min(k, w.length - 1))].t; };
+
+const tl = gsap.timeline({ paused: true });
+tl.to({}, { duration: DUR }, 0);
+const hide = e => tl.set(e, { opacity: 0 }, 0);
+const show = (e, t, d = .4) => { hide(e); tl.to(e, { opacity: 1, duration: d, ease: 'power1.out' }, Math.max(0, t)); };
+const fadeOut = (e, t, d = .3) => tl.to(e, { opacity: 0, duration: d, ease: 'power1.in' }, t);
+function pop(e, t, d = .4, sound = 'pop') { tl.set(e, { opacity: 0, scale: .55, transformOrigin: '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: d, ease: 'back.out(2.2)' }, Math.max(0, t)); if (sound) sfx(sound, t, .5); }
+function slam(e, t) { tl.set(e, { opacity: 0, scale: 2.0, transformOrigin: '50% 50%' }, 0); tl.to(e, { opacity: 1, scale: 1, duration: .28, ease: 'power4.out' }, Math.max(0, t)); sfx('thud', t + .18, .8); }
+function dropIn(e, t, dy = -260) { if (e.getAttribute('transform')) { const w = el('g', {}); e.parentNode.insertBefore(w, e); w.appendChild(e); e = w; } tl.set(e, { opacity: 0, y: dy }, 0); tl.to(e, { opacity: 1, duration: .12 }, t); tl.to(e, { y: 0, duration: .55, ease: 'bounce.out' }, t); sfx('thud', t + .32, .55); }
+const flash = (t, a = .5) => { tl.set($('flash'), { opacity: a }, t); tl.to($('flash'), { opacity: 0, duration: .45 }, t + .03); };
+function counter(tEl, from, to, t, d, fmt) { const o = { v: from }; tl.to(o, { v: to, duration: d, ease: 'power2.out', onUpdate: () => tEl.textContent = fmt(o.v) }, t); }
+const rs = v => '₹' + v.toFixed(2);
+const rk = v => '₹' + Math.round(v).toLocaleString('en-IN');
+
+// ---------------------------------------------------------------- pills + title bars (the series look)
+function pill(parent, x, y, str, o = {}) {
+  const size = o.size || 42, fg = o.fg || '#FFFFFF', bg = o.bg || C.navy, pad = o.pad || 34, anchor = o.anchor || 'middle';
+  const g = el('g', { transform: `translate(${x} ${y})` }, parent);
+  const r = el('rect', { rx: size * .9, fill: bg, filter: o.shadow === false ? '' : 'url(#shadowS)' }, g);
+  const t = text(g, 0, 2, str, size, fg, 'start', { 'letter-spacing': o.ls ?? .5 });
+  const w = t.getBBox().width + pad * 2, h = size * 1.8;
+  const x0 = anchor === 'middle' ? -w / 2 : anchor === 'end' ? -w : 0;
+  r.setAttribute('x', x0); r.setAttribute('y', -h / 2); r.setAttribute('width', w); r.setAttribute('height', h); t.setAttribute('x', x0 + pad);
+  g.W = w; return g;
+}
+// a big title: small line + a word on a lime highlight bar
+function titleBar(parent, x, y, small, big, o = {}) {
+  const g = el('g', {}, parent);
+  if (small) fitW(text(g, x, y, small, o.smallSize || 64, C.ink, 'middle', { 'font-family': 'Anek' }), 860);
+  const by = y + (small ? (o.gap || 112) : 0);
+  const bar = el('rect', { fill: o.barFill || C.lime, rx: 8 }, g);
+  const bt = fitW(text(g, x, by + 4, big, o.bigSize || 120, o.bigFill || C.ink, 'middle', { 'font-family': ML(big) ? 'Anek' : 'Inter', 'font-weight': 900 }), o.maxW || 820);
+  const bb = bt.getBBox(); bar.setAttribute('x', bb.x - 28); bar.setAttribute('y', bb.y + bb.height * .1); bar.setAttribute('width', bb.width + 56); bar.setAttribute('height', bb.height * .86);
+  g.bar = bar; return g;
+}
+
+// ---------------------------------------------------------------- the set: tile wall, wall cap with plants, wooden counter
+(function buildSet() {
+  const top = $('top');
+  el('rect', { x: -200, y: 0, width: 1480, height: 150, fill: 'url(#sky)' }, top);
+  // leaves peeking over the wall (simple flat palms, two greens)
+  const lg = el('g', { id: 'leaves' }, top);
+  const leaf = (x, y, rot, s, col) => { for (const ox of [-1080, 0, 1080]) el('path', { d: 'M0 0 C 30 -60 90 -110 160 -130 C 110 -90 60 -40 0 0 Z', fill: col, transform: `translate(${x + ox} ${y}) rotate(${rot}) scale(${s})` }, lg); };
+  [[-40, 150, -150, 1.4, '#2F6B3F'], [60, 150, -110, 1.2, '#3E8A4F'], [120, 150, -60, 1.3, '#2F6B3F'], [150, 150, -20, 1.0, '#3E8A4F'],
+   [880, 150, -160, 1.2, '#3E8A4F'], [930, 150, -120, 1.4, '#2F6B3F'], [990, 150, -70, 1.3, '#3E8A4F'], [1040, 150, -30, 1.1, '#2F6B3F'],
+   [470, 150, -140, .8, '#3E8A4F'], [520, 150, -40, .8, '#2F6B3F']].forEach(a => leaf(...a));
+  el('rect', { x: -200, y: 140, width: 1480, height: 34, fill: '#E9E5DB' }, top);
+  el('rect', { x: -200, y: 170, width: 1480, height: 10, fill: '#CFC9BC' }, top);
+  el('rect', { x: -200, y: 180, width: 1480, height: 40, fill: '#000', opacity: .06 }, top);
+  const ct = $('counter');
+  el('rect', { x: -200, y: 1180, width: 1480, height: 740, fill: 'url(#woodFront)' }, ct);
+  for (let k = 0; k < 9; k++) el('rect', { x: -200, y: 1262 + k * 80, width: 1480, height: 3, fill: '#000', opacity: .12 }, ct);
+  el('rect', { x: -200, y: 1166, width: 1480, height: 40, rx: 6, fill: 'url(#woodTop)' }, ct);
+  el('rect', { x: -200, y: 1166, width: 1480, height: 6, fill: '#E2B07F', opacity: .8 }, ct);
+  el('rect', { x: -200, y: 1206, width: 1480, height: 18, fill: '#000', opacity: .18 }, ct);
+})();
+const SETS = $('sets');
+const set = name => el('g', { id: 'set_' + name }, SETS);
+
+// ================================================================= PHOTOS (Wikimedia Commons, credited) — preloaded so frame 0 has them
+const PB = 'build/aikid/photos/';
+const CRED = window.__CRED || {};
+const IMG = src => new Promise(ok => { const i = new Image(); i.onload = () => ok(true); i.onerror = () => ok(false); i.src = src; });
+const HAVE = {}; for (const k of ['raul', 'putin', 'tokayev', 'moscow']) HAVE[k] = await IMG(PB + k + '.jpg');
+// a photo in a white frame with a caption + credit strip
+function photoCard(parent, cx, cy, w, h, key, cap, credit, rot = 0) {
+  const g = el('g', { transform: `translate(${cx} ${cy}) rotate(${rot})` }, parent); const pad = 20, ch = cap ? 76 : 26;
+  el('rect', { x: -w / 2 - pad, y: -h / 2 - pad, width: w + pad * 2, height: h + pad + ch, rx: 18, fill: '#FFFFFF', filter: 'url(#shadow)' }, g);
+  if (HAVE[key]) el('image', { href: PB + key + '.jpg', x: -w / 2, y: -h / 2, width: w, height: h, preserveAspectRatio: 'xMidYMid slice' }, g);
+  else { el('rect', { x: -w / 2, y: -h / 2, width: w, height: h, fill: '#DDE3EA' }, g); el('circle', { cx: 0, cy: -h * .08, r: h * .18, fill: '#B8C2CE' }, g); el('path', { d: `M${-h * .32} ${h / 2} Q0 ${h * .05} ${h * .32} ${h / 2} Z`, fill: '#B8C2CE' }, g); }
+  if (cap) fitW(text(g, -w / 2, h / 2 + 34, cap, 32, C.ink, 'start'), w);
+  if (credit) fitW(text(g, -w / 2, h / 2 + (cap ? 64 : 14), credit, 18, '#6A6F7C', 'start', { 'font-weight': 600 }), w);
+  return g;
+}
+const wrap = e => { const w = el('g', {}); e.parentNode.insertBefore(w, e); w.appendChild(e); return w; };
+const cr = k => CRED[k] ? `Photo: ${CRED[k].author} · ${CRED[k].license} · Wikimedia Commons` : '';
+const front = $('front');
+const ov = (visible = false) => { const g = el('g', {}, front); if (!visible) tl.set(g, { opacity: 0 }, 0); return g; };
+const CAMS = { s: 1, ox: 540, oy: 900 };
+const camTo = (t, v, d, ease = 'sine.inOut') => tl.to(CAMS, Object.assign({ duration: d, ease }, v), t);
+const WX = { v: 0 };
+function slide(from, to, t) { sfx('whoosh', t, .8); tl.set(to, { opacity: 1 }, t); tl.fromTo(to, { x: 1080 }, { x: 0, duration: .6, ease: 'power3.inOut', immediateRender: false }, t);
+  if (from) { tl.to(from, { x: -1080, duration: .6, ease: 'power3.inOut' }, t); tl.set(from, { opacity: 0, x: 0 }, t + .62); } tl.to(WX, { v: WX.v - 1080, duration: .6, ease: 'power3.inOut' }, t); WX.v -= 1080; }
+
+// ================================================================= SETS
+// hook: "9 വയസ്സ്" + a phone taking the selfie
+const hSet = set('hook');
+const hTitle = titleBar(hSet, 540, 300, 'ഒൻപതാം വയസ്സിൽ', 'സ്വയം AI', { bigSize: 118, gap: 120 });
+const kid = photoCard(hSet, 540, 800, 600, 464, 'raul', null, cr('raul'), -2);
+const glow = el('g', {}, hSet);
+// floating "AI" chips around the boy
+const chips = ['PYTHON', 'NEURAL NET', 'PROMPTS', 'ML', 'DATA'].map((s, k) => pill(hSet, [230, 800, 180, 820, 520][k], [560, 580, 1060, 1080, 1150][k], s, { size: 30, bg: k % 2 ? C.navy : '#FFFFFF', fg: k % 2 ? '#FFFFFF' : C.ink, pad: 22 }));
+// the phone + selfie
+const phone = el('g', {}, hSet);
+const ph = el('g', { transform: 'translate(540 760)' }, phone);
+el('rect', { x: -250, y: -420, width: 500, height: 860, rx: 60, fill: '#10131F', filter: 'url(#shadow)' }, ph);
+el('rect', { x: -228, y: -398, width: 456, height: 816, rx: 44, fill: '#1F2433' }, ph);
+const selfie = el('g', {}, ph); const half = (key, x) => { const g = el('g', {}, selfie); const id = 'sc' + key; const cp = el('clipPath', { id }, $('defs')); el('rect', { x: x, y: -398, width: 228, height: 700 }, cp);
+  if (HAVE[key]) el('image', { href: PB + key + '.jpg', x: x - 120, y: -398, width: 468, height: 700, preserveAspectRatio: 'xMidYMid slice', 'clip-path': `url(#${id})` }, g); return g; };
+half('raul', -228); half('putin', 0); el('rect', { x: -2, y: -398, width: 4, height: 700, fill: '#FFFFFF', opacity: .8 }, selfie);
+el('rect', { x: -228, y: 302, width: 456, height: 116, fill: '#10131F' }, ph);
+el('circle', { cx: 0, cy: 360, r: 40, fill: '#FFFFFF' }, ph); el('circle', { cx: 0, cy: 360, r: 32, fill: '#FFFFFF', stroke: '#10131F', 'stroke-width': 4 }, ph);
+['RAUL', 'PUTIN'].forEach((s, k) => pill(ph, k ? 114 : -114, 250, s, { size: 30, bg: k ? C.navy : C.lime, fg: k ? '#FFFFFF' : C.ink, pad: 20 }));
+const shutter = el('rect', { x: -228, y: -398, width: 456, height: 700, fill: '#FFFFFF', opacity: 0 }, ph);
+const hPill = pill(hSet, 540, 1262, 'MOSCOW · AI JOURNEY 2026', { size: 42 });
+const hCred = text(hSet, 540, 1150, '', 20, '#6A6F7C', 'middle', { 'font-weight': 600 });
+
+// who: name card + photo
+const wSet = set('who');
+const wPhoto = photoCard(wSet, 540, 640, 500, 560, 'raul', 'Raul John Aju', cr('raul'), -2);
+const wName = el('g', {}, wSet); el('rect', { x: 120, y: 1010, width: 840, height: 130, rx: 34, fill: 'url(#navyCard)', filter: 'url(#shadow)' }, wName);
+fitW(text(wName, 540, 1075, 'RAUL JOHN AJU', 70, '#FFFFFF', 'middle', { 'font-weight': 900, 'letter-spacing': 2 }), 760);
+const wKid = pill(wSet, 540, 290, 'AI KID OF INDIA', { size: 54, bg: C.lime, fg: C.ink, pad: 40 });
+const wStud = pill(wSet, 540, 1262, 'PLUS TWO STUDENT', { size: 42 });
+
+// rise: the + pills and the 5 lakh counter
+const rSet = set('rise');
+const rTitle = titleBar(rSet, 540, 300, 'പഠിച്ചത്, പഠിപ്പിച്ചു', 'START-UP', { bigSize: 110, gap: 118 });
+const rP = [pill(rSet, 110, 560, '+ SELF-TAUGHT AT 9', { size: 42, bg: C.lime, fg: C.ink, anchor: 'start' }),
+  pill(rSet, 110, 668, '+ TAUGHT OTHERS', { size: 42, anchor: 'start' }),
+  pill(rSet, 110, 776, '+ START-UP · KSUM CERTIFIED', { size: 42, bg: C.lime, fg: C.ink, anchor: 'start' })];
+const rBoard = el('g', {}, rSet); el('rect', { x: 110, y: 860, width: 860, height: 270, rx: 34, fill: 'url(#navyCard)', filter: 'url(#shadow)' }, rBoard);
+text(rBoard, 160, 920, 'TRAINED IN AI', 34, '#8F98C8', 'start', { 'letter-spacing': 2 });
+const rVal = text(rBoard, 160, 1036, '≈ 0', 110, C.lime, 'start', { 'font-weight': 900 });
+text(rBoard, 920, 920, 'PEOPLE', 34, '#FFFFFF', 'end', { 'letter-spacing': 2 });
+
+// moscow: city photo + the two presidents
+const mSet = set('moscow');
+const mCity = photoCard(mSet, 540, 560, 760, 420, 'moscow', 'Moscow', cr('moscow'), 2);
+const mTitle = pill(mSet, 540, 280, 'AI JOURNEY 2026 · MOSCOW', { size: 46, bg: C.lime, fg: C.ink, pad: 36 });
+const mP1 = photoCard(mSet, 300, 760, 340, 380, 'putin', 'RUSSIA · PUTIN', cr('putin'), -3);
+const mP2 = photoCard(mSet, 780, 760, 340, 380, 'tokayev', 'KAZAKHSTAN · TOKAYEV', cr('tokayev'), 3);
+const mTal = pill(mSet, 540, 1262, 'YOUNG AI TALENTS  + 1 MALAYALI', { size: 42 });
+
+// twist: question card and answer
+const tSet = set('twist');
+const tQ = el('g', {}, tSet); el('rect', { x: 100, y: 330, width: 880, height: 330, rx: 36, fill: 'url(#navyCard)', filter: 'url(#shadow)' }, tQ);
+text(tQ, 150, 400, 'PUTIN ASKED', 32, '#8F98C8', 'start', { 'letter-spacing': 3 });
+fitW(text(tQ, 150, 490, 'IS AI A THREAT', 74, '#FFFFFF', 'start', { 'font-weight': 900 }), 560); fitW(text(tQ, 150, 580, 'TO EDUCATION?', 74, '#FFFFFF', 'start', { 'font-weight': 900 }), 560);
+if (HAVE.putin) { const id = 'qcp'; const cp = el('clipPath', { id }, $('defs')); el('circle', { cx: 830, cy: 500, r: 110 }, cp); el('image', { href: PB + 'putin.jpg', x: 700, y: 370, width: 260, height: 260, preserveAspectRatio: 'xMidYMid slice', 'clip-path': `url(#${id})` }, tQ); el('circle', { cx: 830, cy: 500, r: 110, fill: 'none', stroke: C.lime, 'stroke-width': 8 }, tQ); }
+const tA0 = text(tSet, 540, 760, 'THE AI KID’S ANSWER', 36, '#5A6070', 'middle', { 'letter-spacing': 3 });
+const tA1 = titleBar(tSet, 540, 870, null, 'BASICS FIRST', { bigSize: 120 });
+const tA2 = pill(tSet, 540, 1010, 'AI · AFTER THAT', { size: 60, pad: 44 });
+const tRep = text(tSet, 540, 1100, 'AS REPORTED', 26, '#6A6F7C', 'middle', { 'letter-spacing': 3 });
+
+// callback
+const cSet = set('callback');
+const cTitle = titleBar(cSet, 540, 330, '9 വയസ്സിൽ തുടങ്ങിയ പയ്യൻ', 'BASICS FIRST', { bigSize: 120, gap: 124 });
+const cPhoto = photoCard(cSet, 540, 820, 380, 420, 'raul', 'Raul John Aju · AI Kid of India', cr('raul'), -2);
+
+[wSet, rSet, mSet, tSet, cSet].forEach(g => tl.set(g, { opacity: 0 }, 0));
+const phW = wrap(ph), mP1W = wrap(mP1), mP2W = wrap(mP2), cPhotoW = wrap(cPhoto), mCityW = wrap(mCity), wPhotoW = wrap(wPhoto), kidW = wrap(kid);
+const chipsW = chips.map(wrap);
+
+// ================================================================= SCENES
+const scenes = {
+  hook(si) {
+    // bright first frame: title + the boy at his laptop with AI chips floating
+    chipsW.forEach((c, k) => tl.fromTo(c, { y: 0 }, { y: -18, duration: 1.4, yoyo: true, repeat: 3, ease: 'sine.inOut', immediateRender: false }, k * .2));
+    tl.fromTo(kidW, { scale: 1.0, transformOrigin: '540px 800px' }, { scale: 1.05, duration: 4, ease: 'none', immediateRender: false }, 0);
+    camTo(0, { s: 1.06, oy: 820 }, pS(si, 2));
+    const tp = pS(si, 2) - .1;                                       // "ഈ ആഴ്ച, മോസ്കോയിൽ..."
+    tl.to([hTitle, kidW, ...chipsW], { opacity: 0, duration: .3 }, tp); 
+    tl.set(phone, { opacity: 0 }, 0); tl.to(phone, { opacity: 1, duration: .2 }, tp); tl.fromTo(phW, { rotation: 18, y: 900, transformOrigin: '540px 760px' }, { rotation: -3, y: 0, duration: .7, ease: 'back.out(1.3)', immediateRender: false }, tp); sfx('whoosh', tp, .6);
+    camTo(tp, { s: 1, oy: 900 }, .6, 'power2.out');
+    const ts = pE(si, 2) - .55;                                      // "...സെൽഫി എടുത്തു!"
+    tl.set(shutter, { opacity: .95 }, ts); tl.to(shutter, { opacity: 0, duration: .35 }, ts + .05); sfx('shutter', ts, .9); flash(ts, .25);
+    tl.set(hPill, { opacity: 0 }, 0); pop(hPill, tp + .6);
+    if (CRED.putin) { hCred.textContent = 'Split screen of two photos, not the actual selfie · ' + [CRED.raul, CRED.putin].filter(Boolean).map(c => `${c.author} (${c.license})`).join(' · ') + ' · Wikimedia Commons'; fitW(hCred, 800); }
+    tl.set(hCred, { opacity: 0 }, 0); tl.to(hCred, { opacity: 1, duration: .3 }, tp + .8);
+  },
+  who(si) {
+    const t0 = sStart(si) - .05; slide($('set_hook'), wSet, t0);
+    tl.fromTo(wPhotoW, { scale: 1.06, transformOrigin: '540px 640px' }, { scale: 1, duration: sEnd(si) - t0, ease: 'none', immediateRender: false }, t0);
+    tl.set(wName, { opacity: 0 }, 0); tl.fromTo(wName, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .35, ease: 'power3.out', immediateRender: false }, pS(si, 1)); sfx('pop', pS(si, 1), .5);
+    tl.set(wKid, { opacity: 0 }, 0); slam(wKid, pS(si, 2));
+    tl.set(wStud, { opacity: 0 }, 0); pop(wStud, pS(si, 3));
+    camTo(t0 + .6, { s: 1.04, oy: 760 }, sEnd(si) - t0 - .6);
+  },
+  rise(si) {
+    const t0 = sStart(si) - .05; slide(wSet, rSet, t0); camTo(t0, { s: 1, oy: 900 }, .6, 'power2.inOut');
+    [[rP[0], pS(si, 0) + .1], [rP[1], pS(si, 1)], [rP[2], pS(si, 2)]].forEach(([p, t]) => pop(p, t));
+    tl.set(rBoard, { opacity: 0 }, 0); tl.to(rBoard, { opacity: 1, duration: .3 }, pS(si, 3) - .1);
+    counter(rVal, 0, 500000, pS(si, 3), 1.8, v => '≈ ' + (Math.round(v / 1000) * 1000).toLocaleString('en-IN'));
+    for (let k = 0; k < 14; k++) sfx('tick', pS(si, 3) + 1.8 * (1 - Math.sqrt(1 - k / 14)), .4); sfx('coin', pS(si, 3) + 1.8, .6);
+    camTo(t0 + .6, { s: 1.04, oy: 1000 }, sEnd(si) - t0 - .6);
+  },
+  moscow(si) {
+    const t0 = sStart(si) - .05; slide(rSet, mSet, t0);
+    const w = sentences[si].words; const wAt = s => { const k = w.findIndex(x => x.w.startsWith(s)); return k >= 0 ? w[k].t : t0 + 1; };
+    tl.set(mTitle, { opacity: 0 }, 0); pop(mTitle, t0 + .5);
+    tl.fromTo(mCityW, { scale: 1.08, transformOrigin: '540px 560px' }, { scale: 1, duration: 3, ease: 'none', immediateRender: false }, t0);
+    const tr = wAt('റഷ്യ'), tk = wAt('കസാഖ'), tm = wAt('മലയാളി');
+    tl.to(mCityW, { opacity: 0, y: -200, duration: .4, ease: 'power2.in' }, tr - .2);
+    tl.set(mP1W, { opacity: 0 }, 0); tl.fromTo(mP1W, { opacity: 0, y: 300 }, { opacity: 1, y: 0, duration: .5, ease: 'back.out(1.4)', immediateRender: false }, tr); sfx('whoosh', tr, .5);
+    tl.set(mP2W, { opacity: 0 }, 0); tl.fromTo(mP2W, { opacity: 0, y: 300 }, { opacity: 1, y: 0, duration: .5, ease: 'back.out(1.4)', immediateRender: false }, tk); sfx('whoosh', tk, .5);
+    tl.set(mTal, { opacity: 0 }, 0); slam(mTal, tm);
+    // the silence beat
+    const hb = pE(si, 0) + .25; tl.to([mP1W, mP2W, mTitle], { opacity: .25, duration: .5 }, hb); sfx('dip', hb, .8);
+    camTo(t0 + .6, { s: 1.04 }, sEnd(si) - t0 - .6);
+  },
+  twist(si) {
+    const t0 = sStart(si) - .05; slide(mSet, tSet, t0); camTo(t0, { s: 1, oy: 900 }, .6, 'power2.inOut');
+    tl.set(tQ, { opacity: 0 }, 0); tl.fromTo(tQ, { opacity: 0, x: -200 }, { opacity: 1, x: 0, duration: .45, ease: 'power3.out', immediateRender: false }, pS(si, 0) + .15); sfx('pop', pS(si, 0) + .15, .5);
+    [tA0, tRep].forEach(e => tl.set(e, { opacity: 0 }, 0)); tl.to(tA0, { opacity: 1, duration: .3 }, pS(si, 2));
+    tl.set(tA1, { opacity: 0 }, 0); slam(tA1, pS(si, 3)); tl.set(tA2, { opacity: 0 }, 0); pop(tA2, pS(si, 4)); tl.to(tRep, { opacity: 1, duration: .3 }, pS(si, 4) + .3);
+    camTo(pS(si, 3), { s: 1.05, oy: 900 }, sEnd(si) - pS(si, 3));
+  },
+  callback(si) {
+    const t0 = sStart(si) - .05; slide(tSet, cSet, t0); camTo(t0, { s: 1, oy: 900 }, .6, 'power2.inOut');
+    tl.set(cPhotoW, { opacity: 0 }, 0); tl.fromTo(cPhotoW, { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: .5, ease: 'back.out(1.4)', immediateRender: false }, t0 + .4);
+    tl.set(cTitle.bar, { scaleX: 0, transformOrigin: '0% 50%' }, 0); tl.to(cTitle.bar, { scaleX: 1, duration: .4, ease: 'power3.out' }, pS(si, 1)); sfx('thud', pS(si, 1) + .2, .6);
+    camTo(t0 + .6, { s: 1.05 }, DUR - t0 - .6);
+  }
+};
+sentences.forEach((s, si) => scenes[s.scene](si));
+
+// ---------------------------------------------------------------- captions: navy box, word by word
+const capBox = $('captions'), MAXCH = 22;
+const isNum = w => /[0-9]|ലക്ഷം|ഒൻപതാം|പുടിൻ|എഐ/.test(w);
+TIM.phrases.forEach((ph, pi) => {
+  const pages = []; let cur = [];
+  ph.words.forEach(w => { const len = cur.reduce((a, b) => a + b.w.length + 1, 0); if (cur.length && len + w.w.length > MAXCH) { pages.push(cur); cur = []; } cur.push(w); });
+  if (cur.length) pages.push(cur);
+  const next = pi + 1 < TIM.phrases.length ? TIM.phrases[pi + 1].start : DUR;
+  pages.forEach((words, k) => {
+    const page = document.createElement('div'); page.className = 'page'; capBox.appendChild(page);
+    const box = document.createElement('div'); box.className = 'box'; page.appendChild(box);
+    const tOut = k + 1 < pages.length ? pages[k + 1][0].t - .12 : (pi + 1 < TIM.phrases.length ? Math.min(next - .1, ph.end + .9) : DUR + 1);
+    tl.set(page, { opacity: 0, scale: .92 }, 0); tl.to(page, { opacity: 1, scale: 1, duration: .18, ease: 'back.out(2)' }, Math.max(0, words[0].t - .1));
+    words.forEach((w, j) => {
+      const s = document.createElement('span'); s.className = 'w' + (isNum(w.w) ? ' num' : ''); s.textContent = w.w; box.appendChild(s);
+      tl.set(s, { opacity: .35 }, 0); tl.set(s, { opacity: 1, color: C.lime }, Math.max(0, w.t - .05));
+      tl.set(s, { color: '#FFFFFF' }, j + 1 < words.length ? words[j + 1].t - .05 : tOut);
+    });
+    tl.set(page, { opacity: 0 }, tOut);
+  });
+});
+
+// ---------------------------------------------------------------- time-only render
+const tiles = $('tiles'), leaves = $('leaves'), cam = $('cam');
+function render(t) {
+  const wx = WX.v; tiles.setAttribute('patternTransform', `translate(${(wx % 120).toFixed(2)} 0)`); const lw = ((wx % 1080) + 1080) % 1080; leaves.setAttribute('transform', `translate(${(lw > 540 ? lw - 1080 : lw).toFixed(2)} 0)`);
+  cam.setAttribute('transform', `translate(${CAMS.ox} ${CAMS.oy}) scale(${CAMS.s.toFixed(4)}) translate(${-CAMS.ox} ${-CAMS.oy})`);
+}
+tl.seek(DUR, false); tl.seek(0, false); render(0);
+window.seek = t => { tl.seek(Math.max(0, Math.min(DUR, t)), false); render(t); };
+window.DURATION = DUR; window.SFX = SFX.sort((a, b) => a.t - b.t); window.CONFIG = CFG; window.READY = true;
+const q = new URLSearchParams(location.search);
+if (q.has('guides')) { const st = $('stage'); [['0', '0', '1080px', '230px'], ['0', '1520px', '1080px', '400px'], ['940px', '0', '140px', '1920px']].forEach(([l, tp, w, h]) => { const d = document.createElement('div'); d.className = 'guide'; Object.assign(d.style, { left: l, top: tp, width: w, height: h }); st.appendChild(d); }); }
+if (q.has('t')) window.seek(parseFloat(q.get('t')));
+})();
+</script>
+</body>
+</html>
