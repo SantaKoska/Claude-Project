@@ -1,0 +1,94 @@
+{
+ "ep": 6,
+ "of": 14,
+ "district": "Idukki",
+ "next": "Ernakulam",
+ "nextDir": "west",
+ "start": {
+  "name": "Illikkal Kallu",
+  "short": "ILLIKKAL KALLU",
+  "lat": 9.7697,
+  "lon": 76.8344
+ },
+ "stops": [
+  {
+   "n": 1,
+   "name": "Vagamon",
+   "card": "VAGAMON",
+   "line": "Meadows and a pine forest · about 1,100 m",
+   "chip": "MEADOWS · PINE FOREST · 1,100 m",
+   "lat": 9.6863,
+   "lon": 76.9036,
+   "legs": [
+    {
+     "mode": "taxi"
+    }
+   ],
+   "photos": "Vagamon"
+  },
+  {
+   "n": 2,
+   "name": "Thekkady",
+   "card": "THEKKADY",
+   "line": "Periyar Tiger Reserve · boat ride on the lake",
+   "chip": "PERIYAR TIGER RESERVE",
+   "lat": 9.5735,
+   "lon": 77.1757,
+   "legs": [
+    {
+     "mode": "bus"
+    }
+   ],
+   "photos": "Periyar Thekkady boat"
+  },
+  {
+   "n": 3,
+   "name": "Idukki Dam",
+   "card": "IDUKKI ARCH DAM",
+   "line": "A 168 m arch between the Kuravan and Kurathi hills",
+   "chip": "168 m · KURAVAN & KURATHI",
+   "lat": 9.8433,
+   "lon": 76.9758,
+   "legs": [
+    {
+     "mode": "bus"
+    }
+   ],
+   "photos": "Idukki arch dam"
+  },
+  {
+   "n": 4,
+   "name": "Munnar",
+   "card": "MUNNAR",
+   "line": "Tea gardens as far as the eye can see",
+   "chip": "TEA HILLS",
+   "lat": 10.0889,
+   "lon": 77.0595,
+   "legs": [
+    {
+     "mode": "bus"
+    }
+   ],
+   "photos": "Munnar tea"
+  },
+  {
+   "n": 5,
+   "name": "Eravikulam",
+   "card": "ERAVIKULAM NATIONAL PARK",
+   "line": "Home of the endangered Nilgiri tahr",
+   "chip": "NILGIRI TAHR · CLOSED FEB–MAR",
+   "lat": 10.1434,
+   "lon": 77.0436,
+   "legs": [
+    {
+     "mode": "taxi"
+    }
+   ],
+   "photos": "Nilgiri tahr Eravikulam"
+  }
+ ],
+ "nextPoint": {
+  "lat": 10.05,
+  "lon": 76.79
+ }
+}
