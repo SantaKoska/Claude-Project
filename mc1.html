@@ -768,8 +768,11 @@ function stamp(parent, x, y, str, size, t, fill = C.paper, anchor = 'middle', d 
 
 // ---------------------------------------------------------------- camera (whole world)
 const CAM = { s: 1, x: 0, y: 0 };
-const camSet = (t, v) => tl.set(CAM, v, t);
-const camTo = (t, v, d, ease = 'sine.inOut') => tl.to(CAM, Object.assign({ duration: d, ease }, v), t);
+// a camera move must end before the next camera set/move starts, or render workers seeking out of order land on different values and the frame shakes
+const CAMTW = [];
+const clipCam = t => CAMTW.forEach(w => { const st = w.startTime(); if (st < t && st + w.duration() > t - .02) w.duration(Math.max(.03, t - .02 - st)); });
+const camSet = (t, v) => { t = Math.max(0, t); clipCam(t); return tl.set(CAM, v, t); };
+const camTo = (t, v, d, ease = 'sine.inOut') => { t = Math.max(0, t); clipCam(t); tl.to(CAM, Object.assign({ duration: d, ease }, v), t); CAMTW.push(tl.recent()); return tl; };
 const world = $('cam');
 const set = (name, visible = false) => { const g = el('g', { id: 'set_' + name }, world); if (!visible) tl.set(g, { opacity: 0 }, 0); return g; };
 const showSet = (g, t0, t1) => { tl.set(g, { opacity: 1 }, t0); if (t1 != null) tl.set(g, { opacity: 0 }, t1); };
@@ -1036,9 +1039,9 @@ const scenes = {
     const tc = pE(si, 3) + .45; tl.set($('black'), { opacity: 1 }, tc); sfx('sting', tc, 1);
     // end card (schedule only)
     const E = el('g', {}, endG); tl.set(E, { opacity: 0 }, 0); tl.to(E, { opacity: 1, duration: .6 }, tc + .5);
-    text(E, 540, 760, 'ഭാഗം 2', 120, '#FFFFFF'); text(E, 540, 900, 'നാളെ രാത്രി 9 ന്', 64, C.amber);
-    el('line', { x1: 380, y1: 1000, x2: 700, y2: 1000, stroke: C.red, 'stroke-width': 4 }, E);
-    text(E, 540, 1060, 'ഇരുട്ടിലെ കഥകൾ · THE MARY CELESTE', 32, '#B8B0A2', 'middle', { 'letter-spacing': 3 });
+    text(E, 540, 760, 'ഭാഗം 2', 120, '#FFFFFF'); text(E, 540, 900, 'വരുന്നു...', 72, C.amber); text(E, 540, 975, 'PART 2 · COMING', 30, '#B8B0A2', 'middle', { 'letter-spacing': 8 });
+    el('line', { x1: 380, y1: 1020, x2: 700, y2: 1020, stroke: C.red, 'stroke-width': 4 }, E);
+    text(E, 540, 1075, 'ഇരുട്ടിലെ കഥകൾ · THE MARY CELESTE', 32, '#B8B0A2', 'middle', { 'letter-spacing': 3 });
   }
 };
 sentences.forEach((s, si) => scenes[s.scene](si));
