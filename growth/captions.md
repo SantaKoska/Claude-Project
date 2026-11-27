@@ -338,3 +338,15 @@ Bharananganam: Princebpaul0484 (CC BY-SA 3.0)
 Illikkal Kallu: Hciteam1 (CC BY-SA 4.0)
 
 Instagram post body line: `Map: EOX Sentinel-2, NASA, © OpenStreetMap. Photos: Wikimedia Commons (credits on YouTube).`
+
+## 25. News: Kerala's "AI Kid" and the Putin selfie (explainer, post 7:30 PM)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram: `Started AI at 9. Selfie with Putin at 16 🤖 എഐ കിഡ് ഓഫ് ഇന്ത്യ #AIKid #Kerala`
+- YouTube Shorts title: `Kerala AI Kid meets Putin: Raul John Aju's story 🤖 എഐ കിഡ് #AI #Shorts`
+
+### YouTube description
+Raul John Aju, the Malayali "AI Kid of India", started teaching himself AI at nine. His start-up has trained about five lakh people. This week at the AI Journey 2026 conference in Moscow he was among the young AI talents who met the presidents of Russia and Kazakhstan, and his selfie with Vladimir Putin went viral. Asked whether AI threatens education, he reportedly said students should learn the basics first.
+ഒൻപതാം വയസ്സിൽ സ്വയം എഐ പഠിച്ച മലയാളി പയ്യൻ, മോസ്കോയിൽ പുടിനൊപ്പം.
+AI Kid of India, Raul John Aju, Putin selfie, AI Journey 2026, Kerala student, Malayalam explainer.
+Sources: Onmanorama, The Tribune, Business Today, AIR News, Russian Embassy in India. Photo: kremlin.ru (CC BY 4.0).
