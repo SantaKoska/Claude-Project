@@ -68,7 +68,36 @@ def onepole_lp(x, cut):
 
 
 # --------------------------------------------------------------- music
+def dark_music(dur, cfg):
+    """Mystery bed: a low drone that breathes, wind, and sparse minor piano notes in a big room (no drums)."""
+    N = int(dur * SR); t = np.arange(N) / SR; out = np.zeros((2, N))
+    root = 33 + NOTE.get(cfg.get("key", "D"), 2)          # low drone (MIDI)
+    for k, (n, amp) in enumerate(((root, .5), (root + 7, .28), (root + 12, .18), (root + 15, .08))):
+        f = midi(n); lfo = 0.6 + 0.4 * np.sin(2 * np.pi * (0.05 + 0.017 * k) * t + k)
+        for det, pan in ((-5, -0.5), (5, 0.5)):
+            ff = f * 2 ** (det / 1200)
+            add(out, (np.sin(2 * np.pi * ff * t) + .25 * np.sin(4 * np.pi * ff * t)) * lfo * amp * .09, 0, pan, 1)
+    wind = onepole_lp(rng.standard_normal(N), 500) - onepole_lp(rng.standard_normal(N), 120)
+    gust = 0.5 + 0.5 * np.sin(2 * np.pi * 0.07 * t) * np.sin(2 * np.pi * 0.031 * t + 1)
+    add(out, wind * gust * .25, 0, -0.2, 1); add(out, np.roll(wind, SR // 3) * gust * .2, 0, 0.3, 1)
+    # sparse piano: minor notes, one every ~3.5 s, random register
+    scale = [0, 3, 7, 10, 12, 15, 14, 8]; tk = 2.0; dry = np.zeros((2, N))
+    while tk < dur - 2:
+        n = 57 + NOTE.get(cfg.get("key", "D"), 2) + scale[int(rng.integers(len(scale)))]; f = midi(n); tn = tt(4.0)
+        sig = sum(a * np.sin(2 * np.pi * f * r * tn) * np.exp(-tn * d) for r, a, d in ((1, 1, 1.1), (2, .35, 2.2), (3, .12, 3.5))) * np.minimum(tn / .004, 1)
+        add(dry, sig, tk, float(rng.uniform(-.5, .5)), .05); tk += float(rng.uniform(2.8, 4.6))
+    ir_t = tt(3.5)
+    for c in range(2):
+        ir = rng.standard_normal(len(ir_t)) * np.exp(-ir_t / 1.1); ir[:int(0.02 * SR)] = 0; ir /= np.sqrt((ir ** 2).sum())
+        L = 1 << int(np.ceil(np.log2(N + len(ir))))
+        out[c] += dry[c] * .6 + .9 * np.fft.irfft(np.fft.rfft(dry[c], L) * np.fft.rfft(ir, L), L)[:N]
+    fade = np.ones(N); fi = int(1.5 * SR); fo = int(2.0 * SR)
+    fade[:fi] = np.linspace(0, 1, fi); fade[-fo:] = np.linspace(1, 0, fo) ** 1.5
+    return out * fade
+
+
 def music(dur, cfg):
+    if cfg.get("style") == "dark": return dark_music(dur, cfg)
     bpm = cfg.get("bpm", 96); beat = 60 / bpm; bar = beat * 4
     chords = cfg.get("chords", ["D", "A", "Bm", "G"])
     N = int(dur * SR); dry = np.zeros((2, N)); drums = np.zeros((2, N))
@@ -205,12 +234,38 @@ def sfx_sig(kind):
     if kind == "shutter":                  # camera click
         t = tt(0.12); c = rng.standard_normal(len(t))
         return (c * np.exp(-t * 120) + np.roll(c, int(0.05 * SR)) * (t > 0.05) * np.exp(-np.clip(t - 0.05, 0, None) * 140)) * 0.8, 0
+    if kind == "creak":                    # old wood creaking: a slow pitch glide through a resonant buzz
+        d = 1.3; t = tt(d); f = 140 + 90 * np.sin(np.pi * t / d) + 20 * np.sin(2 * np.pi * 7 * t)
+        saw = ((np.cumsum(f) / SR) % 1.0) * 2 - 1
+        g = (rng.random(len(t)) > 0.6) * 1.0; g = onepole_lp(g, 60)
+        sig = onepole_lp(saw * g, 1800) - onepole_lp(saw * g, 300)
+        return sig * np.sin(np.pi * t / d) ** 1.5 * 2.2, -0.2
+    if kind == "heartbeat":                # two low thumps
+        t = tt(1.0); out = np.zeros(len(t))
+        for dl, a in ((0, 1), (0.26, .7)):
+            tt_ = np.clip(t - dl, 0, None); on = t >= dl
+            out += on * a * np.sin(2 * np.pi * (50 + 30 * np.exp(-tt_ * 30)) * tt_) * np.exp(-tt_ * 12)
+        return out * 1.4, 0
+    if kind == "riser":                    # dread swell before a cut (noise + rising tone, ends abruptly)
+        d = 2.4; t = tt(d); u = t / d
+        n = onepole_lp(rng.standard_normal(len(t)), 300 + 5000 * u ** 2)
+        tone = np.sin(2 * np.pi * np.cumsum(110 + 330 * u ** 2) / SR) * .4
+        return (n + tone) * u ** 2.2 * 1.6, 0
+    if kind == "sting":                    # dissonant low cluster hit
+        t = tt(2.5); out = np.zeros(len(t))
+        for f in (73.4, 77.8, 110, 116.5, 155.6):
+            out += np.sin(2 * np.pi * f * t) * np.exp(-t * 1.4)
+        boom = np.sin(2 * np.pi * np.cumsum(38 + 60 * np.exp(-t * 18)) / SR) * np.exp(-t * 3)
+        return (out / 4 + boom) * np.minimum(t / .005, 1), 0
+    if kind == "drip":                     # a single drop in a dark room
+        t = tt(0.35); f = 900 + 1400 * np.exp(-t * 40)
+        return np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 18) * .8, 0.3
     raise ValueError(kind)
 
 
 SFX_GAIN = {"whoosh": .10, "pop": .13, "tick": .05, "thud": .16, "chime": .10, "shimmer": .07, "fire": .09,
             "ping": .10, "door": .10, "shutter": .13, "hit": .22, "coin": .12, "wave": .08, "siren": .07, "type": .06,
-            "hiss": .10, "click": .09, "hum": .06}
+            "hiss": .10, "click": .09, "hum": .06, "creak": .10, "heartbeat": .20, "riser": .10, "sting": .20, "drip": .08}
 
 
 def loudness(path):
