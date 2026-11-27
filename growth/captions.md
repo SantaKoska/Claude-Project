@@ -342,7 +342,7 @@ Instagram post body line: `Map: EOX Sentinel-2, NASA, © OpenStreetMap. Photos: 
 ## 25. News: Kerala's "AI Kid" and the Putin selfie (explainer, post 7:30 PM)
 
 ### Short versions (100 characters max, emoji counts as 2)
-- Instagram: `Started AI at 9. Selfie with Putin at 16 🤖 എഐ കിഡ് ഓഫ് ഇന്ത്യ #AIKid #Kerala`
+- Instagram: `Taught himself AI at 9. Now a selfie with Putin 🤖 എഐ കിഡ് #AIKid #Kerala`
 - YouTube Shorts title: `Kerala AI Kid meets Putin: Raul John Aju's story 🤖 എഐ കിഡ് #AI #Shorts`
 
 ### YouTube description
