@@ -14,6 +14,10 @@ Second exception: the **split series** ("ഒരു രൂപയുടെ കണ�
 
 **Daily plan (owner, 25 Nov 2026):** three series. Every day one Kerala Yatra (1 PM) plus one more reel (7:30 PM): a news explainer when the news is trending hard, otherwise a split episode. Details in `growth/posting_strategy.md`.
 
+## Every video (owner, 28 Nov 2026)
+
+Run the growth checklist in `growth/growth_playbook.md` for every video: topic gate, 3 hooks scored with the `virality` skill (hookscore) and judged against our own winners (Doomsday ~36k, gold ~32k, tea 6k likes in a day), `yt-package` title + cover lint, ig-caption rules with exactly 5 hashtags by job, the best voice and a series-fitting sound mix ("audio skills"), and a 24 h / 7 d stats entry plus `yt-retention` after posting.
+
 ## Quality bar (owner, 19 Nov 2026)
 
 The watch anatomy test (`out/watch_anatomy_test.mp4`, `anatomy_lab.html`) is the standard every future reel is judged against. The owner's words: clarity, quality and cinematic camera movement "mean a lot for the viewers" and grow views and subscribers.
