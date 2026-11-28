@@ -419,6 +419,7 @@ Link to Part 1 (Instagram linked reels; YouTube related video).
 - Instagram: `10 people vanished. 150+ years, still no answer. Part 3/3 🌊 ഷെർലക് ഹോംസ് #MaryCeleste #Mystery`
 - YouTube Shorts title: `Sherlock Holmes' creator and the ghost ship | Part 3` (cover: `10 GONE. NO ANSWER`)
 - 5 hashtags: `#MaryCeleste #GhostShip #SherlockHolmes #Malayalam #IruttileKathakal`
+- Voice: OmniVoice (male, low pitch), generated phrase by phrase; from this part on the narrator is OmniVoice.
 
 ### YouTube description
 The Mary Celeste, Part 3. In 1884 a 24-year-old doctor wrote a story about the ship and changed its name to "Marie Celeste". Many took it as true, newspapers included; later retellings even added a half-eaten breakfast, which is not in the records. The officer who led the inquiry called it "a fabrication from beginning to end". The doctor was Arthur Conan Doyle, who created Sherlock Holmes three years later. One theory: fumes from the alcohol barrels made the crew fear an explosion and take to the lifeboat. The ten people were never found.
