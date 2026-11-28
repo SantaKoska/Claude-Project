@@ -42,23 +42,35 @@
 പന്ത്രണ്ട് വർഷം കഴിഞ്ഞ്, ഒരു യുവ ഡോക്ടർ, ഈ കപ്പലിനെക്കുറിച്ച് ഒരു കഥയെഴുതി. ആ കഥ, ലോകം വിശ്വസിച്ചു.
 ```
 
-## Part 3: the doctor
+## Part 3: the doctor (v2, 28 Nov 2026, growth checklist applied)
+
+Hook check (virality/hookscore.py, English proxies): "10 people vanished. 150 years later, still no answer" 66 (top) · "The man who invented Sherlock Holmes could not solve this ship" 54 · "A 24-year-old doctor's story fooled the world for 140 years" 50.6 · "Sherlock Holmes's creator made this mystery famous" 43. So Part 3 now opens on the number line (the series' own winning pattern: a number in frame 1 + a question everyone has), then recaps.
+Title (yt-package/title.py): "Sherlock Holmes' creator and the ghost ship | Part 3" 98/100, cover "10 GONE. NO ANSWER" (different words from the title).
+109 words, about 65 s at the slow mystery pace.
 
 ```
-കഴിഞ്ഞ ഭാഗത്ത്: ആളില്ലാത്ത കപ്പൽ. വാളിലെ കറ. പക്ഷേ, അത് രക്തമായിരുന്നില്ല.
+പത്ത് പേർ. നൂറ്റമ്പത് വർഷത്തിലേറെ. ഇന്നും ഉത്തരമില്ല.
 
-ആയിരത്തി എണ്ണൂറ്റി എൺപത്തിനാല്. ആ യുവ ഡോക്ടറുടെ കഥയിൽ, കപ്പലിന്റെ പേര് ചെറുതായി മാറി. മേരി അല്ല... മാരി സെലസ്റ്റ്.
+കഴിഞ്ഞ ഭാഗത്ത്: ആളില്ലാത്ത കപ്പൽ. വാളിലെ കറ. പക്ഷേ, രക്തമല്ല.
+
+ആയിരത്തി എണ്ണൂറ്റി എൺപത്തിനാല്. ഇരുപത്തിനാല് വയസ്സുള്ള ഒരു യുവ ഡോക്ടർ, ഈ കപ്പലിനെക്കുറിച്ച് ഒരു കഥയെഴുതി. കഥയിൽ, കപ്പലിന്റെ പേര് ചെറുതായി മാറി. മേരി അല്ല... മാരി സെലസ്റ്റ്.
 
 പലരും അത് സത്യമാണെന്ന് കരുതി. പത്രങ്ങൾ പോലും. പിന്നീട് വന്ന കഥകൾ, മേശപ്പുറത്ത് പാതി കഴിച്ച ഭക്ഷണം വരെ കൂട്ടിച്ചേർത്തു. യഥാർത്ഥ രേഖകളിൽ, അങ്ങനെയൊന്നുമില്ല.
 
 അന്വേഷണം നയിച്ച ഉദ്യോഗസ്ഥൻ പറഞ്ഞു: ആ കഥ, തുടക്കം മുതൽ അവസാനം വരെ, കെട്ടിച്ചമച്ചതാണ്.
 
+...
+
 ആ ഡോക്ടറുടെ പേര്... ആർതർ കോനൻ ഡോയൽ. മൂന്ന് വർഷം കഴിഞ്ഞ്, അദ്ദേഹം ഷെർലക് ഹോംസിനെ സൃഷ്ടിച്ചു.
+
+ലോകത്തിലെ ഏറ്റവും പ്രശസ്തനായ ഡിറ്റക്ടീവിന്റെ സ്രഷ്ടാവ്. പക്ഷേ, ഈ കപ്പലിന്റെ രഹസ്യത്തിന്, ഇന്നുവരെ ആരും ഉത്തരം കണ്ടെത്തിയിട്ടില്ല.
 
 ഒരു സിദ്ധാന്തം: മദ്യവീപ്പകളിലെ ആവി കണ്ട്, പൊട്ടിത്തെറി ഭയന്ന്, അവർ ലൈഫ്ബോട്ടിൽ ഇറങ്ങിയിരിക്കാം.
 
-പക്ഷേ, ആ ലൈഫ്ബോട്ട്... ആ പത്ത് പേർ... നൂറ്റമ്പത് വർഷം കഴിഞ്ഞിട്ടും, ആരെയും കണ്ടെത്തിയിട്ടില്ല.
+പക്ഷേ, ആ ലൈഫ്ബോട്ട്... ആ പത്ത് പേർ... ഇന്നുവരെ, ആരെയും കണ്ടെത്തിയിട്ടില്ല.
 ```
+
+Accuracy notes for v2: Doyle was born 22 May 1859; the story ran in the January 1884 Cornhill, so he was 24. "More than 150 years" (1872 to 2026 = 154). "No one has found the answer" (not "Doyle tried to solve it").
 
 ## Visual plan (night cinematics)
 - Part 1: grey Atlantic at dusk, slow drift toward a two-masted brigantine under torn sails (silhouette, fog, moon behind cloud); Dei Gratia's lantern approaching; the empty wheel; two men rowing across; torch beam through empty cabins (hammocks, clothes, food barrels); the empty davits where the lifeboat should hang; the captain's cabin door creaks; the logbook on the desk, a page turning... cut to black.
