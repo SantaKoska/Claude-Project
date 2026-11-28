@@ -398,3 +398,17 @@ Munnar: Rainer Halama (CC BY-SA 4.0), Ingo Mehling (CC BY-SA 4.0)
 Nilgiri tahr: Charles J. Sharp (CC BY-SA 4.0)
 
 Instagram post body line: `Map: EOX Sentinel-2, NASA, © OpenStreetMap. Photos: Wikimedia Commons (credits on YouTube).`
+
+## 29. Mystery S1 · The Mary Celeste, Part 2/3 (series "ഇരുട്ടിലെ കഥകൾ", post 9:00 PM)
+
+### Short versions (100 characters max, emoji counts as 2)
+- Instagram: `A stain on a sword. A murder theory. Part 2/3 🌊 ആരും തിരിച്ചുവന്നില്ല #MaryCeleste #Mystery`
+- YouTube Shorts title: `Mary Celeste ghost ship mystery Part 2 🌊 രക്തമല്ല #Mystery #Shorts`
+
+### YouTube description
+The Mary Celeste, Part 2. The last log entry: 25 November 1872, near the Azores. The ship was found ten days later. In the hold, about 1,700 barrels of alcohol and 3.5 feet of water. In Gibraltar, the investigating officer suspected murder: red marks on the deck, a stain on a sword. The test said: not blood. So where did the ten people go? Twelve years later, a young doctor wrote a story about this ship, and the world believed it. Part 3 is coming.
+മേരി സെലസ്റ്റ്, ഭാഗം 2: വാളിലെ കറ, പക്ഷേ രക്തമല്ല.
+Mary Celeste, ghost ship, Gibraltar inquiry, unsolved mystery, Malayalam story, ഇരുട്ടിലെ കഥകൾ.
+Sources: Wikipedia, Britannica, Royal Museums Greenwich, New England Historical Society.
+
+Link to Part 1 (Instagram linked reels; YouTube related video).
