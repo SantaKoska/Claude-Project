@@ -18,6 +18,10 @@ Second exception: the **split series** ("ഒരു രൂപയുടെ കണ�
 
 Run the growth checklist in `growth/growth_playbook.md` for every video: topic gate, 3 hooks scored with the `virality` skill (hookscore) and judged against our own winners (Doomsday ~36k, gold ~32k, tea 6k likes in a day), `yt-package` title + cover lint, ig-caption rules with exactly 5 hashtags by job, the best voice and a series-fitting sound mix ("audio skills"), and a 24 h / 7 d stats entry plus `yt-retention` after posting.
 
+## Workflow (owner, 28 Nov 2026)
+
+Script first; once the owner says "approve", do everything in one go: generate the narration with **OmniVoice** (male, low pitch; setup in the session scratchpad, model k2-fsa/OmniVoice, Malayalam `language='ml'`, one paragraph at a time with natural pauses), sync it, build, check frames and shake (stride check), render, verify and deliver. The owner no longer records ElevenLabs voices (from Mary Celeste Part 3 onwards).
+
 ## Quality bar (owner, 19 Nov 2026)
 
 The watch anatomy test (`out/watch_anatomy_test.mp4`, `anatomy_lab.html`) is the standard every future reel is judged against. The owner's words: clarity, quality and cinematic camera movement "mean a lot for the viewers" and grow views and subscribers.
