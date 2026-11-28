@@ -749,9 +749,10 @@ const fadeOut = (e, t, d = .5) => tl.to(e, { opacity: 0, duration: d, ease: 'pow
 const dip = (t, d = .5) => { tl.to($('black'), { opacity: 1, duration: d * .45, ease: 'power1.in' }, t - d * .45); tl.to($('black'), { opacity: 0, duration: d * .55, ease: 'power1.out' }, t); };
 // serif caption stamp (small caps, letter-spaced), typed in
 function stamp(parent, x, y, str, size, t, fill = C.paper, anchor = 'middle', d = .8) {
-  const g = el('g', {}, parent); const tx = text(g, x, y, str, size, fill, anchor, { 'letter-spacing': 5 });
-  const id = 'st' + Math.round(t * 1000) + Math.round(x); const cp = el('clipPath', { id }, $('defs')); const bb = tx.getBBox(); const r = el('rect', { x: bb.x - 6, y: bb.y - 10, width: 0, height: bb.height + 20 }, cp);
-  tx.setAttribute('clip-path', `url(#${id})`); tl.to(r, { attr: { width: bb.width + 12 }, duration: d, ease: 'steps(' + Math.max(8, str.length) + ')' }, t);
+  const g = el('g', {}, parent); const bg = el('rect', { rx: 10, fill: '#05070C', opacity: .62 }, g); const tx = text(g, x, y, str, size, fill, anchor, { 'letter-spacing': 5 });
+  const id = 'st' + Math.round(t * 1000) + Math.round(x); const cp = el('clipPath', { id }, $('defs')); const bb = tx.getBBox(); const r = el('rect', { x: bb.x - 26, y: bb.y - 16, width: 0, height: bb.height + 32 }, cp);
+  { const b2 = tx.getBBox(); bg.setAttribute('x', b2.x - 22); bg.setAttribute('y', b2.y - 12); bg.setAttribute('width', b2.width + 44); bg.setAttribute('height', b2.height + 24); bg.setAttribute('clip-path', `url(#${id})`); }
+  tx.setAttribute('clip-path', `url(#${id})`); tl.to(r, { attr: { width: bb.width + 52 }, duration: d, ease: 'steps(' + Math.max(8, str.length) + ')' }, t);
   for (let k = 0; k < Math.min(10, str.length); k++) sfx('type', t + k * d / Math.min(10, str.length), .4);
   return g;
 }
