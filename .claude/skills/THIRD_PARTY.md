@@ -7,3 +7,5 @@
 | hyperframes, hyperframes-cli, hyperframes-registry | https://github.com/heygen-com/hyperframes (skills/) | Apache-2.0 (hyperframes/LICENSE) | added a local note at the top of each SKILL.md: never run telemetry; use alongside our pipeline |
 | ig-* | jakeschincariol/instagram-agent-skill | MIT (growth/INSTAGRAM_SKILLS_LICENSE.txt) | see earlier commits |
 | bang-motion, canvas-design, skill-creator | see growth/BANG_MOTION_README.md, growth/ANTHROPIC_SKILLS_NOTICES.md | | |
+| virality | https://github.com/Jakeschincariol/master-skills (skills/virality) | MIT (growth/MASTER_SKILLS_LICENSE.txt) | local note at the top of SKILL.md: house rules win, no CTA step |
+| yt-retention, yt-package, yt-seo, yt-audit, yt-edit | https://github.com/Jakeschincariol/youtube-agent-skill (skills/) | MIT (growth/YOUTUBE_SKILLS_LICENSE.txt) | local note at the top of each SKILL.md: house rules win |
