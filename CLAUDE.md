@@ -20,7 +20,7 @@ Run the growth checklist in `growth/growth_playbook.md` for every video: topic g
 
 ## Workflow (owner, 28 Nov 2026)
 
-Script first; once the owner says "approve", do everything in one go: generate the narration with **OmniVoice** (male, low pitch; setup in the session scratchpad, model k2-fsa/OmniVoice, Malayalam `language='ml'`, one paragraph at a time with natural pauses), sync it, build, check frames and shake (stride check), render, verify and deliver. The owner no longer records ElevenLabs voices (from Mary Celeste Part 3 onwards).
+Script first; once the owner says "approve", do everything in one go: generate the narration with **OmniVoice** (male, low pitch; setup in the session scratchpad, model k2-fsa/OmniVoice, Malayalam `language='ml'`, **one full sentence per clip** so each sentence flows naturally (never phrase by phrase: the owner rejected that as choppy), `num_step=64`, speed 0.92, clear 0.8 s gaps between sentences), sync it, build, check frames and shake (stride check), render, verify and deliver. The owner no longer records ElevenLabs voices (from Mary Celeste Part 3 onwards).
 
 ## Quality bar (owner, 19 Nov 2026)
 
